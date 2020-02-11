@@ -30,7 +30,7 @@
 @{
     if (ViewBag.MenuType == 179 || (int)Session["F_MenuType"] == 179)
     {
-        <div class="title_01">Things to do</div>
+        <div class="title_01">Destination</div>
         <div id="Partial_Index_Destination">
             <!--.......-->
         </div>
@@ -100,7 +100,7 @@
                                         </div>
 
                                         <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center align-center">
-                                            <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/ThingsToDo_Img/")@item.Destination_Type_ImgName" />
+                                            <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/Destination/")@item.Destination_Type_ImgName" />
                                             <br />
                                             <input data-imgid="Index_Img_File@(x)" name="Index_Img_File" type="file" class="form-control" accept=".jpeg,.jpg,.gif,.png" />
                                         </div>
