@@ -1,0 +1,66 @@
+﻿@model WebSiteProject.Models.F_Destination_Type
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>F_Destination_Type</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination_Type_Title1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination_Type_Title1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination_Type_Title2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination_Type_Title2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination_Type_CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination_Type_CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination_Type_ImgName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination_Type_ImgName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination_Type_Link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination_Type_Link)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination_Type_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination_Type_Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Destination_Type_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

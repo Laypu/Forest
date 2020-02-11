@@ -42,7 +42,6 @@ namespace WebSiteProject.Models
         public virtual DbSet<Destination_Index> Destination_Index { get; set; }
         public virtual DbSet<EventListItem> EventListItems { get; set; }
         public virtual DbSet<EventListUnitSetting> EventListUnitSettings { get; set; }
-        public virtual DbSet<F_Destination_Type> F_Destination_Type { get; set; }
         public virtual DbSet<F_HashTag_Type> F_HashTag_Type { get; set; }
         public virtual DbSet<F_Index> F_Index { get; set; }
         public virtual DbSet<F_Index_Img> F_Index_Img { get; set; }
@@ -93,12 +92,13 @@ namespace WebSiteProject.Models
         public virtual DbSet<SiteFlow> SiteFlows { get; set; }
         public virtual DbSet<SiteLayout> SiteLayouts { get; set; }
         public virtual DbSet<SiteList> SiteLists { get; set; }
-       // public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<VideoItem> VideoItems { get; set; }
         public virtual DbSet<VideoUnitSetting> VideoUnitSettings { get; set; }
         public virtual DbSet<AdminFunction> AdminFunctions { get; set; }
         public virtual DbSet<LinkItem> LinkItems { get; set; }
         public virtual DbSet<ZipCode> ZipCodes { get; set; }
+        public virtual DbSet<F_Destination_Type> F_Destination_Type { get; set; }
     }
 }

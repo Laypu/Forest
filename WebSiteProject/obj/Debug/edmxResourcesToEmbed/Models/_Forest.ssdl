@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="ForestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'Forest.dbo.ActiveDateRange' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="ActiveDateRange">
-          <Property Name="ModelID" Type="int" />
-          <Property Name="ItemID" Type="int" />
-          <Property Name="StartDate" Type="varchar" MaxLength="50" />
-          <Property Name="EndDate" Type="varchar" MaxLength="50" />
-        </EntityType>-->
   <EntityType Name="ActiveItem">
     <Key>
       <PropertyRef Name="ItemID" />
@@ -198,15 +190,6 @@
     <Property Name="Parameter" Type="varchar" MaxLength="50" />
     <Property Name="ParentGroupID" Type="int" />
   </EntityType>
-  <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'Forest.dbo.AdminFunctionAuth' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="AdminFunctionAuth">
-          <Property Name="GroupID" Type="int" />
-          <Property Name="LangID" Type="int" />
-          <Property Name="ItemID" Type="int" />
-          <Property Name="Type" Type="int" />
-          <Property Name="GID" Type="int" />
-        </EntityType>-->
   <EntityType Name="ADMobile">
     <Key>
       <PropertyRef Name="ID" />
@@ -336,14 +319,6 @@
     <Property Name="CityID" Type="int" Nullable="false" />
     <Property Name="CityName" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'Forest.dbo.ClickCountTable' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="ClickCountTable">
-          <Property Name="Type" Type="varchar" MaxLength="20" />
-          <Property Name="IP" Type="varchar" MaxLength="16" />
-          <Property Name="LastClickDatetime" Type="datetime" />
-          <Property Name="ID" Type="varchar" MaxLength="10" />
-        </EntityType>-->
   <EntityType Name="ColumnSetting">
     <Key>
       <PropertyRef Name="ID" />
@@ -368,13 +343,6 @@
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Sort" Type="int" />
   </EntityType>
-  <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'Forest.dbo.CountSearchKey' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="CountSearchKey">
-          <Property Name="SearchKey" Type="nvarchar" MaxLength="50" />
-          <Property Name="Count" Type="int" />
-          <Property Name="LangID" Type="int" />
-        </EntityType>-->
   <EntityType Name="Destination_Index">
     <Key>
       <PropertyRef Name="Destination_ID" />
@@ -382,6 +350,7 @@
     <Property Name="Destination_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Destination_Title" Type="nvarchar(max)" />
     <Property Name="Destination_Context" Type="nvarchar(max)" />
+    <Property Name="Destination_Catagory" Type="nvarchar(max)" />
     <Property Name="Destination_Img" Type="nvarchar(max)" />
     <Property Name="Destination_Img_Mobile" Type="nvarchar(max)" />
   </EntityType>
@@ -459,9 +428,12 @@
       <PropertyRef Name="Destination_Type_ID" />
     </Key>
     <Property Name="Destination_Type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Destination_Type_Name" Type="nvarchar(max)" />
-    <Property Name="Destination_Type_Description" Type="nvarchar(max)" />
+    <Property Name="Destination_Type_Title1" Type="nvarchar(max)" />
+    <Property Name="Destination_Type_Title2" Type="nvarchar(max)" />
     <Property Name="Destination_Type_CreateDate" Type="datetime" />
+    <Property Name="Destination_Type_ImgName" Type="nvarchar(max)" />
+    <Property Name="Destination_Type_Link" Type="nvarchar(max)" />
+    <Property Name="Destination_Type_Description" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="F_HashTag_Type">
     <Key>
@@ -617,16 +589,6 @@
     <Property Name="ReplyAccount" Type="varchar" MaxLength="50" />
     <Property Name="ReplyDatetime" Type="datetime" />
   </EntityType>
-  <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'Forest.dbo.FormInputNote' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="FormInputNote">
-          <Property Name="InputID" Type="int" />
-          <Property Name="NoteText" Type="ntext" />
-          <Property Name="CreateDateTime" Type="datetime" />
-          <Property Name="Account" Type="varchar" MaxLength="50" />
-          <Property Name="Type" Type="varchar" MaxLength="1" />
-          <Property Name="MainID" Type="int" />
-        </EntityType>-->
   <EntityType Name="FormSelItem">
     <Key>
       <PropertyRef Name="ID" />
@@ -903,13 +865,6 @@
     <Property Name="UpdateDatetime" Type="datetime" />
     <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
   </EntityType>
-  <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'Forest.dbo.LangInputText' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="LangInputText">
-          <Property Name="LangID" Type="int" />
-          <Property Name="LangTextID" Type="int" />
-          <Property Name="Text" Type="nvarchar" MaxLength="500" />
-        </EntityType>-->
   <EntityType Name="LangKey">
     <Key>
       <PropertyRef Name="LKey" />
@@ -995,12 +950,6 @@
     <Property Name="DisplayName" Type="varchar" MaxLength="100" />
     <Property Name="ICon" Type="varchar" MaxLength="100" />
   </EntityType>
-  <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'Forest.dbo.MenuUrl' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="MenuUrl">
-          <Property Name="MenuName" Type="nvarchar" MaxLength="50" />
-          <Property Name="MenuPath" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
   <EntityType Name="MessageItem">
     <Key>
       <PropertyRef Name="ItemID" />
@@ -1315,126 +1264,6 @@
     <Property Name="SType" Type="char" MaxLength="1" />
     <Property Name="ModelItemList" Type="varchar" MaxLength="1000" />
   </EntityType>
-  <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'Forest.dbo.PageLayoutActivity' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="PageLayoutActivity">
-          <Property Name="IsShow" Type="bit" />
-          <Property Name="LangID" Type="int" />
-          <Property Name="MoreLinkUrl" Type="varchar" MaxLength="1000" />
-          <Property Name="Item1Link" Type="varchar" MaxLength="1000" />
-          <Property Name="Item2Link" Type="varchar" MaxLength="1000" />
-          <Property Name="Item3Link" Type="varchar" MaxLength="1000" />
-          <Property Name="Item4Link" Type="varchar" MaxLength="1000" />
-          <Property Name="Item5Link" Type="varchar" MaxLength="1000" />
-          <Property Name="Item6Link" Type="varchar" MaxLength="1000" />
-          <Property Name="Item7Link" Type="varchar" MaxLength="1000" />
-          <Property Name="Item1Desc" Type="nvarchar" MaxLength="1000" />
-          <Property Name="Item2Desc" Type="nvarchar" MaxLength="1000" />
-          <Property Name="Item3Desc" Type="nvarchar" MaxLength="1000" />
-          <Property Name="Item4Desc" Type="nvarchar" MaxLength="1000" />
-          <Property Name="Item5Desc" Type="nvarchar" MaxLength="1000" />
-          <Property Name="Item6Desc" Type="nvarchar" MaxLength="1000" />
-          <Property Name="Item7Desc" Type="nvarchar" MaxLength="1000" />
-          <Property Name="Item1ImageName" Type="nvarchar" MaxLength="100" />
-          <Property Name="Item2ImageName" Type="nvarchar" MaxLength="100" />
-          <Property Name="Item3ImageName" Type="nvarchar" MaxLength="100" />
-          <Property Name="Item4ImageName" Type="nvarchar" MaxLength="100" />
-          <Property Name="Item5ImageName" Type="nvarchar" MaxLength="100" />
-          <Property Name="Item6ImageName" Type="nvarchar" MaxLength="100" />
-          <Property Name="Item7ImageName" Type="nvarchar" MaxLength="100" />
-          <Property Name="Item1ImageNamePath" Type="nvarchar" MaxLength="300" />
-          <Property Name="Item2ImageNamePath" Type="nvarchar" MaxLength="300" />
-          <Property Name="Item3ImageNamePath" Type="nvarchar" MaxLength="300" />
-          <Property Name="Item4ImageNamePath" Type="nvarchar" MaxLength="300" />
-          <Property Name="Item5ImageNamePath" Type="nvarchar" MaxLength="300" />
-          <Property Name="Item6ImageNamePath" Type="nvarchar" MaxLength="300" />
-          <Property Name="Item7ImageNamePath" Type="nvarchar" MaxLength="300" />
-          <Property Name="Item1Title" Type="varchar" MaxLength="100" />
-          <Property Name="Item2Title" Type="varchar" MaxLength="100" />
-          <Property Name="Item3Title" Type="varchar" MaxLength="100" />
-          <Property Name="Item4Title" Type="varchar" MaxLength="100" />
-          <Property Name="Item5Title" Type="varchar" MaxLength="100" />
-          <Property Name="Item6Title" Type="varchar" MaxLength="100" />
-          <Property Name="Item7Title" Type="varchar" MaxLength="100" />
-        </EntityType>-->
-  <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'Forest.dbo.PageLayoutOP1' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="PageLayoutOP1">
-          <Property Name="IsShow" Type="bit" />
-          <Property Name="LangID" Type="int" />
-          <Property Name="LeftTitle" Type="nvarchar" MaxLength="100" />
-          <Property Name="RightTitle" Type="nvarchar" MaxLength="100" />
-          <Property Name="Introduction" Type="nvarchar" MaxLength="2000" />
-          <Property Name="RightLink" Type="varchar" MaxLength="1000" />
-          <Property Name="LeftItem1Link" Type="varchar" MaxLength="1000" />
-          <Property Name="LeftItem2Link" Type="varchar" MaxLength="1000" />
-          <Property Name="LeftItem3Link" Type="varchar" MaxLength="1000" />
-          <Property Name="LeftItem4Link" Type="varchar" MaxLength="1000" />
-          <Property Name="RightItem1Link" Type="varchar" MaxLength="1000" />
-          <Property Name="RightItem2Link" Type="varchar" MaxLength="1000" />
-          <Property Name="RightItem3Link" Type="varchar" MaxLength="1000" />
-          <Property Name="LeftItem1Desc" Type="nvarchar" MaxLength="1000" />
-          <Property Name="LeftItem2Desc" Type="nvarchar" MaxLength="1000" />
-          <Property Name="LeftItem3Desc" Type="nvarchar" MaxLength="1000" />
-          <Property Name="LeftItem4Desc" Type="nvarchar" MaxLength="1000" />
-          <Property Name="RightItem1Desc" Type="nvarchar" MaxLength="1000" />
-          <Property Name="RightItem2Desc" Type="nvarchar" MaxLength="1000" />
-          <Property Name="RightItem3Desc" Type="nvarchar" MaxLength="1000" />
-          <Property Name="LeftItem1ImageName" Type="nvarchar" MaxLength="100" />
-          <Property Name="LeftItem2ImageName" Type="nvarchar" MaxLength="100" />
-          <Property Name="LeftItem3ImageName" Type="nvarchar" MaxLength="100" />
-          <Property Name="LeftItem4ImageName" Type="nvarchar" MaxLength="100" />
-          <Property Name="RightItem1ImageName" Type="nvarchar" MaxLength="100" />
-          <Property Name="RightItem2ImageName" Type="nvarchar" MaxLength="100" />
-          <Property Name="RightItem3ImageName" Type="nvarchar" MaxLength="100" />
-          <Property Name="LeftItem1ImageNamePath" Type="nvarchar" MaxLength="300" />
-          <Property Name="LeftItem2ImageNamePath" Type="nvarchar" MaxLength="300" />
-          <Property Name="LeftItem3ImageNamePath" Type="nvarchar" MaxLength="300" />
-          <Property Name="LeftItem4ImageNamePath" Type="nvarchar" MaxLength="300" />
-          <Property Name="RightItem1ImageNamePath" Type="nvarchar" MaxLength="300" />
-          <Property Name="RightItem2ImageNamePath" Type="nvarchar" MaxLength="300" />
-          <Property Name="RightItem3ImageNamePath" Type="nvarchar" MaxLength="300" />
-          <Property Name="LeftItem1Title" Type="varchar" MaxLength="100" />
-          <Property Name="LeftItem2Title" Type="varchar" MaxLength="100" />
-          <Property Name="LeftItem3Title" Type="varchar" MaxLength="100" />
-          <Property Name="LeftItem4Title" Type="varchar" MaxLength="100" />
-          <Property Name="RightItem1Title" Type="varchar" MaxLength="100" />
-          <Property Name="RightItem2Title" Type="varchar" MaxLength="100" />
-          <Property Name="RightItem3Title" Type="varchar" MaxLength="100" />
-          <Property Name="LeftItem1LinkMode" Type="nvarchar" MaxLength="1" />
-          <Property Name="LeftItem2LinkMode" Type="nvarchar" MaxLength="1" />
-          <Property Name="LeftItem3LinkMode" Type="nvarchar" MaxLength="1" />
-          <Property Name="LeftItem4LinkMode" Type="nvarchar" MaxLength="1" />
-          <Property Name="RightItem1LinkMode" Type="nvarchar" MaxLength="1" />
-          <Property Name="RightItem2LinkMode" Type="nvarchar" MaxLength="1" />
-          <Property Name="RightItem3LinkMode" Type="nvarchar" MaxLength="1" />
-          <Property Name="RightLinkMode" Type="nvarchar" MaxLength="1" />
-        </EntityType>-->
-  <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'Forest.dbo.PageLayoutOP2' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="PageLayoutOP2">
-          <Property Name="IsShow" Type="bit" />
-          <Property Name="LangID" Type="int" />
-          <Property Name="Title" Type="nvarchar" MaxLength="100" />
-          <Property Name="Introduction" Type="nvarchar" MaxLength="2000" />
-          <Property Name="Link" Type="varchar" MaxLength="1000" />
-          <Property Name="ImageName" Type="nvarchar" MaxLength="100" />
-          <Property Name="ImageNamePath" Type="nvarchar" MaxLength="300" />
-          <Property Name="LinkMode" Type="nvarchar" MaxLength="1" />
-        </EntityType>-->
-  <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'Forest.dbo.PageLayoutOP3' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="PageLayoutOP3">
-          <Property Name="IsShow" Type="bit" />
-          <Property Name="LangID" Type="int" />
-          <Property Name="Title" Type="nvarchar" MaxLength="100" />
-          <Property Name="Introduction" Type="nvarchar" MaxLength="2000" />
-          <Property Name="Link" Type="varchar" MaxLength="1000" />
-          <Property Name="ImageName" Type="nvarchar" MaxLength="100" />
-          <Property Name="ImageNamePath" Type="nvarchar" MaxLength="300" />
-          <Property Name="VideoLink" Type="nvarchar" MaxLength="100" />
-          <Property Name="LinkMode" Type="nvarchar" MaxLength="1" />
-        </EntityType>-->
   <EntityType Name="PageUnitSetting">
     <Key>
       <PropertyRef Name="ID" />
@@ -1458,20 +1287,6 @@
     <Property Name="Column4" Type="nvarchar" MaxLength="50" />
     <Property Name="Column5" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'Forest.dbo.PatentDetail' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="PatentDetail">
-          <Property Name="MainID" Type="int" />
-          <Property Name="ItemID" Type="int" />
-          <Property Name="GroupID" Type="int" />
-          <Property Name="LangID" Type="int" />
-          <Property Name="Nation" Type="nvarchar" MaxLength="50" />
-          <Property Name="Patentno" Type="nvarchar" MaxLength="100" />
-          <Property Name="PatentDate" Type="varchar" MaxLength="20" />
-          <Property Name="EarlyPublicDate" Type="varchar" MaxLength="20" />
-          <Property Name="EarlyPublicNo" Type="nvarchar" MaxLength="100" />
-          <Property Name="Deadline" Type="varchar" MaxLength="20" />
-        </EntityType>-->
   <EntityType Name="PatentItem">
     <Key>
       <PropertyRef Name="ItemID" />
@@ -1660,16 +1475,6 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
-  <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'Forest.dbo.SystemRecord' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="SystemRecord">
-          <Property Name="UserID" Type="int" />
-          <Property Name="Account" Type="varchar" MaxLength="20" />
-          <Property Name="IP" Type="varchar" MaxLength="20" />
-          <Property Name="Login" Type="datetime" />
-          <Property Name="Logout" Type="datetime" />
-          <Property Name="Logs" Type="text" />
-        </EntityType>-->
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="ID" />
@@ -1686,23 +1491,6 @@
     <Property Name="UpdateDatetime" Type="datetime" />
     <Property Name="UpdateUser" Type="nvarchar" MaxLength="20" />
   </EntityType>
-  <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'Forest.dbo.VerifyData' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="VerifyData">
-          <Property Name="ModelID" Type="int" />
-          <Property Name="ModelMainID" Type="int" />
-          <Property Name="ModelItemID" Type="int" />
-          <Property Name="ModelName" Type="nvarchar" MaxLength="150" />
-          <Property Name="ModelStatus" Type="int" />
-          <Property Name="VerifyStatus" Type="int" />
-          <Property Name="VerifyDateTime" Type="datetime" />
-          <Property Name="VerifyUser" Type="varchar" MaxLength="20" />
-          <Property Name="VerifyName" Type="nvarchar" MaxLength="20" />
-          <Property Name="UpdateUser" Type="nvarchar" MaxLength="20" />
-          <Property Name="UpdateDateTime" Type="datetime" />
-          <Property Name="UpdateAccount" Type="varchar" MaxLength="20" />
-          <Property Name="LangID" Type="int" />
-        </EntityType>-->
   <EntityType Name="VideoItem">
     <Key>
       <PropertyRef Name="ItemID" />
@@ -1773,19 +1561,6 @@
     <Property Name="ColumnSetting" Type="nvarchar" MaxLength="500" />
     <Property Name="IntroductionHtml" Type="ntext" />
   </EntityType>
-  <!--產生期間發現錯誤:
-警告 6013: 資料表/檢視 'Forest.dbo.WebSiteMapInfo' 未定義主索引鍵，也無法推斷有效的主索引鍵。此資料表/檢視已被排除。如果要使用此實體，您必須檢閱您的結構描述，加入正確的索引鍵，並將它取消註解。
-        <EntityType Name="WebSiteMapInfo">
-          <Property Name="MainID" Type="int" />
-          <Property Name="LangID" Type="int" />
-          <Property Name="HtmlContent" Type="ntext" />
-          <Property Name="HotKey" Type="nvarchar" MaxLength="1000" />
-          <Property Name="AreaName" Type="nvarchar" MaxLength="1000" />
-          <Property Name="Intro" Type="nvarchar" MaxLength="1000" />
-          <Property Name="UpdateDatetime" Type="datetime" />
-          <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
-          <Property Name="UpdateName" Type="nvarchar" MaxLength="20" />
-        </EntityType>-->
   <!--產生期間發現錯誤:
 警告 6002: 資料表/檢視 'Forest.dbo.ZipCode' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="ZipCode">

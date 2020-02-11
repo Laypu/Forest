@@ -228,6 +228,7 @@
   <ItemGroup>
     <Compile Include="Areas\webadmin\Controllers\AccountController.cs" />
     <Compile Include="Areas\webadmin\Controllers\Destination_IndexController.cs" />
+    <Compile Include="Areas\webadmin\Controllers\F_Destination_TypeController.cs" />
     <Compile Include="Areas\webadmin\Controllers\F_ThingtodoController.cs" />
     <Compile Include="Areas\webadmin\Controllers\PatentController.cs" />
     <Compile Include="Areas\webadmin\Controllers\WebsiteMapController.cs" />
@@ -3185,6 +3186,11 @@
     <Content Include="Areas\webadmin\Views\Destination_Index\Edit.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\Index.cshtml" />
     <Content Include="Areas\webadmin\Views\Menu\MenuLinkDestination.cshtml" />
+    <Content Include="Areas\webadmin\Views\F_Destination_Type\Create.cshtml" />
+    <Content Include="Areas\webadmin\Views\F_Destination_Type\Delete.cshtml" />
+    <Content Include="Areas\webadmin\Views\F_Destination_Type\Details.cshtml" />
+    <Content Include="Areas\webadmin\Views\F_Destination_Type\Edit.cshtml" />
+    <Content Include="Areas\webadmin\Views\F_Destination_Type\Index.cshtml" />
     <None Include="Properties\PublishProfiles\MySkylines.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

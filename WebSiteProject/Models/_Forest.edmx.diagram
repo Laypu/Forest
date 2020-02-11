@@ -19,68 +19,68 @@
         <EntityTypeShape EntityType="ForestModel.City" Width="1.5" PointX="12.75" PointY="10.75" />
         <EntityTypeShape EntityType="ForestModel.ColumnSetting" Width="1.5" PointX="6.75" PointY="13.75" />
         <EntityTypeShape EntityType="ForestModel.Country" Width="1.5" PointX="8.75" PointY="13.75" />
-        <EntityTypeShape EntityType="ForestModel.Destination_Index" Width="1.5" PointX="10.75" PointY="13.75" />
-        <EntityTypeShape EntityType="ForestModel.EventListItem" Width="1.5" PointX="12.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ForestModel.Destination_Index" Width="1.75" PointX="10.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ForestModel.EventListItem" Width="1.5" PointX="13.125" PointY="13.75" />
         <EntityTypeShape EntityType="ForestModel.EventListUnitSetting" Width="1.5" PointX="14.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ForestModel.F_Destination_Type" Width="1.5" PointX="2.75" PointY="14.75" />
         <EntityTypeShape EntityType="ForestModel.F_HashTag_Type" Width="1.5" PointX="0.75" PointY="0.875" />
-        <EntityTypeShape EntityType="ForestModel.F_Index" Width="1.5" PointX="14.75" PointY="7.75" />
-        <EntityTypeShape EntityType="ForestModel.F_Index_Img" Width="1.5" PointX="14.75" PointY="10.75" />
-        <EntityTypeShape EntityType="ForestModel.F_MessageModel" Width="1.5" PointX="14.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ForestModel.F_Index" Width="1.5" PointX="2.75" PointY="14.75" />
+        <EntityTypeShape EntityType="ForestModel.F_Index_Img" Width="1.5" PointX="14.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ForestModel.F_MessageModel" Width="1.5" PointX="14.75" PointY="10.75" />
         <EntityTypeShape EntityType="ForestModel.F_Sub_HashTag_Type" Width="1.5" PointX="3" PointY="1.125" />
-        <EntityTypeShape EntityType="ForestModel.F_Thingtodo_Index" Width="1.5" PointX="16.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ForestModel.F_Thingtodo_Type" Width="1.5" PointX="16.75" PointY="3.75" />
-        <EntityTypeShape EntityType="ForestModel.FileDownloadItem" Width="1.5" PointX="16.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ForestModel.F_Thingtodo_Index" Width="1.5" PointX="14.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ForestModel.F_Thingtodo_Type" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ForestModel.FileDownloadItem" Width="1.5" PointX="16.75" PointY="3.75" />
         <EntityTypeShape EntityType="ForestModel.FileDownloadUnitSetting" Width="1.5" PointX="8.75" PointY="16.75" />
-        <EntityTypeShape EntityType="ForestModel.FormInput" Width="1.5" PointX="16.75" PointY="14.75" />
-        <EntityTypeShape EntityType="ForestModel.FormSelItem" Width="1.5" PointX="2.75" PointY="17.75" />
-        <EntityTypeShape EntityType="ForestModel.FormSetting" Width="1.5" PointX="4.75" PointY="17.75" />
-        <EntityTypeShape EntityType="ForestModel.FormUnitSetting" Width="1.5" PointX="18.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ForestModel.ForumUnitSetting" Width="1.5" PointX="18.75" PointY="9.75" />
-        <EntityTypeShape EntityType="ForestModel.FreeZoneContent" Width="1.5" PointX="14.75" PointY="18.75" />
-        <EntityTypeShape EntityType="ForestModel.FreeZoneTitle" Width="1.5" PointX="16.75" PointY="19.75" />
-        <EntityTypeShape EntityType="ForestModel.GroupActive" Width="1.5" PointX="18.75" PointY="19.75" />
-        <EntityTypeShape EntityType="ForestModel.GroupFileDownload" Width="1.5" PointX="20.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ForestModel.GroupMessage" Width="1.5" PointX="20.75" PointY="4.75" />
-        <EntityTypeShape EntityType="ForestModel.GroupPatent" Width="1.5" PointX="20.75" PointY="8.75" />
-        <EntityTypeShape EntityType="ForestModel.GroupUser" Width="1.5" PointX="20.75" PointY="12.75" />
-        <EntityTypeShape EntityType="ForestModel.GroupVideo" Width="1.5" PointX="20.75" PointY="16.75" />
-        <EntityTypeShape EntityType="ForestModel.Img" Width="1.5" PointX="20.75" PointY="20.75" />
-        <EntityTypeShape EntityType="ForestModel.Lang" Width="1.5" PointX="4.75" PointY="21.75" />
-        <EntityTypeShape EntityType="ForestModel.LangKey" Width="1.5" PointX="22.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ForestModel.LangKeyUnit" Width="1.5" PointX="0.75" PointY="22.75" />
-        <EntityTypeShape EntityType="ForestModel.Menu" Width="1.5" PointX="22.75" PointY="4.75" />
-        <EntityTypeShape EntityType="ForestModel.MessageItem" Width="1.5" PointX="10.75" PointY="22.75" />
-        <EntityTypeShape EntityType="ForestModel.MessageUnitSetting" Width="1.5" PointX="22.75" PointY="11.75" />
-        <EntityTypeShape EntityType="ForestModel.ModelActiveEditMain" Width="1.5" PointX="12.75" PointY="22.75" />
-        <EntityTypeShape EntityType="ForestModel.ModelEventListMain" Width="1.5" PointX="14.75" PointY="22.75" />
-        <EntityTypeShape EntityType="ForestModel.ModelFileDownloadMain" Width="1.5" PointX="22.75" PointY="18.75" />
-        <EntityTypeShape EntityType="ForestModel.ModelFormMain" Width="1.5" PointX="22.75" PointY="22.75" />
-        <EntityTypeShape EntityType="ForestModel.ModelLangMain" Width="1.5" PointX="16.75" PointY="23.75" />
-        <EntityTypeShape EntityType="ForestModel.ModelMessageMain" Width="1.5" PointX="18.75" PointY="23.75" />
-        <EntityTypeShape EntityType="ForestModel.ModelPageEditMain" Width="1.5" PointX="24.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ForestModel.ModelPatentMain" Width="1.5" PointX="24.75" PointY="4.75" />
-        <EntityTypeShape EntityType="ForestModel.ModelVideoMain" Width="1.5" PointX="24.75" PointY="8.75" />
-        <EntityTypeShape EntityType="ForestModel.ModelWebsiteMapMain" Width="1.5" PointX="24.75" PointY="12.75" />
-        <EntityTypeShape EntityType="ForestModel.PageIndexItem" Width="1.5" PointX="24.75" PointY="16.75" />
-        <EntityTypeShape EntityType="ForestModel.PageIndexSetting" Width="1.5" PointX="24.75" PointY="23.75" />
-        <EntityTypeShape EntityType="ForestModel.PageLayout" Width="1.5" PointX="0.75" PointY="25.75" />
-        <EntityTypeShape EntityType="ForestModel.PageUnitSetting" Width="1.5" PointX="6.75" PointY="25.75" />
-        <EntityTypeShape EntityType="ForestModel.PatentItem" Width="1.5" PointX="26.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ForestModel.PatentUnitSetting" Width="1.5" PointX="26.75" PointY="8.75" />
-        <EntityTypeShape EntityType="ForestModel.SEO" Width="1.5" PointX="12.75" PointY="26.75" />
-        <EntityTypeShape EntityType="ForestModel.SiteConfig" Width="1.5" PointX="26.75" PointY="16.75" />
-        <EntityTypeShape EntityType="ForestModel.SiteFlow" Width="1.5" PointX="26.75" PointY="23.75" />
-        <EntityTypeShape EntityType="ForestModel.SiteLayout" Width="1.5" PointX="26.75" PointY="26.75" />
-        <EntityTypeShape EntityType="ForestModel.SiteList" Width="1.5" PointX="14.75" PointY="27.75" />
-        <EntityTypeShape EntityType="ForestModel.sysdiagram" Width="1.5" PointX="16.75" PointY="27.75" />
-        <EntityTypeShape EntityType="ForestModel.User" Width="1.5" PointX="18.75" PointY="27.75" />
-        <EntityTypeShape EntityType="ForestModel.VideoItem" Width="1.5" PointX="20.75" PointY="27.75" />
-        <EntityTypeShape EntityType="ForestModel.VideoUnitSetting" Width="1.5" PointX="28.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ForestModel.AdminFunction" Width="1.5" PointX="28.75" PointY="7.75" />
-        <EntityTypeShape EntityType="ForestModel.LinkItem" Width="1.5" PointX="28.75" PointY="10.75" />
-        <EntityTypeShape EntityType="ForestModel.ZipCode" Width="1.5" PointX="28.75" PointY="16.75" />
+        <EntityTypeShape EntityType="ForestModel.FormInput" Width="1.5" PointX="16.75" PointY="11.75" />
+        <EntityTypeShape EntityType="ForestModel.FormSelItem" Width="1.5" PointX="14.75" PointY="16.75" />
+        <EntityTypeShape EntityType="ForestModel.FormSetting" Width="1.5" PointX="16.75" PointY="15.75" />
+        <EntityTypeShape EntityType="ForestModel.FormUnitSetting" Width="1.5" PointX="2.75" PointY="17.75" />
+        <EntityTypeShape EntityType="ForestModel.ForumUnitSetting" Width="1.5" PointX="4.75" PointY="17.75" />
+        <EntityTypeShape EntityType="ForestModel.FreeZoneContent" Width="1.5" PointX="18.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ForestModel.FreeZoneTitle" Width="1.5" PointX="18.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ForestModel.GroupActive" Width="1.5" PointX="18.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ForestModel.GroupFileDownload" Width="1.5" PointX="18.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ForestModel.GroupMessage" Width="1.5" PointX="18.75" PointY="14.75" />
+        <EntityTypeShape EntityType="ForestModel.GroupPatent" Width="1.5" PointX="18.75" PointY="18.75" />
+        <EntityTypeShape EntityType="ForestModel.GroupUser" Width="1.5" PointX="20.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ForestModel.GroupVideo" Width="1.5" PointX="20.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ForestModel.Img" Width="1.5" PointX="20.75" PointY="8.75" />
+        <EntityTypeShape EntityType="ForestModel.Lang" Width="1.5" PointX="20.75" PointY="11.75" />
+        <EntityTypeShape EntityType="ForestModel.LangKey" Width="1.5" PointX="20.75" PointY="20.75" />
+        <EntityTypeShape EntityType="ForestModel.LangKeyUnit" Width="1.5" PointX="14.75" PointY="21.75" />
+        <EntityTypeShape EntityType="ForestModel.Menu" Width="1.5" PointX="22.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ForestModel.MessageItem" Width="1.5" PointX="22.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ForestModel.MessageUnitSetting" Width="1.5" PointX="10.75" PointY="22.75" />
+        <EntityTypeShape EntityType="ForestModel.ModelActiveEditMain" Width="1.5" PointX="22.75" PointY="16.75" />
+        <EntityTypeShape EntityType="ForestModel.ModelEventListMain" Width="1.5" PointX="16.75" PointY="22.75" />
+        <EntityTypeShape EntityType="ForestModel.ModelFileDownloadMain" Width="1.5" PointX="22.75" PointY="20.75" />
+        <EntityTypeShape EntityType="ForestModel.ModelFormMain" Width="1.5" PointX="24.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ForestModel.ModelLangMain" Width="1.5" PointX="24.75" PointY="5.75" />
+        <EntityTypeShape EntityType="ForestModel.ModelMessageMain" Width="1.5" PointX="24.75" PointY="9.75" />
+        <EntityTypeShape EntityType="ForestModel.ModelPageEditMain" Width="1.5" PointX="12.75" PointY="24.75" />
+        <EntityTypeShape EntityType="ForestModel.ModelPatentMain" Width="1.5" PointX="24.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ForestModel.ModelVideoMain" Width="1.5" PointX="24.75" PointY="17.75" />
+        <EntityTypeShape EntityType="ForestModel.ModelWebsiteMapMain" Width="1.5" PointX="18.75" PointY="24.75" />
+        <EntityTypeShape EntityType="ForestModel.PageIndexItem" Width="1.5" PointX="20.75" PointY="24.75" />
+        <EntityTypeShape EntityType="ForestModel.PageIndexSetting" Width="1.5" PointX="24.75" PointY="21.75" />
+        <EntityTypeShape EntityType="ForestModel.PageLayout" Width="1.5" PointX="6.75" PointY="25.75" />
+        <EntityTypeShape EntityType="ForestModel.PageUnitSetting" Width="1.5" PointX="26.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ForestModel.PatentItem" Width="1.5" PointX="0.75" PointY="26.75" />
+        <EntityTypeShape EntityType="ForestModel.PatentUnitSetting" Width="1.5" PointX="26.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ForestModel.SEO" Width="1.5" PointX="26.75" PointY="14.75" />
+        <EntityTypeShape EntityType="ForestModel.SiteConfig" Width="1.5" PointX="14.75" PointY="26.75" />
+        <EntityTypeShape EntityType="ForestModel.SiteFlow" Width="1.5" PointX="26.75" PointY="19.75" />
+        <EntityTypeShape EntityType="ForestModel.SiteLayout" Width="1.5" PointX="26.75" PointY="22.75" />
+        <EntityTypeShape EntityType="ForestModel.SiteList" Width="1.5" PointX="2.75" PointY="27.75" />
+        <EntityTypeShape EntityType="ForestModel.sysdiagram" Width="1.5" PointX="28.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ForestModel.User" Width="1.5" PointX="28.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ForestModel.VideoItem" Width="1.5" PointX="28.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ForestModel.VideoUnitSetting" Width="1.5" PointX="28.75" PointY="16.75" />
+        <EntityTypeShape EntityType="ForestModel.AdminFunction" Width="1.5" PointX="16.75" PointY="28.75" />
+        <EntityTypeShape EntityType="ForestModel.LinkItem" Width="1.5" PointX="22.75" PointY="28.75" />
+        <EntityTypeShape EntityType="ForestModel.ZipCode" Width="1.5" PointX="28.75" PointY="23.75" />
         <AssociationConnector Association="ForestModel.FK_F_Sub_HashTag_Type_F_HashTag_Type" />
+        <EntityTypeShape EntityType="ForestModel.F_Destination_Type" Width="2" PointX="9.375" PointY="29.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

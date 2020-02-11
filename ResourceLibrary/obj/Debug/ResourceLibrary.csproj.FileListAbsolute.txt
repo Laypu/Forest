@@ -261,3 +261,13 @@ C:\Users\PC003\Desktop\Forest\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.c
 C:\Users\PC003\Desktop\Forest\Forest\ResourceLibrary\obj\Debug\en-US\ResourceLibrary.resources.dll
 C:\Users\PC003\Desktop\Forest\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.dll
 C:\Users\PC003\Desktop\Forest\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.pdb
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\bin\Debug\ResourceLibrary.dll
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\bin\Debug\ResourceLibrary.pdb
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\bin\Debug\en-US\ResourceLibrary.resources.dll
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.csprojAssemblyReference.cache
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.Resource.resources
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.Resource.en-US.resources
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.csproj.GenerateResource.cache
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Debug\en-US\ResourceLibrary.resources.dll
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.dll
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.pdb

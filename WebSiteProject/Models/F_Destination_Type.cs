@@ -15,8 +15,11 @@ namespace WebSiteProject.Models
     public partial class F_Destination_Type
     {
         public int Destination_Type_ID { get; set; }
-        public string Destination_Type_Name { get; set; }
-        public string Destination_Type_Description { get; set; }
+        public string Destination_Type_Title1 { get; set; }
+        public string Destination_Type_Title2 { get; set; }
         public Nullable<System.DateTime> Destination_Type_CreateDate { get; set; }
+        public string Destination_Type_ImgName { get; set; }
+        public string Destination_Type_Link { get; set; }
+        public string Destination_Type_Description { get; set; }
     }
 }

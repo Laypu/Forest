@@ -348,6 +348,7 @@
     <EntitySetMapping Name="Destination_Index">
       <EntityTypeMapping TypeName="ForestModel.Destination_Index">
         <MappingFragment StoreEntitySet="Destination_Index">
+          <ScalarProperty Name="Destination_Catagory" ColumnName="Destination_Catagory" />
           <ScalarProperty Name="Destination_Img_Mobile" ColumnName="Destination_Img_Mobile" />
           <ScalarProperty Name="Destination_Img" ColumnName="Destination_Img" />
           <ScalarProperty Name="Destination_Context" ColumnName="Destination_Context" />
@@ -424,16 +425,6 @@
           <ScalarProperty Name="IsPrint" ColumnName="IsPrint" />
           <ScalarProperty Name="MainID" ColumnName="MainID" />
           <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="F_Destination_Type">
-      <EntityTypeMapping TypeName="ForestModel.F_Destination_Type">
-        <MappingFragment StoreEntitySet="F_Destination_Type">
-          <ScalarProperty Name="Destination_Type_CreateDate" ColumnName="Destination_Type_CreateDate" />
-          <ScalarProperty Name="Destination_Type_Description" ColumnName="Destination_Type_Description" />
-          <ScalarProperty Name="Destination_Type_Name" ColumnName="Destination_Type_Name" />
-          <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1634,6 +1625,19 @@
           <ScalarProperty Name="Town" ColumnName="Town" />
           <ScalarProperty Name="Country" ColumnName="Country" />
           <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Destination_Type">
+      <EntityTypeMapping TypeName="ForestModel.F_Destination_Type">
+        <MappingFragment StoreEntitySet="F_Destination_Type">
+          <ScalarProperty Name="Destination_Type_Description" ColumnName="Destination_Type_Description" />
+          <ScalarProperty Name="Destination_Type_Link" ColumnName="Destination_Type_Link" />
+          <ScalarProperty Name="Destination_Type_ImgName" ColumnName="Destination_Type_ImgName" />
+          <ScalarProperty Name="Destination_Type_CreateDate" ColumnName="Destination_Type_CreateDate" />
+          <ScalarProperty Name="Destination_Type_Title2" ColumnName="Destination_Type_Title2" />
+          <ScalarProperty Name="Destination_Type_Title1" ColumnName="Destination_Type_Title1" />
+          <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

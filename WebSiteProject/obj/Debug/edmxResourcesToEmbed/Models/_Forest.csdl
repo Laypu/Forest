@@ -18,7 +18,6 @@
     <EntitySet Name="Destination_Index" EntityType="ForestModel.Destination_Index" />
     <EntitySet Name="EventListItems" EntityType="ForestModel.EventListItem" />
     <EntitySet Name="EventListUnitSettings" EntityType="ForestModel.EventListUnitSetting" />
-    <EntitySet Name="F_Destination_Type" EntityType="ForestModel.F_Destination_Type" />
     <EntitySet Name="F_HashTag_Type" EntityType="ForestModel.F_HashTag_Type" />
     <EntitySet Name="F_Index" EntityType="ForestModel.F_Index" />
     <EntitySet Name="F_Index_Img" EntityType="ForestModel.F_Index_Img" />
@@ -80,6 +79,7 @@
       <End Role="F_HashTag_Type" EntitySet="F_HashTag_Type" />
       <End Role="F_Sub_HashTag_Type" EntitySet="F_Sub_HashTag_Type" />
     </AssociationSet>
+    <EntitySet Name="F_Destination_Type" EntityType="ForestModel.F_Destination_Type" />
   </EntityContainer>
   <EntityType Name="ActiveItem">
     <Key>
@@ -420,6 +420,7 @@
     <Property Name="Destination_Context" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Destination_Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Destination_Img_Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Destination_Catagory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="EventListItem">
     <Key>
@@ -489,15 +490,6 @@
     <Property Name="EMailAuth" Type="Boolean" />
     <Property Name="ColumnSetting" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="IntroductionHtml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="F_Destination_Type">
-    <Key>
-      <PropertyRef Name="Destination_Type_ID" />
-    </Key>
-    <Property Name="Destination_Type_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Destination_Type_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Destination_Type_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Destination_Type_CreateDate" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="F_HashTag_Type">
     <Key>
@@ -1659,4 +1651,16 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="F_Destination_Type">
+    <Key>
+      <PropertyRef Name="Destination_Type_ID" />
+    </Key>
+    <Property Name="Destination_Type_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Destination_Type_Title1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Destination_Type_Title2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Destination_Type_CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Destination_Type_ImgName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Destination_Type_Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Destination_Type_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

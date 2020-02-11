@@ -19,5 +19,6 @@ namespace WebSiteProject.Models
         public string Destination_Context { get; set; }
         public string Destination_Img { get; set; }
         public string Destination_Img_Mobile { get; set; }
+        public string Destination_Catagory { get; set; }
     }
 }

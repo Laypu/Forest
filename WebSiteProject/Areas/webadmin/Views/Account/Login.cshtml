@@ -53,9 +53,11 @@
                         <span class="input-group-addon input-circle-left">
                             <i class="fa fa-key"></i>
                         </span>
-                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control input-circle-right", placeholder = "Password" } })
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control input-circle-right", placeholder = "Password", @id = "pwd" } })
                         @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                     </div>
+                    <span id="sCapsLockWarning" style="color:red;display:none">提醒: 密碼大小寫有別，大寫鎖定啟用中。</span>
+
                     <div class="g-recaptcha" data-sitekey="@ViewBag.v2htmlkey"></div>
 
                 </div>
@@ -85,4 +87,18 @@
             });
         }
     });
+     
+     $(function () {
+            $("#pwd").keypress(function (e) {pwd
+                $("#sCapsLockWarning").toggle(
+                    //沒按下Shift鍵，卻輸入大寫字母
+                    (e.which >= 65 && e.which <= 90 && !e.shiftKey) ||
+                    //按下Shift鍵時，卻輸入小寫字母
+                    (e.which >= 97 && e.which <= 122 && e.shiftKey)
+                    );
+            }).focusout(function () { $("#sCapsLockWarning").hide(); });
+           
+      
+     });
+    
 </script>

@@ -439,14 +439,14 @@
 
            //F_Index_Select_Load('24');
 
-
-           console.log(Index_data);
+        
+        
     });
 
 
      //載入Load Select
         function Index_Select_Load() {
-            var Url = $("#thIndex_Partial_Selectis[data-index='']").val();
+            var Url = $("#Index_Partial_Selectis[data-index='']").val();
             console.log( "Index_Select_Load=" + Url);
             $("#Partial_Index").load(Url)
 
@@ -480,7 +480,7 @@
             var str = $(".title_04").text();
 
             $("#Index_Partial_Select").children(`option:contains(${str})`).attr("selected", "selected").siblings().removeAttr("selected");
-             ShowLink();
+            
        };
 
        //載入Load Select
