@@ -1,0 +1,103 @@
+.noscript_font {
+    font-size: 1em;
+    color: #fff;
+    padding: 3%;
+	background:#333;
+}
+
+#header .header-body{
+	position:relative !important; 
+}
+.page_content{
+	margin-top:0;
+}
+
+
+/*index_banner*/
+.index_banner{
+	 z-index:80;
+	 position: relative;
+}
+/*.hidden-xs .slider-container ,.visible-xs .slider-container{
+	display:none;
+}
+.noscrip_banner .item{
+	position:relative;
+}
+.noscrip_banner .item .item_box{
+	position: absolute;
+	top:5%;
+	background: rgba(0,0,0,.54);
+    padding: 25px 25px 35px 25px !important;
+    width: 100%;
+    max-width: 700px !important;
+    color:#fff;
+    line-height: 150% !important;
+    white-space: normal;	
+}*/
+
+/*index_link*/
+.index_link {
+    z-index: 99;
+}
+
+
+/*water
+.water {
+	background-position:center;
+	background-color:#ddd7c2;
+}*/
+.water .container{
+	/*width:1920px !important;
+	min-width:1920px !important;*/
+	/*position: inherit;*/
+}
+.water .water_item {
+	padding-right:600px;
+}
+.water .page_top ,.water .btn_01{
+	margin-left:-700px;
+	margin-top:0;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+.water .water_item {
+	padding-right:0;
+}
+.water .page_top ,.water .btn_01{
+	margin-left:0;
+}
+}
+
+
+
+
+
+/*--------------------------------------for 電腦、平版、手機------------------------------------------------*/
+/* 大螢幕 */
+@media (min-width: 1200px) {
+}
+
+ 
+/* 平板電腦、橫向手機和一般桌機解析度 */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+
+/* 電腦、橫向平板電腦解析度 */
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+
+/* 橫向智慧手機到竪立平板電腦解析度 */
+@media (max-width: 767px) {
+
+
+ 
+/* 橫向智慧手機及其他更小解析度 */
+@media (max-width: 480px) {
+
+
+}
+
+

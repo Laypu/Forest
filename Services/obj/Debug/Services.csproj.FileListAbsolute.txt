@@ -1,0 +1,838 @@
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\Services.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\Services.pdb
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\AutoMapper.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\SQLModel.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.Mvc.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\Utilities.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\ViewModels.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\EntityFramework.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\NLog.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\ResourceLibrary.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.Razor.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.WebPages.Razor.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.WebPages.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\SQLModel.pdb
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\Utilities.pdb
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\ViewModels.pdb
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\AutoMapper.xml
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.Mvc.xml
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\NLog.xml
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\ResourceLibrary.pdb
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.Razor.xml
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.WebPages.Razor.xml
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.WebPages.xml
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\zh-Hant\System.Web.Mvc.resources.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\zh-Hant\System.Web.Razor.resources.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\zh-Hant\System.Web.WebPages.Razor.resources.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\zh-Hant\System.Web.WebPages.resources.dll
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+E:\Dropbox\TPCA\TPCA\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+E:\Dropbox\TPCA\TPCA\Services\obj\Debug\Services.dll
+E:\Dropbox\TPCA\TPCA\Services\obj\Debug\Services.pdb
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\EntityFramework.xml
+E:\Dropbox\TPCA\TPCA\Services\bin\Debug\zh-Hant\EntityFramework.resources.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\Services.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\Services.pdb
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\AutoMapper.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\Newtonsoft.Json.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\SQLModel.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.Mvc.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\Utilities.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\ViewModels.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\EntityFramework.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\NLog.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\ResourceLibrary.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.Razor.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.WebPages.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\SQLModel.pdb
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\Utilities.pdb
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\Utilities.dll.config
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\ViewModels.pdb
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\AutoMapper.xml
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\NLog.xml
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\ResourceLibrary.pdb
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\obj\Debug\Services.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\obj\Debug\Services.pdb
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\Newtonsoft.Json.xml
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.Mvc.xml
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.Razor.xml
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.WebPages.xml
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\zh-Hant\System.Web.Mvc.resources.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\zh-Hant\System.Web.Razor.resources.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\zh-Hant\System.Web.WebPages.resources.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Services\bin\Debug\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+I:\OneDrive\專案\TPCA\TPCA\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+I:\OneDrive\專案\TPCA\TPCA\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+I:\OneDrive\專案\TPCA\TPCA\Services\obj\Debug\Services.dll
+I:\OneDrive\專案\TPCA\TPCA\Services\obj\Debug\Services.pdb
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\Services.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\Services.pdb
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\AutoMapper.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\SQLModel.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.Mvc.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\Utilities.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\ViewModels.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\EntityFramework.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\NLog.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\ResourceLibrary.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\SQLModel.pdb
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\Utilities.pdb
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\Utilities.dll.config
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\ViewModels.pdb
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\AutoMapper.xml
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\NLog.xml
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\ResourceLibrary.pdb
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\obj\Debug\Services.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\obj\Debug\Services.pdb
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\Services.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\Services.pdb
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\AutoMapper.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\Newtonsoft.Json.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\ResourceLibrary.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\SQLModel.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.Mvc.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\Utilities.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\ViewModels.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\EntityFramework.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\NLog.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.Razor.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.Razor.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\ResourceLibrary.pdb
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\SQLModel.pdb
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\Utilities.pdb
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\ViewModels.pdb
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\AutoMapper.xml
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\Newtonsoft.Json.xml
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.Mvc.xml
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\NLog.xml
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.Razor.xml
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.Razor.xml
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.xml
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.Mvc.resources.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.Razor.resources.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.Razor.resources.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.resources.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+E:\Dropbox\TPCAMain\TPCAMain\Services\obj\Debug\Services.dll
+E:\Dropbox\TPCAMain\TPCAMain\Services\obj\Debug\Services.pdb
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\Services.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\Services.pdb
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\AutoMapper.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\Newtonsoft.Json.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\ResourceLibrary.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\SQLModel.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.Mvc.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\Utilities.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\ViewModels.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\EntityFramework.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\NLog.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.Razor.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\ResourceLibrary.pdb
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\SQLModel.pdb
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\Utilities.pdb
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\Utilities.dll.config
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\ViewModels.pdb
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\AutoMapper.xml
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\Newtonsoft.Json.xml
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.Mvc.xml
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\NLog.xml
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.Razor.xml
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.xml
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.Mvc.resources.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.Razor.resources.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.resources.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\obj\Debug\Services.csprojAssemblyReference.cache
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\obj\Debug\Services.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Services\obj\Debug\Services.pdb
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\itextsharp.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.Razor.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\itextsharp.xml
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\Newtonsoft.Json.xml
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.Mvc.xml
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.Razor.xml
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.xml
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\obj\Debug\Services.csprojAssemblyReference.cache
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\Services.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\Services.pdb
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\AutoMapper.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\itextsharp.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\ResourceLibrary.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\SQLModel.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\System.Web.Mvc.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\Utilities.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\ViewModels.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\EntityFramework.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\NLog.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\System.Web.Razor.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\System.Web.WebPages.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\ResourceLibrary.pdb
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\SQLModel.pdb
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\Utilities.pdb
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\Utilities.dll.config
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\ViewModels.pdb
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\AutoMapper.xml
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\itextsharp.xml
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\Newtonsoft.Json.xml
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\System.Web.Mvc.xml
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\NLog.xml
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\System.Web.Razor.xml
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\System.Web.WebPages.xml
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\obj\Debug\Services.csprojAssemblyReference.cache
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\obj\Debug\Services.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Services\obj\Debug\Services.pdb
+E:\Dropbox\TPCAMain\Services\bin\Debug\Services.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\Services.pdb
+E:\Dropbox\TPCAMain\Services\bin\Debug\AutoMapper.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\Newtonsoft.Json.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\ResourceLibrary.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\SQLModel.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\System.Web.Mvc.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\Utilities.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\ViewModels.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\EntityFramework.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\NLog.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\System.Web.Razor.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\System.Web.WebPages.Razor.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\System.Web.WebPages.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\ResourceLibrary.pdb
+E:\Dropbox\TPCAMain\Services\bin\Debug\SQLModel.pdb
+E:\Dropbox\TPCAMain\Services\bin\Debug\Utilities.pdb
+E:\Dropbox\TPCAMain\Services\bin\Debug\ViewModels.pdb
+E:\Dropbox\TPCAMain\Services\bin\Debug\AutoMapper.xml
+E:\Dropbox\TPCAMain\Services\bin\Debug\Newtonsoft.Json.xml
+E:\Dropbox\TPCAMain\Services\bin\Debug\System.Web.Mvc.xml
+E:\Dropbox\TPCAMain\Services\bin\Debug\NLog.xml
+E:\Dropbox\TPCAMain\Services\bin\Debug\System.Web.Razor.xml
+E:\Dropbox\TPCAMain\Services\bin\Debug\System.Web.WebPages.Razor.xml
+E:\Dropbox\TPCAMain\Services\bin\Debug\System.Web.WebPages.xml
+E:\Dropbox\TPCAMain\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\Dropbox\TPCAMain\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.Mvc.resources.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.Razor.resources.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.Razor.resources.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.resources.dll
+E:\Dropbox\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+E:\Dropbox\TPCAMain\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+E:\Dropbox\TPCAMain\Services\obj\Debug\Services.dll
+E:\Dropbox\TPCAMain\Services\obj\Debug\Services.pdb
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\Services.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\Services.pdb
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\AutoMapper.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\Newtonsoft.Json.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\ResourceLibrary.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\SQLModel.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\System.Web.Mvc.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\Utilities.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\ViewModels.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\EntityFramework.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\NLog.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\System.Web.Razor.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\System.Web.WebPages.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\ResourceLibrary.pdb
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\SQLModel.pdb
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\Utilities.pdb
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\Utilities.dll.config
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\ViewModels.pdb
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\AutoMapper.xml
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\Newtonsoft.Json.xml
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\System.Web.Mvc.xml
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\NLog.xml
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\System.Web.Razor.xml
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\System.Web.WebPages.xml
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.Mvc.resources.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.Razor.resources.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.resources.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\bin\Debug\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\obj\Debug\Services.csprojAssemblyReference.cache
+C:\Dropbox\Dropbox\TPCAMain\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Dropbox\Dropbox\TPCAMain\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Dropbox\Dropbox\TPCAMain\Services\obj\Debug\Services.dll
+C:\Dropbox\Dropbox\TPCAMain\Services\obj\Debug\Services.pdb
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\Services.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\Services.pdb
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\AutoMapper.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\itextsharp.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\ResourceLibrary.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\SQLModel.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\System.Web.Mvc.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\Utilities.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\ViewModels.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\EntityFramework.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\NLog.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\ResourceLibrary.pdb
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\SQLModel.pdb
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\Utilities.pdb
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\Utilities.dll.config
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\ViewModels.pdb
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\AutoMapper.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\itextsharp.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\obj\Debug\Services.csprojAssemblyReference.cache
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\obj\Debug\Services.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\Services\obj\Debug\Services.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\Services.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\Services.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\AutoMapper.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\itextsharp.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\ResourceLibrary.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\SQLModel.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\System.Web.Mvc.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\Utilities.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\ViewModels.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\EntityFramework.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\NLog.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\ViewModels.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\ResourceLibrary.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\SQLModel.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\AutoMapper.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\itextsharp.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\Utilities.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\Utilities.dll.config
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\obj\Debug\Services.csprojAssemblyReference.cache
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\obj\Debug\Services.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\Services\obj\Debug\Services.pdb
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\Services.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\Services.pdb
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\AutoMapper.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\itextsharp.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\ResourceLibrary.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\SQLModel.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\System.Web.Mvc.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\Utilities.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\ViewModels.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\NLog.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\EntityFramework.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\Utilities.pdb
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\Utilities.dll.config
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\ViewModels.pdb
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\ResourceLibrary.pdb
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\SQLModel.pdb
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\AutoMapper.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\itextsharp.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\obj\Debug\Services.csprojAssemblyReference.cache
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\obj\Debug\Services.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\Services\obj\Debug\Services.pdb
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\obj\Debug\Services.csprojAssemblyReference.cache
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\libmp3lame.32.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\libmp3lame.64.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\Services.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\Services.pdb
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\AutoMapper.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\itextsharp.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\NAudio.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\NAudio.Lame.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\ResourceLibrary.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\SQLModel.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\System.Web.Mvc.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\Utilities.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\ViewModels.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\EntityFramework.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\NLog.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\ViewModels.pdb
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\ResourceLibrary.pdb
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\SQLModel.pdb
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\Utilities.pdb
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\Utilities.dll.config
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\AutoMapper.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\itextsharp.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\NAudio.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\NLog.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\obj\Debug\Services.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Services\obj\Debug\Services.pdb
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\libmp3lame.32.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\libmp3lame.64.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\Services.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\Services.pdb
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\AutoMapper.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\NAudio.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\NAudio.Lame.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\Newtonsoft.Json.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\ResourceLibrary.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\SQLModel.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\System.Web.Mvc.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\ViewModels.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\NLog.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\System.Web.Razor.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\System.Web.WebPages.Razor.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\System.Web.WebPages.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\ViewModels.pdb
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\ResourceLibrary.pdb
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\SQLModel.pdb
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\AutoMapper.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\NAudio.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\System.Web.Mvc.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\NLog.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\System.Web.Razor.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\System.Web.WebPages.Razor.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\System.Web.WebPages.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\Microsoft.Web.Infrastructure.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\zh-Hans\System.Web.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\zh-Hans\System.Web.WebPages.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\obj\Debug\Services.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Services\obj\Debug\Services.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\obj\Debug\Services.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\obj\Debug\Services.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\libmp3lame.32.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\libmp3lame.64.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\Services.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\Services.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\AutoMapper.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\NAudio.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\NAudio.Lame.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\Newtonsoft.Json.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\ResourceLibrary.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\SQLModel.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\System.Web.Mvc.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\ViewModels.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\NLog.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\System.Web.Razor.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\System.Web.WebPages.Razor.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\System.Web.WebPages.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\ViewModels.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\ResourceLibrary.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\SQLModel.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\AutoMapper.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\NAudio.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\System.Web.Mvc.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\NLog.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\System.Web.Razor.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\System.Web.WebPages.Razor.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\System.Web.WebPages.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\Microsoft.Web.Infrastructure.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\zh-Hans\System.Web.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\zh-Hans\System.Web.WebPages.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Services\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\libmp3lame.32.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\libmp3lame.64.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\Services.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\Services.pdb
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\AutoMapper.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\NAudio.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\NAudio.Lame.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\Newtonsoft.Json.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\ResourceLibrary.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\SQLModel.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\System.Web.Mvc.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\ViewModels.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\NLog.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\System.Web.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\System.Web.WebPages.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\System.Web.WebPages.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\ViewModels.pdb
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\ResourceLibrary.pdb
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\SQLModel.pdb
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\AutoMapper.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\NAudio.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\System.Web.Mvc.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\NLog.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\System.Web.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\System.Web.WebPages.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\System.Web.WebPages.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\Microsoft.Web.Infrastructure.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\zh-Hans\System.Web.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\zh-Hans\System.Web.WebPages.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\obj\Debug\Services.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Services\obj\Debug\Services.pdb
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\libmp3lame.32.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\libmp3lame.64.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\Services.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\Services.pdb
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\AutoMapper.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\NAudio.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\NAudio.Lame.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\Newtonsoft.Json.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\ResourceLibrary.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\SQLModel.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\System.Web.Mvc.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\ViewModels.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\NLog.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\System.Web.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\System.Web.WebPages.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\System.Web.WebPages.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\ViewModels.pdb
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\ResourceLibrary.pdb
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\SQLModel.pdb
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\AutoMapper.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\NAudio.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\System.Web.Mvc.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\NLog.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\System.Web.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\System.Web.WebPages.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\System.Web.WebPages.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\Microsoft.Web.Infrastructure.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\zh-Hans\System.Web.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\obj\Debug\Services.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Services\obj\Debug\Services.pdb
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\libmp3lame.32.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\libmp3lame.64.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\Services.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\Services.pdb
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\AutoMapper.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\NAudio.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\NAudio.Lame.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\Newtonsoft.Json.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\ResourceLibrary.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\SQLModel.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\System.Web.Mvc.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\ViewModels.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\NLog.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\System.Web.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\System.Web.WebPages.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\System.Web.WebPages.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\ViewModels.pdb
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\ResourceLibrary.pdb
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\SQLModel.pdb
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\AutoMapper.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\NAudio.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\System.Web.Mvc.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\NLog.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\System.Web.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\System.Web.WebPages.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\System.Web.WebPages.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\Microsoft.Web.Infrastructure.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\zh-Hans\System.Web.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\obj\Debug\Services.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Services\obj\Debug\Services.pdb
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\obj\Debug\Services.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\obj\Debug\Services.pdb
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\libmp3lame.32.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\libmp3lame.64.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\Services.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\Services.pdb
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\AutoMapper.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\NAudio.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\NAudio.Lame.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\Newtonsoft.Json.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\ResourceLibrary.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\SQLModel.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\System.Web.Mvc.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\ViewModels.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\NLog.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\System.Web.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\System.Web.WebPages.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\System.Web.WebPages.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\ViewModels.pdb
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\ResourceLibrary.pdb
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\SQLModel.pdb
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\AutoMapper.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\NAudio.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\System.Web.Mvc.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\NLog.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\System.Web.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\System.Web.WebPages.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\System.Web.WebPages.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\Microsoft.Web.Infrastructure.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\zh-Hans\System.Web.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\libmp3lame.32.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\libmp3lame.64.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\Services.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\Services.pdb
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\AutoMapper.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\NAudio.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\NAudio.Lame.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\Newtonsoft.Json.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\ResourceLibrary.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\SQLModel.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\System.Web.Mvc.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\ViewModels.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\NLog.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\System.Web.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\System.Web.WebPages.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\System.Web.WebPages.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\ViewModels.pdb
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\ResourceLibrary.pdb
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\SQLModel.pdb
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\AutoMapper.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\NAudio.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\System.Web.Mvc.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\NLog.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\System.Web.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\System.Web.WebPages.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\System.Web.WebPages.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\Microsoft.Web.Infrastructure.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\zh-Hans\System.Web.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\obj\Debug\Services.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Services\obj\Debug\Services.pdb
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\libmp3lame.32.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\libmp3lame.64.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\Services.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\Services.pdb
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\AutoMapper.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\NAudio.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\NAudio.Lame.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\ResourceLibrary.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\SQLModel.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\Utilities.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\ViewModels.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\EntityFramework.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\NLog.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\System.Web.Razor.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\System.Web.WebPages.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\ViewModels.pdb
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\ResourceLibrary.pdb
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\SQLModel.pdb
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\Utilities.pdb
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\Utilities.dll.config
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\AutoMapper.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\NAudio.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\System.Web.Mvc.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\NLog.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\System.Web.Razor.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\System.Web.WebPages.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\Microsoft.Web.Infrastructure.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\zh-Hans\System.Web.Razor.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.Razor.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\obj\Debug\Services.csprojAssemblyReference.cache
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\obj\Debug\Services.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Services\obj\Debug\Services.pdb
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\libmp3lame.32.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\libmp3lame.64.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\Services.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\Services.pdb
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\AutoMapper.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\NAudio.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\NAudio.Lame.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\ResourceLibrary.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\SQLModel.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\Utilities.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\ViewModels.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\EntityFramework.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\NLog.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\System.Web.Razor.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\System.Web.WebPages.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\ViewModels.pdb
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\ResourceLibrary.pdb
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\SQLModel.pdb
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\Utilities.pdb
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\Utilities.dll.config
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\AutoMapper.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\NAudio.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\System.Web.Mvc.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\NLog.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\System.Web.Razor.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\System.Web.WebPages.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\Microsoft.Web.Infrastructure.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\zh-Hans\System.Web.Razor.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.Razor.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\obj\Debug\Services.csprojAssemblyReference.cache
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\obj\Debug\Services.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Services\obj\Debug\Services.pdb
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\libmp3lame.32.dll
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\libmp3lame.64.dll
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\Services.dll
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\Services.pdb
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\AutoMapper.dll
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\NAudio.dll
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\NAudio.Lame.dll
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\ResourceLibrary.dll
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\SQLModel.dll
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\Utilities.dll
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\ViewModels.dll
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\EntityFramework.dll
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\NLog.dll
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\ViewModels.pdb
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\ResourceLibrary.pdb
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\SQLModel.pdb
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\Utilities.pdb
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\Utilities.dll.config
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\AutoMapper.xml
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\NAudio.xml
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\NLog.xml
+C:\Users\PC003\Desktop\Forest\Forest\Services\bin\Debug\en-US\ResourceLibrary.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\Services\obj\Debug\Services.csprojAssemblyReference.cache
+C:\Users\PC003\Desktop\Forest\Forest\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\PC003\Desktop\Forest\Forest\Services\obj\Debug\Services.dll
+C:\Users\PC003\Desktop\Forest\Forest\Services\obj\Debug\Services.pdb

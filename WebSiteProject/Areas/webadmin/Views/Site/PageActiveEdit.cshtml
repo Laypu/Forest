@@ -1,0 +1,235 @@
+﻿@model System.Collections.Generic.List<PageLayoutModel>
+<script src="@Url.Content("~/Scripts/datatable.js")"></script>
+<script src="@Url.Content("~/Scripts/custom.js")"></script>
+<!--page bar start-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="@Url.Action("Index","Home")">Home</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>版面設定<i class="fa fa-circle"></i></li>
+        <li>入口首頁配置</li>
+    </ul>
+</div>
+<!--page bar end-->
+<!--message start-->
+<div class="title_01">入口首頁配置</div>
+
+<div class="portlet light bordered">
+    <div class="table-toolbar">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <p class="class_title">管理項目</p>
+            <div class="display_inline">
+                <select class="form-control_1" id="sel_unit" onChange="window.location.href=this.value">
+                    <option value="@Url.Action("PageNewsEdit")">焦點新聞</option>
+                    <option value="#" selected>活動專區</option>
+                    <option value="@Url.Action("PageLayoutOP1Edit")">自由編輯區1</option>
+                    <option value="@Url.Action("PageLayoutOP2Edit")">自由編輯區2</option>
+                    <option value="@Url.Action("PageLayoutOP3Edit")">自由編輯區3</option>
+                    <option value="@Url.Action("PageLayoutLink")">首頁相關連結</option>
+                    <option value="@Url.Action("PageActivity")">相關活動</option>
+                </select>
+            </div>
+        </div>
+    </div>    <hr>
+    <form class="form-horizontal form-bordered" method="Post" id="editform" action='@Url.Action("SavePageLayoutEdit")' enctype="multipart/form-data">
+        @Html.HiddenFor(Model => Model[0].ID)
+        <div class="portlet light form-fit bordered">
+            <div class="portlet-body form">
+                <div class="form-horizontal form-bordered">
+                    <div class="form-body" id="form-body2">
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 search_item">連結項目</div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                <div class="col-md-12" id="div_menu">
+                                    <div class="col-md-1">選單項目</div>
+                                    <select style="" id="sel_MenuItem" name='[0].MenuItem'>
+                                        <option value="1">主要選單</option>
+                                        <option value="2">上方選單</option>
+                                        <option value="3">下方選單</option>
+                                    </select><br />
+                                    <div class="col-md-1">主選單</div>
+                                    <select style="" id="sel_MenLevel1" name='[0].MenuLevel1'>@Html.Raw(ViewBag.L1option)</select><br />
+
+                                    <div class="col-md-1">次選單</div>
+                                    <select style="" id="sel_MenLevel2" name='[0].MenuLevel2'></select><br />
+                                    @*<div class="col-md-1">選擇項目</div>*@
+                                    <div class="table-scrollable">
+                                        @*<table class="table table-bordered table-hover" border="0" cellspacing="0" cellpadding="0"
+                                               id="eventtable"
+                                               data-url="@Url.Action("PagingItemActive")"
+                                               data-sort-name='Sort'
+                                               data-page-size='10'
+                                               data-filed-id='ItemID'
+                                               data-max-pagination='10'>
+                                            <thead>
+                                                <tr>
+                                                    <th width="80" class="text-center delete_th" filed-type='delcheckbox'>選取</th>
+                                                    <th filed-name='PublicshDate' width="100px" class="text-center">發佈日期</th>
+                                                    <th filed-name='Title' class="text-center" filed-class='text-left'>標題</th>
+                                                    <th filed-name='GroupName' width="100px" class="text-center" filed-item-class='text-center'>類別</th>
+                                                    <th filed-name='VerifyStr' width="50px" class="text-center" filed-item-class='text-center'>審核狀態</th>
+                                                    <th filed-name='IsRange' width="80px" class="text-center" filed-item-class='text-center'>是否在顯示區間</th>
+                                                    <th filed-name='Enabled' width="80px" class="text-center" filed-type='boolean'>上架</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>*@
+                                    </div>
+                                    <div id="page_number" class="table-toolbar">
+                                        <div class="col-md-4 col-sm-12 col-xs-12 page_total" id="tableinfo"></div>
+                                        <div class="col-md-8 col-sm-12 col-xs-12 page_icon">
+                                            <div class="btn-group" id="pagination">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center search_padding">
+            <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+        </div>
+    </form>
+
+</div>
+@section scripts {
+    <script>
+        var mytable;
+        $(function () {
+
+            if ('@Model[0].ID' != '-1') {
+                $('#Title').val('@Html.Raw(Model[0].Title)');
+                if ('@Model[0].LinkMode' == '1') {
+                    $('#sel_MenuItem').val('@Model[0].MenuItem');
+                    $.post('@Url.Action("GetMenOption")', { "menuitem": $('#sel_MenuItem').val(), "level": 1, "parentid": -1, modelid:0 }, function (data) {
+                        $('#sel_MenLevel1').empty('');
+                        $(data).appendTo('#sel_MenLevel1');
+                        $('#sel_MenLevel1').val('@Model[0].MenuLevel1');
+                        $.post('@Url.Action("GetMenOption")', { "menuitem": $('#sel_MenuItem').val(), "level": 2, "parentid": $('#sel_MenLevel1').val(), modelid: 0}, function (data) {
+                            $('#sel_MenLevel2').empty('');
+                            $(data).appendTo('#sel_MenLevel2');
+                            $('#sel_MenLevel2').val('@Model[0].MenuLevel2');
+                            //mytable.SearchModelBase.key = $("#sel_MenLevel2").val();mytable.GetData(1);
+                        });
+                    });
+                } else {
+                    $('#sel_model').val('@Model[0].ModelID');
+                    $.post('@Url.Action("GetModelItem")', { "modelid": $('#sel_model').val() }, function (data) {
+                        $('#sel_modelitem').empty('');
+                        $(data).appendTo('#sel_modelitem');
+                        $('#sel_modelitem').val('@Model[0].ModelItemID');
+                    });
+                    $('#div_menu').hide();
+                    $('#div_model').show();
+                }
+            }
+            //==============================
+            $('#sel_MenuItem').change(function () {
+                var tempid = this.id;
+                if (this.id == "sel_MenuItem") {
+                    $('#sel_MenLevel1').empty('');
+                    $('#sel_MenLevel2').empty('');
+                    $('#sel_MenLevel3').empty('');
+                } else {
+                    $('#sel_MenLevel1_1').empty('');
+                    $('#sel_MenLevel2_1').empty('');
+                    $('#sel_MenLevel3_1').empty('');
+                }
+                $.post('@Url.Action("GetMenOption")', { "menuitem": $('#' + this.id).val(), "level": 1, "parentid": -1, modelid: 0}, function (data) {
+                    if (tempid== "sel_MenuItem") { $(data).appendTo('#sel_MenLevel1'); } else { $(data).appendTo('#sel_MenLevel1_1'); }
+                });
+            });
+            $('#sel_MenLevel1').change(function () {
+                var tempid = this.id;
+                if (this.id == "sel_MenLevel1") {
+                    $('#sel_MenLevel2').empty('');
+                    $('#sel_MenLevel3').empty('');
+                    $.post('@Url.Action("GetMenOption")', { "menuitem": $('#sel_MenuItem').val(), "level": 2, "parentid": $('#sel_MenLevel1').val(), modelid: 0 }, function (data) {
+                         $(data).appendTo('#sel_MenLevel2');
+                    });
+                } else {
+                    $('#sel_MenLevel2_1').empty('');
+                    $('#sel_MenLevel3_1').empty('');
+                    $.post('@Url.Action("GetMenOption")', { "menuitem": $('#sel_MenuItem_1').val(), "level": 2, "parentid": $('#sel_MenLevel1_1').val(), modelid: 0}, function (data) {
+                        $(data).appendTo('#sel_MenLevel2_1');
+                     });
+                }
+
+            });
+
+            //$('#sel_MenLevel2').change(function () {
+            //    GetData();
+            //});
+            //$("#eventtable").delegate((".chksel"), "click", function () {
+            //    var selitem = mytable.keepcheckid;
+            //    var _index = $(this).val();
+            //    if ($(this)[0].checked) {
+            //        if (selitem.length > 4) {
+            //            alert('只能選取5組,超過選取上限');
+            //            return false;
+            //        }
+            //        if (jQuery.inArray(_index, selitem) < 0) {
+            //            mytable.keepcheckid.push(_index);
+            //        }
+            //    } else {
+            //        mytable.keepcheckid = jQuery.grep(mytable.keepcheckid, function (value) {
+            //            return value != _index;
+            //        });
+            //    }
+            //});
+
+           $('#editform').submit(function (event) {
+               $(".required").hide();
+               var inputval = $("#editform :input").filter(function () { return $(this).val() == "" && $(this).hasClass('checkitem'); });
+               for (var idx = 0; idx < inputval.length; idx++) {
+                   $("#" + inputval[idx].id + "-error").show();
+               }
+               if (inputval.length > 0) { return false; }
+               var value = $('.LinkMode:checked').val();
+               if (value != "2") {
+                   if ($('#sel_MenLevel1').val() != "" && $('#sel_MenLevel2').val() == "" && $('#sel_MenLevel3').val() == "") {
+                       alert($('#Title').val()+"請選擇選單項目");
+                       return false;
+                   }
+               } else {
+                   if ($('#sel_model').val() != "" && $('#sel_modelitem').val() == "") {
+                       alert($('#Title').val()+"請選擇程式模組");
+                       return false;
+                   }
+               }
+                var formData = new FormData();
+                var array = $('#editform').serializeArray();
+                $.each(array, function () {
+                    formData.append(this.name, this.value);
+                });
+               formData.append("[0].Title", "活動專區");
+                $.ajax({
+                    url: this.action,
+                    data: formData,
+                    type: 'POST',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        if (data == "") {
+                            alert("作業完成");
+                        } else {
+                            alert(data);
+                        }
+
+                    }, error: function () {
+                        // handle error
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+
+}
+

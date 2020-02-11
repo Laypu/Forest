@@ -1,0 +1,1641 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ForestModelStoreContainer" CdmEntityContainer="ForestEntities">
+    <EntitySetMapping Name="ActiveItems">
+      <EntityTypeMapping TypeName="ForestModel.ActiveItem">
+        <MappingFragment StoreEntitySet="ActiveItem">
+          <ScalarProperty Name="LinkUrlDesc" ColumnName="LinkUrlDesc" />
+          <ScalarProperty Name="IsVerift" ColumnName="IsVerift" />
+          <ScalarProperty Name="UpdateName" ColumnName="UpdateName" />
+          <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDatetime" ColumnName="CreateDatetime" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="RelateImageFileOrgName" ColumnName="RelateImageFileOrgName" />
+          <ScalarProperty Name="RelateImageFileName" ColumnName="RelateImageFileName" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
+          <ScalarProperty Name="ActiveItemID" ColumnName="ActiveItemID" />
+          <ScalarProperty Name="ActiveID" ColumnName="ActiveID" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="PublicshDate" ColumnName="PublicshDate" />
+          <ScalarProperty Name="EdDate" ColumnName="EdDate" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+          <ScalarProperty Name="ImageFileLocation" ColumnName="ImageFileLocation" />
+          <ScalarProperty Name="ImageFileDesc" ColumnName="ImageFileDesc" />
+          <ScalarProperty Name="ImageFileOrgName" ColumnName="ImageFileOrgName" />
+          <ScalarProperty Name="ImageFileName" ColumnName="ImageFileName" />
+          <ScalarProperty Name="UploadFileDesc" ColumnName="UploadFileDesc" />
+          <ScalarProperty Name="UploadFilePath" ColumnName="UploadFilePath" />
+          <ScalarProperty Name="UploadFileName" ColumnName="UploadFileName" />
+          <ScalarProperty Name="ClickCnt" ColumnName="ClickCnt" />
+          <ScalarProperty Name="HtmlContent" ColumnName="HtmlContent" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActivePhotoes">
+      <EntityTypeMapping TypeName="ForestModel.ActivePhoto">
+        <MappingFragment StoreEntitySet="ActivePhoto">
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="FileDesc" ColumnName="FileDesc" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="MainID" ColumnName="MainID" />
+          <ScalarProperty Name="PID" ColumnName="PID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActiveUnitSettings">
+      <EntityTypeMapping TypeName="ForestModel.ActiveUnitSetting">
+        <MappingFragment StoreEntitySet="ActiveUnitSetting">
+          <ScalarProperty Name="ColumnSetting" ColumnName="ColumnSetting" />
+          <ScalarProperty Name="EMailAuth" ColumnName="EMailAuth" />
+          <ScalarProperty Name="VIPAuth" ColumnName="VIPAuth" />
+          <ScalarProperty Name="EnterpriceStudentAuth" ColumnName="EnterpriceStudentAuth" />
+          <ScalarProperty Name="GeneralStudentAuth" ColumnName="GeneralStudentAuth" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Column17" ColumnName="Column17" />
+          <ScalarProperty Name="Column16" ColumnName="Column16" />
+          <ScalarProperty Name="Column15" ColumnName="Column15" />
+          <ScalarProperty Name="Column14" ColumnName="Column14" />
+          <ScalarProperty Name="Column13" ColumnName="Column13" />
+          <ScalarProperty Name="Column12" ColumnName="Column12" />
+          <ScalarProperty Name="Column11" ColumnName="Column11" />
+          <ScalarProperty Name="Column10" ColumnName="Column10" />
+          <ScalarProperty Name="Column9" ColumnName="Column9" />
+          <ScalarProperty Name="Column8" ColumnName="Column8" />
+          <ScalarProperty Name="Column7" ColumnName="Column7" />
+          <ScalarProperty Name="Column6" ColumnName="Column6" />
+          <ScalarProperty Name="Column5" ColumnName="Column5" />
+          <ScalarProperty Name="Column4" ColumnName="Column4" />
+          <ScalarProperty Name="Column3" ColumnName="Column3" />
+          <ScalarProperty Name="Column2" ColumnName="Column2" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="ShowCount" ColumnName="ShowCount" />
+          <ScalarProperty Name="ClassOverview" ColumnName="ClassOverview" />
+          <ScalarProperty Name="MemberAuth" ColumnName="MemberAuth" />
+          <ScalarProperty Name="IsShare" ColumnName="IsShare" />
+          <ScalarProperty Name="IsRSS" ColumnName="IsRSS" />
+          <ScalarProperty Name="IsForward" ColumnName="IsForward" />
+          <ScalarProperty Name="IsPrint" ColumnName="IsPrint" />
+          <ScalarProperty Name="MainID" ColumnName="MainID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADCenters">
+      <EntityTypeMapping TypeName="ForestModel.ADCenter">
+        <MappingFragment StoreEntitySet="ADCenter">
+          <ScalarProperty Name="SType" ColumnName="SType" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Review_Date" ColumnName="Review_Date" />
+          <ScalarProperty Name="Fixed" ColumnName="Fixed" />
+          <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
+          <ScalarProperty Name="Link_Href" ColumnName="Link_Href" />
+          <ScalarProperty Name="AD_Height" ColumnName="AD_Height" />
+          <ScalarProperty Name="AD_Width" ColumnName="AD_Width" />
+          <ScalarProperty Name="Img_Name_Thumb" ColumnName="Img_Name_Thumb" />
+          <ScalarProperty Name="Img_Name_Ori" ColumnName="Img_Name_Ori" />
+          <ScalarProperty Name="Img_Show_Name" ColumnName="Img_Show_Name" />
+          <ScalarProperty Name="AD_Name" ColumnName="AD_Name" />
+          <ScalarProperty Name="EdDate" ColumnName="EdDate" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADDowns">
+      <EntityTypeMapping TypeName="ForestModel.ADDown">
+        <MappingFragment StoreEntitySet="ADDown">
+          <ScalarProperty Name="SType" ColumnName="SType" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Review_Date" ColumnName="Review_Date" />
+          <ScalarProperty Name="Fixed" ColumnName="Fixed" />
+          <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
+          <ScalarProperty Name="Link_Href" ColumnName="Link_Href" />
+          <ScalarProperty Name="AD_Height" ColumnName="AD_Height" />
+          <ScalarProperty Name="AD_Width" ColumnName="AD_Width" />
+          <ScalarProperty Name="Img_Name_Thumb" ColumnName="Img_Name_Thumb" />
+          <ScalarProperty Name="Img_Name_Ori" ColumnName="Img_Name_Ori" />
+          <ScalarProperty Name="Img_Show_Name" ColumnName="Img_Show_Name" />
+          <ScalarProperty Name="AD_Name" ColumnName="AD_Name" />
+          <ScalarProperty Name="EdDate" ColumnName="EdDate" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADMains">
+      <EntityTypeMapping TypeName="ForestModel.ADMain">
+        <MappingFragment StoreEntitySet="ADMain">
+          <ScalarProperty Name="ADDesc" ColumnName="ADDesc" />
+          <ScalarProperty Name="UploadVideoFileDesc" ColumnName="UploadVideoFileDesc" />
+          <ScalarProperty Name="UploadVideoFilePath" ColumnName="UploadVideoFilePath" />
+          <ScalarProperty Name="UploadVideoFileName" ColumnName="UploadVideoFileName" />
+          <ScalarProperty Name="SType" ColumnName="SType" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Review_Date" ColumnName="Review_Date" />
+          <ScalarProperty Name="Fixed" ColumnName="Fixed" />
+          <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
+          <ScalarProperty Name="Link_Href" ColumnName="Link_Href" />
+          <ScalarProperty Name="AD_Height" ColumnName="AD_Height" />
+          <ScalarProperty Name="AD_Width" ColumnName="AD_Width" />
+          <ScalarProperty Name="Img_Name_Thumb" ColumnName="Img_Name_Thumb" />
+          <ScalarProperty Name="Img_Name_Ori" ColumnName="Img_Name_Ori" />
+          <ScalarProperty Name="Img_Show_Name" ColumnName="Img_Show_Name" />
+          <ScalarProperty Name="AD_Name" ColumnName="AD_Name" />
+          <ScalarProperty Name="EdDate" ColumnName="EdDate" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADMobiles">
+      <EntityTypeMapping TypeName="ForestModel.ADMobile">
+        <MappingFragment StoreEntitySet="ADMobile">
+          <ScalarProperty Name="SType" ColumnName="SType" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Review_Date" ColumnName="Review_Date" />
+          <ScalarProperty Name="Fixed" ColumnName="Fixed" />
+          <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
+          <ScalarProperty Name="Link_Href" ColumnName="Link_Href" />
+          <ScalarProperty Name="AD_Height" ColumnName="AD_Height" />
+          <ScalarProperty Name="AD_Width" ColumnName="AD_Width" />
+          <ScalarProperty Name="Img_Name_Thumb" ColumnName="Img_Name_Thumb" />
+          <ScalarProperty Name="Img_Name_Ori" ColumnName="Img_Name_Ori" />
+          <ScalarProperty Name="Img_Show_Name" ColumnName="Img_Show_Name" />
+          <ScalarProperty Name="AD_Name" ColumnName="AD_Name" />
+          <ScalarProperty Name="EdDate" ColumnName="EdDate" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADMobileBlocks">
+      <EntityTypeMapping TypeName="ForestModel.ADMobileBlock">
+        <MappingFragment StoreEntitySet="ADMobileBlock">
+          <ScalarProperty Name="SType" ColumnName="SType" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Review_Date" ColumnName="Review_Date" />
+          <ScalarProperty Name="Fixed" ColumnName="Fixed" />
+          <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
+          <ScalarProperty Name="Link_Href" ColumnName="Link_Href" />
+          <ScalarProperty Name="AD_Height" ColumnName="AD_Height" />
+          <ScalarProperty Name="AD_Width" ColumnName="AD_Width" />
+          <ScalarProperty Name="Img_Name_Thumb" ColumnName="Img_Name_Thumb" />
+          <ScalarProperty Name="Img_Name_Ori" ColumnName="Img_Name_Ori" />
+          <ScalarProperty Name="Img_Show_Name" ColumnName="Img_Show_Name" />
+          <ScalarProperty Name="AD_Name" ColumnName="AD_Name" />
+          <ScalarProperty Name="EdDate" ColumnName="EdDate" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADRights">
+      <EntityTypeMapping TypeName="ForestModel.ADRight">
+        <MappingFragment StoreEntitySet="ADRight">
+          <ScalarProperty Name="SType" ColumnName="SType" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Review_Date" ColumnName="Review_Date" />
+          <ScalarProperty Name="Fixed" ColumnName="Fixed" />
+          <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
+          <ScalarProperty Name="Link_Href" ColumnName="Link_Href" />
+          <ScalarProperty Name="AD_Height" ColumnName="AD_Height" />
+          <ScalarProperty Name="AD_Width" ColumnName="AD_Width" />
+          <ScalarProperty Name="Img_Name_Thumb" ColumnName="Img_Name_Thumb" />
+          <ScalarProperty Name="Img_Name_Ori" ColumnName="Img_Name_Ori" />
+          <ScalarProperty Name="Img_Show_Name" ColumnName="Img_Show_Name" />
+          <ScalarProperty Name="AD_Name" ColumnName="AD_Name" />
+          <ScalarProperty Name="EdDate" ColumnName="EdDate" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADRightDowns">
+      <EntityTypeMapping TypeName="ForestModel.ADRightDown">
+        <MappingFragment StoreEntitySet="ADRightDown">
+          <ScalarProperty Name="SType" ColumnName="SType" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Review_Date" ColumnName="Review_Date" />
+          <ScalarProperty Name="Fixed" ColumnName="Fixed" />
+          <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
+          <ScalarProperty Name="Link_Href" ColumnName="Link_Href" />
+          <ScalarProperty Name="AD_Height" ColumnName="AD_Height" />
+          <ScalarProperty Name="AD_Width" ColumnName="AD_Width" />
+          <ScalarProperty Name="Img_Name_Thumb" ColumnName="Img_Name_Thumb" />
+          <ScalarProperty Name="Img_Name_Ori" ColumnName="Img_Name_Ori" />
+          <ScalarProperty Name="Img_Show_Name" ColumnName="Img_Show_Name" />
+          <ScalarProperty Name="AD_Name" ColumnName="AD_Name" />
+          <ScalarProperty Name="EdDate" ColumnName="EdDate" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADSets">
+      <EntityTypeMapping TypeName="ForestModel.ADSet">
+        <MappingFragment StoreEntitySet="ADSet">
+          <ScalarProperty Name="SType" ColumnName="SType" />
+          <ScalarProperty Name="Max_Col" ColumnName="Max_Col" />
+          <ScalarProperty Name="Show_AD_Page" ColumnName="Show_AD_Page" />
+          <ScalarProperty Name="Show_AD" ColumnName="Show_AD" />
+          <ScalarProperty Name="Max_Num" ColumnName="Max_Num" />
+          <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="ForestModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ColumnSettings">
+      <EntityTypeMapping TypeName="ForestModel.ColumnSetting">
+        <MappingFragment StoreEntitySet="ColumnSetting">
+          <ScalarProperty Name="ListKey" ColumnName="ListKey" />
+          <ScalarProperty Name="InputType" ColumnName="InputType" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="IsMust" ColumnName="IsMust" />
+          <ScalarProperty Name="Search" ColumnName="Search" />
+          <ScalarProperty Name="Show" ColumnName="Show" />
+          <ScalarProperty Name="Used" ColumnName="Used" />
+          <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+          <ScalarProperty Name="ColumnKey" ColumnName="ColumnKey" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="ForestModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Destination_Index">
+      <EntityTypeMapping TypeName="ForestModel.Destination_Index">
+        <MappingFragment StoreEntitySet="Destination_Index">
+          <ScalarProperty Name="Destination_Img_Mobile" ColumnName="Destination_Img_Mobile" />
+          <ScalarProperty Name="Destination_Img" ColumnName="Destination_Img" />
+          <ScalarProperty Name="Destination_Context" ColumnName="Destination_Context" />
+          <ScalarProperty Name="Destination_Title" ColumnName="Destination_Title" />
+          <ScalarProperty Name="Destination_ID" ColumnName="Destination_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventListItems">
+      <EntityTypeMapping TypeName="ForestModel.EventListItem">
+        <MappingFragment StoreEntitySet="EventListItem">
+          <ScalarProperty Name="LinkUrlDesc" ColumnName="LinkUrlDesc" />
+          <ScalarProperty Name="IsVerift" ColumnName="IsVerift" />
+          <ScalarProperty Name="UpdateName" ColumnName="UpdateName" />
+          <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDatetime" ColumnName="CreateDatetime" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="RelateImageFileOrgName" ColumnName="RelateImageFileOrgName" />
+          <ScalarProperty Name="RelateImageFileName" ColumnName="RelateImageFileName" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
+          <ScalarProperty Name="ActiveItemID" ColumnName="ActiveItemID" />
+          <ScalarProperty Name="ActiveID" ColumnName="ActiveID" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="PublicshDate" ColumnName="PublicshDate" />
+          <ScalarProperty Name="EdDate" ColumnName="EdDate" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+          <ScalarProperty Name="ImageFileLocation" ColumnName="ImageFileLocation" />
+          <ScalarProperty Name="ImageFileDesc" ColumnName="ImageFileDesc" />
+          <ScalarProperty Name="ImageFileOrgName" ColumnName="ImageFileOrgName" />
+          <ScalarProperty Name="ImageFileName" ColumnName="ImageFileName" />
+          <ScalarProperty Name="UploadFileDesc" ColumnName="UploadFileDesc" />
+          <ScalarProperty Name="UploadFilePath" ColumnName="UploadFilePath" />
+          <ScalarProperty Name="UploadFileName" ColumnName="UploadFileName" />
+          <ScalarProperty Name="ClickCnt" ColumnName="ClickCnt" />
+          <ScalarProperty Name="HtmlContent" ColumnName="HtmlContent" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventListUnitSettings">
+      <EntityTypeMapping TypeName="ForestModel.EventListUnitSetting">
+        <MappingFragment StoreEntitySet="EventListUnitSetting">
+          <ScalarProperty Name="IntroductionHtml" ColumnName="IntroductionHtml" />
+          <ScalarProperty Name="ColumnSetting" ColumnName="ColumnSetting" />
+          <ScalarProperty Name="EMailAuth" ColumnName="EMailAuth" />
+          <ScalarProperty Name="VIPAuth" ColumnName="VIPAuth" />
+          <ScalarProperty Name="EnterpriceStudentAuth" ColumnName="EnterpriceStudentAuth" />
+          <ScalarProperty Name="GeneralStudentAuth" ColumnName="GeneralStudentAuth" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Column7" ColumnName="Column7" />
+          <ScalarProperty Name="Column6" ColumnName="Column6" />
+          <ScalarProperty Name="Column5" ColumnName="Column5" />
+          <ScalarProperty Name="Column4" ColumnName="Column4" />
+          <ScalarProperty Name="Column3" ColumnName="Column3" />
+          <ScalarProperty Name="Column2" ColumnName="Column2" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="ShowCount" ColumnName="ShowCount" />
+          <ScalarProperty Name="ClassOverview" ColumnName="ClassOverview" />
+          <ScalarProperty Name="MemberAuth" ColumnName="MemberAuth" />
+          <ScalarProperty Name="IsShare" ColumnName="IsShare" />
+          <ScalarProperty Name="IsRSS" ColumnName="IsRSS" />
+          <ScalarProperty Name="IsForward" ColumnName="IsForward" />
+          <ScalarProperty Name="IsPrint" ColumnName="IsPrint" />
+          <ScalarProperty Name="MainID" ColumnName="MainID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Destination_Type">
+      <EntityTypeMapping TypeName="ForestModel.F_Destination_Type">
+        <MappingFragment StoreEntitySet="F_Destination_Type">
+          <ScalarProperty Name="Destination_Type_CreateDate" ColumnName="Destination_Type_CreateDate" />
+          <ScalarProperty Name="Destination_Type_Description" ColumnName="Destination_Type_Description" />
+          <ScalarProperty Name="Destination_Type_Name" ColumnName="Destination_Type_Name" />
+          <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_HashTag_Type">
+      <EntityTypeMapping TypeName="ForestModel.F_HashTag_Type">
+        <MappingFragment StoreEntitySet="F_HashTag_Type">
+          <ScalarProperty Name="HashTag_Type_Link" ColumnName="HashTag_Type_Link" />
+          <ScalarProperty Name="HashTag_CreateTime" ColumnName="HashTag_CreateTime" />
+          <ScalarProperty Name="HashTag_Description" ColumnName="HashTag_Description" />
+          <ScalarProperty Name="HashTag_Type_Name" ColumnName="HashTag_Type_Name" />
+          <ScalarProperty Name="HashTag_Type_ID" ColumnName="HashTag_Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Index">
+      <EntityTypeMapping TypeName="ForestModel.F_Index">
+        <MappingFragment StoreEntitySet="F_Index">
+          <ScalarProperty Name="F_Index_Img" ColumnName="F_Index_Img" />
+          <ScalarProperty Name="F_Index_ID" ColumnName="F_Index_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Index_Img">
+      <EntityTypeMapping TypeName="ForestModel.F_Index_Img">
+        <MappingFragment StoreEntitySet="F_Index_Img">
+          <ScalarProperty Name="Index_Img_File" ColumnName="Index_Img_File" />
+          <ScalarProperty Name="Index_Img_Name" ColumnName="Index_Img_Name" />
+          <ScalarProperty Name="Index_Img_ID" ColumnName="Index_Img_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_MessageModel">
+      <EntityTypeMapping TypeName="ForestModel.F_MessageModel">
+        <MappingFragment StoreEntitySet="F_MessageModel">
+          <ScalarProperty Name="MessageModel_CreateDate" ColumnName="MessageModel_CreateDate" />
+          <ScalarProperty Name="MessageModel_Description" ColumnName="MessageModel_Description" />
+          <ScalarProperty Name="MessageModel_Name" ColumnName="MessageModel_Name" />
+          <ScalarProperty Name="MessageModel_ID" ColumnName="MessageModel_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Sub_HashTag_Type">
+      <EntityTypeMapping TypeName="ForestModel.F_Sub_HashTag_Type">
+        <MappingFragment StoreEntitySet="F_Sub_HashTag_Type">
+          <ScalarProperty Name="MessageItem_ID" ColumnName="MessageItem_ID" />
+          <ScalarProperty Name="HashTag_Type_ID" ColumnName="HashTag_Type_ID" />
+          <ScalarProperty Name="Sub_HashTag_Type_ID" ColumnName="Sub_HashTag_Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Thingtodo_Index">
+      <EntityTypeMapping TypeName="ForestModel.F_Thingtodo_Index">
+        <MappingFragment StoreEntitySet="F_Thingtodo_Index">
+          <ScalarProperty Name="F_Thingtodo_Index_Content" ColumnName="F_Thingtodo_Index_Content" />
+          <ScalarProperty Name="F_Thingtodo_Index_Title" ColumnName="F_Thingtodo_Index_Title" />
+          <ScalarProperty Name="F_Thingtodo_Index_ID" ColumnName="F_Thingtodo_Index_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Thingtodo_Type">
+      <EntityTypeMapping TypeName="ForestModel.F_Thingtodo_Type">
+        <MappingFragment StoreEntitySet="F_Thingtodo_Type">
+          <ScalarProperty Name="F_Thingtodo_Type_Description" ColumnName="F_Thingtodo_Type_Description" />
+          <ScalarProperty Name="F_Thingtodo_Type_Link" ColumnName="F_Thingtodo_Type_Link" />
+          <ScalarProperty Name="F_Thingtodo_Type_ImgName" ColumnName="F_Thingtodo_Type_ImgName" />
+          <ScalarProperty Name="F_Thingtodo_Type_Title2" ColumnName="F_Thingtodo_Type_Title2" />
+          <ScalarProperty Name="F_Thingtodo_Type_Title1" ColumnName="F_Thingtodo_Type_Title1" />
+          <ScalarProperty Name="F_Thingtodo_Type_ID" ColumnName="F_Thingtodo_Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileDownloadItems">
+      <EntityTypeMapping TypeName="ForestModel.FileDownloadItem">
+        <MappingFragment StoreEntitySet="FileDownloadItem">
+          <ScalarProperty Name="UpdateName" ColumnName="UpdateName" />
+          <ScalarProperty Name="CreateDatetime" ColumnName="CreateDatetime" />
+          <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="LinkUrlDesc" ColumnName="LinkUrlDesc" />
+          <ScalarProperty Name="IsVerift" ColumnName="IsVerift" />
+          <ScalarProperty Name="RelateImageFileOrgName" ColumnName="RelateImageFileOrgName" />
+          <ScalarProperty Name="RelateImageFileName" ColumnName="RelateImageFileName" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="PublicshDate" ColumnName="PublicshDate" />
+          <ScalarProperty Name="EdDate" ColumnName="EdDate" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+          <ScalarProperty Name="ImageFileLocation" ColumnName="ImageFileLocation" />
+          <ScalarProperty Name="ImageFileDesc" ColumnName="ImageFileDesc" />
+          <ScalarProperty Name="ImageFileOrgName" ColumnName="ImageFileOrgName" />
+          <ScalarProperty Name="ImageFileName" ColumnName="ImageFileName" />
+          <ScalarProperty Name="UploadFileDesc" ColumnName="UploadFileDesc" />
+          <ScalarProperty Name="UploadFilePath" ColumnName="UploadFilePath" />
+          <ScalarProperty Name="UploadFileName" ColumnName="UploadFileName" />
+          <ScalarProperty Name="HtmlContent" ColumnName="HtmlContent" />
+          <ScalarProperty Name="ClickCnt" ColumnName="ClickCnt" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileDownloadUnitSettings">
+      <EntityTypeMapping TypeName="ForestModel.FileDownloadUnitSetting">
+        <MappingFragment StoreEntitySet="FileDownloadUnitSetting">
+          <ScalarProperty Name="ColumnSetting" ColumnName="ColumnSetting" />
+          <ScalarProperty Name="EMailAuth" ColumnName="EMailAuth" />
+          <ScalarProperty Name="VIPAuth" ColumnName="VIPAuth" />
+          <ScalarProperty Name="EnterpriceStudentAuth" ColumnName="EnterpriceStudentAuth" />
+          <ScalarProperty Name="GeneralStudentAuth" ColumnName="GeneralStudentAuth" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Column20" ColumnName="Column20" />
+          <ScalarProperty Name="Column19" ColumnName="Column19" />
+          <ScalarProperty Name="Column18" ColumnName="Column18" />
+          <ScalarProperty Name="Column17" ColumnName="Column17" />
+          <ScalarProperty Name="Column16" ColumnName="Column16" />
+          <ScalarProperty Name="Column15" ColumnName="Column15" />
+          <ScalarProperty Name="Column14" ColumnName="Column14" />
+          <ScalarProperty Name="Column13" ColumnName="Column13" />
+          <ScalarProperty Name="Column12" ColumnName="Column12" />
+          <ScalarProperty Name="Column11" ColumnName="Column11" />
+          <ScalarProperty Name="Column10" ColumnName="Column10" />
+          <ScalarProperty Name="Column9" ColumnName="Column9" />
+          <ScalarProperty Name="Column8" ColumnName="Column8" />
+          <ScalarProperty Name="Column7" ColumnName="Column7" />
+          <ScalarProperty Name="Column6" ColumnName="Column6" />
+          <ScalarProperty Name="Column5" ColumnName="Column5" />
+          <ScalarProperty Name="Column4" ColumnName="Column4" />
+          <ScalarProperty Name="Column3" ColumnName="Column3" />
+          <ScalarProperty Name="Column2" ColumnName="Column2" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="ShowCount" ColumnName="ShowCount" />
+          <ScalarProperty Name="ClassOverview" ColumnName="ClassOverview" />
+          <ScalarProperty Name="MemberAuth" ColumnName="MemberAuth" />
+          <ScalarProperty Name="IsShare" ColumnName="IsShare" />
+          <ScalarProperty Name="IsRSS" ColumnName="IsRSS" />
+          <ScalarProperty Name="IsForward" ColumnName="IsForward" />
+          <ScalarProperty Name="IsPrint" ColumnName="IsPrint" />
+          <ScalarProperty Name="MainID" ColumnName="MainID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormInputs">
+      <EntityTypeMapping TypeName="ForestModel.FormInput">
+        <MappingFragment StoreEntitySet="FormInput">
+          <ScalarProperty Name="ReplyDatetime" ColumnName="ReplyDatetime" />
+          <ScalarProperty Name="ReplyAccount" ColumnName="ReplyAccount" />
+          <ScalarProperty Name="ProcessDatetime" ColumnName="ProcessDatetime" />
+          <ScalarProperty Name="ProcessAccount" ColumnName="ProcessAccount" />
+          <ScalarProperty Name="Progress" ColumnName="Progress" />
+          <ScalarProperty Name="CreateDatetime" ColumnName="CreateDatetime" />
+          <ScalarProperty Name="JSONStr" ColumnName="JSONStr" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MainID" ColumnName="MainID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormSelItems">
+      <EntityTypeMapping TypeName="ForestModel.FormSelItem">
+        <MappingFragment StoreEntitySet="FormSelItem">
+          <ScalarProperty Name="KayName" ColumnName="KayName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SelList" ColumnName="SelList" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DefaultText" ColumnName="DefaultText" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ItemMode" ColumnName="ItemMode" />
+          <ScalarProperty Name="RowNum" ColumnName="RowNum" />
+          <ScalarProperty Name="ColumnNum" ColumnName="ColumnNum" />
+          <ScalarProperty Name="TextLength" ColumnName="TextLength" />
+          <ScalarProperty Name="MustInput" ColumnName="MustInput" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormSettings">
+      <EntityTypeMapping TypeName="ForestModel.FormSetting">
+        <MappingFragment StoreEntitySet="FormSetting">
+          <ScalarProperty Name="AdminSenderTitle" ColumnName="AdminSenderTitle" />
+          <ScalarProperty Name="AdminSenderEMail" ColumnName="AdminSenderEMail" />
+          <ScalarProperty Name="AdminSenderName" ColumnName="AdminSenderName" />
+          <ScalarProperty Name="ReceiveMail" ColumnName="ReceiveMail" />
+          <ScalarProperty Name="SenderTitle" ColumnName="SenderTitle" />
+          <ScalarProperty Name="SenderEMail" ColumnName="SenderEMail" />
+          <ScalarProperty Name="SenderName" ColumnName="SenderName" />
+          <ScalarProperty Name="ConfirmContent" ColumnName="ConfirmContent" />
+          <ScalarProperty Name="FormDesc" ColumnName="FormDesc" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormUnitSettings">
+      <EntityTypeMapping TypeName="ForestModel.FormUnitSetting">
+        <MappingFragment StoreEntitySet="FormUnitSetting">
+          <ScalarProperty Name="EMailAuth" ColumnName="EMailAuth" />
+          <ScalarProperty Name="VIPAuth" ColumnName="VIPAuth" />
+          <ScalarProperty Name="EnterpriceStudentAuth" ColumnName="EnterpriceStudentAuth" />
+          <ScalarProperty Name="GeneralStudentAuth" ColumnName="GeneralStudentAuth" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Column20" ColumnName="Column20" />
+          <ScalarProperty Name="Column19" ColumnName="Column19" />
+          <ScalarProperty Name="Column18" ColumnName="Column18" />
+          <ScalarProperty Name="Column17" ColumnName="Column17" />
+          <ScalarProperty Name="Column16" ColumnName="Column16" />
+          <ScalarProperty Name="Column15" ColumnName="Column15" />
+          <ScalarProperty Name="Column14" ColumnName="Column14" />
+          <ScalarProperty Name="Column13" ColumnName="Column13" />
+          <ScalarProperty Name="Column12" ColumnName="Column12" />
+          <ScalarProperty Name="Column11" ColumnName="Column11" />
+          <ScalarProperty Name="Column10" ColumnName="Column10" />
+          <ScalarProperty Name="Column9" ColumnName="Column9" />
+          <ScalarProperty Name="Column8" ColumnName="Column8" />
+          <ScalarProperty Name="Column7" ColumnName="Column7" />
+          <ScalarProperty Name="Column6" ColumnName="Column6" />
+          <ScalarProperty Name="Column5" ColumnName="Column5" />
+          <ScalarProperty Name="Column4" ColumnName="Column4" />
+          <ScalarProperty Name="Column3" ColumnName="Column3" />
+          <ScalarProperty Name="Column2" ColumnName="Column2" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="ShowCount" ColumnName="ShowCount" />
+          <ScalarProperty Name="ClassOverview" ColumnName="ClassOverview" />
+          <ScalarProperty Name="MemberAuth" ColumnName="MemberAuth" />
+          <ScalarProperty Name="IsShare" ColumnName="IsShare" />
+          <ScalarProperty Name="IsRSS" ColumnName="IsRSS" />
+          <ScalarProperty Name="IsForward" ColumnName="IsForward" />
+          <ScalarProperty Name="IsPrint" ColumnName="IsPrint" />
+          <ScalarProperty Name="MainID" ColumnName="MainID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ForumUnitSettings">
+      <EntityTypeMapping TypeName="ForestModel.ForumUnitSetting">
+        <MappingFragment StoreEntitySet="ForumUnitSetting">
+          <ScalarProperty Name="ColumnSetting" ColumnName="ColumnSetting" />
+          <ScalarProperty Name="EMailAuth" ColumnName="EMailAuth" />
+          <ScalarProperty Name="VIPAuth" ColumnName="VIPAuth" />
+          <ScalarProperty Name="EnterpriceStudentAuth" ColumnName="EnterpriceStudentAuth" />
+          <ScalarProperty Name="GeneralStudentAuth" ColumnName="GeneralStudentAuth" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Column25" ColumnName="Column25" />
+          <ScalarProperty Name="Column24" ColumnName="Column24" />
+          <ScalarProperty Name="Column23" ColumnName="Column23" />
+          <ScalarProperty Name="Column22" ColumnName="Column22" />
+          <ScalarProperty Name="Column21" ColumnName="Column21" />
+          <ScalarProperty Name="Column20" ColumnName="Column20" />
+          <ScalarProperty Name="Column19" ColumnName="Column19" />
+          <ScalarProperty Name="Column18" ColumnName="Column18" />
+          <ScalarProperty Name="Column17" ColumnName="Column17" />
+          <ScalarProperty Name="Column16" ColumnName="Column16" />
+          <ScalarProperty Name="Column15" ColumnName="Column15" />
+          <ScalarProperty Name="Column14" ColumnName="Column14" />
+          <ScalarProperty Name="Column13" ColumnName="Column13" />
+          <ScalarProperty Name="Column12" ColumnName="Column12" />
+          <ScalarProperty Name="Column11" ColumnName="Column11" />
+          <ScalarProperty Name="Column10" ColumnName="Column10" />
+          <ScalarProperty Name="Column9" ColumnName="Column9" />
+          <ScalarProperty Name="Column8" ColumnName="Column8" />
+          <ScalarProperty Name="Column7" ColumnName="Column7" />
+          <ScalarProperty Name="Column6" ColumnName="Column6" />
+          <ScalarProperty Name="Column5" ColumnName="Column5" />
+          <ScalarProperty Name="Column4" ColumnName="Column4" />
+          <ScalarProperty Name="Column3" ColumnName="Column3" />
+          <ScalarProperty Name="Column2" ColumnName="Column2" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="ShowCount" ColumnName="ShowCount" />
+          <ScalarProperty Name="ClassOverview" ColumnName="ClassOverview" />
+          <ScalarProperty Name="MemberAuth" ColumnName="MemberAuth" />
+          <ScalarProperty Name="IsShare" ColumnName="IsShare" />
+          <ScalarProperty Name="IsRSS" ColumnName="IsRSS" />
+          <ScalarProperty Name="IsForward" ColumnName="IsForward" />
+          <ScalarProperty Name="IsPrint" ColumnName="IsPrint" />
+          <ScalarProperty Name="MainID" ColumnName="MainID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FreeZoneContents">
+      <EntityTypeMapping TypeName="ForestModel.FreeZoneContent">
+        <MappingFragment StoreEntitySet="FreeZoneContent">
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="LinkName" ColumnName="LinkName" />
+          <ScalarProperty Name="FreeZoneTitleID" ColumnName="FreeZoneTitleID" />
+          <ScalarProperty Name="FreeZoneContentID" ColumnName="FreeZoneContentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FreeZoneTitles">
+      <EntityTypeMapping TypeName="ForestModel.FreeZoneTitle">
+        <MappingFragment StoreEntitySet="FreeZoneTitle">
+          <ScalarProperty Name="FreeZoneTitleContent" ColumnName="FreeZoneTitleContent" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="FreeZoneTitleID" ColumnName="FreeZoneTitleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupActives">
+      <EntityTypeMapping TypeName="ForestModel.GroupActive">
+        <MappingFragment StoreEntitySet="GroupActive">
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Readonly" ColumnName="Readonly" />
+          <ScalarProperty Name="Seo_Manage" ColumnName="Seo_Manage" />
+          <ScalarProperty Name="Group_Name" ColumnName="Group_Name" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="Main_ID" ColumnName="Main_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupFileDownloads">
+      <EntityTypeMapping TypeName="ForestModel.GroupFileDownload">
+        <MappingFragment StoreEntitySet="GroupFileDownload">
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Readonly" ColumnName="Readonly" />
+          <ScalarProperty Name="Seo_Manage" ColumnName="Seo_Manage" />
+          <ScalarProperty Name="Group_Name" ColumnName="Group_Name" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="Main_ID" ColumnName="Main_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupMessages">
+      <EntityTypeMapping TypeName="ForestModel.GroupMessage">
+        <MappingFragment StoreEntitySet="GroupMessage">
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Readonly" ColumnName="Readonly" />
+          <ScalarProperty Name="Seo_Manage" ColumnName="Seo_Manage" />
+          <ScalarProperty Name="Group_Name" ColumnName="Group_Name" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="Main_ID" ColumnName="Main_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupPatents">
+      <EntityTypeMapping TypeName="ForestModel.GroupPatent">
+        <MappingFragment StoreEntitySet="GroupPatent">
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Readonly" ColumnName="Readonly" />
+          <ScalarProperty Name="Seo_Manage" ColumnName="Seo_Manage" />
+          <ScalarProperty Name="Group_Name" ColumnName="Group_Name" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="Main_ID" ColumnName="Main_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupUsers">
+      <EntityTypeMapping TypeName="ForestModel.GroupUser">
+        <MappingFragment StoreEntitySet="GroupUser">
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Readonly" ColumnName="Readonly" />
+          <ScalarProperty Name="Seo_Manage" ColumnName="Seo_Manage" />
+          <ScalarProperty Name="Group_Name" ColumnName="Group_Name" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupVideos">
+      <EntityTypeMapping TypeName="ForestModel.GroupVideo">
+        <MappingFragment StoreEntitySet="GroupVideo">
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Readonly" ColumnName="Readonly" />
+          <ScalarProperty Name="Seo_Manage" ColumnName="Seo_Manage" />
+          <ScalarProperty Name="Group_Name" ColumnName="Group_Name" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="Main_ID" ColumnName="Main_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Imgs">
+      <EntityTypeMapping TypeName="ForestModel.Img">
+        <MappingFragment StoreEntitySet="Img">
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Langs">
+      <EntityTypeMapping TypeName="ForestModel.Lang">
+        <MappingFragment StoreEntitySet="Lang">
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Published" ColumnName="Published" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Readonly" ColumnName="Readonly" />
+          <ScalarProperty Name="Acc_Check_Passed2" ColumnName="Acc_Check_Passed2" />
+          <ScalarProperty Name="Acc_Check_Passed" ColumnName="Acc_Check_Passed" />
+          <ScalarProperty Name="Footer_Text" ColumnName="Footer_Text" />
+          <ScalarProperty Name="Index_Text" ColumnName="Index_Text" />
+          <ScalarProperty Name="Pda_Footer_Text" ColumnName="Pda_Footer_Text" />
+          <ScalarProperty Name="Img_Name_Thumb10" ColumnName="Img_Name_Thumb10" />
+          <ScalarProperty Name="Img_Name_Ori10" ColumnName="Img_Name_Ori10" />
+          <ScalarProperty Name="Img_Name_Height3" ColumnName="Img_Name_Height3" />
+          <ScalarProperty Name="Img_Name_Thumb3" ColumnName="Img_Name_Thumb3" />
+          <ScalarProperty Name="Img_Name_Ori3" ColumnName="Img_Name_Ori3" />
+          <ScalarProperty Name="Img_Name_Height2" ColumnName="Img_Name_Height2" />
+          <ScalarProperty Name="Img_Name_Thumb2" ColumnName="Img_Name_Thumb2" />
+          <ScalarProperty Name="Img_Name_Ori2" ColumnName="Img_Name_Ori2" />
+          <ScalarProperty Name="Img_Name_Height" ColumnName="Img_Name_Height" />
+          <ScalarProperty Name="Img_Name_Thumb" ColumnName="Img_Name_Thumb" />
+          <ScalarProperty Name="Img_Name_Ori" ColumnName="Img_Name_Ori" />
+          <ScalarProperty Name="Link_Href" ColumnName="Link_Href" />
+          <ScalarProperty Name="Link_Lang_ID" ColumnName="Link_Lang_ID" />
+          <ScalarProperty Name="Content_Source" ColumnName="Content_Source" />
+          <ScalarProperty Name="Indep_Domain_Name" ColumnName="Indep_Domain_Name" />
+          <ScalarProperty Name="Sub_Domain_Name" ColumnName="Sub_Domain_Name" />
+          <ScalarProperty Name="Domain_Type" ColumnName="Domain_Type" />
+          <ScalarProperty Name="Disp_Name" ColumnName="Disp_Name" />
+          <ScalarProperty Name="Lang_Name" ColumnName="Lang_Name" />
+          <ScalarProperty Name="Area_id" ColumnName="Area_id" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LangKeys">
+      <EntityTypeMapping TypeName="ForestModel.LangKey">
+        <MappingFragment StoreEntitySet="LangKey">
+          <ScalarProperty Name="Used" ColumnName="Used" />
+          <ScalarProperty Name="LKey" ColumnName="LKey" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="SubGroup" ColumnName="SubGroup" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LangKeyUnits">
+      <EntityTypeMapping TypeName="ForestModel.LangKeyUnit">
+        <MappingFragment StoreEntitySet="LangKeyUnit">
+          <ScalarProperty Name="LKey" ColumnName="LKey" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Item" ColumnName="Item" />
+          <ScalarProperty Name="SubGroup" ColumnName="SubGroup" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="ForestModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="ICon" ColumnName="ICon" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="LinkUploadFilePath" ColumnName="LinkUploadFilePath" />
+          <ScalarProperty Name="LinkUploadFileName" ColumnName="LinkUploadFileName" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="ImageHeight" ColumnName="ImageHeight" />
+          <ScalarProperty Name="WindowHeight" ColumnName="WindowHeight" />
+          <ScalarProperty Name="WindowWidth" ColumnName="WindowWidth" />
+          <ScalarProperty Name="ImgNameThumb" ColumnName="ImgNameThumb" />
+          <ScalarProperty Name="ImgShowName" ColumnName="ImgShowName" />
+          <ScalarProperty Name="ImgNameOri" ColumnName="ImgNameOri" />
+          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="OpenMode" ColumnName="OpenMode" />
+          <ScalarProperty Name="ShowMode" ColumnName="ShowMode" />
+          <ScalarProperty Name="LinkMode" ColumnName="LinkMode" />
+          <ScalarProperty Name="ModelItemID" ColumnName="ModelItemID" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="MenuLevel" ColumnName="MenuLevel" />
+          <ScalarProperty Name="MenuType" ColumnName="MenuType" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="LangID" ColumnName="LangID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessageItems">
+      <EntityTypeMapping TypeName="ForestModel.MessageItem">
+        <MappingFragment StoreEntitySet="MessageItem">
+          <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
+          <ScalarProperty Name="LinkUrlDesc" ColumnName="LinkUrlDesc" />
+          <ScalarProperty Name="IsVerift" ColumnName="IsVerift" />
+          <ScalarProperty Name="UpdateName" ColumnName="UpdateName" />
+          <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDatetime" ColumnName="CreateDatetime" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="RelateImageFileOrgName" ColumnName="RelateImageFileOrgName" />
+          <ScalarProperty Name="RelateImageFileName" ColumnName="RelateImageFileName" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
+          <ScalarProperty Name="ActiveItemID" ColumnName="ActiveItemID" />
+          <ScalarProperty Name="ActiveID" ColumnName="ActiveID" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="PublicshDate" ColumnName="PublicshDate" />
+          <ScalarProperty Name="EdDate" ColumnName="EdDate" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+          <ScalarProperty Name="ImageFileLocation" ColumnName="ImageFileLocation" />
+          <ScalarProperty Name="ImageFileDesc" ColumnName="ImageFileDesc" />
+          <ScalarProperty Name="ImageFileOrgName" ColumnName="ImageFileOrgName" />
+          <ScalarProperty Name="ImageFileName" ColumnName="ImageFileName" />
+          <ScalarProperty Name="UploadFileDesc" ColumnName="UploadFileDesc" />
+          <ScalarProperty Name="UploadFilePath" ColumnName="UploadFilePath" />
+          <ScalarProperty Name="UploadFileName" ColumnName="UploadFileName" />
+          <ScalarProperty Name="ClickCnt" ColumnName="ClickCnt" />
+          <ScalarProperty Name="HtmlContent" ColumnName="HtmlContent" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessageUnitSettings">
+      <EntityTypeMapping TypeName="ForestModel.MessageUnitSetting">
+        <MappingFragment StoreEntitySet="MessageUnitSetting">
+          <ScalarProperty Name="IntroductionHtml" ColumnName="IntroductionHtml" />
+          <ScalarProperty Name="ColumnSetting" ColumnName="ColumnSetting" />
+          <ScalarProperty Name="EMailAuth" ColumnName="EMailAuth" />
+          <ScalarProperty Name="VIPAuth" ColumnName="VIPAuth" />
+          <ScalarProperty Name="EnterpriceStudentAuth" ColumnName="EnterpriceStudentAuth" />
+          <ScalarProperty Name="GeneralStudentAuth" ColumnName="GeneralStudentAuth" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Column7" ColumnName="Column7" />
+          <ScalarProperty Name="Column6" ColumnName="Column6" />
+          <ScalarProperty Name="Column5" ColumnName="Column5" />
+          <ScalarProperty Name="Column4" ColumnName="Column4" />
+          <ScalarProperty Name="Column3" ColumnName="Column3" />
+          <ScalarProperty Name="Column2" ColumnName="Column2" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="ShowCount" ColumnName="ShowCount" />
+          <ScalarProperty Name="ClassOverview" ColumnName="ClassOverview" />
+          <ScalarProperty Name="MemberAuth" ColumnName="MemberAuth" />
+          <ScalarProperty Name="IsShare" ColumnName="IsShare" />
+          <ScalarProperty Name="IsRSS" ColumnName="IsRSS" />
+          <ScalarProperty Name="IsForward" ColumnName="IsForward" />
+          <ScalarProperty Name="IsPrint" ColumnName="IsPrint" />
+          <ScalarProperty Name="MainID" ColumnName="MainID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModelActiveEditMains">
+      <EntityTypeMapping TypeName="ForestModel.ModelActiveEditMain">
+        <MappingFragment StoreEntitySet="ModelActiveEditMain">
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModelEventListMains">
+      <EntityTypeMapping TypeName="ForestModel.ModelEventListMain">
+        <MappingFragment StoreEntitySet="ModelEventListMain">
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModelFileDownloadMains">
+      <EntityTypeMapping TypeName="ForestModel.ModelFileDownloadMain">
+        <MappingFragment StoreEntitySet="ModelFileDownloadMain">
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModelFormMains">
+      <EntityTypeMapping TypeName="ForestModel.ModelFormMain">
+        <MappingFragment StoreEntitySet="ModelFormMain">
+          <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+          <ScalarProperty Name="UpdateName" ColumnName="UpdateName" />
+          <ScalarProperty Name="IsVerift" ColumnName="IsVerift" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModelLangMains">
+      <EntityTypeMapping TypeName="ForestModel.ModelLangMain">
+        <MappingFragment StoreEntitySet="ModelLangMain">
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UseLangID" ColumnName="UseLangID" />
+          <ScalarProperty Name="UseType" ColumnName="UseType" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModelMessageMains">
+      <EntityTypeMapping TypeName="ForestModel.ModelMessageMain">
+        <MappingFragment StoreEntitySet="ModelMessageMain">
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModelPageEditMains">
+      <EntityTypeMapping TypeName="ForestModel.ModelPageEditMain">
+        <MappingFragment StoreEntitySet="ModelPageEditMain">
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModelPatentMains">
+      <EntityTypeMapping TypeName="ForestModel.ModelPatentMain">
+        <MappingFragment StoreEntitySet="ModelPatentMain">
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModelVideoMains">
+      <EntityTypeMapping TypeName="ForestModel.ModelVideoMain">
+        <MappingFragment StoreEntitySet="ModelVideoMain">
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModelWebsiteMapMains">
+      <EntityTypeMapping TypeName="ForestModel.ModelWebsiteMapMain">
+        <MappingFragment StoreEntitySet="ModelWebsiteMapMain">
+          <ScalarProperty Name="ColumnDict" ColumnName="ColumnDict" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PageIndexItems">
+      <EntityTypeMapping TypeName="ForestModel.PageIndexItem">
+        <MappingFragment StoreEntitySet="PageIndexItem">
+          <ScalarProperty Name="LinkUrlDesc" ColumnName="LinkUrlDesc" />
+          <ScalarProperty Name="IsVerift" ColumnName="IsVerift" />
+          <ScalarProperty Name="UpdateName" ColumnName="UpdateName" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDatetime" ColumnName="CreateDatetime" />
+          <ScalarProperty Name="ActiveItemID" ColumnName="ActiveItemID" />
+          <ScalarProperty Name="ActiveID" ColumnName="ActiveID" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+          <ScalarProperty Name="ImageFileLocation" ColumnName="ImageFileLocation" />
+          <ScalarProperty Name="ImageFileDesc" ColumnName="ImageFileDesc" />
+          <ScalarProperty Name="ImageFileOrgName" ColumnName="ImageFileOrgName" />
+          <ScalarProperty Name="ImageFileName" ColumnName="ImageFileName" />
+          <ScalarProperty Name="UploadFileDesc" ColumnName="UploadFileDesc" />
+          <ScalarProperty Name="UploadFilePath" ColumnName="UploadFilePath" />
+          <ScalarProperty Name="UploadFileName" ColumnName="UploadFileName" />
+          <ScalarProperty Name="HtmlContent" ColumnName="HtmlContent" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PageIndexSettings">
+      <EntityTypeMapping TypeName="ForestModel.PageIndexSetting">
+        <MappingFragment StoreEntitySet="PageIndexSetting">
+          <ScalarProperty Name="Column21" ColumnName="Column21" />
+          <ScalarProperty Name="Column20" ColumnName="Column20" />
+          <ScalarProperty Name="Column19" ColumnName="Column19" />
+          <ScalarProperty Name="Column18" ColumnName="Column18" />
+          <ScalarProperty Name="Column17" ColumnName="Column17" />
+          <ScalarProperty Name="Column16" ColumnName="Column16" />
+          <ScalarProperty Name="Column15" ColumnName="Column15" />
+          <ScalarProperty Name="Column14" ColumnName="Column14" />
+          <ScalarProperty Name="Column13" ColumnName="Column13" />
+          <ScalarProperty Name="Column12" ColumnName="Column12" />
+          <ScalarProperty Name="Column11" ColumnName="Column11" />
+          <ScalarProperty Name="Column10" ColumnName="Column10" />
+          <ScalarProperty Name="Column9" ColumnName="Column9" />
+          <ScalarProperty Name="Column8" ColumnName="Column8" />
+          <ScalarProperty Name="Column7" ColumnName="Column7" />
+          <ScalarProperty Name="Column6" ColumnName="Column6" />
+          <ScalarProperty Name="Column5" ColumnName="Column5" />
+          <ScalarProperty Name="Column4" ColumnName="Column4" />
+          <ScalarProperty Name="Column3" ColumnName="Column3" />
+          <ScalarProperty Name="Column2" ColumnName="Column2" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="HtmlContent" ColumnName="HtmlContent" />
+          <ScalarProperty Name="ShowCount" ColumnName="ShowCount" />
+          <ScalarProperty Name="IsInPage" ColumnName="IsInPage" />
+          <ScalarProperty Name="IsFirstPage" ColumnName="IsFirstPage" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PageLayouts">
+      <EntityTypeMapping TypeName="ForestModel.PageLayout">
+        <MappingFragment StoreEntitySet="PageLayout">
+          <ScalarProperty Name="ModelItemList" ColumnName="ModelItemList" />
+          <ScalarProperty Name="SType" ColumnName="SType" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="OpenModeCust" ColumnName="OpenModeCust" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="OpenMode" ColumnName="OpenMode" />
+          <ScalarProperty Name="MenuLevel3" ColumnName="MenuLevel3" />
+          <ScalarProperty Name="MenuLevel2" ColumnName="MenuLevel2" />
+          <ScalarProperty Name="MenuLevel1" ColumnName="MenuLevel1" />
+          <ScalarProperty Name="MenuItem" ColumnName="MenuItem" />
+          <ScalarProperty Name="ModelItemID" ColumnName="ModelItemID" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="LinkMode" ColumnName="LinkMode" />
+          <ScalarProperty Name="ImageDesc" ColumnName="ImageDesc" />
+          <ScalarProperty Name="ImgShowName" ColumnName="ImgShowName" />
+          <ScalarProperty Name="ImgNameOri" ColumnName="ImgNameOri" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="BlockWidth" ColumnName="BlockWidth" />
+          <ScalarProperty Name="LangID" ColumnName="LangID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PageUnitSettings">
+      <EntityTypeMapping TypeName="ForestModel.PageUnitSetting">
+        <MappingFragment StoreEntitySet="PageUnitSetting">
+          <ScalarProperty Name="Column5" ColumnName="Column5" />
+          <ScalarProperty Name="Column4" ColumnName="Column4" />
+          <ScalarProperty Name="Column3" ColumnName="Column3" />
+          <ScalarProperty Name="Column2" ColumnName="Column2" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="EMailAuth" ColumnName="EMailAuth" />
+          <ScalarProperty Name="VIPAuth" ColumnName="VIPAuth" />
+          <ScalarProperty Name="EnterpriceStudentAuth" ColumnName="EnterpriceStudentAuth" />
+          <ScalarProperty Name="GeneralStudentAuth" ColumnName="GeneralStudentAuth" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="MemberAuth" ColumnName="MemberAuth" />
+          <ScalarProperty Name="IsShare" ColumnName="IsShare" />
+          <ScalarProperty Name="IsRSS" ColumnName="IsRSS" />
+          <ScalarProperty Name="IsForward" ColumnName="IsForward" />
+          <ScalarProperty Name="IsPrint" ColumnName="IsPrint" />
+          <ScalarProperty Name="MainID" ColumnName="MainID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatentItems">
+      <EntityTypeMapping TypeName="ForestModel.PatentItem">
+        <MappingFragment StoreEntitySet="PatentItem">
+          <ScalarProperty Name="LinkUrlDesc" ColumnName="LinkUrlDesc" />
+          <ScalarProperty Name="IsVerift" ColumnName="IsVerift" />
+          <ScalarProperty Name="UpdateName" ColumnName="UpdateName" />
+          <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDatetime" ColumnName="CreateDatetime" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
+          <ScalarProperty Name="ActiveItemID" ColumnName="ActiveItemID" />
+          <ScalarProperty Name="ActiveID" ColumnName="ActiveID" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="PublicshDate" ColumnName="PublicshDate" />
+          <ScalarProperty Name="EdDate" ColumnName="EdDate" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+          <ScalarProperty Name="UploadFileDesc" ColumnName="UploadFileDesc" />
+          <ScalarProperty Name="UploadFilePath" ColumnName="UploadFilePath" />
+          <ScalarProperty Name="UploadFileName" ColumnName="UploadFileName" />
+          <ScalarProperty Name="HtmlContent" ColumnName="HtmlContent" />
+          <ScalarProperty Name="Field" ColumnName="Field" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Inventor" ColumnName="Inventor" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatentUnitSettings">
+      <EntityTypeMapping TypeName="ForestModel.PatentUnitSetting">
+        <MappingFragment StoreEntitySet="PatentUnitSetting">
+          <ScalarProperty Name="IntroductionHtml" ColumnName="IntroductionHtml" />
+          <ScalarProperty Name="ColumnSetting" ColumnName="ColumnSetting" />
+          <ScalarProperty Name="EMailAuth" ColumnName="EMailAuth" />
+          <ScalarProperty Name="VIPAuth" ColumnName="VIPAuth" />
+          <ScalarProperty Name="EnterpriceStudentAuth" ColumnName="EnterpriceStudentAuth" />
+          <ScalarProperty Name="GeneralStudentAuth" ColumnName="GeneralStudentAuth" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Column13" ColumnName="Column13" />
+          <ScalarProperty Name="Column12" ColumnName="Column12" />
+          <ScalarProperty Name="Column11" ColumnName="Column11" />
+          <ScalarProperty Name="Column10" ColumnName="Column10" />
+          <ScalarProperty Name="Column9" ColumnName="Column9" />
+          <ScalarProperty Name="Column8" ColumnName="Column8" />
+          <ScalarProperty Name="Column7" ColumnName="Column7" />
+          <ScalarProperty Name="Column6" ColumnName="Column6" />
+          <ScalarProperty Name="Column5" ColumnName="Column5" />
+          <ScalarProperty Name="Column4" ColumnName="Column4" />
+          <ScalarProperty Name="Column3" ColumnName="Column3" />
+          <ScalarProperty Name="Column2" ColumnName="Column2" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="ShowCount" ColumnName="ShowCount" />
+          <ScalarProperty Name="ClassOverview" ColumnName="ClassOverview" />
+          <ScalarProperty Name="MemberAuth" ColumnName="MemberAuth" />
+          <ScalarProperty Name="IsShare" ColumnName="IsShare" />
+          <ScalarProperty Name="IsRSS" ColumnName="IsRSS" />
+          <ScalarProperty Name="IsForward" ColumnName="IsForward" />
+          <ScalarProperty Name="IsPrint" ColumnName="IsPrint" />
+          <ScalarProperty Name="MainID" ColumnName="MainID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEOs">
+      <EntityTypeMapping TypeName="ForestModel.SEO">
+        <MappingFragment StoreEntitySet="SEO">
+          <ScalarProperty Name="Keywords10" ColumnName="Keywords10" />
+          <ScalarProperty Name="Keywords9" ColumnName="Keywords9" />
+          <ScalarProperty Name="Keywords8" ColumnName="Keywords8" />
+          <ScalarProperty Name="Keywords7" ColumnName="Keywords7" />
+          <ScalarProperty Name="Keywords6" ColumnName="Keywords6" />
+          <ScalarProperty Name="Keywords5" ColumnName="Keywords5" />
+          <ScalarProperty Name="Keywords4" ColumnName="Keywords4" />
+          <ScalarProperty Name="Keywords3" ColumnName="Keywords3" />
+          <ScalarProperty Name="Keywords2" ColumnName="Keywords2" />
+          <ScalarProperty Name="Keywords1" ColumnName="Keywords1" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SiteConfigs">
+      <EntityTypeMapping TypeName="ForestModel.SiteConfig">
+        <MappingFragment StoreEntitySet="SiteConfig">
+          <ScalarProperty Name="FirstPageMaxLinkItem" ColumnName="FirstPageMaxLinkItem" />
+          <ScalarProperty Name="InvoiceMailSenderTitle" ColumnName="InvoiceMailSenderTitle" />
+          <ScalarProperty Name="InvoiceMailSenderMail" ColumnName="InvoiceMailSenderMail" />
+          <ScalarProperty Name="InvoiceMailSender" ColumnName="InvoiceMailSender" />
+          <ScalarProperty Name="InvoiceDesc" ColumnName="InvoiceDesc" />
+          <ScalarProperty Name="QuestionnaireFinishDesc" ColumnName="QuestionnaireFinishDesc" />
+          <ScalarProperty Name="IsAuthMailServer" ColumnName="IsAuthMailServer" />
+          <ScalarProperty Name="EMailPassword" ColumnName="EMailPassword" />
+          <ScalarProperty Name="EMailAccount" ColumnName="EMailAccount" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="MailServerIP" ColumnName="MailServerIP" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Img_Name_Thumb3" ColumnName="Img_Name_Thumb3" />
+          <ScalarProperty Name="Img_Name_Ori3" ColumnName="Img_Name_Ori3" />
+          <ScalarProperty Name="Page_Title" ColumnName="Page_Title" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Comp_Name" ColumnName="Comp_Name" />
+          <ScalarProperty Name="Img_Name_Thumb2" ColumnName="Img_Name_Thumb2" />
+          <ScalarProperty Name="Img_Name_Ori2" ColumnName="Img_Name_Ori2" />
+          <ScalarProperty Name="Img_Name_Thumb1" ColumnName="Img_Name_Thumb1" />
+          <ScalarProperty Name="Img_Name_Ori1" ColumnName="Img_Name_Ori1" />
+          <ScalarProperty Name="Login_Title" ColumnName="Login_Title" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SiteFlows">
+      <EntityTypeMapping TypeName="ForestModel.SiteFlow">
+        <MappingFragment StoreEntitySet="SiteFlow">
+          <ScalarProperty Name="Siteflow_Link_Y" ColumnName="Siteflow_Link_Y" />
+          <ScalarProperty Name="Siteflow_Code_Y" ColumnName="Siteflow_Code_Y" />
+          <ScalarProperty Name="Siteflow_Link" ColumnName="Siteflow_Link" />
+          <ScalarProperty Name="Siteflow_Code" ColumnName="Siteflow_Code" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SiteLayouts">
+      <EntityTypeMapping TypeName="ForestModel.SiteLayout">
+        <MappingFragment StoreEntitySet="SiteLayout">
+          <ScalarProperty Name="PublishContent" ColumnName="PublishContent" />
+          <ScalarProperty Name="InnerLogoImgHeight" ColumnName="InnerLogoImgHeight" />
+          <ScalarProperty Name="InnerLogoImgNameThumb" ColumnName="InnerLogoImgNameThumb" />
+          <ScalarProperty Name="InnerLogoImgShowName" ColumnName="InnerLogoImgShowName" />
+          <ScalarProperty Name="InnerLogoImgNameOri" ColumnName="InnerLogoImgNameOri" />
+          <ScalarProperty Name="SType" ColumnName="SType" />
+          <ScalarProperty Name="Page404Title" ColumnName="Page404Title" />
+          <ScalarProperty Name="Page404HtmlContent" ColumnName="Page404HtmlContent" />
+          <ScalarProperty Name="PrintHtmlContent" ColumnName="PrintHtmlContent" />
+          <ScalarProperty Name="PrintImgNameThumb" ColumnName="PrintImgNameThumb" />
+          <ScalarProperty Name="PrintImgShowName" ColumnName="PrintImgShowName" />
+          <ScalarProperty Name="PrintImgNameOri" ColumnName="PrintImgNameOri" />
+          <ScalarProperty Name="FowardHtmlContent" ColumnName="FowardHtmlContent" />
+          <ScalarProperty Name="FowardImgNameThumb" ColumnName="FowardImgNameThumb" />
+          <ScalarProperty Name="FowardImgShowName" ColumnName="FowardImgShowName" />
+          <ScalarProperty Name="FowardImgNameOri" ColumnName="FowardImgNameOri" />
+          <ScalarProperty Name="HtmlContent" ColumnName="HtmlContent" />
+          <ScalarProperty Name="InsidePageImgHeight" ColumnName="InsidePageImgHeight" />
+          <ScalarProperty Name="InsidePageImgNameThumb" ColumnName="InsidePageImgNameThumb" />
+          <ScalarProperty Name="InsidePageImgShowName" ColumnName="InsidePageImgShowName" />
+          <ScalarProperty Name="InsidePageImgNameOri" ColumnName="InsidePageImgNameOri" />
+          <ScalarProperty Name="FirstPageImgHeight" ColumnName="FirstPageImgHeight" />
+          <ScalarProperty Name="FirstPageImgNameThumb" ColumnName="FirstPageImgNameThumb" />
+          <ScalarProperty Name="FirstPageImgShowName" ColumnName="FirstPageImgShowName" />
+          <ScalarProperty Name="FirstPageImgNameOri" ColumnName="FirstPageImgNameOri" />
+          <ScalarProperty Name="LogoImgHeight" ColumnName="LogoImgHeight" />
+          <ScalarProperty Name="LogoImgNameThumb" ColumnName="LogoImgNameThumb" />
+          <ScalarProperty Name="LogoImgShowName" ColumnName="LogoImgShowName" />
+          <ScalarProperty Name="LogoImgNameOri" ColumnName="LogoImgNameOri" />
+          <ScalarProperty Name="LangID" ColumnName="LangID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SiteLists">
+      <EntityTypeMapping TypeName="ForestModel.SiteList">
+        <MappingFragment StoreEntitySet="SiteList">
+          <ScalarProperty Name="SiteList_Name_en" ColumnName="SiteList_Name_en" />
+          <ScalarProperty Name="SiteList_Name_ch" ColumnName="SiteList_Name_ch" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="SiteList_ID" ColumnName="SiteList_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ForestModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ForestModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Readonly" ColumnName="Readonly" />
+          <ScalarProperty Name="User_Email" ColumnName="User_Email" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="PWD" ColumnName="PWD" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Group_ID" ColumnName="Group_ID" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VideoItems">
+      <EntityTypeMapping TypeName="ForestModel.VideoItem">
+        <MappingFragment StoreEntitySet="VideoItem">
+          <ScalarProperty Name="IsShowMoreVideo" ColumnName="IsShowMoreVideo" />
+          <ScalarProperty Name="VideoLink" ColumnName="VideoLink" />
+          <ScalarProperty Name="LinkUrlDesc" ColumnName="LinkUrlDesc" />
+          <ScalarProperty Name="IsVerift" ColumnName="IsVerift" />
+          <ScalarProperty Name="UpdateName" ColumnName="UpdateName" />
+          <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDatetime" ColumnName="CreateDatetime" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="RelateImageFileOrgName" ColumnName="RelateImageFileOrgName" />
+          <ScalarProperty Name="RelateImageFileName" ColumnName="RelateImageFileName" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
+          <ScalarProperty Name="ActiveItemID" ColumnName="ActiveItemID" />
+          <ScalarProperty Name="ActiveID" ColumnName="ActiveID" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="PublicshDate" ColumnName="PublicshDate" />
+          <ScalarProperty Name="EdDate" ColumnName="EdDate" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+          <ScalarProperty Name="ImageFileLocation" ColumnName="ImageFileLocation" />
+          <ScalarProperty Name="ImageFileDesc" ColumnName="ImageFileDesc" />
+          <ScalarProperty Name="ImageFileOrgName" ColumnName="ImageFileOrgName" />
+          <ScalarProperty Name="ImageFileName" ColumnName="ImageFileName" />
+          <ScalarProperty Name="UploadFileDesc" ColumnName="UploadFileDesc" />
+          <ScalarProperty Name="UploadFilePath" ColumnName="UploadFilePath" />
+          <ScalarProperty Name="UploadFileName" ColumnName="UploadFileName" />
+          <ScalarProperty Name="ClickCnt" ColumnName="ClickCnt" />
+          <ScalarProperty Name="HtmlContent" ColumnName="HtmlContent" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VideoUnitSettings">
+      <EntityTypeMapping TypeName="ForestModel.VideoUnitSetting">
+        <MappingFragment StoreEntitySet="VideoUnitSetting">
+          <ScalarProperty Name="IntroductionHtml" ColumnName="IntroductionHtml" />
+          <ScalarProperty Name="ColumnSetting" ColumnName="ColumnSetting" />
+          <ScalarProperty Name="EMailAuth" ColumnName="EMailAuth" />
+          <ScalarProperty Name="VIPAuth" ColumnName="VIPAuth" />
+          <ScalarProperty Name="EnterpriceStudentAuth" ColumnName="EnterpriceStudentAuth" />
+          <ScalarProperty Name="GeneralStudentAuth" ColumnName="GeneralStudentAuth" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Column7" ColumnName="Column7" />
+          <ScalarProperty Name="Column6" ColumnName="Column6" />
+          <ScalarProperty Name="Column5" ColumnName="Column5" />
+          <ScalarProperty Name="Column4" ColumnName="Column4" />
+          <ScalarProperty Name="Column3" ColumnName="Column3" />
+          <ScalarProperty Name="Column2" ColumnName="Column2" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="ShowCount" ColumnName="ShowCount" />
+          <ScalarProperty Name="ClassOverview" ColumnName="ClassOverview" />
+          <ScalarProperty Name="MemberAuth" ColumnName="MemberAuth" />
+          <ScalarProperty Name="IsShare" ColumnName="IsShare" />
+          <ScalarProperty Name="IsRSS" ColumnName="IsRSS" />
+          <ScalarProperty Name="IsForward" ColumnName="IsForward" />
+          <ScalarProperty Name="IsPrint" ColumnName="IsPrint" />
+          <ScalarProperty Name="MainID" ColumnName="MainID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminFunctions">
+      <EntityTypeMapping TypeName="ForestModel.AdminFunction">
+        <MappingFragment StoreEntitySet="AdminFunction">
+          <ScalarProperty Name="ParentGroupID" ColumnName="ParentGroupID" />
+          <ScalarProperty Name="Parameter" ColumnName="Parameter" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LinkItems">
+      <EntityTypeMapping TypeName="ForestModel.LinkItem">
+        <MappingFragment StoreEntitySet="LinkItem">
+          <ScalarProperty Name="IsVerift" ColumnName="IsVerift" />
+          <ScalarProperty Name="UpdateName" ColumnName="UpdateName" />
+          <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="CreateDatetime" ColumnName="CreateDatetime" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="PublicshDate" ColumnName="PublicshDate" />
+          <ScalarProperty Name="EdDate" ColumnName="EdDate" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="LinkUrlDesc" ColumnName="LinkUrlDesc" />
+          <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+          <ScalarProperty Name="ImageFileDesc" ColumnName="ImageFileDesc" />
+          <ScalarProperty Name="ImageFileOrgName" ColumnName="ImageFileOrgName" />
+          <ScalarProperty Name="ImageFileName" ColumnName="ImageFileName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZipCodes">
+      <EntityTypeMapping TypeName="ForestModel.ZipCode">
+        <MappingFragment StoreEntitySet="ZipCode">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Town" ColumnName="Town" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

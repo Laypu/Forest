@@ -1,0 +1,17 @@
+E:\Dropbox\TPCA\TPCA\Utilities\bin\Debug\Utilities.dll.config
+E:\Dropbox\TPCA\TPCA\Utilities\bin\Debug\Utilities.dll
+E:\Dropbox\TPCA\TPCA\Utilities\bin\Debug\Utilities.pdb
+E:\Dropbox\TPCA\TPCA\Utilities\bin\Debug\NLog.dll
+E:\Dropbox\TPCA\TPCA\Utilities\bin\Debug\NLog.xml
+E:\Dropbox\TPCA\TPCA\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+E:\Dropbox\TPCA\TPCA\Utilities\obj\Debug\Utilities.dll
+E:\Dropbox\TPCA\TPCA\Utilities\obj\Debug\Utilities.pdb
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\bin\Debug\Utilities.dll.config
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\bin\Debug\Utilities.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\bin\Debug\Utilities.pdb
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\bin\Debug\NLog.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\bin\Debug\NLog.xml
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\obj\Debug\Utilities.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\obj\Debug\Utilities.pdb
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache

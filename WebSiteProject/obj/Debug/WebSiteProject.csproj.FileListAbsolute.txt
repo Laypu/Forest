@@ -1,0 +1,1800 @@
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\roslyn\csc.exe
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\roslyn\vbc.exe
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\roslyn\VBCSCompiler.exe
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Antlr3.Runtime.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\AutoMapper.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\EntityFramework.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\EntityFramework.SqlServer.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.Security.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Newtonsoft.Json.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Owin.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\ResourceLibrary.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Services.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\SQLModel.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Net.Http.Formatting.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.Helpers.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.Http.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.Http.WebHost.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.Mvc.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.Optimization.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.Razor.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.WebPages.Deployment.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.WebPages.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.WebPages.Razor.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Utilities.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\ViewModels.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\WebGrease.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\NPOI.OOXML.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\NPOI.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\itextsharp.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\NPOI.OpenXmlFormats.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\NPOI.OpenXml4Net.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\ResourceLibrary.pdb
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Services.pdb
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\SQLModel.pdb
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Utilities.pdb
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Utilities.dll.config
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\ViewModels.pdb
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\AutoMapper.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Newtonsoft.Json.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Net.Http.Formatting.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.Http.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.Http.WebHost.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.Helpers.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.Mvc.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.Optimization.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.Razor.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.WebPages.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.WebPages.Deployment.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\System.Web.WebPages.Razor.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Antlr3.Runtime.pdb
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\EntityFramework.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\EntityFramework.SqlServer.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.Security.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\itextsharp.xml
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\en-US\ResourceLibrary.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\System.Web.Http.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\System.Web.Optimization.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\Microsoft.Owin.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\Microsoft.Owin.Security.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\obj\Debug\WebSiteProject.csprojAssemblyReference.cache
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\obj\Debug\WebSiteProject.csproj.CoreCompileInputs.cache
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\obj\Debug\WebSiteProject.csproj.CopyComplete
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\WebSiteProject.dll.config
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\WebSiteProject.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\bin\WebSiteProject.pdb
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\obj\Debug\WebSiteProject.dll
+C:\Users\shaok\Desktop\MySkylines\TPCAMain\TPCAMain\obj\Debug\WebSiteProject.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\roslyn\csc.exe
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\roslyn\vbc.exe
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\roslyn\VBCSCompiler.exe
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\WebSiteProject.dll.config
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\WebSiteProject.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\WebSiteProject.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Antlr3.Runtime.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\AutoMapper.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\EntityFramework.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\EntityFramework.SqlServer.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.Security.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Newtonsoft.Json.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Owin.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\ResourceLibrary.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Services.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\SQLModel.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Net.Http.Formatting.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.Helpers.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.Http.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.Http.WebHost.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.Mvc.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.Optimization.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.Razor.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.WebPages.Deployment.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.WebPages.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.WebPages.Razor.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Utilities.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\ViewModels.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\WebGrease.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\NPOI.OOXML.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\NPOI.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\itextsharp.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\NPOI.OpenXmlFormats.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\NPOI.OpenXml4Net.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\ViewModels.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\ResourceLibrary.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Services.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\SQLModel.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\AutoMapper.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Newtonsoft.Json.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Net.Http.Formatting.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.Http.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.Http.WebHost.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.Helpers.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.Mvc.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.Optimization.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.Razor.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.WebPages.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.WebPages.Deployment.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\System.Web.WebPages.Razor.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Utilities.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Utilities.dll.config
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Antlr3.Runtime.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\EntityFramework.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\EntityFramework.SqlServer.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.Security.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\itextsharp.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\en-US\ResourceLibrary.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\System.Web.Http.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\System.Web.Optimization.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\Microsoft.Owin.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\Microsoft.Owin.Security.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\obj\Debug\WebSiteProject.csprojAssemblyReference.cache
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\obj\Debug\WebSiteProject.csproj.CoreCompileInputs.cache
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\obj\Debug\WebSiteProject.csproj.CopyComplete
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\obj\Debug\WebSiteProject.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\TPCAMain\obj\Debug\WebSiteProject.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\obj\Debug\WebSiteProject.csprojAssemblyReference.cache
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\obj\Debug\WebSiteProject.csproj.CoreCompileInputs.cache
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\roslyn\csc.exe
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\roslyn\vbc.exe
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\roslyn\VBCSCompiler.exe
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\WebSiteProject.dll.config
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\WebSiteProject.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\WebSiteProject.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Antlr3.Runtime.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\AutoMapper.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\EntityFramework.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\EntityFramework.SqlServer.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.Security.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Newtonsoft.Json.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Owin.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\ResourceLibrary.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Services.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\SQLModel.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Net.Http.Formatting.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.Helpers.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.Http.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.Http.WebHost.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.Mvc.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.Optimization.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.Razor.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.WebPages.Deployment.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.WebPages.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.WebPages.Razor.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Utilities.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\ViewModels.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\WebGrease.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\NPOI.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Utilities.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Utilities.dll.config
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\ViewModels.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\ResourceLibrary.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Services.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\SQLModel.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\AutoMapper.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Newtonsoft.Json.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Net.Http.Formatting.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.Http.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.Http.WebHost.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.Helpers.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.Mvc.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.Optimization.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.Razor.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.WebPages.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.WebPages.Deployment.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\System.Web.WebPages.Razor.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Antlr3.Runtime.pdb
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\EntityFramework.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\EntityFramework.SqlServer.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.Security.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\en-US\ResourceLibrary.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\System.Web.Http.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\System.Web.Optimization.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\Microsoft.Owin.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\obj\Debug\WebSiteProject.csproj.CopyComplete
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\obj\Debug\WebSiteProject.dll
+C:\Users\shaok\Desktop\MySkylines\MySkylines\WebSiteProject\obj\Debug\WebSiteProject.pdb
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\roslyn\csc.exe
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\roslyn\vbc.exe
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\roslyn\VBCSCompiler.exe
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\WebSiteProject.dll.config
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\WebSiteProject.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\WebSiteProject.pdb
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Antlr3.Runtime.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\AutoMapper.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\EntityFramework.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\EntityFramework.SqlServer.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Newtonsoft.Json.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Owin.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\ResourceLibrary.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Services.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\SQLModel.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Net.Http.Formatting.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.Helpers.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.Http.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.Http.WebHost.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.Mvc.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.Optimization.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.Razor.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.WebPages.Deployment.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.WebPages.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.WebPages.Razor.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Utilities.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\ViewModels.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\WebGrease.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\NPOI.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Utilities.pdb
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Utilities.dll.config
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\ViewModels.pdb
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\ResourceLibrary.pdb
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Services.pdb
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\SQLModel.pdb
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\AutoMapper.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Newtonsoft.Json.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Net.Http.Formatting.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.Http.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.Http.WebHost.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.Helpers.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.Mvc.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.Optimization.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.Razor.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.WebPages.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.WebPages.Deployment.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\System.Web.WebPages.Razor.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Antlr3.Runtime.pdb
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\EntityFramework.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\EntityFramework.SqlServer.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\en-US\ResourceLibrary.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Http.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Optimization.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\obj\Debug\WebSiteProject.csprojAssemblyReference.cache
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\obj\Debug\WebSiteProject.csproj.CoreCompileInputs.cache
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\obj\Debug\WebSiteProject.csproj.CopyComplete
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\obj\Debug\WebSiteProject.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\obj\Debug\WebSiteProject.pdb
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\NPOI.OOXML.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\NPOI.OpenXmlFormats.dll
+C:\Users\shaok\Desktop\NCHC\NCHC\WebSiteProject\bin\NPOI.OpenXml4Net.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\obj\Debug\WebSiteProject.csprojAssemblyReference.cache
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\obj\Debug\WebSiteProject.csproj.CoreCompileInputs.cache
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\libmp3lame.32.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\libmp3lame.64.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\roslyn\csc.exe
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\roslyn\vbc.exe
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\roslyn\VBCSCompiler.exe
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\WebSiteProject.dll.config
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\WebSiteProject.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\WebSiteProject.pdb
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Antlr3.Runtime.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\AutoMapper.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\EntityFramework.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\EntityFramework.SqlServer.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\NAudio.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\NAudio.Lame.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Newtonsoft.Json.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Owin.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\ResourceLibrary.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Services.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\SQLModel.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Net.Http.Formatting.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.Helpers.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.Http.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.Http.WebHost.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.Mvc.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.Optimization.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.Razor.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.WebPages.Deployment.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.WebPages.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.WebPages.Razor.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Utilities.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\ViewModels.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\WebGrease.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\NPOI.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\NPOI.OOXML.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\NPOI.OpenXmlFormats.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\NPOI.OpenXml4Net.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\ViewModels.pdb
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\ResourceLibrary.pdb
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Services.pdb
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\SQLModel.pdb
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Utilities.pdb
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Utilities.dll.config
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\AutoMapper.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\NAudio.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Newtonsoft.Json.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Net.Http.Formatting.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.Http.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.Http.WebHost.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.Helpers.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.Mvc.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.Optimization.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.Razor.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.WebPages.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.WebPages.Deployment.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Web.WebPages.Razor.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Antlr3.Runtime.pdb
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\EntityFramework.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\EntityFramework.SqlServer.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\en-US\ResourceLibrary.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Http.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Optimization.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\obj\Debug\WebSiteProject.csproj.CopyComplete
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\obj\Debug\WebSiteProject.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\obj\Debug\WebSiteProject.pdb
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\AngleSharp.Css.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\AngleSharp.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\HtmlSanitizer.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\System.Text.Encoding.CodePages.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\HtmlSanitizer.pdb
+C:\Users\shaok\Desktop\NCHCProject\NCHC\WebSiteProject\bin\HtmlSanitizer.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\libmp3lame.32.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\libmp3lame.64.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\roslyn\csc.exe
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\roslyn\System.Collections.Immutable.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\roslyn\System.Reflection.Metadata.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\roslyn\vbc.exe
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\roslyn\VBCSCompiler.exe
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\roslyn\VBCSCompiler.exe.config
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\WebSiteProject.dll.config
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\WebSiteProject.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\WebSiteProject.pdb
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Antlr3.Runtime.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\AutoMapper.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\EntityFramework.SqlServer.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Google.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Web.Infrastructure.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\NAudio.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\NAudio.Lame.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Newtonsoft.Json.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Owin.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\ResourceLibrary.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Services.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\SQLModel.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Net.Http.Formatting.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.Helpers.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.Http.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.Http.WebHost.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.Mvc.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.Optimization.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.Razor.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.WebPages.Deployment.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.WebPages.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.WebPages.Razor.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\ViewModels.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\WebGrease.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\NPOI.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\NPOI.OOXML.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\NPOI.OpenXmlFormats.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\NPOI.OpenXml4Net.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\ViewModels.pdb
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\ResourceLibrary.pdb
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Services.pdb
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\SQLModel.pdb
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\AutoMapper.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\NAudio.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Newtonsoft.Json.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Net.Http.Formatting.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.Http.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.Http.WebHost.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.Helpers.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.Mvc.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.Optimization.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.Razor.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.WebPages.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.WebPages.Deployment.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\System.Web.WebPages.Razor.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Antlr3.Runtime.pdb
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\EntityFramework.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\EntityFramework.SqlServer.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Google.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\en-US\ResourceLibrary.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Http.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Helpers.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Mvc.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Optimization.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\System.Web.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\System.Web.WebPages.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\EntityFramework.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Core.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Owin.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Host.SystemWeb.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Facebook.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Google.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Twitter.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\obj\Debug\WebSiteProject.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\obj\Debug\WebSiteProject.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\WebSiteProject\obj\Debug\WebSiteProject.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\obj\Debug\WebSiteProject.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\obj\Debug\WebSiteProject.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\obj\Debug\WebSiteProject.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\libmp3lame.32.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\libmp3lame.64.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\roslyn\csc.exe
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\roslyn\System.Collections.Immutable.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\roslyn\System.Reflection.Metadata.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\roslyn\vbc.exe
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\roslyn\VBCSCompiler.exe
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\roslyn\VBCSCompiler.exe.config
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\WebSiteProject.dll.config
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\WebSiteProject.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\WebSiteProject.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Antlr3.Runtime.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\AutoMapper.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\EntityFramework.SqlServer.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.Google.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Web.Infrastructure.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\NAudio.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\NAudio.Lame.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Newtonsoft.Json.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Owin.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\ResourceLibrary.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Services.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\SQLModel.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Net.Http.Formatting.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.Helpers.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.Http.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.Http.WebHost.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.Mvc.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.Optimization.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.Razor.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.WebPages.Deployment.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.WebPages.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.WebPages.Razor.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\ViewModels.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\WebGrease.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\NPOI.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\NPOI.OOXML.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\NPOI.OpenXmlFormats.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\NPOI.OpenXml4Net.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\ViewModels.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\ResourceLibrary.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Services.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\SQLModel.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\AutoMapper.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\NAudio.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Newtonsoft.Json.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Net.Http.Formatting.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.Http.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.Http.WebHost.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.Helpers.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.Mvc.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.Optimization.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.Razor.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.WebPages.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.WebPages.Deployment.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\System.Web.WebPages.Razor.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Antlr3.Runtime.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\EntityFramework.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\EntityFramework.SqlServer.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.Google.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\en-US\ResourceLibrary.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.Http.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.Helpers.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.Mvc.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.Optimization.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.WebPages.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\EntityFramework.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Core.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Owin.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.Owin.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Host.SystemWeb.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Facebook.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Google.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Twitter.resources.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\libmp3lame.32.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\libmp3lame.64.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\roslyn\csc.exe
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\roslyn\System.Collections.Immutable.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\roslyn\System.Reflection.Metadata.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\roslyn\vbc.exe
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\roslyn\VBCSCompiler.exe
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\roslyn\VBCSCompiler.exe.config
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\WebSiteProject.dll.config
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\WebSiteProject.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\WebSiteProject.pdb
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Antlr3.Runtime.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\AutoMapper.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\EntityFramework.SqlServer.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.Google.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Web.Infrastructure.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\NAudio.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\NAudio.Lame.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Newtonsoft.Json.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Owin.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\ResourceLibrary.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Services.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\SQLModel.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Net.Http.Formatting.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.Helpers.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.Http.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.Http.WebHost.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.Mvc.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.Optimization.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.WebPages.Deployment.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.WebPages.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.WebPages.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\ViewModels.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\WebGrease.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\NPOI.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\NPOI.OOXML.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\NPOI.OpenXmlFormats.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\NPOI.OpenXml4Net.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\ViewModels.pdb
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\ResourceLibrary.pdb
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Services.pdb
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\SQLModel.pdb
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\AutoMapper.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\NAudio.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Newtonsoft.Json.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Net.Http.Formatting.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.Http.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.Http.WebHost.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.Helpers.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.Mvc.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.Optimization.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.WebPages.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.WebPages.Deployment.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\System.Web.WebPages.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Antlr3.Runtime.pdb
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\EntityFramework.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\EntityFramework.SqlServer.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.Google.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\en-US\ResourceLibrary.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.Http.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.Helpers.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.Mvc.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.Optimization.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.WebPages.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\EntityFramework.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Core.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Owin.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.Owin.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Host.SystemWeb.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Facebook.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Google.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Twitter.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\obj\Debug\WebSiteProject.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\obj\Debug\WebSiteProject.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\WebSiteProject\obj\Debug\WebSiteProject.pdb
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\libmp3lame.32.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\libmp3lame.64.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\roslyn\csc.exe
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\roslyn\System.Collections.Immutable.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\roslyn\System.Reflection.Metadata.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\roslyn\vbc.exe
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\roslyn\VBCSCompiler.exe
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\roslyn\VBCSCompiler.exe.config
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\WebSiteProject.dll.config
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\WebSiteProject.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\WebSiteProject.pdb
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Antlr3.Runtime.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\AutoMapper.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\EntityFramework.SqlServer.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Google.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Web.Infrastructure.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\NAudio.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\NAudio.Lame.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Newtonsoft.Json.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Owin.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\ResourceLibrary.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Services.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\SQLModel.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Net.Http.Formatting.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.Helpers.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.Http.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.Http.WebHost.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.Mvc.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.Optimization.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.WebPages.Deployment.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.WebPages.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.WebPages.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\ViewModels.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\WebGrease.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\NPOI.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\NPOI.OOXML.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\NPOI.OpenXmlFormats.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\NPOI.OpenXml4Net.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\ViewModels.pdb
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\ResourceLibrary.pdb
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Services.pdb
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\SQLModel.pdb
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\AutoMapper.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\NAudio.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Newtonsoft.Json.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Net.Http.Formatting.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.Http.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.Http.WebHost.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.Helpers.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.Mvc.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.Optimization.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.WebPages.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.WebPages.Deployment.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\System.Web.WebPages.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Antlr3.Runtime.pdb
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\EntityFramework.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\EntityFramework.SqlServer.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Google.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\en-US\ResourceLibrary.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Http.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Helpers.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Mvc.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Optimization.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\EntityFramework.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Core.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Owin.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Host.SystemWeb.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Facebook.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Google.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Twitter.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\obj\Debug\WebSiteProject.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\obj\Debug\WebSiteProject.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\WebSiteProject\obj\Debug\WebSiteProject.pdb
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\libmp3lame.32.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\libmp3lame.64.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\roslyn\csc.exe
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\roslyn\System.Collections.Immutable.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\roslyn\System.Reflection.Metadata.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\roslyn\vbc.exe
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\roslyn\VBCSCompiler.exe
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\roslyn\VBCSCompiler.exe.config
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\WebSiteProject.dll.config
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\WebSiteProject.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\WebSiteProject.pdb
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Antlr3.Runtime.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\AutoMapper.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\EntityFramework.SqlServer.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Google.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Web.Infrastructure.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\NAudio.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\NAudio.Lame.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Newtonsoft.Json.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Owin.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\ResourceLibrary.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Services.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\SQLModel.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Net.Http.Formatting.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.Helpers.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.Http.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.Http.WebHost.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.Mvc.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.Optimization.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.WebPages.Deployment.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.WebPages.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.WebPages.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\ViewModels.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\WebGrease.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\NPOI.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\NPOI.OOXML.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\NPOI.OpenXmlFormats.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\NPOI.OpenXml4Net.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\ViewModels.pdb
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\ResourceLibrary.pdb
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Services.pdb
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\SQLModel.pdb
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\AutoMapper.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\NAudio.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Newtonsoft.Json.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Net.Http.Formatting.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.Http.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.Http.WebHost.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.Helpers.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.Mvc.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.Optimization.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.WebPages.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.WebPages.Deployment.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\System.Web.WebPages.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Antlr3.Runtime.pdb
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\EntityFramework.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\EntityFramework.SqlServer.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Google.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\en-US\ResourceLibrary.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Http.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Helpers.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Mvc.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Optimization.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\EntityFramework.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Core.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Owin.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Host.SystemWeb.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Facebook.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Google.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Twitter.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\obj\Debug\WebSiteProject.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\obj\Debug\WebSiteProject.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\WebSiteProject\obj\Debug\WebSiteProject.pdb
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\libmp3lame.32.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\libmp3lame.64.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\roslyn\csc.exe
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\roslyn\System.Collections.Immutable.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\roslyn\System.Reflection.Metadata.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\roslyn\vbc.exe
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\roslyn\VBCSCompiler.exe
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\roslyn\VBCSCompiler.exe.config
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\WebSiteProject.dll.config
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\WebSiteProject.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\WebSiteProject.pdb
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Antlr3.Runtime.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\AutoMapper.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\EntityFramework.SqlServer.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Google.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Web.Infrastructure.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\NAudio.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\NAudio.Lame.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Newtonsoft.Json.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Owin.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\ResourceLibrary.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Services.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\SQLModel.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Net.Http.Formatting.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.Helpers.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.Http.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.Http.WebHost.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.Mvc.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.Optimization.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.WebPages.Deployment.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.WebPages.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.WebPages.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\ViewModels.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\WebGrease.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\NPOI.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\NPOI.OOXML.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\NPOI.OpenXmlFormats.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\NPOI.OpenXml4Net.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\ViewModels.pdb
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\ResourceLibrary.pdb
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Services.pdb
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\SQLModel.pdb
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\AutoMapper.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\NAudio.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Newtonsoft.Json.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Net.Http.Formatting.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.Http.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.Http.WebHost.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.Helpers.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.Mvc.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.Optimization.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.WebPages.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.WebPages.Deployment.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\System.Web.WebPages.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Antlr3.Runtime.pdb
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\EntityFramework.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\EntityFramework.SqlServer.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Google.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\en-US\ResourceLibrary.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Http.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Helpers.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Mvc.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Optimization.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\EntityFramework.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Core.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Owin.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Host.SystemWeb.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Facebook.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Google.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Twitter.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\obj\Debug\WebSiteProject.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\obj\Debug\WebSiteProject.dll
+E:\_public project\林務局悠遊網\AP\20200107A\Forest\WebSiteProject\obj\Debug\WebSiteProject.pdb
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\libmp3lame.32.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\libmp3lame.64.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\roslyn\csc.exe
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\roslyn\System.Collections.Immutable.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\roslyn\System.Reflection.Metadata.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\roslyn\vbc.exe
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\roslyn\VBCSCompiler.exe
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\roslyn\VBCSCompiler.exe.config
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\WebSiteProject.dll.config
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\WebSiteProject.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\WebSiteProject.pdb
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Antlr3.Runtime.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\AutoMapper.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\EntityFramework.SqlServer.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Google.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Web.Infrastructure.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\NAudio.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\NAudio.Lame.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Newtonsoft.Json.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Owin.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\ResourceLibrary.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Services.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\SQLModel.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Net.Http.Formatting.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.Helpers.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.Http.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.Http.WebHost.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.Mvc.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.Optimization.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.WebPages.Deployment.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.WebPages.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.WebPages.Razor.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\ViewModels.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\WebGrease.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\NPOI.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\NPOI.OOXML.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\NPOI.OpenXmlFormats.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\NPOI.OpenXml4Net.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\ViewModels.pdb
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\ResourceLibrary.pdb
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Services.pdb
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\SQLModel.pdb
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\AutoMapper.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\NAudio.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Newtonsoft.Json.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Net.Http.Formatting.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.Http.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.Http.WebHost.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.Helpers.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.Mvc.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.Optimization.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.WebPages.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.WebPages.Deployment.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\System.Web.WebPages.Razor.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Antlr3.Runtime.pdb
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\EntityFramework.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\EntityFramework.SqlServer.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Google.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\en-US\ResourceLibrary.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Http.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Helpers.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Mvc.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Optimization.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\System.Web.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\EntityFramework.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Core.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Owin.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Host.SystemWeb.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Facebook.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Google.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Twitter.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\obj\Debug\WebSiteProject.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\obj\Debug\WebSiteProject.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\WebSiteProject\obj\Debug\WebSiteProject.pdb
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\libmp3lame.32.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\libmp3lame.64.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\roslyn\csc.exe
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\roslyn\vbc.exe
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\roslyn\VBCSCompiler.exe
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\WebSiteProject.dll.config
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\WebSiteProject.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\WebSiteProject.pdb
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Antlr3.Runtime.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\AutoMapper.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\EntityFramework.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\EntityFramework.SqlServer.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\NAudio.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\NAudio.Lame.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Newtonsoft.Json.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Owin.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\ResourceLibrary.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Services.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\SQLModel.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Net.Http.Formatting.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.Helpers.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.Http.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.Http.WebHost.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.Mvc.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.Optimization.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.Razor.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.Deployment.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.Razor.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Utilities.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\ViewModels.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\WebGrease.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\NPOI.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\NPOI.OOXML.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\NPOI.OpenXmlFormats.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\NPOI.OpenXml4Net.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\ViewModels.pdb
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\ResourceLibrary.pdb
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Services.pdb
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\SQLModel.pdb
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Utilities.pdb
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Utilities.dll.config
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\AutoMapper.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\NAudio.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Newtonsoft.Json.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Net.Http.Formatting.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.Http.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.Http.WebHost.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.Helpers.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.Mvc.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.Optimization.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.Razor.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.Deployment.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.Razor.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Antlr3.Runtime.pdb
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\EntityFramework.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\EntityFramework.SqlServer.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\en-US\ResourceLibrary.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Http.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Optimization.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\obj\Debug\WebSiteProject.csprojAssemblyReference.cache
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\obj\Debug\WebSiteProject.csproj.CopyComplete
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\obj\Debug\WebSiteProject.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\WebSiteProject\obj\Debug\WebSiteProject.pdb
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\libmp3lame.32.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\libmp3lame.64.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\roslyn\csc.exe
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\roslyn\vbc.exe
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\roslyn\VBCSCompiler.exe
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\WebSiteProject.dll.config
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\WebSiteProject.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\WebSiteProject.pdb
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Antlr3.Runtime.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\AutoMapper.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\EntityFramework.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\EntityFramework.SqlServer.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\NAudio.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\NAudio.Lame.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Newtonsoft.Json.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Owin.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\ResourceLibrary.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Services.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\SQLModel.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Net.Http.Formatting.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.Helpers.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.Http.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.Http.WebHost.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.Mvc.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.Optimization.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.Razor.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.Deployment.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.Razor.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Utilities.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\ViewModels.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\WebGrease.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\NPOI.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\NPOI.OOXML.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\NPOI.OpenXmlFormats.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\NPOI.OpenXml4Net.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\ViewModels.pdb
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\ResourceLibrary.pdb
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Services.pdb
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\SQLModel.pdb
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Utilities.pdb
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Utilities.dll.config
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\AutoMapper.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\NAudio.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Newtonsoft.Json.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Net.Http.Formatting.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.Http.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.Http.WebHost.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.Helpers.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.Mvc.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.Optimization.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.Razor.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.Deployment.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.Razor.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Antlr3.Runtime.pdb
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\EntityFramework.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\EntityFramework.SqlServer.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\en-US\ResourceLibrary.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Http.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Optimization.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\obj\Debug\WebSiteProject.csprojAssemblyReference.cache
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\obj\Debug\WebSiteProject.csproj.CopyComplete
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\obj\Debug\WebSiteProject.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\WebSiteProject\obj\Debug\WebSiteProject.pdb
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\libmp3lame.32.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\libmp3lame.64.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\roslyn\csc.exe
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\roslyn\vbc.exe
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\roslyn\VBCSCompiler.exe
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\WebSiteProject.dll.config
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\WebSiteProject.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\WebSiteProject.pdb
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Antlr3.Runtime.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\AutoMapper.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\EntityFramework.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\EntityFramework.SqlServer.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\NAudio.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\NAudio.Lame.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Newtonsoft.Json.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Owin.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\ResourceLibrary.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Services.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\SQLModel.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Net.Http.Formatting.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.Helpers.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.Http.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.Http.WebHost.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.Mvc.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.Optimization.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.Razor.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.Deployment.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.Razor.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Utilities.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\ViewModels.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\WebGrease.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\NPOI.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\NPOI.OOXML.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\NPOI.OpenXmlFormats.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\NPOI.OpenXml4Net.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\ViewModels.pdb
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\ResourceLibrary.pdb
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Services.pdb
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\SQLModel.pdb
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Utilities.pdb
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Utilities.dll.config
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\AutoMapper.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\NAudio.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Newtonsoft.Json.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Net.Http.Formatting.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.Http.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.Http.WebHost.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.Helpers.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.Mvc.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.Optimization.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.Razor.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.Deployment.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\System.Web.WebPages.Razor.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Antlr3.Runtime.pdb
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\EntityFramework.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\EntityFramework.SqlServer.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\en-US\ResourceLibrary.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Net.Http.Formatting.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Http.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Http.WebHost.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Helpers.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Mvc.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Optimization.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.Razor.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Deployment.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\System.Web.WebPages.Razor.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\EntityFramework.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\bin\zh-Hant\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\obj\Debug\WebSiteProject.csproj.CopyComplete
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\obj\Debug\WebSiteProject.dll
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\obj\Debug\WebSiteProject.pdb
+C:\Users\PC003\Desktop\Forest\Forest\WebSiteProject\obj\Debug\WebSiteProject.csprojAssemblyReference.cache

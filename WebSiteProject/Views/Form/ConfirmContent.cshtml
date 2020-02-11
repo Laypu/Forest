@@ -1,0 +1,33 @@
+﻿<!--page banner start-->
+@{
+    Layout = WebSiteProject.Code.Common.GetLayout(Model.ShowModel, Model.LangId);
+}
+@model FormFrontIndexModel
+<div id="content" class="page_content">
+    <div class="container">
+
+        <div class="page_top">
+            <a href="#;return false;" title="@Common.GetLangText("主要內容區")" accesskey="@if(Model.LangId == "1"){@("C") }else{ @("C")}" id="main-content">:::</a>
+            @Html.Raw(Model.LinkStr)
+        </div>
+
+        <div class="title">
+            <h2 data-sr="enter left over 1.5s">@Model.Title</h2>
+        </div>
+
+        <div class="content_con">
+
+            <div class="left">
+                <div class="con_font">
+                   @Html.Raw(Model.Desc)
+                </div>
+
+            </div>
+
+            <div class="right">
+                @Html.Raw(Model.LeftMenu)
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "Index_Img";
+}
+
+<style>
+    .CurrentImage{
+        margin:10px -10px;
+    }
+</style>
+
+<div class="title_01">Home</div>
+<div id="Partial_Index">
+    <!--...-->
+</div>
+
+<div class="portlet light bordered">
+    @*<div class="title_04">@(ViewBag.FreeZoneTitleID == 1 ? "自由編輯區一" : "自由編輯區二")</div>*@
+
+    <div class="form-horizontal form-bordered" id="editform" enctype="multipart/form-data">
+
+        <form method="post" action="@Url.Action("Index_Img_Edit","Home")" enctype="multipart/form-data">
+            <div class="title_01">標題</div>
+            <div class="portlet light form-fit bordered">
+                <div class="portlet-body form">
+                    <div class="form-horizontal form-bordered">
+                        <div class="form-body">
+                            @*<input name="_FreeZoneID" type="hidden" value="@ViewBag.FreeZoneTitleID" />*@
+                            <div class="form-group">
+                                <div class="col-md-1 col-sm-12 col-xs-12 search_item text-center">
+                                    <span>圖片</span>
+                                </div>
+                                <div class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                    <span class="text-primary">@ViewBag.ImgName</span>
+                                    <input name="Index_Img_File" type="file"  class="form-control" accept = ".jpeg,.jpg,.gif,.png"/>
+                                </div>
+                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white text-center table-bordered CurrentImage">
+                                    <img id="CurrentProductImage_create" src="@ViewBag.ImgPath" />
+                                </div>
+                            </div>                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">修改</button>
+            </div>
+
+        </form>                
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section scripts{
+    <script>
+        $(function () {            
+            
+
+            //圖片上傳修改
+            ShowImg();
+
+        });
+
+
+
+        //圖片上傳修改
+        function ShowImg() {
+            $("[name='Index_Img_File']").change(function () {
+                //alert("Image changed");
+                var reader = new FileReader();
+                reader.readAsDataURL(this.files[0]);
+                reader.onload = function (e) {
+                    $("#CurrentProductImage_create").attr("src", e.target.result)
+                };
+            })
+        }                        
+
+    </script>
+}

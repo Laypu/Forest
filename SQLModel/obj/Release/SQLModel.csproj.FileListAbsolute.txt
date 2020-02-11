@@ -1,0 +1,12 @@
+C:\Dropbox\Dropbox\TPCA\TPCA\SQLModel\bin\Release\SQLModel.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\SQLModel\bin\Release\SQLModel.pdb
+C:\Dropbox\Dropbox\TPCA\TPCA\SQLModel\bin\Release\EntityFramework.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\SQLModel\bin\Release\Utilities.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\SQLModel\bin\Release\NLog.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\SQLModel\bin\Release\Utilities.pdb
+C:\Dropbox\Dropbox\TPCA\TPCA\SQLModel\bin\Release\EntityFramework.xml
+C:\Dropbox\Dropbox\TPCA\TPCA\SQLModel\bin\Release\NLog.xml
+C:\Dropbox\Dropbox\TPCA\TPCA\SQLModel\bin\Release\zh-Hant\EntityFramework.resources.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\SQLModel\obj\Release\SQLModel.csprojResolveAssemblyReference.cache
+C:\Dropbox\Dropbox\TPCA\TPCA\SQLModel\obj\Release\SQLModel.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\SQLModel\obj\Release\SQLModel.pdb

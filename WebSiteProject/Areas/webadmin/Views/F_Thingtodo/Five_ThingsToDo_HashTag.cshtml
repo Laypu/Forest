@@ -1,0 +1,174 @@
+﻿@model IEnumerable<WebSiteProject.Models.F_HashTag_Type>
+
+@{
+    if (TempData["Msg"] != null)
+    {
+        <script>
+            $(function () {
+                var Msg = @Html.Raw(Json.Encode(TempData["Msg"]));
+                alert(Msg);
+            });
+        </script>
+    }
+}
+
+<style>
+    hr {
+        margin: 0px;
+        border-top: 0px solid #eee;
+    }
+
+    .Five_Thingtodo_Header {
+        background-color: lightgray;
+        font-weight: bolder;
+    }
+
+    .width118 {
+        width: 118%;
+    }
+
+    span.disable-links {
+        pointer-events: none;
+        background-color: lightgray;
+    }
+
+    .f-font-size-sm {
+        font-size: 80%;
+        font-style: italic;
+    }
+</style>
+
+<div class="title_01">Things to do</div>
+
+
+<div id="Partial_Index_MenuLink">
+    <!--.......-->
+</div>
+
+
+<div class="portlet light bordered">
+    <div class="title_04">
+        <span>五大旅遊資訊標籤設定</span>
+        <span class="f-font-size-sm text-danger">(前五大標籤對應五大旅遊資訊，為固定標籤)</span>
+    </div>
+
+    <div class="form-horizontal form-bordered" id="editform" enctype="multipart/form-data">
+
+        <div class="portlet light form-fit bordered">
+            <div class="portlet-body form">
+                <div class="form-horizontal form-bordered">
+                    <div class="form-body" id="form-body">
+
+                        @foreach (var item in Model)
+                        {
+                            <form method="post" action="@Url.Action("Five_ThingsToDo_HashTag_Edit", "F_Thingtodo")">
+                                <div class="form-group">
+                                    <input type="hidden" name="HashTag_ID" value="@item.HashTag_Type_ID" />
+                                    <div class="col-md-3 col-sm-12 col-xs-12 text-center search_item">
+                                        <span class="display_inline">標籤名稱 : </span>
+                                        <span class="display_inline">
+                                            <input type="text" name="HashTag_Name" value="@item.HashTag_Type_Name" data-id="@item.HashTag_Type_ID" class="form-control width118" />
+                                        </span>
+                                    </div>
+                                    <div class="col-md-7 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center">
+                                        <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white">
+                                            <span class="display_inline">超連結 : </span>
+                                        </div>
+                                        <div class="col-md-11 col-sm-12 col-xs-12 bg-white mobile_white forest_link">
+                                            <input type="text" name="HashTag_Link" value="@item.HashTag_Type_Link" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                        <button class="form-control btn-warning text-center">修改</button>
+                                    </div>
+                                    <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white">
+                                        <span data-id="@item.HashTag_Type_ID" class="">
+                                            <a href="@Url.Action("Five_ThingsToDo_HashTag_Delete","F_Thingtodo",new { id = item.HashTag_Type_ID})" class="form-control btn-danger text-center" data-id="@item.HashTag_Type_ID" onclick="return confirm('確定要刪除嗎?')">刪除</a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <hr />
+                            </form>
+
+
+                        }
+
+
+                    </div>
+
+                    <div class="text-center">
+                        <button type="button" class="btn green-meadow btn-xs addmenu addfreezone" index="179" nextlevel="2"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        @*<div class="text-center search_padding">
+                <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+            </div>*@
+    </div>
+
+</div>
+
+
+
+
+@section scripts{
+    <script>
+        $(function () {
+
+            //增加新連結
+            add();
+
+            //不能修改的項目
+            CanNotDelete();
+
+        });
+
+        //新增超連結
+        function add() {
+            $(".addfreezone").click(function () {
+                $("#form-body").append(
+                    `<form method="post" action="@Url.Action("Five_ThingsToDo_HashTag_Edit", "F_Thingtodo", new { IsCreate=1})">
+                            <div class="form-group">
+
+                                <div class="col-md-3 col-sm-12 col-xs-12 text-center search_item">
+                                    <span class="display_inline">標籤名稱 : </span>
+                                    <span class="display_inline">
+                                        <input type="text" name="HashTag_Name" value="" class="form-control width118"/>
+                                    </span>
+                                </div>
+                                <div class="col-md-7 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center">
+                                    <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white">
+                                        <span class="display_inline">超連結 : </span>
+                                    </div>
+                                    <div class="col-md-11 col-sm-12 col-xs-12 bg-white mobile_white forest_link">
+                                        <input type="text" name="HashTag_Link" value="" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                    <button class="form-control btn-success text-center">新增</button>
+                                </div>
+                                <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white">
+                                    <a class="form-control btn-danger text-center" onclick="$(this).closest('form').remove()">刪除</a>
+                                </div>
+                            </div>
+                            <hr/>
+                       </form>`
+                );
+            });
+        };
+
+
+        function CanNotDelete() {
+            for (i = 1; i<=5; i++){
+                //$(`input[data-id='${i}']`).attr("readonly", "readonly");
+                $(`span[data-id='${i}']`).addClass("disable-links");
+                $(`a[data-id='${i}']`).remove();
+            }
+        };
+
+    </script>
+}
+

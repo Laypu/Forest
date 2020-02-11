@@ -1,0 +1,157 @@
+E:\Dropbox\TPCA\TPCA\Utilities\bin\Debug\Utilities.dll.config
+E:\Dropbox\TPCA\TPCA\Utilities\bin\Debug\Utilities.dll
+E:\Dropbox\TPCA\TPCA\Utilities\bin\Debug\Utilities.pdb
+E:\Dropbox\TPCA\TPCA\Utilities\bin\Debug\NLog.dll
+E:\Dropbox\TPCA\TPCA\Utilities\bin\Debug\NLog.xml
+E:\Dropbox\TPCA\TPCA\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+E:\Dropbox\TPCA\TPCA\Utilities\obj\Debug\Utilities.dll
+E:\Dropbox\TPCA\TPCA\Utilities\obj\Debug\Utilities.pdb
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\bin\Debug\Utilities.dll.config
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\bin\Debug\Utilities.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\bin\Debug\Utilities.pdb
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\bin\Debug\NLog.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\bin\Debug\NLog.xml
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\obj\Debug\Utilities.dll
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\obj\Debug\Utilities.pdb
+C:\Dropbox\Dropbox\TPCA\TPCA\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Utilities\bin\Debug\Utilities.dll.config
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Utilities\bin\Debug\Utilities.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Utilities\bin\Debug\Utilities.pdb
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Utilities\bin\Debug\NLog.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Utilities\bin\Debug\NLog.xml
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Utilities\obj\Debug\Utilities.dll
+C:\Users\shaok\Desktop\TPCAMain\TPCAMain\Utilities\obj\Debug\Utilities.pdb
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Utilities\bin\Debug\Utilities.dll.config
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Utilities\bin\Debug\Utilities.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Utilities\bin\Debug\Utilities.pdb
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Utilities\bin\Debug\NLog.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Utilities\bin\Debug\NLog.xml
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Utilities\obj\Debug\Utilities.csprojAssemblyReference.cache
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Utilities\obj\Debug\Utilities.csproj.CopyComplete
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Utilities\obj\Debug\Utilities.dll
+C:\Dropbox\Dropbox\TPCAMain\TPCAMain\Utilities\obj\Debug\Utilities.pdb
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Utilities\bin\Debug\Utilities.dll.config
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Utilities\bin\Debug\Utilities.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Utilities\bin\Debug\Utilities.pdb
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Utilities\bin\Debug\NLog.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Utilities\bin\Debug\NLog.xml
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Utilities\obj\Debug\Utilities.csproj.CopyComplete
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Utilities\obj\Debug\Utilities.dll
+C:\Users\shaok\Desktop\TPCAMain2\TPCAMain\Utilities\obj\Debug\Utilities.pdb
+C:\Dropbox\Dropbox\TPCAMain\Utilities\bin\Debug\Utilities.dll.config
+C:\Dropbox\Dropbox\TPCAMain\Utilities\bin\Debug\Utilities.dll
+C:\Dropbox\Dropbox\TPCAMain\Utilities\bin\Debug\Utilities.pdb
+C:\Dropbox\Dropbox\TPCAMain\Utilities\bin\Debug\NLog.dll
+C:\Dropbox\Dropbox\TPCAMain\Utilities\bin\Debug\NLog.xml
+C:\Dropbox\Dropbox\TPCAMain\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
+C:\Dropbox\Dropbox\TPCAMain\Utilities\obj\Debug\Utilities.csproj.CopyComplete
+C:\Dropbox\Dropbox\TPCAMain\Utilities\obj\Debug\Utilities.dll
+C:\Dropbox\Dropbox\TPCAMain\Utilities\obj\Debug\Utilities.pdb
+C:\Dropbox\Dropbox\Utilities\bin\Debug\Utilities.dll.config
+C:\Dropbox\Dropbox\Utilities\bin\Debug\Utilities.dll
+C:\Dropbox\Dropbox\Utilities\bin\Debug\Utilities.pdb
+C:\Dropbox\Dropbox\Utilities\obj\Debug\Utilities.csprojAssemblyReference.cache
+C:\Dropbox\Dropbox\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
+C:\Dropbox\Dropbox\Utilities\obj\Debug\Utilities.csproj.CopyComplete
+C:\Dropbox\Dropbox\Utilities\obj\Debug\Utilities.dll
+C:\Dropbox\Dropbox\Utilities\obj\Debug\Utilities.pdb
+E:\Dropbox\Utilities\bin\Debug\Utilities.dll.config
+E:\Dropbox\Utilities\bin\Debug\Utilities.dll
+E:\Dropbox\Utilities\bin\Debug\Utilities.pdb
+E:\Dropbox\Utilities\obj\Debug\Utilities.dll
+E:\Dropbox\Utilities\obj\Debug\Utilities.pdb
+C:\Dropbox\Dropbox\CommonLib\Utilities\bin\Debug\Utilities.dll.config
+C:\Dropbox\Dropbox\CommonLib\Utilities\bin\Debug\Utilities.dll
+C:\Dropbox\Dropbox\CommonLib\Utilities\bin\Debug\Utilities.pdb
+C:\Dropbox\Dropbox\CommonLib\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
+C:\Dropbox\Dropbox\CommonLib\Utilities\obj\Debug\Utilities.csproj.CopyComplete
+C:\Dropbox\Dropbox\CommonLib\Utilities\obj\Debug\Utilities.dll
+C:\Dropbox\Dropbox\CommonLib\Utilities\obj\Debug\Utilities.pdb
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Utilities\bin\Debug\Utilities.dll.config
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Utilities\bin\Debug\Utilities.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Utilities\bin\Debug\Utilities.pdb
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Utilities\bin\Debug\NLog.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Utilities\bin\Debug\NLog.xml
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Utilities\obj\Debug\Utilities.csproj.CopyComplete
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Utilities\obj\Debug\Utilities.dll
+C:\Users\shaok\Desktop\NCHCProject\NCHC\Utilities\obj\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Utilities\bin\Debug\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Utilities\bin\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Utilities\bin\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Utilities\bin\Debug\NLog.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Utilities\bin\Debug\NLog.xml
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Utilities\obj\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20191230B\NCHC\Utilities\obj\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Utilities\bin\Debug\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Utilities\bin\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Utilities\bin\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Utilities\bin\Debug\NLog.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Utilities\bin\Debug\NLog.xml
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Utilities\obj\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20191231A\AP_20191230\Utilities\obj\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Utilities\bin\Debug\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Utilities\bin\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Utilities\bin\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Utilities\bin\Debug\NLog.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Utilities\bin\Debug\NLog.xml
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Utilities\obj\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Utilities\obj\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200102A\AP_20191230\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Utilities\bin\Debug\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Utilities\bin\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Utilities\bin\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Utilities\bin\Debug\NLog.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Utilities\bin\Debug\NLog.xml
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Utilities\obj\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200103A\Forest\Utilities\obj\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Utilities\bin\Debug\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Utilities\bin\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Utilities\bin\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Utilities\bin\Debug\NLog.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Utilities\bin\Debug\NLog.xml
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Utilities\obj\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200106A\Forest\Utilities\obj\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Utilities\bin\Debug\Utilities.dll.config
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Utilities\bin\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Utilities\bin\Debug\Utilities.pdb
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Utilities\bin\Debug\NLog.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Utilities\bin\Debug\NLog.xml
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Utilities\obj\Debug\Utilities.dll
+E:\_public project\林務局悠遊網\AP\20200109A\Forest\Utilities\obj\Debug\Utilities.pdb
+C:\Users\PC003\Desktop\forest\Forest\Forest\Utilities\bin\Debug\Utilities.dll.config
+C:\Users\PC003\Desktop\forest\Forest\Forest\Utilities\bin\Debug\Utilities.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Utilities\bin\Debug\Utilities.pdb
+C:\Users\PC003\Desktop\forest\Forest\Forest\Utilities\bin\Debug\NLog.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Utilities\bin\Debug\NLog.xml
+C:\Users\PC003\Desktop\forest\Forest\Forest\Utilities\obj\Debug\Utilities.csprojAssemblyReference.cache
+C:\Users\PC003\Desktop\forest\Forest\Forest\Utilities\obj\Debug\Utilities.csproj.CopyComplete
+C:\Users\PC003\Desktop\forest\Forest\Forest\Utilities\obj\Debug\Utilities.dll
+C:\Users\PC003\Desktop\forest\Forest\Forest\Utilities\obj\Debug\Utilities.pdb
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Utilities\bin\Debug\Utilities.dll.config
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Utilities\bin\Debug\Utilities.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Utilities\bin\Debug\Utilities.pdb
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Utilities\bin\Debug\NLog.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Utilities\bin\Debug\NLog.xml
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Utilities\obj\Debug\Utilities.csprojAssemblyReference.cache
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Utilities\obj\Debug\Utilities.csproj.CopyComplete
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Utilities\obj\Debug\Utilities.dll
+C:\Users\PC003\Desktop\Forest林務局\20100131\Forest\Forest\Utilities\obj\Debug\Utilities.pdb
+C:\Users\PC003\Desktop\Forest\Forest\Utilities\bin\Debug\Utilities.dll.config
+C:\Users\PC003\Desktop\Forest\Forest\Utilities\bin\Debug\Utilities.dll
+C:\Users\PC003\Desktop\Forest\Forest\Utilities\bin\Debug\Utilities.pdb
+C:\Users\PC003\Desktop\Forest\Forest\Utilities\bin\Debug\NLog.dll
+C:\Users\PC003\Desktop\Forest\Forest\Utilities\bin\Debug\NLog.xml
+C:\Users\PC003\Desktop\Forest\Forest\Utilities\obj\Debug\Utilities.csprojAssemblyReference.cache
+C:\Users\PC003\Desktop\Forest\Forest\Utilities\obj\Debug\Utilities.csproj.CopyComplete
+C:\Users\PC003\Desktop\Forest\Forest\Utilities\obj\Debug\Utilities.dll
+C:\Users\PC003\Desktop\Forest\Forest\Utilities\obj\Debug\Utilities.pdb

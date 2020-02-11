@@ -1,0 +1,203 @@
+.noscript_font {
+    font-size: 1em;
+    color: #fff;
+    padding: 1% 3%;
+    line-height: 150%;
+    height: 100px;
+	background:#333;
+}
+
+#header .header-body{
+	position:relative;
+	background: rgba(77,83,39,.9);
+}
+.page_content{
+	margin-top:0;
+}
+
+
+/*index_banner*/
+.index_banner{
+	 z-index:80;
+	 margin-top:0;
+}
+.slider-container ,.hidden-xs .slider-container ,.visible-xs .slider-container{
+	display:none;
+}
+.noscrip_banner .item{
+	position:relative;
+}
+.noscrip_banner .item .item_box{
+	position: absolute;
+	top:5%;
+	background: rgba(0,0,0,.54);
+    padding: 25px 25px 35px 25px !important;
+    width: 100%;
+    max-width: 700px !important;
+    color:#fff;
+    line-height: 150% !important;
+    white-space: normal;	
+}
+.index_banner .defaultimg div img {
+    margin-top: 182px;
+}
+.banner_title{
+	z-index: 999;
+    position: relative;
+}
+
+
+/*index_ad*/
+.index_ad .defaultimg{
+	position:relative;
+	margin-top:120px;
+}
+
+/*page_bookmark*/
+.page_bookmark .season {
+	padding:30px 0;
+}
+.page_bookmark .season li{
+	background:url(../img/season_bg.png);
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size:140px;
+	padding:20px !important;
+	height:140px;
+}
+.circular-bar .circular-bar-chart {
+    padding-top: 25px;
+}
+.circular-bar strong  ,.circular-bar label{
+    position: relative;
+}
+
+/*news_box
+.news_box{
+	z-index:81;
+	position: absolute;
+	float:left;
+	width:100%;
+}*/
+
+
+/*index_activity
+.noscript_activity .title {
+    padding: 0 50px 0 100px;
+}*/
+
+
+/*index_link
+.noscript_link{
+	float:left;
+	width:100%;
+	padding:15px;
+}
+.noscript_link .item{
+	float:left;
+	width:20%;
+	padding:15px;
+}
+*/
+
+/*video
+.noscript_video{
+	float:left;
+	width:100%;
+}
+.noscript_video .item{
+	float:left;
+	width:22%;
+	margin:1.5%;
+}
+.noscript_video .item img{
+	border: solid #e1e1e1 1px;
+    padding: 10px;
+    float: left;
+}
+.noscript_video .item .con_font {
+    padding: 5px 10px;
+    float: left;
+    width: 100%;
+}*/
+
+
+
+/*--------------------------------------for 電腦、平版、手機------------------------------------------------*/
+/* 大螢幕 */
+@media (min-width: 1200px) {
+}
+
+ 
+/* 平板電腦、橫向手機和一般桌機解析度 */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+
+/* 電腦、橫向平板電腦解析度 */
+@media (min-width: 768px) and (max-width: 991px) {
+.index_banner .defaultimg div img {
+    margin-top: 177px;
+}
+
+}
+
+
+/* 橫向智慧手機到竪立平板電腦解析度 */
+@media (max-width: 767px) {
+.noscript_font {
+    font-size: 0.8em;
+}
+#header {
+    position: relative;
+}
+/*news_box
+.news_box{
+	position: relative;
+}*/
+
+
+/*index_link
+.noscript_link .item{
+	width:33.3%;
+}
+.noscript_link .item:nth-child(4) ,.noscript_link .item:nth-child(5){
+	display:none;
+}*/
+
+
+/*video
+.noscript_video .item{
+	float:left;
+	width:46%;
+	margin:2%;
+}*/
+.index_banner .defaultimg div img {
+    margin-top: 152px;
+}
+
+}
+
+ 
+/* 橫向智慧手機及其他更小解析度 */
+@media (max-width: 480px) {
+/*index_link*/
+.noscript_link .item{
+	width:50%;
+}
+.noscript_link .item:nth-child(3),.noscript_link .item:nth-child(4) ,.noscript_link .item:nth-child(5){
+	display:none;
+}
+
+
+/*video*/
+.noscript_video .item{
+	float:left;
+	width:100%;
+	margin:5% 0;
+}
+
+
+}
+
+
