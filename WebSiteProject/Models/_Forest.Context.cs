@@ -39,7 +39,6 @@ namespace WebSiteProject.Models
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<ColumnSetting> ColumnSettings { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
-        public virtual DbSet<Destination_Index> Destination_Index { get; set; }
         public virtual DbSet<EventListItem> EventListItems { get; set; }
         public virtual DbSet<EventListUnitSetting> EventListUnitSettings { get; set; }
         public virtual DbSet<F_HashTag_Type> F_HashTag_Type { get; set; }
@@ -100,5 +99,7 @@ namespace WebSiteProject.Models
         public virtual DbSet<LinkItem> LinkItems { get; set; }
         public virtual DbSet<ZipCode> ZipCodes { get; set; }
         public virtual DbSet<F_Destination_Type> F_Destination_Type { get; set; }
+        public virtual DbSet<Destination_Index> Destination_Index { get; set; }
+        public virtual DbSet<MAP_LEGEND> MAP_LEGEND { get; set; }
     }
 }

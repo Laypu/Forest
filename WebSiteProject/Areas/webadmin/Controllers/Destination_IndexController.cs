@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -12,39 +13,40 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 {
     public class Destination_IndexController : Controller
     {
-        private ForestEntities db = new ForestEntities();
+        ForestEntities db = new ForestEntities();
 
-        // GET: webadmin/Destination_Index
+        // GET: webadmin/destination
         public ActionResult MainTitleAndContent()
         {
-            Destination_Index DEST = new Destination_Index();
-            TTD.F_Thingtodo_Index_Title = Server.HtmlDecode(db.F_Thingtodo_Index.FirstOrDefault().F_Thingtodo_Index_Title);
-            TTD.F_Thingtodo_Index_Content = Server.HtmlDecode(db.F_Thingtodo_Index.FirstOrDefault().F_Thingtodo_Index_Content);
-            TTD.F_Thingtodo_Index_ID = db.F_Thingtodo_Index.FirstOrDefault().F_Thingtodo_Index_ID;
-            return View(TTD);
+            Destination_Index DES = new Destination_Index();
+            DES.Destination_Title = Server.HtmlDecode(db.Destination_Index.FirstOrDefault().Destination_Title);
+            DES.Destination_Context = Server.HtmlDecode(db.Destination_Index.FirstOrDefault().Destination_Context);
+            DES.Destination_ID = db.Destination_Index.FirstOrDefault().Destination_ID;
+            
+            return View(DES);
         }
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult MainTitleAndContent_Edit(int _Thingtodo_Index_ID, string _Thingtodo_Index_Title, string _Thingtodo_Index_Content)
+        public ActionResult MainTitleAndContent_Edit(int _Destination_ID, string _Destination_Title, string _Destination_Context)
         {
-            var TTD = db.F_Thingtodo_Index.Find(_Thingtodo_Index_ID);
-            TTD.F_Thingtodo_Index_Title = _Thingtodo_Index_Title;
-            TTD.F_Thingtodo_Index_Content = Server.HtmlEncode(_Thingtodo_Index_Content);
-            db.Entry(TTD).State = System.Data.Entity.EntityState.Modified;
+            var DES = db.Destination_Index.Find(_Destination_ID);
+            DES.Destination_Title = _Destination_Title;
+            DES.Destination_Context = Server.HtmlEncode(_Destination_Context);
+            db.Entry(DES).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
 
             return RedirectToAction("MainTitleAndContent");
         }
 
         [HttpGet]
-        public ActionResult Five_Thingstodo(int? F_MenuType)
+        public ActionResult destination(int? F_MenuType)
         {
-            var TTD = db.F_Thingtodo_Type.ToList();
+            var DES = db.Destination_Index.ToList();
 
             Session["F_MenuType"] = F_MenuType;
 
-            return View(TTD);
+            return View(DES);
         }
 
         [HttpPost]
@@ -90,11 +92,11 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 
             try
             {
-                var TTD = db.F_Thingtodo_Type.Find(_Thingtodo_Type_ID);
-                TTD.F_Thingtodo_Type_Title1 = _Thingtodo_Type_Title1;
-                TTD.F_Thingtodo_Type_Title2 = _Thingtodo_Type_Title2;
-                TTD.F_Thingtodo_Type_Description = _Thingtodo_Type_Description;
-                db.Entry(TTD).State = System.Data.Entity.EntityState.Modified;
+                var DES = db.F_Thingtodo_Type.Find(_Thingtodo_Type_ID);
+                DES.F_Thingtodo_Type_Title1 = _Thingtodo_Type_Title1;
+                DES.F_Thingtodo_Type_Title2 = _Thingtodo_Type_Title2;
+                DES.F_Thingtodo_Type_Description = _Thingtodo_Type_Description;
+                db.Entry(DES).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }
             catch
@@ -111,8 +113,8 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         [HttpGet]
         public ActionResult Five_ThingsToDo_HashTag()
         {
-            var TTDH = db.F_HashTag_Type.ToList();
-            return View(TTDH);
+            var DESH = db.F_HashTag_Type.ToList();
+            return View(DESH);
         }
 
         [HttpPost]
@@ -129,18 +131,18 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 {
                     if (IsCreate != 1)
                     {
-                        var TTDH = db.F_HashTag_Type.Find(HashTag_ID);
-                        TTDH.HashTag_Type_Name = HashTag_Name;
-                        TTDH.HashTag_Type_Link = HashTag_Link;
-                        db.Entry(TTDH).State = System.Data.Entity.EntityState.Modified;
+                        var DESH = db.F_HashTag_Type.Find(HashTag_ID);
+                        DESH.HashTag_Type_Name = HashTag_Name;
+                        DESH.HashTag_Type_Link = HashTag_Link;
+                        db.Entry(DESH).State = System.Data.Entity.EntityState.Modified;
                         db.SaveChanges();
                     }
                     else
                     {
-                        F_HashTag_Type TTDH = new F_HashTag_Type();
-                        TTDH.HashTag_Type_Name = HashTag_Name;
-                        TTDH.HashTag_Type_Link = HashTag_Link;
-                        db.F_HashTag_Type.Add(TTDH);
+                        F_HashTag_Type DESH = new F_HashTag_Type();
+                        DESH.HashTag_Type_Name = HashTag_Name;
+                        DESH.HashTag_Type_Link = HashTag_Link;
+                        db.F_HashTag_Type.Add(DESH);
                         db.SaveChanges();
                     }
                 }
@@ -156,27 +158,33 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 
         public ActionResult Five_ThingsToDo_HashTag_Delete(int id)
         {
-            var TTDH = db.F_HashTag_Type.Find(id);
-            db.Entry(TTDH).State = System.Data.Entity.EntityState.Deleted;
+            var DESH = db.F_HashTag_Type.Find(id);
+            db.Entry(DESH).State = System.Data.Entity.EntityState.Deleted;
             db.SaveChanges();
 
             return RedirectToAction("Five_ThingsToDo_HashTag");
         }
-    
 
-    // GET: webadmin/Destination_Index/Details/5
-    public ActionResult Details(int? id)
+
+        // GET: webadmin/Destination_Index
+        public ActionResult Index()
+        {
+            return View(db.Destination_Index.ToList());
+        }
+
+        // GET: webadmin/Destination_Index/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Destination_Index destination_Index = db.Destination_Index.Find(id);
-            if (destination_Index == null)
+            Destination_Index Destination_Index = db.Destination_Index.Find(id);
+            if (Destination_Index == null)
             {
                 return HttpNotFound();
             }
-            return View(destination_Index);
+            return View(Destination_Index);
         }
 
         // GET: webadmin/Destination_Index/Create
@@ -190,16 +198,16 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         // 詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Destination_ID,Destination_Title,Destination_Context,Destination_Img,Destination_Img_Mobile")] Destination_Index destination_Index)
+        public ActionResult Create([Bind(Include = "Destination_Type_ID,Destination_Type_Title1,Destination_Type_Title2,Destination_Type_CreateDate,Destination_Type_ImgName,Destination_Type_Link,Destination_Type_Description")] Destination_Index Destination_Index)
         {
             if (ModelState.IsValid)
             {
-                db.Destination_Index.Add(destination_Index);
+                db.Destination_Index.Add(Destination_Index);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(destination_Index);
+            return View(Destination_Index);
         }
 
         // GET: webadmin/Destination_Index/Edit/5
@@ -209,12 +217,12 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Destination_Index destination_Index = db.Destination_Index.Find(id);
-            if (destination_Index == null)
+            Destination_Index Destination_Index = db.Destination_Index.Find(id);
+            if (Destination_Index == null)
             {
                 return HttpNotFound();
             }
-            return View(destination_Index);
+            return View(Destination_Index);
         }
 
         // POST: webadmin/Destination_Index/Edit/5
@@ -222,15 +230,15 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         // 詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Destination_ID,Destination_Title,Destination_Context,Destination_Img,Destination_Img_Mobile")] Destination_Index destination_Index)
+        public ActionResult Edit([Bind(Include = "Destination_Type_ID,Destination_Type_Title1,Destination_Type_Title2,Destination_Type_CreateDate,Destination_Type_ImgName,Destination_Type_Link,Destination_Type_Description")] Destination_Index Destination_Index)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(destination_Index).State = EntityState.Modified;
+                db.Entry(Destination_Index).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(destination_Index);
+            return View(Destination_Index);
         }
 
         // GET: webadmin/Destination_Index/Delete/5
@@ -240,12 +248,12 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Destination_Index destination_Index = db.Destination_Index.Find(id);
-            if (destination_Index == null)
+            Destination_Index Destination_Index = db.Destination_Index.Find(id);
+            if (Destination_Index == null)
             {
                 return HttpNotFound();
             }
-            return View(destination_Index);
+            return View(Destination_Index);
         }
 
         // POST: webadmin/Destination_Index/Delete/5
@@ -253,8 +261,8 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Destination_Index destination_Index = db.Destination_Index.Find(id);
-            db.Destination_Index.Remove(destination_Index);
+            Destination_Index Destination_Index = db.Destination_Index.Find(id);
+            db.Destination_Index.Remove(Destination_Index);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -345,18 +345,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Destination_Index">
-      <EntityTypeMapping TypeName="ForestModel.Destination_Index">
-        <MappingFragment StoreEntitySet="Destination_Index">
-          <ScalarProperty Name="Destination_Catagory" ColumnName="Destination_Catagory" />
-          <ScalarProperty Name="Destination_Img_Mobile" ColumnName="Destination_Img_Mobile" />
-          <ScalarProperty Name="Destination_Img" ColumnName="Destination_Img" />
-          <ScalarProperty Name="Destination_Context" ColumnName="Destination_Context" />
-          <ScalarProperty Name="Destination_Title" ColumnName="Destination_Title" />
-          <ScalarProperty Name="Destination_ID" ColumnName="Destination_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="EventListItems">
       <EntityTypeMapping TypeName="ForestModel.EventListItem">
         <MappingFragment StoreEntitySet="EventListItem">
@@ -1638,6 +1626,26 @@
           <ScalarProperty Name="Destination_Type_Title2" ColumnName="Destination_Type_Title2" />
           <ScalarProperty Name="Destination_Type_Title1" ColumnName="Destination_Type_Title1" />
           <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Destination_Index">
+      <EntityTypeMapping TypeName="ForestModel.Destination_Index">
+        <MappingFragment StoreEntitySet="Destination_Index">
+          <ScalarProperty Name="Destination_MAP_LEGEND_ID" ColumnName="Destination_MAP_LEGEND_ID" />
+          <ScalarProperty Name="Destination_Context" ColumnName="Destination_Context" />
+          <ScalarProperty Name="Destination_Title" ColumnName="Destination_Title" />
+          <ScalarProperty Name="Destination_ID" ColumnName="Destination_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MAP_LEGEND">
+      <EntityTypeMapping TypeName="ForestModel.MAP_LEGEND">
+        <MappingFragment StoreEntitySet="MAP_LEGEND">
+          <ScalarProperty Name="Destination_Img_Mobile" ColumnName="Destination_Img_Mobile" />
+          <ScalarProperty Name="Destination_Img" ColumnName="Destination_Img" />
+          <ScalarProperty Name="Destination_MAP_LEGEND_Name" ColumnName="Destination_MAP_LEGEND_Name" />
+          <ScalarProperty Name="Destination_MAP_LEGEND_ID" ColumnName="Destination_MAP_LEGEND_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

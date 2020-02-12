@@ -355,9 +355,7 @@
           <Property Name="Destination_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Destination_Title" Type="nvarchar(max)" />
           <Property Name="Destination_Context" Type="nvarchar(max)" />
-          <Property Name="Destination_Catagory" Type="nvarchar(max)" />
-          <Property Name="Destination_Img" Type="nvarchar(max)" />
-          <Property Name="Destination_Img_Mobile" Type="nvarchar(max)" />
+          <Property Name="Destination_MAP_LEGEND_ID" Type="int" />
         </EntityType>
         <EntityType Name="EventListItem">
           <Key>
@@ -923,6 +921,15 @@
           <Property Name="CreateName" Type="nvarchar" MaxLength="20" />
           <Property Name="UpdateName" Type="nvarchar" MaxLength="20" />
           <Property Name="IsVerift" Type="bit" />
+        </EntityType>
+        <EntityType Name="MAP_LEGEND">
+          <Key>
+            <PropertyRef Name="Destination_MAP_LEGEND_ID" />
+          </Key>
+          <Property Name="Destination_MAP_LEGEND_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Destination_MAP_LEGEND_Name" Type="nvarchar(max)" />
+          <Property Name="Destination_Img" Type="nvarchar(max)" />
+          <Property Name="Destination_Img_Mobile" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Menu">
           <Key>
@@ -1579,6 +1586,18 @@
           <Property Name="Town" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Code" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Destination_Index_MAP_LEGEND">
+          <End Role="MAP_LEGEND" Type="Self.MAP_LEGEND" Multiplicity="0..1" />
+          <End Role="Destination_Index" Type="Self.Destination_Index" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MAP_LEGEND">
+              <PropertyRef Name="Destination_MAP_LEGEND_ID" />
+            </Principal>
+            <Dependent Role="Destination_Index">
+              <PropertyRef Name="Destination_MAP_LEGEND_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_F_Sub_HashTag_Type_F_HashTag_Type">
           <End Role="F_HashTag_Type" Type="Self.F_HashTag_Type" Multiplicity="1" />
           <End Role="F_Sub_HashTag_Type" Type="Self.F_Sub_HashTag_Type" Multiplicity="*" />
@@ -1636,6 +1655,7 @@
           <EntitySet Name="Lang" EntityType="Self.Lang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LangKey" EntityType="Self.LangKey" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LangKeyUnit" EntityType="Self.LangKeyUnit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MAP_LEGEND" EntityType="Self.MAP_LEGEND" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MessageItem" EntityType="Self.MessageItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MessageUnitSetting" EntityType="Self.MessageUnitSetting" Schema="dbo" store:Type="Tables" />
@@ -1709,6 +1729,10 @@
     [ZipCode].[Code] AS [Code]
     FROM [dbo].[ZipCode] AS [ZipCode]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK_Destination_Index_MAP_LEGEND" Association="Self.FK_Destination_Index_MAP_LEGEND">
+            <End Role="MAP_LEGEND" EntitySet="MAP_LEGEND" />
+            <End Role="Destination_Index" EntitySet="Destination_Index" />
+          </AssociationSet>
           <AssociationSet Name="FK_F_Sub_HashTag_Type_F_HashTag_Type" Association="Self.FK_F_Sub_HashTag_Type_F_HashTag_Type">
             <End Role="F_HashTag_Type" EntitySet="F_HashTag_Type" />
             <End Role="F_Sub_HashTag_Type" EntitySet="F_Sub_HashTag_Type" />
@@ -1733,7 +1757,6 @@
           <EntitySet Name="Cities" EntityType="ForestModel.City" />
           <EntitySet Name="ColumnSettings" EntityType="ForestModel.ColumnSetting" />
           <EntitySet Name="Countries" EntityType="ForestModel.Country" />
-          <EntitySet Name="Destination_Index" EntityType="ForestModel.Destination_Index" />
           <EntitySet Name="EventListItems" EntityType="ForestModel.EventListItem" />
           <EntitySet Name="EventListUnitSettings" EntityType="ForestModel.EventListUnitSetting" />
           <EntitySet Name="F_HashTag_Type" EntityType="ForestModel.F_HashTag_Type" />
@@ -1798,6 +1821,12 @@
             <End Role="F_Sub_HashTag_Type" EntitySet="F_Sub_HashTag_Type" />
           </AssociationSet>
           <EntitySet Name="F_Destination_Type" EntityType="ForestModel.F_Destination_Type" />
+          <EntitySet Name="Destination_Index" EntityType="ForestModel.Destination_Index" />
+          <EntitySet Name="MAP_LEGEND" EntityType="ForestModel.MAP_LEGEND" />
+          <AssociationSet Name="FK_Destination_Index_MAP_LEGEND" Association="ForestModel.FK_Destination_Index_MAP_LEGEND">
+            <End Role="MAP_LEGEND" EntitySet="MAP_LEGEND" />
+            <End Role="Destination_Index" EntitySet="Destination_Index" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="ActiveItem">
           <Key>
@@ -2128,17 +2157,6 @@
           <Property Name="ID" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Sort" Type="Int32" />
-        </EntityType>
-        <EntityType Name="Destination_Index">
-          <Key>
-            <PropertyRef Name="Destination_ID" />
-          </Key>
-          <Property Name="Destination_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Destination_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Destination_Context" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Destination_Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Destination_Img_Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Destination_Catagory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="EventListItem">
           <Key>
@@ -3381,6 +3399,38 @@
           <Property Name="Destination_Type_Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Destination_Type_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Destination_Index">
+          <Key>
+            <PropertyRef Name="Destination_ID" />
+          </Key>
+          <Property Name="Destination_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Destination_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Destination_Context" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Destination_MAP_LEGEND_ID" Type="Int32" />
+          <NavigationProperty Name="MAP_LEGEND" Relationship="ForestModel.FK_Destination_Index_MAP_LEGEND" FromRole="Destination_Index" ToRole="MAP_LEGEND" />
+        </EntityType>
+        <EntityType Name="MAP_LEGEND">
+          <Key>
+            <PropertyRef Name="Destination_MAP_LEGEND_ID" />
+          </Key>
+          <Property Name="Destination_MAP_LEGEND_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Destination_MAP_LEGEND_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Destination_Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Destination_Img_Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Destination_Index" Relationship="ForestModel.FK_Destination_Index_MAP_LEGEND" FromRole="MAP_LEGEND" ToRole="Destination_Index" />
+        </EntityType>
+        <Association Name="FK_Destination_Index_MAP_LEGEND">
+          <End Type="ForestModel.MAP_LEGEND" Role="MAP_LEGEND" Multiplicity="0..1" />
+          <End Type="ForestModel.Destination_Index" Role="Destination_Index" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MAP_LEGEND">
+              <PropertyRef Name="Destination_MAP_LEGEND_ID" />
+            </Principal>
+            <Dependent Role="Destination_Index">
+              <PropertyRef Name="Destination_MAP_LEGEND_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3728,18 +3778,6 @@
                 <ScalarProperty Name="Sort" ColumnName="Sort" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Destination_Index">
-            <EntityTypeMapping TypeName="ForestModel.Destination_Index">
-              <MappingFragment StoreEntitySet="Destination_Index">
-                <ScalarProperty Name="Destination_Catagory" ColumnName="Destination_Catagory" />
-                <ScalarProperty Name="Destination_Img_Mobile" ColumnName="Destination_Img_Mobile" />
-                <ScalarProperty Name="Destination_Img" ColumnName="Destination_Img" />
-                <ScalarProperty Name="Destination_Context" ColumnName="Destination_Context" />
-                <ScalarProperty Name="Destination_Title" ColumnName="Destination_Title" />
-                <ScalarProperty Name="Destination_ID" ColumnName="Destination_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -5024,6 +5062,26 @@
                 <ScalarProperty Name="Destination_Type_Title2" ColumnName="Destination_Type_Title2" />
                 <ScalarProperty Name="Destination_Type_Title1" ColumnName="Destination_Type_Title1" />
                 <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Destination_Index">
+            <EntityTypeMapping TypeName="ForestModel.Destination_Index">
+              <MappingFragment StoreEntitySet="Destination_Index">
+                <ScalarProperty Name="Destination_MAP_LEGEND_ID" ColumnName="Destination_MAP_LEGEND_ID" />
+                <ScalarProperty Name="Destination_Context" ColumnName="Destination_Context" />
+                <ScalarProperty Name="Destination_Title" ColumnName="Destination_Title" />
+                <ScalarProperty Name="Destination_ID" ColumnName="Destination_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MAP_LEGEND">
+            <EntityTypeMapping TypeName="ForestModel.MAP_LEGEND">
+              <MappingFragment StoreEntitySet="MAP_LEGEND">
+                <ScalarProperty Name="Destination_Img_Mobile" ColumnName="Destination_Img_Mobile" />
+                <ScalarProperty Name="Destination_Img" ColumnName="Destination_Img" />
+                <ScalarProperty Name="Destination_MAP_LEGEND_Name" ColumnName="Destination_MAP_LEGEND_Name" />
+                <ScalarProperty Name="Destination_MAP_LEGEND_ID" ColumnName="Destination_MAP_LEGEND_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

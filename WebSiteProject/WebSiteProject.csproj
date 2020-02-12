@@ -422,6 +422,9 @@
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MAP_LEGEND.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Menu.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
@@ -3182,7 +3185,7 @@
     <Content Include="ClassDiagram1.cd" />
     <Content Include="Areas\webadmin\Views\Destination_Index\Create.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\Delete.cshtml" />
-    <Content Include="Areas\webadmin\Views\Destination_Index\Details.cshtml" />
+    <Content Include="Areas\webadmin\Views\Destination_Index\MainTitleAndContent.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\Edit.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\Index.cshtml" />
     <Content Include="Areas\webadmin\Views\Menu\MenuLinkDestination.cshtml" />

@@ -19,7 +19,6 @@
         <EntityTypeShape EntityType="ForestModel.City" Width="1.5" PointX="12.75" PointY="10.75" />
         <EntityTypeShape EntityType="ForestModel.ColumnSetting" Width="1.5" PointX="6.75" PointY="13.75" />
         <EntityTypeShape EntityType="ForestModel.Country" Width="1.5" PointX="8.75" PointY="13.75" />
-        <EntityTypeShape EntityType="ForestModel.Destination_Index" Width="1.75" PointX="10.75" PointY="13.75" />
         <EntityTypeShape EntityType="ForestModel.EventListItem" Width="1.5" PointX="13.125" PointY="13.75" />
         <EntityTypeShape EntityType="ForestModel.EventListUnitSetting" Width="1.5" PointX="14.75" PointY="0.75" />
         <EntityTypeShape EntityType="ForestModel.F_HashTag_Type" Width="1.5" PointX="0.75" PointY="0.875" />
@@ -80,7 +79,10 @@
         <EntityTypeShape EntityType="ForestModel.LinkItem" Width="1.5" PointX="22.75" PointY="28.75" />
         <EntityTypeShape EntityType="ForestModel.ZipCode" Width="1.5" PointX="28.75" PointY="23.75" />
         <AssociationConnector Association="ForestModel.FK_F_Sub_HashTag_Type_F_HashTag_Type" />
-        <EntityTypeShape EntityType="ForestModel.F_Destination_Type" Width="2" PointX="9.375" PointY="29.75" />
+        <EntityTypeShape EntityType="ForestModel.F_Destination_Type" Width="2.5" PointX="9.375" PointY="29.75" />
+        <EntityTypeShape EntityType="ForestModel.Destination_Index" Width="1.5" PointX="31.625" PointY="26.875" />
+        <EntityTypeShape EntityType="ForestModel.MAP_LEGEND" Width="1.5" PointX="29.375" PointY="26.875" />
+        <AssociationConnector Association="ForestModel.FK_Destination_Index_MAP_LEGEND" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

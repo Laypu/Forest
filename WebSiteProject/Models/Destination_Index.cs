@@ -17,8 +17,8 @@ namespace WebSiteProject.Models
         public int Destination_ID { get; set; }
         public string Destination_Title { get; set; }
         public string Destination_Context { get; set; }
-        public string Destination_Img { get; set; }
-        public string Destination_Img_Mobile { get; set; }
-        public string Destination_Catagory { get; set; }
+        public Nullable<int> Destination_MAP_LEGEND_ID { get; set; }
+    
+        public virtual MAP_LEGEND MAP_LEGEND { get; set; }
     }
 }

@@ -1,0 +1,141 @@
+﻿@model WebSiteProject.Models.Destination_Index
+
+<div class="title_01">Destination</div>
+<div id="Partial_Index_MenuLink">
+    <!--.......-->
+</div>
+
+<div class="portlet light bordered">
+    <div class="title_04">目的地主版設定(標題&文字)</div>
+
+    <div class="form-horizontal form-bordered" id="editform" enctype="multipart/form-data">
+
+        <form method="post" action="@Url.Action("MainTitleAndContent_Edit","Destination_Index")">
+            <div class="portlet light form-fit bordered">
+                <div class="portlet-body form">
+                    <div class="form-horizontal form-bordered">
+                        <div class="form-body">
+                            <input name="_Destination_Index_ID" type="hidden" value="@Model.Destination_ID" />
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                    <span>標題名稱</span>
+                                </div>
+                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                    <textarea id="_Destination_Index_Title" name="_Destination_Index_Title" class="form-control">@Model.Destination_Title</textarea>
+                                    <span>
+                                        <a id="addbr1" class="btn btn-primary">加入換行符號</a>
+                                    </span>
+                                    <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                    <span>內容</span>
+                                </div>
+                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                    <textarea id="_Destination_Index_Content" name="_Destination_Index_Content" class="form-control f_textarea">@Model.Destination_Context</textarea>
+                                    <span>
+                                        <a id="addbr" class="btn btn-primary">加入換行符號</a>
+                                    </span>
+                                    <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-5 col-sm-12 col-xs-12 bg-white mobile_white text-center">
+
+                                </div>
+                                <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white text-center">
+                                    <button name="Btn_Destination_Index_Edit" class="form-control btn-warning text-center" data-id="@Model.Destination_ID" data-name="@Model.Destination_Title">修改</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+
+@section scripts{
+    <script>
+        $(function () {
+
+            //Content加入換行符號
+            addbr();
+
+            //Title加入換行符號
+            addbr1()
+
+
+
+            @*$("#Partial_Index_MenuLink").append(
+                `<div class="portlet light bordered">
+                    <!--set item start-->
+                    <div class="table-toolbar">
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <p class="class_title">管理項目</p>
+                            <div class="display_inline">
+                                <select id="Index_Partial_Select" class="form-control checkitem" onchange="window.location.href=this.value">
+                                    <option data-index="0" value="#">請選擇</option>
+                                    <option data-index="1" value="#">連結路徑</option>
+                                    <option data-index="2" value="@Url.Action("Index", "AD", new { site_id = 4 })">輪播牆設定</option>
+                                    <option data-index="3" value="@Url.Action("MainTitleAndContent", "F_Thingtodo")">旅遊資訊主版設定(標題&文字)</option>
+                                    <option data-index="4" value="#">五大旅遊資訊設定</option>
+                                    <option data-index="5" value="#">#</option>
+                                    <option data-index="6" value="#">#</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>`
+            );*@
+
+
+        });
+
+
+        //插入換行符號
+        function addbr() {
+            $("#addbr").click(function () {
+                console.log("</br>");
+                str = "</br>";
+                insertText(_Thingtodo_Index_Content, str)
+            });
+        };
+
+        //插入換行符號
+        function addbr1() {
+            $("#addbr1").click(function () {
+                console.log("</br>");
+                str = "</br>";
+                insertText(_Thingtodo_Index_Title, str)
+            });
+        };
+
+        //取得當前游標位置
+        //obj是textarea的id，str是要加入的字串
+        //ex: <textarea id="test"></textarea>; str="<br/>"; insertText(test, str)
+        function insertText(obj, str) {
+            if (document.selection) {
+                var sel = document.selection.createRange();
+                sel.text = str;
+            } else if (typeof obj.selectionStart === 'number' && typeof obj.selectionEnd === 'number') {
+                var startPos = obj.selectionStart,
+                    endPos = obj.selectionEnd,
+                    cursorPos = startPos,
+                    tmpStr = obj.value;
+                obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);
+                cursorPos = str.length;
+                obj.selectionStart = obj.selectionEnd = cursorPos;
+            } else {
+                obj.value = str;
+            }
+        }
+
+
+
+    </script>
+}
