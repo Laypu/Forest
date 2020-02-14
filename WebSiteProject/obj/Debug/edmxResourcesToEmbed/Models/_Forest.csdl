@@ -80,11 +80,7 @@
     </AssociationSet>
     <EntitySet Name="F_Destination_Type" EntityType="ForestModel.F_Destination_Type" />
     <EntitySet Name="Destination_Index" EntityType="ForestModel.Destination_Index" />
-    <EntitySet Name="MAP_LEGEND" EntityType="ForestModel.MAP_LEGEND" />
-    <AssociationSet Name="FK_Destination_Index_MAP_LEGEND" Association="ForestModel.FK_Destination_Index_MAP_LEGEND">
-      <End Role="MAP_LEGEND" EntitySet="MAP_LEGEND" />
-      <End Role="Destination_Index" EntitySet="Destination_Index" />
-    </AssociationSet>
+    <EntitySet Name="Destination_MapLegend" EntityType="ForestModel.Destination_MapLegend" />
   </EntityContainer>
   <EntityType Name="ActiveItem">
     <Key>
@@ -1664,10 +1660,8 @@
     <Property Name="Destination_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Destination_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Destination_Context" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Destination_MAP_LEGEND_ID" Type="Int32" />
-    <NavigationProperty Name="MAP_LEGEND" Relationship="ForestModel.FK_Destination_Index_MAP_LEGEND" FromRole="Destination_Index" ToRole="MAP_LEGEND" />
   </EntityType>
-  <EntityType Name="MAP_LEGEND">
+  <EntityType Name="Destination_MapLegend">
     <Key>
       <PropertyRef Name="Destination_MAP_LEGEND_ID" />
     </Key>
@@ -1675,18 +1669,5 @@
     <Property Name="Destination_MAP_LEGEND_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Destination_Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Destination_Img_Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Destination_Index" Relationship="ForestModel.FK_Destination_Index_MAP_LEGEND" FromRole="MAP_LEGEND" ToRole="Destination_Index" />
   </EntityType>
-  <Association Name="FK_Destination_Index_MAP_LEGEND">
-    <End Type="ForestModel.MAP_LEGEND" Role="MAP_LEGEND" Multiplicity="0..1" />
-    <End Type="ForestModel.Destination_Index" Role="Destination_Index" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MAP_LEGEND">
-        <PropertyRef Name="Destination_MAP_LEGEND_ID" />
-      </Principal>
-      <Dependent Role="Destination_Index">
-        <PropertyRef Name="Destination_MAP_LEGEND_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema>

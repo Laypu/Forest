@@ -40,9 +40,9 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         }
 
         [HttpGet]
-        public ActionResult destination(int? F_MenuType)
+        public ActionResult Destination(int? F_MenuType)
         {
-            var DES = db.Destination_Index.ToList();
+            var DES = db.F_Destination_Type.ToList();
 
             Session["F_MenuType"] = F_MenuType;
 
@@ -50,7 +50,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Five_Thingstodo_Edit(int _Thingtodo_Type_ID, string _Thingtodo_Type_Title1, string _Thingtodo_Type_Title2, string _Thingtodo_Type_Description, HttpPostedFileBase Index_Img_File)
+        public ActionResult Destination_Edit(int _DES_Type_ID, string _DES_Type_Title1, string _DES_Type_Title2, string _DES_Type_Description, HttpPostedFileBase Index_Img_File)
 
         {
             string Index_Img_Name = "";
@@ -60,7 +60,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             {
                 if (Index_Img_File.ContentLength > 0)  //若檔案不為空檔案
                 {
-                    string uploadPath = Server.MapPath("~/UploadImage/ThingsToDo_Img/");
+                    string uploadPath = Server.MapPath("~/UploadImage/Destination_Img/");
                     // 如果UploadFiles文件夹不存在则先创建
                     if (!Directory.Exists(uploadPath))
                     {
@@ -68,7 +68,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     }
 
                     Index_Img_Name = Path.GetFileName(Index_Img_File.FileName);  //取得檔案名
-                    var path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), Index_Img_Name);  //取得本機檔案路徑
+                    var path = Path.Combine(Server.MapPath("~/UploadImage/Destination_Img/"), Index_Img_Name);  //取得本機檔案路徑
 
 
 
@@ -78,13 +78,13 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     {
                         Random rand = new Random();
                         Index_Img_Name = rand.Next().ToString() + "-" + Index_Img_Name;
-                        path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), Index_Img_Name);
+                        path = Path.Combine(Server.MapPath("~/UploadImage/Destination_Img/"), Index_Img_Name);
                     }
                     Index_Img_File.SaveAs(path);
                     //若有重複則換名字_end
 
 
-                    db.F_Thingtodo_Type.Where(t => t.F_Thingtodo_Type_ID == _Thingtodo_Type_ID).FirstOrDefault().F_Thingtodo_Type_ImgName = Index_Img_Name;
+                    db.F_Destination_Type.Where(t => t.Destination_Type_ID == _DES_Type_ID).FirstOrDefault().Destination_Type_ImgName = Index_Img_Name;
                     db.SaveChanges();
                 }
             }
@@ -92,10 +92,10 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 
             try
             {
-                var DES = db.F_Thingtodo_Type.Find(_Thingtodo_Type_ID);
-                DES.F_Thingtodo_Type_Title1 = _Thingtodo_Type_Title1;
-                DES.F_Thingtodo_Type_Title2 = _Thingtodo_Type_Title2;
-                DES.F_Thingtodo_Type_Description = _Thingtodo_Type_Description;
+                var DES = db.F_Destination_Type.Find(_DES_Type_ID);
+                DES.Destination_Type_Title1 = _DES_Type_Title1;
+                DES.Destination_Type_Title2 = _DES_Type_Title2;
+                DES.Destination_Type_Description = _DES_Type_Description;
                 db.Entry(DES).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }

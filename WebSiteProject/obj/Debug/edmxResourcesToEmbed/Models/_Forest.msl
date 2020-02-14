@@ -1632,16 +1632,15 @@
     <EntitySetMapping Name="Destination_Index">
       <EntityTypeMapping TypeName="ForestModel.Destination_Index">
         <MappingFragment StoreEntitySet="Destination_Index">
-          <ScalarProperty Name="Destination_MAP_LEGEND_ID" ColumnName="Destination_MAP_LEGEND_ID" />
           <ScalarProperty Name="Destination_Context" ColumnName="Destination_Context" />
           <ScalarProperty Name="Destination_Title" ColumnName="Destination_Title" />
           <ScalarProperty Name="Destination_ID" ColumnName="Destination_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="MAP_LEGEND">
-      <EntityTypeMapping TypeName="ForestModel.MAP_LEGEND">
-        <MappingFragment StoreEntitySet="MAP_LEGEND">
+    <EntitySetMapping Name="Destination_MapLegend">
+      <EntityTypeMapping TypeName="ForestModel.Destination_MapLegend">
+        <MappingFragment StoreEntitySet="Destination_MapLegend">
           <ScalarProperty Name="Destination_Img_Mobile" ColumnName="Destination_Img_Mobile" />
           <ScalarProperty Name="Destination_Img" ColumnName="Destination_Img" />
           <ScalarProperty Name="Destination_MAP_LEGEND_Name" ColumnName="Destination_MAP_LEGEND_Name" />

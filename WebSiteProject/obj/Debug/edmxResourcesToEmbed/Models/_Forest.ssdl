@@ -350,7 +350,15 @@
     <Property Name="Destination_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Destination_Title" Type="nvarchar(max)" />
     <Property Name="Destination_Context" Type="nvarchar(max)" />
-    <Property Name="Destination_MAP_LEGEND_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Destination_MapLegend">
+    <Key>
+      <PropertyRef Name="Destination_MAP_LEGEND_ID" />
+    </Key>
+    <Property Name="Destination_MAP_LEGEND_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Destination_MAP_LEGEND_Name" Type="nvarchar(max)" />
+    <Property Name="Destination_Img" Type="nvarchar(max)" />
+    <Property Name="Destination_Img_Mobile" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="EventListItem">
     <Key>
@@ -916,15 +924,6 @@
     <Property Name="CreateName" Type="nvarchar" MaxLength="20" />
     <Property Name="UpdateName" Type="nvarchar" MaxLength="20" />
     <Property Name="IsVerift" Type="bit" />
-  </EntityType>
-  <EntityType Name="MAP_LEGEND">
-    <Key>
-      <PropertyRef Name="Destination_MAP_LEGEND_ID" />
-    </Key>
-    <Property Name="Destination_MAP_LEGEND_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Destination_MAP_LEGEND_Name" Type="nvarchar(max)" />
-    <Property Name="Destination_Img" Type="nvarchar(max)" />
-    <Property Name="Destination_Img_Mobile" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Menu">
     <Key>
@@ -1581,18 +1580,6 @@
     <Property Name="Town" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Code" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="FK_Destination_Index_MAP_LEGEND">
-    <End Role="MAP_LEGEND" Type="Self.MAP_LEGEND" Multiplicity="0..1" />
-    <End Role="Destination_Index" Type="Self.Destination_Index" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MAP_LEGEND">
-        <PropertyRef Name="Destination_MAP_LEGEND_ID" />
-      </Principal>
-      <Dependent Role="Destination_Index">
-        <PropertyRef Name="Destination_MAP_LEGEND_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_F_Sub_HashTag_Type_F_HashTag_Type">
     <End Role="F_HashTag_Type" Type="Self.F_HashTag_Type" Multiplicity="1" />
     <End Role="F_Sub_HashTag_Type" Type="Self.F_Sub_HashTag_Type" Multiplicity="*" />
@@ -1621,6 +1608,7 @@
     <EntitySet Name="ColumnSetting" EntityType="Self.ColumnSetting" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Destination_Index" EntityType="Self.Destination_Index" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Destination_MapLegend" EntityType="Self.Destination_MapLegend" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EventListItem" EntityType="Self.EventListItem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EventListUnitSetting" EntityType="Self.EventListUnitSetting" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="F_Destination_Type" EntityType="Self.F_Destination_Type" Schema="dbo" store:Type="Tables" />
@@ -1650,7 +1638,6 @@
     <EntitySet Name="Lang" EntityType="Self.Lang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LangKey" EntityType="Self.LangKey" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LangKeyUnit" EntityType="Self.LangKeyUnit" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MAP_LEGEND" EntityType="Self.MAP_LEGEND" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MessageItem" EntityType="Self.MessageItem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MessageUnitSetting" EntityType="Self.MessageUnitSetting" Schema="dbo" store:Type="Tables" />
@@ -1724,10 +1711,6 @@
     [ZipCode].[Code] AS [Code]
     FROM [dbo].[ZipCode] AS [ZipCode]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="FK_Destination_Index_MAP_LEGEND" Association="Self.FK_Destination_Index_MAP_LEGEND">
-      <End Role="MAP_LEGEND" EntitySet="MAP_LEGEND" />
-      <End Role="Destination_Index" EntitySet="Destination_Index" />
-    </AssociationSet>
     <AssociationSet Name="FK_F_Sub_HashTag_Type_F_HashTag_Type" Association="Self.FK_F_Sub_HashTag_Type_F_HashTag_Type">
       <End Role="F_HashTag_Type" EntitySet="F_HashTag_Type" />
       <End Role="F_Sub_HashTag_Type" EntitySet="F_Sub_HashTag_Type" />

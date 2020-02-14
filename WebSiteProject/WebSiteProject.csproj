@@ -329,6 +329,9 @@
     <Compile Include="Models\Destination_Index.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Destination_MapLegend.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\EventListItem.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
@@ -422,9 +425,6 @@
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\MAP_LEGEND.cs">
-      <DependentUpon>_Forest.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Menu.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
@@ -3186,13 +3186,13 @@
     <Content Include="Areas\webadmin\Views\Destination_Index\Create.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\Delete.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\MainTitleAndContent.cshtml" />
-    <Content Include="Areas\webadmin\Views\Destination_Index\Edit.cshtml" />
+    <Content Include="Areas\webadmin\Views\Destination_Index\Destination.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\Index.cshtml" />
     <Content Include="Areas\webadmin\Views\Menu\MenuLinkDestination.cshtml" />
     <Content Include="Areas\webadmin\Views\F_Destination_Type\Create.cshtml" />
     <Content Include="Areas\webadmin\Views\F_Destination_Type\Delete.cshtml" />
     <Content Include="Areas\webadmin\Views\F_Destination_Type\Details.cshtml" />
-    <Content Include="Areas\webadmin\Views\F_Destination_Type\Edit.cshtml" />
+    <Content Include="Areas\webadmin\Views\F_Destination_Type\dd.cshtml" />
     <Content Include="Areas\webadmin\Views\F_Destination_Type\Index.cshtml" />
     <None Include="Properties\PublishProfiles\MySkylines.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

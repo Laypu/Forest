@@ -100,6 +100,6 @@ namespace WebSiteProject.Models
         public virtual DbSet<ZipCode> ZipCodes { get; set; }
         public virtual DbSet<F_Destination_Type> F_Destination_Type { get; set; }
         public virtual DbSet<Destination_Index> Destination_Index { get; set; }
-        public virtual DbSet<MAP_LEGEND> MAP_LEGEND { get; set; }
+        public virtual DbSet<Destination_MapLegend> Destination_MapLegend { get; set; }
     }
 }
