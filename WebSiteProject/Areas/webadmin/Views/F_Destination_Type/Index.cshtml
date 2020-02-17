@@ -1,7 +1,7 @@
 ﻿@*destination 觀光區編輯*@
 
 @model IEnumerable<WebSiteProject.Models.F_Destination_Type>
-
+ 
 @{
     if (TempData["Msg"] != null)
     {
@@ -27,22 +27,12 @@
 </style>
 
 
-@{
-    if (ViewBag.MenuType == 179 || (int)Session["F_MenuType"] == 179)
-    {
         <div class="title_01">Destination</div>
         <div id="Partial_Index_Destination">
             <!--.......-->
         </div>
-    }
-    else if (ViewBag.MenuType == 0 || (int)Session["F_MenuType"] == 0)
-    {
-        <div class="title_01">Home</div>
-        <div id="Partial_Index">
+    
 
-        </div>
-    }
-}
 
 
 
@@ -55,10 +45,10 @@
             <div class="portlet-body form">
                 <div class="form-horizontal form-bordered">
                     <div class="form-body" id="form-body">
-                        <form method="post" action="#" class="Five_Thingtodo_Header">
+                        <form method="post" class="Five_Thingtodo_Header">
                             <div class="form-group ">
                                 <div class="col-md-1 col-sm-12 col-xs-12 text-center">
-                                    <span class="display_inline">序號</span>
+                                    @Html.LabelFor(m=>m.)序號</span>
                                 </div>
                                 <div class="col-md-2 col-sm-12 col-xs-12 text-center ">
                                     <span class="display_inline">標題(上)</span>

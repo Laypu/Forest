@@ -18,24 +18,27 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         // GET: webadmin/destination
         public ActionResult MainTitleAndContent()
         {
+            
             Destination_Index DES = new Destination_Index();
             DES.Destination_Title = Server.HtmlDecode(db.Destination_Index.FirstOrDefault().Destination_Title);
             DES.Destination_Context = Server.HtmlDecode(db.Destination_Index.FirstOrDefault().Destination_Context);
             DES.Destination_ID = db.Destination_Index.FirstOrDefault().Destination_ID;
-            
             return View(DES);
         }
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult MainTitleAndContent_Edit(int _Destination_ID, string _Destination_Title, string _Destination_Context)
+        public ActionResult MainTitleAndContent_Edit(int _Destination_Index_ID,string _Destination_Index_Title, string _Destination_Index_Context)
         {
-            var DES = db.Destination_Index.Find(_Destination_ID);
-            DES.Destination_Title = _Destination_Title;
-            DES.Destination_Context = Server.HtmlEncode(_Destination_Context);
-            db.Entry(DES).State = System.Data.Entity.EntityState.Modified;
-            db.SaveChanges();
 
+                var DES = db.Destination_Index.FirstOrDefault();
+                DES.Destination_Title = _Destination_Index_Title;
+                DES.Destination_Context = Server.HtmlEncode(_Destination_Index_Context);
+                db.Entry(DES).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            
+           
+            
             return RedirectToAction("MainTitleAndContent");
         }
 
@@ -274,6 +277,24 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult LoadData()
+        {
+            var datas = db.F_Destination_Type.AsEnumerable().Select(n => new
+            {
+                n.Destination_Type_ID,
+                n.Destination_Type_Title1,
+                n.Destination_Type_Title2,
+                n.Destination_Type_Description,
+                n.Destination_Type_CreateDate,
+                n.Destination_Type_Link,
+                n.Destination_Type_ImgName
+            }).ToList();
+
+
+            return Json(new { data = datas }, JsonRequestBehavior.AllowGet);
+
         }
     }
 }

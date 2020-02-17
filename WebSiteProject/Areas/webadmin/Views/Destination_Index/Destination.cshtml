@@ -46,7 +46,7 @@
 
 
 
-<div class="portlet light bordered">
+<div class="portlet light bordered" style="padding-bottom:50px">
     <div class="title_04">@(ViewBag.FreeZoneTitleID == 1 ? "自由編輯區一" : "目的地設定")</div>
 
     <div class="form-horizontal form-bordered" id="editform" enctype="multipart/form-data">
@@ -55,7 +55,8 @@
             <div class="portlet-body form">
                 <div class="form-horizontal form-bordered">
                     <div class="form-body" id="form-body">
-                        <form method="post" action="#" class="Five_Thingtodo_Header">
+                        
+                        <form method="post" action="#" class="Five_Thingtodo_Header" id="editform">
                             <div class="form-group ">
                                 <div class="col-md-1 col-sm-12 col-xs-12 text-center">
                                     <span class="display_inline">序號</span>
@@ -66,57 +67,62 @@
                                 <div class="col-md-2 col-sm-12 col-xs-12  text-center">
                                     <span class="display_inline">標題(下)</span>
                                 </div>
-                                <div class="col-md-1 col-sm-12 col-xs-12   text-center">
+                                <div class="col-md-2 col-sm-12 col-xs-12   text-center">
                                     <span class="display_inline">圖片</span>
                                 </div>
                                 <div class="col-md-5 col-sm-12 col-xs-12   text-center">
                                     <span class="display_inline">說明</span>
                                 </div>
-                                <div class="col-md-1 col-sm-12 col-xs-12   text-center">
-                                    <span class="display_inline">編輯</span>
-                                </div>
+                                @*<div class="col-md-1 col-sm-12 col-xs-12   text-center">
+                <span class="display_inline">編輯</span>
+            </div>*@
                             </div>
                             <hr class="Five_Thingtodo_div" />
-                        </form>
-                        @{
-                            var x = 0;
-                            foreach (var item in Model)
-                            {
-                                <form method="post" action="@Url.Action("Destination_Edit","Destination")" enctype="multipart/form-data">
-                                    <div class="form-group">
-                                        <input type="hidden" name="_Destination_Type_ID" value="@item.Destination_Type_ID" />
+                            @*</form>*@
+                            @{
+                                var x = 0;
+                                foreach (var item in Model)
+                                {
+                                    @*<form method="post" action="@Url.Action("Destination_Edit","Destination")" enctype="multipart/form-data">*@
+                                    <div class="form-group" style="background-color:white">
+                                        <input type="hidden" name="_Destination_Type_ID" id="Destination_Type_ID" value="@item.Destination_Type_ID" />
                                         <div class="col-md-1 col-sm-12 col-xs-12 text-center">
                                             <span class="display_inline">@(++x)</span>
                                         </div>
                                         <div class="col-md-2 col-sm-12 col-xs-12 text-center ">
                                             <span class="display_inline">
-                                                <input type="text" name="_Destination_Type_Title1" value="@item.Destination_Type_Title1" class="form-control" />
+                                                <input type="text" name="_Destination_Type_Title1" id="Destination_Type_Title1" value="@item.Destination_Type_Title1" class="form-control" />
                                             </span>
                                         </div>
                                         <div class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center">
                                             <div class="col-md-11 col-sm-12 col-xs-12 bg-white mobile_white forest_link">
-                                                <input type="text" name="_Destination_Type_Title2" value="@item.Destination_Type_Title2" class="form-control" />
+                                                <input type="text" name="_Destination_Type_Title2" id="Destination_Type_Title2"  value="@item.Destination_Type_Title2" class="form-control" />
                                             </div>
                                         </div>
 
-                                        <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center align-center">
+                                        <div class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center align-center">
                                             <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/ThingsToDo_Img/")@item.Destination_Type_ImgName" />
                                             <br />
-                                            <input data-imgid="Index_Img_File@(x)" name="Index_Img_File" type="file" class="form-control" accept=".jpeg,.jpg,.gif,.png" />
+                                            <input data-imgid="Index_Img_File@(x)"  name="Index_Img_File" type="file" class="form-control" id="Index_Img_File" accept=".jpeg,.jpg,.gif,.png" />
                                         </div>
 
                                         <div class="col-md-5 col-sm-12 col-xs-12 bg-white mobile_white">
-                                            <textarea name="_Destination_Type_Description" class="form-control">@item.Destination_Type_Description</textarea>
-                                        </div>                         
-                                        <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                            <button class="form-control btn-warning text-center">編輯</button>
+                                            <textarea name="_Destination_Type_Description" id="Destination_Type_Description" style="resize:none; height:160px"  class="form-control">@item.Destination_Type_Description</textarea>
                                         </div>
-                                       
+                                        @*<div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white ">
+                        <button class="form-control btn-warning text-center">編輯</button>
+                    </div>*@
+
                                     </div>
                                     <hr class="Five_Thingtodo_div" />
-                                </form>
+                                    @*</form>*@
+                                }
+
                             }
-                        }
+                            <div  class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white text-center " id="div_buttons" style="margin:10px;padding:10px">
+                                <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -140,9 +146,92 @@
 
             //圖片上傳修改
             ShowImg();
+            
+            //送出表單
+            $('#editform').submit(function (event) {
+               var formData = new FormData();
+               var array = $('#editform').serializeArray();
+               $.each(array, function () {
+                   formData.append(this.name, this.value);
+               });
+               formData.append("Title", encodeURIComponent($('#Title').val()));
+                var iscon = true;
+                if ($('#LinkUrl').val() != "" && $('#LinkUrlDesc').val() == "") {
+                    $('#LinkUrlDesc-error').show();
+                    iscon = false;
+                }
+                var images = $('#file_image').get(0).files;
+                if (images.length > 0) {
+                    formData.append("ImageFile", images[0]);
+                    if ($('#ImageFileDesc').val() == "") {
+                        $('#ImageFileDesc-error').show();
+                        iscon = false;
+                    }
+                } else {
+                    formData.append("ImageFile", null);
+                    if ($('#ImageFileName').val() != "") {
+                        if ($('#ImageFileDesc').val() == "") {
+                            $('#ImageFileDesc-error').show();
+                            iscon = false;
+                        }
+                    }
+                }
+               //
+                var rimages = $('#file_relateimage').get(0).files;
+                if (rimages.length > 0) {
+                    formData.append("RelateImageFile", rimages[0]);
+                } else {
+                    formData.append("RelateImageFile", null);
+                }
+               //
 
-        });
+                var uploadfile = $('#uploadfile').get(0).files;
+                if (uploadfile.length > 0) {
+                    formData.append("UploadFile", uploadfile[0]);
+                    if ($('#UploadFileDesc').val() == "") {
+                        $('#UploadFileDesc-error').show();
+                        iscon = false;
+                    }
+                } else {
+                    formData.append("UploadFile", null);
+                    if ($('#UploadFileName').val() != "") {
+                        if ($('#UploadFileDesc').val() == "") {
+                            $('#UploadFileDesc-error').show();
+                            iscon = false;
+                        }
+                    }
+                }
 
+                if (iscon == false)
+                { return false; }
+
+
+                @*$.ajax({
+                    url: this.action,
+                    data: formData,
+                    type: 'POST',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        alert(data);
+                        CreatePost('@Url.Action("ModelItem")', { mainid: '@Model.ModelID'});
+                    }, error: function () {
+                        // handle error
+                    }
+                });*@
+            //    return false;
+            //});
+
+
+           
+
+            
+
+        })
+
+        
+        
 
 
         //圖片上傳修改
@@ -158,6 +247,8 @@
                 };
             })
         }
+
+
 
     </script>
 }

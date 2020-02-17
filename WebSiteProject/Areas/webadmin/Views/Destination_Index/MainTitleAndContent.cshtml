@@ -10,7 +10,7 @@
 
     <div class="form-horizontal form-bordered" id="editform" enctype="multipart/form-data">
 
-        <form method="post" action="@Url.Action("MainTitleAndContent_Edit","Destination_Index")">
+        <form method="post" action="@Url.Action("MainTitleAndContent_Edit", "Destination_Index")">
             <div class="portlet light form-fit bordered">
                 <div class="portlet-body form">
                     <div class="form-horizontal form-bordered">
@@ -21,11 +21,7 @@
                                     <span>標題名稱</span>
                                 </div>
                                 <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    <textarea id="_Destination_Index_Title" name="_Destination_Index_Title" class="form-control">@Model.Destination_Title</textarea>
-                                    <span>
-                                        <a id="addbr1" class="btn btn-primary">加入換行符號</a>
-                                    </span>
-                                    <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>
+                                    <textarea id="_Destination_Index_Title" name="_Destination_Index_Title" class="form-control" style="height:50px;resize:none">@Model.Destination_Title</textarea>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -33,11 +29,7 @@
                                     <span>內容</span>
                                 </div>
                                 <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    <textarea id="_Destination_Index_Content" name="_Destination_Index_Content" class="form-control f_textarea">@Model.Destination_Context</textarea>
-                                    <span>
-                                        <a id="addbr" class="btn btn-primary">加入換行符號</a>
-                                    </span>
-                                    <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>
+                                    <textarea id="_Destination_Index_Context" name="_Destination_Index_Context" class="form-control f_textarea" style="height:250px;resize:none">@Model.Destination_Context</textarea>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -45,7 +37,8 @@
 
                                 </div>
                                 <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white text-center">
-                                    <button name="Btn_Destination_Index_Edit" class="form-control btn-warning text-center" data-id="@Model.Destination_ID" data-name="@Model.Destination_Title">修改</button>
+                                    <button name="Btn_Destination_Index_Edit" class="form-control btn blue text-center" data-id="@Model.Destination_ID" data-name="@Model.Destination_Title">確認送出</button>
+                                    
                                 </div>
                             </div>
                         </div>

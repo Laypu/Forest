@@ -22,11 +22,11 @@
                                     <span>標題名稱</span>
                                 </div>
                                 <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    <textarea id="_Thingtodo_Index_Title" name="_Thingtodo_Index_Title"  class="form-control">@Model.F_Thingtodo_Index_Title</textarea>
-                                    <span>
+                                    <textarea id="_Thingtodo_Index_Title" name="_Thingtodo_Index_Title"  class="form-control" style="height:50px;resize:none">@Model.F_Thingtodo_Index_Title</textarea>
+                                    @*<span>
                                         <a id="addbr1" class="btn btn-primary">加入換行符號</a>
                                     </span>
-                                    <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>
+                                    <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>*@
                                 </div>
                             </div>
                             <div class="form-group">
@@ -34,11 +34,11 @@
                                     <span>內容</span>
                                 </div>
                                 <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    <textarea id="_Thingtodo_Index_Content" name="_Thingtodo_Index_Content" class="form-control f_textarea">@Model.F_Thingtodo_Index_Content</textarea>
-                                    <span>
+                                    <textarea id="_Thingtodo_Index_Content" name="_Thingtodo_Index_Content" class="form-control f_textarea" style="height:250px;resize:none">@Model.F_Thingtodo_Index_Content</textarea>
+                                    @*<span>
                                         <a id="addbr" class="btn btn-primary">加入換行符號</a>
                                     </span>
-                                    <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>
+                                    <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>*@
                                 </div>
                             </div>
                             <div class="form-group">
@@ -46,7 +46,7 @@
 
                                 </div>
                                 <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white text-center">
-                                    <button name="Btn_Thingtodo_Index_Edit" class="form-control btn-warning text-center" data-id="@Model.F_Thingtodo_Index_ID" data-name="@Model.F_Thingtodo_Index_Title">修改</button>
+                                    <button name="Btn_Thingtodo_Index_Edit" class="form-control btn blue text-center" data-id="@Model.F_Thingtodo_Index_ID" data-name="@Model.F_Thingtodo_Index_Title">確認送出</button>
                                 </div>
                             </div>
                         </div>

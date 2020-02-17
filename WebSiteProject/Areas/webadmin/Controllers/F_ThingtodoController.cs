@@ -27,6 +27,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         [ValidateInput(false)]
         public ActionResult MainTitleAndContent_Edit(int _Thingtodo_Index_ID, string _Thingtodo_Index_Title, string _Thingtodo_Index_Content)
         {
+            _Thingtodo_Index_ID = 1;
             var TTD = db.F_Thingtodo_Index.Find(_Thingtodo_Index_ID);
             TTD.F_Thingtodo_Index_Title = _Thingtodo_Index_Title;
             TTD.F_Thingtodo_Index_Content = Server.HtmlEncode(_Thingtodo_Index_Content);

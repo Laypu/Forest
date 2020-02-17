@@ -70,9 +70,9 @@
                                 <div class="col-md-5 col-sm-12 col-xs-12   text-center">
                                     <span class="display_inline">說明</span>
                                 </div>
-                                <div class="col-md-1 col-sm-12 col-xs-12   text-center">
+                                @*<div class="col-md-1 col-sm-12 col-xs-12   text-center">
                                     <span class="display_inline">編輯</span>
-                                </div>
+                                </div>*@
                             </div>
                             <hr class="Five_Thingtodo_div" />
                         </form>
@@ -98,23 +98,21 @@
                                         </div>
 
                                         <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center align-center">
-                                            <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/ThingsToDo_Img/")@item.F_Thingtodo_Type_ImgName" />
-                                            <br />
-                                            <input data-imgid="Index_Img_File@(x)" name="Index_Img_File" type="file" class="form-control" accept=".jpeg,.jpg,.gif,.png" />
+                                                <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/ThingsToDo_Img/")@item.F_Thingtodo_Type_ImgName" />
+                                                <br />
+                                                <input data-imgid="Index_Img_File@(x)" name="Index_Img_File" type="file" class="form-control" accept=".jpeg,.jpg,.gif,.png" />
                                         </div>
 
                                         <div class="col-md-5 col-sm-12 col-xs-12 bg-white mobile_white">
-                                            <textarea name="_Thingtodo_Type_Description" class="form-control">@item.F_Thingtodo_Type_Description</textarea>
+                                            <textarea name="_Thingtodo_Type_Description" class="form-control" style="resize:none; height:160px" >@item.F_Thingtodo_Type_Description</textarea>
                                         </div>
 
 
 
-                                        <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                        @*<div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white ">
                                             <button class="form-control btn-warning text-center">編輯</button>
-                                        </div>
-                                        @*<div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white">
-                                                <a href="@Url.Action("Index_FreeZone_Delete","Home",new { id = item.F_Thingtodo_Type_ID})" class="form-control btn-danger text-center" onclick="return confirm('確定要刪除嗎?')">刪除</a>
-                                            </div>*@
+                                        </div>*@
+                                       
                                     </div>
                                     <hr class="Five_Thingtodo_div" />
                                 </form>
