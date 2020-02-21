@@ -10,16 +10,14 @@
 <div class="page-bar">
     <ul class="page-breadcrumb">
         <li>
-            <span href="#">Home</span>
+            <a href="@Url.Action("Index","Home")">Home</a>
             <i class="fa fa-circle"></i>
         </li>
         <li>
-            <span href="#">網站選單</span>
+            網站選單
             <i class="fa fa-circle"></i>
         </li>
-        <li>
-            <span href="#">@ViewBag.Title</span>
-        </li>
+        <li>@ViewBag.Title</li>
     </ul>
 
 </div>
@@ -58,7 +56,6 @@
                                 arrl2stratidx.Add(l1rowcount);
                                 l1rowcount += Math.Max(1, l3cnt);
                             }
-                            //先產生第一組tr
                             l1rowcount = l1rowcount == 0 ? 1 : l1rowcount;
                             IList<SQLModel.Models.Menu> _l3menu = null;
                             for (var idx = 0; idx < l1rowcount; idx++)
@@ -70,19 +67,19 @@
                                             <div class='display_inline' style='float:left'>
                                                 @if (ViewBag.onlylevle1 != "Y")
                                                 {
-                                                    <button type='button' class='btn green-meadow btn-xs addmenu' index='@l1.ID' nextlevel='@(l1.MenuLevel + 1)'><i class='fa fa-plus'></i></button>
+                                                    <button type='button' class='btn green-meadow btn-xs addmenu' index='@l1.ID' nextlevel='@(l1.MenuLevel + 1)'><i class='fa fa-plus' aria-hidden='true'></i></button>
                                                 }
-                                                <button type='button' class='btn red-mint btn-xs delmenu' index='@l1.ID'><i class='glyphicon glyphicon-trash'></i></button>
+                                                <button type='button' class='btn red-mint btn-xs delmenu' index='@l1.ID'><i class='glyphicon glyphicon-trash' aria-hidden='true'></i></button>
                                                 @if (l1.Status.Value)
                                                 {
-                                                    <button type='button' class='btn yellow btn-xs menudisable' index='@l1.ID'><i class='fa fa-check-square'></i></button>}
+                                                    <button type='button' class='btn yellow btn-xs menudisable' index='@l1.ID'><i class='fa fa-check-square' aria-hidden='true'></i></button>}
                                                 else
                                                 {
-                                                    <button type='button' class='btn yellow btn-xs menuenable' index='@l1.ID'><i class='fa fa fa-square-o'></i></button>}
-                                                <button type='button' class='btn btn-default btn-xs menusortup' index='@l1.ID'><i class='fa fa-angle-up'></i></button>
-                                                <button type='button' class='btn btn-default btn-xs menusortdown' index='@l1.ID'><i class='fa fa-angle-down'></i></button>
+                                                    <button type='button' class='btn yellow btn-xs menuenable' index='@l1.ID'><i class='fa fa fa-square-o' aria-hidden='true'></i></button>}
+                                                <button type='button' class='btn btn-default btn-xs menusortup' index='@l1.ID'><i class='fa fa-angle-up' aria-hidden='true'></i></button>
+                                                <button type='button' class='btn btn-default btn-xs menusortdown' index='@l1.ID'><i class='fa fa-angle-down' aria-hidden='true'></i></button>
                                             </div>
-                                            <div class='training_class_title' style='float:left; margin-left:10px' level='@l1.MenuLevel'><a href="#" class="update"  index='@l1.ID'>@l1.MenuName</a></div>
+                                            <div class='training_class_title' style='float:left; margin-left:10px' level='@l1.MenuLevel'><a href="#" class="update"  index='@l1.ID'>@(string.IsNullOrEmpty(l1.DisplayName)?l1.MenuName: l1.DisplayName)</a></div>
                                         </td>
                                         if (l2arr.Count() == 0)
                                         {
@@ -103,18 +100,18 @@
                                             l3useidx = 0;
                                             <td class='class_03' rowspan='@(_l3menu.Count()==0?1:_l3menu.Count())'>
                                                 <div class='display_inline' style='float:left'>
-                                                    <button type='button' class='btn green-meadow btn-xs addmenu' index='@l2arr[l2arridx].ID' nextlevel='@(l2arr[l2arridx].MenuLevel + 1)'><i class='fa fa-plus'></i></button>
+                                                    <button type='button' class='btn green-meadow btn-xs addmenu' index='@l2arr[l2arridx].ID' nextlevel='@(l2arr[l2arridx].MenuLevel + 1)'><i class='fa fa-plus' aria-hidden='true'></i></button>
                                                     <button type='button' class='btn red-mint btn-xs delmenu' index='@l2arr[l2arridx].ID'><i class='glyphicon glyphicon-trash'></i></button>
                                                     @if (l2arr[l2arridx].Status.Value)
                                                     {
-                                                        <button type='button' class='btn yellow btn-xs menudisable' index='@l2arr[l2arridx].ID'><i class='fa fa-check-square'></i></button>}
+                                                        <button type='button' class='btn yellow btn-xs menudisable' index='@l2arr[l2arridx].ID'><i class='fa fa-check-square' aria-hidden='true'></i></button>}
                                                     else
                                                     {
-                                                        <button type='button' class='btn yellow btn-xs menuenable' index='@l2arr[l2arridx].ID'><i class='fa fa fa-square-o'></i></button>}
-                                                    <button type='button' class='btn btn-default btn-xs menusortup' index='@l2arr[l2arridx].ID'><i class='fa fa-angle-up'></i></button>
-                                                    <button type='button' class='btn btn-default btn-xs menusortdown' index='@l2arr[l2arridx].ID'><i class='fa fa-angle-down'></i></button>
+                                                        <button type='button' class='btn yellow btn-xs menuenable' index='@l2arr[l2arridx].ID'><i class='fa fa fa-square-o' aria-hidden='true'></i></button>}
+                                                    <button type='button' class='btn btn-default btn-xs menusortup' index='@l2arr[l2arridx].ID'><i class='fa fa-angle-up' aria-hidden='true'></i></button>
+                                                    <button type='button' class='btn btn-default btn-xs menusortdown' index='@l2arr[l2arridx].ID'><i class='fa fa-angle-down' aria-hidden='true'></i></button>
                                                 </div>
-                                                <div class='training_class_title' style='float:left; margin-left:10px'  level='@l2arr[l2arridx].MenuLevel'><a href="#" class="update" index='@l2arr[l2arridx].ID'>@l2arr[l2arridx].MenuName</a></div>
+                                                <div class='training_class_title' style='float:left; margin-left:10px'  level='@l2arr[l2arridx].MenuLevel'><a href="#" class="update" index='@l2arr[l2arridx].ID'>@(string.IsNullOrEmpty(l2arr[l2arridx].DisplayName) ? l2arr[l2arridx].MenuName : l2arr[l2arridx].DisplayName)</a></div>
                                             </td>
                                             if (_l3menu.Count() == 0)
                                             {
@@ -130,14 +127,14 @@
                                                 <button type='button' class='btn red-mint btn-xs delmenu' index='@_l3menu[l3useidx].ID'><i class='glyphicon glyphicon-trash'></i></button>
                                                 @if (_l3menu[l3useidx].Status.Value)
                                                 {
-                                                    <button type='button' class='btn yellow btn-xs menudisable' index='@_l3menu[l3useidx].ID'><i class='fa fa-check-square'></i></button>}
+                                                    <button type='button' class='btn yellow btn-xs menudisable' index='@_l3menu[l3useidx].ID'><i class='fa fa-check-square' aria-hidden='true'></i></button>}
                                                 else
                                                 {
-                                                    <button type='button' class='btn yellow btn-xs menuenable' index='@_l3menu[l3useidx].ID'><i class='fa fa fa-square-o'></i></button>}
-                                                <button type='button' class='btn btn-default btn-xs menusortup' index='@_l3menu[l3useidx].ID'><i class='fa fa-angle-up'></i></button>
-                                                <button type='button' class='btn btn-default btn-xs menusortdown' index='@_l3menu[l3useidx].ID'><i class='fa fa-angle-down'></i></button>
+                                                    <button type='button' class='btn yellow btn-xs menuenable' index='@_l3menu[l3useidx].ID'><i class='fa fa fa-square-o' aria-hidden='true'></i></button>}
+                                                <button type='button' class='btn btn-default btn-xs menusortup' index='@_l3menu[l3useidx].ID'><i class='fa fa-angle-up' aria-hidden='true'></i></button>
+                                                <button type='button' class='btn btn-default btn-xs menusortdown' index='@_l3menu[l3useidx].ID'><i class='fa fa-angle-down' aria-hidden='true'></i></button>
                                             </div>
-                                            <div class='training_class_title' style='float:left; margin-left:10px'  level='@_l3menu[l3useidx].MenuLevel'><a href="#" class="update" index='@_l3menu[l3useidx].ID'>@_l3menu[l3useidx].MenuName</a></div>
+                                            <div class='training_class_title' style='float:left; margin-left:10px'  level='@_l3menu[l3useidx].MenuLevel'><a href="#" class="update" index='@_l3menu[l3useidx].ID'>@(string.IsNullOrEmpty(_l3menu[l3useidx].DisplayName) ? _l3menu[l3useidx].MenuName : _l3menu[l3useidx].DisplayName)</a></div>
                                         </td>
                                         l3useidx += 1;
                                     }

@@ -24,7 +24,21 @@
     }
 </style>
 
-
+<!--page bar start-->
+<div class="page-bar all_width">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="@Url.Action("Index", "Home")">Home</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            Things to do
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>旅遊資訊設定</li>
+    </ul>
+</div>
+<!--page bar end-->
 @{
     if (ViewBag.MenuType == 24 || (int)Session["F_MenuType"] == 24)
     {
@@ -44,8 +58,8 @@
 
 
 
-<div class="portlet light bordered">
-    <div class="title_04">@(ViewBag.FreeZoneTitleID == 1 ? "自由編輯區一" : "五大旅遊資訊設定")</div>
+<div class="portlet light bordered" style="padding-bottom:50px">
+    <div class="title_04">@(ViewBag.FreeZoneTitleID == 1 ? "自由編輯區一" : "旅遊資訊設定")</div>
 
     <div class="form-horizontal form-bordered" id="editform" enctype="multipart/form-data">
 
@@ -53,7 +67,7 @@
             <div class="portlet-body form">
                 <div class="form-horizontal form-bordered">
                     <div class="form-body" id="form-body">
-                        <form method="post" action="#" class="Five_Thingtodo_Header">
+                        <form method="post" action="@Url.Action("Five_Thingstodo_Edit","F_Thingtodo")" class="Five_Thingtodo_Header" id="editform">
                             <div class="form-group ">
                                 <div class="col-md-1 col-sm-12 col-xs-12 text-center">
                                     <span class="display_inline">序號</span>
@@ -64,60 +78,74 @@
                                 <div class="col-md-2 col-sm-12 col-xs-12  text-center">
                                     <span class="display_inline">標題(下)</span>
                                 </div>
-                                <div class="col-md-1 col-sm-12 col-xs-12   text-center">
+                                <div class="col-md-2 col-sm-12 col-xs-12   text-center">
                                     <span class="display_inline">圖片</span>
                                 </div>
                                 <div class="col-md-5 col-sm-12 col-xs-12   text-center">
                                     <span class="display_inline">說明</span>
                                 </div>
                                 @*<div class="col-md-1 col-sm-12 col-xs-12   text-center">
-                                    <span class="display_inline">編輯</span>
-                                </div>*@
+                                        <span class="display_inline">編輯</span>
+                                    </div>*@
                             </div>
                             <hr class="Five_Thingtodo_div" />
-                        </form>
-                        @{
-                            var x = 0;
-                            foreach (var item in Model)
-                            {
-                                <form method="post" action="@Url.Action("Five_Thingstodo_Edit","F_Thingtodo")" enctype="multipart/form-data">
-                                    <div class="form-group">
-                                        <input type="hidden" name="_Thingtodo_Type_ID" value="@item.F_Thingtodo_Type_ID" />
+                            @{
+                                var x = 0;
+                                foreach (var item in Model)
+                                {
+                                    <div class="form-group" style="background-color:white">
+                                        <input type="hidden" name="F_things[@x].F_Thingtodo_Type_ID" value="@item.F_Thingtodo_Type_ID" />
+                                        <input type="hidden" name="F_things[@x].F_Thingtodo_Type_Link" value="@item.F_Thingtodo_Type_Link" />
+
                                         <div class="col-md-1 col-sm-12 col-xs-12 text-center">
-                                            <span class="display_inline">@(++x)</span>
-                                        </div>
-                                        <div class="col-md-2 col-sm-12 col-xs-12 text-center ">
                                             <span class="display_inline">
-                                                <input type="text" name="_Thingtodo_Type_Title1" value="@item.F_Thingtodo_Type_Title1" class="form-control" />
+                                                <label type="text" name="F_DES[@x].F_Thingtodo_Type_ID" id="Destination_Type_ID"> @item.F_Thingtodo_Type_ID</label>
+                                            </span>
+                                        </div>
+                                        <div class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center ">
+                                            <span class="display_inline">
+                                                <input type="text" name="F_DES[@x].F_Thingtodo_Type_Title1" value="@item.F_Thingtodo_Type_Title1" class="form-control" />
                                             </span>
                                         </div>
                                         <div class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center">
                                             <div class="col-md-11 col-sm-12 col-xs-12 bg-white mobile_white forest_link">
-                                                <input type="text" name="_Thingtodo_Type_Title2" value="@item.F_Thingtodo_Type_Title2" class="form-control" />
+                                                <input type="text" name="F_DES[@x].F_Thingtodo_Type_ImgName" value="@item.F_Thingtodo_Type_Title2" class="form-control" />
                                             </div>
                                         </div>
 
-                                        <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center align-center">
-                                                <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/ThingsToDo_Img/")@item.F_Thingtodo_Type_ImgName" />
-                                                <br />
-                                                <input data-imgid="Index_Img_File@(x)" name="Index_Img_File" type="file" class="form-control" accept=".jpeg,.jpg,.gif,.png" />
+                                        <div class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center align-center">
+                                            <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/ThingsToDo_Img/")@item.F_Thingtodo_Type_ImgName" />
+                                            <br />
+                                            @*<label for="Index_Img_File">
+                                                    <input type="button" id="btn" value="傳送檔案"><span id="Img_FileName">@item.Destination_Type_ImgName</span>
+                                                    <input data-imgid="Index_Img_File@(x)" name="F_DES[@x].Destination_Type_ImgName" type="file" id="Index_Img_File" accept=".jpeg,.jpg,.gif,.png" style="display:none" />
+
+                                                </label>*@
+                                            <input data-imgid="Index_Img_File@(x)" name="Img_File" type="file" accept=".jpeg,.jpg,.gif,.png" />
+                                            <label for="Index_Img_File@(x)" style="display:none"></label>
+                                            <input id="Img_FileName@(x)" name="F_DES[@x].Destination_Type_ImgName" class="selected" value="@item.F_Thingtodo_Type_ImgName" style="display:none">
                                         </div>
 
                                         <div class="col-md-5 col-sm-12 col-xs-12 bg-white mobile_white">
-                                            <textarea name="_Thingtodo_Type_Description" class="form-control" style="resize:none; height:160px" >@item.F_Thingtodo_Type_Description</textarea>
+                                            <textarea name="F_DES[@x].F_Thingtodo_Type_Description" class="form-control" style="resize:none; height:160px">@item.F_Thingtodo_Type_Description</textarea>
                                         </div>
 
 
 
                                         @*<div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                            <button class="form-control btn-warning text-center">編輯</button>
-                                        </div>*@
-                                       
+                                                <button class="form-control btn-warning text-center">編輯</button>
+                                            </div>*@
+
                                     </div>
                                     <hr class="Five_Thingtodo_div" />
-                                </form>
+                                    x = x + 1;
+                                }
+
                             }
-                        }
+                            <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white text-center " id="div_buttons" style="margin:10px;padding:10px">
+                                <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -150,13 +178,16 @@
         function ShowImg() {
             $("[name='Index_Img_File']").change(function () {
 
-                var imgid = $(this).attr("data-imgid");
+                var imgid = $(this).attr("data-imgid")
                 //alert("Image changed");
+                console.log(imgid);
                 var reader = new FileReader();
                 reader.readAsDataURL(this.files[0]);
+
                 reader.onload = function (e) {
                     $(`#${imgid}`).attr("src", e.target.result)
                 };
+
             })
         }
 

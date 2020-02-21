@@ -47,25 +47,24 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             return View(TTD);
         }
 
-        [HttpPost]
-        public ActionResult Five_Thingstodo_Edit(int _Thingtodo_Type_ID , string _Thingtodo_Type_Title1 , string _Thingtodo_Type_Title2 , string _Thingtodo_Type_Description, HttpPostedFileBase Index_Img_File)
-
+        
+        //上傳檔案
+        public ActionResult Upload(HttpPostedFileBase Img_File)
         {
             string Index_Img_Name = "";
 
-
-            if (Index_Img_File != null) //判斷是否有檔案
+            if (Img_File != null) //判斷是否有檔案
             {
-                if (Index_Img_File.ContentLength > 0)  //若檔案不為空檔案
+                if (Img_File.ContentLength > 0)  //若檔案不為空檔案
                 {
                     string uploadPath = Server.MapPath("~/UploadImage/ThingsToDo_Img/");
-                    // 如果UploadFiles文件夹不存在则先创建
+                    // 如果UploadFiles文件夾不存在則先創建
                     if (!Directory.Exists(uploadPath))
                     {
                         Directory.CreateDirectory(uploadPath);
                     }
 
-                    Index_Img_Name = Path.GetFileName(Index_Img_File.FileName);  //取得檔案名
+                    Index_Img_Name = Path.GetFileName(Img_File.FileName);  //取得檔案名
                     var path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), Index_Img_Name);  //取得本機檔案路徑
 
 
@@ -78,33 +77,59 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         Index_Img_Name = rand.Next().ToString() + "-" + Index_Img_Name;
                         path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), Index_Img_Name);
                     }
-                    Index_Img_File.SaveAs(path);
+                    Img_File.SaveAs(path);
                     //若有重複則換名字_end
 
-
-                    db.F_Thingtodo_Type.Where(t => t.F_Thingtodo_Type_ID == _Thingtodo_Type_ID).FirstOrDefault().F_Thingtodo_Type_ImgName = Index_Img_Name;
-                    db.SaveChanges();
                 }
+
             }
+            return RedirectToAction("Five_Thingstodo");
 
 
-            try
+
+
+
+        }
+
+        [HttpPost]
+        public ActionResult Five_Thingstodo(F_Thingtodo_Type[] F_things ,int? F_MenuType)
+
+        {
+            Session["F_MenuType"] = F_MenuType;
+
+
+            //批次更改
+            if (ModelState.IsValid)
             {
-                var TTD = db.F_Thingtodo_Type.Find(_Thingtodo_Type_ID);
-                TTD.F_Thingtodo_Type_Title1 = _Thingtodo_Type_Title1;
-                TTD.F_Thingtodo_Type_Title2 = _Thingtodo_Type_Title2;
-                TTD.F_Thingtodo_Type_Description = _Thingtodo_Type_Description;
-                db.Entry(TTD).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
+                //int Des_ID;
+                for (int i = 0; i < F_things.Length; i++)
+                {
+
+                    
+                    if (F_things[i].F_Thingtodo_Type_ImgName == null)
+                    {
+                        db.Entry(F_things[i]).State = System.Data.Entity.EntityState.Modified;
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+
+                        db.Entry(F_things[i]).State = System.Data.Entity.EntityState.Modified;
+
+                        db.SaveChanges();
+                    }
+
+                }
+                TempData["Msg"] = "作業完成";
+                return RedirectToAction("Five_Thingstodo");
+
             }
-            catch
+            else
             {
                 TempData["Msg"] = "作業失敗";
                 return RedirectToAction("Five_Thingstodo");
             }
-            TempData["Msg"] = "作業完成";
-
-            return RedirectToAction("Five_Thingstodo");
+        
         }
 
 
@@ -127,6 +152,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 }
                 else
                 {
+                    //判斷
                     if (IsCreate != 1)
                     {
                         var TTDH = db.F_HashTag_Type.Find(HashTag_ID);

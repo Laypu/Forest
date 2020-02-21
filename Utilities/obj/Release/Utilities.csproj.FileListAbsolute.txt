@@ -24,3 +24,12 @@ C:\Dropbox\Dropbox\CommonLib\Utilities\obj\Release\Utilities.csproj.CoreCompileI
 C:\Dropbox\Dropbox\CommonLib\Utilities\obj\Release\Utilities.csproj.CopyComplete
 C:\Dropbox\Dropbox\CommonLib\Utilities\obj\Release\Utilities.dll
 C:\Dropbox\Dropbox\CommonLib\Utilities\obj\Release\Utilities.pdb
+C:\Users\PC003\Desktop\git\Forest\Forest\Utilities\bin\Release\Utilities.dll.config
+C:\Users\PC003\Desktop\git\Forest\Forest\Utilities\bin\Release\Utilities.dll
+C:\Users\PC003\Desktop\git\Forest\Forest\Utilities\bin\Release\Utilities.pdb
+C:\Users\PC003\Desktop\git\Forest\Forest\Utilities\bin\Release\NLog.dll
+C:\Users\PC003\Desktop\git\Forest\Forest\Utilities\bin\Release\NLog.xml
+C:\Users\PC003\Desktop\git\Forest\Forest\Utilities\obj\Release\Utilities.csprojAssemblyReference.cache
+C:\Users\PC003\Desktop\git\Forest\Forest\Utilities\obj\Release\Utilities.csproj.CopyComplete
+C:\Users\PC003\Desktop\git\Forest\Forest\Utilities\obj\Release\Utilities.dll
+C:\Users\PC003\Desktop\git\Forest\Forest\Utilities\obj\Release\Utilities.pdb

@@ -1,0 +1,1719 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ForestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ActiveItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="GroupID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="HtmlContent" Type="ntext" />
+    <Property Name="ClickCnt" Type="int" />
+    <Property Name="UploadFileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="UploadFilePath" Type="varchar" MaxLength="100" />
+    <Property Name="UploadFileDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileOrgName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileLocation" Type="varchar" MaxLength="1" />
+    <Property Name="LinkUrl" Type="varchar" MaxLength="1000" />
+    <Property Name="StDate" Type="datetime" />
+    <Property Name="EdDate" Type="datetime" />
+    <Property Name="PublicshDate" Type="datetime" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="ActiveID" Type="int" />
+    <Property Name="ActiveItemID" Type="int" />
+    <Property Name="Link_Mode" Type="int" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="RelateImageFileName" Type="varchar" MaxLength="100" />
+    <Property Name="RelateImageFileOrgName" Type="varchar" MaxLength="100" />
+    <Property Name="Introduction" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreateDatetime" Type="datetime" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+    <Property Name="CreateName" Type="nvarchar" MaxLength="20" />
+    <Property Name="UpdateName" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsVerift" Type="bit" />
+    <Property Name="LinkUrlDesc" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ActivePhoto">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MainID" Type="int" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="FilePath" Type="varchar" MaxLength="500" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="500" />
+    <Property Name="FileDesc" Type="nvarchar" MaxLength="500" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ActiveUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MainID" Type="int" />
+    <Property Name="IsPrint" Type="bit" />
+    <Property Name="IsForward" Type="bit" />
+    <Property Name="IsRSS" Type="bit" />
+    <Property Name="IsShare" Type="bit" />
+    <Property Name="MemberAuth" Type="bit" />
+    <Property Name="ClassOverview" Type="bit" />
+    <Property Name="ShowCount" Type="int" />
+    <Property Name="Column1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column5" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column6" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column7" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column8" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column9" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column10" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column11" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column12" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column13" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column14" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column15" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column16" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column17" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="GeneralStudentAuth" Type="bit" />
+    <Property Name="EnterpriceStudentAuth" Type="bit" />
+    <Property Name="VIPAuth" Type="bit" />
+    <Property Name="EMailAuth" Type="bit" />
+    <Property Name="ColumnSetting" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ADCenter">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Type_ID" Type="nvarchar" MaxLength="10" />
+    <Property Name="StDate" Type="datetime" />
+    <Property Name="EdDate" Type="datetime" />
+    <Property Name="AD_Name" Type="nvarchar" MaxLength="300" />
+    <Property Name="Img_Show_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Img_Name_Ori" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Thumb" Type="nvarchar" MaxLength="255" />
+    <Property Name="AD_Width" Type="int" />
+    <Property Name="AD_Height" Type="int" />
+    <Property Name="Link_Href" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Link_Mode" Type="nvarchar" MaxLength="1" />
+    <Property Name="Fixed" Type="bit" />
+    <Property Name="Review_Date" Type="datetime" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="SType" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="ADDown">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Type_ID" Type="nvarchar" MaxLength="10" />
+    <Property Name="StDate" Type="datetime" />
+    <Property Name="EdDate" Type="datetime" />
+    <Property Name="AD_Name" Type="nvarchar" MaxLength="300" />
+    <Property Name="Img_Show_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Img_Name_Ori" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Thumb" Type="nvarchar" MaxLength="255" />
+    <Property Name="AD_Width" Type="int" />
+    <Property Name="AD_Height" Type="int" />
+    <Property Name="Link_Href" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Link_Mode" Type="nvarchar" MaxLength="1" />
+    <Property Name="Fixed" Type="bit" />
+    <Property Name="Review_Date" Type="datetime" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="SType" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="ADMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Type_ID" Type="nvarchar" MaxLength="10" />
+    <Property Name="StDate" Type="datetime" />
+    <Property Name="EdDate" Type="datetime" />
+    <Property Name="AD_Name" Type="nvarchar" MaxLength="300" />
+    <Property Name="Img_Show_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Img_Name_Ori" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Thumb" Type="nvarchar" MaxLength="255" />
+    <Property Name="AD_Width" Type="int" />
+    <Property Name="AD_Height" Type="int" />
+    <Property Name="Link_Href" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Link_Mode" Type="nvarchar" MaxLength="1" />
+    <Property Name="Fixed" Type="bit" />
+    <Property Name="Review_Date" Type="datetime" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="SType" Type="char" MaxLength="1" />
+    <Property Name="UploadVideoFileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="UploadVideoFilePath" Type="varchar" MaxLength="100" />
+    <Property Name="UploadVideoFileDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="ADDesc" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'Forest.dbo.AdminFunction' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="AdminFunction">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="GroupID" Type="int" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar" MaxLength="50" />
+    <Property Name="Parameter" Type="varchar" MaxLength="50" />
+    <Property Name="ParentGroupID" Type="int" />
+  </EntityType>
+  <EntityType Name="ADMobile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Type_ID" Type="nvarchar" MaxLength="10" />
+    <Property Name="StDate" Type="datetime" />
+    <Property Name="EdDate" Type="datetime" />
+    <Property Name="AD_Name" Type="nvarchar" MaxLength="300" />
+    <Property Name="Img_Show_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Img_Name_Ori" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Thumb" Type="nvarchar" MaxLength="255" />
+    <Property Name="AD_Width" Type="int" />
+    <Property Name="AD_Height" Type="int" />
+    <Property Name="Link_Href" Type="nvarchar" MaxLength="255" />
+    <Property Name="Link_Mode" Type="nvarchar" MaxLength="1" />
+    <Property Name="Fixed" Type="bit" />
+    <Property Name="Review_Date" Type="datetime" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="SType" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="ADMobileBlock">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Type_ID" Type="nvarchar" MaxLength="20" />
+    <Property Name="StDate" Type="datetime" />
+    <Property Name="EdDate" Type="datetime" />
+    <Property Name="AD_Name" Type="nvarchar" MaxLength="300" />
+    <Property Name="Img_Show_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Img_Name_Ori" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Thumb" Type="nvarchar" MaxLength="255" />
+    <Property Name="AD_Width" Type="int" />
+    <Property Name="AD_Height" Type="int" />
+    <Property Name="Link_Href" Type="nvarchar" MaxLength="255" />
+    <Property Name="Link_Mode" Type="nvarchar" MaxLength="1" />
+    <Property Name="Fixed" Type="bit" />
+    <Property Name="Review_Date" Type="datetime" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="SType" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="ADRight">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Type_ID" Type="nvarchar" MaxLength="10" />
+    <Property Name="StDate" Type="datetime" />
+    <Property Name="EdDate" Type="datetime" />
+    <Property Name="AD_Name" Type="nvarchar" MaxLength="300" />
+    <Property Name="Img_Show_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Img_Name_Ori" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Thumb" Type="nvarchar" MaxLength="255" />
+    <Property Name="AD_Width" Type="int" />
+    <Property Name="AD_Height" Type="int" />
+    <Property Name="Link_Href" Type="nvarchar" MaxLength="255" />
+    <Property Name="Link_Mode" Type="nvarchar" MaxLength="1" />
+    <Property Name="Fixed" Type="bit" />
+    <Property Name="Review_Date" Type="datetime" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="SType" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="ADRightDown">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Type_ID" Type="nvarchar" MaxLength="10" />
+    <Property Name="StDate" Type="datetime" />
+    <Property Name="EdDate" Type="datetime" />
+    <Property Name="AD_Name" Type="nvarchar" MaxLength="300" />
+    <Property Name="Img_Show_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Img_Name_Ori" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Thumb" Type="nvarchar" MaxLength="255" />
+    <Property Name="AD_Width" Type="int" />
+    <Property Name="AD_Height" Type="int" />
+    <Property Name="Link_Href" Type="nvarchar" MaxLength="255" />
+    <Property Name="Link_Mode" Type="nvarchar" MaxLength="1" />
+    <Property Name="Fixed" Type="bit" />
+    <Property Name="Review_Date" Type="datetime" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="SType" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="ADSet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Type_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Max_Num" Type="int" />
+    <Property Name="Show_AD" Type="bit" />
+    <Property Name="Show_AD_Page" Type="bit" />
+    <Property Name="Max_Col" Type="int" />
+    <Property Name="SType" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="int" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ColumnSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+    <Property Name="ColumnKey" Type="int" />
+    <Property Name="ColumnName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Used" Type="bit" />
+    <Property Name="Show" Type="bit" />
+    <Property Name="Search" Type="bit" />
+    <Property Name="IsMust" Type="bit" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="InputType" Type="varchar" MaxLength="2" />
+    <Property Name="ListKey" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sort" Type="int" />
+  </EntityType>
+  <EntityType Name="Destination_Index">
+    <Key>
+      <PropertyRef Name="Destination_ID" />
+    </Key>
+    <Property Name="Destination_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Destination_Title" Type="nvarchar(max)" />
+    <Property Name="Destination_Context" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Destination_MapLegend">
+    <Key>
+      <PropertyRef Name="Destination_MAP_LEGEND_ID" />
+    </Key>
+    <Property Name="Destination_MAP_LEGEND_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Destination_MAP_LEGEND_Name" Type="nvarchar(max)" />
+    <Property Name="Destination_Img" Type="nvarchar(max)" />
+    <Property Name="Destination_Img_Mobile" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="EventListItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="GroupID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="Year" Type="varchar" MaxLength="5" />
+    <Property Name="HtmlContent" Type="ntext" />
+    <Property Name="ClickCnt" Type="int" />
+    <Property Name="UploadFileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="UploadFilePath" Type="varchar" MaxLength="100" />
+    <Property Name="UploadFileDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileOrgName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileLocation" Type="varchar" MaxLength="1" />
+    <Property Name="LinkUrl" Type="varchar" MaxLength="1000" />
+    <Property Name="StDate" Type="datetime" />
+    <Property Name="EdDate" Type="datetime" />
+    <Property Name="PublicshDate" Type="datetime" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="ActiveID" Type="int" />
+    <Property Name="ActiveItemID" Type="int" />
+    <Property Name="Link_Mode" Type="int" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="RelateImageFileName" Type="varchar" MaxLength="100" />
+    <Property Name="RelateImageFileOrgName" Type="varchar" MaxLength="100" />
+    <Property Name="Introduction" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreateDatetime" Type="datetime" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+    <Property Name="CreateName" Type="nvarchar" MaxLength="20" />
+    <Property Name="UpdateName" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsVerift" Type="bit" />
+    <Property Name="LinkUrlDesc" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="EventListUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MainID" Type="int" />
+    <Property Name="IsPrint" Type="bit" />
+    <Property Name="IsForward" Type="bit" />
+    <Property Name="IsRSS" Type="bit" />
+    <Property Name="IsShare" Type="bit" />
+    <Property Name="MemberAuth" Type="bit" />
+    <Property Name="ClassOverview" Type="bit" />
+    <Property Name="ShowCount" Type="int" />
+    <Property Name="Column1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column5" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column6" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column7" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="GeneralStudentAuth" Type="bit" />
+    <Property Name="EnterpriceStudentAuth" Type="bit" />
+    <Property Name="VIPAuth" Type="bit" />
+    <Property Name="EMailAuth" Type="bit" />
+    <Property Name="ColumnSetting" Type="nvarchar" MaxLength="500" />
+    <Property Name="IntroductionHtml" Type="ntext" />
+  </EntityType>
+  <EntityType Name="F_Destination_Type">
+    <Key>
+      <PropertyRef Name="Destination_Type_ID" />
+    </Key>
+    <Property Name="Destination_Type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Destination_Type_Title1" Type="nvarchar(max)" />
+    <Property Name="Destination_Type_Title2" Type="nvarchar(max)" />
+    <Property Name="Destination_Type_CreateDate" Type="datetime" />
+    <Property Name="Destination_Type_ImgName" Type="nvarchar(max)" />
+    <Property Name="Destination_Type_Link" Type="nvarchar(max)" />
+    <Property Name="Destination_Type_Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="F_HashTag_Type">
+    <Key>
+      <PropertyRef Name="HashTag_Type_ID" />
+    </Key>
+    <Property Name="HashTag_Type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HashTag_Type_Name" Type="nvarchar(max)" />
+    <Property Name="HashTag_Description" Type="nvarchar(max)" />
+    <Property Name="HashTag_CreateTime" Type="datetime" />
+    <Property Name="HashTag_Type_Link" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="F_Index">
+    <Key>
+      <PropertyRef Name="F_Index_ID" />
+    </Key>
+    <Property Name="F_Index_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="F_Index_Img" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="F_Index_Img">
+    <Key>
+      <PropertyRef Name="Index_Img_ID" />
+    </Key>
+    <Property Name="Index_Img_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Index_Img_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Index_Img_File" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="F_MessageModel">
+    <Key>
+      <PropertyRef Name="MessageModel_ID" />
+    </Key>
+    <Property Name="MessageModel_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MessageModel_Name" Type="nvarchar(max)" />
+    <Property Name="MessageModel_Description" Type="nvarchar(max)" />
+    <Property Name="MessageModel_CreateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="F_Sub_HashTag_Type">
+    <Key>
+      <PropertyRef Name="Sub_HashTag_Type_ID" />
+    </Key>
+    <Property Name="Sub_HashTag_Type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HashTag_Type_ID" Type="int" Nullable="false" />
+    <Property Name="MessageItem_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="F_Thingtodo_Index">
+    <Key>
+      <PropertyRef Name="F_Thingtodo_Index_ID" />
+    </Key>
+    <Property Name="F_Thingtodo_Index_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="F_Thingtodo_Index_Title" Type="nvarchar(max)" />
+    <Property Name="F_Thingtodo_Index_Content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="F_Thingtodo_Type">
+    <Key>
+      <PropertyRef Name="F_Thingtodo_Type_ID" />
+    </Key>
+    <Property Name="F_Thingtodo_Type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="F_Thingtodo_Type_Title1" Type="nvarchar" MaxLength="100" />
+    <Property Name="F_Thingtodo_Type_Title2" Type="nvarchar" MaxLength="100" />
+    <Property Name="F_Thingtodo_Type_ImgName" Type="nvarchar" MaxLength="100" />
+    <Property Name="F_Thingtodo_Type_Link" Type="nvarchar" MaxLength="100" />
+    <Property Name="F_Thingtodo_Type_Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="FileDownloadItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="GroupID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="ClickCnt" Type="int" />
+    <Property Name="HtmlContent" Type="ntext" />
+    <Property Name="UploadFileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="UploadFilePath" Type="varchar" MaxLength="100" />
+    <Property Name="UploadFileDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileOrgName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileLocation" Type="varchar" MaxLength="100" />
+    <Property Name="LinkUrl" Type="varchar" MaxLength="200" />
+    <Property Name="StDate" Type="datetime" />
+    <Property Name="EdDate" Type="datetime" />
+    <Property Name="PublicshDate" Type="varchar" MaxLength="30" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="Link_Mode" Type="int" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="RelateImageFileName" Type="varchar" MaxLength="100" />
+    <Property Name="RelateImageFileOrgName" Type="varchar" MaxLength="100" />
+    <Property Name="IsVerift" Type="bit" />
+    <Property Name="LinkUrlDesc" Type="nvarchar" MaxLength="200" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+    <Property Name="CreateName" Type="nvarchar" MaxLength="20" />
+    <Property Name="CreateDatetime" Type="datetime" />
+    <Property Name="UpdateName" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="FileDownloadUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MainID" Type="int" />
+    <Property Name="IsPrint" Type="bit" />
+    <Property Name="IsForward" Type="bit" />
+    <Property Name="IsRSS" Type="bit" />
+    <Property Name="IsShare" Type="bit" />
+    <Property Name="MemberAuth" Type="bit" />
+    <Property Name="ClassOverview" Type="bit" />
+    <Property Name="ShowCount" Type="int" />
+    <Property Name="Column1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column5" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column6" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column7" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column8" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column9" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column10" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column11" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column12" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column13" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column14" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column15" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column16" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column17" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column18" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column19" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column20" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="GeneralStudentAuth" Type="bit" />
+    <Property Name="EnterpriceStudentAuth" Type="bit" />
+    <Property Name="VIPAuth" Type="bit" />
+    <Property Name="EMailAuth" Type="bit" />
+    <Property Name="ColumnSetting" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="FormInput">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MainID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="EMail" Type="varchar" MaxLength="100" />
+    <Property Name="JSONStr" Type="ntext" />
+    <Property Name="CreateDatetime" Type="datetime" />
+    <Property Name="Progress" Type="varchar" MaxLength="10" />
+    <Property Name="ProcessAccount" Type="varchar" MaxLength="50" />
+    <Property Name="ProcessDatetime" Type="datetime" />
+    <Property Name="ReplyAccount" Type="varchar" MaxLength="50" />
+    <Property Name="ReplyDatetime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FormSelItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="MustInput" Type="bit" Nullable="false" />
+    <Property Name="TextLength" Type="int" />
+    <Property Name="ColumnNum" Type="int" />
+    <Property Name="RowNum" Type="int" />
+    <Property Name="ItemMode" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="DefaultText" Type="nvarchar" MaxLength="500" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SelList" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="KayName" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="FormSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="FormDesc" Type="nvarchar" MaxLength="4000" />
+    <Property Name="ConfirmContent" Type="nvarchar" MaxLength="4000" />
+    <Property Name="SenderName" Type="varchar" MaxLength="2000" />
+    <Property Name="SenderEMail" Type="varchar" MaxLength="500" />
+    <Property Name="SenderTitle" Type="nvarchar" MaxLength="500" />
+    <Property Name="ReceiveMail" Type="varchar" MaxLength="500" />
+    <Property Name="AdminSenderName" Type="varchar" MaxLength="500" />
+    <Property Name="AdminSenderEMail" Type="varchar" MaxLength="500" />
+    <Property Name="AdminSenderTitle" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="FormUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MainID" Type="int" />
+    <Property Name="IsPrint" Type="bit" />
+    <Property Name="IsForward" Type="bit" />
+    <Property Name="IsRSS" Type="bit" />
+    <Property Name="IsShare" Type="bit" />
+    <Property Name="MemberAuth" Type="bit" />
+    <Property Name="ClassOverview" Type="bit" />
+    <Property Name="ShowCount" Type="int" />
+    <Property Name="Column1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column5" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column6" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column7" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column8" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column9" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column10" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column11" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column12" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column13" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column14" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column15" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column16" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column17" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column18" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column19" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column20" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="GeneralStudentAuth" Type="bit" />
+    <Property Name="EnterpriceStudentAuth" Type="bit" />
+    <Property Name="VIPAuth" Type="bit" />
+    <Property Name="EMailAuth" Type="bit" />
+  </EntityType>
+  <EntityType Name="ForumUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MainID" Type="int" />
+    <Property Name="IsPrint" Type="bit" />
+    <Property Name="IsForward" Type="bit" />
+    <Property Name="IsRSS" Type="bit" />
+    <Property Name="IsShare" Type="bit" />
+    <Property Name="MemberAuth" Type="bit" />
+    <Property Name="ClassOverview" Type="bit" />
+    <Property Name="ShowCount" Type="int" />
+    <Property Name="Column1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column5" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column6" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column7" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column8" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column9" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column10" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column11" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column12" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column13" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column14" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column15" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column16" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column17" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column18" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column19" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column20" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column21" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column22" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column23" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column24" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column25" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="GeneralStudentAuth" Type="bit" />
+    <Property Name="EnterpriceStudentAuth" Type="bit" />
+    <Property Name="VIPAuth" Type="bit" />
+    <Property Name="EMailAuth" Type="bit" />
+    <Property Name="ColumnSetting" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="FreeZoneContent">
+    <Key>
+      <PropertyRef Name="FreeZoneContentID" />
+    </Key>
+    <Property Name="FreeZoneContentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FreeZoneTitleID" Type="int" />
+    <Property Name="LinkName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Link" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="FreeZoneTitle">
+    <Key>
+      <PropertyRef Name="FreeZoneTitleID" />
+    </Key>
+    <Property Name="FreeZoneTitleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="FreeZoneTitleContent" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="GroupActive">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Main_ID" Type="int" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Group_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Seo_Manage" Type="bit" />
+    <Property Name="Readonly" Type="bit" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="GroupFileDownload">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Main_ID" Type="int" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Group_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Seo_Manage" Type="bit" />
+    <Property Name="Readonly" Type="bit" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="GroupMessage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Main_ID" Type="int" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Group_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Seo_Manage" Type="bit" />
+    <Property Name="Readonly" Type="bit" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="GroupPatent">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Main_ID" Type="int" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Group_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Seo_Manage" Type="bit" />
+    <Property Name="Readonly" Type="bit" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="GroupUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Group_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Seo_Manage" Type="bit" />
+    <Property Name="Readonly" Type="bit" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="GroupVideo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Main_ID" Type="int" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Group_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Seo_Manage" Type="bit" />
+    <Property Name="Readonly" Type="bit" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Img">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="item" Type="nvarchar" MaxLength="50" />
+    <Property Name="width" Type="int" />
+    <Property Name="height" Type="int" />
+  </EntityType>
+  <EntityType Name="Lang">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Area_id" Type="int" />
+    <Property Name="Lang_Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="Disp_Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="Domain_Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sub_Domain_Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="Indep_Domain_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Content_Source" Type="nvarchar" MaxLength="50" />
+    <Property Name="Link_Lang_ID" Type="int" />
+    <Property Name="Link_Href" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Ori" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Thumb" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Height" Type="int" />
+    <Property Name="Img_Name_Ori2" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Thumb2" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Height2" Type="int" />
+    <Property Name="Img_Name_Ori3" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Thumb3" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Height3" Type="int" />
+    <Property Name="Img_Name_Ori10" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Thumb10" Type="nvarchar" MaxLength="255" />
+    <Property Name="Pda_Footer_Text" Type="ntext" />
+    <Property Name="Index_Text" Type="ntext" />
+    <Property Name="Footer_Text" Type="ntext" />
+    <Property Name="Acc_Check_Passed" Type="bit" />
+    <Property Name="Acc_Check_Passed2" Type="bit" />
+    <Property Name="Readonly" Type="bit" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="Published" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="LangKey">
+    <Key>
+      <PropertyRef Name="LKey" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubGroup" Type="int" />
+    <Property Name="Item" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="LKey" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Used" Type="bit" />
+  </EntityType>
+  <EntityType Name="LangKeyUnit">
+    <Key>
+      <PropertyRef Name="GroupName" />
+      <PropertyRef Name="LKey" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SubGroup" Type="int" />
+    <Property Name="Item" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="LKey" Type="int" Nullable="false" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'Forest.dbo.LinkItem' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="LinkItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="GroupID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="ImageFileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileOrgName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="LinkUrl" Type="varchar" MaxLength="1000" />
+    <Property Name="LinkUrlDesc" Type="nvarchar" MaxLength="200" />
+    <Property Name="StDate" Type="datetime" />
+    <Property Name="EdDate" Type="datetime" />
+    <Property Name="PublicshDate" Type="datetime" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="Link_Mode" Type="int" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="Introduction" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreateDatetime" Type="datetime" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+    <Property Name="CreateName" Type="nvarchar" MaxLength="20" />
+    <Property Name="UpdateName" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsVerift" Type="bit" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LangID" Type="int" />
+    <Property Name="ParentID" Type="int" />
+    <Property Name="MenuType" Type="int" />
+    <Property Name="MenuLevel" Type="int" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="ModelItemID" Type="int" />
+    <Property Name="LinkMode" Type="int" />
+    <Property Name="ShowMode" Type="int" />
+    <Property Name="OpenMode" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="MenuName" Type="nvarchar" MaxLength="150" />
+    <Property Name="ImgNameOri" Type="nvarchar" MaxLength="200" />
+    <Property Name="ImgShowName" Type="nvarchar" MaxLength="200" />
+    <Property Name="ImgNameThumb" Type="varchar" MaxLength="200" />
+    <Property Name="WindowWidth" Type="int" />
+    <Property Name="WindowHeight" Type="int" />
+    <Property Name="ImageHeight" Type="int" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="LinkUrl" Type="nvarchar" MaxLength="200" />
+    <Property Name="LinkUploadFileName" Type="varchar" MaxLength="100" />
+    <Property Name="LinkUploadFilePath" Type="varchar" MaxLength="200" />
+    <Property Name="DisplayName" Type="varchar" MaxLength="100" />
+    <Property Name="ICon" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="MessageItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="GroupID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="HtmlContent" Type="ntext" />
+    <Property Name="ClickCnt" Type="int" />
+    <Property Name="UploadFileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="UploadFilePath" Type="varchar" MaxLength="100" />
+    <Property Name="UploadFileDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileOrgName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileLocation" Type="varchar" MaxLength="1" />
+    <Property Name="LinkUrl" Type="varchar" MaxLength="1000" />
+    <Property Name="StDate" Type="datetime" />
+    <Property Name="EdDate" Type="datetime" />
+    <Property Name="PublicshDate" Type="datetime" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="ActiveID" Type="int" />
+    <Property Name="ActiveItemID" Type="int" />
+    <Property Name="Link_Mode" Type="int" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="RelateImageFileName" Type="varchar" MaxLength="100" />
+    <Property Name="RelateImageFileOrgName" Type="varchar" MaxLength="100" />
+    <Property Name="Introduction" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreateDatetime" Type="datetime" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+    <Property Name="CreateName" Type="nvarchar" MaxLength="20" />
+    <Property Name="UpdateName" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsVerift" Type="bit" />
+    <Property Name="LinkUrlDesc" Type="nvarchar" MaxLength="200" />
+    <Property Name="Destination_Type_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="MessageUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MainID" Type="int" />
+    <Property Name="IsPrint" Type="bit" />
+    <Property Name="IsForward" Type="bit" />
+    <Property Name="IsRSS" Type="bit" />
+    <Property Name="IsShare" Type="bit" />
+    <Property Name="MemberAuth" Type="bit" />
+    <Property Name="ClassOverview" Type="bit" />
+    <Property Name="ShowCount" Type="int" />
+    <Property Name="Column1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column5" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column6" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column7" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="GeneralStudentAuth" Type="bit" />
+    <Property Name="EnterpriceStudentAuth" Type="bit" />
+    <Property Name="VIPAuth" Type="bit" />
+    <Property Name="EMailAuth" Type="bit" />
+    <Property Name="ColumnSetting" Type="nvarchar" MaxLength="500" />
+    <Property Name="IntroductionHtml" Type="ntext" />
+  </EntityType>
+  <EntityType Name="ModelActiveEditMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ModelEventListMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ModelFileDownloadMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ModelFormMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="IsVerift" Type="bit" />
+    <Property Name="UpdateName" Type="nvarchar" MaxLength="20" />
+    <Property Name="CreateName" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ModelLangMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="UseType" Type="int" />
+    <Property Name="UseLangID" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ModelMessageMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ModelPageEditMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ModelPatentMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ModelVideoMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ModelWebsiteMapMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="ColumnDict" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="PageIndexItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="150" />
+    <Property Name="HtmlContent" Type="ntext" />
+    <Property Name="UploadFileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="UploadFilePath" Type="varchar" MaxLength="200" />
+    <Property Name="UploadFileDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileOrgName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileLocation" Type="varchar" MaxLength="1" />
+    <Property Name="LinkUrl" Type="varchar" MaxLength="1000" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="ActiveID" Type="int" />
+    <Property Name="ActiveItemID" Type="int" />
+    <Property Name="CreateDatetime" Type="datetime" />
+    <Property Name="CreateUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="CreateName" Type="nvarchar" MaxLength="20" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="UpdateName" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsVerift" Type="bit" />
+    <Property Name="LinkUrlDesc" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="PageIndexSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="IsFirstPage" Type="bit" />
+    <Property Name="IsInPage" Type="bit" />
+    <Property Name="ShowCount" Type="int" />
+    <Property Name="HtmlContent" Type="ntext" />
+    <Property Name="Column1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column5" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column6" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column7" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column8" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column9" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column10" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column11" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column12" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column13" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column14" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column15" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column16" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column17" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column18" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column19" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column20" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column21" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PageLayout">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="LangID" Type="int" />
+    <Property Name="BlockWidth" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="ImgNameOri" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImgShowName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageDesc" Type="varchar" MaxLength="1000" />
+    <Property Name="LinkMode" Type="int" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="ModelItemID" Type="int" />
+    <Property Name="MenuItem" Type="int" />
+    <Property Name="MenuLevel1" Type="int" />
+    <Property Name="MenuLevel2" Type="int" />
+    <Property Name="MenuLevel3" Type="int" />
+    <Property Name="OpenMode" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="OpenModeCust" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="nvarchar" MaxLength="20" />
+    <Property Name="SType" Type="char" MaxLength="1" />
+    <Property Name="ModelItemList" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="PageUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MainID" Type="int" />
+    <Property Name="IsPrint" Type="bit" />
+    <Property Name="IsForward" Type="bit" />
+    <Property Name="IsRSS" Type="bit" />
+    <Property Name="IsShare" Type="bit" />
+    <Property Name="MemberAuth" Type="bit" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="GeneralStudentAuth" Type="bit" />
+    <Property Name="EnterpriceStudentAuth" Type="bit" />
+    <Property Name="VIPAuth" Type="bit" />
+    <Property Name="EMailAuth" Type="bit" />
+    <Property Name="Column1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PatentItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="GroupID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="Inventor" Type="nvarchar" MaxLength="300" />
+    <Property Name="Year" Type="varchar" MaxLength="10" />
+    <Property Name="Field" Type="nvarchar" MaxLength="300" />
+    <Property Name="HtmlContent" Type="ntext" />
+    <Property Name="UploadFileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="UploadFilePath" Type="varchar" MaxLength="100" />
+    <Property Name="UploadFileDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="LinkUrl" Type="varchar" MaxLength="1000" />
+    <Property Name="StDate" Type="datetime" />
+    <Property Name="EdDate" Type="datetime" />
+    <Property Name="PublicshDate" Type="datetime" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="ActiveID" Type="int" />
+    <Property Name="ActiveItemID" Type="int" />
+    <Property Name="Link_Mode" Type="int" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="Introduction" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreateDatetime" Type="datetime" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+    <Property Name="CreateName" Type="nvarchar" MaxLength="20" />
+    <Property Name="UpdateName" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsVerift" Type="bit" />
+    <Property Name="LinkUrlDesc" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="PatentUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MainID" Type="int" />
+    <Property Name="IsPrint" Type="bit" />
+    <Property Name="IsForward" Type="bit" />
+    <Property Name="IsRSS" Type="bit" />
+    <Property Name="IsShare" Type="bit" />
+    <Property Name="MemberAuth" Type="bit" />
+    <Property Name="ClassOverview" Type="bit" />
+    <Property Name="ShowCount" Type="int" />
+    <Property Name="Column1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column5" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column6" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column7" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column8" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column9" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column10" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column11" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column12" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column13" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="GeneralStudentAuth" Type="bit" />
+    <Property Name="EnterpriceStudentAuth" Type="bit" />
+    <Property Name="VIPAuth" Type="bit" />
+    <Property Name="EMailAuth" Type="bit" />
+    <Property Name="ColumnSetting" Type="nvarchar" MaxLength="500" />
+    <Property Name="IntroductionHtml" Type="ntext" />
+  </EntityType>
+  <EntityType Name="SEO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="varchar" MaxLength="50" />
+    <Property Name="TypeID" Type="int" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Keywords1" Type="nvarchar" MaxLength="200" />
+    <Property Name="Keywords2" Type="nvarchar" MaxLength="200" />
+    <Property Name="Keywords3" Type="nvarchar" MaxLength="200" />
+    <Property Name="Keywords4" Type="nvarchar" MaxLength="200" />
+    <Property Name="Keywords5" Type="nvarchar" MaxLength="200" />
+    <Property Name="Keywords6" Type="nvarchar" MaxLength="200" />
+    <Property Name="Keywords7" Type="nvarchar" MaxLength="200" />
+    <Property Name="Keywords8" Type="nvarchar" MaxLength="200" />
+    <Property Name="Keywords9" Type="nvarchar" MaxLength="200" />
+    <Property Name="Keywords10" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="SiteConfig">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login_Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="Img_Name_Ori1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Thumb1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Ori2" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Thumb2" Type="nvarchar" MaxLength="255" />
+    <Property Name="Comp_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="70" />
+    <Property Name="Content" Type="ntext" />
+    <Property Name="Page_Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="Img_Name_Ori3" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Thumb3" Type="nvarchar" MaxLength="255" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="MailServerIP" Type="varchar" MaxLength="100" />
+    <Property Name="Port" Type="int" />
+    <Property Name="EMailAccount" Type="varchar" MaxLength="100" />
+    <Property Name="EMailPassword" Type="varchar" MaxLength="100" />
+    <Property Name="IsAuthMailServer" Type="bit" />
+    <Property Name="QuestionnaireFinishDesc" Type="nvarchar" MaxLength="4000" />
+    <Property Name="InvoiceDesc" Type="nvarchar" MaxLength="4000" />
+    <Property Name="InvoiceMailSender" Type="nvarchar" MaxLength="100" />
+    <Property Name="InvoiceMailSenderMail" Type="nvarchar" MaxLength="100" />
+    <Property Name="InvoiceMailSenderTitle" Type="nvarchar" MaxLength="200" />
+    <Property Name="FirstPageMaxLinkItem" Type="int" />
+  </EntityType>
+  <EntityType Name="SiteFlow">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Siteflow_Code" Type="ntext" />
+    <Property Name="Siteflow_Link" Type="nvarchar" MaxLength="255" />
+    <Property Name="Siteflow_Code_Y" Type="ntext" />
+    <Property Name="Siteflow_Link_Y" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="SiteLayout">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LangID" Type="int" />
+    <Property Name="LogoImgNameOri" Type="nvarchar" MaxLength="200" />
+    <Property Name="LogoImgShowName" Type="nvarchar" MaxLength="200" />
+    <Property Name="LogoImgNameThumb" Type="nvarchar" MaxLength="200" />
+    <Property Name="LogoImgHeight" Type="int" />
+    <Property Name="FirstPageImgNameOri" Type="nvarchar" MaxLength="200" />
+    <Property Name="FirstPageImgShowName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FirstPageImgNameThumb" Type="nvarchar" MaxLength="200" />
+    <Property Name="FirstPageImgHeight" Type="int" />
+    <Property Name="InsidePageImgNameOri" Type="nvarchar" MaxLength="200" />
+    <Property Name="InsidePageImgShowName" Type="nvarchar" MaxLength="200" />
+    <Property Name="InsidePageImgNameThumb" Type="nvarchar" MaxLength="200" />
+    <Property Name="InsidePageImgHeight" Type="int" />
+    <Property Name="HtmlContent" Type="ntext" />
+    <Property Name="FowardImgNameOri" Type="nvarchar" MaxLength="200" />
+    <Property Name="FowardImgShowName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FowardImgNameThumb" Type="nvarchar" MaxLength="200" />
+    <Property Name="FowardHtmlContent" Type="ntext" />
+    <Property Name="PrintImgNameOri" Type="nvarchar" MaxLength="200" />
+    <Property Name="PrintImgShowName" Type="nvarchar" MaxLength="200" />
+    <Property Name="PrintImgNameThumb" Type="nvarchar" MaxLength="200" />
+    <Property Name="PrintHtmlContent" Type="ntext" />
+    <Property Name="Page404HtmlContent" Type="ntext" />
+    <Property Name="Page404Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="SType" Type="char" MaxLength="1" />
+    <Property Name="InnerLogoImgNameOri" Type="nvarchar" MaxLength="200" />
+    <Property Name="InnerLogoImgShowName" Type="nvarchar" MaxLength="200" />
+    <Property Name="InnerLogoImgNameThumb" Type="nvarchar" MaxLength="200" />
+    <Property Name="InnerLogoImgHeight" Type="int" />
+    <Property Name="PublishContent" Type="ntext" />
+  </EntityType>
+  <EntityType Name="SiteList">
+    <Key>
+      <PropertyRef Name="SiteList_ID" />
+    </Key>
+    <Property Name="SiteList_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="SiteList_Name_ch" Type="nvarchar(max)" />
+    <Property Name="SiteList_Name_en" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Group_ID" Type="int" />
+    <Property Name="Account" Type="nvarchar" MaxLength="25" />
+    <Property Name="PWD" Type="varchar" MaxLength="200" />
+    <Property Name="User_Name" Type="nvarchar" MaxLength="30" />
+    <Property Name="User_Email" Type="nvarchar" MaxLength="80" />
+    <Property Name="Readonly" Type="bit" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="VideoItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="GroupID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="HtmlContent" Type="ntext" />
+    <Property Name="ClickCnt" Type="int" />
+    <Property Name="UploadFileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="UploadFilePath" Type="varchar" MaxLength="100" />
+    <Property Name="UploadFileDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileOrgName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageFileLocation" Type="varchar" MaxLength="1" />
+    <Property Name="LinkUrl" Type="varchar" MaxLength="1000" />
+    <Property Name="StDate" Type="datetime" />
+    <Property Name="EdDate" Type="datetime" />
+    <Property Name="PublicshDate" Type="datetime" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="ActiveID" Type="int" />
+    <Property Name="ActiveItemID" Type="int" />
+    <Property Name="Link_Mode" Type="int" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="RelateImageFileName" Type="varchar" MaxLength="100" />
+    <Property Name="RelateImageFileOrgName" Type="varchar" MaxLength="100" />
+    <Property Name="Introduction" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreateDatetime" Type="datetime" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="20" />
+    <Property Name="CreateName" Type="nvarchar" MaxLength="20" />
+    <Property Name="UpdateName" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsVerift" Type="bit" />
+    <Property Name="LinkUrlDesc" Type="nvarchar" MaxLength="200" />
+    <Property Name="VideoLink" Type="varchar" MaxLength="1000" />
+    <Property Name="IsShowMoreVideo" Type="bit" />
+  </EntityType>
+  <EntityType Name="VideoUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MainID" Type="int" />
+    <Property Name="IsPrint" Type="bit" />
+    <Property Name="IsForward" Type="bit" />
+    <Property Name="IsRSS" Type="bit" />
+    <Property Name="IsShare" Type="bit" />
+    <Property Name="MemberAuth" Type="bit" />
+    <Property Name="ClassOverview" Type="bit" />
+    <Property Name="ShowCount" Type="int" />
+    <Property Name="Column1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column5" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column6" Type="nvarchar" MaxLength="50" />
+    <Property Name="Column7" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="GeneralStudentAuth" Type="bit" />
+    <Property Name="EnterpriceStudentAuth" Type="bit" />
+    <Property Name="VIPAuth" Type="bit" />
+    <Property Name="EMailAuth" Type="bit" />
+    <Property Name="ColumnSetting" Type="nvarchar" MaxLength="500" />
+    <Property Name="IntroductionHtml" Type="ntext" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'Forest.dbo.ZipCode' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="ZipCode">
+    <Key>
+      <PropertyRef Name="Country" />
+      <PropertyRef Name="Town" />
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="CountryId" Type="int" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Town" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Code" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_F_Sub_HashTag_Type_F_HashTag_Type">
+    <End Role="F_HashTag_Type" Type="Self.F_HashTag_Type" Multiplicity="1" />
+    <End Role="F_Sub_HashTag_Type" Type="Self.F_Sub_HashTag_Type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="F_HashTag_Type">
+        <PropertyRef Name="HashTag_Type_ID" />
+      </Principal>
+      <Dependent Role="F_Sub_HashTag_Type">
+        <PropertyRef Name="HashTag_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ForestModelStoreContainer">
+    <EntitySet Name="ActiveItem" EntityType="Self.ActiveItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ActivePhoto" EntityType="Self.ActivePhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ActiveUnitSetting" EntityType="Self.ActiveUnitSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ADCenter" EntityType="Self.ADCenter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ADDown" EntityType="Self.ADDown" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ADMain" EntityType="Self.ADMain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ADMobile" EntityType="Self.ADMobile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ADMobileBlock" EntityType="Self.ADMobileBlock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ADRight" EntityType="Self.ADRight" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ADRightDown" EntityType="Self.ADRightDown" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ADSet" EntityType="Self.ADSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ColumnSetting" EntityType="Self.ColumnSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Destination_Index" EntityType="Self.Destination_Index" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Destination_MapLegend" EntityType="Self.Destination_MapLegend" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EventListItem" EntityType="Self.EventListItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EventListUnitSetting" EntityType="Self.EventListUnitSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Destination_Type" EntityType="Self.F_Destination_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_HashTag_Type" EntityType="Self.F_HashTag_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Index" EntityType="Self.F_Index" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Index_Img" EntityType="Self.F_Index_Img" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_MessageModel" EntityType="Self.F_MessageModel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Sub_HashTag_Type" EntityType="Self.F_Sub_HashTag_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Thingtodo_Index" EntityType="Self.F_Thingtodo_Index" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="F_Thingtodo_Type" EntityType="Self.F_Thingtodo_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FileDownloadItem" EntityType="Self.FileDownloadItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FileDownloadUnitSetting" EntityType="Self.FileDownloadUnitSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FormInput" EntityType="Self.FormInput" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FormSelItem" EntityType="Self.FormSelItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FormSetting" EntityType="Self.FormSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FormUnitSetting" EntityType="Self.FormUnitSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ForumUnitSetting" EntityType="Self.ForumUnitSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FreeZoneContent" EntityType="Self.FreeZoneContent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FreeZoneTitle" EntityType="Self.FreeZoneTitle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupActive" EntityType="Self.GroupActive" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupFileDownload" EntityType="Self.GroupFileDownload" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupMessage" EntityType="Self.GroupMessage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupPatent" EntityType="Self.GroupPatent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupUser" EntityType="Self.GroupUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupVideo" EntityType="Self.GroupVideo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Img" EntityType="Self.Img" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lang" EntityType="Self.Lang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LangKey" EntityType="Self.LangKey" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LangKeyUnit" EntityType="Self.LangKeyUnit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MessageItem" EntityType="Self.MessageItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MessageUnitSetting" EntityType="Self.MessageUnitSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModelActiveEditMain" EntityType="Self.ModelActiveEditMain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModelEventListMain" EntityType="Self.ModelEventListMain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModelFileDownloadMain" EntityType="Self.ModelFileDownloadMain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModelFormMain" EntityType="Self.ModelFormMain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModelLangMain" EntityType="Self.ModelLangMain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModelMessageMain" EntityType="Self.ModelMessageMain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModelPageEditMain" EntityType="Self.ModelPageEditMain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModelPatentMain" EntityType="Self.ModelPatentMain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModelVideoMain" EntityType="Self.ModelVideoMain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModelWebsiteMapMain" EntityType="Self.ModelWebsiteMapMain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PageIndexItem" EntityType="Self.PageIndexItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PageIndexSetting" EntityType="Self.PageIndexSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PageLayout" EntityType="Self.PageLayout" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PageUnitSetting" EntityType="Self.PageUnitSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatentItem" EntityType="Self.PatentItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PatentUnitSetting" EntityType="Self.PatentUnitSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SEO" EntityType="Self.SEO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SiteConfig" EntityType="Self.SiteConfig" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SiteFlow" EntityType="Self.SiteFlow" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SiteLayout" EntityType="Self.SiteLayout" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SiteList" EntityType="Self.SiteList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VideoItem" EntityType="Self.VideoItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VideoUnitSetting" EntityType="Self.VideoUnitSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminFunction" EntityType="Self.AdminFunction" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AdminFunction].[ID] AS [ID], 
+    [AdminFunction].[GroupID] AS [GroupID], 
+    [AdminFunction].[ItemName] AS [ItemName], 
+    [AdminFunction].[Url] AS [Url], 
+    [AdminFunction].[Parameter] AS [Parameter], 
+    [AdminFunction].[ParentGroupID] AS [ParentGroupID]
+    FROM [dbo].[AdminFunction] AS [AdminFunction]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="LinkItem" EntityType="Self.LinkItem" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [LinkItem].[ItemID] AS [ItemID], 
+    [LinkItem].[Lang_ID] AS [Lang_ID], 
+    [LinkItem].[GroupID] AS [GroupID], 
+    [LinkItem].[Sort] AS [Sort], 
+    [LinkItem].[Title] AS [Title], 
+    [LinkItem].[ImageFileName] AS [ImageFileName], 
+    [LinkItem].[ImageFileOrgName] AS [ImageFileOrgName], 
+    [LinkItem].[ImageFileDesc] AS [ImageFileDesc], 
+    [LinkItem].[LinkUrl] AS [LinkUrl], 
+    [LinkItem].[LinkUrlDesc] AS [LinkUrlDesc], 
+    [LinkItem].[StDate] AS [StDate], 
+    [LinkItem].[EdDate] AS [EdDate], 
+    [LinkItem].[PublicshDate] AS [PublicshDate], 
+    [LinkItem].[Enabled] AS [Enabled], 
+    [LinkItem].[Link_Mode] AS [Link_Mode], 
+    [LinkItem].[UpdateDatetime] AS [UpdateDatetime], 
+    [LinkItem].[UpdateUser] AS [UpdateUser], 
+    [LinkItem].[Introduction] AS [Introduction], 
+    [LinkItem].[CreateDatetime] AS [CreateDatetime], 
+    [LinkItem].[CreateUser] AS [CreateUser], 
+    [LinkItem].[CreateName] AS [CreateName], 
+    [LinkItem].[UpdateName] AS [UpdateName], 
+    [LinkItem].[IsVerift] AS [IsVerift]
+    FROM [dbo].[LinkItem] AS [LinkItem]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ZipCode" EntityType="Self.ZipCode" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ZipCode].[CountryId] AS [CountryId], 
+    [ZipCode].[Country] AS [Country], 
+    [ZipCode].[Town] AS [Town], 
+    [ZipCode].[Code] AS [Code]
+    FROM [dbo].[ZipCode] AS [ZipCode]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_F_Sub_HashTag_Type_F_HashTag_Type" Association="Self.FK_F_Sub_HashTag_Type_F_HashTag_Type">
+      <End Role="F_HashTag_Type" EntitySet="F_HashTag_Type" />
+      <End Role="F_Sub_HashTag_Type" EntitySet="F_Sub_HashTag_Type" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

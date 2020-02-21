@@ -3,21 +3,26 @@
 <script src="@Url.Content("~/Scripts/bootbox.min.js")"></script>
 
 <!--page bar start-->
-<div class="page-bar">
+<div class="page-bar all_width">
     <ul class="page-breadcrumb">
         <li>
-            <span href="#">Home</span>
+            <a href="@Url.Action("Index","Home")">Home</a>
             <i class="fa fa-circle"></i>
         </li>
         <li>
-            <span href="#">權限管理</span>
+            系統管理
+            <i class="fa fa-circle"></i>
         </li>
+        <li>
+            <a href="@Url.Action("UserList")">權限管理</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>    <a href="@Url.Action("GroupEdit")">群組管理設定</a></li>
     </ul>
-
 </div>
 <!--page bar end-->
 <!--message start-->
-<div class="title_01">權限管理</div>
+<div class="title_01">@ViewBag.Title</div>
 <form class="form-horizontal form-bordered" method="Post" id="editform" action='@Url.Action("GroupAuthSave")' enctype="multipart/form-data">
     <div class="portlet light bordered">
 
@@ -28,10 +33,12 @@
                     <div class="form-body">
                         <div class="form-group">
                             <div class="col-md-2 col-sm-12 search_item">語系</div>
+                            <div class="col-md-10 col-sm-12 bg-white mobile_white">                            
                             @Html.DropDownList("sel_lang", (IEnumerable<SelectListItem>)ViewBag.langlist, new { @class = "form_02" })
+                            </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-2 col-sm-12 search_item">群組名稱</div>
+                            <div class="col-md-2 col-sm-12 search_item"><span class="red">*</span>群組名稱</div>
                             <div class="col-md-10 col-sm-12 bg-white mobile_white"><input type="text" class="form-control input-medium" value="@Model.GroupName" id="groupname"></div>
                         </div>
 
@@ -155,7 +162,7 @@
                                 <!--系統功能(上方選單) end-->
                                 <!--主要選單 start-->
                                 @{
-                                    for (var mtidx = 1; mtidx <= 5; mtidx++)
+                                    for (var mtidx = 1; mtidx <=3; mtidx++)
                                     {
                                         <div class="competence_title">
                                             @if (mtidx == 1)
@@ -176,19 +183,6 @@
                                                 <input type="checkbox" class="checkboxes checkallitem"  id="menu_3"  />
                                                 <span></span>
                                             </label> }
-                                            else if (mtidx == 4)
-                                            {   <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline" id="menu_3">
-                                                   手機版選單(主選單)
-                                                <input type="checkbox" class="checkboxes checkallitem" id="menu_3" />
-                                                <span></span>
-                                            </label> }
-                                            else if (mtidx == 5)
-                                            {   <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline" id="menu_3">
-                                                   手機版選單(上方選單)
-                                                <input type="checkbox" class="checkboxes checkallitem" id="menu_3" />
-                                                <span></span>
-                                            </label> }
-                                          
                                         </div>
                                         <div class="table-scrollable menu_@mtidx">
                                             <table class="table table-bordered competence_table" width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -218,7 +212,7 @@
                                                                         ischeck = @Model.AdminMenuFunctionInput.Any(x => x.ItemID == l1.ID) ? "checked=checked" : "";
                                                                         <td class='class_03' rowspan='@l1rowcount'>
                                                                             <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                                @l1.MenuName<input type="checkbox" class="checkboxes checkitem" id="menu_@l1.ID" @ischeck/><span></span>
+                                                                                @(string.IsNullOrEmpty(l1.DisplayName)? l1.MenuName:l1.DisplayName)<input type="checkbox" class="checkboxes checkitem" id="menu_@l1.ID" @ischeck/><span></span>
                                                                             </label>
                                                                         </td>
                                                                         if (l2arr.Count() == 0)
@@ -241,8 +235,8 @@
                                                                             ischeck = @Model.AdminMenuFunctionInput.Any(x => x.ItemID == l2arr[l2arridx].ID) ? "checked=checked" : "";
                                                                             <td class='class_03' rowspan='@(_l3menu.Count()==0?1:_l3menu.Count())'>
                                                                                 <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                                    @l2arr[l2arridx].MenuName
-                                                                                    <input type="checkbox" class="checkboxes checkitem" id="menu_@l2arr[l2arridx].ID" @ischeck/>
+                                                                                    @(string.IsNullOrEmpty(l2arr[l2arridx].DisplayName) ? l2arr[l2arridx].MenuName : l2arr[l2arridx].DisplayName) 
+                                                                                    <input type="checkbox" class="checkboxes checkitem" id="menu_@l2arr[l2arridx].ID" @ischeck />
                                                                                     <span></span>
                                                                                 </label>
 
@@ -259,8 +253,8 @@
                                                                         ischeck = @Model.AdminMenuFunctionInput.Any(x => x.ItemID == _l3menu[l3useidx].ID) ? "checked=checked" : "";
                                                                         <td class='class_03'>
                                                                             <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                                                @_l3menu[l3useidx].MenuName
-                                                                                <input type="checkbox" class="checkboxes checkitem" id="menu_@_l3menu[l3useidx].ID" @ischeck/>
+                                                                                @(string.IsNullOrEmpty(_l3menu[l3useidx].DisplayName) ? _l3menu[l3useidx].MenuName : _l3menu[l3useidx].DisplayName)
+                                                                                <input type="checkbox" class="checkboxes checkitem" id="menu_@_l3menu[l3useidx].ID" @ischeck />
                                                                                 <span></span>
                                                                             </label>
                                                                         </td>

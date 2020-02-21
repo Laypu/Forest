@@ -10,3 +10,16 @@ C:\Dropbox\Dropbox\TPCA\TPCA\SQLModel\bin\Release\zh-Hant\EntityFramework.resour
 C:\Dropbox\Dropbox\TPCA\TPCA\SQLModel\obj\Release\SQLModel.csprojResolveAssemblyReference.cache
 C:\Dropbox\Dropbox\TPCA\TPCA\SQLModel\obj\Release\SQLModel.dll
 C:\Dropbox\Dropbox\TPCA\TPCA\SQLModel\obj\Release\SQLModel.pdb
+C:\Users\PC003\Desktop\git\Forest\Forest\SQLModel\bin\Release\SQLModel.dll
+C:\Users\PC003\Desktop\git\Forest\Forest\SQLModel\bin\Release\SQLModel.pdb
+C:\Users\PC003\Desktop\git\Forest\Forest\SQLModel\bin\Release\Utilities.dll
+C:\Users\PC003\Desktop\git\Forest\Forest\SQLModel\bin\Release\NLog.dll
+C:\Users\PC003\Desktop\git\Forest\Forest\SQLModel\bin\Release\Utilities.pdb
+C:\Users\PC003\Desktop\git\Forest\Forest\SQLModel\bin\Release\Utilities.dll.config
+C:\Users\PC003\Desktop\git\Forest\Forest\SQLModel\bin\Release\EntityFramework.xml
+C:\Users\PC003\Desktop\git\Forest\Forest\SQLModel\bin\Release\NLog.xml
+C:\Users\PC003\Desktop\git\Forest\Forest\SQLModel\bin\Release\zh-Hant\EntityFramework.resources.dll
+C:\Users\PC003\Desktop\git\Forest\Forest\SQLModel\obj\Release\SQLModel.csprojAssemblyReference.cache
+C:\Users\PC003\Desktop\git\Forest\Forest\SQLModel\obj\Release\SQLModel.csproj.CopyComplete
+C:\Users\PC003\Desktop\git\Forest\Forest\SQLModel\obj\Release\SQLModel.dll
+C:\Users\PC003\Desktop\git\Forest\Forest\SQLModel\obj\Release\SQLModel.pdb

@@ -6,31 +6,29 @@
 <div class="page-bar all_width">
     <ul class="page-breadcrumb">
         <li>
-            <span href="#">Home</span>
+            <a href="@Url.Action("Index","Home")">Home</a>
             <i class="fa fa-circle"></i>
-            <span href="#">系統管理</span>
-            <i class="fa fa-circle"></i>
-            <span href="#">權限管理</span>
         </li>
+        <li>系統管理<i class="fa fa-circle"></i></li>
+        <li>權限管理</li>
     </ul>
 </div>
 <!--page bar end-->
-<div class="member_title">權限管理</div>
+<div class="title_01">權限管理</div>
 <div class="portlet light bordered">
     <!--set item start-->
     <div class="table-toolbar">
         <div class="col-md-6 col-sm-12 col-xs-12">
             <div class="display_inline">
-                <p class="btn_03">群組</p>
-                @Html.DropDownList(@Html.IdFor(m => m.GroupId).ToString(), (IEnumerable<SelectListItem>)ViewBag.grouplist, new { @class = "form_02" })
-                <button type="button" class="btn blue" id="btn_groupmanager">管理<i class="fa fa-wrench" style="margin-left:2px"></i></button>
+                <p class="class_title">群組</p>
+                @Html.DropDownList(@Html.IdFor(m => m.GroupId).ToString(), (IEnumerable<SelectListItem>)ViewBag.grouplist, new { @class = "form-control_1" })
+                <button type="button" class="btn grey-mint" id="btn_groupmanager">管理</button>
             </div>
         </div>
         <div class="col-md-6 col-sm-12 col-xs-12 mobile_left">
             <p class="display_inline">
                 <button class="btn blue search_icon open">搜尋 <i class="fa fa-search"></i></button>
                 <button class="btn green-meadow" id='btn_add'>新增 <i class="fa fa-plus"></i></button>
-                <button class="btn red" id='btn_del'>刪除 <i class="glyphicon glyphicon-trash"></i></button>
             </p>
         </div>
     </div>
@@ -85,21 +83,22 @@
         <table class="table table-bordered table-hover" border="0" cellspacing="0" cellpadding="0"
                id="eventtable"
                data-url="@Url.Action("PagingUser")"
-               data-sort-name='User_ID'
+               data-sort-name='Account'
                data-page-size='10'
                data-filed-id='ID'
                data-max-pagination='10'>
             <thead>
                 <tr class="bg-grey_1" filed-class='odd gradeX'>
-                    <th width="80" class="text-center"  filed-type='function' filed-name='customerdeltr'>
+                    <th width="60" class="text-center" filed-type='function' filed-name='customerdeltr'>
                         <label class='mt-checkbox mt-checkbox-single mt-checkbox-outline'>
                             <input type='checkbox' class='checkboxes' id="chk_all" /><span></span>
-                        </label>刪除
+                        </label>
+                        <button class="btn red-mint btn-xs" id='btn_del'><i class="glyphicon glyphicon-trash"></i></button>
                     </th>
-                    <th filed-name='customernametr' width="20%" class="text-center" filed-type='function'  >帳號</th>
-                    <th filed-name='Name' width="20%" class="text-center">姓名</th>
-                    <th filed-name='GroupName' width="20%" class="text-center">所屬群組</th>
-                    <th filed-name='customertr' width="80px" class="text-center" filed-item-class="chkstatus"  filed-type='function'>啟用</th>
+                    <th filed-name='customernametr' class="text-center" filed-type='function' >帳號</th>
+                    <th filed-name='Name' class="text-center" filed-item-class="text-center">姓名</th>
+                    <th filed-name='GroupName'  class="text-center" filed-item-class="text-center">所屬群組</th>
+                    <th filed-name='customertr' width="10%" class="text-center" filed-item-class="chkstatus"  filed-type='function'>啟用</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -225,9 +224,9 @@
 
         function customernametr(row, columnidx, idx, filedname, tableid, type, fileditemclass) {
             if (row["Readonly"]) {
-                return "<td>admin</td>";
+                return "<td class='text-center'>admin</td>";
             } else {
-                return "<td><a href='#' class='edit' value='" + row[tableid] + "'>" + row["Account"] + "</a></td>";
+                return "<td class='text-center'><a href='#' class='edit' value='" + row[tableid] + "'>" + row["Account"] + "</a></td>";
             }
         }
         function customertr(row, columnidx, idx, filedname, tableid, type, fileditemclass) {

@@ -16,7 +16,7 @@
 </div>
 <!--page bar end-->
 <!--message start-->
-<div class="member_title">@ViewBag.Title</div>
+<div class="title_01">@ViewBag.Title</div>
 
 <div class="portlet light bordered">
 
@@ -29,8 +29,12 @@
                         <div class="form-group">
                             <div class="col-md-2 col-sm-2 col-xs-12 search_item">切換項目</div>
                             <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
-                               <div style="float:left"> <input id="Radio1" type="radio" name="Type" value="1" checked="checked"/>單語系 @Html.DropDownList("LangID", (IEnumerable<SelectListItem>)ViewBag.langlist, new { @class = "form_02" })</div>
-                                <div style="float:left; margin-left:20px; margin-top:10px"> <input id="Radio2" type="radio"   name="Type" value="2"/>多語系</div>
+                                @Html.DropDownList("LangID", (IEnumerable<SelectListItem>)ViewBag.langlist, new { @class = "form_02" })
+                                @*<div style="float:left">
+                                    <input id="Radio1" type="radio" name="Type" value="1" checked="checked" />單語系
+                                    @Html.DropDownList("LangID", (IEnumerable<SelectListItem>)ViewBag.langlist, new { @class = "form_02" })
+                                </div>
+                                <div style="float:left; margin-left:20px; margin-top:10px"> <input id="Radio2" type="radio" name="Type" value="2" />多語系</div>*@
                             </div>
                         </div>
                     </div>
@@ -39,7 +43,7 @@
         </div>
         <div class="text-center search_padding">
             <button type="button" class="btn blue" id="btn_submit">確認送出</button>
-            <button type="button" class="btn blue" id="btn_return" onclick="document.location.href='@Url.Action("Index")'">返回列表</button>
+            <button type="button" class="btn grey-mint" id="btn_return" onclick="document.location.href='@Url.Action("Index")'">返回列表</button>
         </div>
     </form>
 
@@ -54,10 +58,14 @@
             $("input[name=Type][value=" + '@ViewBag.usetype' + "]").attr('checked', true);
             $("#LangID").val('@ViewBag.langid')
             $("#btn_submit").click(function () {
-                $.post('@Url.Action("SetModelSetting")', { mainid: '@ViewBag.mainid', type: $('input[name=Type]:checked').val(), langid: $("#LangID").val() },
+                $.post('@Url.Action("SetModelSetting")', { mainid: '@ViewBag.mainid', type: "1", langid: $("#LangID").val() },
                     function (data) {
                     alert(data);
                 });
+                @*$.post('@Url.Action("SetModelSetting")', { mainid: '@ViewBag.mainid', type: $('input[name=Type]:checked').val(), langid: $("#LangID").val() },
+                    function (data) {
+                    alert(data);
+                });*@
             });
         });
     </script>

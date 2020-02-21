@@ -3,77 +3,72 @@
 <div class="page-bar all_width">
     <ul class="page-breadcrumb">
         <li>
-            <span href="#">Home</span>
+            <a href="@Url.Action("Index","Home")">Home</a>
             <i class="fa fa-circle"></i>
-            <span href="#">系統管理</span>
-            <i class="fa fa-circle"></i>
-            <span href="#">管理介面設定</span>
         </li>
+        <li>系統管理<i class="fa fa-circle"></i></li>
+        <li>管理介面設定</li>
     </ul>
 </div>
 <!--page bar end-->
 <!--message start-->
-<div class="member_title">@ViewBag.Title</div>
+<div class="title_01">管理介面設定</div>
 
 <div class="portlet light bordered">
     <form class="form-horizontal form-bordered" method="Post" id="editform" action='@Url.Action("SaveSiteConfig")' enctype="multipart/form-data">
         @Html.HiddenFor(Model => Model.ID)
+
+        <h3>登入頁</h3>
         <div class="portlet light form-fit bordered">
             <div class="portlet-body form">
                 <div class="form-horizontal form-bordered">
+
                     <div class="form-body" id="form-body">
 
                         <div class="form-group">
-                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">
-                                <img src="@Url.Content("~/img/Icon_01.gif")" style="margin:0px 5px 5px 0px" />登入頁
-                            </div>
-                            <div class="col-md-4 col-sm-4 col-xs-12 bg-white mobile_white">
-
-                            </div>
-                            <div class="col-md-6 col-sm-6 hidden-xs bg-white">&nbsp;</div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-2 col-sm-2 col-xs-12 search_item">視窗標題文字</div>
-                            <div class="col-md-4 col-sm-4 col-xs-12 bg-white mobile_white">
+                            <div class="col-md-2 col-sm-12 col-xs-12 search_item">視窗標題文字</div>
+                            <div class="col-md-10 col-sm-12col-xs-12 bg-white mobile_white">
                                 @Html.EditorFor(model => model.Login_Title, new { htmlAttributes = new { @class = "form-control" } })
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-md-2 col-sm-2 col-xs-12 search_item">公司名稱</div>
-                            <div class="col-md-4 col-sm-4 col-xs-12 bg-white mobile_white">
+                        @*<div class="form-group">
+                            <div class="col-md-2 col-sm-12 col-xs-12 search_item">公司名稱</div>
+                            <div class="col-md-4 col-sm-12col-xs-12 bg-white mobile_white">
                                 @Html.EditorFor(model => model.Comp_Name, new { htmlAttributes = new { @class = "form-control" } })
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">
-                                <img src="@Url.Content("~/img/Icon_01.gif")" style="margin:0px 5px 5px 0px" />後台管理內頁
-                            </div>
-                            <div class="col-md-4 col-sm-4 col-xs-12 bg-white mobile_white">
+                        </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                            </div>
-                            <div class="col-md-6 col-sm-6 hidden-xs bg-white">&nbsp;</div>
-                        </div>
+        <h3>後台管理內頁</h3>
+        <div class="portlet light form-fit bordered">
+            <div class="portlet-body form">
+                <div class="form-horizontal form-bordered">
+
+                    <div class="form-body" id="form-body">
                         <div class="form-group">
-                            <div class="col-md-2 col-sm-2 col-xs-12 search_item">視窗標題文字</div>
-                            <div class="col-md-4 col-sm-4 col-xs-12 bg-white mobile_white">
+                            <div class="col-md-2 col-sm-12 col-xs-12 search_item">視窗標題文字</div>
+                            <div class="col-md-10 col-sm-12col-xs-12 bg-white mobile_white">
                                 @Html.EditorFor(model => model.Page_Title, new { htmlAttributes = new { @class = "form-control" } })
                             </div>
                         </div>
                         <div class="form-group" style="display:none">
-                            <div class="col-md-2 col-sm-2 col-xs-12 search_item">網站Logo</div>
+                            <div class="col-md-2 col-sm-12 col-xs-12 search_item">網站Logo</div>
                             <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
-                                <input type="file" id="fileupload" class="form-control mobile_input display_inline" name="uploadfile">
+                                <input type="file" id="fileupload" class=" mobile_input display_inline" name="uploadfile">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="text-center search_padding">
             <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
         </div>
-       </form>
+    </form>
 
 </div>
 @section scripts {

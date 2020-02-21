@@ -3,17 +3,16 @@
 <div class="page-bar all_width">
     <ul class="page-breadcrumb">
         <li>
-            <span href="#">Home</span>
+            <a href="@Url.Action("Index","Home")">Home</a>
             <i class="fa fa-circle"></i>
-            <span href="#">系統管理</span>
-            <i class="fa fa-circle"></i>
-            <span href="#">密碼設定</span>
         </li>
+        <li>系統管理<i class="fa fa-circle"></i></li>
+        <li>流量分析</li>
     </ul>
 </div>
 <!--page bar end-->
 <!--message start-->
-<div class="member_title">@ViewBag.Title</div>
+<div class="title_01">流量分析</div>
 
 <div class="portlet light bordered">
 
@@ -28,10 +27,9 @@
 
                         <div class="form-group">
                             <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">申請說明</div>
-                            <div class="col-md-4 col-sm-4 col-xs-12 bg-white mobile_white">
+                            <div class="col-md-10 col-sm-4 col-xs-12 bg-white mobile_white">
                                 <button type="button" class="btn blue" id="btn_open">開啟</button>
                             </div>
-                            <div class="col-md-6 col-sm-6 hidden-xs bg-white">&nbsp;</div>
                         </div>
 
                         <div class="form-group">
@@ -42,7 +40,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-2 col-sm-2 col-xs-12 search_item">流量分析頁面路徑</div>
-                            <div class="col-md-4 col-sm-4 col-xs-12 bg-white mobile_white">
+                            <div class="col-md-10 col-sm-4 col-xs-12 bg-white mobile_white">
                                 <input id="txt_path" type="text" class="form-control" name="Siteflow_Link" value="@ViewBag.Path"/>
                             </div>
                         </div>
@@ -52,7 +50,7 @@
         </div>
         <div class="text-center search_padding">
             <button type="button" class="btn blue" id="btn_submit">確認送出</button>
-            <button type="button" class="btn blue" id="btn_return" onclick="document.location.href='@Url.Action("SiteFlow")'">返回列表</button>
+            <button type="button" class="btn grey-mint" id="btn_return" onclick="document.location.href='@Url.Action("SiteFlow")'">返回列表</button>
         </div>
     </form>
 

@@ -3,19 +3,32 @@
 <script src="@Url.Content("~/Scripts/custom.js")"></script>
 <script src="@Url.Content("~/Scripts/bootbox.min.js")"></script>
 <!--page bar start-->
-<div class="page-bar all_width">
+<div class="page-bar">
     <ul class="page-breadcrumb">
         <li>
-            <span href="#">Home</span>
+            <a href="@Url.Action("Index","Home")">Home</a>
             <i class="fa fa-circle"></i>
-            <span href="#">訊息管理</span>
+        </li>
+        <li>
+            <a href="@Url.Action("Index","Model")">模組管理</a>
             <i class="fa fa-circle"></i>
-            <span href="#">類別管理設定</span>
+        </li>
+        <li>
+            <a href="@Url.Action("Index","Message")">訊息管理</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            <a href="@Url.Action("ModelItem","Message",new { mainid= ViewBag.mainid })">清單</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            類別管理
         </li>
     </ul>
+
 </div>
 <!--page bar end-->
-<div class="member_title"> 類別管理設定</div>
+<div class="title_01"> 類別管理設定</div>
 <div class="portlet light bordered">
     <!--set item start-->
     <div class="table-toolbar">
@@ -24,8 +37,7 @@
         <div class="col-md-6 col-sm-12 col-xs-12 mobile_left ">
             <p class="display_inline ">
                 <button class="btn green-meadow" id='btn_add'>新增 <i class="fa fa-plus"></i></button>
-                <button class="btn red" id='btn_del'>刪除 <i class="glyphicon glyphicon-trash"></i></button>
-                <button type="button" class="btn blue" id="btn_return">返回</button>
+                <button type="button" class="btn grey-mint" id="btn_return">返回</button>
             </p>
         </div>
     </div>
@@ -41,12 +53,13 @@
                data-max-pagination='10'>
             <thead>
                 <tr class="bg-grey_1" filed-class='odd gradeX'>
-                    <th width="80px" class="text-center"  filed-type='delcheckbox'>
-                         <label class='mt-checkbox mt-checkbox-single mt-checkbox-outline'>
-                          <input type='checkbox' class='checkboxes' id="chk_all" /><span></span>
-                          </label>刪除
+                    <th width="80px" class="text-center" filed-type='delcheckbox'>
+                        <label class='mt-checkbox mt-checkbox-single mt-checkbox-outline'>
+                            <input type='checkbox' class='checkboxes' id="chk_all" /><span></span>
+                        </label>
+                        <button class="btn red-mint btn-xs" id='btn_del'><i class="glyphicon glyphicon-trash"></i></button>
                     </th>
-                    <th filed-name='Sort' width="40px" class="text-center"  filed-type='numbertextcheck' filed-item-class="sortedit">排序</th>
+                    <th filed-name='Sort' width="160px" class="text-center"  filed-type='numbertextcheck' filed-item-class="sortedit">排序</th>
                     <th filed-name='Group_Name' class="text-center"  filed-type='link'>類別名稱</th>
                     <th width="80px" filed-name='Enabled'  class="text-center" filed-type='checkbox'   filed-item-class="chkstatus">顯示</th>
                 </tr>

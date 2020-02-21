@@ -1,0 +1,42 @@
+﻿@model WebSiteProject.Models.Destination_MapLegend
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Destination_MapLegend</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination_MAP_LEGEND_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination_MAP_LEGEND_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination_Img)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination_Img)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Destination_Img_Mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination_Img_Mobile)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Destination_MAP_LEGEND_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

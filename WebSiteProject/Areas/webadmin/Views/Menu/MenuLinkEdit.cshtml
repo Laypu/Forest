@@ -4,11 +4,11 @@
 <div class="page-bar all_width">
     <ul class="page-breadcrumb">
         <li>
-            <a href="@Url.Action("Index","Home")">Home</a>
+            <a href="@Url.Action("Index", "Home")">Home</a>
             <i class="fa fa-circle"></i>
         </li>
         <li>
-            網站選單
+            @(string.IsNullOrEmpty(Model.DisplayName) ? Model.MenuName : Model.DisplayName)
             <i class="fa fa-circle"></i>
         </li>
         <li>連結路徑</li>
@@ -48,7 +48,8 @@
     @section scripts {
         <script>
         $(function () {
-
+            
+            
             $('#editform').submit(function (event) {
                $(".required").hide();
                var inputval = $("#editform :input").filter(function () { return $(this).val() == "" && $(this).hasClass('checkitem'); });

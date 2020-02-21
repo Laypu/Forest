@@ -4,126 +4,153 @@
 <div class="page-bar all_width">
     <ul class="page-breadcrumb">
         <li>
-            <span href="#">Home</span>
+            <a href="@Url.Action("Index","Home")">Home</a>
             <i class="fa fa-circle"></i>
-            <span href="#">選單管理</span>
-            <i class="fa fa-circle"></i>
-            <span href="#">@ViewBag.Title</span>
         </li>
+        <li>
+            網站選單
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>@ViewBag.Title</li>
     </ul>
 </div>
 <!--page bar end-->
 <!--message start-->
-<div class="member_title">@ViewBag.Title</div>
-<form class="form-horizontal form-bordered" method="Post" id="editform" action='@Url.Action("SaveMenu")'>
-    @Html.HiddenFor(Model => Model.ID)
-    @Html.HiddenFor(Model => Model.MenuType)
-    @Html.HiddenFor(Model => Model.ImgNameOri)
-    @Html.HiddenFor(Model => Model.MenuLevel)
-    @Html.HiddenFor(Model => Model.ParentID)
-    @Html.HiddenFor(Model => Model.DeleteUploadFile)
-    @Html.HiddenFor(Model => Model.LinkUploadFileName)
-    <div class="portlet light form-fit bordered" id="div_seo">
-        <div class="portlet-body form">
-            <div class="form-horizontal form-bordered">
-                <div class="form-body" id="form-body">
-                    <div class="form-group">
-                        <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">選單名稱</div>
-                        <div class="col-md-4 col-sm-4 col-xs-12 bg-white mobile_white">
-                            <div class="input-group input-large">
-                                @Html.EditorFor(model => model.MenuName, new { htmlAttributes = new { @class = "form-control checkitem" } })
-                                <span class="required" id="MenuName-error" style="display:none;">標題 必須填寫！</span>
+<div class="title_01">@ViewBag.Title</div>
+<div class="portlet light bordered">
+    <form class="form-horizontal form-bordered" method="Post" id="editform" action='@Url.Action("SaveMenu")'>
+        @Html.HiddenFor(Model => Model.ID)
+        @Html.HiddenFor(Model => Model.MenuType)
+        @Html.HiddenFor(Model => Model.ImgNameOri)
+        @Html.HiddenFor(Model => Model.MenuLevel)
+        @Html.HiddenFor(Model => Model.ParentID)
+        @Html.HiddenFor(Model => Model.DeleteUploadFile)
+        @Html.HiddenFor(Model => Model.LinkUploadFileName)
+        <div class="portlet light form-fit bordered" id="div_seo">
+            <div class="portlet-body form">
+                <div class="form-horizontal form-bordered">
+                    <div class="form-body" id="form-body">
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-12 col-xs-12 bg-grey_1 search_item"><span class="red">*</span>選單名稱</div>
+                            <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
+                                <input id="MenuName" type="text" class="form-control checkitem" value="@Model.MenuName" />
+                                <span class="required" id="MenuName-error" style="display:none;">選單內容 必須填寫！</span>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6 hidden-xs bg-white">&nbsp;</div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-2 col-sm-12 search_item">內頁風格上傳</div>
-                        <div class="col-md-10 col-sm-12 bg-white mobile_white">
-                            <div class="col-md-12">
-                                <div id="div_oldfile" style="display:none"><a href="@Model.ImageUrl" target="preview">@Html.Raw(Model.ImgShowName)</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delimage">刪除</label></div>
-                                <div style="display:inline">
-                                    <label for="exampleInputFile" class="control-label display_inline">圖片上傳</label>
-                                    <input id="file_image" type="file" class="form-control mobile_input display_inline" name="ImageFile" accept="image/*" />
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-12 col-xs-12 bg-grey_1 search_item">ICON</div>
+                            <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
+                                <input id="ICon" type="text" class="form-control" value="@Model.ICon" />
+                            </div>
+                        </div>
+                        <div class="form-group" style="display:none;">
+                            <div class="col-md-2 col-sm-12 search_item">內頁風格上傳</div>
+                            <div class="col-md-10 col-sm-12 bg-white mobile_white">
+                                <div class="col-md-12">
+                                    <div id="div_oldfile" style="display:none"><a href="@Model.ImageUrl" target="preview">@Html.Raw(Model.ImgShowName)</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delimage">刪除</label></div>
+                                    <div style="display:inline">
+                                        <input id="file_image" type="file" class="display_inline" name="ImageFile" accept="image/*" />
+                                    </div>
+                                    <div>
+                                        <span style="color:red;padding-left; font-size:12px">建議尺寸 1920X470 px，限jpg、gif、png格式</span>
+                                    </div>
+                                </div>
+                                @*<div class="col-md-12">
+                                        <label class="control-label display_inline" style="float:left">內頁風格高度</label>
+                                        @Html.EditorFor(model => model.ImageHeight, new { htmlAttributes = new { @class = "form-control input-small", style = "float:left" } })
+                                    </div>*@
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-12 search_item">連結方式</div>
+                            <div class="col-md-10 col-sm-12 bg-white mobile_white">
+                                <div class="col-md-12">
+
+                                    <label for="ImageFile" class="col-md-2">連結方式</label>
+                                    <div class="col-md-10">
+                                        @Html.RadioButtonFor(model => model.LinkMode, 1, new { style = "margin-left :15px", @checked = "checked", @class = "LinkMode" }) 無
+                                        @Html.RadioButtonFor(model => model.LinkMode, 2, new { style = "margin-left :40px", @class = "LinkMode" }) 程式模組
+                                        @Html.RadioButtonFor(model => model.LinkMode, 3, new { style = "margin-left :40px", @class = "LinkMode" }) 路徑
+                                        @Html.RadioButtonFor(model => model.LinkMode, 4, new { style = "margin-left :40px", @class = "LinkMode" }) 檔案
+                                    </div>
+                                </div>
+                                <div class="col-md-12" id="div_model">
+                                    <label for="ImageFile" class="col-md-2">程式模組</label>
+                                    <div class="col-md-10">
+                                        <select style="" id="sel_model" name='@Html.IdFor(m=>m.ModelID)' class="form-control_1">
+                                            <option value="" selected="selected">請選擇程式模組</option>
+                                            <option value="1">圖文編輯</option>
+                                            <option value="2">訊息管理</option>
+                                            <option value="3">活動管理</option>
+                                            <option value="4">文件下載</option>
+                                            <option value="11">表單管理</option>
+                                            <option value="18">影音管理</option>
+                                            <option value="5">網站導覽</option>
+                                            <option value="17">大事記要模組</option>
+                                            <option value="19">專利管理</option>
+                                            @*<option value="6">語系切換</option>*@
+                                        </select>
+                                        <select style="margin-left :10px" id="sel_modelitem" name='@Html.IdFor(m=>m.ModelItemID)' class="form-control_1"></select>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-12" id="div_link" style="display:none">
+                                    <label for="ImageFile" class="col-md-2">連結路徑</label>
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.LinkUrl, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <div class="col-md-12" id="div_file" style="display:none">
+                                    <div id="div_hasfile" style="display:none">
+
+                                        <a href="#" class="btn blue-hoki alert_box_checkbox" role="button" id='btn_DelFile'>刪除</a>
+                                        <label class="col-md-2">檔案名稱</label>
+                                        <div class="col-md-10">
+                                            <a href='@Url.Action("FileDownLoad",new {id=Model.ID})'>@Model.LinkUploadFileName</a>
+                                        </div>
+                                    </div>
+                                    <div id="div_nofile" style="display:inline">
+                                        <label class="col-md-2">檔案上傳</label>
+                                        <div class="col-md-10">
+                                            <input type="file" id="uploadfile" class="display_inline" name="uploadfile">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            @*<div class="col-md-12">
-                                <label class="control-label display_inline" style="float:left">內頁風格高度</label>
-                                @Html.EditorFor(model => model.ImageHeight, new { htmlAttributes = new { @class = "form-control input-small", style = "float:left" } })
-                            </div>*@
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-2 col-sm-12 search_item">連結方式</div>
-                        <div class="col-md-10 col-sm-12 bg-white mobile_white">
-                            <div class="col-md-12">
-                                <label class="control-label display_inline">連結方式:</label>
-                                @Html.RadioButtonFor(model => model.LinkMode, 1, new { style = "margin-left :15px", @checked = "checked" ,@class= "LinkMode" }) 無
-                                @Html.RadioButtonFor(model => model.LinkMode, 2, new { style = "margin-left :40px", @class = "LinkMode" }) 程式模組
-                                @Html.RadioButtonFor(model => model.LinkMode, 3, new { style = "margin-left :40px", @class = "LinkMode" }) 路徑
-                                @Html.RadioButtonFor(model => model.LinkMode, 4, new { style = "margin-left :40px", @class = "LinkMode" }) 檔案
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-12 col-xs-12 bg-grey_1 search_item">顯示模式</div>
+                            <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white form-horizontal table_font">
+                                @Html.RadioButtonFor(model => model.ShowMode, 1, new { style = "margin-left :0px", @checked = "checked" }) 顯示框架
+                                @Html.RadioButtonFor(model => model.ShowMode, 2, new { style = "margin-left :40px" }) 不顯示框架
                             </div>
-                            <div class="col-md-12" id="div_model">
-                                <div class="col-md-1">程式模組:</div>
-                                <select style="" id="sel_model" name='@Html.IdFor(m=>m.ModelID)'>
-                                    <option value="" selected="selected">請選擇程式模組</option>
-                                    <option value="1">圖文編輯</option>
-                                    <option value="2">訊息管理</option>
-                                    <option value="16">常見問答</option>
-                                </select>
-                                <select style="margin-left :40px" id="sel_modelitem" name='@Html.IdFor(m=>m.ModelItemID)'></select>
-                            </div>
-                            <div class="col-md-12" id="div_link" style="display:none">
-                                <div class="col-md-1">連結路徑:</div>
-                                <div class="col-md-11">@Html.EditorFor(model => model.LinkUrl, new { htmlAttributes = new { @class = "form-control" } })</div>
-                            </div>
-                            <div class="col-md-12" id="div_file" style="display:none">
-                                <div id="div_hasfile" style="display:none">
-                                    <a href="#" class="btn blue-hoki alert_box_checkbox" role="button" id='btn_DelFile'>刪除</a>
-                                    <label for="uploadfile" class="control-label display_inline">
-                                        檔案名稱:
-                                        <a href='@Url.Action("FileDownLoad",new {id=Model.ID})'>@Model.LinkUploadFileName</a>
-                                    </label>
-                                </div>
-                                <div id="div_nofile" style="display:inline">
-                                    <label for="uploadfile" class="control-label display_inline">檔案上傳</label>
-                                    <input type="file" id="uploadfile" class="form-control mobile_input display_inline" name="uploadfile">
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-12 col-xs-12 bg-grey_1 search_item">開啟方式</div>
+                            <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white form-horizontal">
+                                @Html.RadioButtonFor(model => model.OpenMode, 1, new { style = "margin-left :0px", @checked = "checked" }) 原視窗<br />
+                                @Html.RadioButtonFor(model => model.OpenMode, 2, new { style = "" }) 新視窗<br />
+                                @Html.RadioButtonFor(model => model.OpenMode, 3, new { style = "float:left" }) <div style="float:left">跳出視窗</div>
+                                <div>
+                                    <div style="float:left; margin-left:40px">視窗寬度</div>@Html.EditorFor(model => model.WindowWidth, new { htmlAttributes = new { @class = "form-control input-small", style = "float:left; margin-left:2px" } })
+                                    <div style="float:left;margin-left:20px">視窗高度</div>@Html.EditorFor(model => model.WindowHeight, new { htmlAttributes = new { @class = "form-control input-small", style = "float:left;margin-left:2px" } })
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">顯示模式</div>
-                        <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white form-horizontal">
-                            @Html.RadioButtonFor(model => model.ShowMode, 1, new { style = "margin-left :0px", @checked = "checked" }) 顯示框架
-                            @Html.RadioButtonFor(model => model.ShowMode, 2, new { style = "margin-left :40px" }) 不顯示框架
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">開啟方式</div>
-                        <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white form-horizontal">
-                            @Html.RadioButtonFor(model => model.OpenMode, 1, new { style = "margin-left :0px", @checked = "checked" }) 原視窗<br />
-                            @Html.RadioButtonFor(model => model.OpenMode, 2, new { style = "" }) 新視窗<br />
-                            @Html.RadioButtonFor(model => model.OpenMode, 3, new { style = "float:left" }) <div style="float:left">跳出視窗</div>
-                            <div>
-                                <div style="float:left; margin-left:40px">視窗寬度</div>@Html.EditorFor(model => model.WindowWidth, new { htmlAttributes = new { @class = "form-control input-small", style = "float:left; margin-left:2px" } })
-                                <div style="float:left;margin-left:20px">視窗高度</div>@Html.EditorFor(model => model.WindowHeight, new { htmlAttributes = new { @class = "form-control input-small", style = "float:left;margin-left:2px" } })
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
 
             </div>
-
         </div>
-    </div>
-    <div class="text-center search_padding">
-        <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
-        <button type="button" class="btn blue" id="btn_return" onclick="document.location.href='@Url.Action("MainMenu")?menutype=@Model.MenuType'">返回</button>
-    </div>
-</form>
-@section scripts {
-    <script>
+        <div class="text-center search_padding">
+            <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+            <button type="button" class="btn grey-mint" id="btn_return" onclick="document.location.href='@Url.Action("MainMenu")?menutype=@Model.MenuType'">返回</button>
+        </div>
+    </form>
+    @section scripts {
+        <script>
         $(function () {
             var fileupload = '@Model.ImageFile';
           if ('@Model.ID'>0 && '@Model.ImgNameOri'!='') {
@@ -202,7 +229,7 @@
                 }
 
                 var file = $("#file_image");
-                var _validFileExtensions = [".jpg", ".png", ".gif"];
+                var _validFileExtensions = [".jpg", ".png", ".gif", ".jpeg"];
                 var sFileName = file.val();
                 if (sFileName.length > 0) {
                     var blnValid = false;
@@ -241,6 +268,8 @@
                         return false;
                     }
                 }
+                formData.append("MenuName", encodeURIComponent($('#MenuName').val()));
+                formData.append("ICon", encodeURIComponent($('#ICon').val()));
                 formData.append("DeleteUploadFile", $("#DeleteUploadFile").val());
                 $.ajax({
                     url: this.action,
@@ -260,7 +289,8 @@
                 return false;
             });
         });
-    </script>
+        </script>
 
-}
+    }
 
+</div>

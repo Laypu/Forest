@@ -1,0 +1,1673 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ForestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ForestEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ActiveItems" EntityType="ForestModel.ActiveItem" />
+    <EntitySet Name="ActivePhotoes" EntityType="ForestModel.ActivePhoto" />
+    <EntitySet Name="ActiveUnitSettings" EntityType="ForestModel.ActiveUnitSetting" />
+    <EntitySet Name="ADCenters" EntityType="ForestModel.ADCenter" />
+    <EntitySet Name="ADDowns" EntityType="ForestModel.ADDown" />
+    <EntitySet Name="ADMains" EntityType="ForestModel.ADMain" />
+    <EntitySet Name="ADMobiles" EntityType="ForestModel.ADMobile" />
+    <EntitySet Name="ADMobileBlocks" EntityType="ForestModel.ADMobileBlock" />
+    <EntitySet Name="ADRights" EntityType="ForestModel.ADRight" />
+    <EntitySet Name="ADRightDowns" EntityType="ForestModel.ADRightDown" />
+    <EntitySet Name="ADSets" EntityType="ForestModel.ADSet" />
+    <EntitySet Name="Cities" EntityType="ForestModel.City" />
+    <EntitySet Name="ColumnSettings" EntityType="ForestModel.ColumnSetting" />
+    <EntitySet Name="Countries" EntityType="ForestModel.Country" />
+    <EntitySet Name="EventListItems" EntityType="ForestModel.EventListItem" />
+    <EntitySet Name="EventListUnitSettings" EntityType="ForestModel.EventListUnitSetting" />
+    <EntitySet Name="F_HashTag_Type" EntityType="ForestModel.F_HashTag_Type" />
+    <EntitySet Name="F_Index" EntityType="ForestModel.F_Index" />
+    <EntitySet Name="F_Index_Img" EntityType="ForestModel.F_Index_Img" />
+    <EntitySet Name="F_MessageModel" EntityType="ForestModel.F_MessageModel" />
+    <EntitySet Name="F_Sub_HashTag_Type" EntityType="ForestModel.F_Sub_HashTag_Type" />
+    <EntitySet Name="F_Thingtodo_Index" EntityType="ForestModel.F_Thingtodo_Index" />
+    <EntitySet Name="F_Thingtodo_Type" EntityType="ForestModel.F_Thingtodo_Type" />
+    <EntitySet Name="FileDownloadItems" EntityType="ForestModel.FileDownloadItem" />
+    <EntitySet Name="FileDownloadUnitSettings" EntityType="ForestModel.FileDownloadUnitSetting" />
+    <EntitySet Name="FormInputs" EntityType="ForestModel.FormInput" />
+    <EntitySet Name="FormSelItems" EntityType="ForestModel.FormSelItem" />
+    <EntitySet Name="FormSettings" EntityType="ForestModel.FormSetting" />
+    <EntitySet Name="FormUnitSettings" EntityType="ForestModel.FormUnitSetting" />
+    <EntitySet Name="ForumUnitSettings" EntityType="ForestModel.ForumUnitSetting" />
+    <EntitySet Name="FreeZoneContents" EntityType="ForestModel.FreeZoneContent" />
+    <EntitySet Name="FreeZoneTitles" EntityType="ForestModel.FreeZoneTitle" />
+    <EntitySet Name="GroupActives" EntityType="ForestModel.GroupActive" />
+    <EntitySet Name="GroupFileDownloads" EntityType="ForestModel.GroupFileDownload" />
+    <EntitySet Name="GroupMessages" EntityType="ForestModel.GroupMessage" />
+    <EntitySet Name="GroupPatents" EntityType="ForestModel.GroupPatent" />
+    <EntitySet Name="GroupUsers" EntityType="ForestModel.GroupUser" />
+    <EntitySet Name="GroupVideos" EntityType="ForestModel.GroupVideo" />
+    <EntitySet Name="Imgs" EntityType="ForestModel.Img" />
+    <EntitySet Name="Langs" EntityType="ForestModel.Lang" />
+    <EntitySet Name="LangKeys" EntityType="ForestModel.LangKey" />
+    <EntitySet Name="LangKeyUnits" EntityType="ForestModel.LangKeyUnit" />
+    <EntitySet Name="Menus" EntityType="ForestModel.Menu" />
+    <EntitySet Name="MessageItems" EntityType="ForestModel.MessageItem" />
+    <EntitySet Name="MessageUnitSettings" EntityType="ForestModel.MessageUnitSetting" />
+    <EntitySet Name="ModelActiveEditMains" EntityType="ForestModel.ModelActiveEditMain" />
+    <EntitySet Name="ModelEventListMains" EntityType="ForestModel.ModelEventListMain" />
+    <EntitySet Name="ModelFileDownloadMains" EntityType="ForestModel.ModelFileDownloadMain" />
+    <EntitySet Name="ModelFormMains" EntityType="ForestModel.ModelFormMain" />
+    <EntitySet Name="ModelLangMains" EntityType="ForestModel.ModelLangMain" />
+    <EntitySet Name="ModelMessageMains" EntityType="ForestModel.ModelMessageMain" />
+    <EntitySet Name="ModelPageEditMains" EntityType="ForestModel.ModelPageEditMain" />
+    <EntitySet Name="ModelPatentMains" EntityType="ForestModel.ModelPatentMain" />
+    <EntitySet Name="ModelVideoMains" EntityType="ForestModel.ModelVideoMain" />
+    <EntitySet Name="ModelWebsiteMapMains" EntityType="ForestModel.ModelWebsiteMapMain" />
+    <EntitySet Name="PageIndexItems" EntityType="ForestModel.PageIndexItem" />
+    <EntitySet Name="PageIndexSettings" EntityType="ForestModel.PageIndexSetting" />
+    <EntitySet Name="PageLayouts" EntityType="ForestModel.PageLayout" />
+    <EntitySet Name="PageUnitSettings" EntityType="ForestModel.PageUnitSetting" />
+    <EntitySet Name="PatentItems" EntityType="ForestModel.PatentItem" />
+    <EntitySet Name="PatentUnitSettings" EntityType="ForestModel.PatentUnitSetting" />
+    <EntitySet Name="SEOs" EntityType="ForestModel.SEO" />
+    <EntitySet Name="SiteConfigs" EntityType="ForestModel.SiteConfig" />
+    <EntitySet Name="SiteFlows" EntityType="ForestModel.SiteFlow" />
+    <EntitySet Name="SiteLayouts" EntityType="ForestModel.SiteLayout" />
+    <EntitySet Name="SiteLists" EntityType="ForestModel.SiteList" />
+    <EntitySet Name="sysdiagrams" EntityType="ForestModel.sysdiagram" />
+    <EntitySet Name="Users" EntityType="ForestModel.User" />
+    <EntitySet Name="VideoItems" EntityType="ForestModel.VideoItem" />
+    <EntitySet Name="VideoUnitSettings" EntityType="ForestModel.VideoUnitSetting" />
+    <EntitySet Name="AdminFunctions" EntityType="ForestModel.AdminFunction" />
+    <EntitySet Name="LinkItems" EntityType="ForestModel.LinkItem" />
+    <EntitySet Name="ZipCodes" EntityType="ForestModel.ZipCode" />
+    <AssociationSet Name="FK_F_Sub_HashTag_Type_F_HashTag_Type" Association="ForestModel.FK_F_Sub_HashTag_Type_F_HashTag_Type">
+      <End Role="F_HashTag_Type" EntitySet="F_HashTag_Type" />
+      <End Role="F_Sub_HashTag_Type" EntitySet="F_Sub_HashTag_Type" />
+    </AssociationSet>
+    <EntitySet Name="F_Destination_Type" EntityType="ForestModel.F_Destination_Type" />
+    <EntitySet Name="Destination_Index" EntityType="ForestModel.Destination_Index" />
+    <EntitySet Name="Destination_MapLegend" EntityType="ForestModel.Destination_MapLegend" />
+  </EntityContainer>
+  <EntityType Name="ActiveItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="GroupID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="HtmlContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClickCnt" Type="Int32" />
+    <Property Name="UploadFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UploadFilePath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UploadFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileLocation" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="LinkUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="StDate" Type="DateTime" Precision="3" />
+    <Property Name="EdDate" Type="DateTime" Precision="3" />
+    <Property Name="PublicshDate" Type="DateTime" Precision="3" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="ActiveID" Type="Int32" />
+    <Property Name="ActiveItemID" Type="Int32" />
+    <Property Name="Link_Mode" Type="Int32" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RelateImageFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RelateImageFileOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Introduction" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IsVerift" Type="Boolean" />
+    <Property Name="LinkUrlDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ActivePhoto">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MainID" Type="Int32" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="FilePath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="FileName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FileDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ActiveUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MainID" Type="Int32" />
+    <Property Name="IsPrint" Type="Boolean" />
+    <Property Name="IsForward" Type="Boolean" />
+    <Property Name="IsRSS" Type="Boolean" />
+    <Property Name="IsShare" Type="Boolean" />
+    <Property Name="MemberAuth" Type="Boolean" />
+    <Property Name="ClassOverview" Type="Boolean" />
+    <Property Name="ShowCount" Type="Int32" />
+    <Property Name="Column1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column11" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column12" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column13" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column14" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column15" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column16" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column17" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GeneralStudentAuth" Type="Boolean" />
+    <Property Name="EnterpriceStudentAuth" Type="Boolean" />
+    <Property Name="VIPAuth" Type="Boolean" />
+    <Property Name="EMailAuth" Type="Boolean" />
+    <Property Name="ColumnSetting" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ADCenter">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Type_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="StDate" Type="DateTime" Precision="3" />
+    <Property Name="EdDate" Type="DateTime" Precision="3" />
+    <Property Name="AD_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Show_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Ori" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Thumb" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AD_Width" Type="Int32" />
+    <Property Name="AD_Height" Type="Int32" />
+    <Property Name="Link_Href" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Link_Mode" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Fixed" Type="Boolean" />
+    <Property Name="Review_Date" Type="DateTime" Precision="3" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ADDown">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Type_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="StDate" Type="DateTime" Precision="3" />
+    <Property Name="EdDate" Type="DateTime" Precision="3" />
+    <Property Name="AD_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Show_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Ori" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Thumb" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AD_Width" Type="Int32" />
+    <Property Name="AD_Height" Type="Int32" />
+    <Property Name="Link_Href" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Link_Mode" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Fixed" Type="Boolean" />
+    <Property Name="Review_Date" Type="DateTime" Precision="3" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ADMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Type_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="StDate" Type="DateTime" Precision="3" />
+    <Property Name="EdDate" Type="DateTime" Precision="3" />
+    <Property Name="AD_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Show_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Ori" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Thumb" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AD_Width" Type="Int32" />
+    <Property Name="AD_Height" Type="Int32" />
+    <Property Name="Link_Href" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Link_Mode" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Fixed" Type="Boolean" />
+    <Property Name="Review_Date" Type="DateTime" Precision="3" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UploadVideoFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UploadVideoFilePath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UploadVideoFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ADDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ADMobile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Type_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="StDate" Type="DateTime" Precision="3" />
+    <Property Name="EdDate" Type="DateTime" Precision="3" />
+    <Property Name="AD_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Show_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Ori" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Thumb" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AD_Width" Type="Int32" />
+    <Property Name="AD_Height" Type="Int32" />
+    <Property Name="Link_Href" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Link_Mode" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Fixed" Type="Boolean" />
+    <Property Name="Review_Date" Type="DateTime" Precision="3" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ADMobileBlock">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Type_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="StDate" Type="DateTime" Precision="3" />
+    <Property Name="EdDate" Type="DateTime" Precision="3" />
+    <Property Name="AD_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Show_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Ori" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Thumb" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AD_Width" Type="Int32" />
+    <Property Name="AD_Height" Type="Int32" />
+    <Property Name="Link_Href" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Link_Mode" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Fixed" Type="Boolean" />
+    <Property Name="Review_Date" Type="DateTime" Precision="3" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ADRight">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Type_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="StDate" Type="DateTime" Precision="3" />
+    <Property Name="EdDate" Type="DateTime" Precision="3" />
+    <Property Name="AD_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Show_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Ori" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Thumb" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AD_Width" Type="Int32" />
+    <Property Name="AD_Height" Type="Int32" />
+    <Property Name="Link_Href" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Link_Mode" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Fixed" Type="Boolean" />
+    <Property Name="Review_Date" Type="DateTime" Precision="3" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ADRightDown">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Type_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="StDate" Type="DateTime" Precision="3" />
+    <Property Name="EdDate" Type="DateTime" Precision="3" />
+    <Property Name="AD_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Show_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Ori" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Thumb" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AD_Width" Type="Int32" />
+    <Property Name="AD_Height" Type="Int32" />
+    <Property Name="Link_Href" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Link_Mode" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Fixed" Type="Boolean" />
+    <Property Name="Review_Date" Type="DateTime" Precision="3" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="Create_Date" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ADSet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Type_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Max_Num" Type="Int32" />
+    <Property Name="Show_AD" Type="Boolean" />
+    <Property Name="Show_AD_Page" Type="Boolean" />
+    <Property Name="Max_Col" Type="Int32" />
+    <Property Name="SType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ColumnSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ColumnKey" Type="Int32" />
+    <Property Name="ColumnName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Used" Type="Boolean" />
+    <Property Name="Show" Type="Boolean" />
+    <Property Name="Search" Type="Boolean" />
+    <Property Name="IsMust" Type="Boolean" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="InputType" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="ListKey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+  </EntityType>
+  <EntityType Name="EventListItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="GroupID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Year" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="HtmlContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClickCnt" Type="Int32" />
+    <Property Name="UploadFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UploadFilePath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UploadFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileLocation" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="LinkUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="StDate" Type="DateTime" Precision="3" />
+    <Property Name="EdDate" Type="DateTime" Precision="3" />
+    <Property Name="PublicshDate" Type="DateTime" Precision="3" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="ActiveID" Type="Int32" />
+    <Property Name="ActiveItemID" Type="Int32" />
+    <Property Name="Link_Mode" Type="Int32" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RelateImageFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RelateImageFileOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Introduction" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IsVerift" Type="Boolean" />
+    <Property Name="LinkUrlDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EventListUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MainID" Type="Int32" />
+    <Property Name="IsPrint" Type="Boolean" />
+    <Property Name="IsForward" Type="Boolean" />
+    <Property Name="IsRSS" Type="Boolean" />
+    <Property Name="IsShare" Type="Boolean" />
+    <Property Name="MemberAuth" Type="Boolean" />
+    <Property Name="ClassOverview" Type="Boolean" />
+    <Property Name="ShowCount" Type="Int32" />
+    <Property Name="Column1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GeneralStudentAuth" Type="Boolean" />
+    <Property Name="EnterpriceStudentAuth" Type="Boolean" />
+    <Property Name="VIPAuth" Type="Boolean" />
+    <Property Name="EMailAuth" Type="Boolean" />
+    <Property Name="ColumnSetting" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IntroductionHtml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="F_HashTag_Type">
+    <Key>
+      <PropertyRef Name="HashTag_Type_ID" />
+    </Key>
+    <Property Name="HashTag_Type_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HashTag_Type_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HashTag_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HashTag_CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="HashTag_Type_Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="F_Sub_HashTag_Type" Relationship="ForestModel.FK_F_Sub_HashTag_Type_F_HashTag_Type" FromRole="F_HashTag_Type" ToRole="F_Sub_HashTag_Type" />
+  </EntityType>
+  <EntityType Name="F_Index">
+    <Key>
+      <PropertyRef Name="F_Index_ID" />
+    </Key>
+    <Property Name="F_Index_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="F_Index_Img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="F_Index_Img">
+    <Key>
+      <PropertyRef Name="Index_Img_ID" />
+    </Key>
+    <Property Name="Index_Img_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Index_Img_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Index_Img_File" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="F_MessageModel">
+    <Key>
+      <PropertyRef Name="MessageModel_ID" />
+    </Key>
+    <Property Name="MessageModel_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MessageModel_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MessageModel_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MessageModel_CreateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="F_Sub_HashTag_Type">
+    <Key>
+      <PropertyRef Name="Sub_HashTag_Type_ID" />
+    </Key>
+    <Property Name="Sub_HashTag_Type_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HashTag_Type_ID" Type="Int32" Nullable="false" />
+    <Property Name="MessageItem_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="F_HashTag_Type" Relationship="ForestModel.FK_F_Sub_HashTag_Type_F_HashTag_Type" FromRole="F_Sub_HashTag_Type" ToRole="F_HashTag_Type" />
+  </EntityType>
+  <EntityType Name="F_Thingtodo_Index">
+    <Key>
+      <PropertyRef Name="F_Thingtodo_Index_ID" />
+    </Key>
+    <Property Name="F_Thingtodo_Index_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="F_Thingtodo_Index_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="F_Thingtodo_Index_Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="F_Thingtodo_Type">
+    <Key>
+      <PropertyRef Name="F_Thingtodo_Type_ID" />
+    </Key>
+    <Property Name="F_Thingtodo_Type_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="F_Thingtodo_Type_Title1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="F_Thingtodo_Type_Title2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="F_Thingtodo_Type_ImgName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="F_Thingtodo_Type_Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="F_Thingtodo_Type_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FileDownloadItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="GroupID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ClickCnt" Type="Int32" />
+    <Property Name="HtmlContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UploadFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UploadFilePath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UploadFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileLocation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LinkUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="StDate" Type="DateTime" Precision="3" />
+    <Property Name="EdDate" Type="DateTime" Precision="3" />
+    <Property Name="PublicshDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="Link_Mode" Type="Int32" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RelateImageFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RelateImageFileOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsVerift" Type="Boolean" />
+    <Property Name="LinkUrlDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FileDownloadUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MainID" Type="Int32" />
+    <Property Name="IsPrint" Type="Boolean" />
+    <Property Name="IsForward" Type="Boolean" />
+    <Property Name="IsRSS" Type="Boolean" />
+    <Property Name="IsShare" Type="Boolean" />
+    <Property Name="MemberAuth" Type="Boolean" />
+    <Property Name="ClassOverview" Type="Boolean" />
+    <Property Name="ShowCount" Type="Int32" />
+    <Property Name="Column1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column11" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column12" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column13" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column14" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column15" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column16" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column17" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column18" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column19" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column20" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GeneralStudentAuth" Type="Boolean" />
+    <Property Name="EnterpriceStudentAuth" Type="Boolean" />
+    <Property Name="VIPAuth" Type="Boolean" />
+    <Property Name="EMailAuth" Type="Boolean" />
+    <Property Name="ColumnSetting" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FormInput">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MainID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="JSONStr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="Progress" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ProcessAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProcessDatetime" Type="DateTime" Precision="3" />
+    <Property Name="ReplyAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReplyDatetime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="FormSelItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="MustInput" Type="Boolean" Nullable="false" />
+    <Property Name="TextLength" Type="Int32" />
+    <Property Name="ColumnNum" Type="Int32" />
+    <Property Name="RowNum" Type="Int32" />
+    <Property Name="ItemMode" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DefaultText" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SelList" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="KayName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FormSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="FormDesc" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="ConfirmContent" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="SenderName" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="SenderEMail" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SenderTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ReceiveMail" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="AdminSenderName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="AdminSenderEMail" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="AdminSenderTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FormUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MainID" Type="Int32" />
+    <Property Name="IsPrint" Type="Boolean" />
+    <Property Name="IsForward" Type="Boolean" />
+    <Property Name="IsRSS" Type="Boolean" />
+    <Property Name="IsShare" Type="Boolean" />
+    <Property Name="MemberAuth" Type="Boolean" />
+    <Property Name="ClassOverview" Type="Boolean" />
+    <Property Name="ShowCount" Type="Int32" />
+    <Property Name="Column1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column11" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column12" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column13" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column14" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column15" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column16" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column17" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column18" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column19" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column20" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GeneralStudentAuth" Type="Boolean" />
+    <Property Name="EnterpriceStudentAuth" Type="Boolean" />
+    <Property Name="VIPAuth" Type="Boolean" />
+    <Property Name="EMailAuth" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ForumUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MainID" Type="Int32" />
+    <Property Name="IsPrint" Type="Boolean" />
+    <Property Name="IsForward" Type="Boolean" />
+    <Property Name="IsRSS" Type="Boolean" />
+    <Property Name="IsShare" Type="Boolean" />
+    <Property Name="MemberAuth" Type="Boolean" />
+    <Property Name="ClassOverview" Type="Boolean" />
+    <Property Name="ShowCount" Type="Int32" />
+    <Property Name="Column1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column11" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column12" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column13" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column14" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column15" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column16" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column17" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column18" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column19" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column20" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column21" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column22" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column23" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column24" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column25" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GeneralStudentAuth" Type="Boolean" />
+    <Property Name="EnterpriceStudentAuth" Type="Boolean" />
+    <Property Name="VIPAuth" Type="Boolean" />
+    <Property Name="EMailAuth" Type="Boolean" />
+    <Property Name="ColumnSetting" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FreeZoneContent">
+    <Key>
+      <PropertyRef Name="FreeZoneContentID" />
+    </Key>
+    <Property Name="FreeZoneContentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FreeZoneTitleID" Type="Int32" />
+    <Property Name="LinkName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FreeZoneTitle">
+    <Key>
+      <PropertyRef Name="FreeZoneTitleID" />
+    </Key>
+    <Property Name="FreeZoneTitleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FreeZoneTitleContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GroupActive">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Main_ID" Type="Int32" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Group_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Seo_Manage" Type="Boolean" />
+    <Property Name="Readonly" Type="Boolean" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GroupFileDownload">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Main_ID" Type="Int32" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Group_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Seo_Manage" Type="Boolean" />
+    <Property Name="Readonly" Type="Boolean" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GroupMessage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Main_ID" Type="Int32" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Group_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Seo_Manage" Type="Boolean" />
+    <Property Name="Readonly" Type="Boolean" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GroupPatent">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Main_ID" Type="Int32" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Group_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Seo_Manage" Type="Boolean" />
+    <Property Name="Readonly" Type="Boolean" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GroupUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Group_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Seo_Manage" Type="Boolean" />
+    <Property Name="Readonly" Type="Boolean" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GroupVideo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Main_ID" Type="Int32" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Group_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Seo_Manage" Type="Boolean" />
+    <Property Name="Readonly" Type="Boolean" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Img">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="item" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="width" Type="Int32" />
+    <Property Name="height" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Lang">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Area_id" Type="Int32" />
+    <Property Name="Lang_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Disp_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Domain_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sub_Domain_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Indep_Domain_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Content_Source" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Link_Lang_ID" Type="Int32" />
+    <Property Name="Link_Href" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Ori" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Thumb" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Height" Type="Int32" />
+    <Property Name="Img_Name_Ori2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Thumb2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Height2" Type="Int32" />
+    <Property Name="Img_Name_Ori3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Thumb3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Height3" Type="Int32" />
+    <Property Name="Img_Name_Ori10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Thumb10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Pda_Footer_Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Index_Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Footer_Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Acc_Check_Passed" Type="Boolean" />
+    <Property Name="Acc_Check_Passed2" Type="Boolean" />
+    <Property Name="Readonly" Type="Boolean" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="Published" Type="Boolean" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LangKey">
+    <Key>
+      <PropertyRef Name="LKey" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubGroup" Type="Int32" />
+    <Property Name="Item" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="LKey" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Used" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="LangKeyUnit">
+    <Key>
+      <PropertyRef Name="GroupName" />
+      <PropertyRef Name="LKey" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubGroup" Type="Int32" />
+    <Property Name="Item" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="LKey" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LangID" Type="Int32" />
+    <Property Name="ParentID" Type="Int32" />
+    <Property Name="MenuType" Type="Int32" />
+    <Property Name="MenuLevel" Type="Int32" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="ModelItemID" Type="Int32" />
+    <Property Name="LinkMode" Type="Int32" />
+    <Property Name="ShowMode" Type="Int32" />
+    <Property Name="OpenMode" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="MenuName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ImgNameOri" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ImgShowName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ImgNameThumb" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="WindowWidth" Type="Int32" />
+    <Property Name="WindowHeight" Type="Int32" />
+    <Property Name="ImageHeight" Type="Int32" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="LinkUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LinkUploadFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LinkUploadFilePath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DisplayName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ICon" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MessageItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="GroupID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="HtmlContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClickCnt" Type="Int32" />
+    <Property Name="UploadFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UploadFilePath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UploadFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileLocation" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="LinkUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="StDate" Type="DateTime" Precision="3" />
+    <Property Name="EdDate" Type="DateTime" Precision="3" />
+    <Property Name="PublicshDate" Type="DateTime" Precision="3" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="ActiveID" Type="Int32" />
+    <Property Name="ActiveItemID" Type="Int32" />
+    <Property Name="Link_Mode" Type="Int32" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RelateImageFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RelateImageFileOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Introduction" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IsVerift" Type="Boolean" />
+    <Property Name="LinkUrlDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Destination_Type_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MessageUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MainID" Type="Int32" />
+    <Property Name="IsPrint" Type="Boolean" />
+    <Property Name="IsForward" Type="Boolean" />
+    <Property Name="IsRSS" Type="Boolean" />
+    <Property Name="IsShare" Type="Boolean" />
+    <Property Name="MemberAuth" Type="Boolean" />
+    <Property Name="ClassOverview" Type="Boolean" />
+    <Property Name="ShowCount" Type="Int32" />
+    <Property Name="Column1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GeneralStudentAuth" Type="Boolean" />
+    <Property Name="EnterpriceStudentAuth" Type="Boolean" />
+    <Property Name="VIPAuth" Type="Boolean" />
+    <Property Name="EMailAuth" Type="Boolean" />
+    <Property Name="ColumnSetting" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IntroductionHtml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ModelActiveEditMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ModelEventListMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ModelFileDownloadMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ModelFormMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IsVerift" Type="Boolean" />
+    <Property Name="UpdateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ModelLangMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="UseType" Type="Int32" />
+    <Property Name="UseLangID" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ModelMessageMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ModelPageEditMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ModelPatentMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ModelVideoMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ModelWebsiteMapMain">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ColumnDict" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PageIndexItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="ItemName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="HtmlContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UploadFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UploadFilePath" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="UploadFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileLocation" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="LinkUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="ActiveID" Type="Int32" />
+    <Property Name="ActiveItemID" Type="Int32" />
+    <Property Name="CreateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IsVerift" Type="Boolean" />
+    <Property Name="LinkUrlDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PageIndexSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="IsFirstPage" Type="Boolean" />
+    <Property Name="IsInPage" Type="Boolean" />
+    <Property Name="ShowCount" Type="Int32" />
+    <Property Name="HtmlContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Column1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column11" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column12" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column13" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column14" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column15" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column16" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column17" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column18" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column19" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column20" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column21" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PageLayout">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="LangID" Type="Int32" />
+    <Property Name="BlockWidth" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ImgNameOri" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImgShowName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="LinkMode" Type="Int32" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="ModelItemID" Type="Int32" />
+    <Property Name="MenuItem" Type="Int32" />
+    <Property Name="MenuLevel1" Type="Int32" />
+    <Property Name="MenuLevel2" Type="Int32" />
+    <Property Name="MenuLevel3" Type="Int32" />
+    <Property Name="OpenMode" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="OpenModeCust" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ModelItemList" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PageUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MainID" Type="Int32" />
+    <Property Name="IsPrint" Type="Boolean" />
+    <Property Name="IsForward" Type="Boolean" />
+    <Property Name="IsRSS" Type="Boolean" />
+    <Property Name="IsShare" Type="Boolean" />
+    <Property Name="MemberAuth" Type="Boolean" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GeneralStudentAuth" Type="Boolean" />
+    <Property Name="EnterpriceStudentAuth" Type="Boolean" />
+    <Property Name="VIPAuth" Type="Boolean" />
+    <Property Name="EMailAuth" Type="Boolean" />
+    <Property Name="Column1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PatentItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="GroupID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Inventor" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Year" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Field" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="HtmlContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UploadFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UploadFilePath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UploadFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LinkUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="StDate" Type="DateTime" Precision="3" />
+    <Property Name="EdDate" Type="DateTime" Precision="3" />
+    <Property Name="PublicshDate" Type="DateTime" Precision="3" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="ActiveID" Type="Int32" />
+    <Property Name="ActiveItemID" Type="Int32" />
+    <Property Name="Link_Mode" Type="Int32" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Introduction" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IsVerift" Type="Boolean" />
+    <Property Name="LinkUrlDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PatentUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MainID" Type="Int32" />
+    <Property Name="IsPrint" Type="Boolean" />
+    <Property Name="IsForward" Type="Boolean" />
+    <Property Name="IsRSS" Type="Boolean" />
+    <Property Name="IsShare" Type="Boolean" />
+    <Property Name="MemberAuth" Type="Boolean" />
+    <Property Name="ClassOverview" Type="Boolean" />
+    <Property Name="ShowCount" Type="Int32" />
+    <Property Name="Column1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column11" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column12" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column13" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GeneralStudentAuth" Type="Boolean" />
+    <Property Name="EnterpriceStudentAuth" Type="Boolean" />
+    <Property Name="VIPAuth" Type="Boolean" />
+    <Property Name="EMailAuth" Type="Boolean" />
+    <Property Name="ColumnSetting" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IntroductionHtml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SEO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TypeID" Type="Int32" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Keywords1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Keywords2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Keywords3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Keywords4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Keywords5" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Keywords6" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Keywords7" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Keywords8" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Keywords9" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Keywords10" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SiteConfig">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login_Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Ori1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Thumb1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Ori2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Thumb2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Comp_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Page_Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Ori3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Img_Name_Thumb3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MailServerIP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Port" Type="Int32" />
+    <Property Name="EMailAccount" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EMailPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsAuthMailServer" Type="Boolean" />
+    <Property Name="QuestionnaireFinishDesc" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="InvoiceDesc" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="InvoiceMailSender" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InvoiceMailSenderMail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="InvoiceMailSenderTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FirstPageMaxLinkItem" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SiteFlow">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Siteflow_Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Siteflow_Link" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Siteflow_Code_Y" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Siteflow_Link_Y" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SiteLayout">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LangID" Type="Int32" />
+    <Property Name="LogoImgNameOri" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LogoImgShowName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LogoImgNameThumb" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LogoImgHeight" Type="Int32" />
+    <Property Name="FirstPageImgNameOri" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FirstPageImgShowName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FirstPageImgNameThumb" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FirstPageImgHeight" Type="Int32" />
+    <Property Name="InsidePageImgNameOri" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="InsidePageImgShowName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="InsidePageImgNameThumb" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="InsidePageImgHeight" Type="Int32" />
+    <Property Name="HtmlContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FowardImgNameOri" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FowardImgShowName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FowardImgNameThumb" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FowardHtmlContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PrintImgNameOri" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PrintImgShowName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PrintImgNameThumb" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PrintHtmlContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Page404HtmlContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Page404Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="InnerLogoImgNameOri" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="InnerLogoImgShowName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="InnerLogoImgNameThumb" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="InnerLogoImgHeight" Type="Int32" />
+    <Property Name="PublishContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SiteList">
+    <Key>
+      <PropertyRef Name="SiteList_ID" />
+    </Key>
+    <Property Name="SiteList_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="SiteList_Name_ch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SiteList_Name_en" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Site_ID" Type="Int32" />
+    <Property Name="Group_ID" Type="Int32" />
+    <Property Name="Account" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PWD" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="User_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="User_Email" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="Readonly" Type="Boolean" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VideoItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModelID" Type="Int32" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="GroupID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="HtmlContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClickCnt" Type="Int32" />
+    <Property Name="UploadFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UploadFilePath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UploadFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileLocation" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="LinkUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="StDate" Type="DateTime" Precision="3" />
+    <Property Name="EdDate" Type="DateTime" Precision="3" />
+    <Property Name="PublicshDate" Type="DateTime" Precision="3" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="ActiveID" Type="Int32" />
+    <Property Name="ActiveItemID" Type="Int32" />
+    <Property Name="Link_Mode" Type="Int32" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RelateImageFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RelateImageFileOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Introduction" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IsVerift" Type="Boolean" />
+    <Property Name="LinkUrlDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="VideoLink" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="IsShowMoreVideo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="VideoUnitSetting">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MainID" Type="Int32" />
+    <Property Name="IsPrint" Type="Boolean" />
+    <Property Name="IsForward" Type="Boolean" />
+    <Property Name="IsRSS" Type="Boolean" />
+    <Property Name="IsShare" Type="Boolean" />
+    <Property Name="MemberAuth" Type="Boolean" />
+    <Property Name="ClassOverview" Type="Boolean" />
+    <Property Name="ShowCount" Type="Int32" />
+    <Property Name="Column1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Column7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GeneralStudentAuth" Type="Boolean" />
+    <Property Name="EnterpriceStudentAuth" Type="Boolean" />
+    <Property Name="VIPAuth" Type="Boolean" />
+    <Property Name="EMailAuth" Type="Boolean" />
+    <Property Name="ColumnSetting" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IntroductionHtml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AdminFunction">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="GroupID" Type="Int32" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Parameter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ParentGroupID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="LinkItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Lang_ID" Type="Int32" />
+    <Property Name="GroupID" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ImageFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LinkUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="LinkUrlDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="StDate" Type="DateTime" Precision="3" />
+    <Property Name="EdDate" Type="DateTime" Precision="3" />
+    <Property Name="PublicshDate" Type="DateTime" Precision="3" />
+    <Property Name="Enabled" Type="Boolean" />
+    <Property Name="Link_Mode" Type="Int32" />
+    <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Introduction" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDatetime" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IsVerift" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ZipCode">
+    <Key>
+      <PropertyRef Name="Country" />
+      <PropertyRef Name="Town" />
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="Country" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Town" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_F_Sub_HashTag_Type_F_HashTag_Type">
+    <End Type="ForestModel.F_HashTag_Type" Role="F_HashTag_Type" Multiplicity="1" />
+    <End Type="ForestModel.F_Sub_HashTag_Type" Role="F_Sub_HashTag_Type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="F_HashTag_Type">
+        <PropertyRef Name="HashTag_Type_ID" />
+      </Principal>
+      <Dependent Role="F_Sub_HashTag_Type">
+        <PropertyRef Name="HashTag_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="F_Destination_Type">
+    <Key>
+      <PropertyRef Name="Destination_Type_ID" />
+    </Key>
+    <Property Name="Destination_Type_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Destination_Type_Title1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Destination_Type_Title2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Destination_Type_CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Destination_Type_ImgName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Destination_Type_Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Destination_Type_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Destination_Index">
+    <Key>
+      <PropertyRef Name="Destination_ID" />
+    </Key>
+    <Property Name="Destination_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Destination_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Destination_Context" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Destination_MapLegend">
+    <Key>
+      <PropertyRef Name="Destination_MAP_LEGEND_ID" />
+    </Key>
+    <Property Name="Destination_MAP_LEGEND_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Destination_MAP_LEGEND_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Destination_Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Destination_Img_Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

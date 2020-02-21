@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebSiteProject.Models.Destination_MapLegend>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Destination_MAP_LEGEND_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Destination_Img)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Destination_Img_Mobile)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Destination_MAP_LEGEND_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Destination_Img)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Destination_Img_Mobile)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Destination_MAP_LEGEND_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Destination_MAP_LEGEND_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Destination_MAP_LEGEND_ID })
+        </td>
+    </tr>
+}
+
+</table>

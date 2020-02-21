@@ -42,35 +42,31 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             return RedirectToAction("MainTitleAndContent");
         }
 
+        
         [HttpGet]
         public ActionResult Destination(int? F_MenuType)
         {
             var DES = db.F_Destination_Type.ToList();
-
             Session["F_MenuType"] = F_MenuType;
-
             return View(DES);
         }
 
-        [HttpPost]
-        public ActionResult Destination_Edit(int _DES_Type_ID, string _DES_Type_Title1, string _DES_Type_Title2, string _DES_Type_Description, HttpPostedFileBase Index_Img_File)
-
+        public ActionResult Upload(HttpPostedFileBase Img_File)
         {
             string Index_Img_Name = "";
 
-
-            if (Index_Img_File != null) //判斷是否有檔案
+            if (Img_File != null) //判斷是否有檔案
             {
-                if (Index_Img_File.ContentLength > 0)  //若檔案不為空檔案
+                if (Img_File.ContentLength > 0)  //若檔案不為空檔案
                 {
                     string uploadPath = Server.MapPath("~/UploadImage/Destination_Img/");
-                    // 如果UploadFiles文件夹不存在则先创建
+                    // 如果UploadFiles文件夾不存在則先創建
                     if (!Directory.Exists(uploadPath))
                     {
                         Directory.CreateDirectory(uploadPath);
                     }
 
-                    Index_Img_Name = Path.GetFileName(Index_Img_File.FileName);  //取得檔案名
+                    Index_Img_Name = Path.GetFileName(Img_File.FileName);  //取得檔案名
                     var path = Path.Combine(Server.MapPath("~/UploadImage/Destination_Img/"), Index_Img_Name);  //取得本機檔案路徑
 
 
@@ -83,33 +79,59 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         Index_Img_Name = rand.Next().ToString() + "-" + Index_Img_Name;
                         path = Path.Combine(Server.MapPath("~/UploadImage/Destination_Img/"), Index_Img_Name);
                     }
-                    Index_Img_File.SaveAs(path);
+                    Img_File.SaveAs(path);
                     //若有重複則換名字_end
 
-
-                    db.F_Destination_Type.Where(t => t.Destination_Type_ID == _DES_Type_ID).FirstOrDefault().Destination_Type_ImgName = Index_Img_Name;
-                    db.SaveChanges();
                 }
+
             }
+            return RedirectToAction("Destination");
 
 
-            try
+
+
+
+        }
+
+        [HttpPost]
+        public ActionResult Destination(F_Destination_Type[] F_DES,int? F_MenuType)
+        {
+            
+            Session["F_MenuType"] = F_MenuType;
+
+
+            //批次更改
+            if (ModelState.IsValid)
             {
-                var DES = db.F_Destination_Type.Find(_DES_Type_ID);
-                DES.Destination_Type_Title1 = _DES_Type_Title1;
-                DES.Destination_Type_Title2 = _DES_Type_Title2;
-                DES.Destination_Type_Description = _DES_Type_Description;
-                db.Entry(DES).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
+                //int Des_ID;
+                for (int i = 0; i < F_DES.Length; i++)
+                {
+
+                    //Des_ID = F_DES[i].Destination_Type_ID;
+                    //db.Entry(F_DES[i]).State = EntityState.Detached;
+                    if (F_DES[i].Destination_Type_ImgName == null)
+                    {
+                        db.Entry(F_DES[i]).State = System.Data.Entity.EntityState.Modified;
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        
+                        db.Entry(F_DES[i]).State = System.Data.Entity.EntityState.Modified;
+
+                        db.SaveChanges();
+                    }
+
+                }
+                TempData["Msg"] = "作業完成";
+                return RedirectToAction("Destination");
+
             }
-            catch
+            else 
             {
                 TempData["Msg"] = "作業失敗";
-                return RedirectToAction("Five_Thingstodo");
+                return RedirectToAction("Destination");
             }
-            TempData["Msg"] = "作業完成";
-
-            return RedirectToAction("Five_Thingstodo");
         }
 
 
