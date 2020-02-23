@@ -68,16 +68,17 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     var path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), Index_Img_Name);  //取得本機檔案路徑
 
 
-
-
-                    //若有重複則換名字_srart
-                    while (System.IO.File.Exists(path))
+                    //若有重複則不儲存
+                    if (System.IO.File.Exists(path))
                     {
-                        Random rand = new Random();
-                        Index_Img_Name = rand.Next().ToString() + "-" + Index_Img_Name;
-                        path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), Index_Img_Name);
+                        //Random rand = new Random();
+                        //Index_Img_Name = rand.Next().ToString() + "-" + Index_Img_Name;
+                        //path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), Index_Img_Name);
                     }
-                    Img_File.SaveAs(path);
+                    else {
+                        Img_File.SaveAs(path);
+                    }
+                    
                     //若有重複則換名字_end
 
                 }
@@ -93,19 +94,16 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 
         [HttpPost]
         public ActionResult Five_Thingstodo(F_Thingtodo_Type[] F_things ,int? F_MenuType)
-
         {
             Session["F_MenuType"] = F_MenuType;
 
-
-            //批次更改
-            if (ModelState.IsValid)
+                //批次更改
+                if (ModelState.IsValid)
             {
                 //int Des_ID;
                 for (int i = 0; i < F_things.Length; i++)
                 {
 
-                    
                     if (F_things[i].F_Thingtodo_Type_ImgName == null)
                     {
                         db.Entry(F_things[i]).State = System.Data.Entity.EntityState.Modified;
@@ -115,7 +113,6 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     {
 
                         db.Entry(F_things[i]).State = System.Data.Entity.EntityState.Modified;
-
                         db.SaveChanges();
                     }
 

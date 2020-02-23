@@ -96,6 +96,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Bin\NLog.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -126,6 +127,7 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -3188,7 +3190,6 @@
     <Content Include="Areas\webadmin\Views\Destination_Index\Delete.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\MainTitleAndContent.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\Destination.cshtml" />
-    <Content Include="Areas\webadmin\Views\Destination_Index\Index.cshtml" />
     <Content Include="Areas\webadmin\Views\Menu\MenuLinkDestination.cshtml" />
     <Content Include="Areas\webadmin\Views\F_Destination_Type\Create.cshtml" />
     <Content Include="Areas\webadmin\Views\F_Destination_Type\Delete.cshtml" />

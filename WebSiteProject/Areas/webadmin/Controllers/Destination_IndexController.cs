@@ -59,27 +59,31 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             {
                 if (Img_File.ContentLength > 0)  //若檔案不為空檔案
                 {
-                    string uploadPath = Server.MapPath("~/UploadImage/Destination_Img/");
+                    
                     // 如果UploadFiles文件夾不存在則先創建
-                    if (!Directory.Exists(uploadPath))
+                    
+                    if (!Directory.Exists(Server.MapPath("~/UploadImage/Destination_Img/")))
                     {
-                        Directory.CreateDirectory(uploadPath);
+                        Directory.CreateDirectory(Server.MapPath("~/UploadImage/Destination_Img/"));
+                        
                     }
-
+                    
                     Index_Img_Name = Path.GetFileName(Img_File.FileName);  //取得檔案名
                     var path = Path.Combine(Server.MapPath("~/UploadImage/Destination_Img/"), Index_Img_Name);  //取得本機檔案路徑
 
 
-
-
-                    //若有重複則換名字_srart
-                    while (System.IO.File.Exists(path))
+                    //若有重複則不儲存
+                    if (System.IO.File.Exists(path))
                     {
-                        Random rand = new Random();
-                        Index_Img_Name = rand.Next().ToString() + "-" + Index_Img_Name;
-                        path = Path.Combine(Server.MapPath("~/UploadImage/Destination_Img/"), Index_Img_Name);
+                        //Random rand = new Random();
+                        //Index_Img_Name = rand.Next().ToString() + "-" + Index_Img_Name;
+                        //path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), Index_Img_Name);
                     }
-                    Img_File.SaveAs(path);
+                    else
+                    {
+                        Img_File.SaveAs(path);
+                    }
+
                     //若有重複則換名字_end
 
                 }
@@ -213,6 +217,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         }
 
         // GET: webadmin/Destination_Index/Create
+        
         public ActionResult Create()
         {
             return View();
@@ -221,18 +226,63 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         // POST: webadmin/Destination_Index/Create
         // 若要免於過量張貼攻擊，請啟用想要繫結的特定屬性，如需
         // 詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Destination_Type_ID,Destination_Type_Title1,Destination_Type_Title2,Destination_Type_CreateDate,Destination_Type_ImgName,Destination_Type_Link,Destination_Type_Description")] Destination_Index Destination_Index)
+        public ActionResult Create(F_Destination_Type F_DES, HttpPostedFileBase Img_File)
         {
-            if (ModelState.IsValid)
+
+            string Index_Img_Name = "";
+
+            if (Img_File != null) //判斷是否有檔案
             {
-                db.Destination_Index.Add(Destination_Index);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (Img_File.ContentLength > 0)  //若檔案不為空檔案
+                {
+
+                    // 如果UploadFiles文件夾不存在則先創建
+
+                    if (!Directory.Exists(Server.MapPath("~/UploadImage/Destination_Img/")))
+                    {
+                        Directory.CreateDirectory(Server.MapPath("~/UploadImage/Destination_Img/"));
+
+                    }
+
+                    Index_Img_Name = Path.GetFileName(Img_File.FileName);  //取得檔案名
+                    var path = Path.Combine(Server.MapPath("~/UploadImage/Destination_Img/"), Index_Img_Name);  //取得本機檔案路徑
+
+
+                    //若有重複則不儲存
+                    if (System.IO.File.Exists(path))
+                    {
+                        //Random rand = new Random();
+                        //Index_Img_Name = rand.Next().ToString() + "-" + Index_Img_Name;
+                        //path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), Index_Img_Name);
+                    }
+                    else
+                    {
+                        Img_File.SaveAs(path);
+                    }
+                }
             }
 
-            return View(Destination_Index);
+
+            if (ModelState.IsValid)
+            {
+                db.F_Destination_Type.Add(new Models.F_Destination_Type
+                {
+                    Destination_Type_Title1 = F_DES.Destination_Type_Title1,
+                    Destination_Type_Title2 = F_DES.Destination_Type_Title2,
+                    Destination_Type_CreateDate = DateTime.Now,
+                    Destination_Type_Description = F_DES.Destination_Type_Description,
+                    Destination_Type_ImgName = F_DES.Destination_Type_ImgName,
+                    Destination_Type_Link = "#"
+
+                });
+                db.SaveChanges();
+
+            }
+
+            return RedirectToAction("Destination");
         }
 
         // GET: webadmin/Destination_Index/Edit/5

@@ -280,3 +280,4 @@ C:\Users\PC003\Desktop\git\Forest\Forest\ResourceLibrary\obj\Debug\ResourceLibra
 C:\Users\PC003\Desktop\git\Forest\Forest\ResourceLibrary\obj\Debug\en-US\ResourceLibrary.resources.dll
 C:\Users\PC003\Desktop\git\Forest\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.dll
 C:\Users\PC003\Desktop\git\Forest\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.pdb
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.csprojAssemblyReference.cache

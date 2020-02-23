@@ -51,8 +51,17 @@
 
 
 <div class="portlet light bordered" style="padding-bottom:50px">
-    <div class="title_04">@(ViewBag.FreeZoneTitleID == 1 ? "自由編輯區一" : "目的地設定")</div>
-
+    <div style="padding-bottom:10px">
+        <div class="title_04">@(ViewBag.FreeZoneTitleID == 2 ? "自由編輯區一" : "目的地設定")
+            <button class="btn green-meadow" id="datacreat" style="float:right" onclick="location.href='@Url.Action("Create","Destination_Index")'">
+                新增 <i class="fa fa-plus"></i>
+            </button>
+        </div>
+        
+    </div>
+    
+        
+    
     <div class="form-horizontal form-bordered" id="editform" enctype="multipart/form-data">
 
         <div class="portlet light form-fit bordered">
@@ -110,7 +119,7 @@
                                         </div>
 
                                         <div class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center align-center">
-                                            <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/ThingsToDo_Img/")@item.Destination_Type_ImgName" />
+                                            <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/Destination_Img/")@item.Destination_Type_ImgName" />
                                             <br />
                                             @*<label for="Index_Img_File">
                                                     <input type="button" id="btn" value="傳送檔案"><span id="Img_FileName">@item.Destination_Type_ImgName</span>
@@ -162,17 +171,10 @@
             ShowImg();
 
 
-            //圖片上傳修改
-            $("#btn").click(function () {
-                $('#Index_Img_File').trigger("click");
-
-            })
-
-
-
-
             //送出表單
             $("#editform").submit(function () {
+
+               
                 $.ajax({
                     type: "POST",
                     url: form.action,
@@ -183,16 +185,9 @@
                     }
                 });
 
-
+                
             })
-
-
-            number = $("#editform>hr").length;
-            console.log(number);
-
-
-
-
+               
         })
 
 
@@ -214,8 +209,26 @@
 
                     $(`#${imgid}`).attr("src", e.target.result)
 
-
+                    
                 };
+            
+
+                var file_data = $(this).prop('files')[0];
+                var form_data = new FormData();  //建構new FormData()
+                form_data.append('Img_File', file_data);
+               
+                    $.ajax({
+                        type: "POST",
+                        url: `@Url.Action("Upload","Destination_Index")`,
+                        data: form_data,
+                        async: false,
+                        contentType: false,
+                        processData:false,
+                        success: function (data) {
+                        
+                        }
+                    });
+
             })
 
         }
