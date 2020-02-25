@@ -137,7 +137,13 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 return RedirectToAction("Destination");
             }
         }
+        public ActionResult Fare(int? id)
+        {
+            var Fare = db.Destination_Fare.Include(e => e.F_Destination_Type).Where(e => e.Destination_Type_ID == id).ToList();
 
+            return PartialView("_FarePartial",Fare);
+
+        }
 
         [HttpGet]
         public ActionResult Five_ThingsToDo_HashTag()
@@ -292,12 +298,12 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Destination_Index Destination_Index = db.Destination_Index.Find(id);
-            if (Destination_Index == null)
+            F_Destination_Type Destination_Type = db.F_Destination_Type.Find(id);
+            if (Destination_Type == null)
             {
                 return HttpNotFound();
             }
-            return View(Destination_Index);
+            return View(Destination_Type);
         }
 
         // POST: webadmin/Destination_Index/Edit/5
@@ -305,19 +311,19 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         // 詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Destination_Type_ID,Destination_Type_Title1,Destination_Type_Title2,Destination_Type_CreateDate,Destination_Type_ImgName,Destination_Type_Link,Destination_Type_Description")] Destination_Index Destination_Index)
+        public ActionResult Edit(F_Destination_Type Destination_Type)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(Destination_Index).State = EntityState.Modified;
+                db.Entry(Destination_Type).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Destination");
             }
-            return View(Destination_Index);
+            return View(Destination_Type);
         }
 
         // GET: webadmin/Destination_Index/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Charge(int? id)
         {
             if (id == null)
             {
@@ -351,22 +357,6 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult LoadData()
-        {
-            var datas = db.F_Destination_Type.AsEnumerable().Select(n => new
-            {
-                n.Destination_Type_ID,
-                n.Destination_Type_Title1,
-                n.Destination_Type_Title2,
-                n.Destination_Type_Description,
-                n.Destination_Type_CreateDate,
-                n.Destination_Type_Link,
-                n.Destination_Type_ImgName
-            }).ToList();
-
-
-            return Json(new { data = datas }, JsonRequestBehavior.AllowGet);
-
-        }
+        
     }
 }

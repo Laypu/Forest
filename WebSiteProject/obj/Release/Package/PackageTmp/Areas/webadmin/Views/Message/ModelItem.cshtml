@@ -29,7 +29,7 @@
 
 @if (ViewBag.HashTag != null)
 {
-    <div class="title_01">Things to do</div>
+    
     <div id="Partial_Index_MenuLink">
         <!--.......-->
     </div>
@@ -43,7 +43,7 @@ else
 
     @if (ViewBag.HashTag != null)
     {
-        <div class="title_04">五大旅遊資訊文章設定</div>
+        <div class="title_04">旅遊資訊文章設定</div>
     }
 
     <!--management item start-->
@@ -64,7 +64,7 @@ else
     <div class="table-toolbar">
         <div class="col-md-6 col-sm-12 col-xs-12">
             <div class="display_inline">
-                <p class="class_title">@(ViewBag.HashTag!=null? "國家公園類別":"類別") </p>
+                <p class="class_title">@(ViewBag.HashTag!=null? "森林遊樂區類別":"類別") </p>
                 @{var grouplist = (IList<SelectListItem>)ViewBag.grouplist;
                 <select class="form-control_1" id="GroupId">@foreach (var g in grouplist) {<option value="@g.Value">@g.Text</option>}</select>}
                 <p class="display_inline"><a href="#" class="btn grey-mint" role="button" id="btn_groupmanager">管理</a></p>

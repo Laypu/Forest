@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -20,19 +21,82 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             return View(db.Destination_MapLegend.ToList());
         }
 
-        // GET: webadmin/Destination_MapLegend/Details/5
-        public ActionResult Details(int? id)
+        [HttpPost]
+        public ActionResult Index(Destination_MapLegend[] DML, int? F_MenuType)
         {
-            if (id == null)
+
+            Session["F_MenuType"] = F_MenuType;
+
+
+            //批次更改
+            if (ModelState.IsValid)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                //int Des_ID;
+                for (int i = 0; i < DML.Length; i++)
+                {
+                    
+                        db.Entry(DML[i]).State = System.Data.Entity.EntityState.Modified;
+
+                        db.SaveChanges();
+                    
+                }
+                TempData["Msg"] = "作業完成";
+                return RedirectToAction("Index");
+
             }
-            Destination_MapLegend destination_MapLegend = db.Destination_MapLegend.Find(id);
-            if (destination_MapLegend == null)
+            else
             {
-                return HttpNotFound();
+                TempData["Msg"] = "作業失敗";
+                return RedirectToAction("Index");
             }
-            return View(destination_MapLegend);
+        }
+
+
+
+        public ActionResult Upload(HttpPostedFileBase Img_File)
+        {
+            string Index_Img_Name = "";
+
+            if (Img_File != null) //判斷是否有檔案
+            {
+                if (Img_File.ContentLength > 0)  //若檔案不為空檔案
+                {
+
+                    // 如果UploadFiles文件夾不存在則先創建
+
+                    if (!Directory.Exists(Server.MapPath("~/UploadImage/MapLEGEND_Img/")))
+                    {
+                        Directory.CreateDirectory(Server.MapPath("~/UploadImage/MapLEGEND_Img/"));
+
+                    }
+
+                    Index_Img_Name = Path.GetFileName(Img_File.FileName);  //取得檔案名
+                    var path = Path.Combine(Server.MapPath("~/UploadImage/MapLEGEND_Img/"), Index_Img_Name);  //取得本機檔案路徑
+
+
+                    //若有重複則不儲存
+                    if (System.IO.File.Exists(path))
+                    {
+                        //Random rand = new Random();
+                        //Index_Img_Name = rand.Next().ToString() + "-" + Index_Img_Name;
+                        //path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), Index_Img_Name);
+                    }
+                    else
+                    {
+                        Img_File.SaveAs(path);
+                    }
+
+                    //若有重複則換名字_end
+
+                }
+
+            }
+            return RedirectToAction("Index");
+
+
+
+
+
         }
 
         // GET: webadmin/Destination_MapLegend/Create

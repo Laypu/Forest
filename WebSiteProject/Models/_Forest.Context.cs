@@ -98,8 +98,9 @@ namespace WebSiteProject.Models
         public virtual DbSet<AdminFunction> AdminFunctions { get; set; }
         public virtual DbSet<LinkItem> LinkItems { get; set; }
         public virtual DbSet<ZipCode> ZipCodes { get; set; }
-        public virtual DbSet<F_Destination_Type> F_Destination_Type { get; set; }
         public virtual DbSet<Destination_Index> Destination_Index { get; set; }
         public virtual DbSet<Destination_MapLegend> Destination_MapLegend { get; set; }
+        public virtual DbSet<F_Destination_Type> F_Destination_Type { get; set; }
+        public virtual DbSet<Destination_Fare> Destination_Fare { get; set; }
     }
 }

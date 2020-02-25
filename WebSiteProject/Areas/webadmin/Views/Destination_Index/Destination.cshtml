@@ -1,7 +1,7 @@
 ﻿@*destination 觀光區編輯*@
 
 @model IEnumerable<WebSiteProject.Models.F_Destination_Type>
-
+ 
 @{
     if (TempData["Msg"] != null)
     {
@@ -12,6 +12,7 @@
             });
         </script>
     }
+    
 }
 
 <style>
@@ -83,10 +84,10 @@
                                 <div class="col-md-2 col-sm-12 col-xs-12   text-center">
                                     <span class="display_inline">圖片</span>
                                 </div>
-                                <div class="col-md-5 col-sm-12 col-xs-12   text-center">
+                                <div class="col-md-4 col-sm-12 col-xs-12   text-center">
                                     <span class="display_inline">說明</span>
                                 </div>
-
+                                
                             </div>
                             <hr class="Five_Thingtodo_div" />
 
@@ -94,47 +95,71 @@
                                 var x = 0;
                                 foreach (var item in Model)
                                 {
+                                    ViewBag.id = item.Destination_Type_ID;
+                                                        <div class="form-group" style="background-color:white">
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_ID" id="Destination_Type_ID" value="@item.Destination_Type_ID" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_Link" id="Destination_Type_Link" value="@item.Destination_Type_Link" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_CreateDate" id="Destination_Type_CreateDate" value="@item.Destination_Type_CreateDate" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_ServiceHours" id="Destination_Type_ServiceHours" value="@item.Destination_Type_ServiceHours" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_Altitude" id="Destination_Type_Altitude" value="@item.Destination_Type_Altitude" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_MapName" id="Destination_Type_MapName" value="@item.Destination_Type_MapName" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_Area" id="Destination_Type_Area" value="@item.Destination_Type_Area" />
+                                                            <input type="hidden" name="F_DES[@x].FPI" id="FPI" value="@item.FPI" />
+                                                            <input type="hidden" name="F_DES[@x].FPII" id="FPII" value="@item.FPII" />
+                                                            <input type="hidden" name="F_DES[@x].FPIII" id="FPIII" value="@item.FPIII" />
+                                                            <input type="hidden" name="F_DES[@x].FPIV" id="FPIV" value="@item.FPIV" />
+                                                            <input type="hidden" name="F_DES[@x].FPV" id="FPV" value="@item.FPV" />
+                                                            <input type="hidden" name="F_DES[@x].FPVI" id="FPVI" value="@item.FPVI" />
+                                                            <input type="hidden" name="F_DES[@x].FPVII" id="FPVII" value="@item.FPVII" />
+                                                            <input type="hidden" name="F_DES[@x].FPVIII" id="FPVIII" value="@item.FPVIII" />
+                                                            <input type="hidden" name="F_DES[@x].FPIX" id="FPIX" value="@item.FPIX" />
+                                                            <input type="hidden" name="F_DES[@x].FPX" id="FPX" value="@item.FPX" />
+                                                            <input type="hidden" name="F_DES[@x].Temp_Spring" id="Temp_Spring" value="@item.Temp_Spring" />
+                                                            <input type="hidden" name="F_DES[@x].Temp_Summer" id="Temp_Summer" value="@item.Temp_Summer" />
+                                                            <input type="hidden" name="F_DES[@x].Temp_Autumn" id="Temp_Autumn" value="@item.Temp_Autumn" />
+                                                            <input type="hidden" name="F_DES[@x].Temp_Winter" id="Temp_Winter" value="@item.Temp_Winter" />
 
-                                    <div class="form-group" style="background-color:white">
-                                        <input type="hidden" name="F_DES[@x].Destination_Type_ID" id="Destination_Type_ID" value="@item.Destination_Type_ID" />
-                                        <input type="hidden" name="F_DES[@x].Destination_Type_Link" id="Destination_Type_Link" value="@item.Destination_Type_Link" />
-                                        <input type="hidden" name="F_DES[@x].Destination_Type_CreateDate" id="Destination_Type_CreateDate" value="@item.Destination_Type_CreateDate" />
+                                                            <div class="col-md-1 col-sm-12 col-xs-12 text-center">
+                                                                <span class="display_inline">
+                                                                    <label type="text" name="F_DES[@x].Destination_Type_ID" id="Destination_Type_ID"> @item.Destination_Type_ID</label>
+                                                                </span>
+                                                            </div>
 
-                                        <div class="col-md-1 col-sm-12 col-xs-12 text-center">
-                                            <span class="display_inline">
-                                                <label type="text" name="F_DES[@x].Destination_Type_ID" id="Destination_Type_ID"> @item.Destination_Type_ID</label>
-                                            </span>
-                                        </div>
+                                                            <div class="col-md-2 col-sm-12 col-xs-12 text-center ">
+                                                                <span class="display_inline">
+                                                                    <input type="text" name="F_DES[@x].Destination_Type_Title1" id="Destination_Type_Title1" value="@item.Destination_Type_Title1" class="form-control" />
+                                                                </span>
+                                                            </div>
 
-                                        <div class="col-md-2 col-sm-12 col-xs-12 text-center ">
-                                            <span class="display_inline">
-                                                <input type="text" name="F_DES[@x].Destination_Type_Title1" id="Destination_Type_Title1" value="@item.Destination_Type_Title1" class="form-control" />
-                                            </span>
-                                        </div>
+                                                            <div class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center">
+                                                                <div class="col-md-11 col-sm-12 col-xs-12 bg-white mobile_white forest_link">
+                                                                    <input type="text" name="F_DES[@x].Destination_Type_Title2" id="Destination_Type_Title2" value="@item.Destination_Type_Title2" class="form-control" />
+                                                                </div>
+                                                            </div>
 
-                                        <div class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center">
-                                            <div class="col-md-11 col-sm-12 col-xs-12 bg-white mobile_white forest_link">
-                                                <input type="text" name="F_DES[@x].Destination_Type_Title2" id="Destination_Type_Title2" value="@item.Destination_Type_Title2" class="form-control" />
-                                            </div>
-                                        </div>
+                                                            <div class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center align-center">
+                                                                <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/Destination_Img/")@item.Destination_Type_ImgName" />
+                                                                <br />
+                                                                @*<label for="Index_Img_File">
+                <input type="button" id="btn" value="傳送檔案"><span id="Img_FileName">@item.Destination_Type_ImgName</span>
+                <input data-imgid="Index_Img_File@(x)" name="F_DES[@x].Destination_Type_ImgName" type="file" id="Index_Img_File" accept=".jpeg,.jpg,.gif,.png" style="display:none" />
 
-                                        <div class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center align-center">
-                                            <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/Destination_Img/")@item.Destination_Type_ImgName" />
-                                            <br />
-                                            @*<label for="Index_Img_File">
-                                                    <input type="button" id="btn" value="傳送檔案"><span id="Img_FileName">@item.Destination_Type_ImgName</span>
-                                                    <input data-imgid="Index_Img_File@(x)" name="F_DES[@x].Destination_Type_ImgName" type="file" id="Index_Img_File" accept=".jpeg,.jpg,.gif,.png" style="display:none" />
+            </label>*@
+                                                                <input data-imgid="Index_Img_File@(x)" name="Img_File" type="file" accept=".jpeg,.jpg,.gif,.png" />
+                                                                <label for="Index_Img_File@(x)" style="display:none"></label>
+                                                                <input id="Img_FileName@(x)" name="F_DES[@x].Destination_Type_ImgName" class="selected" value="@item.Destination_Type_ImgName" style="display:none">
+                                                            </div>
 
-                                                </label>*@
-                                            <input data-imgid="Index_Img_File@(x)" name="Img_File" type="file" accept=".jpeg,.jpg,.gif,.png" />
-                                            <label for="Index_Img_File@(x)" style="display:none"></label>
-                                            <input id="Img_FileName@(x)" name="F_DES[@x].Destination_Type_ImgName" class="selected" value="@item.Destination_Type_ImgName" style="display:none">
-                                        </div>
+                                                            <div class="col-md-4 col-sm-12 col-xs-12 bg-white mobile_white">
+                                                                <textarea name="F_DES[@x].Destination_Type_Description" id="Destination_Type_Description" style="resize:none; height:160px" class="form-control">@item.Destination_Type_Description</textarea>
+                                                            </div>
 
-                                        <div class="col-md-5 col-sm-12 col-xs-12 bg-white mobile_white">
-                                            <textarea name="F_DES[@x].Destination_Type_Description" id="Destination_Type_Description" style="resize:none; height:160px" class="form-control">@item.Destination_Type_Description</textarea>
-                                        </div>
-                                    </div>
+                                                            <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white " >
+                                                                <button class="btn grey-mint">@Html.ActionLink("管理", "Edit", new { id = item.Destination_Type_ID },new {style="color:white" })</button>
+                                                                
+                                                                
+                                                            </div>
+                                                        </div>
                                     <hr class="Five_Thingtodo_div" />
                                     @*</form>*@
                                     x = x + 1;

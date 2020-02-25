@@ -1,0 +1,196 @@
+﻿@model WebSiteProject.Models.F_Destination_Type
+
+@{
+    if (TempData["Msg"] != null)
+    {
+        <script>
+            $(function () {
+                var Msg = @Html.Raw(Json.Encode(TempData["Msg"]));
+                alert(Msg);
+            });
+        </script>
+    }
+}
+
+<style>
+    hr {
+        margin: 0px;
+        border-top: 0px solid #eee;
+    }
+
+    .Five_Thingtodo_Header {
+        background-color: lightgray;
+        font-weight: bolder;
+    }
+</style>
+
+<!--page bar start-->
+<div class="page-bar all_width">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="@Url.Action("Index", "Home")">Home</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            Destinations
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            目的地設定
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>目的地詳細資料設定</li>
+    </ul>
+</div>
+<!--page bar end-->
+
+<div class="title_01">Destinations</div>
+<div id="Partial_Index_MenuLink">
+    <!--.......-->
+</div>
+
+<div class="portlet light bordered">
+
+    <form class="form-horizontal form-bordered" method="Post" id="editform" action='@Url.Action("Edit","Destination_Index")' enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(Model => Model.Destination_Type_ID)
+        @Html.HiddenFor(Model => Model.Destination_Type_Title1)
+        @Html.HiddenFor(Model => Model.Destination_Type_Title2)
+        @Html.HiddenFor(Model => Model.Destination_Type_ImgName)
+        @Html.HiddenFor(Model => Model.Destination_Type_Link)
+        @Html.HiddenFor(Model => Model.Destination_Type_Description)
+        <div class="portlet light form-fit bordered">
+            <div class="portlet-body form">
+                <div class="form-horizontal form-bordered">
+                    <div class="form-body" id="form-body2">
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-12 col-xs-12 search_item">目的地名稱</div>
+                            <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
+                                @Html.ValueFor(model => model.Destination_Type_Title1)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-12 col-xs-12 search_item">地圖設定</div>
+                            <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
+                                @Html.EditorFor(model => model.Destination_Type_MapName, new { htmlAttributes = new { @class = "form-control input-small" } })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-12 col-xs-12 search_item">目的地地址</div>
+                            <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
+                                @Html.EditorFor(model => model.Destination_Type_Location, new { htmlAttributes = new { @class = "form-control input-small" } })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-12 col-xs-12 search_item">開放時間</div>
+                            <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
+                                @Html.TextAreaFor(model => model.Destination_Type_ServiceHours, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-12 col-xs-12 bg-grey_1 search_item">面積</div>
+                            <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
+                                @Html.EditorFor(model => model.Destination_Type_Area, new { htmlAttributes = new { @class = "form-control input-small" } })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-12 col-xs-12 bg-grey_1 search_item">海拔</div>
+                            <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
+                                @Html.EditorFor(model => model.Destination_Type_Altitude, new { htmlAttributes = new { @class = "form-control input-small" } })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-12 col-xs-12 bg-grey_1 search_item">季節溫度(&deg;C)</div>
+                            <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
+                                @Html.Label("春天", new { htmlAttributes = new { @class = "inline-block" } })
+                                @Html.EditorFor(model => model.Temp_Spring, new
+                                {
+                                    htmlAttributes = new
+                                    {@*placeholder = "春天",*@@class = "form-control input-small inline-block"
+}
+})｜
+                                @Html.Label("夏天", new { htmlAttributes = new { @class = "inline-block" } })
+                                @Html.EditorFor(model => model.Temp_Summer, new
+                                {
+                                    htmlAttributes = new
+                                    {@*placeholder = "夏天",*@@class = "form-control input-small inline-block"
+}
+})｜
+                                @Html.Label("秋天", new { htmlAttributes = new { @class = "inline-block" } })
+                                @Html.EditorFor(model => model.Temp_Autumn, new
+                                {
+                                    htmlAttributes = new
+                                    {@*placeholder = "秋天",*@@class = "form-control input-small inline-block"
+}
+})｜
+                                @Html.Label("冬天", new { htmlAttributes = new { @class = "inline-block" } })
+                                @Html.EditorFor(model => model.Temp_Winter, new
+                                {
+                                    htmlAttributes = new
+                                    {@*placeholder = "冬天",*@@class = "form-control input-small inline-block"
+}
+})
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-12 col-xs-12 search_item">目的地特點</div>
+                            <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white table_font">
+                                @Html.EditorFor(model => model.FPI, new { htmlAttributes = new { @class = "form-control input-small inline-block", @style = "margin:0px 5px 5px 0px" } })
+                                @Html.EditorFor(model => model.FPII, new { htmlAttributes = new { @class = "form-control input-small inline-block", @style = "margin:0px 5px 5px 0px" } })
+                                @Html.EditorFor(model => model.FPIII, new { htmlAttributes = new { @class = "form-control input-small inline-block", @style = "margin:0px 5px 5px 0px" } })
+                                @Html.EditorFor(model => model.FPIV, new { htmlAttributes = new { @class = "form-control input-small inline-block", @style = "margin:0px 5px 5px 0px" } })
+                                @Html.EditorFor(model => model.FPV, new { htmlAttributes = new { @class = "form-control input-small inline-block", @style = "margin:0px 5px 5px 0px" } })
+                                @Html.EditorFor(model => model.FPVI, new { htmlAttributes = new { @class = "form-control input-small inline-block", @style = "margin:0px 5px 5px 0px" } })
+                                @Html.EditorFor(model => model.FPVII, new { htmlAttributes = new { @class = "form-control input-small inline-block", @style = "margin:0px 5px 5px 0px" } })
+                                @Html.EditorFor(model => model.FPVIII, new { htmlAttributes = new { @class = "form-control input-small inline-block", @style = "margin:0px 5px 5px 0px" } })
+                                @Html.EditorFor(model => model.FPIX, new { htmlAttributes = new { @class = "form-control input-small inline-block", @style = "margin:0px 5px 5px 0px" } })
+                                @Html.EditorFor(model => model.FPX, new { htmlAttributes = new { @class = "form-control input-small inline-block", @style = "margin:0px 5px 5px 0px" } })
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center search_padding" id="div_buttons">
+            <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+            <button type="button" class="btn grey-mint" id="btn_return">返回列表</button>
+            <button type="button" class="btn grey-mint " id="preview" onclick="callpreview()">預覽</button>
+        </div>
+    </form>
+</div>
+<script>
+    $(function () {
+
+
+            //顯示圖片
+            ShowImg();
+
+
+            //送出表單
+            $("#editform").submit(function () {
+
+               
+                $.ajax({
+                    type: "POST",
+                    url: form.action,
+                    data: $(form).serialize(),
+                    success: function (data) {
+                        console.log("success");
+
+                    }
+                });
+
+                
+            })
+               
+        })
+
+</script>

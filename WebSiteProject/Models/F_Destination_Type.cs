@@ -14,6 +14,12 @@ namespace WebSiteProject.Models
     
     public partial class F_Destination_Type
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public F_Destination_Type()
+        {
+            this.Destination_Fare = new HashSet<Destination_Fare>();
+        }
+    
         public int Destination_Type_ID { get; set; }
         public string Destination_Type_Title1 { get; set; }
         public string Destination_Type_Title2 { get; set; }
@@ -21,5 +27,27 @@ namespace WebSiteProject.Models
         public string Destination_Type_ImgName { get; set; }
         public string Destination_Type_Link { get; set; }
         public string Destination_Type_Description { get; set; }
+        public string Destination_Type_MapName { get; set; }
+        public string Destination_Type_Location { get; set; }
+        public string Destination_Type_ServiceHours { get; set; }
+        public string Destination_Type_Area { get; set; }
+        public string Destination_Type_Altitude { get; set; }
+        public Nullable<decimal> Temp_Spring { get; set; }
+        public Nullable<decimal> Temp_Summer { get; set; }
+        public Nullable<decimal> Temp_Autumn { get; set; }
+        public Nullable<decimal> Temp_Winter { get; set; }
+        public string FPI { get; set; }
+        public string FPII { get; set; }
+        public string FPIII { get; set; }
+        public string FPIV { get; set; }
+        public string FPV { get; set; }
+        public string FPVI { get; set; }
+        public string FPVII { get; set; }
+        public string FPVIII { get; set; }
+        public string FPIX { get; set; }
+        public string FPX { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Destination_Fare> Destination_Fare { get; set; }
     }
 }

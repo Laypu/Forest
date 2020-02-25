@@ -329,6 +329,9 @@
     <Compile Include="Models\Country.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Destination_Fare.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Destination_Index.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
@@ -746,7 +749,6 @@
     <Content Include="img\f_pic_07.jpg" />
     <Content Include="img\f_pic_08.jpg" />
     <Content Include="img\f_pic_09.jpg" />
-    <Content Include="img\Icon_01.gif" />
     <Content Include="img\icon_01.jpg" />
     <Content Include="img\icon_01.png" />
     <Content Include="img\icon_02.jpg" />
@@ -824,15 +826,6 @@
     <Content Include="img\season_bg.png" />
     <Content Include="img\smart_icon.png" />
     <Content Include="img\smart_icon_0.png" />
-    <Content Include="img\System03.gif" />
-    <Content Include="img\System16.gif" />
-    <Content Include="img\System25.gif" />
-    <Content Include="img\System28.gif" />
-    <Content Include="img\System29.gif" />
-    <Content Include="img\System36.gif" />
-    <Content Include="img\System40.gif" />
-    <Content Include="img\System41.gif" />
-    <Content Include="img\System45.gif" />
     <Content Include="img\trip-advisor.png" />
     <Content Include="img\trip_map_01.png" />
     <Content Include="img\trip_map_02.png" />
@@ -1167,9 +1160,6 @@
     <Content Include="Scripts\amcharts\themes\light.js" />
     <Content Include="Scripts\amcharts\themes\patterns.js" />
     <Content Include="Scripts\amcharts\xy.js" />
-    <Content Include="Scripts\ammap\ammap.css" />
-    <Content Include="Scripts\ammap\ammap.js" />
-    <Content Include="Scripts\ammap\ammap_amcharts_extension.js" />
     <Content Include="Scripts\ammap\images\arrowDown.gif" />
     <Content Include="Scripts\ammap\images\arrowUp.gif" />
     <Content Include="Scripts\ammap\images\export.png" />
@@ -3187,7 +3177,7 @@
     <Content Include="Areas\webadmin\Views\F_Thingtodo\Five_ThingsToDo_HashTag.cshtml" />
     <Content Include="ClassDiagram1.cd" />
     <Content Include="Areas\webadmin\Views\Destination_Index\Create.cshtml" />
-    <Content Include="Areas\webadmin\Views\Destination_Index\Delete.cshtml" />
+    <Content Include="Areas\webadmin\Views\Destination_Index\Edit.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\MainTitleAndContent.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\Destination.cshtml" />
     <Content Include="Areas\webadmin\Views\Menu\MenuLinkDestination.cshtml" />
@@ -3201,6 +3191,7 @@
     <Content Include="Areas\webadmin\Views\Destination_MapLegend\Details.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_MapLegend\Edit.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_MapLegend\Index.cshtml" />
+    <Content Include="Areas\webadmin\Views\Destination_Index\_FarePartial.cshtml" />
     <None Include="Properties\PublishProfiles\MySkylines.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

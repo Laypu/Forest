@@ -343,6 +343,16 @@
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Sort" Type="int" />
   </EntityType>
+  <EntityType Name="Destination_Fare">
+    <Key>
+      <PropertyRef Name="ChargeID" />
+    </Key>
+    <Property Name="ChargeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Destination_Type_ID" Type="int" />
+    <Property Name="TicketType" Type="nvarchar(max)" />
+    <Property Name="Fare" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
   <EntityType Name="Destination_Index">
     <Key>
       <PropertyRef Name="Destination_ID" />
@@ -440,6 +450,25 @@
     <Property Name="Destination_Type_ImgName" Type="nvarchar(max)" />
     <Property Name="Destination_Type_Link" Type="nvarchar(max)" />
     <Property Name="Destination_Type_Description" Type="nvarchar(max)" />
+    <Property Name="Destination_Type_MapName" Type="nvarchar(max)" />
+    <Property Name="Destination_Type_Location" Type="nvarchar(max)" />
+    <Property Name="Destination_Type_ServiceHours" Type="nvarchar(max)" />
+    <Property Name="Destination_Type_Area" Type="nvarchar(max)" />
+    <Property Name="Destination_Type_Altitude" Type="nvarchar(max)" />
+    <Property Name="Temp_Spring" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Temp_Summer" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Temp_Autumn" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="Temp_Winter" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="FPI" Type="nvarchar" MaxLength="20" />
+    <Property Name="FPII" Type="nvarchar" MaxLength="20" />
+    <Property Name="FPIII" Type="nvarchar" MaxLength="20" />
+    <Property Name="FPIV" Type="nvarchar" MaxLength="20" />
+    <Property Name="FPV" Type="nvarchar" MaxLength="20" />
+    <Property Name="FPVI" Type="nvarchar" MaxLength="20" />
+    <Property Name="FPVII" Type="nvarchar" MaxLength="20" />
+    <Property Name="FPVIII" Type="nvarchar" MaxLength="20" />
+    <Property Name="FPIX" Type="nvarchar" MaxLength="20" />
+    <Property Name="FPX" Type="nvarchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="F_HashTag_Type">
     <Key>
@@ -1580,6 +1609,18 @@
     <Property Name="Town" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Code" Type="int" Nullable="false" />
   </EntityType>
+  <Association Name="FK_Destination_Fare_F_Destination_Type">
+    <End Role="F_Destination_Type" Type="Self.F_Destination_Type" Multiplicity="0..1" />
+    <End Role="Destination_Fare" Type="Self.Destination_Fare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="F_Destination_Type">
+        <PropertyRef Name="Destination_Type_ID" />
+      </Principal>
+      <Dependent Role="Destination_Fare">
+        <PropertyRef Name="Destination_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_F_Sub_HashTag_Type_F_HashTag_Type">
     <End Role="F_HashTag_Type" Type="Self.F_HashTag_Type" Multiplicity="1" />
     <End Role="F_Sub_HashTag_Type" Type="Self.F_Sub_HashTag_Type" Multiplicity="*" />
@@ -1607,6 +1648,7 @@
     <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ColumnSetting" EntityType="Self.ColumnSetting" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Destination_Fare" EntityType="Self.Destination_Fare" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Destination_Index" EntityType="Self.Destination_Index" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Destination_MapLegend" EntityType="Self.Destination_MapLegend" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="EventListItem" EntityType="Self.EventListItem" Schema="dbo" store:Type="Tables" />
@@ -1711,6 +1753,10 @@
     [ZipCode].[Code] AS [Code]
     FROM [dbo].[ZipCode] AS [ZipCode]</DefiningQuery>
     </EntitySet>
+    <AssociationSet Name="FK_Destination_Fare_F_Destination_Type" Association="Self.FK_Destination_Fare_F_Destination_Type">
+      <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
+      <End Role="Destination_Fare" EntitySet="Destination_Fare" />
+    </AssociationSet>
     <AssociationSet Name="FK_F_Sub_HashTag_Type_F_HashTag_Type" Association="Self.FK_F_Sub_HashTag_Type_F_HashTag_Type">
       <End Role="F_HashTag_Type" EntitySet="F_HashTag_Type" />
       <End Role="F_Sub_HashTag_Type" EntitySet="F_Sub_HashTag_Type" />

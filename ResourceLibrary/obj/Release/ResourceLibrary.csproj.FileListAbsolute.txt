@@ -39,3 +39,13 @@ C:\Users\PC003\Desktop\git\Forest\Forest\ResourceLibrary\obj\Release\ResourceLib
 C:\Users\PC003\Desktop\git\Forest\Forest\ResourceLibrary\obj\Release\en-US\ResourceLibrary.resources.dll
 C:\Users\PC003\Desktop\git\Forest\Forest\ResourceLibrary\obj\Release\ResourceLibrary.dll
 C:\Users\PC003\Desktop\git\Forest\Forest\ResourceLibrary\obj\Release\ResourceLibrary.pdb
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\bin\Release\ResourceLibrary.dll
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\bin\Release\ResourceLibrary.pdb
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\bin\Release\en-US\ResourceLibrary.resources.dll
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Release\ResourceLibrary.csprojAssemblyReference.cache
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Release\ResourceLibrary.Resource.resources
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Release\ResourceLibrary.Resource.en-US.resources
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Release\ResourceLibrary.csproj.GenerateResource.cache
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Release\en-US\ResourceLibrary.resources.dll
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Release\ResourceLibrary.dll
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Release\ResourceLibrary.pdb
