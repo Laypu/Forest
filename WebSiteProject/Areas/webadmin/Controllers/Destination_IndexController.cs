@@ -139,9 +139,9 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         }
         public ActionResult Fare(int? id)
         {
-            var Fare = db.Destination_Fare.Include(e => e.F_Destination_Type).Where(e => e.Destination_Type_ID == id).ToList();
+            var Fares = db.Destination_Fare.Where(e => e.Destination_Type_ID == id);
 
-            return PartialView("_FarePartial",Fare);
+            return PartialView("_FarePartial",Fares);
 
         }
 
