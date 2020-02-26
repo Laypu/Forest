@@ -234,6 +234,7 @@
     <Compile Include="Areas\webadmin\Controllers\F_Destination_TypeController.cs" />
     <Compile Include="Areas\webadmin\Controllers\F_ThingtodoController.cs" />
     <Compile Include="Areas\webadmin\Controllers\PatentController.cs" />
+    <Compile Include="Areas\webadmin\Controllers\RecommendedtripsController.cs" />
     <Compile Include="Areas\webadmin\Controllers\WebsiteMapController.cs" />
     <Compile Include="Areas\webadmin\Controllers\ADController.cs" />
     <Compile Include="Areas\webadmin\Controllers\AppController.cs" />
@@ -266,6 +267,7 @@
     <Compile Include="Code\CacheMapping.cs" />
     <Compile Include="Code\RssActionResult .cs" />
     <Compile Include="Controllers\Destination_IndexController.cs" />
+    <Compile Include="Controllers\F_RecommendedtripsController.cs" />
     <Compile Include="Controllers\F_ThingsToDoController.cs" />
     <Compile Include="Controllers\MapController.cs" />
     <Compile Include="Controllers\AppController.cs" />
@@ -487,6 +489,18 @@
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PatentUnitSetting.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecommendedTrip.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecommendedTrips_Day.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecommendedTrips_HashTag_Type.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecommendedTrips_Index.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SEO.cs">
@@ -3192,6 +3206,7 @@
     <Content Include="Areas\webadmin\Views\Destination_MapLegend\Edit.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_MapLegend\Index.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\_FarePartial.cshtml" />
+    <Content Include="Areas\webadmin\Views\Recommendedtrips\RecommendedtripsIndex.cshtml" />
     <None Include="Properties\PublishProfiles\MySkylines.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -3368,6 +3383,7 @@
     <Content Include="Views\Destination_Index\Details.cshtml" />
     <Content Include="Views\Destination_Index\Edit.cshtml" />
     <Content Include="Views\Destination_Index\Index.cshtml" />
+    <Content Include="Views\F_Recommendedtrips\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -3379,6 +3395,7 @@
     <Folder Include="UploadImage\Config\" />
     <Folder Include="UploadImage\Editor\" />
     <Folder Include="UploadImage\Notice\" />
+    <Folder Include="UploadImage\RecommendedTrips\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -3429,7 +3446,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>17473</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54333/forest</IISUrl>
+          <IISUrl>http://localhost:54332/forest</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

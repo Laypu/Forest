@@ -281,3 +281,14 @@ C:\Users\PC003\Desktop\git\Forest\Forest\ResourceLibrary\obj\Debug\en-US\Resourc
 C:\Users\PC003\Desktop\git\Forest\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.dll
 C:\Users\PC003\Desktop\git\Forest\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.pdb
 C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.csprojAssemblyReference.cache
+D:\GITHUB\Forest\ResourceLibrary\bin\Debug\ResourceLibrary.dll
+D:\GITHUB\Forest\ResourceLibrary\bin\Debug\ResourceLibrary.pdb
+D:\GITHUB\Forest\ResourceLibrary\bin\Debug\en-US\ResourceLibrary.resources.dll
+D:\GITHUB\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.csprojAssemblyReference.cache
+D:\GITHUB\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.Resource.resources
+D:\GITHUB\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.Resource.en-US.resources
+D:\GITHUB\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.csproj.GenerateResource.cache
+D:\GITHUB\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.csproj.CoreCompileInputs.cache
+D:\GITHUB\Forest\ResourceLibrary\obj\Debug\en-US\ResourceLibrary.resources.dll
+D:\GITHUB\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.dll
+D:\GITHUB\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.pdb

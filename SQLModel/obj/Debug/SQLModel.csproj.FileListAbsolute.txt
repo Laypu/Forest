@@ -237,3 +237,15 @@ C:\Users\PC003\Desktop\git\Forest\Forest\SQLModel\obj\Debug\SQLModel.csprojAssem
 C:\Users\PC003\Desktop\git\Forest\Forest\SQLModel\obj\Debug\SQLModel.csproj.CopyComplete
 C:\Users\PC003\Desktop\git\Forest\Forest\SQLModel\obj\Debug\SQLModel.dll
 C:\Users\PC003\Desktop\git\Forest\Forest\SQLModel\obj\Debug\SQLModel.pdb
+D:\GITHUB\Forest\SQLModel\bin\Debug\SQLModel.dll
+D:\GITHUB\Forest\SQLModel\bin\Debug\SQLModel.pdb
+D:\GITHUB\Forest\SQLModel\bin\Debug\Utilities.dll
+D:\GITHUB\Forest\SQLModel\bin\Debug\NLog.dll
+D:\GITHUB\Forest\SQLModel\bin\Debug\Utilities.pdb
+D:\GITHUB\Forest\SQLModel\bin\Debug\Utilities.dll.config
+D:\GITHUB\Forest\SQLModel\bin\Debug\NLog.xml
+D:\GITHUB\Forest\SQLModel\obj\Debug\SQLModel.csprojAssemblyReference.cache
+D:\GITHUB\Forest\SQLModel\obj\Debug\SQLModel.csproj.CoreCompileInputs.cache
+D:\GITHUB\Forest\SQLModel\obj\Debug\SQLModel.csproj.CopyComplete
+D:\GITHUB\Forest\SQLModel\obj\Debug\SQLModel.dll
+D:\GITHUB\Forest\SQLModel\obj\Debug\SQLModel.pdb
