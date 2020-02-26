@@ -111,9 +111,9 @@
                                 @Html.EditorFor(model => model.Temp_Spring, new
                            {
                                htmlAttributes = new
-                               {@*placeholder = "春天",*@ @class = "form-control input-small inline-block"
-                        }
-                    })｜
+                               {@*placeholder = "春天",*@@class = "form-control input-small inline-block"
+}
+})｜
                                 @Html.Label("夏天", new { htmlAttributes = new { @class = "inline-block" } })
                                 @Html.EditorFor(model => model.Temp_Summer, new
                            {
@@ -124,15 +124,15 @@
                            {
                                htmlAttributes = new
                                {@*placeholder = "秋天",*@@class = "form-control input-small inline-block"
-                        }
-                    })｜
+}
+})｜
                                 @Html.Label("冬天", new { htmlAttributes = new { @class = "inline-block" } })
                                 @Html.EditorFor(model => model.Temp_Winter, new
                            {
                                htmlAttributes = new
                                {@*placeholder = "冬天",*@@class = "form-control input-small inline-block"
-                        }
-                    })
+}
+})
                             </div>
                         </div>
 
@@ -151,12 +151,12 @@
                                 @Html.EditorFor(model => model.FPX, new { htmlAttributes = new { @class = "form-control input-small inline-block", @style = "margin:0px 5px 5px 0px" } })
                             </div>
                         </div>
+                        
                         @{
                             var vid = Model.Destination_Type_ID;
-
-                            Html.RenderAction("Fare", new { id = vid });
+                            
                         }
-
+                        @Html.Action("_FarePartial", new { id = vid });
                     </div>
                 </div>
             </div>

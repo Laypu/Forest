@@ -6,11 +6,7 @@
         <!--<button class="btn green-meadow" id="btn_add">新增 <i class="fa fa-plus"></i></button>-->
         <button class="btn red" id="btn_del">刪除 <i class="glyphicon glyphicon-trash"></i></button>
     </div>
-    @{ 
-        Html.HiddenFor(model => model.ChargeID);
-
-        Html.HiddenFor(model => model.Destination_Type_ID );
-    }
+    
     <!--table start-->
     <table class="table table-bordered nomarginbottom" border="0" cellspacing="0" cellpadding="0">
         <thead>
@@ -29,9 +25,13 @@
                         <span></span>
                     </label>
                 </td>
-                <td class="text-center">@Html.EditorFor(m => m.TicketType)</td>
-                <td class="text-center">@Html.EditorFor(m => m.Fare)</td>
-                <td class="text-center">@Html.EditorFor(m => m.Description)</td>
+                @{
+                   
+                    <td class="text-center">@Html.EditorFor(model => model.TicketType)</td>
+                    <td class="text-center">@Html.EditorFor(model => model.Fare)</td>
+                    <td class="text-center">@Html.EditorFor(model => model.Description)</td>
+                 }
+
             </tr>
         </tbody>
     </table>

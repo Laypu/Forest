@@ -137,11 +137,43 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 return RedirectToAction("Destination");
             }
         }
-        public ActionResult Fare(int? id)
+        [HttpGet]
+        public ActionResult _FarePartial(int? id)
         {
-            var Fares = db.Destination_Fare.Where(e => e.Destination_Type_ID == id);
+            ViewBag.employeeID = new SelectList(db.F_Destination_Type, "employeeID", "EmployeeName");
+            using (ForestEntities db = new ForestEntities())
+                {
 
-            return PartialView("_FarePartial",Fares);
+                return PartialView(db.Destination_Fare.Where(x => x.Destination_Type_ID == id).FirstOrDefault<Destination_Fare>());
+                }
+            
+
+        }
+        
+        [HttpPost]
+        public ActionResult _FarePartial(Destination_Fare[] DF)
+        {
+            if (ModelState.IsValid)
+            {
+                //int Des_ID;
+                for (int i = 0; i < DF.Length; i++)
+                {
+                    db.Entry(DF[i]).State = System.Data.Entity.EntityState.Modified;
+
+                    db.SaveChanges();
+                    
+
+                }
+                TempData["Msg"] = "作業完成";
+                return RedirectToAction("Destination");
+
+            }
+            else
+            {
+                TempData["Msg"] = "作業失敗";
+                return RedirectToAction("Destination");
+            }
+
 
         }
 
@@ -319,6 +351,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Destination");
             }
+            TempData["Msg"] = "作業完成";
             return View(Destination_Type);
         }
 
