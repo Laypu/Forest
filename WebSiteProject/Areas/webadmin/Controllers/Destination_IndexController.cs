@@ -138,43 +138,43 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             }
         }
         [HttpGet]
-        public ActionResult _FarePartial(int? id)
+        public ActionResult _FarePartial(int? id,string Name)
         {
-            ViewBag.employeeID = new SelectList(db.F_Destination_Type, "employeeID", "EmployeeName");
-            using (ForestEntities db = new ForestEntities())
-                {
+            ViewBag.TypeID = id;
+            ViewBag.TypeName = Name;
+            //ViewBag.Destination_Type_ID = new SelectList(db.F_Destination_Type, "Destination_Type_ID", "Destination_Type_Title");
+            //using (ForestEntities db = new ForestEntities())
+            //    {
 
-                return PartialView(db.Destination_Fare.Where(x => x.Destination_Type_ID == id).FirstOrDefault<Destination_Fare>());
-                }
+            return PartialView(db.Destination_Fare.Where(x => x.Destination_Type_ID == id).ToList());
+            //}
             
 
         }
         
-        [HttpPost]
-        public ActionResult _FarePartial(Destination_Fare[] DF)
+
+        [HttpGet]
+        public ActionResult Createtr(int? TypeID,string TypeName)
         {
+            //ViewBag.Destination_Type_ID = new SelectList(db.F_Destination_Type, "Destination_Type_ID", "Destination_Type_Title1" + " " + "Destination_Type_Title2");
+            ViewBag.DesTypeName = TypeName;
+            ViewBag.DesTypeID = TypeID;
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Createtr(Destination_Fare DFTR)
+        {
+
             if (ModelState.IsValid)
             {
-                //int Des_ID;
-                for (int i = 0; i < DF.Length; i++)
-                {
-                    db.Entry(DF[i]).State = System.Data.Entity.EntityState.Modified;
-
-                    db.SaveChanges();
-                    
-
-                }
-                TempData["Msg"] = "作業完成";
-                return RedirectToAction("Destination");
+                db.Destination_Fare.Add(DFTR);
+                db.SaveChanges();
 
             }
-            else
-            {
-                TempData["Msg"] = "作業失敗";
-                return RedirectToAction("Destination");
-            }
 
-
+            return RedirectToAction("Destination");
         }
 
         [HttpGet]
@@ -258,7 +258,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         
         public ActionResult Create()
         {
-            return View();
+           return View();
         }
 
         // POST: webadmin/Destination_Index/Create
@@ -343,32 +343,31 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         // 詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(F_Destination_Type Destination_Type)
+        public ActionResult Edit(F_Destination_Type Destination_Type, Destination_Fare[] DF)
         {
             if (ModelState.IsValid)
             {
+                
                 db.Entry(Destination_Type).State = EntityState.Modified;
+                if (DF != null)
+                {
+                    for (var i = 0; i < DF.Length; i++)
+                    {
+                        db.Entry(DF[i]).State = EntityState.Modified;
+                    }
+                }
+                else {
+                    return RedirectToAction("Createtr");
+                }
+                
                 db.SaveChanges();
+                TempData["Msg"] = "作業完成";
                 return RedirectToAction("Destination");
             }
             TempData["Msg"] = "作業完成";
             return View(Destination_Type);
         }
 
-        // GET: webadmin/Destination_Index/Delete/5
-        public ActionResult Charge(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Destination_Index Destination_Index = db.Destination_Index.Find(id);
-            if (Destination_Index == null)
-            {
-                return HttpNotFound();
-            }
-            return View(Destination_Index);
-        }
 
         // POST: webadmin/Destination_Index/Delete/5
         [HttpPost, ActionName("Delete")]

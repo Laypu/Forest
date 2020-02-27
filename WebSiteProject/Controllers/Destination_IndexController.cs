@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Services.Interface;
+using Services.Manager;
+using SQLModel;
+using SQLModel.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -6,123 +10,133 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using WebSiteProject.Models;
+using ViewModels;
+using WebSiteProject.Code;
+
 
 namespace WebSiteProject.Controllers
 {
-    public class Destination_IndexController : Controller
+    public class Destination_IndexController : AppController
     {
-        private ForestEntities db = new ForestEntities();
+        MasterPageManager _IMasterPageManager;
+        ILangManager _ILangManager;
+        ISiteLayoutManager _ISiteLayoutManager;
+        ILoginManager _ILoginManager;
+        IMenuManager _IMenuManager;
+        IModelLinkManager _IModelLinkManager;
+        ADRightDownManager _ADRightDownManager;
 
+        WebSiteProject.Models.ForestEntities db = new Models.ForestEntities();
+
+        public Destination_IndexController()
+        {
+            _IMasterPageManager = new MasterPageManager(connectionstr, LangID, Common.GetLangDict());
+            _ISiteLayoutManager = serviceinstance.SiteLayoutManager;
+            _ILangManager = serviceinstance.LangManager;
+            _ILoginManager = serviceinstance.LoginManager;
+            _IMenuManager = serviceinstance.MenuManager;
+            _IModelLinkManager = serviceinstance.ModelLinkManager;
+            _ADRightDownManager = new ADRightDownManager(new SQLRepository<ADRightDown>(connectionstr));
+        }
         // GET: Destination_Index
-        public ActionResult Index()
+        public ActionResult Index(int? langid)
         {
-            return View(db.Destination_Index.ToList());
-        }
-
-        // GET: Destination_Index/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
+            var site_id = 3; //Destination輪播ID
+            if (Session["LangID"] == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                var DefaultLang = System.Web.Configuration.WebConfigurationManager.AppSettings["DefaultLang"];
+                _ILangManager = serviceinstance.LangManager;
+                var alllang = _ILangManager.GetAll();
+                if (alllang != null)
+                {
+                    if (alllang.Any(v => v.Lang_Name == DefaultLang))
+                    {
+                        langid = alllang.Where(v => v.Lang_Name == DefaultLang).First().ID.Value;
+                    }
+                }
+                Session["LangID"] = langid.ToString();
+                Session.Timeout = 600;
             }
-            Destination_Index destination_Index = db.Destination_Index.Find(id);
-            if (destination_Index == null)
+            else
             {
-                return HttpNotFound();
-            }
-            return View(destination_Index);
-        }
-
-        // GET: Destination_Index/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Destination_Index/Create
-        // 若要免於過量張貼攻擊，請啟用想要繫結的特定屬性，如需
-        // 詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Destination_ID,Destination_Title,Destination_Context,Destination_Img,Destination_Img_Mobile")] Destination_Index destination_Index)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Destination_Index.Add(destination_Index);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (langid == null)
+                {
+                    int _langid = 1;
+                    if (int.TryParse(Session["LangID"].ToString(), out _langid) == false)
+                    {
+                        langid = 1;
+                    }
+                    else { langid = _langid; }
+                }
+                else
+                {
+                    Session["LangID"] = langid.ToString();
+                }
             }
 
-            return View(destination_Index);
-        }
+            HomeViewModel viewmodel = new HomeViewModel();
+            //讀取logo圖片
+            _IMasterPageManager.SetModel<HomeViewModel>(ref viewmodel, "P", langid.ToString(), "");
+            viewmodel.SEOScript = _IMasterPageManager.GetSEOData("", "", langid.ToString());
+            viewmodel.ADMain = _IMasterPageManager.GetADMain("P", langid.ToString(), site_id);
+            viewmodel.ADMobile = _IMasterPageManager.GetADMain("M", langid.ToString(), site_id);
+            viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
 
-        // GET: Destination_Index/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
+            var sitemenu = _ISiteLayoutManager.PagingMain(new ViewModels.SearchModelBase()
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Destination_Index destination_Index = db.Destination_Index.Find(id);
-            if (destination_Index == null)
+                Limit = 100,
+                Key = Device,
+                NowPage = 1,
+                Offset = 0,
+                Sort = "ID",
+                LangId = langid.ToString()
+            });
+            if (sitemenu.total > 0)
             {
-                return HttpNotFound();
+                var layoutpagelist = ((List<PageLayout>)sitemenu.rows);
+                if (layoutpagelist.Any(v => v.Title == "焦點新聞"))
+                {
+                    viewmodel.PageLayoutModel1 = _IMasterPageManager.GetSiteLayout(sitemenu.rows, "焦點新聞", langid.ToString()).First();
+                }
+                else { viewmodel.PageLayoutModel1 = new HomePageLayoutModel(); }
+                if (layoutpagelist.Any(v => v.Title == "活動專區"))
+                {
+                    viewmodel.PageLayoutModel2 = _IMasterPageManager.GetSiteLayout(sitemenu.rows, "活動專區", langid.ToString()).First();
+                }
+                else { viewmodel.PageLayoutModel2 = new HomePageLayoutModel(); }
             }
-            return View(destination_Index);
-        }
+            else
+            {
+                viewmodel.PageLayoutModel1 = new HomePageLayoutModel();
+                viewmodel.PageLayoutModel2 = new HomePageLayoutModel();
+                ViewBag.sitemenu = new List<PageLayout>();
+                ViewBag.sitemenupart = "";
+            }
+            viewmodel.BannerImage = "";
+            viewmodel.PageLayoutOP1 = _ISiteLayoutManager.GetPageLayoutOP1Edit(langid.ToString());
+            viewmodel.PageLayoutOP2 = _ISiteLayoutManager.GetPageLayoutOP2Edit(langid.ToString());
+            viewmodel.PageLayoutOP3 = _ISiteLayoutManager.GetPageLayoutOP3Edit(langid.ToString());
+            viewmodel.PageLayoutActivityModel = _ISiteLayoutManager.PageLayoutActivity(langid.ToString());
 
-        // POST: Destination_Index/Edit/5
-        // 若要免於過量張貼攻擊，請啟用想要繫結的特定屬性，如需
-        // 詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Destination_ID,Destination_Title,Destination_Context,Destination_Img,Destination_Img_Mobile")] Destination_Index destination_Index)
-        {
-            if (ModelState.IsValid)
+            viewmodel.LinkItems = _IModelLinkManager.PagingItem("Y", new SearchModelBase()
             {
-                db.Entry(destination_Index).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(destination_Index);
-        }
+                LangId = this.LangID,
+                Limit = -1,
+                Sort = "Sort"
+            }).rows;
 
-        // GET: Destination_Index/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Destination_Index destination_Index = db.Destination_Index.Find(id);
-            if (destination_Index == null)
-            {
-                return HttpNotFound();
-            }
-            return View(destination_Index);
-        }
 
-        // POST: Destination_Index/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Destination_Index destination_Index = db.Destination_Index.Find(id);
-            db.Destination_Index.Remove(destination_Index);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-        
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
+            //標題和內容
+            ViewBag.Title = Server.HtmlDecode(db.Destination_Index.FirstOrDefault().Destination_Title);
+            ViewBag.Content = Server.HtmlDecode(db.Destination_Index.FirstOrDefault().Destination_Context);
+            ViewBag.ImgName = Server.HtmlDecode(db.Destination_MapLegend.FirstOrDefault().Destination_Img);
+            //五大標題+圖
+            ViewBag.F_Destination_Type = db.F_Destination_Type.ToList();
+
+
+
+            return View(viewmodel);
         }
     }
 }
