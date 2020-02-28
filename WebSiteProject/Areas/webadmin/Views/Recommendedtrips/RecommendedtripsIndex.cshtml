@@ -25,7 +25,7 @@
 </div>
 
 <div class="portlet light bordered">
-    <div class="title_04">旅遊資訊主版設定(標題&文字)</div>
+    <div class="title_04">推薦行程主版設定(標題&文字)</div>
 
     <div class="form-horizontal form-bordered">
 
@@ -84,7 +84,7 @@
                filebrowserImageUploadUrl: '@Url.Action("Upload")?command=QuickUpload&type=Images',
                filebrowserUploadUrl: '@Url.Action("UploadFile")?command=QuickUpload&type=Files',
             });
-            //CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
+            CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
             //CKEDITOR.config.shiftEnterMode = CKEDITOR.ENTER_P;
             CKEDITOR.on('instanceReady', function (ev) {
                 ev.editor.dataProcessor.writer.setRules('p',
@@ -107,27 +107,27 @@
                     });
             }); 
 
-            $('#editform').submit(function (event) {
-                var formData = new FormData();
-                var array = $('#editform').serializeArray();
-                $.each(array, function () {
-                    formData.append(this.name, this.value);
-                });
-                formData.append("RecommendedTrips_Index_Content", encodeURIComponent(CKEDITOR.instances.HtmlContent.getData()));
-                $.ajax({
-                    url: this.action,
-                    data: formData,
-                    type: 'POST',
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                    success: function (data) {
-                        alert(data);
-                    }, error: function () {
-                        // handle error
-                    }
-                });
-            });
+            //$('#editform').submit(function (event) {
+            //    var formData = new FormData();
+            //    var array = $('#editform').serializeArray();
+            //    $.each(array, function () {
+            //        formData.append(this.name, this.value);
+            //    });
+            //    formData.append("RecommendedTrips_Index_Content", encodeURIComponent(CKEDITOR.instances.HtmlContent.getData()));
+            //    $.ajax({
+            //        url: this.action,
+            //        data: formData,
+            //        type: 'POST',
+            //        cache: false,
+            //        contentType: false,
+            //        processData: false,
+            //        success: function (data) {
+            //            alert(data);
+            //        }, error: function () {
+            //            // handle error
+            //        }
+            //    });
+            //});
         });
     </script>
 }

@@ -18,6 +18,7 @@ namespace WebSiteProject.Models
         public F_Destination_Type()
         {
             this.Destination_Fare = new HashSet<Destination_Fare>();
+            this.RecommendedTrips = new HashSet<RecommendedTrip>();
         }
     
         public int Destination_Type_ID { get; set; }
@@ -49,5 +50,7 @@ namespace WebSiteProject.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Destination_Fare> Destination_Fare { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RecommendedTrip> RecommendedTrips { get; set; }
     }
 }

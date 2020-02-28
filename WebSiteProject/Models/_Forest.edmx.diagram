@@ -82,14 +82,16 @@
         <EntityTypeShape EntityType="ForestModel.Destination_Index" Width="2.375" PointX="29.375" PointY="26.75" />
         <EntityTypeShape EntityType="ForestModel.Destination_MapLegend" Width="2.625" PointX="29.375" PointY="29.75" />
         <EntityTypeShape EntityType="ForestModel.F_Destination_Type" Width="2.125" PointX="31.375" PointY="1.125" />
-        <EntityTypeShape EntityType="ForestModel.Destination_Fare" Width="1.5" PointX="34.25" PointY="3.125" />
+        <EntityTypeShape EntityType="ForestModel.Destination_Fare" Width="5.375" PointX="34.25" PointY="3.125" />
         <AssociationConnector Association="ForestModel.FK_Destination_Fare_F_Destination_Type" />
-        <EntityTypeShape EntityType="ForestModel.RecommendedTrip" Width="1.5" PointX="5.625" PointY="32" />
-        <EntityTypeShape EntityType="ForestModel.RecommendedTrips_HashTag_Type" Width="4.75" PointX="8.5" PointY="32.375" />
+        <EntityTypeShape EntityType="ForestModel.RecommendedTrips_Day" Width="5.375" PointX="35" PointY="0.75" />
+        <EntityTypeShape EntityType="ForestModel.RecommendedTrips_Index" Width="1.5" PointX="9.375" PointY="30.125" />
+        <EntityTypeShape EntityType="ForestModel.V_RecommendedTrips" Width="1.5" PointX="11.375" PointY="29.75" />
+        <EntityTypeShape EntityType="ForestModel.RecommendedTrip" Width="1.5" PointX="41.125" PointY="2.375" />
+        <EntityTypeShape EntityType="ForestModel.RecommendedTrips_HashTag_Type" Width="1.5" PointX="43.375" PointY="3.125" />
+        <AssociationConnector Association="ForestModel.FK_RecommendedTrips_F_Destination_Type" />
         <AssociationConnector Association="ForestModel.FK_RecommendedTrips_HashTag_Type_RecommendedTrips" />
-        <EntityTypeShape EntityType="ForestModel.RecommendedTrips_Day" Width="1.5" PointX="3.375" PointY="32.375" />
         <AssociationConnector Association="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day" />
-        <EntityTypeShape EntityType="ForestModel.RecommendedTrips_Index" Width="1.5" PointX="9.375" PointY="29.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

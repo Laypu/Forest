@@ -1,0 +1,241 @@
+﻿@model WebSiteProject.Models.RecommendedTrip
+@{
+    ViewBag.Title = "Recommendedtrips_Insert";
+    Layout = "~/Areas/webadmin/Views/Shared/_Layout.cshtml";
+}
+<script src="@Url.Content("~/Scripts/components-date-time-pickers.min.js")"></script>
+<script src="@Url.Content("~/Scripts/bootstrap-datepicker.min.js")"></script>
+<script src="@Url.Content("~/Scripts/custom.js")"></script>
+<script src="@Url.Content("~/Scripts/ckeditor/ckeditor.js")"></script>
+<script src="@Url.Content("~/Scripts/bootbox.min.js")"></script>
+<h2>推薦行程</h2>
+
+<div class="portlet light bordered">
+    <div class="title_04">推薦行程設定</div>
+
+    <div class="form-horizontal form-bordered">
+
+        <form id="editform" @*method="post" action="@Url.Action("RecommendedtripsIndex_Edit","Recommendedtrips")"*@ enctype="multipart/form-data">
+            <div class="portlet light form-fit bordered">
+                <div class="portlet-body form">
+                    <div class="form-horizontal form-bordered">
+                        <div class="form-body">
+                            @Html.HiddenFor(m => m.RecommendedTrips_ID)
+                            @Html.HiddenFor(Model => Model.RecommendedTrips_Img)
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                    <span>旅遊天數</span>
+                                </div>
+                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                    @Html.DropDownList("RecommendedTrips_Day_ID", null, "請選擇", htmlAttributes: new { @class = "form-control", rows = "8", cols = "100", @style = "width:300px" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                    <span>目的地</span>
+                                </div>
+                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                    @Html.DropDownList("RecommendedTrips_Destinations_ID", (IEnumerable<SelectListItem>)ViewBag.SelectList, "請選擇", htmlAttributes: new { @class = "form-control", rows = "8", cols = "100", @style = "width:300px" })
+                                </div>
+                            </div>
+                            @{
+                                var HModel = (IEnumerable<WebSiteProject.Models.F_HashTag_Type>)ViewBag.HashTag;
+                                var RecommendedTrips_HashTag = (IEnumerable<WebSiteProject.Models.RecommendedTrips_HashTag_Type>)ViewBag.Sub_HashTag;
+                            }
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                    <span>旅遊資訊類別</span>
+                                </div>
+                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+
+                                    @foreach (var item in HModel)
+                                    {
+                                        if (RecommendedTrips_HashTag.Any(f => f.HashTag_Type_ID == item.HashTag_Type_ID))
+                                        {
+                                            <input type="checkbox" name="HashTag_Type" value="@item.HashTag_Type_ID" class="checkbox-inline checkbox" checked />@item.HashTag_Type_Name <span>&nbsp;</span><span>&nbsp;</span>
+                                        }
+                                        else
+                                        {
+                                            <input type="checkbox" name="HashTag_Type" value="@item.HashTag_Type_ID" class="checkbox-inline checkbox" />@item.HashTag_Type_Name <span>&nbsp;</span><span>&nbsp;</span>
+                                        }
+                                    }
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                    <span>行程圖片_列表圖片</span>
+                                </div>
+                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                    <a href="~/forest/UploadImage/RecommendedTrips/@Model.RecommendedTrips_Img" target="preview" id="aimg">@Model.RecommendedTrips_Img</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delrelateimage">刪除</label>
+                                    <input type="file" class="form-control" accept="image/*" name="fileImag" id="fileImag" />
+                                    <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度800 * 800px</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                    <span>行程圖片_圖片說明</span>
+                                </div>
+                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                    @Html.EditorFor(model => model.RecommendedTrips_Img_Description, new { htmlAttributes = new { @class = "form-control  inline-block" } })
+                                    <div class="red">必須要輸入圖片說明</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                    <span>行程標題</span>
+                                </div>
+                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                    @Html.EditorFor(model => model.RecommendedTrips_Title, new { htmlAttributes = new { @class = "form-control  inline-block" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                    <span>行程特色</span>
+                                </div>
+                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                    @Html.TextAreaFor(model => model.RecommendedTrips_Content, new { @class = "form-control", @style = "width:400px;height:200px;resize:none" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                    <span>行程地區介紹</span>
+                                </div>
+                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                    @Html.TextAreaFor(model => model.RecommendedTrips_Location, new { @class = "form-control", @style = "width:400px;;height:200px;resize:none" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                    <span>旅遊行程總攬</span>
+                                </div>
+                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                    <textarea cols="80" id="RecommendedTrips_HtmContent" name="RecommendedTrips_HtmContent" class="form-control f_textarea" style="height:250px;resize:none">@Model.RecommendedTrips_HtmContent</textarea>
+                                    @*@Html.TextAreaFor(model => model.RecommendedTrips_HtmContent, new { @class = "form-control f_textarea", @style = "height:250px;resize:none" })*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <a class="btn blue" id="btn_save">確認(存檔)</a><a href="@Url.Action("Recommendedtrips_item")" class="btn grey-mint">回上一頁</a>
+    </div>
+
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            var aimg = $("#aimg").val();
+            if (aimg == "")
+            {
+                $("#delrelateimage").hide();
+            }
+            var ckedit = CKEDITOR.replace('RecommendedTrips_HtmContent', {
+                height: 300,
+               filebrowserImageUploadUrl: '@Url.Action("Upload")?command=QuickUpload&type=Images',
+               filebrowserUploadUrl: '@Url.Action("UploadFile")?command=QuickUpload&type=Files',
+            });
+            CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
+            CKEDITOR.config.shiftEnterMode = CKEDITOR.ENTER_P;
+            CKEDITOR.on('instanceReady', function (ev) {
+                ev.editor.dataProcessor.writer.setRules('p',
+                    {
+                        indent: false,
+                        breakBeforeOpen: false,
+                        breakAfterOpen: false,
+                        breakBeforeClose: false,
+                        breakAfterClose: false
+                    });
+            });
+            CKEDITOR.on('instanceReady', function (ev) {
+                ev.editor.dataProcessor.writer.setRules('div',
+                    {
+                        indent: true,
+                        breakBeforeOpen: true,
+                        breakAfterOpen: true,
+                        breakBeforeClose: false,
+                        breakAfterClose: false
+                    });
+            });
+            $("#btn_save").click(function () {
+                var RecommendedTrips_Day_ID = $("#RecommendedTrips_Day_ID").val();
+                var RecommendedTrips_Destinations_ID = $("#RecommendedTrips_Destinations_ID").val();
+                var RecommendedTrips_Img_Description = $("#RecommendedTrips_Img_Description").val();
+                var rfile = $("#fileImag");
+                var _validFileExtensions = [".jpg", ".png", ".gif", ".jpeg"];
+                if (RecommendedTrips_Day_ID == "" || RecommendedTrips_Destinations_ID == "")
+                {
+                    alert("請確實選擇行程天數或目的地")
+                    return false;
+                }
+                if (RecommendedTrips_Img_Description == "")
+                {
+                    alert("請確實輸入圖片說明")
+                    return false;
+                }
+                var sFileName = rfile.val();
+                if (sFileName.length > 0) {
+                    var blnValid = false;
+                    for (var j = 0; j < _validFileExtensions.length; j++) {
+                        var sCurExtension = _validFileExtensions[j];
+                        if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+                            blnValid = true;
+                            break;
+                        }
+                    }
+                    if (!blnValid) {
+                        alert("相關圖片只能上傳Image檔案");
+                        file.outerHTML = file.outerHTML;
+                        return false;
+                    }
+                }
+                var formData = new FormData();
+                var array = $('#editform').serializeArray();
+                $.each(array, function () {
+                    formData.append(this.name, this.value);
+                });
+                formData.append("RecommendedTrips_HtmContent", encodeURIComponent(CKEDITOR.instances.RecommendedTrips_HtmContent.getData()))
+                formData.append("RecommendedTrips_Title", encodeURIComponent($('#RecommendedTrips_Title').val()));
+                formData.append("RecommendedTrips_Content", encodeURIComponent($('#RecommendedTrips_Content').val()));
+                var images = $('#fileImag').get(0).files;
+                if (images.length > 0) {
+                    formData.append("fileImag", images[0]);
+                    if (RecommendedTrips_Img_Description == "") {
+                        alert("請確實輸入圖片說明")
+                        iscon = false;
+                    }
+                } else {
+                    formData.append("fileImag", null);
+                    if ($('#fileImag').val() != "") {
+                        if (RecommendedTrips_Img_Description == "") {
+                            alert("請確實輸入圖片說明")
+                            iscon = false;
+                        }
+                    }
+                }
+                $.ajax({
+                    url:"@Url.Action("SaveItem", "Recommendedtrips")",
+                    data: formData,
+                    type: 'POST',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        alert(data);
+                        location.href='@Url.Action("Recommendedtrips_item", "Recommendedtrips")';
+                    }, error: function () {
+                        // handle error
+                    }
+                });
+                @*$.post("@Url.Action("SaveItem", "Recommendedtrips")", formData)
+                    .success(function (data) {
+                        alert("data");
+                        location.href='@Url.Action("Recommendedtrips_item", "Recommendedtrips")';
+                });*@
+
+            })
+
+        });
+    </script>
+}

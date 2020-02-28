@@ -531,6 +531,9 @@
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\F_ViewModels\Index_ViewModel.cs" />
+    <Compile Include="Models\V_RecommendedTrips.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ZipCode.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
@@ -3207,6 +3210,8 @@
     <Content Include="Areas\webadmin\Views\Destination_MapLegend\Index.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\_FarePartial.cshtml" />
     <Content Include="Areas\webadmin\Views\Recommendedtrips\RecommendedtripsIndex.cshtml" />
+    <Content Include="Areas\webadmin\Views\Recommendedtrips\Recommendedtrips_item.cshtml" />
+    <Content Include="Areas\webadmin\Views\Recommendedtrips\Recommendedtrips_Edit.cshtml" />
     <None Include="Properties\PublishProfiles\MySkylines.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -3314,6 +3319,8 @@
     <Content Include="Scripts\theme.js" />
     <Content Include="Scripts\websitemain.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="UploadImage\RecommendedTrips\800x450.png" />
+    <Content Include="UploadImage\RecommendedTrips\trip_pic_01.jpg" />
     <Content Include="Views\Error\FrontPageNotFound.cshtml" />
     <Content Include="Views\Error\FrontError.cshtml" />
     <Content Include="Web.config">
@@ -3395,7 +3402,6 @@
     <Folder Include="UploadImage\Config\" />
     <Folder Include="UploadImage\Editor\" />
     <Folder Include="UploadImage\Notice\" />
-    <Folder Include="UploadImage\RecommendedTrips\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
