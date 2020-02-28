@@ -3380,8 +3380,8 @@
     <Content Include="Views\Destination_Index\Create.cshtml" />
     <Content Include="Views\Destination_Index\Delete.cshtml" />
     <Content Include="Views\Destination_Index\Details.cshtml" />
-    <Content Include="Views\Destination_Index\Edit.cshtml" />
     <Content Include="Views\Destination_Index\Index.cshtml" />
+    <Content Include="Views\Destination_Index\_MapLegendPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
