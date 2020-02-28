@@ -1392,43 +1392,6 @@
     <Property Name="ColumnSetting" Type="nvarchar" MaxLength="500" />
     <Property Name="IntroductionHtml" Type="ntext" />
   </EntityType>
-  <EntityType Name="RecommendedTrip">
-    <Key>
-      <PropertyRef Name="RecommendedTrips_ID" />
-    </Key>
-    <Property Name="RecommendedTrips_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="RecommendedTrips_Day_ID" Type="int" />
-    <Property Name="RecommendedTrips_Destinations_ID" Type="int" />
-    <Property Name="RecommendedTrips_Img" Type="nvarchar" MaxLength="50" />
-    <Property Name="RecommendedTrips_Title" Type="nvarchar(max)" />
-    <Property Name="RecommendedTrips_Content" Type="nvarchar(max)" />
-    <Property Name="RecommendedTrips_Location" Type="nvarchar(max)" />
-    <Property Name="RecommendedTrips_HtmContent" Type="ntext" />
-    <Property Name="RecommendedTrips_Img_Description" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="RecommendedTrips_Day">
-    <Key>
-      <PropertyRef Name="RecommendedTrips_Day_Day_ID" />
-    </Key>
-    <Property Name="RecommendedTrips_Day_Day_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="RecommendedTrips_Day_Name" Type="nvarchar" MaxLength="20" />
-  </EntityType>
-  <EntityType Name="RecommendedTrips_HashTag_Type">
-    <Key>
-      <PropertyRef Name="RecommendedTrips_HashTag_ID" />
-    </Key>
-    <Property Name="RecommendedTrips_HashTag_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="HashTag_Type_ID" Type="int" />
-    <Property Name="RecommendedTrips_ID" Type="int" />
-  </EntityType>
-  <EntityType Name="RecommendedTrips_Index">
-    <Key>
-      <PropertyRef Name="RecommendedTrips_Index_ID" />
-    </Key>
-    <Property Name="RecommendedTrips_Index_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="RecommendedTrips_Index_Title" Type="nvarchar(max)" />
-    <Property Name="RecommendedTrips_Index_Content" Type="ntext" />
-  </EntityType>
   <EntityType Name="SEO">
     <Key>
       <PropertyRef Name="ID" />
@@ -1687,6 +1650,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+<<<<<<< HEAD
   <Association Name="FK_RecommendedTrips_F_Destination_Type">
     <End Role="F_Destination_Type" Type="Self.F_Destination_Type" Multiplicity="0..1" />
     <End Role="RecommendedTrip" Type="Self.RecommendedTrip" Multiplicity="*" />
@@ -1731,6 +1695,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+=======
+>>>>>>> parent of f53692b... update entity
   <EntityContainer Name="ForestModelStoreContainer">
     <EntitySet Name="ActiveItem" EntityType="Self.ActiveItem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ActivePhoto" EntityType="Self.ActivePhoto" Schema="dbo" store:Type="Tables" />
@@ -1797,10 +1763,6 @@
     <EntitySet Name="PageUnitSetting" EntityType="Self.PageUnitSetting" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PatentItem" EntityType="Self.PatentItem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PatentUnitSetting" EntityType="Self.PatentUnitSetting" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="RecommendedTrip" EntityType="Self.RecommendedTrip" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="RecommendedTrips_Day" EntityType="Self.RecommendedTrips_Day" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="RecommendedTrips_HashTag_Type" EntityType="Self.RecommendedTrips_HashTag_Type" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="RecommendedTrips_Index" EntityType="Self.RecommendedTrips_Index" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SEO" EntityType="Self.SEO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SiteConfig" EntityType="Self.SiteConfig" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SiteFlow" EntityType="Self.SiteFlow" Schema="dbo" store:Type="Tables" />
@@ -1877,6 +1839,7 @@
       <End Role="F_HashTag_Type" EntitySet="F_HashTag_Type" />
       <End Role="F_Sub_HashTag_Type" EntitySet="F_Sub_HashTag_Type" />
     </AssociationSet>
+<<<<<<< HEAD
     <AssociationSet Name="FK_RecommendedTrips_F_Destination_Type" Association="Self.FK_RecommendedTrips_F_Destination_Type">
       <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
       <End Role="RecommendedTrip" EntitySet="RecommendedTrip" />
@@ -1890,5 +1853,7 @@
       <End Role="RecommendedTrips_Day" EntitySet="RecommendedTrips_Day" />
       <End Role="RecommendedTrip" EntitySet="RecommendedTrip" />
     </AssociationSet>
+=======
+>>>>>>> parent of f53692b... update entity
   </EntityContainer>
 </Schema>

@@ -84,6 +84,7 @@
         <EntityTypeShape EntityType="ForestModel.F_Destination_Type" Width="2.125" PointX="31.375" PointY="1.125" />
         <EntityTypeShape EntityType="ForestModel.Destination_Fare" Width="5.375" PointX="34.25" PointY="3.125" />
         <AssociationConnector Association="ForestModel.FK_Destination_Fare_F_Destination_Type" />
+<<<<<<< HEAD
         <EntityTypeShape EntityType="ForestModel.RecommendedTrips_Day" Width="5.375" PointX="35" PointY="0.75" />
         <EntityTypeShape EntityType="ForestModel.RecommendedTrips_Index" Width="1.5" PointX="9.375" PointY="30.125" />
         <EntityTypeShape EntityType="ForestModel.V_RecommendedTrips" Width="1.5" PointX="11.375" PointY="29.75" />
@@ -93,6 +94,9 @@
         <AssociationConnector Association="ForestModel.FK_RecommendedTrips_HashTag_Type_RecommendedTrips" />
         <AssociationConnector Association="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day" />
         </Diagram>
+=======
+      </Diagram>
+>>>>>>> parent of f53692b... update entity
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

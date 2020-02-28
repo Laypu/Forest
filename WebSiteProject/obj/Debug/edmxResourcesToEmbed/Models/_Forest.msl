@@ -1678,6 +1678,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
     <EntitySetMapping Name="RecommendedTrips_Day">
       <EntityTypeMapping TypeName="ForestModel.RecommendedTrips_Day">
         <MappingFragment StoreEntitySet="RecommendedTrips_Day">
@@ -1735,5 +1736,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+=======
+>>>>>>> parent of f53692b... update entity
   </EntityContainerMapping>
 </Mapping>

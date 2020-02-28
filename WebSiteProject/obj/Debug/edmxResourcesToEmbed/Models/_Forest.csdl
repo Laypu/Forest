@@ -86,6 +86,7 @@
       <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
       <End Role="Destination_Fare" EntitySet="Destination_Fare" />
     </AssociationSet>
+<<<<<<< HEAD
     <EntitySet Name="RecommendedTrips_Day" EntityType="ForestModel.RecommendedTrips_Day" />
     <EntitySet Name="RecommendedTrips_Index" EntityType="ForestModel.RecommendedTrips_Index" />
     <EntitySet Name="V_RecommendedTrips" EntityType="ForestModel.V_RecommendedTrips" />
@@ -104,6 +105,8 @@
       <End Role="RecommendedTrips_Day" EntitySet="RecommendedTrips_Day" />
       <End Role="RecommendedTrip" EntitySet="RecommendedTrips" />
     </AssociationSet>
+=======
+>>>>>>> parent of f53692b... update entity
   </EntityContainer>
   <EntityType Name="ActiveItem">
     <Key>
@@ -514,7 +517,6 @@
     <Property Name="HashTag_CreateTime" Type="DateTime" Precision="3" />
     <Property Name="HashTag_Type_Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="F_Sub_HashTag_Type" Relationship="ForestModel.FK_F_Sub_HashTag_Type_F_HashTag_Type" FromRole="F_HashTag_Type" ToRole="F_Sub_HashTag_Type" />
-    <NavigationProperty Name="RecommendedTrips_HashTag_Type" Relationship="ForestModel.FK_RecommendedTrips_HashTag_Type_RecommendedTrips" FromRole="F_HashTag_Type" ToRole="RecommendedTrips_HashTag_Type" />
   </EntityType>
   <EntityType Name="F_Index">
     <Key>
@@ -1713,7 +1715,6 @@
     <Property Name="FPIX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="FPX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Destination_Fare" Relationship="ForestModel.FK_Destination_Fare_F_Destination_Type" FromRole="F_Destination_Type" ToRole="Destination_Fare" />
-    <NavigationProperty Name="RecommendedTrips" Relationship="ForestModel.FK_RecommendedTrips_F_Destination_Type" FromRole="F_Destination_Type" ToRole="RecommendedTrip" />
   </EntityType>
   <EntityType Name="Destination_Fare">
     <Key>
@@ -1738,6 +1739,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+<<<<<<< HEAD
   <EntityType Name="RecommendedTrips_Day">
     <Key>
       <PropertyRef Name="RecommendedTrips_Day_Day_ID" />
@@ -1858,4 +1860,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+=======
+>>>>>>> parent of f53692b... update entity
 </Schema>

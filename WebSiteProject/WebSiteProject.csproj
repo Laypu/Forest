@@ -491,18 +491,6 @@
     <Compile Include="Models\PatentUnitSetting.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\RecommendedTrip.cs">
-      <DependentUpon>_Forest.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RecommendedTrips_Day.cs">
-      <DependentUpon>_Forest.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RecommendedTrips_HashTag_Type.cs">
-      <DependentUpon>_Forest.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RecommendedTrips_Index.cs">
-      <DependentUpon>_Forest.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\SEO.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
