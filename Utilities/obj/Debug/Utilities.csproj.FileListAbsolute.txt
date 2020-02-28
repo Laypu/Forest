@@ -173,13 +173,3 @@ C:\Users\PC003\Desktop\git\Forest\Forest\Utilities\obj\Debug\Utilities.csprojAss
 C:\Users\PC003\Desktop\git\Forest\Forest\Utilities\obj\Debug\Utilities.csproj.CopyComplete
 C:\Users\PC003\Desktop\git\Forest\Forest\Utilities\obj\Debug\Utilities.dll
 C:\Users\PC003\Desktop\git\Forest\Forest\Utilities\obj\Debug\Utilities.pdb
-D:\GITHUB\Forest\Utilities\bin\Debug\Utilities.dll.config
-D:\GITHUB\Forest\Utilities\bin\Debug\Utilities.dll
-D:\GITHUB\Forest\Utilities\bin\Debug\Utilities.pdb
-D:\GITHUB\Forest\Utilities\bin\Debug\NLog.dll
-D:\GITHUB\Forest\Utilities\bin\Debug\NLog.xml
-D:\GITHUB\Forest\Utilities\obj\Debug\Utilities.csprojAssemblyReference.cache
-D:\GITHUB\Forest\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
-D:\GITHUB\Forest\Utilities\obj\Debug\Utilities.csproj.CopyComplete
-D:\GITHUB\Forest\Utilities\obj\Debug\Utilities.dll
-D:\GITHUB\Forest\Utilities\obj\Debug\Utilities.pdb

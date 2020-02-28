@@ -9,8 +9,8 @@ CKEDITOR.editorConfig = function (config) {
     config.language = 'zh';
     //config.uiColor = '#AADC6E';
     config.toolbar = 'BasicToolbar';
-    //config.startupMode = 'source';
-    config.startupMode = 'wysiwyg';
+    config.startupMode = 'source';
+    //config.startupMode = 'wysiwyg';
 
     config.allowedContent = true;
     CKEDITOR.config.fillEmptyBlocks = false;

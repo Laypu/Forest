@@ -267,7 +267,6 @@
     <Compile Include="Code\CacheMapping.cs" />
     <Compile Include="Code\RssActionResult .cs" />
     <Compile Include="Controllers\Destination_IndexController.cs" />
-    <Compile Include="Controllers\F_RecommendedtripsController.cs" />
     <Compile Include="Controllers\F_ThingsToDoController.cs" />
     <Compile Include="Controllers\MapController.cs" />
     <Compile Include="Controllers\AppController.cs" />
@@ -491,6 +490,18 @@
     <Compile Include="Models\PatentUnitSetting.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RecommendedTrip.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecommendedTrips_Day.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecommendedTrips_HashTag_Type.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecommendedTrips_Index.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SEO.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
@@ -519,9 +530,6 @@
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\F_ViewModels\Index_ViewModel.cs" />
-    <Compile Include="Models\V_RecommendedTrips.cs">
-      <DependentUpon>_Forest.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\ZipCode.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
@@ -3197,9 +3205,6 @@
     <Content Include="Areas\webadmin\Views\Destination_MapLegend\Edit.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_MapLegend\Index.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\_FarePartial.cshtml" />
-    <Content Include="Areas\webadmin\Views\Recommendedtrips\RecommendedtripsIndex.cshtml" />
-    <Content Include="Areas\webadmin\Views\Recommendedtrips\Recommendedtrips_item.cshtml" />
-    <Content Include="Areas\webadmin\Views\Recommendedtrips\Recommendedtrips_Edit.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\Createtr.cshtml" />
     <None Include="Properties\PublishProfiles\MySkylines.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -3308,8 +3313,6 @@
     <Content Include="Scripts\theme.js" />
     <Content Include="Scripts\websitemain.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="UploadImage\RecommendedTrips\800x450.png" />
-    <Content Include="UploadImage\RecommendedTrips\trip_pic_01.jpg" />
     <Content Include="Views\Error\FrontPageNotFound.cshtml" />
     <Content Include="Views\Error\FrontError.cshtml" />
     <Content Include="Web.config">
@@ -3379,11 +3382,11 @@
     <Content Include="Views\Destination_Index\Details.cshtml" />
     <Content Include="Views\Destination_Index\Edit.cshtml" />
     <Content Include="Views\Destination_Index\Index.cshtml" />
-    <Content Include="Views\F_Recommendedtrips\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="Areas\webadmin\Models\" />
+    <Folder Include="Areas\webadmin\Views\Recommendedtrips\" />
     <Folder Include="ContentWebsite\image\" />
     <Folder Include="Content\admincss\fonts\" />
     <Folder Include="Example\" />
@@ -3391,6 +3394,7 @@
     <Folder Include="UploadImage\Config\" />
     <Folder Include="UploadImage\Editor\" />
     <Folder Include="UploadImage\Notice\" />
+    <Folder Include="Views\Recommendedtrips\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -3441,7 +3445,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>17473</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54332/forest</IISUrl>
+          <IISUrl>http://localhost:54333/forest</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

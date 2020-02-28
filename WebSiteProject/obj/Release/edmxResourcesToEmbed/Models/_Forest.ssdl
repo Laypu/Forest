@@ -350,7 +350,7 @@
     <Property Name="ChargeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Destination_Type_ID" Type="int" />
     <Property Name="TicketType" Type="nvarchar(max)" />
-    <Property Name="fare" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Fare" Type="decimal" Precision="18" Scale="0" />
     <Property Name="Description" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Destination_Index">

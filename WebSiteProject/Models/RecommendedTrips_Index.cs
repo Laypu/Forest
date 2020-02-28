@@ -15,18 +15,14 @@ namespace WebSiteProject.Models
 using System;
     using System.Collections.Generic;
     
-public partial class RecommendedTrips_HashTag_Type
+public partial class RecommendedTrips_Index
 {
 
-    public int RecommendedTrips_HashTag_ID { get; set; }
+    public int RecommendedTrips_Index_ID { get; set; }
 
-    public Nullable<int> HashTag_Type_ID { get; set; }
+    public string RecommendedTrips_Index_Title { get; set; }
 
-    public Nullable<int> RecommendedTrips_ID { get; set; }
-
-
-
-    public virtual F_HashTag_Type F_HashTag_Type { get; set; }
+    public string RecommendedTrips_Index_Content { get; set; }
 
 }
 

@@ -1678,40 +1678,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-<<<<<<< HEAD
-    <EntitySetMapping Name="RecommendedTrips_Day">
-      <EntityTypeMapping TypeName="ForestModel.RecommendedTrips_Day">
-        <MappingFragment StoreEntitySet="RecommendedTrips_Day">
-          <ScalarProperty Name="RecommendedTrips_Day_Name" ColumnName="RecommendedTrips_Day_Name" />
-          <ScalarProperty Name="RecommendedTrips_Day_Day_ID" ColumnName="RecommendedTrips_Day_Day_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="RecommendedTrips_Index">
-      <EntityTypeMapping TypeName="ForestModel.RecommendedTrips_Index">
-        <MappingFragment StoreEntitySet="RecommendedTrips_Index">
-          <ScalarProperty Name="RecommendedTrips_Index_Content" ColumnName="RecommendedTrips_Index_Content" />
-          <ScalarProperty Name="RecommendedTrips_Index_Title" ColumnName="RecommendedTrips_Index_Title" />
-          <ScalarProperty Name="RecommendedTrips_Index_ID" ColumnName="RecommendedTrips_Index_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="V_RecommendedTrips">
-      <EntityTypeMapping TypeName="ForestModel.V_RecommendedTrips">
-        <MappingFragment StoreEntitySet="V_RecommendedTrips">
-          <ScalarProperty Name="RecommendedTrips_HtmContent" ColumnName="RecommendedTrips_HtmContent" />
-          <ScalarProperty Name="RecommendedTrips_Location" ColumnName="RecommendedTrips_Location" />
-          <ScalarProperty Name="RecommendedTrips_Destinations_ID" ColumnName="RecommendedTrips_Destinations_ID" />
-          <ScalarProperty Name="RecommendedTrips_ID" ColumnName="RecommendedTrips_ID" />
-          <ScalarProperty Name="RecommendedTrips_Day_Name" ColumnName="RecommendedTrips_Day_Name" />
-          <ScalarProperty Name="HashTag_Type_ID" ColumnName="HashTag_Type_ID" />
-          <ScalarProperty Name="RecommendedTrips_Content" ColumnName="RecommendedTrips_Content" />
-          <ScalarProperty Name="RecommendedTrips_Title" ColumnName="RecommendedTrips_Title" />
-          <ScalarProperty Name="RecommendedTrips_Img" ColumnName="RecommendedTrips_Img" />
-          <ScalarProperty Name="RecommendedTrips_Day_ID" ColumnName="RecommendedTrips_Day_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="RecommendedTrips">
       <EntityTypeMapping TypeName="ForestModel.RecommendedTrip">
         <MappingFragment StoreEntitySet="RecommendedTrip">
@@ -1727,6 +1693,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="RecommendedTrips_Day">
+      <EntityTypeMapping TypeName="ForestModel.RecommendedTrips_Day">
+        <MappingFragment StoreEntitySet="RecommendedTrips_Day">
+          <ScalarProperty Name="RecommendedTrips_Day_Name" ColumnName="RecommendedTrips_Day_Name" />
+          <ScalarProperty Name="RecommendedTrips_Day_Day_ID" ColumnName="RecommendedTrips_Day_Day_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="RecommendedTrips_HashTag_Type">
       <EntityTypeMapping TypeName="ForestModel.RecommendedTrips_HashTag_Type">
         <MappingFragment StoreEntitySet="RecommendedTrips_HashTag_Type">
@@ -1736,7 +1710,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-=======
->>>>>>> parent of f53692b... update entity
+    <EntitySetMapping Name="RecommendedTrips_Index">
+      <EntityTypeMapping TypeName="ForestModel.RecommendedTrips_Index">
+        <MappingFragment StoreEntitySet="RecommendedTrips_Index">
+          <ScalarProperty Name="RecommendedTrips_Index_Content" ColumnName="RecommendedTrips_Index_Content" />
+          <ScalarProperty Name="RecommendedTrips_Index_Title" ColumnName="RecommendedTrips_Index_Title" />
+          <ScalarProperty Name="RecommendedTrips_Index_ID" ColumnName="RecommendedTrips_Index_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
