@@ -1077,14 +1077,13 @@ footer .copyright{
 	text-align:left;
 	position: absolute;
     top: 20%;
-	left: 75%;
+	left: 60%;
 }
 .page_map .img .font_box .line{
 	background: #573619;
     width: 30px;
     height: 1px;
     margin:10px 10px 0 -40px;
-	display:none;
 }
 .page_map .img .font_box .line:after{
 	padding-right:10px;
@@ -1223,7 +1222,6 @@ footer .copyright{
     bottom: 0;
     padding: 20px;
     width: 100%;
-	background: linear-gradient(rgba(0,0,0,0)10%,rgba(0,0,0,.4)20%,rgba(0,0,0,.8)100%);
 }
 .page_img_list .list li:hover .font_box{
     /*height: 100%;*/
@@ -2790,10 +2788,6 @@ h3{
 .page_map .font_box ,.page_map .img{
 	width:100%;
 }
-.page_map .img .font_box{
-    top: 65%;
-	left: 70%;
-}
 
 
 /*page_img_list*/
@@ -3089,9 +3083,8 @@ h3{
 /*page_map*/
 .page_map .img .font_box{
 	font-size:0.7em;
-    top: 65%;
-	left: 62%;
 }
+
 
 /*page_img_list*/
 .page_img_list .list li {

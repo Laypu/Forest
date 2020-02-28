@@ -202,25 +202,14 @@
     <!--page_img_list start-->
     <div class="page_img_list">
         <div class="container">
-            <ul class="list">
-                @{
-                    var DesModel = (IEnumerable<WebSiteProject.Models.F_Destination_Type>)ViewBag.F_Destination_Type;
-                    var n = 1;
-                    foreach (var item in DesModel)
-                    {
-                        <li>
-                            <a href="@Url.Action("ThinngsToDo_List", "F_ThingsToDo", new { Des_Id= n++})" title="@item.Destination_Type_Title1 @item.Destination_Type_Title2">
-                                
-                                    <div class="img"><img src="@Url.Content("~/img/600x800.png")" alt="" style="background:url(@Url.Content("~/img/" + item.Destination_Type_ImgName))" /></div><!--建議尺寸600*800px-->
-                                    <div class="font_box">
-                                        <div class="title">@item.Destination_Type_Title1<div class="second_line">@item.Destination_Type_Title2</div></div>
-                                    </div>
-                                                              
-                            </a>
-                        </li>
-                    }
-                }
-            </ul>
+            <div class="title">
+                <h3 data-sr="enter top over 1.5s">@Html.Raw(ViewBag.Title)</h3>
+                <ul data-sr="enter top over 1.5s" style="display:none;">
+                    <li><a href="#">See all things to do</a></li>
+                    <li><a href="#">All destinations</a></li>
+                    <li><a href="#">Recommended trips</a></li>
+                </ul>
+            </div>
 
             <div class="con_font w-800">
                 @Html.Raw(ViewBag.Content)
@@ -230,6 +219,25 @@
 
         </div>
 
+        <!--index_info start-->
+        <div class="index_info">
+            <ul class="thing_list">
+                @{
+                    var DesModel = (IEnumerable<WebSiteProject.Models.F_Destination_Type>)ViewBag.F_Destination_Type;
+                    var n = 1;
+                    foreach (var item in DesModel)
+                    {
+                        <li>
+                            <a href="@Url.Action("ThinngsToDo_List", "F_ThingsToDo", new { Des_Id= n++})" title="@item.Destination_Type_Title1 @item.Destination_Type_Title2">
+                                <div class="item_img"><img src="@Url.Content("~/img/600x800.png")" alt="" style="background:url(@Url.Content("~/img/" + item.Destination_Type_ImgName))" /></div><!--建議尺寸600*800px-->
+                                <div class="item_title">@item.Destination_Type_Title1<div class="second_line">@item.Destination_Type_Title2</div></div>
+                            </a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <!--index_info end-->
     </div>
     <!--page_img_list end-->
 </div>
@@ -247,10 +255,9 @@
 
 
 
-<script src="js/bootstrap.js"></script>
+
 
 <script>
-
     window.onload = function () {
         $(".owl-prev").attr("title", "@(Common.GetLangText("Previous"))").attr("tabindex", "0");
         $(".owl-next").attr("title", "@(Common.GetLangText("Next"))").attr("tabindex", "0");

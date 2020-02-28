@@ -1702,7 +1702,7 @@
     <Property Name="ChargeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Destination_Type_ID" Type="Int32" />
     <Property Name="TicketType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Fare" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="fare" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="F_Destination_Type" Relationship="ForestModel.FK_Destination_Fare_F_Destination_Type" FromRole="Destination_Fare" ToRole="F_Destination_Type" />
   </EntityType>
