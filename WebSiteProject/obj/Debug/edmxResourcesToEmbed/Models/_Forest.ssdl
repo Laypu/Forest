@@ -1708,6 +1708,14 @@
       </Principal>
       <Dependent Role="RecommendedTrips_HashTag_Type">
         <PropertyRef Name="RecommendedTrips_ID" />
+    <End Role="F_HashTag_Type" Type="Self.F_HashTag_Type" Multiplicity="0..1" />
+    <End Role="RecommendedTrips_HashTag_Type" Type="Self.RecommendedTrips_HashTag_Type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="F_HashTag_Type">
+        <PropertyRef Name="HashTag_Type_ID" />
+      </Principal>
+      <Dependent Role="RecommendedTrips_HashTag_Type">
+        <PropertyRef Name="HashTag_Type_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1875,6 +1883,7 @@
     </AssociationSet>
     <AssociationSet Name="FK_RecommendedTrips_HashTag_Type_RecommendedTrips" Association="Self.FK_RecommendedTrips_HashTag_Type_RecommendedTrips">
       <End Role="RecommendedTrip" EntitySet="RecommendedTrip" />
+      <End Role="F_HashTag_Type" EntitySet="F_HashTag_Type" />
       <End Role="RecommendedTrips_HashTag_Type" EntitySet="RecommendedTrips_HashTag_Type" />
     </AssociationSet>
     <AssociationSet Name="FK_RecommendedTrips_RecommendedTrips_Day" Association="Self.FK_RecommendedTrips_RecommendedTrips_Day">

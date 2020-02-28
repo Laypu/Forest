@@ -1880,6 +1880,7 @@
           </AssociationSet>
           <AssociationSet Name="FK_RecommendedTrips_HashTag_Type_RecommendedTrips" Association="Self.FK_RecommendedTrips_HashTag_Type_RecommendedTrips">
             <End Role="RecommendedTrip" EntitySet="RecommendedTrip" />
+            <End Role="F_HashTag_Type" EntitySet="F_HashTag_Type" />
             <End Role="RecommendedTrips_HashTag_Type" EntitySet="RecommendedTrips_HashTag_Type" />
           </AssociationSet>
           <AssociationSet Name="FK_RecommendedTrips_RecommendedTrips_Day" Association="Self.FK_RecommendedTrips_RecommendedTrips_Day">
@@ -1988,6 +1989,7 @@
           </AssociationSet>
           <AssociationSet Name="FK_RecommendedTrips_HashTag_Type_RecommendedTrips" Association="ForestModel.FK_RecommendedTrips_HashTag_Type_RecommendedTrips">
             <End Role="RecommendedTrip" EntitySet="RecommendedTrips" />
+            <End Role="F_HashTag_Type" EntitySet="F_HashTag_Type" />
             <End Role="RecommendedTrips_HashTag_Type" EntitySet="RecommendedTrips_HashTag_Type" />
           </AssociationSet>
           <AssociationSet Name="FK_RecommendedTrips_RecommendedTrips_Day" Association="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day">
@@ -2404,6 +2406,7 @@
           <Property Name="HashTag_CreateTime" Type="DateTime" Precision="3" />
           <Property Name="HashTag_Type_Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="F_Sub_HashTag_Type" Relationship="ForestModel.FK_F_Sub_HashTag_Type_F_HashTag_Type" FromRole="F_HashTag_Type" ToRole="F_Sub_HashTag_Type" />
+          <NavigationProperty Name="RecommendedTrips_HashTag_Type" Relationship="ForestModel.FK_RecommendedTrips_HashTag_Type_RecommendedTrips" FromRole="F_HashTag_Type" ToRole="RecommendedTrips_HashTag_Type" />
         </EntityType>
         <EntityType Name="F_Index">
           <Key>
@@ -3675,6 +3678,16 @@
           <NavigationProperty Name="RecommendedTrips_HashTag_Type" Relationship="ForestModel.FK_RecommendedTrips_HashTag_Type_RecommendedTrips" FromRole="RecommendedTrip" ToRole="RecommendedTrips_HashTag_Type" />
           <NavigationProperty Name="RecommendedTrips_Day" Relationship="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day" FromRole="RecommendedTrip" ToRole="RecommendedTrips_Day" />
         </EntityType>
+          <NavigationProperty Name="RecommendedTrips_Day" Relationship="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day" FromRole="RecommendedTrip" ToRole="RecommendedTrips_Day" />
+        </EntityType>
+        <EntityType Name="RecommendedTrips_Day">
+          <Key>
+            <PropertyRef Name="RecommendedTrips_Day_Day_ID" />
+          </Key>
+          <Property Name="RecommendedTrips_Day_Day_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RecommendedTrips_Day_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="RecommendedTrip" Relationship="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day" FromRole="RecommendedTrips_Day" ToRole="RecommendedTrip" />
+        </EntityType>
         <EntityType Name="RecommendedTrips_HashTag_Type">
           <Key>
             <PropertyRef Name="RecommendedTrips_HashTag_ID" />
@@ -3683,6 +3696,15 @@
           <Property Name="HashTag_Type_ID" Type="Int32" />
           <Property Name="RecommendedTrips_ID" Type="Int32" />
           <NavigationProperty Name="RecommendedTrip" Relationship="ForestModel.FK_RecommendedTrips_HashTag_Type_RecommendedTrips" FromRole="RecommendedTrips_HashTag_Type" ToRole="RecommendedTrip" />
+          <NavigationProperty Name="F_HashTag_Type" Relationship="ForestModel.FK_RecommendedTrips_HashTag_Type_RecommendedTrips" FromRole="RecommendedTrips_HashTag_Type" ToRole="F_HashTag_Type" />
+        </EntityType>
+        <EntityType Name="RecommendedTrips_Index">
+          <Key>
+            <PropertyRef Name="RecommendedTrips_Index_ID" />
+          </Key>
+          <Property Name="RecommendedTrips_Index_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RecommendedTrips_Index_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RecommendedTrips_Index_Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_RecommendedTrips_F_Destination_Type">
           <End Type="ForestModel.F_Destination_Type" Role="F_Destination_Type" Multiplicity="0..1" />
@@ -3705,6 +3727,14 @@
             </Principal>
             <Dependent Role="RecommendedTrips_HashTag_Type">
               <PropertyRef Name="RecommendedTrips_ID" />
+          <End Type="ForestModel.F_HashTag_Type" Role="F_HashTag_Type" Multiplicity="0..1" />
+          <End Type="ForestModel.RecommendedTrips_HashTag_Type" Role="RecommendedTrips_HashTag_Type" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="F_HashTag_Type">
+              <PropertyRef Name="HashTag_Type_ID" />
+            </Principal>
+            <Dependent Role="RecommendedTrips_HashTag_Type">
+              <PropertyRef Name="HashTag_Type_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5451,12 +5481,29 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="RecommendedTrips_Day">
+            <EntityTypeMapping TypeName="ForestModel.RecommendedTrips_Day">
+              <MappingFragment StoreEntitySet="RecommendedTrips_Day">
+                <ScalarProperty Name="RecommendedTrips_Day_Name" ColumnName="RecommendedTrips_Day_Name" />
+                <ScalarProperty Name="RecommendedTrips_Day_Day_ID" ColumnName="RecommendedTrips_Day_Day_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="RecommendedTrips_HashTag_Type">
             <EntityTypeMapping TypeName="ForestModel.RecommendedTrips_HashTag_Type">
               <MappingFragment StoreEntitySet="RecommendedTrips_HashTag_Type">
                 <ScalarProperty Name="RecommendedTrips_ID" ColumnName="RecommendedTrips_ID" />
                 <ScalarProperty Name="HashTag_Type_ID" ColumnName="HashTag_Type_ID" />
                 <ScalarProperty Name="RecommendedTrips_HashTag_ID" ColumnName="RecommendedTrips_HashTag_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RecommendedTrips_Index">
+            <EntityTypeMapping TypeName="ForestModel.RecommendedTrips_Index">
+              <MappingFragment StoreEntitySet="RecommendedTrips_Index">
+                <ScalarProperty Name="RecommendedTrips_Index_Content" ColumnName="RecommendedTrips_Index_Content" />
+                <ScalarProperty Name="RecommendedTrips_Index_Title" ColumnName="RecommendedTrips_Index_Title" />
+                <ScalarProperty Name="RecommendedTrips_Index_ID" ColumnName="RecommendedTrips_Index_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

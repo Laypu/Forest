@@ -18,6 +18,7 @@ namespace WebSiteProject.Models
         public F_HashTag_Type()
         {
             this.F_Sub_HashTag_Type = new HashSet<F_Sub_HashTag_Type>();
+            this.RecommendedTrips_HashTag_Type = new HashSet<RecommendedTrips_HashTag_Type>();
         }
     
         public int HashTag_Type_ID { get; set; }
@@ -28,5 +29,7 @@ namespace WebSiteProject.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<F_Sub_HashTag_Type> F_Sub_HashTag_Type { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RecommendedTrips_HashTag_Type> RecommendedTrips_HashTag_Type { get; set; }
     }
 }
