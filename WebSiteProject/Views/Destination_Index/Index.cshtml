@@ -33,7 +33,7 @@
                                      data-width="['auto']"
                                      data-height="['auto']"
                                      data-basealign="slide">
-                                    <img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="@ad.AD_Name">
+                                    <img src="@Url.Content("~/UploadImage/ADMain/" + ad.Img_Name_Ori)" alt="@ad.AD_Name">
                                 </div>
 
                                 @*<div class="tp-caption item_box" data-x="0" data-y="500" data-start="500" data-transform_in="y:[100%];opacity:0;s:500;">
@@ -51,7 +51,7 @@
                                      data-volume="mute"
                                      data-videowidth="100%"
                                      data-videoheight="100%"
-                                     data-videomp4="@VirtualPathUtility.ToAbsolute("~"+ad.UploadVideoFilePath)"
+                                     data-videomp4="@VirtualPathUtility.ToAbsolute("~" + ad.UploadVideoFilePath)"
                                      data-videopreload="preload"
                                      data-videoloop="loop"
                                      data-forceCover="1"
@@ -93,7 +93,7 @@
                                      data-width="['auto']"
                                      data-height="['auto']"
                                      data-basealign="slide">
-                                    <img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="@ad.AD_Name">
+                                    <img src="@Url.Content("~/UploadImage/ADMain/" + ad.Img_Name_Ori)" alt="@ad.AD_Name">
                                 </div>
                                 @*<div class="tp-caption item_box" data-x="30" data-y="220" data-start="0" data-transform_in="y:[0%];opacity:0;s:0;">
                                         <div class="title">@ad.AD_Name</div>
@@ -110,7 +110,7 @@
                                      data-volume="mute"
                                      data-videowidth="100%"
                                      data-videoheight="100%"
-                                     data-videomp4="@VirtualPathUtility.ToAbsolute("~"+ad.UploadVideoFilePath)"
+                                     data-videomp4="@VirtualPathUtility.ToAbsolute("~" + ad.UploadVideoFilePath)"
                                      data-videopreload="preload"
                                      data-videoloop="loop"
                                      data-forceCover="1"
@@ -141,7 +141,7 @@
             {
                 if (string.IsNullOrEmpty(ad.Img_Name_Ori) == false)
                 {
-                    <div><img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="@ad.AD_Name" /></div>
+                    <div><img src="@Url.Content("~/UploadImage/ADMain/" + ad.Img_Name_Ori)" alt="@ad.AD_Name" /></div>
                 }
             }
         </div>
@@ -153,10 +153,6 @@
 
 </div>
 <!--banner end-->
-
-
-
-
 
 
 <!--page_content start-->
@@ -175,30 +171,48 @@
         </div>
     </div>
     <!--page top end-->
-
+    <!--map start-->
     <!--map start-->
     <div class="page_map">
-        <div class="container">
+        <div id="MapLeg" class="container">
 
             <div class="font_box">
                 <div class="title">@Html.Raw(ViewBag.Title)</div>
                 <div class="con_font">@Html.Raw(ViewBag.Content)</div>
-                <div class="menu">
+                <div id="MapL" class="menu">
                     <div class="menu_title">MAP LEGEND</div>
                     <ul>
-                        <li><a href="destinations.html#page_01" name="page_01" title="Regions" class="active">*Regions</a></li>
-                        <li><a href="destinations_01.html#page_02" name="page_02" title="Forest recreation area" >*Forest recreation area</a></li>
-                        <li><a href="destinations_02.html#page_03" name="page_03" title="Airport location">*Airport location </a></li>
-                        <li><a href="destinations_03.html#page_04" name="page_04" title="Taiwan time">*Taiwan time</a></li>
+                        @{
+                            var MapModel = (IEnumerable<WebSiteProject.Models.Destination_MapLegend>)ViewBag.Destination_MapLegend;
+                            foreach (var item in MapModel)
+                            {
+                                <li class="color hover"><a href="javascript:void(0);" id="page_01" name="page_01" data-imgName="@item.Destination_Img" data-imgNameMoblie="@item.Destination_Img_Mobile"  title="@item.Destination_MAP_LEGEND_Name" class="nav-item ">@item.Destination_MAP_LEGEND_Name</a></li>
+                            }
+                        }
                     </ul>
                 </div>
             </div>
-            <div class="img hidden-xs"><img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@Html.Raw(ViewBag.ImgName)" /></div><!--建議尺寸800*478px-->
-            <div class="img visible-xs"><img src="img/d_map_01_m.png" /></div><!--建議尺寸，寬500px-->
+            <div class="img hidden-xs"><img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModel.First().Destination_Img" /></div><!--建議尺寸800*478px-->
+            <div class="img visible-xs"><img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModel.First().Destination_Img_Mobile" /></div><!--建議尺寸，寬500px-->
 
         </div>
     </div>
     <!--map end-->
+    <!--map end-->
+    <!--page top start-->
+    <div class="page_top">
+        <div class="container">
+            <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
+                <a href="#;return false;" title="Main content area" accesskey="C" id="main-content">:::</a> &nbsp;
+                <a href="index.html" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="." title="Destinations">Destinations</a>
+            </div>
+            <div class="col-md-5 col-sm-6 col-xs-12">
+                <!--<script>$.include("blocks/page_top.html");</script>-->
+            </div>
+        </div>
+    </div>
+    <!--page top end-->
     <!--page_img_list start-->
     <div class="page_img_list">
         <div class="container">
@@ -208,14 +222,16 @@
                     var n = 1;
                     foreach (var item in DesModel)
                     {
+                        //"@item.Destination_Type_Title1 @item.Destination_Type_Title2"
+                        var titleford = @item.Destination_Type_Title1 + " " + @item.Destination_Type_Title2;
                         <li>
-                            <a href="@Url.Action("ThinngsToDo_List", "F_ThingsToDo", new { Des_Id= n++})" title="@item.Destination_Type_Title1 @item.Destination_Type_Title2">
-                                
-                                    <div class="img"><img src="@Url.Content("~/img/600x800.png")" alt="" style="background:url(@Url.Content("~/img/" + item.Destination_Type_ImgName))" /></div><!--建議尺寸600*800px-->
-                                    <div class="font_box">
-                                        <div class="title">@item.Destination_Type_Title1<div class="second_line">@item.Destination_Type_Title2</div></div>
-                                    </div>
-                                                              
+                            <a href="@Url.Action("ThinngsToDo_List", "Destination_Index", new { Des_Id = item.Destination_Type_Title1})" title="@titleford">
+
+                                <div class="img"><img src="@Url.Content("~/img/600x800.png")" alt="" style="background:url(@Url.Content("~/UploadImage/MapLEGEND_Img/" + item.Destination_Type_ImgName))" /></div><!--建議尺寸600*800px-->
+                                <div class="font_box">
+                                    <div class="title">@item.Destination_Type_Title1<div class="second_line">@item.Destination_Type_Title2</div></div>
+                                </div>
+
                             </a>
                         </li>
                     }
@@ -234,6 +250,10 @@
     <!--page_img_list end-->
 </div>
 <!--page_content end-->
+
+
+
+
 <!--breadcrumbs start-->
 <div class="breadcrumbs">
     <div class="container">
@@ -257,5 +277,40 @@
         $(".tp-leftarrow").attr("title", "@(Common.GetLangText("Previous"))");
         $(".tp-rightarrow").attr("title", "@(Common.GetLangText("Next"))");
     }
+
+    $(function () {
+
+        //初始畫面maplegend的ul 顏色
+        $("#MapL>ul").children().first().children().attr("class", "active");
+
+        
+        //點擊maplegend換圖
+        $("#MapL>ul>li>a").click(function () {
+            
+            $(this).addClass("active").parent().siblings().children().removeClass("active");
+            var MapImg = `@Url.Content("~/UploadImage/MapLEGEND_Img/")`+$(this).attr("data-imgName");
+            
+            $("#MapLeg>div>img").attr('src',MapImg);
+        });
+
+
+    });
+
+
+
+
+    //$(function () {
+    //    //maplegend 圖片更改
+    //    for (var i = 1; i <= 4; i++)
+    //    {
+    //        $(`#MapL${i}`).click()
+    //        {
+    //            $("#MapL > ul> li").removeAttr("class")
+    //            this.attr("class", "active");
+    //        }
+    //    }
+    //})
+
+
 </script>
 

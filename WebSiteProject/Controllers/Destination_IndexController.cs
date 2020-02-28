@@ -130,10 +130,10 @@ namespace WebSiteProject.Controllers
             //標題和內容
             ViewBag.Title = Server.HtmlDecode(db.Destination_Index.FirstOrDefault().Destination_Title);
             ViewBag.Content = Server.HtmlDecode(db.Destination_Index.FirstOrDefault().Destination_Context);
-            ViewBag.ImgName = Server.HtmlDecode(db.Destination_MapLegend.FirstOrDefault().Destination_Img);
             //五大標題+圖
             ViewBag.F_Destination_Type = db.F_Destination_Type.ToList();
 
+            ViewBag.Destination_MapLegend = db.Destination_MapLegend.ToList();
 
 
             return View(viewmodel);
