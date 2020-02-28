@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Utilities;
+using ViewModels;
 using WebSiteProject.Code;
 using WebSiteProject.Models;
 
@@ -33,9 +34,85 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             TempData["Msg"] = "修改成功";
             return RedirectToAction("RecommendedtripsIndex");
         }
-        public ActionResult Recommendedtrips_item()
+        public ActionResult Recommendedtrips_item(string Dstination_typ = "", string Day_Id = "", string F_HashTag="")
         {
-            return View();
+            var Destination_Typ = db.F_Destination_Type;
+            var Day_ID_ = db.RecommendedTrips_Day;
+            var F_HashTag_Type_ = db.F_HashTag_Type;
+            var Destinations_ID = new List<SelectListItem>();
+            foreach (var item in Destination_Typ)
+            {
+                Destinations_ID.Add(new SelectListItem()
+                {
+                    Text = item.Destination_Type_Title1 + " " + item.Destination_Type_Title2,
+                    Value = Convert.ToString(item.Destination_Type_ID),
+                    Selected = false
+                });
+            }
+            var Day_ID = new List<SelectListItem>();
+            foreach (var item in Day_ID_)
+            {
+                Day_ID.Add(new SelectListItem()
+                {
+                    Text = item.RecommendedTrips_Day_Name,
+                    Value = Convert.ToString(item.RecommendedTrips_Day_ID),
+                    Selected = false
+                });
+            }
+            var HashTag_Type = new List<SelectListItem>();
+            foreach (var item in F_HashTag_Type_)
+            {
+                HashTag_Type.Add(new SelectListItem()
+                {
+                    Text = item.HashTag_Type_Name,
+                    Value = Convert.ToString(item.HashTag_Type_ID),
+                    Selected = false
+                });
+            }
+             if (Day_Id != "")
+             {
+                Day_ID.Where(q => q.Value == Day_Id).First().Selected = true;
+            }
+            if (F_HashTag != "")
+                {
+                HashTag_Type.Where(q => q.Value == F_HashTag).First().Selected = true;
+            }
+            if (Dstination_typ != "")
+            {
+                Destinations_ID.Where(q => q.Value == Dstination_typ).First().Selected = true;
+            }
+            ViewBag.RecommendedTrips_Day_ID = Day_ID;
+            ViewBag.RecommendedTrips_Destinations_ID = Destinations_ID;
+            ViewBag.F_HashTag_Type = HashTag_Type;
+            //var searchmoel =new  List<V_RecommendedTripsForWebadmin>();
+            var mode = new List<RecommendedSearchModel>();
+            mode = db.RecommendedTrips.Select(p => new RecommendedSearchModel { RecommendedTrips_ID = p.RecommendedTrips_ID, RecommendedTrips_Title = p.RecommendedTrips_Title, RecommendedTrips_Day_Name = p.RecommendedTrips_Day.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = p.RecommendedTrips_Day.RecommendedTrips_Day_ID, RecommendedTrips_Destinations_ID = p.RecommendedTrips_Destinations_ID }).ToList();
+            //mode = db.V_RecommendedTripsForWebadmin.GroupBy(o=>o.RecommendedTrips_ID).Select(p=>new RecommendedSearchModel {RecommendedTrips_ID=p.Key, RecommendedTrips_Title=p.FirstOrDefault().RecommendedTrips_Title, RecommendedTrips_Day_Name=p.FirstOrDefault().RecommendedTrips_Day_Name,HashTag_Type_ID=p.FirstOrDefault().HashTag_Type_ID,RecommendedTrips_Day_ID=p.FirstOrDefault().RecommendedTrips_Day_ID,RecommendedTrips_Destinations_ID=p.FirstOrDefault().RecommendedTrips_Destinations_ID}).ToList();
+            if (Day_Id != "")
+            {
+                mode = mode.Where(p => p.RecommendedTrips_Day_ID == Convert.ToInt32(Day_Id)).ToList();
+            }
+            if (Dstination_typ != "")
+            {
+                mode = mode.Where(p => p.RecommendedTrips_Destinations_ID == Convert.ToInt32(Dstination_typ)).ToList();
+            }
+            if (F_HashTag != "")
+            {
+                mode = (from t1 in mode
+                        join t2 in db.RecommendedTrips_HashTag_Type on t1.RecommendedTrips_ID equals t2.RecommendedTrips_ID
+                        where t2.HashTag_Type_ID== Convert.ToInt32(F_HashTag)
+                        select new RecommendedSearchModel { RecommendedTrips_ID=t1.RecommendedTrips_ID, RecommendedTrips_Title=t1.RecommendedTrips_Title, RecommendedTrips_Day_Name=t1.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID= t1.RecommendedTrips_Day_ID, HashTag_Type_ID = t2.HashTag_Type_ID, RecommendedTrips_Destinations_ID=t1.RecommendedTrips_Destinations_ID }
+                        ).ToList();
+            }
+            //var mode = new RecommendedSearchModel();        
+            //foreach (var item in searchmoel)
+            //{
+            //    mode.RecommendedTrips_ID = item.RecommendedTrips_ID;
+            //    mode.RecommendedTrips_Title = item.RecommendedTrips_Title;
+            //    mode.RecommendedTrips_Day_Name = item.RecommendedTrips_Day_Name;
+            //    mod.Add(mode);
+            //}
+            return View(mode);
         }
         public ActionResult Recommendedtrips_Edit(string itemid="-1")
         { 
@@ -57,7 +134,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 Day_ID.Add(new SelectListItem()
                 {
                     Text = item.RecommendedTrips_Day_Name ,
-                    Value = Convert.ToString(item.RecommendedTrips_Day_Day_ID),
+                    Value = Convert.ToString(item.RecommendedTrips_Day_ID),
                     Selected = false
                 });
             }
@@ -88,6 +165,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 RE.RecommendedTrips_Content = ReD.RecommendedTrips_Content;
                 RE.RecommendedTrips_Location = ReD.RecommendedTrips_Location;
                 RE.RecommendedTrips_HtmContent = ReD.RecommendedTrips_HtmContent;
+                RE.RecommendedTrips_Img_Description = ReD.RecommendedTrips_Img_Description;
             }
             else
             {
@@ -116,7 +194,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     {
                         uploadfilepath = Request.PhysicalApplicationPath + "\\UploadFile";
                     }
-                    var newfilename = DateTime.Now.Ticks + "_" + recommendedTrip.RecommendedTrips_Img;
+                    var newfilename = DateTime.Now.Ticks + "_" + fileImag.FileName;
                     var path = root + "\\UploadImage\\RecommendedTrips\\" + newfilename;
                     if (System.IO.Directory.Exists(root + "\\UploadImage\\RecommendedTrips\\") == false)
                     {
@@ -149,7 +227,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     foreach (var item in HashTag_Type)
                     {
                         RecommendedTrips_HashTag_Type HashTag = new RecommendedTrips_HashTag_Type();
-                        HashTag.RecommendedTrips_ID = recommendedTrip.RecommendedTrips_ID;
+                        HashTag.RecommendedTrips_ID = recom.RecommendedTrips_ID;
                         HashTag.HashTag_Type_ID = item;
                         db.RecommendedTrips_HashTag_Type.Add(HashTag);
                         db.SaveChanges();
@@ -160,13 +238,16 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             }
             else
             {
-                var old_SizeChart = recommendedTrip.RecommendedTrips_Img;
-                if (old_SizeChart != null)
+                if (fileImag != null)
                 {
-                    string fullpath = Request.MapPath("~/UploadImage/RecommendedTrips/" + recommendedTrip.RecommendedTrips_Img);
-                    if (System.IO.File.Exists(fullpath))
+                    var old_SizeChart = recommendedTrip.RecommendedTrips_Img;
+                    if (old_SizeChart != null)
                     {
-                        System.IO.File.Delete(fullpath);
+                        string fullpath = Request.MapPath("~/UploadImage/RecommendedTrips/" + recommendedTrip.RecommendedTrips_Img);
+                        if (System.IO.File.Exists(fullpath))
+                        {
+                            System.IO.File.Delete(fullpath);
+                        }
                     }
                 }
                 db.Entry(recommendedTrip).State = System.Data.Entity.EntityState.Modified;
@@ -174,10 +255,11 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 if (r > 0) //result為itemID >0為新增成功
                 {
                     var Old_HashTag = db.RecommendedTrips_HashTag_Type.Where(a => a.RecommendedTrips_ID == recommendedTrip.RecommendedTrips_ID).ToList(); ;
+                    if (Old_HashTag.Count()!=0) { 
                     //先全部刪除舊的
                     foreach (var item in Old_HashTag)
                     {
-                        var Old_HashTag_Item = db.RecommendedTrips_HashTag_Type.Find(item.RecommendedTrips_ID);
+                        var Old_HashTag_Item = db.RecommendedTrips_HashTag_Type.Find(item.RecommendedTrips_HashTag_ID);
                         db.Entry(Old_HashTag_Item).State = System.Data.Entity.EntityState.Deleted;
                         db.SaveChanges();
                     };
@@ -191,6 +273,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         db.RecommendedTrips_HashTag_Type.Add(Sub_HashTag);
                         db.SaveChanges();
                     };
+                   }
                     return Json("成功");
                 };
                 return Json("失敗");

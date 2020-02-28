@@ -1,12 +1,113 @@
-﻿
+﻿@model IEnumerable<ViewModels.RecommendedSearchModel>
 @{
     ViewBag.Title = "Recommendedtrips";
     Layout = "~/Areas/webadmin/Views/Shared/_Layout.cshtml";
 }
-
+<link href="https://cdn.datatables.net/autofill/2.3.4/css/autoFill.dataTables.min.css" rel="stylesheet" />
 <div class="title_01">Recommended trips</div>
 <div id="Partial_Index_MenuLink">
     <!--.......-->
 </div>
+<div class="form-group">
+    <div class="col-md-1 col-sm-12 col-xs-12 search_item text-center">
+        <span>旅遊天數</span>
+    </div>
+    <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white">
+        @Html.DropDownList("Day_Id", (IEnumerable<SelectListItem>)ViewBag.RecommendedTrips_Day_ID, "請選擇", htmlAttributes: new { @class = "form-control", rows = "8", cols = "100", @style = "width:300px" })
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-md-1 col-sm-12 col-xs-12 search_item text-center">
+        <span>目的地</span>
+    </div>
+    <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+        @Html.DropDownList("Dstination_typ", (IEnumerable<SelectListItem>)ViewBag.RecommendedTrips_Destinations_ID, "請選擇", htmlAttributes: new { @class = "form-control", rows = "8", cols = "100", @style = "width:300px" })
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-md-1 col-sm-12 col-xs-12 search_item text-center">
+        <span>旅遊類別</span>
+    </div>
+    <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+        @Html.DropDownList("F_HashTag", (IEnumerable<SelectListItem>)ViewBag.F_HashTag_Type, "請選擇", htmlAttributes: new { @class = "form-control", rows = "8", cols = "100", @style = "width:300px" })
+    </div>
+</div>
 <a href="@Url.Action("Recommendedtrips_Edit")" class="btn green-meadow">新增<i class="fa fa-plus"></i></a>
 
+<a class="blue search_icon" id="btn_search">搜尋<i class="fa fa-search"></i></a>
+<div class="table-scrollable">
+    <table class="table table-bordered table-hover" border="0" cellspacing="0" cellpadding="0"
+           id="eventtable"
+           data-url="#"
+           data-sort-name='Sort'
+           data-page-size='10'
+           data-filed-id='RecommendedTrips_ID'
+           data-max-pagination='10'>
+        <thead>
+            <tr>
+                <th class="text-center">編號</th>
+                <th class="text-center">標題</th>
+                <th class="text-center">天數</th>
+                <th class="text-center">編輯</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="text-center">
+                    <td>@item.RecommendedTrips_ID</td>
+                    <td>@item.RecommendedTrips_Title</td>
+                    <td>@item.RecommendedTrips_Day_Name</td>
+                    <td><a href="@Url.Action("Recommendedtrips_Edit",new {itemid=@item.RecommendedTrips_ID})" class="btn green-meadow">編輯<i class="fa fa-plus"></i></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section scripts {
+    <script src="@Url.Content("~/Scripts/datatable.js")"></script>
+    <script>
+        $(function () {
+            //$("#eventtable").DataTable({
+            //    searching: true, //關閉filter功能
+            //    columnDefs: [{
+            //        orderable: false,
+            //    }],
+            //    columnDefs: [
+            //    ],
+            //    "aaSorting": [],
+            //    "lengthMenu": [[10, 20, 30, 50, -1], [10, 20, 30, 50, "全部"]],
+            //    "oLanguage": {
+            //        "sZeroRecords": "查無此商品",
+            //        "sInfoEmpty": "查無此商品",
+            //        "sEmptyTable": "查無此商品",
+            //        "sLengthMenu": "每頁顯示 _MENU_ 筆資料",
+            //        "sSearch": "查詢 : ",
+            //        "oPaginate": {
+            //            "sFirst": "First page",
+            //            "sLast": "Last page",
+            //            "sNext": "下一頁",
+            //            "sPrevious": "上一頁"
+            //        },
+            //        "sInfo": "總共 _TOTAL_ 筆，顯示第 [ _START_ ] 筆到第 [ _END_ ] 筆資料",
+            //        "sInfoFiltered": "篩選之後得到 _TOTAL_ 筆，初始 _MAX_ 筆",
+            //        "sLoadingRecords": "載入中...",
+            //        //"sInfoPostFix": "  (資料純屬虛構，如有雷同純屬巧合。)",
+            //    },
+            //    "scrollCollapse": true,
+            //    "jQueryUI": true
+            //});
+
+
+            //$("#myDataTalbe_paginate").attr("style", "margin-bottom:30px")
+
+            $("#btn_search").click(function () {
+                var Dstination_typ = $("#Dstination_typ").val();
+                var Day_Id = $("#Day_Id").val();
+                var F_HashTag = $("#F_HashTag").val();
+                window.location.href = (`@Url.Action("Recommendedtrips_item", "Recommendedtrips")/?Dstination_typ=${Dstination_typ}&Day_Id=${Day_Id}&F_HashTag=${F_HashTag}`);    
+            })
+        });
+    </script>
+}

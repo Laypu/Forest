@@ -1408,9 +1408,9 @@
   </EntityType>
   <EntityType Name="RecommendedTrips_Day">
     <Key>
-      <PropertyRef Name="RecommendedTrips_Day_Day_ID" />
+      <PropertyRef Name="RecommendedTrips_Day_ID" />
     </Key>
-    <Property Name="RecommendedTrips_Day_Day_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RecommendedTrips_Day_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="RecommendedTrips_Day_Name" Type="nvarchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="RecommendedTrips_HashTag_Type">
@@ -1646,6 +1646,38 @@
     <Property Name="Town" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Code" Type="int" Nullable="false" />
   </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'Forest.dbo.V_RecommendedTrip' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="V_RecommendedTrip">
+    <Key>
+      <PropertyRef Name="RecommendedTrips_ID" />
+    </Key>
+    <Property Name="RecommendedTrips_ID" Type="int" Nullable="false" />
+    <Property Name="RecommendedTrips_Day_ID" Type="int" />
+    <Property Name="RecommendedTrips_Destinations_ID" Type="int" />
+    <Property Name="RecommendedTrips_Img" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecommendedTrips_Title" Type="nvarchar(max)" />
+    <Property Name="RecommendedTrips_Content" Type="nvarchar(max)" />
+    <Property Name="RecommendedTrips_Location" Type="nvarchar(max)" />
+    <Property Name="RecommendedTrips_HtmContent" Type="ntext" />
+    <Property Name="RecommendedTrips_Img_Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecommendedTrips_Day_Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="HashTag_Type_ID" Type="int" />
+    <Property Name="HashTag_Type_Name" Type="nvarchar(max)" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'Forest.dbo.V_RecommendedTripsForWebadmin' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="V_RecommendedTripsForWebadmin">
+    <Key>
+      <PropertyRef Name="RecommendedTrips_ID" />
+    </Key>
+    <Property Name="RecommendedTrips_ID" Type="int" Nullable="false" />
+    <Property Name="RecommendedTrips_Day_ID" Type="int" />
+    <Property Name="RecommendedTrips_Destinations_ID" Type="int" />
+    <Property Name="RecommendedTrips_Title" Type="nvarchar(max)" />
+    <Property Name="RecommendedTrips_Day_Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="HashTag_Type_ID" Type="int" />
+  </EntityType>
   <Association Name="FK_Destination_Fare_F_Destination_Type">
     <End Role="F_Destination_Type" Type="Self.F_Destination_Type" Multiplicity="0..1" />
     <End Role="Destination_Fare" Type="Self.Destination_Fare" Multiplicity="*" />
@@ -1682,27 +1714,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_RecommendedTrips_HashTag_Type_RecommendedTrips">
-    <End Role="F_HashTag_Type" Type="Self.F_HashTag_Type" Multiplicity="0..1" />
-    <End Role="RecommendedTrips_HashTag_Type" Type="Self.RecommendedTrips_HashTag_Type" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="F_HashTag_Type">
-        <PropertyRef Name="HashTag_Type_ID" />
-      </Principal>
-      <Dependent Role="RecommendedTrips_HashTag_Type">
-        <PropertyRef Name="HashTag_Type_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_RecommendedTrips_RecommendedTrips_Day">
-    <End Role="RecommendedTrips_Day" Type="Self.RecommendedTrips_Day" Multiplicity="1" />
-    <End Role="RecommendedTrip" Type="Self.RecommendedTrip" Multiplicity="0..1" />
+    <End Role="RecommendedTrips_Day" Type="Self.RecommendedTrips_Day" Multiplicity="0..1" />
+    <End Role="RecommendedTrip" Type="Self.RecommendedTrip" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="RecommendedTrips_Day">
-        <PropertyRef Name="RecommendedTrips_Day_Day_ID" />
+        <PropertyRef Name="RecommendedTrips_Day_ID" />
       </Principal>
       <Dependent Role="RecommendedTrip">
-        <PropertyRef Name="RecommendedTrips_ID" />
+        <PropertyRef Name="RecommendedTrips_Day_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1830,6 +1850,32 @@
     [ZipCode].[Code] AS [Code]
     FROM [dbo].[ZipCode] AS [ZipCode]</DefiningQuery>
     </EntitySet>
+    <EntitySet Name="V_RecommendedTrip" EntityType="Self.V_RecommendedTrip" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_RecommendedTrip].[RecommendedTrips_ID] AS [RecommendedTrips_ID], 
+    [V_RecommendedTrip].[RecommendedTrips_Day_ID] AS [RecommendedTrips_Day_ID], 
+    [V_RecommendedTrip].[RecommendedTrips_Destinations_ID] AS [RecommendedTrips_Destinations_ID], 
+    [V_RecommendedTrip].[RecommendedTrips_Img] AS [RecommendedTrips_Img], 
+    [V_RecommendedTrip].[RecommendedTrips_Title] AS [RecommendedTrips_Title], 
+    [V_RecommendedTrip].[RecommendedTrips_Content] AS [RecommendedTrips_Content], 
+    [V_RecommendedTrip].[RecommendedTrips_Location] AS [RecommendedTrips_Location], 
+    [V_RecommendedTrip].[RecommendedTrips_HtmContent] AS [RecommendedTrips_HtmContent], 
+    [V_RecommendedTrip].[RecommendedTrips_Img_Description] AS [RecommendedTrips_Img_Description], 
+    [V_RecommendedTrip].[RecommendedTrips_Day_Name] AS [RecommendedTrips_Day_Name], 
+    [V_RecommendedTrip].[HashTag_Type_ID] AS [HashTag_Type_ID], 
+    [V_RecommendedTrip].[HashTag_Type_Name] AS [HashTag_Type_Name]
+    FROM [dbo].[V_RecommendedTrip] AS [V_RecommendedTrip]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_RecommendedTripsForWebadmin" EntityType="Self.V_RecommendedTripsForWebadmin" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_RecommendedTripsForWebadmin].[RecommendedTrips_ID] AS [RecommendedTrips_ID], 
+    [V_RecommendedTripsForWebadmin].[RecommendedTrips_Day_ID] AS [RecommendedTrips_Day_ID], 
+    [V_RecommendedTripsForWebadmin].[RecommendedTrips_Destinations_ID] AS [RecommendedTrips_Destinations_ID], 
+    [V_RecommendedTripsForWebadmin].[RecommendedTrips_Title] AS [RecommendedTrips_Title], 
+    [V_RecommendedTripsForWebadmin].[RecommendedTrips_Day_Name] AS [RecommendedTrips_Day_Name], 
+    [V_RecommendedTripsForWebadmin].[HashTag_Type_ID] AS [HashTag_Type_ID]
+    FROM [dbo].[V_RecommendedTripsForWebadmin] AS [V_RecommendedTripsForWebadmin]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_Destination_Fare_F_Destination_Type" Association="Self.FK_Destination_Fare_F_Destination_Type">
       <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
       <End Role="Destination_Fare" EntitySet="Destination_Fare" />
@@ -1841,10 +1887,6 @@
     <AssociationSet Name="FK_RecommendedTrips_F_Destination_Type" Association="Self.FK_RecommendedTrips_F_Destination_Type">
       <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
       <End Role="RecommendedTrip" EntitySet="RecommendedTrip" />
-    </AssociationSet>
-    <AssociationSet Name="FK_RecommendedTrips_HashTag_Type_RecommendedTrips" Association="Self.FK_RecommendedTrips_HashTag_Type_RecommendedTrips">
-      <End Role="F_HashTag_Type" EntitySet="F_HashTag_Type" />
-      <End Role="RecommendedTrips_HashTag_Type" EntitySet="RecommendedTrips_HashTag_Type" />
     </AssociationSet>
     <AssociationSet Name="FK_RecommendedTrips_RecommendedTrips_Day" Association="Self.FK_RecommendedTrips_RecommendedTrips_Day">
       <End Role="RecommendedTrips_Day" EntitySet="RecommendedTrips_Day" />

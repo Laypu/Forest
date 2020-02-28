@@ -530,6 +530,12 @@
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\F_ViewModels\Index_ViewModel.cs" />
+    <Compile Include="Models\V_RecommendedTrip.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\V_RecommendedTripsForWebadmin.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ZipCode.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
@@ -3206,6 +3212,9 @@
     <Content Include="Areas\webadmin\Views\Destination_MapLegend\Index.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\_FarePartial.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\Createtr.cshtml" />
+    <Content Include="Areas\webadmin\Views\Recommendedtrips\RecommendedtripsIndex.cshtml" />
+    <Content Include="Areas\webadmin\Views\Recommendedtrips\Recommendedtrips_item.cshtml" />
+    <Content Include="Areas\webadmin\Views\Recommendedtrips\Recommendedtrips_Edit.cshtml" />
     <None Include="Properties\PublishProfiles\MySkylines.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -3312,6 +3321,7 @@
     <Content Include="Scripts\theme.init.js" />
     <Content Include="Scripts\theme.js" />
     <Content Include="Scripts\websitemain.js" />
+    <Content Include="Scripts\_html.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Error\FrontPageNotFound.cshtml" />
     <Content Include="Views\Error\FrontError.cshtml" />
@@ -3386,7 +3396,6 @@
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="Areas\webadmin\Models\" />
-    <Folder Include="Areas\webadmin\Views\Recommendedtrips\" />
     <Folder Include="ContentWebsite\image\" />
     <Folder Include="Content\admincss\fonts\" />
     <Folder Include="Example\" />
@@ -3445,7 +3454,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>17473</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54333/forest</IISUrl>
+          <IISUrl>http://localhost:54332/forest</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
