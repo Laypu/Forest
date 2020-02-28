@@ -1,20 +1,19 @@
-﻿@model WebSiteProject.Models.Destination_Fare
+﻿@model IEnumerable<WebSiteProject.Models.Destination_Fare> 
 
 <div class="form-group">
     <div class="display_inline margin_bottom">
-        <button type="button" class="btn blue" onclick="window.open ('mod_teacher_personnel_02.html','','menubar=1,resizable=1,width=1000,height=800')">選擇</button>
-        <!--<button class="btn green-meadow" id="btn_add">新增 <i class="fa fa-plus"></i></button>-->
+        @{
+            var DESTypeID = ViewBag.TypeID;
+            var DESName = ViewBag.TypeName;
+         }
+        <a class="btn green-meadow" id='btn_add' href="@Url.Action("Createtr","Destination_Index",new {TypeID = DESTypeID,TypeName = DESName})">新增 <i class="fa fa-plus"></i></a>
         <button class="btn red" id="btn_del">刪除 <i class="glyphicon glyphicon-trash"></i></button>
     </div>
-    @{ 
-        Html.HiddenFor(model => model.ChargeID);
-
-        Html.HiddenFor(model => model.Destination_Type_ID );
-    }
+    
     <!--table start-->
-    <table class="table table-bordered nomarginbottom" border="0" cellspacing="0" cellpadding="0">
+    <table class="table table-bordered nomarginbottom" id="faretable" border="0" cellspacing="0" cellpadding="0">
         <thead>
-            <tr>
+            <tr >
                 <th width="60" class="text-center" filed-type="delcheckbox">刪除</th>
                 <th class="text-center">@Html.Label("票種")</th>
                 <th class="text-center">@Html.Label("票價")</th>
@@ -22,17 +21,29 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td class="text-center">
-                    <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                        <input type="checkbox" class="checkboxes chksel">
-                        <span></span>
-                    </label>
-                </td>
-                <td class="text-center">@Html.EditorFor(m => m.TicketType)</td>
-                <td class="text-center">@Html.EditorFor(m => m.Fare)</td>
-                <td class="text-center">@Html.EditorFor(m => m.Description)</td>
-            </tr>
+            @{   
+                foreach (var item in Model)
+                {
+                    <tr class="tritem">
+                        <td class="text-center">
+                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                <input type="checkbox" class="checkboxes chksel">
+                                <span></span>
+                            </label>
+                        </td>
+                        @Html.HiddenFor(model => item.ChargeID)
+                        @Html.HiddenFor(model => item.Destination_Type_ID)
+                        <td>@Html.EditorFor(model => item.TicketType, new { htmlAttributes = new { @class = "form-control input-small inline-block" } })</td>
+                        <td>@Html.EditorFor(model => item.Fare, new { htmlAttributes = new { @class = "form-control input-small inline-block" } })</td>
+                        <td>@Html.EditorFor(model => item.Description, new { htmlAttributes = new { @class = "form-control input-small inline-block" } })</td>
+                    </tr>
+                }
+                
+              }
+                            
         </tbody>
     </table>
 </div>
+<script>
+    
+</script>

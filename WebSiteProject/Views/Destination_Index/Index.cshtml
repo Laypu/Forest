@@ -148,11 +148,17 @@
     </noscript>
 
     <div class="banner_title">
-        <h2>Things to do</h2>
+        <h2>Destinations</h2>
     </div>
 
 </div>
 <!--banner end-->
+
+
+
+
+
+
 <!--page_content start-->
 <div class="page_content">
 
@@ -169,17 +175,52 @@
         </div>
     </div>
     <!--page top end-->
+
+    <!--map start-->
+    <div class="page_map">
+        <div class="container">
+
+            <div class="font_box">
+                <div class="title">@Html.Raw(ViewBag.Title)</div>
+                <div class="con_font">@Html.Raw(ViewBag.Content)</div>
+                <div class="menu">
+                    <div class="menu_title">MAP LEGEND</div>
+                    <ul>
+                        <li><a href="destinations.html#page_01" name="page_01" title="Regions" class="active">*Regions</a></li>
+                        <li><a href="destinations_01.html#page_02" name="page_02" title="Forest recreation area" >*Forest recreation area</a></li>
+                        <li><a href="destinations_02.html#page_03" name="page_03" title="Airport location">*Airport location </a></li>
+                        <li><a href="destinations_03.html#page_04" name="page_04" title="Taiwan time">*Taiwan time</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="img hidden-xs"><img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@Html.Raw(ViewBag.ImgName)" /></div><!--建議尺寸800*478px-->
+            <div class="img visible-xs"><img src="img/d_map_01_m.png" /></div><!--建議尺寸，寬500px-->
+
+        </div>
+    </div>
+    <!--map end-->
     <!--page_img_list start-->
     <div class="page_img_list">
         <div class="container">
-            <div class="title">
-                <h3 data-sr="enter top over 1.5s">@Html.Raw(ViewBag.Title)</h3>
-                <ul data-sr="enter top over 1.5s" style="display:none;">
-                    <li><a href="#">See all things to do</a></li>
-                    <li><a href="#">All destinations</a></li>
-                    <li><a href="#">Recommended trips</a></li>
-                </ul>
-            </div>
+            <ul class="list">
+                @{
+                    var DesModel = (IEnumerable<WebSiteProject.Models.F_Destination_Type>)ViewBag.F_Destination_Type;
+                    var n = 1;
+                    foreach (var item in DesModel)
+                    {
+                        <li>
+                            <a href="@Url.Action("ThinngsToDo_List", "F_ThingsToDo", new { Des_Id= n++})" title="@item.Destination_Type_Title1 @item.Destination_Type_Title2">
+                                
+                                    <div class="img"><img src="@Url.Content("~/img/600x800.png")" alt="" style="background:url(@Url.Content("~/img/" + item.Destination_Type_ImgName))" /></div><!--建議尺寸600*800px-->
+                                    <div class="font_box">
+                                        <div class="title">@item.Destination_Type_Title1<div class="second_line">@item.Destination_Type_Title2</div></div>
+                                    </div>
+                                                              
+                            </a>
+                        </li>
+                    }
+                }
+            </ul>
 
             <div class="con_font w-800">
                 @Html.Raw(ViewBag.Content)
@@ -189,25 +230,6 @@
 
         </div>
 
-        <!--index_info start-->
-        <div class="index_info">
-            <ul class="thing_list">
-                @{
-                    var F_TTDModel = (IEnumerable<WebSiteProject.Models.F_Thingtodo_Type>)ViewBag.F_Thingtodo_Type;
-                    var n = 1;
-                    foreach (var item in F_TTDModel)
-                    {
-                        <li>
-                            <a href="@Url.Action("ThinngsToDo_List", "F_ThingsToDo", new { F_TTD_Id= n++})" title="@item.F_Thingtodo_Type_Title1 @item.F_Thingtodo_Type_Title2">
-                                <div class="item_img"><img src="@Url.Content("~/img/600x800.png")" alt="" style="background:url(@Url.Content("~/img/" + item.F_Thingtodo_Type_ImgName))" /></div><!--建議尺寸600*800px-->
-                                <div class="item_title">@item.F_Thingtodo_Type_Title1<div class="second_line">@item.F_Thingtodo_Type_Title2</div></div>
-                            </a>
-                        </li>
-                    }
-                }
-            </ul>
-        </div>
-        <!--index_info end-->
     </div>
     <!--page_img_list end-->
 </div>
@@ -225,9 +247,10 @@
 
 
 
-
+<script src="js/bootstrap.js"></script>
 
 <script>
+
     window.onload = function () {
         $(".owl-prev").attr("title", "@(Common.GetLangText("Previous"))").attr("tabindex", "0");
         $(".owl-next").attr("title", "@(Common.GetLangText("Next"))").attr("tabindex", "0");

@@ -3212,6 +3212,7 @@
     <Content Include="Areas\webadmin\Views\Recommendedtrips\RecommendedtripsIndex.cshtml" />
     <Content Include="Areas\webadmin\Views\Recommendedtrips\Recommendedtrips_item.cshtml" />
     <Content Include="Areas\webadmin\Views\Recommendedtrips\Recommendedtrips_Edit.cshtml" />
+    <Content Include="Areas\webadmin\Views\Destination_Index\Createtr.cshtml" />
     <None Include="Properties\PublishProfiles\MySkylines.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

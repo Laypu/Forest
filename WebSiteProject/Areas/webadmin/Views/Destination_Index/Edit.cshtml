@@ -51,7 +51,7 @@
 
 <div class="portlet light bordered">
 
-    <form class="form-horizontal form-bordered" method="Post" id="editform" action='@Url.Action("Edit","Destination_Index")' enctype="multipart/form-data">
+    <form class="form-horizontal form-bordered" method="Post" id="editform" action='@Url.Action("Edit", "Destination_Index")' enctype="multipart/form-data">
         @Html.AntiForgeryToken()
         @Html.HiddenFor(Model => Model.Destination_Type_ID)
         @Html.HiddenFor(Model => Model.Destination_Type_Title1)
@@ -109,30 +109,28 @@
                             <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
                                 @Html.Label("春天", new { htmlAttributes = new { @class = "inline-block" } })
                                 @Html.EditorFor(model => model.Temp_Spring, new
-                                {
-                                    htmlAttributes = new
-                                    {@*placeholder = "春天",*@@class = "form-control input-small inline-block"
+                           {
+                               htmlAttributes = new
+                               {@*placeholder = "春天",*@@class = "form-control input-small inline-block"
 }
 })｜
                                 @Html.Label("夏天", new { htmlAttributes = new { @class = "inline-block" } })
                                 @Html.EditorFor(model => model.Temp_Summer, new
-                                {
-                                    htmlAttributes = new
-                                    {@*placeholder = "夏天",*@@class = "form-control input-small inline-block"
-}
-})｜
+                           {
+                               htmlAttributes = new { @class = "form-control input-small inline-block" }
+                                })｜
                                 @Html.Label("秋天", new { htmlAttributes = new { @class = "inline-block" } })
                                 @Html.EditorFor(model => model.Temp_Autumn, new
-                                {
-                                    htmlAttributes = new
-                                    {@*placeholder = "秋天",*@@class = "form-control input-small inline-block"
+                           {
+                               htmlAttributes = new
+                               {@*placeholder = "秋天",*@@class = "form-control input-small inline-block"
 }
 })｜
                                 @Html.Label("冬天", new { htmlAttributes = new { @class = "inline-block" } })
                                 @Html.EditorFor(model => model.Temp_Winter, new
-                                {
-                                    htmlAttributes = new
-                                    {@*placeholder = "冬天",*@@class = "form-control input-small inline-block"
+                           {
+                               htmlAttributes = new
+                               {@*placeholder = "冬天",*@@class = "form-control input-small inline-block"
 }
 })
                             </div>
@@ -153,8 +151,12 @@
                                 @Html.EditorFor(model => model.FPX, new { htmlAttributes = new { @class = "form-control input-small inline-block", @style = "margin:0px 5px 5px 0px" } })
                             </div>
                         </div>
-
                         
+                        @{
+                            var vid = Model.Destination_Type_ID;
+                            var vName = Model.Destination_Type_Title1+" "+ Model.Destination_Type_Title2;
+                        }
+                        @Html.Action("_FarePartial", new { id = vid,Name = vName })
                     </div>
                 </div>
             </div>
@@ -170,9 +172,6 @@
     $(function () {
 
 
-            //顯示圖片
-            ShowImg();
-
 
             //送出表單
             $("#editform").submit(function () {
@@ -183,11 +182,11 @@
                     url: form.action,
                     data: $(form).serialize(),
                     success: function (data) {
+                        console.log(data);
                         console.log("success");
 
                     }
                 });
-
                 
             })
                

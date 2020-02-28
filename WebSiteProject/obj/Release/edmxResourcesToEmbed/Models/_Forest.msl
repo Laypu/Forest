@@ -1671,7 +1671,7 @@
       <EntityTypeMapping TypeName="ForestModel.Destination_Fare">
         <MappingFragment StoreEntitySet="Destination_Fare">
           <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="fare" ColumnName="fare" />
+          <ScalarProperty Name="Fare" ColumnName="Fare" />
           <ScalarProperty Name="TicketType" ColumnName="TicketType" />
           <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
           <ScalarProperty Name="ChargeID" ColumnName="ChargeID" />
