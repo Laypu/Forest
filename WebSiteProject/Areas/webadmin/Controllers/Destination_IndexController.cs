@@ -251,6 +251,8 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             {
                 return HttpNotFound();
             }
+
+
             return View(Destination_Index);
         }
 
@@ -316,8 +318,9 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     Destination_Type_Link = "#"
 
                 });
+               
                 db.SaveChanges();
-
+                
             }
 
             return RedirectToAction("Destination");
@@ -349,6 +352,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             {
                 
                 db.Entry(Destination_Type).State = EntityState.Modified;
+                
                 if (DF != null)
                 {
                     for (var i = 0; i < DF.Length; i++)
@@ -356,9 +360,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         db.Entry(DF[i]).State = EntityState.Modified;
                     }
                 }
-                else {
-                    return RedirectToAction("Createtr");
-                }
+                
                 
                 db.SaveChanges();
                 TempData["Msg"] = "作業完成";

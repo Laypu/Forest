@@ -6,8 +6,8 @@
             var DESTypeID = ViewBag.TypeID;
             var DESName = ViewBag.TypeName;
          }
-        <a class="btn green-meadow" id='btn_add' href="@Url.Action("Createtr","Destination_Index",new {TypeID = DESTypeID,TypeName = DESName})">新增 <i class="fa fa-plus"></i></a>
-        <button class="btn red" id="btn_del">刪除 <i class="glyphicon glyphicon-trash"></i></button>
+        <button class="btn green-meadow" id='btn_add' type="button" onclick="@Url.Action("Createtr","Destination_Index",new {TypeID = DESTypeID,TypeName = DESName})">新增 <i class="fa fa-plus"></i></button>
+        <button class="btn red" id="btn_del" type="button">刪除 <i class="glyphicon glyphicon-trash"></i></button>
     </div>
     
     <!--table start-->
@@ -45,5 +45,5 @@
     </table>
 </div>
 <script>
-    
+    $("#btn_add").click({})
 </script>

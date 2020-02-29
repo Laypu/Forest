@@ -17,7 +17,7 @@
                 <li>Destinations<i class="fa fa-circle"></i></li>
             }
             else if (ViewBag.MenuType == 24)
-            { 
+            {
                 <li>Things to do<i class="fa fa-circle"></i></li>
             }
         }
@@ -67,8 +67,11 @@
             <p class="class_title">管理項目</p>
             <div class="display_inline">
                 @Html.DropDownList("ID", (SelectList)ViewBag.SiteList, "請選擇", new { @class = "form-control checkitem" })
-            </div>
+                
 
+                
+            </div>
+            
         </div>
         <div class="col-md-6 col-sm-12 col-xs-12 mobile_left">
             <p class="display_inline">

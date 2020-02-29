@@ -225,9 +225,9 @@
                         //"@item.Destination_Type_Title1 @item.Destination_Type_Title2"
                         var titleford = @item.Destination_Type_Title1 + " " + @item.Destination_Type_Title2;
                         <li>
-                            <a href="@Url.Action("ThinngsToDo_List", "Destination_Index", new { Des_Id = item.Destination_Type_Title1})" title="@titleford">
+                            <a href="@Url.Action("Details", "Destination_Index",new { ImgTitle =item.Destination_Type_Title1})" title="@titleford">
 
-                                <div class="img"><img src="@Url.Content("~/img/600x800.png")" alt="" style="background:url(@Url.Content("~/UploadImage/MapLEGEND_Img/" + item.Destination_Type_ImgName))" /></div><!--建議尺寸600*800px-->
+                                <div class="img"><img src="@Url.Content("~/img/600x800.png")" alt="" style="background:url(@Url.Content("~/UploadImage/Destination_Img/" + item.Destination_Type_ImgName))" /></div><!--建議尺寸600*800px-->
                                 <div class="font_box">
                                     <div class="title">@item.Destination_Type_Title1<div class="second_line">@item.Destination_Type_Title2</div></div>
                                 </div>

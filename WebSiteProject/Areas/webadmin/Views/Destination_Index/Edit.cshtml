@@ -13,6 +13,7 @@
 }
 
 <style>
+
     hr {
         margin: 0px;
         border-top: 0px solid #eee;
@@ -51,7 +52,7 @@
 
 <div class="portlet light bordered">
 
-    <form class="form-horizontal form-bordered" method="Post" id="editform" action='@Url.Action("Edit", "Destination_Index")' enctype="multipart/form-data">
+    <form class="form-horizontal form-bordered" method="Post" id="editform1" enctype="multipart/form-data">
         @Html.AntiForgeryToken()
         @Html.HiddenFor(Model => Model.Destination_Type_ID)
         @Html.HiddenFor(Model => Model.Destination_Type_Title1)
@@ -151,45 +152,47 @@
                                 @Html.EditorFor(model => model.FPX, new { htmlAttributes = new { @class = "form-control input-small inline-block", @style = "margin:0px 5px 5px 0px" } })
                             </div>
                         </div>
-                        
-                        @{
-                            var vid = Model.Destination_Type_ID;
-                            var vName = Model.Destination_Type_Title1+" "+ Model.Destination_Type_Title2;
-                        }
-                        @Html.Action("_FarePartial", new { id = vid,Name = vName })
+
+
                     </div>
+
                 </div>
             </div>
         </div>
-        <div class="text-center search_padding" id="div_buttons">
-            <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
-            <button type="button" class="btn grey-mint" id="btn_return">返回列表</button>
-            <button type="button" class="btn grey-mint " id="preview" onclick="callpreview()">預覽</button>
-        </div>
+        @{
+            var vid = Model.Destination_Type_ID;
+            var vName = Model.Destination_Type_Title1 + " " + Model.Destination_Type_Title2;
+        }
     </form>
+    <form class="form-horizontal form-bordered" method="Post" id="editform2" enctype="multipart/form-data">
+
+        @Html.Action("_FarePartial", new { id = vid, Name = vName })
+    </form>
+    <div class="text-center search_padding" id="div_buttons">
+        <button type="button" class="btn blue" id="btn_submit">確認送出</button>
+        <button type="button" class="btn grey-mint" id="btn_return">返回列表</button>
+        <button type="button" class="btn grey-mint " id="preview" onclick="callpreview()">預覽</button>
+    </div>
 </div>
 <script>
     $(function () {
+        //送出表單
+        $("#btn_submit").click(function () {
 
 
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("Edit", "Destination_Index")',
+                data: $("#editform1, #editform2").serialize(),
+                success: function (data) {
+                    console.log(data);
+                    console.log("success");
 
-            //送出表單
-            $("#editform").submit(function () {
+                }
+            });
 
-               
-                $.ajax({
-                    type: "POST",
-                    url: form.action,
-                    data: $(form).serialize(),
-                    success: function (data) {
-                        console.log(data);
-                        console.log("success");
+        })
 
-                    }
-                });
-                
-            })
-               
         })
 
 </script>
