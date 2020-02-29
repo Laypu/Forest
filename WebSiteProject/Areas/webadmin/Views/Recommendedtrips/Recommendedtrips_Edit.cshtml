@@ -8,6 +8,7 @@
 <script src="@Url.Content("~/Scripts/custom.js")"></script>
 <script src="@Url.Content("~/Scripts/ckeditor/ckeditor.js")"></script>
 <script src="@Url.Content("~/Scripts/bootbox.min.js")"></script>
+<script src="@Url.Content("~/Scripts/_html.js")"></script>
 <h2>推薦行程</h2>
 
 <div class="portlet light bordered">
@@ -35,7 +36,7 @@
                                     <span>目的地</span>
                                 </div>
                                 <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    @Html.DropDownList("RecommendedTrips_Destinations_ID", (IEnumerable<SelectListItem>)ViewBag.SelectList, "請選擇", htmlAttributes: new { @class = "form-control", rows = "8", cols = "100", @style = "width:300px" })
+                                    @Html.DropDownList("RecommendedTrips_Destinations_ID", null, "請選擇", htmlAttributes: new { @class = "form-control", rows = "8", cols = "100", @style = "width:300px" })
                                 </div>
                             </div>
                             @{
@@ -67,7 +68,7 @@
                                     <span>行程圖片_列表圖片</span>
                                 </div>
                                 <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    <a href="~/forest/UploadImage/RecommendedTrips/@Model.RecommendedTrips_Img" target="preview" id="aimg">@Model.RecommendedTrips_Img</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delrelateimage">刪除</label>
+                                    <a href="/forest/UploadImage/RecommendedTrips/@Model.RecommendedTrips_Img" target="preview" id="aimg">@Model.RecommendedTrips_Img</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delrelateimage">刪除</label>
                                     <input type="file" class="form-control" accept="image/*" name="fileImag" id="fileImag" />
                                     <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度800 * 800px</div>
                                 </div>
@@ -77,8 +78,8 @@
                                     <span>行程圖片_圖片說明</span>
                                 </div>
                                 <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    @Html.EditorFor(model => model.RecommendedTrips_Img_Description, new { htmlAttributes = new { @class = "form-control  inline-block" } })
-                                    <div class="red">必須要輸入圖片說明</div>
+                                    @Html.EditorFor(model => model.RecommendedTrips_Img_Description, new { htmlAttributes = new { @class = "form-control  inline-block" } })                                
+                                    <div class="red" id="Img_Description_err" hidden>必須要輸入圖片說明</div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -94,7 +95,8 @@
                                     <span>行程特色</span>
                                 </div>
                                 <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    @Html.TextAreaFor(model => model.RecommendedTrips_Content, new { @class = "form-control", @style = "width:400px;height:200px;resize:none" })
+                                    <textarea cols="80" id="RecommendedTrips_Content" class="form-control f_textarea" style="width:400px;height:200px;resize:none">@HttpUtility.HtmlDecode(Model.RecommendedTrips_Content)</textarea>
+                                    @*@Html.TextAreaFor(model => model.RecommendedTrips_Content, new { @class = "form-control", @style = "width:400px;height:200px;resize:none" })*@
                                 </div>
                             </div>
                             <div class="form-group">
@@ -110,7 +112,7 @@
                                     <span>旅遊行程總攬</span>
                                 </div>
                                 <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    <textarea cols="80" id="RecommendedTrips_HtmContent" name="RecommendedTrips_HtmContent" class="form-control f_textarea" style="height:250px;resize:none">@Model.RecommendedTrips_HtmContent</textarea>
+                                    <textarea cols="80" id="RecommendedTrips_HtmContent"  class="form-control f_textarea" style="height:250px;resize:none">@HttpUtility.HtmlDecode(Model.RecommendedTrips_HtmContent)</textarea>
                                     @*@Html.TextAreaFor(model => model.RecommendedTrips_HtmContent, new { @class = "form-control f_textarea", @style = "height:250px;resize:none" })*@
                                 </div>
                             </div>
@@ -169,11 +171,11 @@
                     alert("請確實選擇行程天數或目的地")
                     return false;
                 }
-                if (RecommendedTrips_Img_Description == "")
-                {
-                    alert("請確實輸入圖片說明")
-                    return false;
-                }
+                //if (RecommendedTrips_Img_Description == "")
+                //{
+                //    alert("請確實輸入圖片說明")
+                //    return false;
+                //}
                 var sFileName = rfile.val();
                 if (sFileName.length > 0) {
                     var blnValid = false;
@@ -195,22 +197,23 @@
                 $.each(array, function () {
                     formData.append(this.name, this.value);
                 });
-                formData.append("RecommendedTrips_HtmContent", encodeURIComponent(CKEDITOR.instances.RecommendedTrips_HtmContent.getData()))
-                formData.append("RecommendedTrips_Title", encodeURIComponent($('#RecommendedTrips_Title').val()));
-                formData.append("RecommendedTrips_Content", encodeURIComponent($('#RecommendedTrips_Content').val()));
+                var ckedval = CKEDITOR.instances.RecommendedTrips_HtmContent.getData();
+                formData.append("RecommendedTrips_HtmContent", _html.encode(ckedval))
+                formData.append("RecommendedTrips_Title", _html.encode($('#RecommendedTrips_Title').val()));
+                formData.append("RecommendedTrips_Content", _html.encode($('#RecommendedTrips_Content').val()));
                 var images = $('#fileImag').get(0).files;
                 if (images.length > 0) {
                     formData.append("fileImag", images[0]);
                     if (RecommendedTrips_Img_Description == "") {
-                        alert("請確實輸入圖片說明")
-                        iscon = false;
+                        $("#Img_Description_err").show();
+                        return false;
                     }
                 } else {
                     formData.append("fileImag", null);
                     if ($('#fileImag').val() != "") {
                         if (RecommendedTrips_Img_Description == "") {
-                            alert("請確實輸入圖片說明")
-                            iscon = false;
+                            $("#Img_Description_err").show();
+                            return false;
                         }
                     }
                 }

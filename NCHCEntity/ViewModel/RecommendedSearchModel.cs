@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ViewModels
+{
+     public class RecommendedSearchModel
+    {
+        public int? RecommendedTrips_ID { get; set; }
+        public int? RecommendedTrips_Day_ID { get; set; }
+        public int? RecommendedTrips_Destinations_ID { get; set; }
+        public int? HashTag_Type_ID { get; set; }
+        public string RecommendedTrips_Day_Name { get; set; }
+        public string RecommendedTrips_Title { get; set; }
+    }
+}

@@ -202,6 +202,7 @@
     <Compile Include="ViewModel\Patent\PatentSearchModel .cs" />
     <Compile Include="ViewModel\Patent\PatentUnitSettingModel.cs" />
     <Compile Include="ViewModel\Map\MapFrontIndexModel.cs" />
+    <Compile Include="ViewModel\RecommendedSearchModel.cs" />
     <Compile Include="ViewModel\Site\PageLayoutActivityModel.cs" />
     <Compile Include="ViewModel\Site\PageLayoutOP3Model.cs" />
     <Compile Include="ViewModel\Site\PageLayoutOP2Model.cs" />
