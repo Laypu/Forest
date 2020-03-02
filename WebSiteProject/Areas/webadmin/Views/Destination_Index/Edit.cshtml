@@ -159,11 +159,14 @@
                 </div>
             </div>
         </div>
+        
         @{
             var vid = Model.Destination_Type_ID;
             var vName = Model.Destination_Type_Title1 + " " + Model.Destination_Type_Title2;
         }
     </form>
+    
+
     <form class="form-horizontal form-bordered" method="Post" id="editform2" enctype="multipart/form-data">
 
         @Html.Action("_FarePartial", new { id = vid, Name = vName })
@@ -183,7 +186,7 @@
             $.ajax({
                 type: "POST",
                 url: '@Url.Action("Edit", "Destination_Index")',
-                data: $("#editform1, #editform2").serialize(),
+                data: $("#editform1,#editform2").serialize(),
                 success: function (data) {
                     console.log(data);
                     console.log("success");
@@ -191,8 +194,12 @@
                 }
             });
 
-        })
+           
+
+
 
         })
+
+    })
 
 </script>

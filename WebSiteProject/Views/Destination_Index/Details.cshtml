@@ -6,7 +6,7 @@
 @model HomeViewModel
 
 <!--header start-->
-<script>$.include("blocks/header.html");</script>
+@*<script>$.include("blocks/header.html");</script>*@
 <!--header end-->
 <!--banner start-->
 <div class="page_banner">
@@ -70,6 +70,7 @@
     @{
         var DesModel = (IEnumerable<WebSiteProject.Models.F_Destination_Type>)ViewBag.F_Destination_Type;
         var BanTitle = DesModel.First().Destination_Type_Title1 + " " + DesModel.First().Destination_Type_Title2;
+        var FareModel = (IEnumerable<WebSiteProject.Models.Destination_Fare>)ViewBag.Destination_Fare;
     }
     <div class="banner_title">
         <h2>@BanTitle</h2>
@@ -81,55 +82,60 @@
 <div class="page_info">
     <div class="container">
         <div class="con_font">
-            @DesModel.First().Destination_Type_Description;
+            @DesModel.First().Destination_Type_Description
         </div>
     </div>
 </div>
 <!--page_info end-->
 <!--page_bookmark start-->
 <div class="page_bookmark">
-    <div class="container">
+    <div class="container" id="bookmark">
 
         <ul class="bookmark_item">
-            <li><a href="javascript:void(0);" name="page_01" title="" class="active">Location</a></li>
-            <li><a href="javascript:void(0);" name="page_02" title="">Featured points</a></li>
-            <li><a href="javascript:void(0);" name="page_03" title="">Season</a></li>
-            <li><a href="javascript:void(0);" name="page_04" title="">Charges</a></li>
+            <li><a href="javascript:void(0);" name="page_01" id="page_01" title="" class="active">Location</a></li>
+            <li><a href="javascript:void(0);" name="page_02" id="page_02" title="">Featured points</a></li>
+            <li><a href="javascript:void(0);" name="page_03" id="page_03" title="">Season</a></li>
+            <li><a href="javascript:void(0);" name="page_04" id="page_04" title="">Charges</a></li>
         </ul>
+        <div id="bookmark_item_detail">
+            <div class="locaton">
+                <ul>
+                    <li data-sr="enter bottom over 1.5s">
+                        <div class="img"><img src="@Url.Content("~/img/page_icon_01.jpg")" alt="" /></div>
+                        <div class="font">
+                            <div class="title">Location</div>
+                            <div class="con_font">@DesModel.First().Destination_Type_Location</div>
+                        </div>
+                    </li>
+                    <li data-sr="enter bottom over 1.5s">
+                        <div class="img"><img src="@Url.Content("~/img/page_icon_02.jpg")" alt="" /></div>
+                        <div class="font">
+                            <div class="title">Service hours</div>
+                            <div class="con_font">@DesModel.First().Destination_Type_ServiceHours</div>
+                        </div>
+                    </li>
+                    <li data-sr="enter bottom over 1.5s">
+                        <div class="img"><img src="@Url.Content("~/img/page_icon_03.jpg")" alt="" /></div>
+                        <div class="font">
+                            <div class="title">Area</div>
+                            <div class="con_font">@DesModel.First().Destination_Type_Area</div>
+                        </div>
+                    </li>
+                    <li data-sr="enter bottom over 1.5s">
+                        <div class="img"><img src="@Url.Content("~/img/page_icon_04.jpg")" alt="" /></div>
+                        <div class="font">
+                            <div class="title">Altitude</div>
+                            <div class="con_font">@DesModel.First().Destination_Type_Altitude</div>
+                        </div>
+                    </li>
 
-        <div class="locaton">
-            <ul>
-                <li data-sr="enter bottom over 1.5s">
-                    <div class="img"><img src="@Url.Content("~/img/page_icon_01.jpg")" alt="" /></div>
-                    <div class="font">
-                        <div class="title">Location</div>
-                        <div class="con_font">@DesModel.First().Destination_Type_Location</div>
-                    </div>
-                </li>
-                <li data-sr="enter bottom over 1.5s">
-                    <div class="img"><img src="@Url.Content("~/img/page_icon_02.jpg")" alt="" /></div>
-                    <div class="font">
-                        <div class="title">Service hours</div>
-                        <div class="con_font">@DesModel.First().Destination_Type_ServiceHours</div>
-                    </div>
-                </li>
-                <li data-sr="enter bottom over 1.5s">
-                    <div class="img"><img src="@Url.Content("~/img/page_icon_03.jpg")" alt="" /></div>
-                    <div class="font">
-                        <div class="title">Area</div>
-                        <div class="con_font">@DesModel.First().Destination_Type_Area</div>
-                    </div>
-                </li>
-                <li data-sr="enter bottom over 1.5s">
-                    <div class="img"><img src="@Url.Content("~/img/page_icon_04.jpg")" alt="" /></div>
-                    <div class="font">
-                        <div class="title">Altitude</div>
-                        <div class="con_font">@DesModel.First().Destination_Type_Altitude</div>
-                    </div>
-                </li>
-            </ul>
+
+
+
+                </ul>
+
+            </div>
         </div>
-
     </div>
 </div>
 <!--page_bookmark end-->
@@ -156,6 +162,7 @@
         <div class="container">
 
             <ul class="list">
+                
                 <li data-sr="enter bottom over 1.5s">
                     <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_11.jpg" alt="" /></a></div>
                     <div class="font_box">
@@ -220,7 +227,7 @@
 </div>
 <!--breadcrumbs end-->
 <!--footer start-->
-<script>$.include("blocks/footer.html");</script>
+@*<script>$.include("blocks/footer.html");</script>*@
 <!--footer end-->
 
 
@@ -233,11 +240,205 @@
         $(".bookmark_item>li>a").click(function () {
 
             $(this).addClass("active").parent().siblings().children().removeClass("active");
-            
-        });
+
+            var BookID = $(this).attr("id");
+
+            switch(BookID)
+            {
+                case "page_01":
+                    $("#bookmark_item_detail").empty();
+                    document.getElementById("bookmark_item_detail").innerHTML = `<div class="locaton"><ul>
+                <li data-sr="enter bottom over 1.5s">
+                    <div class="img"><img src=\"@Url.Content("~/img/page_icon_01.jpg")\" alt="" /></div>
+                    <div class="font">
+                        <div class="title">Location</div>
+                        <div class="con_font">@DesModel.First().Destination_Type_Location</div>
+                    </div>
+                </li>
+                <li data-sr="enter bottom over 1.5s">
+                    <div class="img"><img src="@Url.Content("~/img/page_icon_02.jpg")" alt="" /></div>
+                    <div class="font">
+                        <div class="title">Service hours</div>
+                        <div class="con_font">@DesModel.First().Destination_Type_ServiceHours</div>
+                    </div>
+                </li>
+                <li data-sr="enter bottom over 1.5s">
+                    <div class="img"><img src="@Url.Content("~/img/page_icon_03.jpg")" alt="" /></div>
+                    <div class="font">
+                        <div class="title">Area</div>
+                        <div class="con_font">@DesModel.First().Destination_Type_Area</div>
+                    </div>
+                </li>
+                <li data-sr="enter bottom over 1.5s">
+                    <div class="img"><img src="@Url.Content("~/img/page_icon_04.jpg")" alt="" /></div>
+                    <div class="font">
+                        <div class="title">Altitude</div>
+                        <div class="con_font">@DesModel.First().Destination_Type_Altitude</div>
+                    </div>
+                </li>
+            </ul></div>`
+                    break;
+                case "page_02":
+                    $("#bookmark_item_detail").empty();
+
+                    document.getElementById("bookmark_item_detail").innerHTML = `<div class="featured">
+                    <div class="img"><img src="@Url.Content("~/img/page_icon_05.png")" /></div>
+                    <ul>
+                        @if (@DesModel.First().FPI != null)
+                        {
+                            <li data-sr="enter bottom over 1.5s">@DesModel.First().FPI</li>
+                        }
+                        @if (@DesModel.First().FPII != null)
+                        {
+                            <li data-sr="enter bottom over 1.5s">@DesModel.First().FPII</li>
+                        }
+                        @if (@DesModel.First().FPIII != null)
+                        {
+                            <li data-sr="enter bottom over 1.5s">@DesModel.First().FPIII</li>
+                        }
+                        @if (@DesModel.First().FPIV != null)
+                        {
+                            <li data-sr="enter bottom over 1.5s">@DesModel.First().FPIV</li>
+                        }
+                        @if (@DesModel.First().FPV != null)
+                        {
+                            <li data-sr="enter bottom over 1.5s">@DesModel.First().FPV</li>
+                        }
+                        @if (@DesModel.First().FPVI != null)
+                        {
+                            <li data-sr="enter bottom over 1.5s">@DesModel.First().FPVI</li>
+                        }
+                        @if (@DesModel.First().FPVII != null)
+                        {
+                            <li data-sr="enter bottom over 1.5s">@DesModel.First().FPVII</li>
+                        }
+                        @if (@DesModel.First().FPVIII != null)
+                        {
+                            <li data-sr="enter bottom over 1.5s">@DesModel.First().FPVIII</li>
+                        }
+                        @if (@DesModel.First().FPIX != null)
+                        {
+                            <li data-sr="enter bottom over 1.5s">@DesModel.First().FPIX</li>
+                        }
+                        @if (@DesModel.First().FPX != null)
+                        {
+                            <li data-sr="enter bottom over 1.5s">@DesModel.First().FPX</li>
+                        }
+                     </ul>
+                    </div>`
+                    break;
+                case "page_03":
+                    $("#bookmark_item_detail").empty();
+                    document.getElementById("bookmark_item_detail").innerHTML = `<div class="season">
+                        <ul>
+                            <li data-sr="enter bottom over 1.5s">
+                                <div class="circular-bar">
+                                    <div class="circular-bar-chart" data-percent="@DesModel.First().Temp_Spring">
+                                        <strong>SPRING</strong>
+                                        <label>@DesModel.First().Temp_Spring°C</label>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li data-sr="enter bottom over 1.5s">
+                                <div class="circular-bar">
+                                    <div class="circular-bar-chart" data-percent="@DesModel.First().Temp_Summer">
+                                        <strong>SUMMER</strong>
+                                        <label>@DesModel.First().Temp_Summer°C</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-sr="enter bottom over 1.5s">
+                                <div class="circular-bar">
+                                    <div class="circular-bar-chart" data-percent="@DesModel.First().Temp_Autumn">
+                                        <strong>AUTUMN</strong>
+                                        <label>@DesModel.First().Temp_Autumn°C</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-sr="enter bottom over 1.5s">
+                                <div class="circular-bar">
+                                    <div class="circular-bar-chart" data-percent="@DesModel.First().Temp_Winter">
+                                        <strong>WINTER</strong>
+                                        <label>@DesModel.First().Temp_Winter°C</label>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>`;
+                    $('.circular-bar-chart').easyPieChart({
+                        barColor: "#d0ad7b",
+                        trackColor: "#e7d6bd",
+                        scaleColor: false,
+                        lineWidth: 15,
+                        trackWidth: 15,
+                        lineCap: "round",
+                        size: 140,
+                    });
+                    break;
+                case "page_04":
+                    console.log(BookID);
+                    $("#bookmark_item_detail").empty();
+
+                    document.getElementById("bookmark_item_detail").innerHTML = `<div class="charges" data-sr="enter bottom over 1.5s">
+                        <table class="table" summary="charges list, The first column is Ticket type, the second column is fare (NT $: yuan), and the third column is Description ">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Ticket type</th>
+                                    <th scope="col">Fare (NT$: yuan)</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in FareModel)
+                                {
+                                    <tr>
+                                        <td>
+                                        @if (item.TicketType != null)
+                                        {
+                                            @item.TicketType
+                                        }
+                                        </td>
+                                        <td>$
+                                        @if (item.Fare != null)
+                                        {
+                                            @item.Fare
+                                        }
+                                        </td>
+                                        <td>
+                                        @if (item.Description != null)
+                                        {
+                                            @item.Description
+                                        }
+                                        </td>
+
+                                    </tr>
+                                }
+
+
+                                   
+                            </tbody>
+                        </table>
+                    </div>`
+                    break;
+
+            }
 
 
 
+        })
+
+    })
+
+</script>
+<!--ProgressBar start-->
+<script src="@Url.Content("~/js/jquery.easypiechart.min.js")"></script>
+<script type="text/javascript">
+    // ProgressBar
+    $(function () {
+        
     });
 
 </script>
+<!--ProgressBar end-->

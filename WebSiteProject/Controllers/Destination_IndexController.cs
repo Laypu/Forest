@@ -139,7 +139,7 @@ namespace WebSiteProject.Controllers
             return View(viewmodel);
         }
 
-        public ActionResult Details(int? langid,string ImgTitle= "Aowanda")
+        public ActionResult Details(int? langid,string ImgTitle)
         {
             var site_id = 3;
             if (Session["LangID"] == null)
@@ -226,7 +226,8 @@ namespace WebSiteProject.Controllers
             }).rows;
 
             ViewBag.F_Destination_Type = db.F_Destination_Type.Where(m => m.Destination_Type_Title1 == ImgTitle).ToList();
-
+            
+            ViewBag.Destination_Fare = db.Destination_Fare.Where(F=>F.F_Destination_Type.Destination_Type_Title1 == ImgTitle).ToList();
             return View(viewmodel);
         }
 
