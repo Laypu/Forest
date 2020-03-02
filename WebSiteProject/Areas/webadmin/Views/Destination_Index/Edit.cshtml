@@ -169,12 +169,73 @@
 
     <form class="form-horizontal form-bordered" method="Post" id="editform2" enctype="multipart/form-data">
 
-        @Html.Action("_FarePartial", new { id = vid, Name = vName })
+        
+        <div class="form-group">
+            <div class="display_inline margin_bottom">
+                @{
+                    var DESTypeID = ViewBag.TypeID;
+                    var DESName = ViewBag.TypeName;
+                    var FareModel = ViewBag.Destination_Fare;
+                }
+                <a class="btn green-meadow" id='btn_add' href="@Url.Action("Createtr","Destination_Index",new {TypeID = DESTypeID,TypeName = DESName})">新增 <i class="fa fa-plus"></i></a>
+                <button class="btn red" id="btn_del" type="button">刪除 <i class="glyphicon glyphicon-trash"></i></button>
+            </div>
+
+            <!--table start-->
+            <table class="table table-bordered nomarginbottom" id="faretable" border="0" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th width="60" class="text-center" filed-type="delcheckbox">刪除</th>
+                        <th class="text-center">@Html.Label("票種")</th>
+                        <th class="text-center">@Html.Label("票價")</th>
+                        <th class="text-center">@Html.Label("詳細內容")</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var x = 0;
+                        foreach (var itemF in FareModel)
+                        {
+                            
+                                        <tr class="tritem">
+                                            <td class="text-center">
+                                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                                    <input type="checkbox" class="checkboxes chksel">
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <input type="hidden" name="DF[@x].ChargeID" id="ChargeID[@x]" value="@itemF.ChargeID" />
+                                                <input type="hidden" name="DF[@x].Destination_Type_ID" id="Destination_Type_ID[@x]" value="@itemF.Destination_Type_ID" />
+                                                <input name="DF[@x].TicketType" id="TicketType[@x]" class = "form-control input-small inline-block" value="@itemF.TicketType" />
+                                            </td>
+                                            <td>
+                                                <input name="DF[@x].Fare" id="Fare[@x]" class = "form-control input-small inline-block" value="@itemF.Fare" />
+                                            </td>
+                                            <td>
+                                                <input name="DF[@x].Description" id="Description[@x]" class = "form-control input-small inline-block" value="@itemF.Description" />
+                                            </td>
+                                            
+                                            
+                                        </tr>
+                            x = x + 1;
+                        }
+
+                    }
+
+                </tbody>
+            </table>
+        </div>
+        <script>
+
+        </script>
+
+        @*@Html.Action("_FarePartial", new { id = vid, Name = vName })*@
     </form>
     <div class="text-center search_padding" id="div_buttons">
         <button type="button" class="btn blue" id="btn_submit">確認送出</button>
         <button type="button" class="btn grey-mint" id="btn_return">返回列表</button>
-        <button type="button" class="btn grey-mint " id="preview" onclick="callpreview()">預覽</button>
+        
     </div>
 </div>
 <script>
@@ -195,10 +256,11 @@
             });
 
            
-
-
-
         })
+
+        $("#btn_return").click(function () {
+            history.go(-1);
+        });
 
     })
 

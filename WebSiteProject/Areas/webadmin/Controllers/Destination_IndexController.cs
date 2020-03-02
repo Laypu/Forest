@@ -158,7 +158,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         // GET: webadmin/Destination_Index/Edit/5
         public ActionResult Edit(int? id)
         {
-            ViewBag.Destination_Fare = db.Destination_Fare.ToList();
+            ViewBag.Destination_Fare = db.Destination_Fare.Where(m =>m.Destination_Type_ID == id).ToList();
             
             
             if (id == null)
