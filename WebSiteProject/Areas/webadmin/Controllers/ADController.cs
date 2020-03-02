@@ -31,6 +31,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         [AuthoridUrl("AD/Index", "type,stype")]
         public ActionResult ADEdit(string type,string id,string stype)
         {
+            
             //20191230_Forest客製化
             #region 20191230_Forest客製化
             var SiteList = db.SiteLists.Select(s => new { ID = s.SiteList_ID, Name = s.SiteList_Name_ch + "－" + s.SiteList_Name_en, s.Sort }).OrderBy(s => s.Sort);

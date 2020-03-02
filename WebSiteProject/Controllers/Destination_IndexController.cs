@@ -138,5 +138,252 @@ namespace WebSiteProject.Controllers
 
             return View(viewmodel);
         }
+
+        public ActionResult Details(int? langid,string ImgTitle)
+        {
+            var site_id = 3;
+            if (Session["LangID"] == null)
+            {
+                var DefaultLang = System.Web.Configuration.WebConfigurationManager.AppSettings["DefaultLang"];
+                _ILangManager = serviceinstance.LangManager;
+                var alllang = _ILangManager.GetAll();
+                if (alllang != null)
+                {
+                    if (alllang.Any(v => v.Lang_Name == DefaultLang))
+                    {
+                        langid = alllang.Where(v => v.Lang_Name == DefaultLang).First().ID.Value;
+                    }
+                }
+                Session["LangID"] = langid.ToString();
+                Session.Timeout = 600;
+            }
+            else
+            {
+                if (langid == null)
+                {
+                    int _langid = 1;
+                    if (int.TryParse(Session["LangID"].ToString(), out _langid) == false)
+                    {
+                        langid = 1;
+                    }
+                    else { langid = _langid; }
+                }
+                else
+                {
+                    Session["LangID"] = langid.ToString();
+                }
+            }
+
+            HomeViewModel viewmodel = new HomeViewModel();
+            //讀取logo圖片
+            _IMasterPageManager.SetModel<HomeViewModel>(ref viewmodel, "P", langid.ToString(), "");
+            viewmodel.SEOScript = _IMasterPageManager.GetSEOData("", "", langid.ToString());
+            viewmodel.ADMain = _IMasterPageManager.GetADMain("P", langid.ToString(), site_id);
+            viewmodel.ADMobile = _IMasterPageManager.GetADMain("M", langid.ToString(), site_id);
+            viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
+
+            var sitemenu = _ISiteLayoutManager.PagingMain(new ViewModels.SearchModelBase()
+            {
+                Limit = 100,
+                Key = Device,
+                NowPage = 1,
+                Offset = 0,
+                Sort = "ID",
+                LangId = langid.ToString()
+            });
+            if (sitemenu.total > 0)
+            {
+                var layoutpagelist = ((List<PageLayout>)sitemenu.rows);
+                if (layoutpagelist.Any(v => v.Title == "焦點新聞"))
+                {
+                    viewmodel.PageLayoutModel1 = _IMasterPageManager.GetSiteLayout(sitemenu.rows, "焦點新聞", langid.ToString()).First();
+                }
+                else { viewmodel.PageLayoutModel1 = new HomePageLayoutModel(); }
+                if (layoutpagelist.Any(v => v.Title == "活動專區"))
+                {
+                    viewmodel.PageLayoutModel2 = _IMasterPageManager.GetSiteLayout(sitemenu.rows, "活動專區", langid.ToString()).First();
+                }
+                else { viewmodel.PageLayoutModel2 = new HomePageLayoutModel(); }
+            }
+            else
+            {
+                viewmodel.PageLayoutModel1 = new HomePageLayoutModel();
+                viewmodel.PageLayoutModel2 = new HomePageLayoutModel();
+                ViewBag.sitemenu = new List<PageLayout>();
+                ViewBag.sitemenupart = "";
+            }
+            viewmodel.BannerImage = "";
+            viewmodel.PageLayoutOP1 = _ISiteLayoutManager.GetPageLayoutOP1Edit(langid.ToString());
+            viewmodel.PageLayoutOP2 = _ISiteLayoutManager.GetPageLayoutOP2Edit(langid.ToString());
+            viewmodel.PageLayoutOP3 = _ISiteLayoutManager.GetPageLayoutOP3Edit(langid.ToString());
+            viewmodel.PageLayoutActivityModel = _ISiteLayoutManager.PageLayoutActivity(langid.ToString());
+
+            viewmodel.LinkItems = _IModelLinkManager.PagingItem("Y", new SearchModelBase()
+            {
+                LangId = this.LangID,
+                Limit = -1,
+                Sort = "Sort"
+            }).rows;
+
+            ViewBag.F_Destination_Type = db.F_Destination_Type.Where(m => m.Destination_Type_Title1 == ImgTitle).ToList();
+            
+            ViewBag.Destination_Fare = db.Destination_Fare.Where(F=>F.F_Destination_Type.Destination_Type_Title1 == ImgTitle).ToList();
+            return View(viewmodel);
+        }
+
+
+
+
+        #region Destination_List
+        public ActionResult Destination_List(int? langid, int Des_Id)
+        {
+            var site_id = 5; //這是Destination的輪播ID
+            var mode_id = 9; //這是Destination的ModeID
+            var list_id = 1; //這是Destination的訊息列表ID
+
+            switch (Des_Id)
+            {
+                case 1:
+                    site_id = 5; //這是Destination的輪播ID
+                    list_id = 1; //這是Destination的訊息列表ID
+
+                    break;
+                case 2:
+                    site_id = 6; //這是Destination的輪播ID
+                    list_id = 2; //這是Destination的訊息列表ID
+
+                    break;
+                case 3:
+                    site_id = 7; //這是Destination的輪播ID
+                    list_id = 3; //這是Destination的訊息列表ID
+
+                    break;
+                case 4:
+                    site_id = 8; //這是Destination的輪播ID
+                    list_id = 4; //這是Destination的訊息列表ID
+                    break;
+                case 5:
+                    site_id = 9; //這是Destination的輪播ID
+                    list_id = 5; //這是Destination的訊息列表ID
+
+                    break;
+            }
+
+            if (Session["LangID"] == null)
+            {
+                var DefaultLang = System.Web.Configuration.WebConfigurationManager.AppSettings["DefaultLang"];
+                _ILangManager = serviceinstance.LangManager;
+                var alllang = _ILangManager.GetAll();
+                if (alllang != null)
+                {
+                    if (alllang.Any(v => v.Lang_Name == DefaultLang))
+                    {
+                        langid = alllang.Where(v => v.Lang_Name == DefaultLang).First().ID.Value;
+                    }
+                }
+                Session["LangID"] = langid.ToString();
+                Session.Timeout = 600;
+            }
+            else
+            {
+                if (langid == null)
+                {
+                    int _langid = 1;
+                    if (int.TryParse(Session["LangID"].ToString(), out _langid) == false)
+                    {
+                        langid = 1;
+                    }
+                    else { langid = _langid; }
+                }
+                else
+                {
+                    Session["LangID"] = langid.ToString();
+                }
+            }
+
+            HomeViewModel viewmodel = new HomeViewModel();
+            //讀取logo圖片
+            _IMasterPageManager.SetModel<HomeViewModel>(ref viewmodel, "P", langid.ToString(), "");
+            viewmodel.SEOScript = _IMasterPageManager.GetSEOData("", "", langid.ToString());
+            viewmodel.ADMain = _IMasterPageManager.GetADMain("P", langid.ToString(), site_id);
+            viewmodel.ADMobile = _IMasterPageManager.GetADMain("M", langid.ToString(), site_id);
+            viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
+
+            var sitemenu = _ISiteLayoutManager.PagingMain(new ViewModels.SearchModelBase()
+            {
+                Limit = 100,
+                Key = Device,
+                NowPage = 1,
+                Offset = 0,
+                Sort = "ID",
+                LangId = langid.ToString()
+            });
+            if (sitemenu.total > 0)
+            {
+                var layoutpagelist = ((List<PageLayout>)sitemenu.rows);
+                if (layoutpagelist.Any(v => v.Title == "焦點新聞"))
+                {
+                    viewmodel.PageLayoutModel1 = _IMasterPageManager.GetSiteLayout(sitemenu.rows, "焦點新聞", langid.ToString()).First();
+                }
+                else { viewmodel.PageLayoutModel1 = new HomePageLayoutModel(); }
+                if (layoutpagelist.Any(v => v.Title == "活動專區"))
+                {
+                    viewmodel.PageLayoutModel2 = _IMasterPageManager.GetSiteLayout(sitemenu.rows, "活動專區", langid.ToString()).First();
+                }
+                else { viewmodel.PageLayoutModel2 = new HomePageLayoutModel(); }
+            }
+            else
+            {
+                viewmodel.PageLayoutModel1 = new HomePageLayoutModel();
+                viewmodel.PageLayoutModel2 = new HomePageLayoutModel();
+                ViewBag.sitemenu = new List<PageLayout>();
+                ViewBag.sitemenupart = "";
+            }
+            viewmodel.BannerImage = "";
+            viewmodel.PageLayoutOP1 = _ISiteLayoutManager.GetPageLayoutOP1Edit(langid.ToString());
+            viewmodel.PageLayoutOP2 = _ISiteLayoutManager.GetPageLayoutOP2Edit(langid.ToString());
+            viewmodel.PageLayoutOP3 = _ISiteLayoutManager.GetPageLayoutOP3Edit(langid.ToString());
+            viewmodel.PageLayoutActivityModel = _ISiteLayoutManager.PageLayoutActivity(langid.ToString());
+
+            viewmodel.LinkItems = _IModelLinkManager.PagingItem("Y", new SearchModelBase()
+            {
+                LangId = this.LangID,
+                Limit = -1,
+                Sort = "Sort"
+            }).rows;
+
+            //Destination_Description
+            ViewBag.F_Thingtodo_Type_Description = db.F_Thingtodo_Type.Find(Des_Id).F_Thingtodo_Type_Description;
+
+            //Title
+            ViewBag.F_Thingtodo_Title = db.F_Thingtodo_Type.Where(f => f.F_Thingtodo_Type_ID == Des_Id).FirstOrDefault().F_Thingtodo_Type_Title1 + " " + db.F_Thingtodo_Type.Where(f => f.F_Thingtodo_Type_ID == Des_Id).FirstOrDefault().F_Thingtodo_Type_Title2;
+
+            //Destination_各類別_Description
+            ViewBag.F_Thingtodo__Description = Server.HtmlDecode(db.F_Thingtodo_Type.Find(Des_Id).F_Thingtodo_Type_Description);
+
+            //List
+            ViewBag.Five_Destination_List = db.MessageItems.Join(
+            db.F_Sub_HashTag_Type,
+            f => f.ItemID,
+            f1 => f1.MessageItem_ID,
+            (f, f1) => new WebSiteProject.Models.F_ViewModels.F_ThingsToDo_List_ViewModel
+            {
+                ItemID = f.ItemID,
+                RelateImageFileName = f.RelateImageFileName,
+                Title = f.Title,
+                ModelID = f.ModelID,
+                HashTag_Type_ID = f1.HashTag_Type_ID,
+                Sort = f.Sort,
+                IsVerift = f.IsVerift
+            }
+            ).Where(f => f.ModelID == mode_id && f.HashTag_Type_ID == list_id && f.IsVerift == true).OrderBy(f => f.Sort).ToList();
+
+
+
+
+            return View(viewmodel);
+        }
+        #endregion
+
     }
 }

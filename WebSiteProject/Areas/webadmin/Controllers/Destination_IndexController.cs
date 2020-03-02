@@ -137,8 +137,9 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 return RedirectToAction("Destination");
             }
         }
+
         [HttpGet]
-        public ActionResult _FarePartial(int? id,string Name)
+        public ActionResult _FarePartial(int? id, string Name)
         {
             ViewBag.TypeID = id;
             ViewBag.TypeName = Name;
@@ -148,10 +149,59 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 
             return PartialView(db.Destination_Fare.Where(x => x.Destination_Type_ID == id).ToList());
             //}
-            
+
 
         }
-        
+
+
+
+        // GET: webadmin/Destination_Index/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            ViewBag.Destination_Fare = db.Destination_Fare.Where(m =>m.Destination_Type_ID == id).ToList();
+            
+            
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            F_Destination_Type Destination_Type = db.F_Destination_Type.Find(id);
+            if (Destination_Type == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Destination_Type);
+        }
+
+        // POST: webadmin/Destination_Index/Edit/5
+        // 若要免於過量張貼攻擊，請啟用想要繫結的特定屬性，如需
+        // 詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(F_Destination_Type Destination_Type, Destination_Fare[] DF)
+        {
+            if (ModelState.IsValid)
+            {
+
+                db.Entry(Destination_Type).State = EntityState.Modified;
+
+                if (DF != null)
+                {
+                    for (var i = 0; i < DF.Length; i++)
+                    {
+                        db.Entry(DF[i]).State = EntityState.Modified;
+                    }
+                }
+
+
+                db.SaveChanges();
+                TempData["Msg"] = "作業完成";
+                return RedirectToAction("Destination");
+            }
+            TempData["Msg"] = "作業失敗";
+            return View(Destination_Type);
+        }
+
 
         [HttpGet]
         public ActionResult Createtr(int? TypeID,string TypeName)
@@ -184,54 +234,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             return View(DESH);
         }
 
-        [HttpPost]
-        public ActionResult Five_ThingsToDo_HashTag_Edit(int? HashTag_ID, string HashTag_Name, string HashTag_Link, int IsCreate = 0)
-        {
-            try
-            {
-                if (HashTag_Name.Trim() == "")
-                {
-                    TempData["Msg"] = "名稱不得為空值";
-                    return RedirectToAction("Five_ThingsToDo_HashTag");
-                }
-                else
-                {
-                    if (IsCreate != 1)
-                    {
-                        var DESH = db.F_HashTag_Type.Find(HashTag_ID);
-                        DESH.HashTag_Type_Name = HashTag_Name;
-                        DESH.HashTag_Type_Link = HashTag_Link;
-                        db.Entry(DESH).State = System.Data.Entity.EntityState.Modified;
-                        db.SaveChanges();
-                    }
-                    else
-                    {
-                        F_HashTag_Type DESH = new F_HashTag_Type();
-                        DESH.HashTag_Type_Name = HashTag_Name;
-                        DESH.HashTag_Type_Link = HashTag_Link;
-                        db.F_HashTag_Type.Add(DESH);
-                        db.SaveChanges();
-                    }
-                }
-            }
-            catch
-            {
-                TempData["Msg"] = "失敗";
-                return RedirectToAction("Five_ThingsToDo_HashTag");
-            }
-            TempData["Msg"] = "成功";
-            return RedirectToAction("Five_ThingsToDo_HashTag");
-        }
-
-        public ActionResult Five_ThingsToDo_HashTag_Delete(int id)
-        {
-            var DESH = db.F_HashTag_Type.Find(id);
-            db.Entry(DESH).State = System.Data.Entity.EntityState.Deleted;
-            db.SaveChanges();
-
-            return RedirectToAction("Five_ThingsToDo_HashTag");
-        }
-
+       
 
         // GET: webadmin/Destination_Index
         public ActionResult Index()
@@ -251,6 +254,8 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             {
                 return HttpNotFound();
             }
+
+
             return View(Destination_Index);
         }
 
@@ -316,57 +321,15 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     Destination_Type_Link = "#"
 
                 });
+               
                 db.SaveChanges();
-
+                
             }
 
             return RedirectToAction("Destination");
         }
 
-        // GET: webadmin/Destination_Index/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            F_Destination_Type Destination_Type = db.F_Destination_Type.Find(id);
-            if (Destination_Type == null)
-            {
-                return HttpNotFound();
-            }
-            return View(Destination_Type);
-        }
-
-        // POST: webadmin/Destination_Index/Edit/5
-        // 若要免於過量張貼攻擊，請啟用想要繫結的特定屬性，如需
-        // 詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(F_Destination_Type Destination_Type, Destination_Fare[] DF)
-        {
-            if (ModelState.IsValid)
-            {
-                
-                db.Entry(Destination_Type).State = EntityState.Modified;
-                if (DF != null)
-                {
-                    for (var i = 0; i < DF.Length; i++)
-                    {
-                        db.Entry(DF[i]).State = EntityState.Modified;
-                    }
-                }
-                else {
-                    return RedirectToAction("Createtr");
-                }
-                
-                db.SaveChanges();
-                TempData["Msg"] = "作業完成";
-                return RedirectToAction("Destination");
-            }
-            TempData["Msg"] = "作業完成";
-            return View(Destination_Type);
-        }
+       
 
 
         // POST: webadmin/Destination_Index/Delete/5
@@ -389,6 +352,55 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             base.Dispose(disposing);
         }
 
-        
+
+        [HttpPost]
+        public ActionResult Five_ThingsToDo_HashTag_Edit(int? HashTag_ID, string HashTag_Name, string HashTag_Link, int IsCreate = 0)
+        {
+            try
+            {
+                if (HashTag_Name.Trim() == "")
+                {
+                    TempData["Msg"] = "名稱不得為空值";
+                    return RedirectToAction("Five_ThingsToDo_HashTag");
+                }
+                else
+                {
+                    if (IsCreate != 1)
+                    {
+                        var DESH = db.F_HashTag_Type.Find(HashTag_ID);
+                        DESH.HashTag_Type_Name = HashTag_Name;
+                        DESH.HashTag_Type_Link = HashTag_Link;
+                        db.Entry(DESH).State = System.Data.Entity.EntityState.Modified;
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        F_HashTag_Type DESH = new F_HashTag_Type();
+                        DESH.HashTag_Type_Name = HashTag_Name;
+                        DESH.HashTag_Type_Link = HashTag_Link;
+                        db.F_HashTag_Type.Add(DESH);
+                        db.SaveChanges();
+                    }
+                }
+            }
+            catch
+            {
+                TempData["Msg"] = "失敗";
+                return RedirectToAction("Five_ThingsToDo_HashTag");
+            }
+            TempData["Msg"] = "成功";
+            return RedirectToAction("Five_ThingsToDo_HashTag");
+        }
+
+        public ActionResult Five_ThingsToDo_HashTag_Delete(int id)
+        {
+            var DESH = db.F_HashTag_Type.Find(id);
+            db.Entry(DESH).State = System.Data.Entity.EntityState.Deleted;
+            db.SaveChanges();
+
+            return RedirectToAction("Five_ThingsToDo_HashTag");
+        }
+
+
     }
 }
