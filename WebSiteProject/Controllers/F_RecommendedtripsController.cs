@@ -10,7 +10,7 @@ using System.Web;
 using System.Web.Mvc;
 using ViewModels;
 using WebSiteProject.Code;
-
+using WebSiteProject.Models.F_ViewModels;
 
 namespace WebSiteProject.Controllers
 {
@@ -34,7 +34,7 @@ namespace WebSiteProject.Controllers
             _ILoginManager = serviceinstance.LoginManager;
             _IMenuManager = serviceinstance.MenuManager;
             _IModelLinkManager = serviceinstance.ModelLinkManager;
-            _ADRightDownManager = new ADRightDownManager(new SQLRepository<ADRightDown>(connectionstr));
+            _ADRightDownManager = new ADRightDownManager(new SQLRepository<ADRightDown>(connectionstr)); 
         }
         // GET: F_Recommendedtrips
         public ActionResult Index(int? langid)
@@ -134,5 +134,209 @@ namespace WebSiteProject.Controllers
 
             return View(viewmodel);
         }
+        #region recommended_list
+        public ActionResult recommended_list(int? langid, RecommendSearchViewmodel search)
+        {
+            if (Session["LangID"] == null)
+            {
+                var DefaultLang = System.Web.Configuration.WebConfigurationManager.AppSettings["DefaultLang"];
+                _ILangManager = serviceinstance.LangManager;
+                var alllang = _ILangManager.GetAll();
+                if (alllang != null)
+                {
+                    if (alllang.Any(v => v.Lang_Name == DefaultLang))
+                    {
+                        langid = alllang.Where(v => v.Lang_Name == DefaultLang).First().ID.Value;
+                    }
+                }
+                Session["LangID"] = langid.ToString();
+                Session.Timeout = 600;
+            }
+            else
+            {
+                if (langid == null)
+                {
+                    int _langid = 1;
+                    if (int.TryParse(Session["LangID"].ToString(), out _langid) == false)
+                    {
+                        langid = 1;
+                    }
+                    else { langid = _langid; }
+                }
+                else
+                {
+                    Session["LangID"] = langid.ToString();
+                }
+            }
+
+            HomeViewModel viewmodel = new HomeViewModel();
+            //讀取logo圖片
+            _IMasterPageManager.SetModel<HomeViewModel>(ref viewmodel, "P", langid.ToString(), "");
+            viewmodel.SEOScript = _IMasterPageManager.GetSEOData("", "", langid.ToString());
+            viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
+
+            var Destination_Typ = db.F_Destination_Type;
+            var Day_ID_ = db.RecommendedTrips_Day;
+            var F_HashTag_Type_ = db.F_HashTag_Type;
+            var Destinations_ID = new List<SelectListItem>();
+            foreach (var item in Destination_Typ)
+            {
+                Destinations_ID.Add(new SelectListItem()
+                {
+                    Text = item.Destination_Type_Title1 + " " + item.Destination_Type_Title2,
+                    Value = Convert.ToString(item.Destination_Type_ID),
+                    Selected = false
+                });
+            }
+            var Day_ID = new List<SelectListItem>();
+            foreach (var item in Day_ID_)
+            {
+                Day_ID.Add(new SelectListItem()
+                {
+                    Text = item.RecommendedTrips_Day_Name,
+                    Value = Convert.ToString(item.RecommendedTrips_Day_ID),
+                    Selected = false
+                });
+            }
+            var HashTag_Type = new List<SelectListItem>();
+            foreach (var item in F_HashTag_Type_)
+            {
+                HashTag_Type.Add(new SelectListItem()
+                {
+                    Text = item.HashTag_Type_Name,
+                    Value = Convert.ToString(item.HashTag_Type_ID),
+                    Selected = false
+                });
+            }
+            ViewBag.day_id = search.Day_Id == "" || search.Day_Id ==null? "-1" : search.Day_Id;
+            ViewBag.dstination_typ = search.Dstination_typ == "" || search.Dstination_typ == null ? "-1" : search.Dstination_typ;
+            ViewBag.f_HashTag = search.F_HashTag == "" || search.F_HashTag == null ? "-1" : search.F_HashTag;
+            if (ViewBag.day_id != "-1")
+            {
+                Day_ID.Where(q => q.Value == ViewBag.day_id).First().Selected = true;
+            }
+            if (ViewBag.dstination_typ != "-1" )
+                {
+                    HashTag_Type.Where(q => q.Value == ViewBag.dstination_typ).First().Selected = true;
+                }
+             
+           if (ViewBag.f_HashTag != "-1")
+            {
+                Destinations_ID.Where(q => q.Value == ViewBag.f_HashTag).First().Selected = true;
+            }
+            ViewBag.RecommendedTrips_Day_ID = Day_ID;
+            ViewBag.RecommendedTrips_Destinations_ID = Destinations_ID;
+            ViewBag.F_HashTag_Type = HashTag_Type;
+            return View(viewmodel);
+        }
+        #endregion
+        #region Show_list
+        public ActionResult show_list(RecommendSearchViewmodel recommendSearch)
+        {
+            var mode = new List<RecommendedSearchModel>();
+            mode = db.RecommendedTrips.Select(p => new RecommendedSearchModel { RecommendedTrips_ID = p.RecommendedTrips_ID, RecommendedTrips_Title = p.RecommendedTrips_Title, RecommendedTrips_Day_Name = p.RecommendedTrips_Day.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = p.RecommendedTrips_Day.RecommendedTrips_Day_ID, RecommendedTrips_Destinations_ID = p.RecommendedTrips_Destinations_ID,RecommendedTrips_Index_Content=p.RecommendedTrips_Content,RecommendedTrips_Img=p.RecommendedTrips_Img,RecommendedTrips_Img_Description=p.RecommendedTrips_Img_Description}).ToList();
+            //mode = db.V_RecommendedTripsForWebadmin.GroupBy(o=>o.RecommendedTrips_ID).Select(p=>new RecommendedSearchModel {RecommendedTrips_ID=p.Key, RecommendedTrips_Title=p.FirstOrDefault().RecommendedTrips_Title, RecommendedTrips_Day_Name=p.FirstOrDefault().RecommendedTrips_Day_Name,HashTag_Type_ID=p.FirstOrDefault().HashTag_Type_ID,RecommendedTrips_Day_ID=p.FirstOrDefault().RecommendedTrips_Day_ID,RecommendedTrips_Destinations_ID=p.FirstOrDefault().RecommendedTrips_Destinations_ID}).ToList();
+            if (recommendSearch.Day_Id != "-1")
+            {
+                mode = mode.Where(p => p.RecommendedTrips_Day_ID == Convert.ToInt32(recommendSearch.Day_Id)).ToList();
+            }
+            if (recommendSearch.Dstination_typ != "-1")
+            {
+                mode = mode.Where(p => p.RecommendedTrips_Destinations_ID == Convert.ToInt32(recommendSearch.Dstination_typ)).ToList();
+            }
+            if (recommendSearch.F_HashTag != "-1")
+            {
+                mode = (from t1 in mode
+                        join t2 in db.RecommendedTrips_HashTag_Type on t1.RecommendedTrips_ID equals t2.RecommendedTrips_ID
+                        where t2.HashTag_Type_ID == Convert.ToInt32(recommendSearch.F_HashTag)
+                        select new RecommendedSearchModel { RecommendedTrips_ID = t1.RecommendedTrips_ID, RecommendedTrips_Title = t1.RecommendedTrips_Title, RecommendedTrips_Day_Name = t1.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = t1.RecommendedTrips_Day_ID, HashTag_Type_ID = t2.HashTag_Type_ID, RecommendedTrips_Destinations_ID = t1.RecommendedTrips_Destinations_ID,RecommendedTrips_Index_Content=t1.RecommendedTrips_Index_Content, RecommendedTrips_Img = t1.RecommendedTrips_Img , RecommendedTrips_Img_Description = t1.RecommendedTrips_Img_Description }
+                        ).ToList();
+            }
+            ViewBag.HashTage = db.RecommendedTrips_HashTag_Type.Select(p => new F_Recommendedtrips_List_HashTag_ViewMode  {RecommendedTrips_ID= p.RecommendedTrips_ID,HashTag_Type_Name=p.F_HashTag_Type.HashTag_Type_Name,HashTag_Type_ID=p.HashTag_Type_ID }).ToList();
+            ViewBag.count = mode.Count();
+            return PartialView(mode);
+        }
+        #endregion
+        #region recommended_Detail
+        public ActionResult recommended_Detail(int? langid,int RecommendedTrips_ID=1,int nowpage = 0,int jumpPage=0)
+        {
+            #region page action計算
+            if (nowpage == 0 && jumpPage != 0)
+            {
+                nowpage = jumpPage;
+            }
+            else if (nowpage == 0 && jumpPage == 0)
+            {
+                nowpage = 1;
+            }
+            #endregion
+            var site_id = 11; //這是ThingsToDo的輪播ID
+            if (Session["LangID"] == null)
+            {
+                var DefaultLang = System.Web.Configuration.WebConfigurationManager.AppSettings["DefaultLang"];
+                _ILangManager = serviceinstance.LangManager;
+                var alllang = _ILangManager.GetAll();
+                if (alllang != null)
+                {
+                    if (alllang.Any(v => v.Lang_Name == DefaultLang))
+                    {
+                        langid = alllang.Where(v => v.Lang_Name == DefaultLang).First().ID.Value;
+                    }
+                }
+                Session["LangID"] = langid.ToString();
+                Session.Timeout = 600;
+            }
+            else
+            {
+                if (langid == null)
+                {
+                    int _langid = 1;
+                    if (int.TryParse(Session["LangID"].ToString(), out _langid) == false)
+                    {
+                        langid = 1;
+                    }
+                    else { langid = _langid; }
+                }
+                else
+                {
+                    Session["LangID"] = langid.ToString();
+                }
+            }
+
+            HomeViewModel viewmodel = new HomeViewModel();
+            //讀取logo圖片
+            _IMasterPageManager.SetModel<HomeViewModel>(ref viewmodel, "P", langid.ToString(), "");
+            viewmodel.SEOScript = _IMasterPageManager.GetSEOData("", "", langid.ToString());
+            viewmodel.ADMain = _IMasterPageManager.GetADMain("P", langid.ToString(), site_id);
+            viewmodel.ADMobile = _IMasterPageManager.GetADMain("M", langid.ToString(), site_id);
+            viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
+            var model = db.RecommendedTrips;
+            ViewBag.ID = model.Find(RecommendedTrips_ID).RecommendedTrips_ID;
+            ViewBag.Title = model.Find(RecommendedTrips_ID).RecommendedTrips_Title;
+            ViewBag.day = model.Find(RecommendedTrips_ID).RecommendedTrips_Day.RecommendedTrips_Day_Name;
+            ViewBag.content = model.Find(RecommendedTrips_ID).RecommendedTrips_Content;
+            ViewBag.location = model.Find(RecommendedTrips_ID).RecommendedTrips_Location;
+            ViewBag.HtmlContent= model.Find(RecommendedTrips_ID).RecommendedTrips_HtmContent;
+            ViewBag.NowPag = nowpage;
+            return View(viewmodel);
+        }
+        #endregion
+        #region RecommendedTrip_Travel_list
+        public ActionResult RecommendedTrip_Travel_list(int id,int page=1)
+        {
+            double count = (double)db.RecommendedTrip_Travel.Where(p => p.RecommendedTrip_ID == id).Count();
+            ViewBag.count = count;
+            ViewBag.pageCount = Convert.ToInt16(Math.Ceiling(count / 3));
+            var model = db.RecommendedTrip_Travel.Where(p => p.RecommendedTrip_ID == id).OrderBy(p => p.RecommendedTrip_Travel_ID).Skip((page - 1) * 3).Take(3).ToList();
+            var modelindex = model.GroupBy(o => o.RecommendedTrip_Travel_ID).Select((o) => new { o.Key });
+            if (modelindex.FirstOrDefault()!=null)
+            {
+                ViewBag.star = modelindex.FirstOrDefault().Key;
+                ViewBag.end = modelindex.LastOrDefault().Key;
+            }
+            ViewBag.NowPag = page;
+            return PartialView(model);
+        }
+        #endregion
     }
 }

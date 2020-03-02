@@ -17,7 +17,7 @@
                 <li>Destinations<i class="fa fa-circle"></i></li>
             }
             else if (ViewBag.MenuType == 24)
-            { 
+            {
                 <li>Things to do<i class="fa fa-circle"></i></li>
             }
         }
@@ -45,6 +45,13 @@
     else if (ViewBag.MenuType == 179 || (int)Session["F_MenuType"] == 179)
     {
         <div class="title_01">Destinations</div>
+        <div id="Partial_Index_MenuLink">
+            <!--.......-->
+        </div>
+    }
+    else if (ViewBag.MenuType == 176 || (int)Session["F_MenuType"] == 176)
+    {
+        <div class="title_01">Recommended trips</div>
         <div id="Partial_Index_MenuLink">
             <!--.......-->
         </div>

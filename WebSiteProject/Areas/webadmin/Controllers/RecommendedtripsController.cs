@@ -8,6 +8,7 @@ using Utilities;
 using ViewModels;
 using WebSiteProject.Code;
 using WebSiteProject.Models;
+using WebSiteProject.Models.F_ViewModels;
 
 namespace WebSiteProject.Areas.webadmin.Controllers
 {
@@ -166,6 +167,13 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 RE.RecommendedTrips_Location = ReD.RecommendedTrips_Location;
                 RE.RecommendedTrips_HtmContent = ReD.RecommendedTrips_HtmContent;
                 RE.RecommendedTrips_Img_Description = ReD.RecommendedTrips_Img_Description;
+                RE.RecommendedTrips_UploadFilePath = ReD.RecommendedTrips_UploadFilePath;
+                RE.RecommendedTrips_UploadFileDesc = ReD.RecommendedTrips_UploadFileDesc;
+                RE.RecommendedTrips_UploadFileName = ReD.RecommendedTrips_UploadFileName;
+                RE.RecommendedTrips_StarDay = ReD.RecommendedTrips_StarDay;
+                RE.RecommendedTrips_EndDay = ReD.RecommendedTrips_EndDay;
+                RE.Sort = ReD.Sort;
+                RE.InFront = ReD.InFront;
             }
             else
             {
@@ -176,17 +184,172 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 RE.RecommendedTrips_Content = "";
                 RE.RecommendedTrips_Location = "";
                 RE.RecommendedTrips_HtmContent = "";
+                RE.RecommendedTrips_UploadFilePath = "";
+                RE.RecommendedTrips_UploadFileDesc = "";
+                RE.RecommendedTrips_UploadFileName = "";
             }
             //旅遊資訊關聯
+            var seodata = db.RecommendedTrips_HashTag.Where(p => p.RecommendedTrips_Id.ToString() == itemid);
             ViewBag.Sub_HashTag = db.RecommendedTrips_HashTag_Type.Where(s => s.RecommendedTrips_ID.ToString() == itemid).ToList();
+            ViewBag.RecommendedTrips_HashTahg = seodata.Count() == 0 ? new string[10] : new string[] {
+                        seodata.First().RecommendedTrips_keyword0,seodata.First().RecommendedTrips_keyword1,seodata.First().RecommendedTrips_keyword2,seodata.First().RecommendedTrips_keyword3,seodata.First().RecommendedTrips_keyword4
+                    ,seodata.First().RecommendedTrips_keyword5,seodata.First().RecommendedTrips_keyword6,seodata.First().RecommendedTrips_keyword7,seodata.First().RecommendedTrips_keyword8,seodata.First().RecommendedTrips_keyword9};
             return View(RE);
         }
+        #region RecommendedTrip_TravelItem
+        public ActionResult RecommendedTrip_Travel_Item(string RecommendedTripID="")
+        {
+            var RecommendedTrip = db.RecommendedTrips;
+            var RecommendedTrip_ID = new List<SelectListItem>();
+            foreach (var item in RecommendedTrip)
+            {
+                RecommendedTrip_ID.Add(new SelectListItem()
+                {
+                    Text = item.RecommendedTrips_Title,
+                    Value = Convert.ToString(item.RecommendedTrips_ID),
+                    Selected = false
+                });
+            }
+            if (RecommendedTripID != "")
+            {
+                RecommendedTrip_ID.Where(q => q.Value == RecommendedTripID).First().Selected = true;
+            }
+            ViewBag.RecommendedTrips_ID = RecommendedTrip_ID;
+            var model = new List<RecommendedTrip_Travel_ViewModel>();
+            model = db.RecommendedTrip_Travel.Join(RecommendedTrip,p=>p.RecommendedTrip_ID,o=>o.RecommendedTrips_ID, (p, o) => new RecommendedTrip_Travel_ViewModel {RecommendedTrip_Travel_ID=p.RecommendedTrip_Travel_ID,RecommendedTrips_ID= p.RecommendedTrip_ID,RecommendedTrips_Cate_Name=o.RecommendedTrips_Title,RecommendedTrip_Travel_Title=p.RecommendedTrip_Travel_Title}).ToList();
+            if(RecommendedTripID!="")
+            {
+                model = model.Where(P => P.RecommendedTrips_ID == Convert.ToInt32(RecommendedTripID)).ToList();
+            }
+            return View(model);
+        }
+        #endregion
+        #region RecommendedTrip_Trave_Edit
+        public ActionResult RecommendedTrip_Trave_Edit(string id="-1")
+        {
+            var RecommendedTrip = db.RecommendedTrips;
+            var RecommendedTrip_ID = new List<SelectListItem>();
+            foreach (var item in RecommendedTrip)
+            {
+                RecommendedTrip_ID.Add(new SelectListItem()
+                {
+                    Text = item.RecommendedTrips_Title,
+                    Value = Convert.ToString(item.RecommendedTrips_ID),
+                    Selected = false
+                });
+            }
+            var model = db.RecommendedTrip_Travel.Where(p => p.RecommendedTrip_Travel_ID.ToString() == id);
+            if (model.FirstOrDefault() != null)
+            {
+                if (model.FirstOrDefault().RecommendedTrip_ID != null)
+                {
+                    RecommendedTrip_ID.Where(q => q.Value == Convert.ToString(model.FirstOrDefault().RecommendedTrip_ID)).First().Selected = true;
+                }
+            }
+            ViewBag.RecommendedTrips_ID = RecommendedTrip_ID;
+            var RE = new RecommendedTrip_Travel();
+            if (model.Count() > 0)
+            {
+                var ReD = model.First();
+                RE.RecommendedTrip_Travel_ID = ReD.RecommendedTrip_Travel_ID;
+                RE.RecommendedTrip_ID = ReD.RecommendedTrip_ID;
+                RE.RecommendedTrip_Travel_Img = ReD.RecommendedTrip_Travel_Img;
+                RE.RecommendedTrip_Travel_Title = ReD.RecommendedTrip_Travel_Title;
+                RE.RecommendedTrip_Travel_Content = ReD.RecommendedTrip_Travel_Content;
+                RE.RecommendedTrip_Travel_Img_Description = ReD.RecommendedTrip_Travel_Img_Description;
+                RE.RecommendedTrip_Travel_Link = ReD.RecommendedTrip_Travel_Link;
+            }
+            else
+            {
+                RE.RecommendedTrip_Travel_ID = -1;
+                RE.RecommendedTrip_ID = null;
+                RE.RecommendedTrip_Travel_Title = "";
+                RE.RecommendedTrip_Travel_Content = "";
+                RE.RecommendedTrip_Travel_Img_Description = "";
+                RE.RecommendedTrip_Travel_Img = "";
+                RE.RecommendedTrip_Travel_Link = "";
+            }
+            return View(RE);
+        }
+        #endregion
+        #region SaveItem_Trave
+        [HttpPost]
+        public ActionResult SaveItem_Trave(RecommendedTrip_Travel recommendedTrip_Travel, HttpPostedFileBase fileImag)
+        {
+
+            if (fileImag != null)
+            {
+                var root = Request.PhysicalApplicationPath;
+                var uploadfilepath = ConfigurationManager.AppSettings["UploadFile"];
+                if (uploadfilepath.IsNullorEmpty())
+                {
+                    uploadfilepath = Request.PhysicalApplicationPath + "\\UploadFile";
+                }
+                var newfilename = DateTime.Now.Ticks + "_" + fileImag.FileName;
+                var path = root + "\\UploadImage\\RecommendedTrips\\" + newfilename;
+                if (System.IO.Directory.Exists(root + "\\UploadImage\\RecommendedTrips\\") == false)
+                {
+                    System.IO.Directory.CreateDirectory(root + "\\UploadImage\\RecommendedTrips\\");
+                }
+                fileImag.SaveAs(path);
+                recommendedTrip_Travel.RecommendedTrip_Travel_Img = newfilename;
+            }
+            if (recommendedTrip_Travel.RecommendedTrip_Travel_ID.ToString() == "-1")
+            {
+                RecommendedTrip_Travel recom = new RecommendedTrip_Travel()
+                {
+                    RecommendedTrip_ID = recommendedTrip_Travel.RecommendedTrip_ID,
+                    RecommendedTrip_Travel_Title = recommendedTrip_Travel.RecommendedTrip_Travel_Title,
+                    RecommendedTrip_Travel_Content = recommendedTrip_Travel.RecommendedTrip_Travel_Content,
+                    RecommendedTrip_Travel_Img = recommendedTrip_Travel.RecommendedTrip_Travel_Img,
+                    RecommendedTrip_Travel_Img_Description = recommendedTrip_Travel.RecommendedTrip_Travel_Img_Description,
+                    RecommendedTrip_Travel_Link = recommendedTrip_Travel.RecommendedTrip_Travel_Link,
+                };
+                db.RecommendedTrip_Travel.Add(recom);
+                var r = db.SaveChanges();
+                if (r > 0)
+                {
+                    return Json("成功");
+                }
+                return Json("失敗");
+            }
+            else
+            {
+                if (fileImag != null)
+                {
+
+                    var old_SizeChart = db.RecommendedTrips.Find(recommendedTrip_Travel.RecommendedTrip_Travel_ID).RecommendedTrips_Img;
+                    if (old_SizeChart != null)
+                    {
+                        string fullpath = Request.MapPath("~/UploadImage/RecommendedTrips/" + old_SizeChart);
+                        if (System.IO.File.Exists(fullpath))
+                        {
+                            System.IO.File.Delete(fullpath);
+                        }
+                    }
+                }
+                db.Entry(recommendedTrip_Travel).State = System.Data.Entity.EntityState.Modified;
+                var r = db.SaveChanges();
+                if (r > 0) //result為itemID >0為新增成功
+                {
+                    return Json("成功");
+                };
+                return Json("失敗");
+            }
+
+        }
+        #endregion
         #region SaveItem
         [HttpPost]
-        public ActionResult SaveItem(RecommendedTrip recommendedTrip,HttpPostedFileBase fileImag, List<int> HashTag_Type)
+        public ActionResult SaveItem(RecommendedTrip recommendedTrip,HttpPostedFileBase fileImag, HttpPostedFileBase uploadfile, List<int> HashTag_Type,List<string> Keywords)
         {
-            
-                if (fileImag != null)
+            var iswriteseo = false;
+            if ((Keywords != null && Keywords.Any(v => v.IsNullorEmpty() == false)))
+            {
+                iswriteseo = true;
+            }
+
+            if (fileImag != null)
                 {
                     var root = Request.PhysicalApplicationPath;
                     var uploadfilepath = ConfigurationManager.AppSettings["UploadFile"];
@@ -202,7 +365,28 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     }
                     fileImag.SaveAs(path);
                     recommendedTrip.RecommendedTrips_Img = newfilename;
-                }
+            }
+            if (uploadfile != null)
+                {
+                var root = Request.PhysicalApplicationPath;
+                 var uploadfilepath1 = ConfigurationManager.AppSettings["UploadFile"];
+                    if (uploadfilepath1.IsNullorEmpty())
+                    {
+                        uploadfilepath1 = Request.PhysicalApplicationPath + "\\UploadFile";
+                    }
+                    var newpath = root + "\\UploadFile\\RecommendedTrips\\";
+                    if (System.IO.Directory.Exists(newpath) == false)
+                    {
+                        System.IO.Directory.CreateDirectory(newpath);
+                    }
+                    var guid = Guid.NewGuid();
+                    var filename = DateTime.Now.Ticks + "." + uploadfile.FileName.Split('.').Last();
+                    var path1 = newpath + filename;
+                    recommendedTrip.RecommendedTrips_UploadFileName = filename;
+                    recommendedTrip.RecommendedTrips_UploadFilePath = "\\RecommendedTrips\\" + filename;
+                uploadfile.SaveAs(path1);
+            }
+           
                 recommendedTrip.RecommendedTrips_HtmContent = HttpUtility.UrlDecode(recommendedTrip.RecommendedTrips_HtmContent);
                 recommendedTrip.RecommendedTrips_Title = HttpUtility.UrlDecode(recommendedTrip.RecommendedTrips_Title);
                 recommendedTrip.RecommendedTrips_Content= HttpUtility.UrlDecode(recommendedTrip.RecommendedTrips_Content);
@@ -217,7 +401,25 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     RecommendedTrips_Content = recommendedTrip.RecommendedTrips_Content,
                     RecommendedTrips_Location = recommendedTrip.RecommendedTrips_Location,
                     RecommendedTrips_HtmContent = recommendedTrip.RecommendedTrips_HtmContent,
+                    RecommendedTrips_StarDay= recommendedTrip.RecommendedTrips_StarDay,
+                    RecommendedTrips_EndDay = recommendedTrip.RecommendedTrips_EndDay,
+                    RecommendedTrips_UploadFileDesc= recommendedTrip.RecommendedTrips_UploadFileDesc,
+                    RecommendedTrips_UploadFileName=recommendedTrip.RecommendedTrips_UploadFileName,
+                    RecommendedTrips_UploadFilePath=recommendedTrip.RecommendedTrips_UploadFilePath,
+                    RecommendedTrips_LinkUrl=recommendedTrip.RecommendedTrips_LinkUrl,
+                    RecommendedTrips_LinkUrlDesc=recommendedTrip.RecommendedTrips_LinkUrlDesc,
+                    Sort=1,
+                    InFront=1,
                 };
+                var olddata = db.RecommendedTrips;
+                foreach (var odata in olddata)
+                {
+                    var odd = db.RecommendedTrips.Find(odata.RecommendedTrips_ID);
+                    odata.Sort = odd.Sort + 1;
+                    db.Entry(odata).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                    //_sqlitemrepository.Update("Sort=@1", "ItemID=@2", new object[] { odata.Sort + 1, odata.ItemID });
+                }
                 db.RecommendedTrips.Add(recom);
                 var r= db.SaveChanges();
                 if(r>0)
@@ -232,25 +434,56 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         db.RecommendedTrips_HashTag_Type.Add(HashTag);
                         db.SaveChanges();
                     };
+                    if(iswriteseo)
+                    {
+
+                    db.RecommendedTrips_HashTag.Add(new RecommendedTrips_HashTag()
+                    {
+                        RecommendedTrips_Id = recom.RecommendedTrips_ID,
+                        RecommendedTrips_keyword0 = Keywords[0],
+                        RecommendedTrips_keyword1 = Keywords[1],
+                        RecommendedTrips_keyword2 = Keywords[2],
+                        RecommendedTrips_keyword3 = Keywords[3],
+                        RecommendedTrips_keyword4 = Keywords[4],
+                        RecommendedTrips_keyword5 = Keywords[5],
+                        RecommendedTrips_keyword6 = Keywords[6],
+                        RecommendedTrips_keyword7 = Keywords[7],
+                        RecommendedTrips_keyword8 = Keywords[8],
+                        RecommendedTrips_keyword9 = Keywords[9],
+                    });
+                    db.SaveChanges();
+                    }
                     return Json("成功");
                 }
                 return Json("失敗");
             }
             else
             {
-                if (fileImag != null)
+                if (uploadfile != null)
                 {
-                    var old_SizeChart = recommendedTrip.RecommendedTrips_Img;
+                    var old_SizeChart = db.RecommendedTrips.Find(recommendedTrip.RecommendedTrips_ID).RecommendedTrips_UploadFileName;
                     if (old_SizeChart != null)
                     {
-                        string fullpath = Request.MapPath("~/UploadImage/RecommendedTrips/" + recommendedTrip.RecommendedTrips_Img);
+                        string fullpath = Request.MapPath("~/UploadFile/RecommendedTrips/" + old_SizeChart);
                         if (System.IO.File.Exists(fullpath))
                         {
                             System.IO.File.Delete(fullpath);
                         }
                     }
                 }
-                db.Entry(recommendedTrip).State = System.Data.Entity.EntityState.Modified;
+                if (fileImag != null)
+                {
+                    var old_SizeChart = db.RecommendedTrips.Find(recommendedTrip.RecommendedTrips_ID).RecommendedTrips_Img;
+                    if (old_SizeChart != null)
+                    {
+                        string fullpath = Request.MapPath("~/UploadImage/RecommendedTrips/" + old_SizeChart);
+                        if (System.IO.File.Exists(fullpath))
+                        {
+                            System.IO.File.Delete(fullpath);
+                        }
+                    }
+                }
+                    db.Entry(recommendedTrip).State = System.Data.Entity.EntityState.Modified;
                 var r = db.SaveChanges();
                 if (r > 0) //result為itemID >0為新增成功
                 {
@@ -273,7 +506,47 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         db.RecommendedTrips_HashTag_Type.Add(Sub_HashTag);
                         db.SaveChanges();
                     };
-                   }
+                        if (iswriteseo)
+                        {
+                            var HashMode = db.RecommendedTrips_HashTag.Where(p => p.RecommendedTrips_Id == recommendedTrip.RecommendedTrips_ID);
+                            var Hash = db.RecommendedTrips_HashTag.Find(HashMode.FirstOrDefault().RecommendedTrips_HashTag_Id);
+                            var HashTagcout = HashMode.Count();
+                            if(HashTagcout==0)
+                            {
+                                db.RecommendedTrips_HashTag.Add(new RecommendedTrips_HashTag()
+                                {
+                                    RecommendedTrips_Id = recommendedTrip.RecommendedTrips_ID,
+                                    RecommendedTrips_keyword0 = Keywords[0],
+                                    RecommendedTrips_keyword1 = Keywords[1],
+                                    RecommendedTrips_keyword2 = Keywords[2],
+                                    RecommendedTrips_keyword3 = Keywords[3],
+                                    RecommendedTrips_keyword4 = Keywords[4],
+                                    RecommendedTrips_keyword5 = Keywords[5],
+                                    RecommendedTrips_keyword6 = Keywords[6],
+                                    RecommendedTrips_keyword7 = Keywords[7],
+                                    RecommendedTrips_keyword8 = Keywords[8],
+                                    RecommendedTrips_keyword9 = Keywords[9],
+                                });
+                                db.SaveChanges();
+                            }
+                            else
+                            {
+                                Hash.RecommendedTrips_keyword0 = Keywords[0];
+                                Hash.RecommendedTrips_keyword1 = Keywords[1];
+                                Hash.RecommendedTrips_keyword2 = Keywords[2];
+                                Hash.RecommendedTrips_keyword3 = Keywords[3];
+                                Hash.RecommendedTrips_keyword4 = Keywords[4];
+                                Hash.RecommendedTrips_keyword5 = Keywords[5];
+                                Hash.RecommendedTrips_keyword6 = Keywords[6];
+                                Hash.RecommendedTrips_keyword7 = Keywords[7];
+                                Hash.RecommendedTrips_keyword8 = Keywords[8];
+                                Hash.RecommendedTrips_keyword9 = Keywords[9];
+                          
+                                db.Entry(Hash).State = System.Data.Entity.EntityState.Modified;
+                                db.SaveChanges();
+                            }    
+                        }
+                    }
                     return Json("成功");
                 };
                 return Json("失敗");

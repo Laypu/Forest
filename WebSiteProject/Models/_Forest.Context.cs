@@ -105,8 +105,10 @@ namespace WebSiteProject.Models
         public virtual DbSet<RecommendedTrips_HashTag_Type> RecommendedTrips_HashTag_Type { get; set; }
         public virtual DbSet<RecommendedTrips_Index> RecommendedTrips_Index { get; set; }
         public virtual DbSet<RecommendedTrips_Day> RecommendedTrips_Day { get; set; }
-        public virtual DbSet<RecommendedTrip> RecommendedTrips { get; set; }
         public virtual DbSet<V_RecommendedTrip> V_RecommendedTrip { get; set; }
         public virtual DbSet<V_RecommendedTripsForWebadmin> V_RecommendedTripsForWebadmin { get; set; }
+        public virtual DbSet<RecommendedTrip> RecommendedTrips { get; set; }
+        public virtual DbSet<RecommendedTrip_Travel> RecommendedTrip_Travel { get; set; }
+        public virtual DbSet<RecommendedTrips_HashTag> RecommendedTrips_HashTag { get; set; }
     }
 }

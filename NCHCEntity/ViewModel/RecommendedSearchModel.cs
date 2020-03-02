@@ -14,5 +14,8 @@ namespace ViewModels
         public int? HashTag_Type_ID { get; set; }
         public string RecommendedTrips_Day_Name { get; set; }
         public string RecommendedTrips_Title { get; set; }
+        public string RecommendedTrips_Index_Content { get; set; }
+        public string RecommendedTrips_Img { get; set; }
+        public string RecommendedTrips_Img_Description { get; set; }
     }
 }

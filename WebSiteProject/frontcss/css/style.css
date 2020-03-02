@@ -1670,7 +1670,7 @@ footer .copyright{
 	line-height:130%;
 }
 .trip_list .font ul li:before{
-	content:url(../img/page_icon_05_s.png);
+	content:url(../../img/page_icon_05_s.png);
 	padding-right:5px;	
 	margin-left: -22px;
 }

@@ -15,9 +15,9 @@ margin:0;}
 a{
 	color:#333;
 }
-a:hover ,a:focus{
-	color: #7e2a2c/*#4d5327*/;
-}
+    a:hover, a:focus {
+        <ul> <li>Aboriginal Musical Instrument</li> <li>Millennium Sacred Tree</li> <li>Taiwan endemic bird</li> </ul> color: #7e2a2c /*#4d5327*/;
+    }
 a, a:hover ,a:focus{
 	text-decoration:none;
 }

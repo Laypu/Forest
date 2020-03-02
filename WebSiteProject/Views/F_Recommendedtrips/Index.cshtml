@@ -158,7 +158,7 @@
             <div class="container">
                 <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                     <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
-                    <a href="index.html" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i><a href="things.html">RecommendedTrips</a>
+                    <a href="@Url.Action("Index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i><a href="@Url.Action("Index")" title="Recommended trips">Recommended trips</a>
                 </div>
                 <div class="col-md-5 col-sm-6 col-xs-12">
                     <!--<script>$.include("blocks/page_top.html");</script>-->
@@ -184,10 +184,10 @@
         </div>
         <!--trip_search_btn start-->
         <ul class="trip_search_btn">
-            <a href="recommended_list.html" title="All Itineraries"><li>All Itineraries</li></a>
-            <a href="recommended_list.html" title="1 Day"><li>1 Day</li></a>
-            <a href="recommended_list.html" title="2 Days"><li>2 Days</li></a>
-            <a href="recommended_list.html" title="Special"><li>Special</li></a>
+            <a data-ID="-1" title="All Itineraries"><li>All Itineraries</li></a>
+            <a data-ID="1" title="1 Day"><li>1 Day</li></a>
+            <a data-ID="2" title="2 Days"><li>2 Days</li></a>
+            <a  data-ID="3" title="Special"><li>Special</li></a>
         </ul>
         <!--trip_search_btn end-->
         <!--page_img_list start-->
@@ -217,7 +217,7 @@
 <div class="breadcrumbs">
     <div class="container">
         <div class="title">You are here</div>
-        <div class="font"><a href="index.html" title="Home">Home</a> / Things to do</div>
+        <div class="font"><a href="@Url.Action("Index","Home")" title="Home">Home</a> / <a href="@Url.Action("Index")" title="Recommended trips">Recommended trips</a></div>
     </div>
 </div>
 <!--breadcrumbs end-->
@@ -234,5 +234,9 @@
         $(".owl-next").attr("title", "@(Common.GetLangText("Next"))").attr("tabindex", "0");
         $(".tp-leftarrow").attr("title", "@(Common.GetLangText("Previous"))");
         $(".tp-rightarrow").attr("title", "@(Common.GetLangText("Next"))");
+        $(".trip_search_btn > a").click(function () {
+            var id = $(this).attr("data-ID");
+            location.href = `@Url.Action("recommended_list")/?Day_Id=${id}`
+        })
     }
 </script>

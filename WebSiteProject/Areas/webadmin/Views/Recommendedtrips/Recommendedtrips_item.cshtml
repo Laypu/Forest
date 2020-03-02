@@ -3,7 +3,6 @@
     ViewBag.Title = "Recommendedtrips";
     Layout = "~/Areas/webadmin/Views/Shared/_Layout.cshtml";
 }
-<link href="https://cdn.datatables.net/autofill/2.3.4/css/autoFill.dataTables.min.css" rel="stylesheet" />
 <div class="title_01">Recommended trips</div>
 <div id="Partial_Index_MenuLink">
     <!--.......-->
@@ -37,7 +36,7 @@
 <a class="blue search_icon" id="btn_search">搜尋<i class="fa fa-search"></i></a>
 <div class="table-scrollable">
     <table class="table table-bordered table-hover" border="0" cellspacing="0" cellpadding="0"
-           id="eventtable"
+           id="table"
            data-url="#"
            data-sort-name='Sort'
            data-page-size='10'
@@ -47,7 +46,7 @@
             <tr>
                 <th class="text-center">編號</th>
                 <th class="text-center">標題</th>
-                <th class="text-center">天數</th>
+                <th class="text-center">類別</th>
                 <th class="text-center">編輯</th>
             </tr>
         </thead>
@@ -67,46 +66,49 @@
 
 @section scripts {
     <script src="@Url.Content("~/Scripts/datatable.js")"></script>
+    <script src="~/Scripts/jquery.dataTables.js"></script>
+    <link href="~/css/jquery.dataTables.css" rel="stylesheet" />
     <script>
         $(function () {
-            //$("#eventtable").DataTable({
-            //    searching: true, //關閉filter功能
-            //    columnDefs: [{
-            //        orderable: false,
-            //    }],
-            //    columnDefs: [
-            //    ],
-            //    "aaSorting": [],
-            //    "lengthMenu": [[10, 20, 30, 50, -1], [10, 20, 30, 50, "全部"]],
-            //    "oLanguage": {
-            //        "sZeroRecords": "查無此商品",
-            //        "sInfoEmpty": "查無此商品",
-            //        "sEmptyTable": "查無此商品",
-            //        "sLengthMenu": "每頁顯示 _MENU_ 筆資料",
-            //        "sSearch": "查詢 : ",
-            //        "oPaginate": {
-            //            "sFirst": "First page",
-            //            "sLast": "Last page",
-            //            "sNext": "下一頁",
-            //            "sPrevious": "上一頁"
-            //        },
-            //        "sInfo": "總共 _TOTAL_ 筆，顯示第 [ _START_ ] 筆到第 [ _END_ ] 筆資料",
-            //        "sInfoFiltered": "篩選之後得到 _TOTAL_ 筆，初始 _MAX_ 筆",
-            //        "sLoadingRecords": "載入中...",
-            //        //"sInfoPostFix": "  (資料純屬虛構，如有雷同純屬巧合。)",
-            //    },
-            //    "scrollCollapse": true,
-            //    "jQueryUI": true
-            //});
+            //$("#table").DataTable();
+            $("#table").DataTable({
+                searching: false, //關閉filter功能
+                columnDefs: [{
+                    orderable: false,
+                }],
+                columnDefs: [
+                ],
+                "aaSorting": [],
+                "lengthMenu": [[10, 20, 30, 50, -1], [10, 20, 30, 50, "全部"]],
+                "oLanguage": {
+                    "sZeroRecords": "查無此商品",
+                    "sInfoEmpty": "查無此商品",
+                    "sEmptyTable": "查無此商品",
+                    "sLengthMenu": "每頁顯示 _MENU_ 筆資料",
+                    "sSearch": "查詢 : ",
+                    "oPaginate": {
+                        "sFirst": "First page",
+                        "sLast": "Last page",
+                        "sNext": "下一頁",
+                        "sPrevious": "上一頁"
+                    },
+                    "sInfo": "總共 _TOTAL_ 筆，顯示第 [ _START_ ] 筆到第 [ _END_ ] 筆資料",
+                    "sInfoFiltered": "篩選之後得到 _TOTAL_ 筆，初始 _MAX_ 筆",
+                    "sLoadingRecords": "載入中...",
+                    //"sInfoPostFix": "  (資料純屬虛構，如有雷同純屬巧合。)",
+                },
+                "scrollCollapse": true,
+                "jQueryUI": true
+            });
 
 
-            //$("#myDataTalbe_paginate").attr("style", "margin-bottom:30px")
+            $("#myDataTalbe_paginate").attr("style", "margin-bottom:30px")
 
             $("#btn_search").click(function () {
                 var Dstination_typ = $("#Dstination_typ").val();
                 var Day_Id = $("#Day_Id").val();
                 var F_HashTag = $("#F_HashTag").val();
-                window.location.href = (`@Url.Action("Recommendedtrips_item", "Recommendedtrips")/?Dstination_typ=${Dstination_typ}&Day_Id=${Day_Id}&F_HashTag=${F_HashTag}`);    
+                window.location.href = (`@Url.Action("Recommendedtrips_item", "Recommendedtrips")/?Dstination_typ=${Dstination_typ}&Day_Id=${Day_Id}&F_HashTag=${F_HashTag}`);
             })
         });
     </script>

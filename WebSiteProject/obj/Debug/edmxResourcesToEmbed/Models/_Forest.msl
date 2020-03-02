@@ -1704,21 +1704,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="RecommendedTrips">
-      <EntityTypeMapping TypeName="ForestModel.RecommendedTrip">
-        <MappingFragment StoreEntitySet="RecommendedTrip">
-          <ScalarProperty Name="RecommendedTrips_Img_Description" ColumnName="RecommendedTrips_Img_Description" />
-          <ScalarProperty Name="RecommendedTrips_HtmContent" ColumnName="RecommendedTrips_HtmContent" />
-          <ScalarProperty Name="RecommendedTrips_Location" ColumnName="RecommendedTrips_Location" />
-          <ScalarProperty Name="RecommendedTrips_Content" ColumnName="RecommendedTrips_Content" />
-          <ScalarProperty Name="RecommendedTrips_Title" ColumnName="RecommendedTrips_Title" />
-          <ScalarProperty Name="RecommendedTrips_Img" ColumnName="RecommendedTrips_Img" />
-          <ScalarProperty Name="RecommendedTrips_Destinations_ID" ColumnName="RecommendedTrips_Destinations_ID" />
-          <ScalarProperty Name="RecommendedTrips_Day_ID" ColumnName="RecommendedTrips_Day_ID" />
-          <ScalarProperty Name="RecommendedTrips_ID" ColumnName="RecommendedTrips_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="V_RecommendedTrip">
       <EntityTypeMapping TypeName="ForestModel.V_RecommendedTrip">
         <MappingFragment StoreEntitySet="V_RecommendedTrip">
@@ -1746,6 +1731,66 @@
           <ScalarProperty Name="RecommendedTrips_Destinations_ID" ColumnName="RecommendedTrips_Destinations_ID" />
           <ScalarProperty Name="RecommendedTrips_Day_ID" ColumnName="RecommendedTrips_Day_ID" />
           <ScalarProperty Name="RecommendedTrips_ID" ColumnName="RecommendedTrips_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecommendedTrips">
+      <EntityTypeMapping TypeName="ForestModel.RecommendedTrip">
+        <MappingFragment StoreEntitySet="RecommendedTrip">
+          <ScalarProperty Name="InFront" ColumnName="InFront" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="RecommendedTrips_EndDay" ColumnName="RecommendedTrips_EndDay" />
+          <ScalarProperty Name="RecommendedTrips_StarDay" ColumnName="RecommendedTrips_StarDay" />
+          <ScalarProperty Name="RecommendedTrips_LinkUrlDesc" ColumnName="RecommendedTrips_LinkUrlDesc" />
+          <ScalarProperty Name="RecommendedTrips_LinkUrl" ColumnName="RecommendedTrips_LinkUrl" />
+          <ScalarProperty Name="RecommendedTrips_UploadFileDesc" ColumnName="RecommendedTrips_UploadFileDesc" />
+          <ScalarProperty Name="RecommendedTrips_UploadFilePath" ColumnName="RecommendedTrips_UploadFilePath" />
+          <ScalarProperty Name="RecommendedTrips_UploadFileName" ColumnName="RecommendedTrips_UploadFileName" />
+          <ScalarProperty Name="RecommendedTrips_Img_Description" ColumnName="RecommendedTrips_Img_Description" />
+          <ScalarProperty Name="RecommendedTrips_HtmContent" ColumnName="RecommendedTrips_HtmContent" />
+          <ScalarProperty Name="RecommendedTrips_Location" ColumnName="RecommendedTrips_Location" />
+          <ScalarProperty Name="RecommendedTrips_Content" ColumnName="RecommendedTrips_Content" />
+          <ScalarProperty Name="RecommendedTrips_Title" ColumnName="RecommendedTrips_Title" />
+          <ScalarProperty Name="RecommendedTrips_Img" ColumnName="RecommendedTrips_Img" />
+          <ScalarProperty Name="RecommendedTrips_Destinations_ID" ColumnName="RecommendedTrips_Destinations_ID" />
+          <ScalarProperty Name="RecommendedTrips_Day_ID" ColumnName="RecommendedTrips_Day_ID" />
+          <ScalarProperty Name="RecommendedTrips_ID" ColumnName="RecommendedTrips_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecommendedTrip_Travel">
+      <EntityTypeMapping TypeName="ForestModel.RecommendedTrip_Travel">
+        <MappingFragment StoreEntitySet="RecommendedTrip_Travel">
+          <ScalarProperty Name="InFront" ColumnName="InFront" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="RecommendedTrips_Travel_EndDay" ColumnName="RecommendedTrips_Travel_EndDay" />
+          <ScalarProperty Name="RecommendedTrips_Travel_StarDay" ColumnName="RecommendedTrips_Travel_StarDay" />
+          <ScalarProperty Name="RecommendedTrips_Travel_LinkUrlDesc" ColumnName="RecommendedTrips_Travel_LinkUrlDesc" />
+          <ScalarProperty Name="RecommendedTrip_Travel_Link" ColumnName="RecommendedTrip_Travel_Link" />
+          <ScalarProperty Name="RecommendedTrip_Travel_Img_Description" ColumnName="RecommendedTrip_Travel_Img_Description" />
+          <ScalarProperty Name="RecommendedTrip_Travel_Img" ColumnName="RecommendedTrip_Travel_Img" />
+          <ScalarProperty Name="RecommendedTrip_Travel_Content" ColumnName="RecommendedTrip_Travel_Content" />
+          <ScalarProperty Name="RecommendedTrip_Travel_Title" ColumnName="RecommendedTrip_Travel_Title" />
+          <ScalarProperty Name="RecommendedTrip_ID" ColumnName="RecommendedTrip_ID" />
+          <ScalarProperty Name="RecommendedTrip_Travel_ID" ColumnName="RecommendedTrip_Travel_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecommendedTrips_HashTag">
+      <EntityTypeMapping TypeName="ForestModel.RecommendedTrips_HashTag">
+        <MappingFragment StoreEntitySet="RecommendedTrips_HashTag">
+          <ScalarProperty Name="RecommendedTrips_keyword9" ColumnName="RecommendedTrips_keyword9" />
+          <ScalarProperty Name="RecommendedTrips_keyword8" ColumnName="RecommendedTrips_keyword8" />
+          <ScalarProperty Name="RecommendedTrips_keyword7" ColumnName="RecommendedTrips_keyword7" />
+          <ScalarProperty Name="RecommendedTrips_keyword6" ColumnName="RecommendedTrips_keyword6" />
+          <ScalarProperty Name="RecommendedTrips_keyword5" ColumnName="RecommendedTrips_keyword5" />
+          <ScalarProperty Name="RecommendedTrips_keyword4" ColumnName="RecommendedTrips_keyword4" />
+          <ScalarProperty Name="RecommendedTrips_keyword3" ColumnName="RecommendedTrips_keyword3" />
+          <ScalarProperty Name="RecommendedTrips_keyword2" ColumnName="RecommendedTrips_keyword2" />
+          <ScalarProperty Name="RecommendedTrips_keyword1" ColumnName="RecommendedTrips_keyword1" />
+          <ScalarProperty Name="RecommendedTrips_keyword0" ColumnName="RecommendedTrips_keyword0" />
+          <ScalarProperty Name="RecommendedTrips_Id" ColumnName="RecommendedTrips_Id" />
+          <ScalarProperty Name="RecommendedTrips_HashTag_Id" ColumnName="RecommendedTrips_HashTag_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WebSiteProject.Models.RecommendedTrip_Travel>
+@{
+    Layout = null;
+}
+@{
+
+    var pageCount = (int)ViewBag.pageCount;
+    var nowPage = (int)ViewBag.NowPag;
+    if (ViewBag.count == 0)
+    {
+
+    }
+    else
+    {
+<div class="start_now">
+    <h3><i class="fas fa-map-marked-alt" aria-hidden="true"></i>Start Now</h3>
+    <ul>
+        @foreach (var item in Model)
+            {
+            <li>
+                <div class="img"><img src="@Url.Content("~/UploadImage/RecommendedTrips")/@item.RecommendedTrip_Travel_Img" alt="@item.RecommendedTrip_Travel_Img_Description" /></div><!--建議尺寸800*600px-->
+                <div class="font">
+                    <div class="title">@item.RecommendedTrip_Travel_Title</div>
+                    <div class="con_font">@item.RecommendedTrip_Travel_Content</div>
+                    <a href="@item.RecommendedTrip_Travel_Link" title="@item.RecommendedTrip_Travel_Title"><span class="btn_01">Book now <i class="fas fa-arrow-circle-right" aria-hidden="true"></i></span></a><!-- <a> title = 標題 - Book now -->
+                </div>
+            </li>
+        }
+    </ul>
+    <!--頁碼 start-->
+    <div id="page_number" class="table-toolbar">
+        @{
+            var star = (int)ViewBag.star;
+        var end = (int)ViewBag.end;
+    }
+    @if (ViewBag.count > 3)
+    {
+        <form method="post" action="@Url.Action("recommended_Detail",new {RecommendedTrips_ID=Model.FirstOrDefault().RecommendedTrip_ID})">
+            <div class="col-md-4 col-sm-12 col-xs-12 page_total" data-sr="enter left over 1.5s">Total:@ViewBag.count, Display @star~@end</div>
+            <div class="col-md-8 col-sm-12 col-xs-12 page_icon" data-sr="enter right over 1.5s">
+                <div class="btn-group">
+                    <button type="submit" class="btn_page accesskey"  name="nowpage" value="1" title="First"><i class="fa fa-angle-double-left" aria-hidden="true"></i><span class="sr-only">First</span></button>
+                    <button type="submit" class="btn_page accesskey" name="nowpage" value="@(nowPage==1?1:nowPage-1)" title="Prev"><i class="fa fa-angle-left" aria-hidden="true"></i><span class="sr-only">Prev</span></button>
+                    @{
+                        <select class="form-control page_list accesskey" name="jumpPage" >
+                            @for (int i = 1; i <= pageCount; i++)
+                            {
+                                <option value="@i" @(i == nowPage ? "selected" : "")>@i</option>
+                            }
+                        </select>
+                    }
+                    <button type="submit" class="btn_page accesskey" title="GO">GO</button><!--英文GO-->
+                    <button type="submit" class="btn_page accesskey" name="nowpage" value="@(nowPage<pageCount?nowPage+1:nowPage)" title="Next"><i class="fa fa-angle-right" aria-hidden="true"></i><span class="sr-only">Next</span></button>
+                    <button type="submit" class="btn_page accesskey" name="nowpage" value="@ViewBag.count" title="Last"><i class="fa fa-angle-double-right" aria-hidden="true"></i><span class="sr-only">Last</span></button>
+                </div>
+            </div>
+        </form>
+        }
+        else
+        {
+            <div class="col-md-4 col-sm-12 col-xs-12 page_total" data-sr="enter left over 1.5s">Total:@ViewBag.count, Display @star~@end</div>
+
+        }
+
+    </div>
+</div>
+            <!--頁碼 end-->
+            }
+
+}
+

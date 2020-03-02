@@ -93,17 +93,23 @@
       <End Role="RecommendedTrips_HashTag_Type" EntitySet="RecommendedTrips_HashTag_Type" />
     </AssociationSet>
     <EntitySet Name="RecommendedTrips_Day" EntityType="ForestModel.RecommendedTrips_Day" />
+    <EntitySet Name="V_RecommendedTrip" EntityType="ForestModel.V_RecommendedTrip" />
+    <EntitySet Name="V_RecommendedTripsForWebadmin" EntityType="ForestModel.V_RecommendedTripsForWebadmin" />
     <EntitySet Name="RecommendedTrips" EntityType="ForestModel.RecommendedTrip" />
+    <EntitySet Name="RecommendedTrip_Travel" EntityType="ForestModel.RecommendedTrip_Travel" />
     <AssociationSet Name="FK_RecommendedTrips_F_Destination_Type" Association="ForestModel.FK_RecommendedTrips_F_Destination_Type">
       <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
       <End Role="RecommendedTrip" EntitySet="RecommendedTrips" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecommendedTrip_Travel_RecommendedTrip" Association="ForestModel.FK_RecommendedTrip_Travel_RecommendedTrip">
+      <End Role="RecommendedTrip" EntitySet="RecommendedTrips" />
+      <End Role="RecommendedTrip_Travel" EntitySet="RecommendedTrip_Travel" />
     </AssociationSet>
     <AssociationSet Name="FK_RecommendedTrips_RecommendedTrips_Day" Association="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day">
       <End Role="RecommendedTrips_Day" EntitySet="RecommendedTrips_Day" />
       <End Role="RecommendedTrip" EntitySet="RecommendedTrips" />
     </AssociationSet>
-    <EntitySet Name="V_RecommendedTrip" EntityType="ForestModel.V_RecommendedTrip" />
-    <EntitySet Name="V_RecommendedTripsForWebadmin" EntityType="ForestModel.V_RecommendedTripsForWebadmin" />
+    <EntitySet Name="RecommendedTrips_HashTag" EntityType="ForestModel.RecommendedTrips_HashTag" />
   </EntityContainer>
   <EntityType Name="ActiveItem">
     <Key>
@@ -1775,46 +1781,6 @@
     <Property Name="RecommendedTrips_Day_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="RecommendedTrips" Relationship="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day" FromRole="RecommendedTrips_Day" ToRole="RecommendedTrip" />
   </EntityType>
-  <EntityType Name="RecommendedTrip">
-    <Key>
-      <PropertyRef Name="RecommendedTrips_ID" />
-    </Key>
-    <Property Name="RecommendedTrips_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="RecommendedTrips_Day_ID" Type="Int32" />
-    <Property Name="RecommendedTrips_Destinations_ID" Type="Int32" />
-    <Property Name="RecommendedTrips_Img" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="RecommendedTrips_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="RecommendedTrips_Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="RecommendedTrips_Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="RecommendedTrips_HtmContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="RecommendedTrips_Img_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="F_Destination_Type" Relationship="ForestModel.FK_RecommendedTrips_F_Destination_Type" FromRole="RecommendedTrip" ToRole="F_Destination_Type" />
-    <NavigationProperty Name="RecommendedTrips_Day" Relationship="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day" FromRole="RecommendedTrip" ToRole="RecommendedTrips_Day" />
-  </EntityType>
-  <Association Name="FK_RecommendedTrips_F_Destination_Type">
-    <End Type="ForestModel.F_Destination_Type" Role="F_Destination_Type" Multiplicity="0..1" />
-    <End Type="ForestModel.RecommendedTrip" Role="RecommendedTrip" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="F_Destination_Type">
-        <PropertyRef Name="Destination_Type_ID" />
-      </Principal>
-      <Dependent Role="RecommendedTrip">
-        <PropertyRef Name="RecommendedTrips_Destinations_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_RecommendedTrips_RecommendedTrips_Day">
-    <End Type="ForestModel.RecommendedTrips_Day" Role="RecommendedTrips_Day" Multiplicity="0..1" />
-    <End Type="ForestModel.RecommendedTrip" Role="RecommendedTrip" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="RecommendedTrips_Day">
-        <PropertyRef Name="RecommendedTrips_Day_ID" />
-      </Principal>
-      <Dependent Role="RecommendedTrip">
-        <PropertyRef Name="RecommendedTrips_Day_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="V_RecommendedTrip">
     <Key>
       <PropertyRef Name="RecommendedTrips_ID" />
@@ -1842,5 +1808,102 @@
     <Property Name="RecommendedTrips_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="RecommendedTrips_Day_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="HashTag_Type_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="RecommendedTrip">
+    <Key>
+      <PropertyRef Name="RecommendedTrips_ID" />
+    </Key>
+    <Property Name="RecommendedTrips_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RecommendedTrips_Day_ID" Type="Int32" />
+    <Property Name="RecommendedTrips_Destinations_ID" Type="Int32" />
+    <Property Name="RecommendedTrips_Img" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_HtmContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_Img_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_UploadFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_UploadFilePath" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_UploadFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_LinkUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="RecommendedTrips_LinkUrlDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RecommendedTrips_StarDay" Type="DateTime" Precision="3" />
+    <Property Name="RecommendedTrips_EndDay" Type="DateTime" Precision="3" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="InFront" Type="Int32" />
+    <NavigationProperty Name="F_Destination_Type" Relationship="ForestModel.FK_RecommendedTrips_F_Destination_Type" FromRole="RecommendedTrip" ToRole="F_Destination_Type" />
+    <NavigationProperty Name="RecommendedTrip_Travel" Relationship="ForestModel.FK_RecommendedTrip_Travel_RecommendedTrip" FromRole="RecommendedTrip" ToRole="RecommendedTrip_Travel" />
+    <NavigationProperty Name="RecommendedTrips_Day" Relationship="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day" FromRole="RecommendedTrip" ToRole="RecommendedTrips_Day" />
+  </EntityType>
+  <EntityType Name="RecommendedTrip_Travel">
+    <Key>
+      <PropertyRef Name="RecommendedTrip_Travel_ID" />
+    </Key>
+    <Property Name="RecommendedTrip_Travel_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RecommendedTrip_ID" Type="Int32" />
+    <Property Name="RecommendedTrip_Travel_Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrip_Travel_Content" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrip_Travel_Img" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrip_Travel_Img_Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrip_Travel_Link" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_Travel_LinkUrlDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_Travel_StarDay" Type="DateTime" Precision="3" />
+    <Property Name="RecommendedTrips_Travel_EndDay" Type="DateTime" Precision="3" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="InFront" Type="Int32" />
+    <NavigationProperty Name="RecommendedTrip" Relationship="ForestModel.FK_RecommendedTrip_Travel_RecommendedTrip" FromRole="RecommendedTrip_Travel" ToRole="RecommendedTrip" />
+  </EntityType>
+  <Association Name="FK_RecommendedTrips_F_Destination_Type">
+    <End Type="ForestModel.F_Destination_Type" Role="F_Destination_Type" Multiplicity="0..1" />
+    <End Type="ForestModel.RecommendedTrip" Role="RecommendedTrip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="F_Destination_Type">
+        <PropertyRef Name="Destination_Type_ID" />
+      </Principal>
+      <Dependent Role="RecommendedTrip">
+        <PropertyRef Name="RecommendedTrips_Destinations_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecommendedTrip_Travel_RecommendedTrip">
+    <End Type="ForestModel.RecommendedTrip" Role="RecommendedTrip" Multiplicity="0..1" />
+    <End Type="ForestModel.RecommendedTrip_Travel" Role="RecommendedTrip_Travel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RecommendedTrip">
+        <PropertyRef Name="RecommendedTrips_ID" />
+      </Principal>
+      <Dependent Role="RecommendedTrip_Travel">
+        <PropertyRef Name="RecommendedTrip_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecommendedTrips_RecommendedTrips_Day">
+    <End Type="ForestModel.RecommendedTrips_Day" Role="RecommendedTrips_Day" Multiplicity="0..1" />
+    <End Type="ForestModel.RecommendedTrip" Role="RecommendedTrip" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RecommendedTrips_Day">
+        <PropertyRef Name="RecommendedTrips_Day_ID" />
+      </Principal>
+      <Dependent Role="RecommendedTrip">
+        <PropertyRef Name="RecommendedTrips_Day_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="RecommendedTrips_HashTag">
+    <Key>
+      <PropertyRef Name="RecommendedTrips_HashTag_Id" />
+    </Key>
+    <Property Name="RecommendedTrips_HashTag_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RecommendedTrips_Id" Type="Int32" />
+    <Property Name="RecommendedTrips_keyword0" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_keyword1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_keyword2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_keyword3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_keyword4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_keyword5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_keyword6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_keyword7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_keyword8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecommendedTrips_keyword9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

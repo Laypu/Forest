@@ -14,6 +14,12 @@ namespace WebSiteProject.Models
     
     public partial class RecommendedTrip
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public RecommendedTrip()
+        {
+            this.RecommendedTrip_Travel = new HashSet<RecommendedTrip_Travel>();
+        }
+    
         public int RecommendedTrips_ID { get; set; }
         public Nullable<int> RecommendedTrips_Day_ID { get; set; }
         public Nullable<int> RecommendedTrips_Destinations_ID { get; set; }
@@ -23,8 +29,19 @@ namespace WebSiteProject.Models
         public string RecommendedTrips_Location { get; set; }
         public string RecommendedTrips_HtmContent { get; set; }
         public string RecommendedTrips_Img_Description { get; set; }
+        public string RecommendedTrips_UploadFileName { get; set; }
+        public string RecommendedTrips_UploadFilePath { get; set; }
+        public string RecommendedTrips_UploadFileDesc { get; set; }
+        public string RecommendedTrips_LinkUrl { get; set; }
+        public string RecommendedTrips_LinkUrlDesc { get; set; }
+        public Nullable<System.DateTime> RecommendedTrips_StarDay { get; set; }
+        public Nullable<System.DateTime> RecommendedTrips_EndDay { get; set; }
+        public Nullable<int> Sort { get; set; }
+        public Nullable<int> InFront { get; set; }
     
         public virtual F_Destination_Type F_Destination_Type { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RecommendedTrip_Travel> RecommendedTrip_Travel { get; set; }
         public virtual RecommendedTrips_Day RecommendedTrips_Day { get; set; }
     }
 }

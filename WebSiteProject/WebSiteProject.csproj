@@ -267,6 +267,7 @@
     <Compile Include="Code\CacheMapping.cs" />
     <Compile Include="Code\RssActionResult .cs" />
     <Compile Include="Controllers\Destination_IndexController.cs" />
+    <Compile Include="Controllers\F_RecommendedtripsController.cs" />
     <Compile Include="Controllers\F_ThingsToDoController.cs" />
     <Compile Include="Controllers\MapController.cs" />
     <Compile Include="Controllers\AppController.cs" />
@@ -396,7 +397,10 @@
     <Compile Include="Models\F_Thingtodo_Type.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\F_ViewModels\F_Recommendedtrips_List_HashTag_ViewMode.cs" />
     <Compile Include="Models\F_ViewModels\F_ThingsToDo_List_ViewModel.cs" />
+    <Compile Include="Models\F_ViewModels\RecommendedTrip_Travel_ViewModel.cs" />
+    <Compile Include="Models\F_ViewModels\RecommendSearchViewmodel.cs" />
     <Compile Include="Models\GroupActive.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
@@ -496,10 +500,16 @@
     <Compile Include="Models\RecommendedTrips_Day.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RecommendedTrips_HashTag.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\RecommendedTrips_HashTag_Type.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RecommendedTrips_Index.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecommendedTrip_Travel.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SEO.cs">
@@ -658,6 +668,12 @@
     <Content Include="css\docs.theme.min.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\fontawesome.min.css" />
+    <Content Include="css\fonts\fontawesome-webfont.svg" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="css\fonts\Simple-Line-Icons.dev.svg" />
+    <Content Include="css\fonts\Simple-Line-Icons.svg" />
+    <Content Include="css\fonts\_notes\dwsync.xml" />
+    <Content Include="css\jquery.dataTables.css" />
     <Content Include="css\noscript.css" />
     <Content Include="css\owl.carousel.min.css" />
     <Content Include="css\owl.theme.default.min.css" />
@@ -3215,6 +3231,23 @@
     <Content Include="Areas\webadmin\Views\Recommendedtrips\RecommendedtripsIndex.cshtml" />
     <Content Include="Areas\webadmin\Views\Recommendedtrips\Recommendedtrips_item.cshtml" />
     <Content Include="Areas\webadmin\Views\Recommendedtrips\Recommendedtrips_Edit.cshtml" />
+    <Content Include="css\fonts\fontawesome-webfont.eot" />
+    <Content Include="css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="css\fonts\fontawesome-webfont.woff" />
+    <Content Include="css\fonts\fontawesome-webfont.woff2" />
+    <Content Include="css\fonts\FontAwesome.otf" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="css\fonts\Simple-Line-Icons.eot" />
+    <Content Include="css\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="css\fonts\Simple-Line-Icons.woff" />
+    <Content Include="css\fonts\summernote.eot" />
+    <Content Include="css\fonts\summernote.ttf" />
+    <Content Include="css\fonts\summernote.woff" />
+    <Content Include="Areas\webadmin\Views\Recommendedtrips\RecommendedTrip_Travel_Item.cshtml" />
+    <Content Include="Areas\webadmin\Views\Recommendedtrips\RecommendedTrip_Trave_Edit.cshtml" />
     <None Include="Properties\PublishProfiles\MySkylines.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -3223,6 +3256,7 @@
     <Content Include="Scripts\jquery-migrate-3.0.0.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.17.custom.min.js" />
     <Content Include="Scripts\jquery.2.1.4.js" />
+    <Content Include="Scripts\jquery.dataTables.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.lightbox.js" />
     <Content Include="Scripts\jquery.magnific-popup.min.js" />
@@ -3323,6 +3357,12 @@
     <Content Include="Scripts\websitemain.js" />
     <Content Include="Scripts\_html.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="UploadFile\VideoItem\263521266-Test.txt" />
+    <Content Include="UploadFile\VideoItem\Test.txt" />
+    <Content Include="UploadImage\RecommendedTrips\637184952690321163_trip_pic_02.jpg" />
+    <Content Include="UploadImage\RecommendedTrips\637184970418494734_trip_pic_03.jpg" />
+    <Content Include="UploadImage\RecommendedTrips\800x450.png" />
+    <Content Include="UploadImage\RecommendedTrips\trip_pic_01.jpg" />
     <Content Include="Views\Error\FrontPageNotFound.cshtml" />
     <Content Include="Views\Error\FrontError.cshtml" />
     <Content Include="Web.config">
@@ -3392,6 +3432,11 @@
     <Content Include="Views\Destination_Index\Details.cshtml" />
     <Content Include="Views\Destination_Index\Index.cshtml" />
     <Content Include="Views\Destination_Index\_MapLegendPartial.cshtml" />
+    <Content Include="Views\F_Recommendedtrips\Index.cshtml" />
+    <Content Include="Views\F_Recommendedtrips\recommended_list.cshtml" />
+    <Content Include="Views\F_Recommendedtrips\show_list.cshtml" />
+    <Content Include="Views\F_Recommendedtrips\recommended_Detail.cshtml" />
+    <Content Include="Views\F_Recommendedtrips\RecommendedTrip_Travel_list.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -3400,6 +3445,7 @@
     <Folder Include="Content\admincss\fonts\" />
     <Folder Include="Example\" />
     <Folder Include="Scripts\cropper\" />
+    <Folder Include="UploadFile\RecommendedTrips\" />
     <Folder Include="UploadImage\Config\" />
     <Folder Include="UploadImage\Editor\" />
     <Folder Include="UploadImage\Notice\" />
