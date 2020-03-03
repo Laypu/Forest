@@ -187,8 +187,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="img hidden-xs"><img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModel.First().Destination_Img" /></div><!--建議尺寸800*478px-->
-            <div class="img visible-xs"><img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModel.First().Destination_Img_Mobile" /></div><!--建議尺寸，寬500px-->
+            <div class="img hidden-xs"><img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModel.First().Destination_Img" alt="@MapModel.First().Destination_Img" /></div><!--建議尺寸800*478px-->
+            <div class="img visible-xs"><img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModel.First().Destination_Img_Mobile" alt="@MapModel.First().Destination_Img" /></div><!--建議尺寸，寬500px-->
 
         </div>
     </div>
@@ -222,7 +222,7 @@
                         <li>
                             <a href="@Url.Action("Details", "Destination_Index",new { ImgTitle =item.Destination_Type_Title1})" title="@titleford">
 
-                                <div class="img"><img src="@Url.Content("~/img/600x800.png")" alt="" style="background:url(@Url.Content("~/UploadImage/Destination_Img/" + item.Destination_Type_ImgName))" /></div><!--建議尺寸600*800px-->
+                                <div class="img"><img src="@Url.Content("~/img/600x800.png")" alt="@item.Destination_Type_Title1" style="background:url(@Url.Content("~/UploadImage/Destination_Img/" + item.Destination_Type_ImgName))" /></div><!--建議尺寸600*800px-->
                                 <div class="font_box">
                                     <div class="title">@item.Destination_Type_Title1<div class="second_line">@item.Destination_Type_Title2</div></div>
                                 </div>
@@ -284,8 +284,9 @@
             
             $(this).addClass("active").parent().siblings().children().removeClass("active");
             var MapImg = `@Url.Content("~/UploadImage/MapLEGEND_Img/")`+$(this).attr("data-imgName");
-            
-            $("#MapLeg>div>img").attr('src',MapImg);
+            var MapName = $(this).attr("title");
+            $("#MapLeg>div>img").attr('src', MapImg);
+            $("#MapLeg>div>img").attr('alt',MapName);
         });
 
 

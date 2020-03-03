@@ -61,7 +61,7 @@
         @Html.HiddenFor(Model => Model.Destination_Type_Link)
         @Html.HiddenFor(Model => Model.Destination_Type_Description)
         @Html.HiddenFor(Model => Model.Destination_Type_ImgDescription)
-        
+        @Html.HiddenFor(Model => Model.Destination_Type_CreateDate)
         <div class="portlet light form-fit bordered">
             <div class="portlet-body form">
                 <div class="form-horizontal form-bordered">
@@ -160,10 +160,10 @@
                             <div class="col-md-10 col-sm-12 bg-white mobile_white">
                                 <div class="col-md-12">
                                     <div style="display:inline">
-                                        <!--<label for="exampleInputFile" class="control-label display_inline">圖片上傳</label>-->
+                                        @Html.ValueFor(model => model.Recommend_Img)<br />
                                         <input id="file_relateimage" type="file" class="display_inline" name="ImageFile" accept="image/*" />
                                         <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度1000 * 225px</div>
-                                        @Html.EditorFor(model => model.Destination_Type_Altitude, new { htmlAttributes = new { @class="selected", @style = "display:none" } })
+                                        @Html.EditorFor(model => model.Recommend_Img, new { htmlAttributes = new { @class="selected", @style = "display:none" } })
                                     </div>
                                 </div>
                             </div>
@@ -174,9 +174,10 @@
                             <div class="col-md-10 col-sm-12 bg-white mobile_white">
                                 <div class="col-md-12">
                                     <div style="display:inline">
-                                        <!--<label for="exampleInputFile" class="control-label display_inline">圖片上傳</label>-->
+                                        @Html.ValueFor(model => model.Recommend_Detail_Img)<br />
                                         <input id="file_relateimage" type="file" class="display_inline" name="ImageFile" accept="image/*" />
                                         <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度1000 * 225px</div>
+                                        @Html.EditorFor(model => model.Recommend_Detail_Img, new { htmlAttributes = new { @class = "selected", @style = "display:none" } })
                                     </div>
                                 </div>
                             </div>
