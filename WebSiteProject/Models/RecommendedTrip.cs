@@ -65,13 +65,13 @@ public partial class RecommendedTrip
 
 
 
-    public virtual F_Destination_Type F_Destination_Type { get; set; }
-
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
     public virtual ICollection<RecommendedTrip_Travel> RecommendedTrip_Travel { get; set; }
 
     public virtual RecommendedTrips_Day RecommendedTrips_Day { get; set; }
+
+    public virtual F_Destination_Type F_Destination_Type { get; set; }
 
 }
 

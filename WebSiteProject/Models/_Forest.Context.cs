@@ -164,8 +164,6 @@ public partial class ForestEntities : DbContext
 
     public virtual DbSet<SiteList> SiteLists { get; set; }
 
-    public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-
     public virtual DbSet<User> Users { get; set; }
 
     public virtual DbSet<VideoItem> VideoItems { get; set; }
@@ -182,8 +180,6 @@ public partial class ForestEntities : DbContext
 
     public virtual DbSet<Destination_MapLegend> Destination_MapLegend { get; set; }
 
-    public virtual DbSet<F_Destination_Type> F_Destination_Type { get; set; }
-
     public virtual DbSet<Destination_Fare> Destination_Fare { get; set; }
 
     public virtual DbSet<RecommendedTrip> RecommendedTrips { get; set; }
@@ -197,6 +193,8 @@ public partial class ForestEntities : DbContext
     public virtual DbSet<RecommendedTrips_Index> RecommendedTrips_Index { get; set; }
 
     public virtual DbSet<RecommendedTrips_HashTag_Type> RecommendedTrips_HashTag_Type { get; set; }
+
+    public virtual DbSet<F_Destination_Type> F_Destination_Type { get; set; }
 
 }
 

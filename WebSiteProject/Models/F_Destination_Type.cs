@@ -39,6 +39,8 @@ public partial class F_Destination_Type
 
     public string Destination_Type_ImgName { get; set; }
 
+    public string Destination_Type_ImgDescription { get; set; }
+
     public string Destination_Type_Link { get; set; }
 
     public string Destination_Type_Description { get; set; }
@@ -80,6 +82,10 @@ public partial class F_Destination_Type
     public string FPIX { get; set; }
 
     public string FPX { get; set; }
+
+    public string Recommend_Img { get; set; }
+
+    public string Recommend_Detail_Img { get; set; }
 
 
 

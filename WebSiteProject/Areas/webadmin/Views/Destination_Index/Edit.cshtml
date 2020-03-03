@@ -60,6 +60,8 @@
         @Html.HiddenFor(Model => Model.Destination_Type_ImgName)
         @Html.HiddenFor(Model => Model.Destination_Type_Link)
         @Html.HiddenFor(Model => Model.Destination_Type_Description)
+        @Html.HiddenFor(Model => Model.Destination_Type_ImgDescription)
+        
         <div class="portlet light form-fit bordered">
             <div class="portlet-body form">
                 <div class="form-horizontal form-bordered">
@@ -153,13 +155,39 @@
                             </div>
                         </div>
 
+                        <div class="form-group bg-grey_1">
+                            <div class="col-md-2 col-sm-12 search_item">地點圖片</div>
+                            <div class="col-md-10 col-sm-12 bg-white mobile_white">
+                                <div class="col-md-12">
+                                    <div style="display:inline">
+                                        <!--<label for="exampleInputFile" class="control-label display_inline">圖片上傳</label>-->
+                                        <input id="file_relateimage" type="file" class="display_inline" name="ImageFile" accept="image/*" />
+                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度1000 * 225px</div>
+                                        @Html.EditorFor(model => model.Destination_Type_Altitude, new { htmlAttributes = new { @class="selected", @style = "display:none" } })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group bg-grey_1">
+                            <div class="col-md-2 col-sm-12 search_item">地點圖片(內容)</div>
+                            <div class="col-md-10 col-sm-12 bg-white mobile_white">
+                                <div class="col-md-12">
+                                    <div style="display:inline">
+                                        <!--<label for="exampleInputFile" class="control-label display_inline">圖片上傳</label>-->
+                                        <input id="file_relateimage" type="file" class="display_inline" name="ImageFile" accept="image/*" />
+                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度1000 * 225px</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
 
                 </div>
             </div>
         </div>
-        
+
         @{
             var vid = Model.Destination_Type_ID;
             var vName = Model.Destination_Type_Title1 + " " + Model.Destination_Type_Title2;
@@ -245,6 +273,8 @@
 </div>
 <script>
     $(function () {
+
+        ShowImg()
         //送出表單
         $("#btn_submit").click(function () {
 
@@ -267,6 +297,43 @@
             history.go(-1);
         });
 
+
+        function ShowImg() {
+
+            $("input[type='file']").change(function () {
+
+                var imgid = $(this).attr("data-imgid");
+                var reader = new FileReader();
+                reader.readAsDataURL(this.files[0]);
+                var p = this.files[0].name;
+                $(this).parent().children(".selected").val(p)
+                reader.onload = function (e) {
+
+                    $(`#${imgid}`).attr("src", e.target.result)
+
+                    
+                };
+            
+
+                var file_data = $(this).prop('files')[0];
+                var form_data = new FormData();  //建構new FormData()
+                form_data.append('Img_File', file_data);
+               
+                    $.ajax({
+                        type: "POST",
+                        url: `@Url.Action("Upload","Destination_Index")`,
+                        data: form_data,
+                        async: false,
+                        contentType: false,
+                        processData:false,
+                        success: function (data) {
+                        
+                        }
+                    });
+
+            })
+
+        }
     })
 
 </script>

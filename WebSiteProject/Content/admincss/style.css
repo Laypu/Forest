@@ -278,9 +278,6 @@ label {
 	color:#333;
 	width: 14px;
 }
-.login .fa-inverse {
-    color: #333;
-}
 .login .left .input-group fa-user{
 	width:14px;
 }
@@ -306,9 +303,6 @@ label {
 	background-size:cover;
 	height:100vh;
 }
-.login .right .logo{
-    margin-bottom:20px;
-}
 .login .right .title{
 	text-align:center;
 	vertical-align:middle;
@@ -316,19 +310,39 @@ label {
 	font-weight:800;
 	margin-bottom:20px;
 	line-height:170%;
-	/*text-shadow: 2px 2px 5px #fff;*/
-	color: #b8986a;
+	text-shadow: 2px 2px 5px #fff;
+	color:#a36341;
 }
 .login .right .font_con{
 	border-radius:10px;
-	color:#fff;
 }
+
 .login .right .font_con .fa-xs{
 	margin-top:10px;
 }
 .login .text-shadow{
-	/*text-shadow: 2px 2px 5px #fff;*/
+	text-shadow: 2px 2px 5px #fff;
 }
+
+
+/*login white*/
+.login .right.white .title{
+	color:#fff;
+	text-shadow: 2px 2px 5px #000;
+}
+.login .right.white .font_con{
+	color:#ccc;
+}
+.login .right.white .font_con .fa-circle:before {
+    color: #FFF;
+}
+.login .right.white .font_con .fa-inverse {
+    color: #666;
+}
+.login .right.white .text-shadow {
+    text-shadow: 2px 2px 5px #000;
+}
+
 
 
 /*left menu*/
@@ -1055,98 +1069,5 @@ body{
 	padding-bottom:10px !important;
 	margin-bottom:0 !important;
 }
-}
-
-
-/*-------------------------------------------2019.7.23客製設定值----------------------------------------*/
-
-.img_padding{
-	padding:10px;
-}
-
-/*客戶編輯器*/
-/*錨點*/
-.anchor_list{
-	float:left;
-	width:100%;
-	list-style:none;
-	margin-bottom:20px;
-	padding-left:0 !important;
-}
-.anchor_list a{
-	float:left;
-	padding:5px 15px;
-	border-radius:5px;
-	color:#333;
-	margin:5px;
-	border: solid #ccc 1px;
-}
-.anchor_list li{
-	float:left;
-}
-.anchor_list a:hover ,.anchor_list a:focus{
-	background:#2e7f98;
-	color:#fff;
-	box-shadow:none;
-	border: solid #2e7f98 1px;
-}
-
-
-/*圖片2則*/
-.img_box_2{
-	float:left;
-	width:100%;
-}
-.img_box_2 .item{
-	float:left;
-	width:50%;
-	padding:15px;
-}
-.img_box_2 img{
-	width:100%;
-	margin-bottom:5px;
-	border: solid #ccc 1px;
-}
-.img_box_2 .con_font{
-	font-size:0.9em;
-	color:#666;
-}
-
-
-/*圖片3則*/
-.img_box_3{
-	float:left;
-	width:100%;
-}
-.img_box_3 .item{
-	float:left;
-	width:33.3%;
-	padding:15px;
-}
-.img_box_3 img{
-	width:100%;
-	margin-bottom:5px;
-	border: solid #ccc 1px;
-}
-.img_box_3 .con_font{
-	font-size:0.9em;
-	color:#666;
-}
-
-/* 橫向智慧手機到竪立平板電腦解析度 */
-@media (max-width: 767px) {
-/*客戶編輯器*/
-/*圖片2則*/
-.img_box_2 .item{
-	width:100%;
-	padding:15px 0;
-}
-
-/*圖片3則*/
-.img_box_3 .item{
-	width:100%;
-	padding:15px 0;
-}
-
 }
 

@@ -71,7 +71,6 @@
         <EntityTypeShape EntityType="ForestModel.SiteFlow" Width="1.5" PointX="26.75" PointY="19.75" />
         <EntityTypeShape EntityType="ForestModel.SiteLayout" Width="1.5" PointX="26.75" PointY="22.75" />
         <EntityTypeShape EntityType="ForestModel.SiteList" Width="1.5" PointX="2.75" PointY="27.75" />
-        <EntityTypeShape EntityType="ForestModel.sysdiagram" Width="1.5" PointX="28.75" PointY="0.75" />
         <EntityTypeShape EntityType="ForestModel.User" Width="1.5" PointX="28.75" PointY="3.75" />
         <EntityTypeShape EntityType="ForestModel.VideoItem" Width="1.5" PointX="28.75" PointY="7.75" />
         <EntityTypeShape EntityType="ForestModel.VideoUnitSetting" Width="1.5" PointX="28.75" PointY="16.75" />
@@ -81,20 +80,20 @@
         <AssociationConnector Association="ForestModel.FK_F_Sub_HashTag_Type_F_HashTag_Type" />
         <EntityTypeShape EntityType="ForestModel.Destination_Index" Width="2.375" PointX="29.375" PointY="26.75" />
         <EntityTypeShape EntityType="ForestModel.Destination_MapLegend" Width="2.625" PointX="29.375" PointY="29.75" />
-        <EntityTypeShape EntityType="ForestModel.F_Destination_Type" Width="2.125" PointX="31.375" PointY="1.125" />
         <EntityTypeShape EntityType="ForestModel.Destination_Fare" Width="2" PointX="34.25" PointY="3.125" />
-        <AssociationConnector Association="ForestModel.FK_Destination_Fare_F_Destination_Type" />
         <EntityTypeShape EntityType="ForestModel.RecommendedTrip" Width="2.125" PointX="37.25" PointY="2.125" />
         <EntityTypeShape EntityType="ForestModel.RecommendedTrip_Travel" Width="2.375" PointX="39.5" PointY="2.875" />
         <EntityTypeShape EntityType="ForestModel.RecommendedTrips_Day" Width="2.625" PointX="35" PointY="0.75" />
         <EntityTypeShape EntityType="ForestModel.RecommendedTrips_HashTag" Width="2.75" PointX="8.5" PointY="30.125" />
         <EntityTypeShape EntityType="ForestModel.RecommendedTrips_Index" Width="1.5" PointX="3.375" PointY="31.125" />
-        <AssociationConnector Association="ForestModel.FK_RecommendedTrips_F_Destination_Type" />
         <AssociationConnector Association="ForestModel.FK_RecommendedTrip_Travel_RecommendedTrip" />
         <AssociationConnector Association="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day" />
         <EntityTypeShape EntityType="ForestModel.RecommendedTrips_HashTag_Type" Width="1.5" PointX="3" PointY="34.125" />
         <AssociationConnector Association="ForestModel.FK_RecommendedTrips_HashTag_Type_F_HashTag_Type" />
-      </Diagram>
+        <EntityTypeShape EntityType="ForestModel.F_Destination_Type" Width="2" PointX="31.375" PointY="1.875" />
+        <AssociationConnector Association="ForestModel.FK_Destination_Fare_F_Destination_Type" />
+        <AssociationConnector Association="ForestModel.FK_RecommendedTrips_F_Destination_Type" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

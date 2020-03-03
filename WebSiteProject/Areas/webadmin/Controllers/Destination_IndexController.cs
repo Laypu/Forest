@@ -19,11 +19,31 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         public ActionResult MainTitleAndContent()
         {
             
+
             Destination_Index DES = new Destination_Index();
-            DES.Destination_Title = Server.HtmlDecode(db.Destination_Index.FirstOrDefault().Destination_Title);
-            DES.Destination_Context = Server.HtmlDecode(db.Destination_Index.FirstOrDefault().Destination_Context);
-            DES.Destination_ID = db.Destination_Index.FirstOrDefault().Destination_ID;
+            if (DES != null)
+            {
+                DES.Destination_Title = Server.HtmlDecode(db.Destination_Index.FirstOrDefault().Destination_Title);
+                DES.Destination_Context = Server.HtmlDecode(db.Destination_Index.FirstOrDefault().Destination_Context);
+                DES.Destination_ID = db.Destination_Index.FirstOrDefault().Destination_ID;
+                return View(DES);
+            }
+            else 
+            {
+                if (ModelState.IsValid)
+                {
+                    DES.Destination_Context = "";
+                    DES.Destination_Title = "";
+
+                    db.Destination_Index.Add(DES);
+                    db.SaveChanges();
+
+                }
+            }
+
             return View(DES);
+
+
         }
 
         [HttpPost]
