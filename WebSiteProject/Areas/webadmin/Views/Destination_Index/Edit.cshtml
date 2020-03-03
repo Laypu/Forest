@@ -178,14 +178,19 @@
                     var FareModel = ViewBag.Destination_Fare;
                 }
                 <a class="btn green-meadow" id='btn_add' href="@Url.Action("Createtr","Destination_Index",new {TypeID = DESTypeID,TypeName = DESName})">新增 <i class="fa fa-plus"></i></a>
-                <button class="btn red" id="btn_del" type="button">刪除 <i class="glyphicon glyphicon-trash"></i></button>
+                
             </div>
 
             <!--table start-->
             <table class="table table-bordered nomarginbottom" id="faretable" border="0" cellspacing="0" cellpadding="0">
                 <thead>
                     <tr>
-                        <th width="60" class="text-center" filed-type="delcheckbox">刪除</th>
+                        <th width="80" class="text-center delete_th" filed-type='delcheckbox'>
+                            <label class='mt-checkbox mt-checkbox-single mt-checkbox-outline'>
+                                <input type='checkbox' class='checkboxes' id="chk_all" /><span></span>
+                            </label>
+                            <button class="btn red-mint btn-xs" id='btn_del'><i class="glyphicon glyphicon-trash"></i></button>
+                        </th>
                         <th class="text-center">@Html.Label("票種")</th>
                         <th class="text-center">@Html.Label("票價")</th>
                         <th class="text-center">@Html.Label("詳細內容")</th>

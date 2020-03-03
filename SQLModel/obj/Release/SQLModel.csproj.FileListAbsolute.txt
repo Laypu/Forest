@@ -29,9 +29,7 @@ C:\Users\PC003\Desktop\git\Forest\SQLModel\bin\Release\Utilities.dll
 C:\Users\PC003\Desktop\git\Forest\SQLModel\bin\Release\NLog.dll
 C:\Users\PC003\Desktop\git\Forest\SQLModel\bin\Release\Utilities.pdb
 C:\Users\PC003\Desktop\git\Forest\SQLModel\bin\Release\Utilities.dll.config
-C:\Users\PC003\Desktop\git\Forest\SQLModel\bin\Release\EntityFramework.xml
 C:\Users\PC003\Desktop\git\Forest\SQLModel\bin\Release\NLog.xml
-C:\Users\PC003\Desktop\git\Forest\SQLModel\bin\Release\zh-Hant\EntityFramework.resources.dll
 C:\Users\PC003\Desktop\git\Forest\SQLModel\obj\Release\SQLModel.csprojAssemblyReference.cache
 C:\Users\PC003\Desktop\git\Forest\SQLModel\obj\Release\SQLModel.csproj.CopyComplete
 C:\Users\PC003\Desktop\git\Forest\SQLModel\obj\Release\SQLModel.dll
