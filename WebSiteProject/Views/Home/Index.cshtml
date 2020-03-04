@@ -371,7 +371,7 @@
             {
                 <li>
                     <a href="@Url.Action("ThinngsToDo_List", "F_ThingsToDo", new { F_TTD_Id= n++})" title="@item.F_Thingtodo_Type_Title1 @item.F_Thingtodo_Type_Title2">
-                        <div class="item_img"><img src="@Url.Content("~/img/600x800.png")" alt="" style="background:url(@Url.Content("~/img/" + item.F_Thingtodo_Type_ImgName))" /></div><!--建議尺寸600*800px-->
+                        <div class="item_img"><img src="@Url.Content("~/img/600x800.png")" alt="" style="background:url(@Url.Content("~/UploadImage/ThingsToDo_Img/" + item.F_Thingtodo_Type_ImgName))" /></div><!--建議尺寸600*800px-->
                         <div class="item_title">@item.F_Thingtodo_Type_Title1<div class="second_line">@item.F_Thingtodo_Type_Title2</div></div>
                     </a>
                 </li>
@@ -423,9 +423,9 @@
             <!--僅顯示圖片，影片不置入-->
             <div class="defaultimg" style="width:100%">
                 <img src="img/index_ad_fake.jpg" alt="" />
-                <div><img src="img/index_pic_12.jpg" alt="" /></div>
-                <div><img src="img/index_pic_09.jpg" alt="" /></div>
-                <div><img src="img/index_pic_10.jpg" alt="" /></div>
+                <div><img src="@Url.Content("~/img/index_pic_12.jpg")" alt="" /></div>
+                <div><img src="@Url.Content("~/img/index_pic_9.jpg")" alt="" /></div>
+                <div><img src="@Url.Content("~/img/index_pic_10.jpg")" alt="" /></div>
             </div>
         </noscript>
 
