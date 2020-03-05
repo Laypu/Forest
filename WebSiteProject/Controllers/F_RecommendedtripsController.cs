@@ -4,10 +4,12 @@ using SQLModel;
 using SQLModel.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Utilities;
 using ViewModels;
 using WebSiteProject.Code;
 using WebSiteProject.Models.F_ViewModels;
@@ -252,7 +254,7 @@ namespace WebSiteProject.Controllers
                         select new RecommendedSearchModel { RecommendedTrips_ID = t1.RecommendedTrips_ID, RecommendedTrips_Title = t1.RecommendedTrips_Title, RecommendedTrips_Day_Name = t1.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = t1.RecommendedTrips_Day_ID, HashTag_Type_ID = t2.HashTag_Type_ID, RecommendedTrips_Destinations_ID = t1.RecommendedTrips_Destinations_ID,RecommendedTrips_Index_Content=t1.RecommendedTrips_Index_Content, RecommendedTrips_Img = t1.RecommendedTrips_Img , RecommendedTrips_Img_Description = t1.RecommendedTrips_Img_Description }
                         ).ToList();
             }
-            ViewBag.HashTage = db.RecommendedTrips_HashTag_Type.Select(p => new F_Recommendedtrips_List_HashTag_ViewMode  {RecommendedTrips_ID= p.RecommendedTrips_ID,HashTag_Type_Name=p.F_HashTag_Type.HashTag_Type_Name,HashTag_Type_ID=p.HashTag_Type_ID }).ToList();
+            ViewBag.HashTage = db.RecommendedTrips_HashTag.ToList();
             ViewBag.count = mode.Count();
             return PartialView(mode);
         }
@@ -318,6 +320,10 @@ namespace WebSiteProject.Controllers
             ViewBag.location = model.Find(RecommendedTrips_ID).RecommendedTrips_Location;
             ViewBag.HtmlContent= model.Find(RecommendedTrips_ID).RecommendedTrips_HtmContent;
             ViewBag.NowPag = nowpage;
+            ViewBag.LinkUrl = model.Find(RecommendedTrips_ID).RecommendedTrips_LinkUrl;
+            ViewBag.LinkUrlDES = model.Find(RecommendedTrips_ID).RecommendedTrips_LinkUrlDesc;
+            ViewBag.Upfile = model.Find(RecommendedTrips_ID).RecommendedTrips_UploadFileDesc; ;
+            ViewBag.UpfileDES= model.Find(RecommendedTrips_ID).RecommendedTrips_UploadFileName; ;
             return View(viewmodel);
         }
         #endregion
@@ -338,5 +344,31 @@ namespace WebSiteProject.Controllers
             return PartialView(model);
         }
         #endregion
+        #region FileDownLoad
+        public ActionResult FileDownLoad(int itemid)
+        {
+            var model = db.RecommendedTrips.Find(itemid);
+            string filepath = model.RecommendedTrips_UploadFilePath;
+            string oldfilename = model.RecommendedTrips_UploadFileName;
+            var uploadfilepath = ConfigurationManager.AppSettings["UploadFile"];
+            if (uploadfilepath.IsNullorEmpty())
+            {
+                uploadfilepath = Request.PhysicalApplicationPath + "\\UploadFile";
+            }
+            if (filepath != "")
+            {
+                string filename = System.IO.Path.GetFileName(filepath);
+                if (string.IsNullOrEmpty(oldfilename)) { oldfilename = filename; }
+                Stream iStream = new FileStream(uploadfilepath + filepath, FileMode.Open, FileAccess.Read, FileShare.Read);
+                return File(iStream, "application/octet-stream", oldfilename);
+            }
+            else
+            {
+                return RedirectToAction("Error");
+            }
+
+        }
+        #endregion
     }
+
 }
