@@ -2075,7 +2075,6 @@
     <Content Include="Views\Videos\XXXIndex.cshtml" />
     <Content Include="Views\Home\F_Video_Detail.cshtml" />
     <Content Include="Views\Destination_Index\Create.cshtml" />
-    <Content Include="Views\Destination_Index\Delete.cshtml" />
     <Content Include="Views\Destination_Index\Details.cshtml" />
     <Content Include="Views\Destination_Index\Index.cshtml" />
     <Content Include="Views\Destination_Index\_MapLegendPartial.cshtml" />

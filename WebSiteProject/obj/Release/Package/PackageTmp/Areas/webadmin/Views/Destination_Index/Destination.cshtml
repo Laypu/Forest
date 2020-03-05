@@ -1,0 +1,271 @@
+﻿@*destination 觀光區編輯*@
+
+@model IEnumerable<WebSiteProject.Models.F_Destination_Type>
+ 
+@{
+    if (TempData["Msg"] != null)
+    {
+        <script>
+            $(function () {
+                var Msg = @Html.Raw(Json.Encode(TempData["Msg"]));
+                alert(Msg);
+            });
+        </script>
+    }
+    
+}
+
+<style>
+    hr {
+        margin: 0px;
+        border-top: 0px solid #eee;
+    }
+
+    .Five_Thingtodo_Header {
+        background-color: lightgray;
+        font-weight: bolder;
+    }
+</style>
+
+<!--page bar start-->
+<div class="page-bar all_width">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="@Url.Action("Index", "Home")">Home</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            Destinations
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>目的地設定</li>
+    </ul>
+</div>
+<!--page bar end-->
+
+<div class="title_01">Destinations</div>
+<div id="Partial_Index_MenuLink">
+    <!--.......-->
+</div>
+
+
+
+
+<div class="portlet light bordered" style="padding-bottom:50px">
+    <div style="padding-bottom:10px">
+        <div class="title_04">@(ViewBag.FreeZoneTitleID == 2 ? "自由編輯區一" : "目的地設定")
+            <button class="btn green-meadow" id="datacreat" style="float:right" onclick="location.href='@Url.Action("Create","Destination_Index")'">
+                新增 <i class="fa fa-plus"></i>
+            </button>
+        </div>
+        
+    </div>
+    
+        
+    
+    <div class="form-horizontal form-bordered" id="editform" enctype="multipart/form-data">
+
+        <div class="portlet light form-fit bordered">
+            <div class="portlet-body form">
+                <div class="form-horizontal form-bordered">
+                    <div class="form-body" id="form-body">
+
+                        <form method="post" action="@Url.Action("Destination","Destination_Index")" class="Five_Thingtodo_Header" id="editform">
+                            <div class="form-group ">
+                                <div class="col-md-1 col-sm-12 col-xs-12 text-center">
+                                    <span class="display_inline">序號</span>
+                                </div>
+                                <div class="col-md-2 col-sm-12 col-xs-12 text-center ">
+                                    <span class="display_inline">標題(上)</span>
+                                </div>
+                                <div class="col-md-2 col-sm-12 col-xs-12  text-center">
+                                    <span class="display_inline">標題(下)</span>
+                                </div>
+                                <div class="col-md-2 col-sm-12 col-xs-12   text-center">
+                                    <span class="display_inline">圖片</span>
+                                </div>
+                                <div class="col-md-2 col-sm-12 col-xs-12   text-center">
+                                    <span class="display_inline">圖片說明</span>
+                                </div>
+                                <div class="col-md-2 col-sm-12 col-xs-12   text-center">
+                                    <span class="display_inline">說明</span>
+                                </div>
+
+                            </div>
+                            <hr class="Five_Thingtodo_div" />
+
+                            @{
+                                var x = 0;
+                                foreach (var item in Model)
+                                {
+                                    ViewBag.id = item.Destination_Type_ID;
+                                                        <div class="form-group" style="background-color:white">
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_ID" id="Destination_Type_ID[@x]" value="@item.Destination_Type_ID" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_Link" id="Destination_Type_Link[@x]" value="@item.Destination_Type_Link" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_CreateDate" id="Destination_Type_CreateDate[@x]" value="@item.Destination_Type_CreateDate" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_ServiceHours" id="Destination_Type_ServiceHours[@x]" value="@item.Destination_Type_ServiceHours" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_Altitude" id="Destination_Type_Altitude[@x]" value="@item.Destination_Type_Altitude" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_MapName" id="Destination_Type_MapName[@x]" value="@item.Destination_Type_MapName" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_Area" id="Destination_Type_Area[@x]" value="@item.Destination_Type_Area" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_Location" id="Destination_Type_Location[@x]" value="@item.Destination_Type_Location" />
+                                                            <input type="hidden" name="F_DES[@x].FPI" id="FPI[@x]" value="@item.FPI" />
+                                                            <input type="hidden" name="F_DES[@x].FPII" id="FPII[@x]" value="@item.FPII" />
+                                                            <input type="hidden" name="F_DES[@x].FPIII" id="FPIII[@x]" value="@item.FPIII" />
+                                                            <input type="hidden" name="F_DES[@x].FPIV" id="FPIV[@x]" value="@item.FPIV" />
+                                                            <input type="hidden" name="F_DES[@x].FPV" id="FPV[@x]" value="@item.FPV" />
+                                                            <input type="hidden" name="F_DES[@x].FPVI" id="FPVI[@x]" value="@item.FPVI" />
+                                                            <input type="hidden" name="F_DES[@x].FPVII" id="FPVII[@x]" value="@item.FPVII" />
+                                                            <input type="hidden" name="F_DES[@x].FPVIII" id="FPVIII[@x]" value="@item.FPVIII" />
+                                                            <input type="hidden" name="F_DES[@x].FPIX" id="FPIX[@x]" value="@item.FPIX" />
+                                                            <input type="hidden" name="F_DES[@x].FPX" id="FPX[@x]" value="@item.FPX" />
+                                                            <input type="hidden" name="F_DES[@x].Temp_Spring" id="Temp_Spring[@x]" value="@item.Temp_Spring" />
+                                                            <input type="hidden" name="F_DES[@x].Temp_Summer" id="Temp_Summer[@x]" value="@item.Temp_Summer" />
+                                                            <input type="hidden" name="F_DES[@x].Temp_Autumn" id="Temp_Autumn[@x]" value="@item.Temp_Autumn" />
+                                                            <input type="hidden" name="F_DES[@x].Temp_Winter" id="Temp_Winter[@x]" value="@item.Temp_Winter" />
+
+                                                            <div class="col-md-1 col-sm-12 col-xs-12 text-center">
+                                                                <span class="display_inline">
+                                                                    <label type="text" name="F_DES[@x].Destination_Type_ID" id="Destination_Type_ID[@x]"> @item.Destination_Type_ID</label>
+                                                                </span>
+                                                            </div>
+
+                                                            <div class="col-md-2 col-sm-12 col-xs-12 text-center ">
+                                                                <span class="display_inline">
+                                                                    <input type="text" name="F_DES[@x].Destination_Type_Title1" id="Destination_Type_Title1T[@x]" value="@item.Destination_Type_Title1" class="form-control" />
+                                                                </span>
+                                                            </div>
+
+                                                            <div class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center">
+                                                                <div class="col-md-11 col-sm-12 col-xs-12 bg-white mobile_white forest_link">
+                                                                    <input type="text" name="F_DES[@x].Destination_Type_Title2" id="Destination_Type_Title2T[@x]" value="@item.Destination_Type_Title2" class="form-control" />
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center align-center">
+                                                                <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/Destination_Img/")@item.Destination_Type_ImgName" />
+                                                                <br />
+
+                                                                <input data-imgid="Index_Img_File@(x)" name="Img_File" type="file" accept=".jpeg,.jpg,.gif,.png" />
+                                                                <label for="Index_Img_File@(x)" style="display:none"></label>
+                                                                <input id="Img_FileName@(x)" name="F_DES[@x].Destination_Type_ImgName" class="selected" value="@item.Destination_Type_ImgName" style="display:none">
+
+                                                            </div>
+
+                                                            <div class="col-md-2 col-sm-12 col-xs-12 text-center ">
+                                                                <span class="display_inline">
+                                                                    <textarea name="F_DES[@x].Destination_Type_ImgDescription" id="Destination_Type_ImgDescription[@x]" style="resize:none; height:160px" class="form-control">@item.Destination_Type_ImgDescription</textarea>
+                                                                </span>
+                                                            </div>
+
+                                                            <div class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white">
+                                                                <textarea name="F_DES[@x].Destination_Type_Description" id="Destination_Type_Description[@x]" style="resize:none; height:160px" class="form-control">@item.Destination_Type_Description</textarea>
+                                                            </div>
+
+                                                            <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                                                <button type="button" class="btn grey-mint">@Html.ActionLink("管理", "Edit", new { id = item.Destination_Type_ID }, new { style = "color:white" })</button>
+
+
+                                                            </div>
+                                                        </div>
+                                    <hr class="Five_Thingtodo_div" />
+                                    @*</form>*@
+                                    x = x + 1;
+                                }
+
+                            }
+                            <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white text-center " id="div_buttons" style="margin:10px;padding:10px">
+                                <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        @*<div class="text-center search_padding">
+                <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+            </div>*@
+    </div>
+
+</div>
+
+
+
+
+@section scripts{
+    <script>
+        var number;
+        $(function () {
+
+
+            //顯示圖片
+            ShowImg();
+
+
+            //送出表單
+            $("#editform").submit(function () {
+
+               
+                $.ajax({
+                    type: "POST",
+                    url: form.action,
+                    data: $(form).serialize(),
+                    success: function (data) {
+                        console.log(data);
+                        console.log("success");
+
+                    }
+                });
+
+                
+            })
+               
+        })
+
+
+
+
+
+
+        //圖片上傳修改
+        function ShowImg() {
+
+            $("input[type='file']").change(function () {
+
+                var imgid = $(this).attr("data-imgid");
+                var reader = new FileReader();
+                reader.readAsDataURL(this.files[0]);
+                var p = this.files[0].name;
+                $(this).parent().children(".selected").val(p)
+                reader.onload = function (e) {
+
+                    $(`#${imgid}`).attr("src", e.target.result)
+
+                    
+                };
+            
+
+                var file_data = $(this).prop('files')[0];
+                var form_data = new FormData();  //建構new FormData()
+                form_data.append('Img_File', file_data);
+               
+                    $.ajax({
+                        type: "POST",
+                        url: `@Url.Action("Upload","Destination_Index")`,
+                        data: form_data,
+                        async: false,
+                        contentType: false,
+                        processData:false,
+                        success: function (data) {
+                        
+                        }
+                    });
+
+            })
+
+        }
+
+
+    </script>
+}

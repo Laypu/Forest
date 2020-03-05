@@ -102,21 +102,21 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             Session.Remove("LoginError");
             var loginSuccess = true;
 
-            if (Request.Form["g-recaptcha-response"].IsNullorEmpty())
-            {
-                loginSuccess = false;
-                model.Message = "尚未勾選驗證";
-            }
-            else
-            {
-                string token = Request.Form["g-recaptcha-response"];
-                var isValid = Common.ValidRecaptcha(token.AntiXssEncode());
-                if (isValid == false)
-                {
-                    loginSuccess = false;
-                    model.Message = "驗證失敗";
-                }
-            }
+            //if (Request.Form["g-recaptcha-response"].IsNullorEmpty())
+            //{
+            //    loginSuccess = false;
+            //    model.Message = "尚未勾選驗證";
+            //}
+            //else
+            //{
+            //    string token = Request.Form["g-recaptcha-response"];
+            //    var isValid = Common.ValidRecaptcha(token.AntiXssEncode());
+            //    if (isValid == false)
+            //    {
+            //        loginSuccess = false;
+            //        model.Message = "驗證失敗";
+            //    }
+            //}
             if (model.Password.IsNullorEmpty())
             {
                 loginSuccess = false;

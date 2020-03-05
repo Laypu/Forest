@@ -94,8 +94,9 @@ namespace Services.Manager
             MasterPageModel.InnerLogoUrl = layoutdata.InnerLogoImageUrlThumb;
             MasterPageModel.PublishContent = layoutdata.PublishContent;
             MasterPageModel.PrintContent = layoutdata.PrintHtmlContent;
-            MasterPageModel.MasterMainTitle = _langdict.ContainsKey("國家高速網路與計算中心") ? _langdict["國家高速網路與計算中心"]: "" ;
-            if (MasterPageModel.MasterMainTitle == "") { MasterPageModel.MasterMainTitle = langid == "1" ? "國家高速網路與計算中心" : "National Center for High-performance Computing"; }
+            MasterPageModel.MasterMainTitle = layoutdata.FowardHtmlContent;
+            //MasterPageModel.MasterMainTitle = _langdict.ContainsKey("國家高速網路與計算中心") ? _langdict["國家高速網路與計算中心"]: "" ;
+            //if (MasterPageModel.MasterMainTitle == "") { MasterPageModel.MasterMainTitle = langid == "1" ? "國家高速網路與計算中心" : "National Center for High-performance Computing"; }
             MasterPageModel.SEOTitle = MasterPageModel.MasterMainTitle;
             var adset = _adsetsqlrepository.GetByWhere("Lang_ID=@1 and SType=@2", new object[] { langid, stype });
             MasterPageModel.FooterString = layoutdata.HtmlContent;
@@ -370,9 +371,10 @@ namespace Services.Manager
             var sb = new StringBuilder();
             UrlHelper helper = new UrlHelper(HttpContext.Current.Request.RequestContext);
             var M = allmenu.Where(v => v.ID == 4);
+            var x = 1;
             foreach (var m in allmenu.Where(v => v.MenuLevel == 1))
             {
-                sb.Append("<li class='dropdown'>");
+                sb.Append($"<li class='dropdown' id='menu{x}'>");
 
                 var l2 = allmenu.Where(v => v.ParentID == m.ID);
                 if (l2.Count() > 0)
@@ -483,6 +485,7 @@ namespace Services.Manager
                     sb.Append(sbstr);
                 }
                 sb.Append("</li>");
+                
             }
 
             return sb.ToString();

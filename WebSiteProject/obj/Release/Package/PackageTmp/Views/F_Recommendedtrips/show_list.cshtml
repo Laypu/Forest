@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ViewModels.RecommendedSearchModel>
+@{
+    Layout = null;
+
+}
+@{
+    var RTModel = (List<WebSiteProject.Models.F_ViewModels.F_Recommendedtrips_List_HashTag_ViewMode>)ViewBag.HashTage;
+    if (ViewBag.count == 0)
+    {
+        <div class="text-center va-middle">目前暫無此推薦行程</div>
+    }
+    else
+    {
+    <ul>      
+           @foreach (var item in Model)
+            {
+            <li class="bg_print" style="background-image:url(img/trip_map_03.png);" data-sr="enter top over 1.5s">
+                <!--六大森林遊樂區trip_map_01~06(內洞、奧萬大、合歡山、大雪山、阿里山、墾丁)，後台可以選擇-->
+                <div class="img" style="background:url(@Url.Content("~/UploadImage/RecommendedTrips/")@item.RecommendedTrips_Img)" title="@item.RecommendedTrips_Img_Description">
+                    <!--建議尺寸800*800px，圖片會置頂、置中，多餘部份遮住-->
+                    <div class="type">@item.RecommendedTrips_Day_Name</div>
+                    <img src="@Url.Content("~/img/800x450.png")" alt="" />
+                </div>
+                <div class="font">
+                    <div class="title"><a href="@Url.Action("recommended_Detail",new {item.RecommendedTrips_ID })" title="">@item.RecommendedTrips_Title</a></div>
+                    <div class="con">
+                        @Html.Raw(HttpUtility.HtmlDecode(item.RecommendedTrips_Index_Content))
+                        <div class="link">
+                            @foreach (var item2 in RTModel)
+                            {
+                                if (item.RecommendedTrips_ID == item2.RecommendedTrips_ID)
+                                {
+                                    <a href="@Url.Action("ThinngsToDo_List","F_ThingsToDo",new {F_TTD_Id=item2.HashTag_Type_ID})" title="">#@item2.HashTag_Type_Name</a>
+                                }
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+            }
+
+
+    </ul>
+  }
+}

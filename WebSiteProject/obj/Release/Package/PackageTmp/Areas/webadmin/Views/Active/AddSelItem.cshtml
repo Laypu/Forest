@@ -1,0 +1,30 @@
+﻿<tr id="tr_@(ViewBag.index)" class="selitem" seqidx="@(ViewBag.seqindex)">
+    <td class="text-center">
+        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+            <input type="checkbox" class="checkboxes">
+            <span name="check_@(ViewBag.index)"></span>
+        </label>
+    </td>
+    <td class="text-center">
+        <div class="col-md-10 bg-white">
+            <div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="yyyy/mm/dd">
+                <input type="text" class="form-control seltext sdate" value="" placeholder="開始日期" id="PublicshDateFrom_@(ViewBag.seqindex)">
+                <span class="input-group-addon"> to </span>
+                <input type="text" class="form-control seltext edate" value="" placeholder="結束日期" id="PublicshDateTo@(ViewBag.seqindex)">
+            </div>
+        </div>
+    </td>
+</tr>
+<script>
+
+    $('#PublicshDateFrom_@(ViewBag.seqindex)').datepicker({
+        format: "yyyy/mm/dd",
+        autoclose: true,
+        language: 'zh-TW'
+    });
+    $('#PublicshDateTo@(ViewBag.seqindex)').datepicker({
+        format: "yyyy/mm/dd",
+        autoclose: true,
+        language: 'zh-TW'
+    });
+</script>

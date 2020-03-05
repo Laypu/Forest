@@ -1,0 +1,339 @@
+﻿@model  PageLayoutActivityModel
+<script src="@Url.Content("~/Scripts/components-date-time-pickers.min.js")"></script>
+<script src="@Url.Content("~/Scripts/bootstrap-datepicker.min.js")"></script>
+<script src="@Url.Content("~/Scripts/ckeditor/ckeditor.js")"></script>
+<script src="@Url.Content("~/Scripts/custom.js")"></script>
+<script src="@Url.Content("~/Scripts/bootbox.min.js")"></script>
+<script src="~/Scripts/cropper/cropper.min.js"></script>
+<link href="~/Scripts/cropper/cropper.min.css" rel="stylesheet" />
+<style type="text/css">
+    #user-photo {
+        width: 300px;
+        height: 300px;
+        margin-top: 10px;
+    }
+
+    #photo {
+        max-width: 100%;
+        max-height: 350px;
+    }
+
+    .img-preview-box {
+        text-align: center;
+    }
+
+        .img-preview-box > div {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+    .img-preview {
+        overflow: hidden;
+    }
+
+    .img-preview-box .img-preview-lg {
+        width: 150px;
+        height: 150px;
+    }
+
+    /*.img-preview-box .img-preview-md {
+        width: 100px;
+        height: 100px;
+    }
+
+    .img-preview-box .img-preview-sm {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }*/
+</style>
+<!--page bar start-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="@Url.Action("Index","Home")">Home</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>版面設定<i class="fa fa-circle"></i></li>
+        <li>入口首頁配置</li>
+    </ul>
+</div>
+<!--page bar end-->
+<!--message start-->
+<div class="title_01">入口首頁配置</div>
+
+<div class="portlet light bordered">
+    <div class="table-toolbar">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <p class="class_title">管理項目</p>
+            <div class="display_inline">
+                <select class="form-control_1" id="sel_unit" onChange="window.location.href=this.value">
+                    <option value="@Url.Action("PageNewsEdit")">焦點新聞</option>
+                    <option value="@Url.Action("PageActiveEdit")">活動專區</option>
+                    <option value="@Url.Action("PageLayoutOP1Edit")">自由編輯區1</option>
+                    <option value="@Url.Action("PageLayoutOP2Edit")">自由編輯區2</option>
+                    <option value="@Url.Action("PageLayoutOP3Edit")">自由編輯區3</option>
+                    <option value="@Url.Action("PageLayoutLink")">首頁相關連結</option>
+                    <option value="#" selected>相關活動</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <form class="form-horizontal form-bordered" method="Post" id="editform" action='@Url.Action("SavePageActivity")' enctype="multipart/form-data">
+        <div class="portlet light form-fit bordered">
+            <div class="portlet-body form">
+                <div class="form-horizontal form-bordered">
+                    <div class="form-body" id="form-body2">
+
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item"><span class="red">*</span>更多訊息</div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                @Html.EditorFor(model => model.Link, new { htmlAttributes = new { @class = "form-control checkitem" } })
+                                <span class="required" id="Link-error" style="display:none;">更多訊息 必須填寫！</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portlet light form-fit bordered">
+            <div class="portlet-body form">
+                <div class="form-horizontal form-bordered">
+                    <div class="form-body" id="form-body2_1">
+                        @for (var idx = 1; idx <= Model.Items.Count(); idx++)
+                        {
+                            <div class="form-group">
+                                <div class="col-md-2 col-sm-2 col-xs-12 search_item">項目@(idx)</div>
+                                <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                    <div class="col-md-12" id="div_item">
+                                        <div class="col-md-1">連結路徑</div>
+                                        <div class="col-md-11">  @Html.EditorFor(model => model.Items[idx - 1].Link, new { htmlAttributes = new { @class = "form-control" } })</div>
+                                        <div class="col-md-1">標題</div>
+                                        <div class="col-md-11">  @Html.EditorFor(model => model.Items[idx - 1].Title, new { htmlAttributes = new { @class = "form-control" } })</div>
+                                        @*<div class="col-md-1">內文</div>
+                                        <div class="col-md-11">
+                                            <textarea cols="80" id="Model_Item@(idx-1)_Desc" rows="3" class="form-control" maxlength="500">@Model.Items[idx-1].Desc</textarea>
+                                        </div>*@
+                                        <div class="col-md-1">上傳圖片</div>
+                                        <div class="col-md-11">
+                                            @if (string.IsNullOrEmpty(Model.Items[idx - 1].FileName) == false)
+                                            {
+                                                <div id="div_oldfile_@idx" class="imagefilearea">
+                                                    @Html.HiddenFor(v => v.Items[idx - 1].FileName)
+                                                    <a href="@Model.Items[idx-1].FilePath" target="preview" class="div_image">@Model.Items[idx - 1].FileName</a>
+                                                    <label style="color:blue;margin-left:10px;cursor:pointer" id="del_image_@idx" class="delimage">刪除</label>
+                                                    <label style="color:blue;margin-left:10px;cursor:pointer" id="cut_image_@idx" class="cutimage" tabindex="@idx">剪裁</label>
+                                                </div>
+                                            }
+                                                <div style="display:inline">
+                                                    <input id="file_icon_@idx" type="file" class="display_inline ltem_image" name="Item[@(idx-1)].ImageFile" accept="image/*" />
+                                                    @if (idx >= 1 && idx <= 2)
+                                                    {
+                                                    <span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸800*383px</span>
+                                                    }
+                                                    else if (idx == 3)
+                                                    {
+                                                    <span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸400*833px</span>
+                                                    }
+                                                    else
+                                                    {
+                                                    <span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸800*800px</span>
+                                                    }
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center search_padding">
+            <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+        </div>
+    </form>
+
+    <div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title text-primary">
+                        <i class="fa fa-pencil"></i>
+                        剪裁設定
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="img-container">
+                        <img src="" alt="" id="photo" index="0">
+                    </div>
+                    <div class="img-preview-box hidden">
+                        <hr>
+                        <span>預覽</span>
+                        <div class="img-preview img-preview-lg">
+                        </div>
+                        @*<span>100*100</span>
+                        <div class="img-preview img-preview-md">
+                        </div>
+                        <span>30*30</span>
+                        <div class="img-preview img-preview-sm">
+                        </div>*@
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary disabled" disabled="true" onclick="sendPhoto();">確定</button>
+                    <button class="btn btn-close" aria-hidden="true" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section scripts {
+    <script>
+        var initCropperInModal = function (img, input, modal) {
+            var $image = img;
+            var $inputImage = input;
+            var $modal = modal;
+            var options = {
+                aspectRatio: 16 / 9, // 纵横比
+                viewMode: 1,
+                dragMode: 'move',
+                preview: '.img-preview' // 预览图的class名
+            };
+            var saveData = {};
+            var URL = window.URL || window.webkitURL;
+            var blobURL;
+            $modal.on('show.bs.modal', function () {
+
+            }).on('shown.bs.modal', function () {
+                $('.img-container').removeClass('hidden');
+                $('.img-preview-box').removeClass('hidden');
+                $('#changeModal .disabled').removeAttr('disabled').removeClass('disabled');
+                $('#changeModal .tip-info').addClass('hidden');
+                var nowindex = $image.attr('index');
+                if (nowindex == 1 || nowindex == 2) {
+                    options.aspectRatio = 800 / 383;
+                } else if (nowindex == 3) {
+                    options.aspectRatio = 400 / 833;
+                } else { options.aspectRatio = 1;}
+                $image.cropper($.extend(options, {
+                    ready: function () {
+                        if (saveData.canvasData) {
+                            $image.cropper('setCanvasData', saveData.canvasData);
+                            $image.cropper('setCropBoxData', saveData.cropBoxData);
+                           
+                        }
+                    }
+                }));
+                $image.cropper('setDragMode', 'move');
+            }).on('hidden.bs.modal', function () {
+                saveData.cropBoxData = $image.cropper('getCropBoxData');
+                saveData.canvasData = $image.cropper('getCanvasData');
+                $image.cropper('destroy').attr('src', blobURL);
+            });
+
+        }
+
+        var sendPhoto = function () {
+            var width = 400;
+            var height = 400;
+            var nowindex = $('#photo').attr('index');
+            if (nowindex == "1" || nowindex == "2") {
+                width = 800;
+                height = 383;
+            } else if (nowindex == "3") {
+                width = 400;
+                height = 833;
+            } 
+            var uri = $('#photo').cropper('getCroppedCanvas', {
+                width: width,
+                height: height
+            }).toDataURL();
+            $.post('@Url.Action("SetImage")', { "imageindex": nowindex, "base64": uri }, function (data) {
+                alert(data);
+                       window.location.href = '@Url.Action("PageActivity")';
+            });
+        }
+       
+
+        $(function () {
+            initCropperInModal($('#photo'), $('#photoInput'), $('#changeModal'));
+            $('.delimage').click(function () {
+                $(this).parents('.imagefilearea').find(':hidden').val('');
+                $(this).parents('.imagefilearea').hide();
+            });
+            $('.cutimage').click(function () {
+                var saveData = {};
+                var URL = window.URL || window.webkitURL;
+                var blobURL;
+                var options = {
+                    aspectRatio: 1,
+                    viewMode: 2,
+                    preview: '.img-preview'
+                };
+       
+                var path = $(this).parents('.imagefilearea').find(".div_image").attr('href');
+                var nowindex = $(this).attr('tabindex');
+                $("#photo").attr('src', path).attr('index', nowindex);
+                $('#changeModal').modal('show');
+      
+            });
+            $('#editform').submit(function (event) {
+                $(".required").hide();
+                var inputval = $("#editform :input").filter(function () { return $(this).val() == "" && $(this).hasClass('checkitem'); });
+                for (var idx = 0; idx < inputval.length; idx++) {
+                    $("#" + inputval[idx].id + "-error").show();
+                }
+                var formData = new FormData();
+                var array = $('#editform').serializeArray();
+                $.each(array, function () {
+                    formData.append(this.name, this.value);
+                });
+                var item = $(".ltem_image ")
+                for (var idx = 0; idx < item.length; idx++) {
+                    var images = $(item[idx]).get(0).files;
+                    if (images.length > 0) {
+                        formData.append("Items[" + idx + "].ImageFile", images[0]);
+                    } else {
+                        formData.append("Items[" + idx + "].ImageFile", null);
+                    }
+                }
+                formData.append("Introduction", encodeURIComponent($('#Introduction').val()));
+                formData.append("Items[0].Desc", encodeURIComponent($('#Model_Item0_Desc').val()));
+                formData.append("Items[1].Desc", encodeURIComponent($('#Model_Item1_Desc').val()));
+                formData.append("Items[2].Desc", encodeURIComponent($('#Model_Item2_Desc').val()));
+                formData.append("Items[3].Desc", encodeURIComponent($('#Model_Item3_Desc').val()));
+                formData.append("Items[4].Desc", encodeURIComponent($('#Model_Item4_Desc').val()));
+                formData.append("Items[5].Desc", encodeURIComponent($('#Model_Item5_Desc').val()));
+                formData.append("Items[6].Desc", encodeURIComponent($('#Model_Item6_Desc').val()));
+                $.ajax({
+                    url: this.action,
+                    data: formData,
+                    type: 'POST',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        if (data == "") {
+                            alert("作業完成");
+                            window.location.href = '@Url.Action("PageActivity")';
+                        } else {
+                            alert(data);
+                        }
+                    }, error: function () {
+                        // handle error
+                    }
+                });
+                return false;
+            });
+        });
+
+
+    </script>
+
+}
+

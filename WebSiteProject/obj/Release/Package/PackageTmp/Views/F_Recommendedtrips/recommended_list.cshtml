@@ -1,0 +1,132 @@
+﻿@{
+    Layout = WebSiteProject.Code.Common.GetIndexLayout(Model.LangId);
+}
+
+@model HomeViewModel
+
+<div class="page_banner banner_bg" style="background:url(@Url.Content("~/img/banner_r.jpg"))">
+    <!--圖片建議尺寸4000*200px-->
+
+    <div class="banner_title">
+        <h2>Recommended trips</h2>
+    </div>
+
+</div>
+<!--page_content start-->
+<div class="page_content">
+    <!--trip_search start-->
+    <div class="trip_search">
+        <form method="post" action="@Url.Action("recommended_list")">
+            <div class="container">
+
+                <label for="trip_day">
+                    I'd like to visit Taiwan for
+                    @Html.DropDownList("Day_Id", (IEnumerable<SelectListItem>)ViewBag.RecommendedTrips_Day_ID, "all ltineraries", htmlAttributes: new { @class = "form-control w-auto display_inline", rows = "8", cols = "100" })
+                    @*<select class="form-control w-auto display_inline" id="trip_day">
+                    <option>All Itineraries</option>
+                    <option>1 Day</option>
+                    <option>2 Day</option>
+                    <option>Special</option>
+                </select>*@
+                </label><br />
+
+                <label for="trip_area">
+                    I want to tour
+                    @Html.DropDownList("Dstination_typ", (IEnumerable<SelectListItem>)ViewBag.RecommendedTrips_Destinations_ID, "all ltineraries", htmlAttributes: new { @class = "form-control w-auto display_inline", rows = "8", cols = "100" })
+                    @*<select class="form-control w-auto display_inline" id="trip_area">
+                    <option>Neidong Forest Recreation Area</option>
+                    <option>Aowanda Forest Recreation Area</option>
+                    <option>Hehuanshan Forest Recreation Area</option>
+                    <option>Dayueshan Forest Recreation Area</option>
+                    <option>Alishan Forest Recreation Area</option>
+                    <option>Kenting Forest Recreation Area</option>
+                </select>*@
+                </label><br />
+
+                <label for="trip_do">
+                    and I'm interested in
+                    @Html.DropDownList("F_HashTag", (IEnumerable<SelectListItem>)ViewBag.F_HashTag_Type, "all ltineraries", htmlAttributes: new { @class = "form-control w-auto display_inline", rows = "8", cols = "100" })
+                    @*<select class="form-control w-auto display_inline" id="trip_do">
+                    <option>Top things to see &amp; do</option>
+                    <option>Forestry culture & railway</option>
+                    <option>Walking &amp; hiking</option>
+                    <option>Ecological observation</option>
+                    <option>Culture experience</option>
+                </select>*@
+                </label>
+
+                <button class="btn_01 display_inline" id="btn_search" type="submit">Find trips</button>
+            </div>
+        </form>
+    </div>
+    <!--trip_search end-->
+    <!--page top start-->
+    <div class="page_top">
+        <div class="container">
+            <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
+                <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
+                <a href="@Url.Action("Index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i><a href="@Url.Action("Index")" title="Recommended trips">Recommended trips</a>
+            </div>
+            <div class="col-md-5 col-sm-6 col-xs-12">
+                <!--<script>$.include("blocks/page_top.html");</script>-->
+            </div>
+        </div>
+    </div>
+    <!--page top end-->
+    <!--trip_list start--><!--預計12個行程，全show，不要分頁-->
+    <div class="trip_list">
+        <div class="container">
+            @{
+                var day = "-1";
+                var Dstination = "-1";
+                var Hashtage = "-1";
+                if (ViewBag.day_id != "-1")
+                {
+                    day = ViewBag.day_id;
+                }
+                if (ViewBag.dstination_typ != "-1")
+                {
+                    Dstination = ViewBag.dstination_typ;
+                }
+
+                if (ViewBag.f_HashTag != "-1")
+                {
+                    Hashtage = ViewBag.f_HashTag;
+                }
+                @Html.Action("Show_list", new { Dstination_typ = Dstination, Day_Id = day, F_HashTag = Hashtage })
+
+            }
+
+
+        </div>
+    </div>
+
+    <!--trip_list end-->
+
+</div>
+<!--page_content end-->
+<!--breadcrumbs start-->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="title">You are here</div>
+        <div class="font"><a href="@Url.Action("Index","Home")" title="Home">Home</a> / <a href="@Url.Action("Index")" title="Recommended trips">Recommended trips</a></div>
+    </div>
+</div>
+<!--breadcrumbs end-->
+@section scripts_V{
+<script>
+        @*$(function () {
+            var appan = $(".trip_list").children(".container")
+             $("#btn_search").click(function () {
+                 var Dstination_typ = $("#Dstination_typ").val();
+                 var Day_Id = $("#Day_Id").val() 
+                 var F_HashTag = $("#F_HashTag").val()
+                 var DestData= Dstination_typ == "" ? "-1" : Dstination_typ;
+                 var DayData = Day_Id == "" ? "-1" : Day_Id;
+                 var HashTagData =F_HashTag == "" ? "-1" : F_HashTag;
+                 appan.load(`@Url.Action("Show_list")/?Dstination_typ=${DestData}&Day_Id=${DayData}&F_HashTag=${HashTagData}`)
+           })
+        })*@
+
+</script>
+ }

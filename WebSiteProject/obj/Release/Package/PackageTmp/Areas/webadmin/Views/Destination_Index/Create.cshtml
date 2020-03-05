@@ -1,0 +1,99 @@
+﻿@model WebSiteProject.Models.F_Destination_Type
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<!--page bar start-->
+<div class="page-bar all_width">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="@Url.Action("Index", "Home")">Home</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            Destinations
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>目的地新增</li>
+    </ul>
+</div>
+<!--page bar end-->
+
+<div class="title_01">Destinations</div>
+
+<div class="portlet light bordered">
+
+    <form class="form-horizontal form-bordered" method="Post" id="editform" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+        
+        @Html.HiddenFor(Model => Model.Destination_Type_CreateDate)
+        @Html.HiddenFor(Model => Model.Destination_Type_Link)
+        <input id="hid_isAdd" type="hidden" name="isAdd" value='@ViewBag.IsAdd' />
+        <div class="portlet light form-fit bordered">
+            <div class="portlet-body form">
+                <div class="form-horizontal form-bordered">
+                    <div class="form-body" id="form-body">
+
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">標題(上)</div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                @Html.TextBoxFor(model => model.Destination_Type_Title1)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">標題(下)</div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                    @Html.TextBoxFor(model => model.Destination_Type_Title2)
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 search_item">圖片上傳</div>
+                            <div class="col-md-10 col-sm-4 col-xs-12 bg-white mobile_white">
+                                @Html.TextBoxFor(model => model.Destination_Type_ImgName, new { @id = "file_image", type = "file", @name = "uploadfile", accept = "image/*" })
+                                @*<div id="div_oldfile" style="display:none">@Model.Destination_Type_ImgName<label style="color:blue;margin-left:10px;cursor:pointer" id="delimage">刪除</label></div>
+                                <input id="file_image" type="file" name="uploadfile" accept="image/*" />*@
+                                @if (ViewBag.SType == "P")
+                                {
+                                    <span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸4000*850px</span>
+                                }
+                                else
+                                {
+                                    <span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸1200*2000px</span>
+                                }
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">說明</div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                    @Html.TextAreaFor(model => model.Destination_Type_Description, new { @style = "height:200px;width:700px;resize:none" })
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center search_padding">
+            <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+            <button type="button" class="btn grey-mint" id="btn_return">返回列表</button>
+        </div>
+    </form>
+
+</div>
+
+<script>
+    $("#btn_return").click(function () {
+        history.go(-1);
+    });
+           
+
+</script>

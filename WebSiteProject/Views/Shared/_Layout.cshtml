@@ -51,7 +51,7 @@
         }
         else
         {
-            <title>@Model.SEOTitle</title>
+            <title>@Model.SEOScript[2]</title>
         }
         if (Model.SEOScript[1] != "")
         {
@@ -343,7 +343,18 @@
            });*@
            if ('@ViewBag.showmessage' == "Y") {
                showauth();
-           }
+        }
+
+        $("#mainNav>li>a").click(function () {
+
+            $(this).addClass("active").parent().siblings().children().removeClass("active");
+
+            
+
+        }
+
+
+
     });
 
 </script>

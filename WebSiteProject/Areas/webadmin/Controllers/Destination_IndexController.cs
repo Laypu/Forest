@@ -179,8 +179,9 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         public ActionResult Edit(int? id)
         {
             ViewBag.Destination_Fare = db.Destination_Fare.Where(m =>m.Destination_Type_ID == id).ToList();
-            
-            
+            ViewBag.TypeID = id;
+            ViewBag.TypeName = db.F_Destination_Type.Where(m=>m.Destination_Type_ID==id).First().Destination_Type_Title1;
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -212,7 +213,6 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         db.Entry(DF[i]).State = EntityState.Modified;
                     }
                 }
-
 
                 db.SaveChanges();
                 TempData["Msg"] = "作業完成";
@@ -349,18 +349,17 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             return RedirectToAction("Destination");
         }
 
-       
 
+        
 
         // POST: webadmin/Destination_Index/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        [HttpPost]
+        public ActionResult Delete(int? chargeID)
         {
-            Destination_Index Destination_Index = db.Destination_Index.Find(id);
-            db.Destination_Index.Remove(Destination_Index);
+            Destination_Fare Destination_Fare = db.Destination_Fare.Find(chargeID);
+            db.Destination_Fare.Remove(Destination_Fare);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Destination");
         }
 
         protected override void Dispose(bool disposing)

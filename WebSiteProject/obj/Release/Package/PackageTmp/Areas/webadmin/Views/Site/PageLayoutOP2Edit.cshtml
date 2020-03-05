@@ -1,0 +1,157 @@
+﻿@model  PageLayoutOP2Model
+<script src="@Url.Content("~/Scripts/components-date-time-pickers.min.js")"></script>
+<script src="@Url.Content("~/Scripts/bootstrap-datepicker.min.js")"></script>
+<script src="@Url.Content("~/Scripts/ckeditor/ckeditor.js")"></script>
+<script src="@Url.Content("~/Scripts/custom.js")"></script>
+<!--page bar start-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="@Url.Action("Index","Home")">Home</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>版面設定<i class="fa fa-circle"></i></li>
+        <li>入口首頁配置</li>
+    </ul>
+</div>
+<!--page bar end-->
+<!--message start-->
+<div class="title_01">入口首頁配置</div>
+
+<div class="portlet light bordered">
+    <div class="table-toolbar">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <p class="class_title">管理項目</p>
+            <div class="display_inline">
+                <select class="form-control_1" id="sel_unit" onChange="window.location.href=this.value">
+                    <option value="@Url.Action("PageNewsEdit")">焦點新聞</option>
+                    <option value="@Url.Action("PageActiveEdit")">活動專區</option>
+                    <option value="@Url.Action("PageLayoutOP1Edit")">自由編輯區1</option>
+                    <option value="#" selected>自由編輯區2</option>
+                    <option value="@Url.Action("PageLayoutOP3Edit")">自由編輯區3</option>
+                    <option value="@Url.Action("PageLayoutLink")">首頁相關連結</option>
+                    <option value="@Url.Action("PageActivity")">相關活動</option>
+                </select>
+            </div>
+        </div>
+    </div> <hr>
+    <form class="form-horizontal form-bordered" method="Post" id="editform" action='@Url.Action("SavePageLayoutOP2Edit")' enctype="multipart/form-data">
+        <div class="portlet light form-fit bordered">
+            <div class="portlet-body form">
+                <div class="form-horizontal form-bordered">
+                    <div class="form-body" id="form-body2">
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">是否顯示</div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                <div class="display_inline">
+                                    <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                        @Html.CheckBoxFor(m => m.IsShow, new { @class = "checkboxes" })
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item"><span class="red">*</span>標題</div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control checkitem" } })
+                                <span class="required" id="LeftTitle-error" style="display:none;">標題 必須填寫！</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">描述</div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                <textarea cols="80" id="Introduction" rows="3" class="form-control" maxlength="500">@Model.Introduction</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item"> 圖片</div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                @if (string.IsNullOrEmpty(Model.FileName) == false)
+                                {
+                                    <div id="div_oldfile" class="imagefilearea">
+                                        @Html.HiddenFor(v => v.FileName)
+                                        <a href="@Url.Content(Model.FilePath)" target="preview">@Model.FileName</a>
+                                        <label style="color:blue;margin-left:10px;cursor:pointer" id="del_image" class="delimage">刪除</label>
+                                    </div>
+                                }
+                                <div style="display:inline">
+                                    <input id="file_image" type="file" class="display_inline right_image" name="ImageFile" accept="image/*" />
+                                    <span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸400*850px</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">了解更多連結</div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                @Html.EditorFor(model => model.Link, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">了解更多連結開啟方式</div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                @Html.RadioButtonFor(model => model.LinkMode, 1, new { style = "margin-left :0px", @checked = "checked" })原視窗
+                                @Html.RadioButtonFor(model => model.LinkMode, 2, new { style = "margin-left :40px" }) 新視窗
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center search_padding">
+            <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+        </div>
+    </form>
+
+</div>
+@section scripts {
+    <script>
+        $(function () {
+            $('.delimage').click(function () {
+                $(this).parents('.imagefilearea').find(':hidden').val('');
+                $(this).parents('.imagefilearea').hide();
+            });
+            
+            $('#editform').submit(function (event) {
+                $(".required").hide();
+                var inputval = $("#editform :input").filter(function () { return $(this).val() == "" && $(this).hasClass('checkitem'); });
+                for (var idx = 0; idx < inputval.length; idx++) {
+                    $("#" + inputval[idx].id + "-error").show();
+                }
+                var formData = new FormData();
+                var array = $('#editform').serializeArray();
+                $.each(array, function () {
+                    formData.append(this.name, this.value);
+                });
+                var image = $("#file_image ").get(0).files;
+                if (image.length > 0) {
+                    formData.append("ImageFile", image[0]);
+                } else {
+                    formData.append("ImageFile", null);
+                }
+                formData.append("Introduction", encodeURIComponent($('#Introduction').val()));
+                $.ajax({
+                    url: this.action,
+                    data: formData,
+                    type: 'POST',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        if (data == "") {
+                            alert("作業完成");
+                            window.location.href = '@Url.Action("PageLayoutOP2Edit")';
+                        } else {
+                            alert(data);
+                        }
+                    }, error: function () {
+                        // handle error
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+
+}
+

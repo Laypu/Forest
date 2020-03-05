@@ -1,0 +1,178 @@
+﻿@model IEnumerable<WebSiteProject.Models.Destination_MapLegend>
+
+@{
+    ViewBag.Title = "Index";
+}
+<!--page bar start-->
+<div class="page-bar all_width">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="@Url.Action("Index", "Home")">Home</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            Destinations
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>MapLegend設定</li>
+    </ul>
+</div>
+<!--page bar end-->
+
+<div class="title_01">Destinations</div>
+<div id="Partial_Index_MenuLink">
+    <!--.......-->
+</div>
+
+<div class="form-horizontal form-bordered" id="editform" enctype="multipart/form-data">
+
+    <div class="portlet light form-fit bordered">
+        <div class="portlet-body form">
+            <div class="form-horizontal form-bordered">
+                <div class="form-body" id="form-body">
+
+                    <form method="post" action="@Url.Action("Index","Destination_MapLegend")" class="Five_Thingtodo_Header" id="editform">
+                        <div class="form-group ">
+                            <div class="col-md-1 col-sm-12 col-xs-12 text-center">
+                                <span class="display_inline">序號</span>
+                            </div>
+                            <div class="col-md-4 col-sm-12 col-xs-12 text-center ">
+                                <span class="display_inline">MapLegend</span>
+                            </div>
+                            <div class="col-md-3 col-sm-12 col-xs-12  text-center">
+                                <span class="display_inline">圖片</span>
+                            </div>
+                            <div class="col-md-3 col-sm-12 col-xs-12   text-center">
+                                <span class="display_inline">圖片(手機)</span>
+                            </div>
+
+
+                        </div>
+                        <hr class="Five_Thingtodo_div" />
+
+                        @{
+                            var x = 0;
+                            foreach (var item in Model)
+                            {
+
+                                <div class="form-group" style="background-color:white">
+                                    <input type="hidden" name="DML[@x].Destination_MAP_LEGEND_ID" id="Destination_MAP_LEGEND_ID" value="@item.Destination_MAP_LEGEND_ID" />
+
+                                    <div class="col-md-1 col-sm-12 col-xs-12 text-center">
+                                        <span class="display_inline">
+                                            <label type="text" name="DML[@x].Destination_MAP_LEGEND_ID" id="Destination_MAP_LEGEND_ID"> @item.Destination_MAP_LEGEND_ID</label>
+                                        </span>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-12 col-xs-12 text-center ">
+                                        <span class="display_inline">
+                                            <input type="text" name="DML[@x].Destination_MAP_LEGEND_Name" id="Destination_MAP_LEGEND_Name" value="@item.Destination_MAP_LEGEND_Name" class="form-control" />
+                                        </span>
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center align-center">
+                                        <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@item.Destination_Img" />
+                                        <br />
+                                        <input data-imgid="Index_Img_File@(x)" name="Img_File" type="file" accept=".jpeg,.jpg,.gif,.png" />
+                                        <label for="Index_Img_File@(x)" style="display:none"></label>
+                                        <input id="Img_FileName@(x)" name="DML[@x].Destination_Img" class="selected" value="@item.Destination_Img" style="display:none">
+                                    </div>
+
+                                    <div class="col-md-3 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center align-center">
+                                        <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@item.Destination_Img_Mobile" />
+                                        <br />
+                                        <input data-imgid="Index_Img_File@(x)" name="Img_File" type="file" accept=".jpeg,.jpg,.gif,.png" />
+                                        <label for="Index_Img_File@(x)" style="display:none"></label>
+                                        <input id="Img_FileName@(x)" name="DML[@x].Destination_Img_Mobile" class="selected" value="@item.Destination_Img_Mobile" style="display:none">
+                                    </div>
+                                </div>
+                                <hr class="Five_Thingtodo_div" />
+
+                                x = x + 1;
+                            }
+
+                        }
+                        <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white text-center " id="div_buttons" style="margin:10px;padding:10px">
+                            <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        var number;
+        $(function () {
+
+
+            //顯示圖片
+            ShowImg();
+
+
+            //送出表單
+            $("#editform").submit(function () {
+
+
+                $.ajax({
+                    type: "POST",
+                    url: form.action,
+                    data: $(form).serialize(),
+                    success: function (data) {
+                        console.log("success");
+
+                    }
+                });
+
+
+            })
+
+        })
+
+
+
+
+
+
+        //圖片上傳修改
+        function ShowImg() {
+
+            $("input[type='file']").change(function () {
+
+                var imgid = $(this).attr("data-imgid");
+                var reader = new FileReader();
+                reader.readAsDataURL(this.files[0]);
+                var p = this.files[0].name;
+                $(this).parent().children(".selected").val(p)
+                reader.onload = function (e) {
+
+                    $(`#${imgid}`).attr("src", e.target.result)
+
+
+                };
+
+
+                var file_data = $(this).prop('files')[0];
+                var form_data = new FormData();  //建構new FormData()
+                form_data.append('Img_File', file_data);
+
+                    $.ajax({
+                        type: "POST",
+                        url: `@Url.Action("Upload","Destination_MapLegend")`,
+                        data: form_data,
+                        async: false,
+                        contentType: false,
+                        processData:false,
+                        success: function (data) {
+
+                        }
+                    });
+
+            })
+
+        }
+
+
+    </script>
+}

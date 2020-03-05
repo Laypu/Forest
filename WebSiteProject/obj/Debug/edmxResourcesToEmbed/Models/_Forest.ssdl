@@ -178,7 +178,7 @@
     <Property Name="ADDesc" Type="nvarchar" MaxLength="1000" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'Forest.dbo.AdminFunction' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'DB67039.dbo.AdminFunction' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="AdminFunction">
     <Key>
       <PropertyRef Name="ID" />
@@ -448,6 +448,7 @@
     <Property Name="Destination_Type_Title2" Type="nvarchar(max)" />
     <Property Name="Destination_Type_CreateDate" Type="datetime" />
     <Property Name="Destination_Type_ImgName" Type="nvarchar(max)" />
+    <Property Name="Destination_Type_ImgDescription" Type="nvarchar(max)" />
     <Property Name="Destination_Type_Link" Type="nvarchar(max)" />
     <Property Name="Destination_Type_Description" Type="nvarchar(max)" />
     <Property Name="Destination_Type_MapName" Type="nvarchar(max)" />
@@ -469,6 +470,8 @@
     <Property Name="FPVIII" Type="nvarchar" MaxLength="20" />
     <Property Name="FPIX" Type="nvarchar" MaxLength="20" />
     <Property Name="FPX" Type="nvarchar" MaxLength="20" />
+    <Property Name="Recommend_Img" Type="nvarchar(max)" />
+    <Property Name="Recommend_Detail_Img" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="F_HashTag_Type">
     <Key>
@@ -925,7 +928,7 @@
     <Property Name="LKey" Type="int" Nullable="false" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'Forest.dbo.LinkItem' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'DB67039.dbo.LinkItem' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="LinkItem">
     <Key>
       <PropertyRef Name="ItemID" />
@@ -1580,16 +1583,6 @@
     <Property Name="SiteList_Name_ch" Type="nvarchar(max)" />
     <Property Name="SiteList_Name_en" Type="nvarchar(max)" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="ID" />
@@ -1677,7 +1670,7 @@
     <Property Name="IntroductionHtml" Type="ntext" />
   </EntityType>
   <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'Forest.dbo.ZipCode' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+警告 6002: 資料表/檢視 'DB67039.dbo.ZipCode' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="ZipCode">
     <Key>
       <PropertyRef Name="Country" />
@@ -1838,7 +1831,6 @@
     <EntitySet Name="SiteFlow" EntityType="Self.SiteFlow" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SiteLayout" EntityType="Self.SiteLayout" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SiteList" EntityType="Self.SiteList" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VideoItem" EntityType="Self.VideoItem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VideoUnitSetting" EntityType="Self.VideoUnitSetting" Schema="dbo" store:Type="Tables" />
