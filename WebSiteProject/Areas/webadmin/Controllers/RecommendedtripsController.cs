@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -344,19 +345,23 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         public ActionResult SaveItem(RecommendedTrip recommendedTrip,HttpPostedFileBase fileImag, HttpPostedFileBase uploadfile, List<int> HashTag_Type,List<string> Keywords)
         {
             var iswriteseo = false;
+            var isHash = false;
             if ((Keywords != null && Keywords.Any(v => v.IsNullorEmpty() == false)))
             {
                 iswriteseo = true;
             }
-
+            if((HashTag_Type != null))
+            {
+                isHash = true;
+            }
             if (fileImag != null)
                 {
                     var root = Request.PhysicalApplicationPath;
-                    var uploadfilepath = ConfigurationManager.AppSettings["UploadFile"];
-                    if (uploadfilepath.IsNullorEmpty())
-                    {
-                        uploadfilepath = Request.PhysicalApplicationPath + "\\UploadFile";
-                    }
+                    //var uploadfilepath = ConfigurationManager.AppSettings["UploadFile"];
+                    //if (uploadfilepath.IsNullorEmpty())
+                    //{
+                    //    uploadfilepath = Request.PhysicalApplicationPath + "\\UploadFile";
+                    //}
                     var newfilename = DateTime.Now.Ticks + "_" + fileImag.FileName;
                     var path = root + "\\UploadImage\\RecommendedTrips\\" + newfilename;
                     if (System.IO.Directory.Exists(root + "\\UploadImage\\RecommendedTrips\\") == false)
@@ -369,11 +374,11 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             if (uploadfile != null)
                 {
                 var root = Request.PhysicalApplicationPath;
-                 var uploadfilepath1 = ConfigurationManager.AppSettings["UploadFile"];
-                    if (uploadfilepath1.IsNullorEmpty())
-                    {
-                        uploadfilepath1 = Request.PhysicalApplicationPath + "\\UploadFile";
-                    }
+                 //var uploadfilepath1 = ConfigurationManager.AppSettings["UploadFile"];
+                 //   if (uploadfilepath1.IsNullorEmpty())
+                 //   {
+                 //       uploadfilepath1 = Request.PhysicalApplicationPath + "\\UploadFile";
+                 //   }
                     var newpath = root + "\\UploadFile\\RecommendedTrips\\";
                     if (System.IO.Directory.Exists(newpath) == false)
                     {
@@ -393,12 +398,12 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             if (recommendedTrip.RecommendedTrips_ID.ToString() == "-1")
             {
                 var olddata = db.RecommendedTrips;
-                foreach (var odata in olddata)
+                if(olddata.FirstOrDefault()!=null)
                 {
-                    var olddate = db.RecommendedTrips.Find(odata.RecommendedTrips_ID);
-                    olddate.Sort= odata.Sort + 1;
-                    db.Entry(olddate).State = System.Data.Entity.EntityState.Modified;
-                    //_sqlitemrepository.Update("Sort=@1", "ItemID=@2", new object[] { odata.Sort + 1, odata.ItemID });
+                    foreach (var odata in olddata)
+                    {
+                        odata.Sort = odata.Sort + 1;
+                    }
                 }
                 db.SaveChanges();
                 RecommendedTrip recom = new RecommendedTrip()
@@ -425,20 +430,21 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 var r= db.SaveChanges();
                 if(r>0)
                 {
-
-                    //增加欄位
-                    foreach (var item in HashTag_Type)
+                    if(isHash)
                     {
-                        RecommendedTrips_HashTag_Type HashTag = new RecommendedTrips_HashTag_Type();
-                        HashTag.RecommendedTrips_ID = recom.RecommendedTrips_ID;
-                        HashTag.HashTag_Type_ID = item;
-                        db.RecommendedTrips_HashTag_Type.Add(HashTag);
-                        db.SaveChanges();
-                    };
+                        //增加欄位
+                        foreach (var item in HashTag_Type)
+                        {
+                            RecommendedTrips_HashTag_Type HashTag = new RecommendedTrips_HashTag_Type();
+                            HashTag.RecommendedTrips_ID = recom.RecommendedTrips_ID;
+                            HashTag.HashTag_Type_ID = item;
+                            db.RecommendedTrips_HashTag_Type.Add(HashTag);
+                            db.SaveChanges();
+                        };
+                    }
                     if(iswriteseo)
-                    {
-
-                    db.RecommendedTrips_HashTag.Add(new RecommendedTrips_HashTag()
+                    {     
+                        db.RecommendedTrips_HashTag.Add(new RecommendedTrips_HashTag()
                     {
                         RecommendedTrips_Id = recom.RecommendedTrips_ID,
                         RecommendedTrips_keyword0 = Keywords[0],
@@ -488,25 +494,30 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 var r = db.SaveChanges();
                 if (r > 0) //result為itemID >0為新增成功
                 {
-                    var Old_HashTag = db.RecommendedTrips_HashTag_Type.Where(a => a.RecommendedTrips_ID == recommendedTrip.RecommendedTrips_ID).ToList(); ;
-                    if (Old_HashTag.Count()!=0) { 
-                    //先全部刪除舊的
-                    foreach (var item in Old_HashTag)
+                    if (isHash)
                     {
-                        var Old_HashTag_Item = db.RecommendedTrips_HashTag_Type.Find(item.RecommendedTrips_HashTag_ID);
-                        db.Entry(Old_HashTag_Item).State = System.Data.Entity.EntityState.Deleted;
-                        db.SaveChanges();
-                    };
+                        var Old_HashTag = db.RecommendedTrips_HashTag_Type.Where(a => a.RecommendedTrips_ID == recommendedTrip.RecommendedTrips_ID).ToList(); ;
+                        if (Old_HashTag.Count() != 0)
+                        {
+                            //先全部刪除舊的
+                            foreach (var item in Old_HashTag)
+                            {
+                                var Old_HashTag_Item = db.RecommendedTrips_HashTag_Type.Find(item.RecommendedTrips_HashTag_ID);
+                                db.Entry(Old_HashTag_Item).State = System.Data.Entity.EntityState.Deleted;
+                                db.SaveChanges();
+                            };
 
-                    //新增加
-                    foreach (var item in HashTag_Type)
-                    {
-                        RecommendedTrips_HashTag_Type Sub_HashTag =new RecommendedTrips_HashTag_Type();
-                        Sub_HashTag.RecommendedTrips_ID = recommendedTrip.RecommendedTrips_ID;
-                        Sub_HashTag.HashTag_Type_ID = item;
-                        db.RecommendedTrips_HashTag_Type.Add(Sub_HashTag);
-                        db.SaveChanges();
-                    };
+                            //新增加
+                            foreach (var item in HashTag_Type)
+                            {
+                                RecommendedTrips_HashTag_Type Sub_HashTag = new RecommendedTrips_HashTag_Type();
+                                Sub_HashTag.RecommendedTrips_ID = recommendedTrip.RecommendedTrips_ID;
+                                Sub_HashTag.HashTag_Type_ID = item;
+                                db.RecommendedTrips_HashTag_Type.Add(Sub_HashTag);
+                                db.SaveChanges();
+                            };
+                        }
+                    }
                         if (iswriteseo)
                         {
                             var HashMode = db.RecommendedTrips_HashTag.Where(p => p.RecommendedTrips_Id == recommendedTrip.RecommendedTrips_ID);
@@ -547,7 +558,6 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                                 db.SaveChanges();
                             }    
                         }
-                    }
                     return Json("成功");
                 };
                 return Json("失敗");
@@ -619,6 +629,31 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 url = imageUrl
             });
             //return Content(result);
+
+        }
+        #endregion
+        #region FileDownLoad
+        public ActionResult FileDownLoad( int itemid)
+        {
+            var model = db.RecommendedTrips.Find(itemid);
+            string filepath = model.RecommendedTrips_UploadFilePath;
+            string oldfilename = model.RecommendedTrips_UploadFileName;
+            var uploadfilepath = ConfigurationManager.AppSettings["UploadFile"];
+            if (uploadfilepath.IsNullorEmpty())
+            {
+                uploadfilepath = Request.PhysicalApplicationPath + "\\UploadFile";
+            }
+            if (filepath != "")
+            {
+                string filename = System.IO.Path.GetFileName(filepath);
+                if (string.IsNullOrEmpty(oldfilename)) { oldfilename = filename; }
+                Stream iStream = new FileStream(uploadfilepath + filepath, FileMode.Open, FileAccess.Read, FileShare.Read);
+                return File(iStream, "application/octet-stream", oldfilename);
+            }
+            else
+            {
+                return RedirectToAction("Error");
+            }
 
         }
         #endregion

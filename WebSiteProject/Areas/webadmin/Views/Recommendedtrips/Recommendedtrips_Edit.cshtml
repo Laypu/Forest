@@ -26,6 +26,7 @@
                             @Html.HiddenFor(m => m.RecommendedTrips_UploadFileName)
                             @Html.HiddenFor(m => m.Sort)
                             @Html.HiddenFor(m=>m.InFront)
+                            @Html.HiddenFor(m=>m.RecommendedTrips_UploadFilePath)
                             <div class="form-group">
                                 <div class="col-md-2 col-sm-12 col-xs-12 search_item text-center">旅遊天數</div>
                                 <div class="col-md-10  col-sm-12 col-xs-12 bg-white mobile_white">
@@ -107,7 +108,7 @@
                                     <div class="col-md-12">
                                         <label class="col-md-2">行程圖片_列表圖片</label>
                                         <div class="col-md-10">
-                                            <a href="/forest/UploadImage/RecommendedTrips/@Model.RecommendedTrips_Img" target="preview" id="aimg">@Model.RecommendedTrips_Img</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delrelateimage">刪除</label>
+                                            <div id="div_oldrelatefile" style="display:none"><a href="/forest/UploadImage/RecommendedTrips/@Model.RecommendedTrips_Img" target="preview" id="aimg">@Model.RecommendedTrips_Img</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delrelateimage">刪除</label></div>
                                             <input type="file" class="form-control" accept="image/*" name="fileImag" id="fileImag" />
                                             <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度800 * 800px</div>
                                         </div>
@@ -161,7 +162,7 @@
                                     <div class="col-md-12">
                                         <label class="col-md-2">相關檔案</label>
                                         <div class="col-md-10">
-                                            @*<a href="/forest/UploadImage/RecommendedTrips/@Model.RecommendedTrips_Img" target="preview" id="aimg">@Model.RecommendedTrips_Img</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delrelateimage">刪除</label>*@
+                                          <div id="div_olduploadfile" style="display:none"><a href="@Url.Action("FileDownLoad",new {itemid=Model.RecommendedTrips_ID})" target="preview" >@Model.RecommendedTrips_UploadFileName</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delrelateimage">刪除</label></div>
                                             <input type="file" class="form-control"  name="uploadfile" id="uploadfile" />
                                             <div class="red">檔案限制5MB以內</div>
                                         </div>
@@ -205,6 +206,15 @@
 @section scripts{
     <script>
         $(function () {
+             var fileupload = '@Model.RecommendedTrips_UploadFileName';
+             var selactiveitem = '@Model.RecommendedTrips_Img';
+             if (fileupload != '')
+             {
+                 $("#div_olduploadfile").show();
+             }
+             if (selactiveitem != '') {
+                 $("#div_oldrelatefile").show();
+             }
             var ckedit = CKEDITOR.replace('RecommendedTrips_HtmContent', {
                 height: 300,
                filebrowserImageUploadUrl: '@Url.Action("Upload")?command=QuickUpload&type=Images',
