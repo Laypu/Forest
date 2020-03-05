@@ -29,7 +29,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             CheckAuth(System.Reflection.MethodBase.GetCurrentMethod());
             Session["IsFromClick"] = "Y";
-            ViewBag.Title = "訊息管理";
+            ViewBag.Title = "部落客文章管理";
             return View();
         }
 
@@ -83,7 +83,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                Common.SetLogs(this.UserID, this.Account, "刪除下列訊息管理=" + delaccount);
+                Common.SetLogs(this.UserID, this.Account, "刪除下列部落客文章管理=" + delaccount);
                 return Json(_IModelEventListManager.Delete(idlist, delaccount, this.LanguageID, this.Account, this.UserName));
             }
             else { return Json("請先登入"); }
@@ -136,7 +136,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                Common.SetLogs(this.UserID, this.Account, "刪除訊息管理=" + delaccount);
+                Common.SetLogs(this.UserID, this.Account, "刪除部落客文章管理=" + delaccount);
                 return Json(_IModelEventListManager.DeleteItem(idlist, delaccount, this.Account, this.UserName));
             }
             else { return Json("請先登入"); }
@@ -149,7 +149,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                Common.SetLogs(this.UserID, this.Account, "修改訊息管理狀態ID=" + id + " status=" + status);
+                Common.SetLogs(this.UserID, this.Account, "修改部落客文章管理狀態ID=" + id + " status=" + status);
                 return Json(_IModelEventListManager.SetItemStatus(id, status, this.Account, this.UserName));
             }
             else { return Json("請先登入"); }
@@ -296,12 +296,12 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             model.Title = HttpUtility.UrlDecode(model.Title);
             if (model.ItemID == -1)
             {
-                Common.SetLogs(this.UserID, this.Account, "新增訊息管理=" + model.Title);
+                Common.SetLogs(this.UserID, this.Account, "新增部落客文章管理=" + model.Title);
                 return Json(_IModelEventListManager.CreateItem(model, this.LanguageID, this.Account));
             }
             else
             {
-                Common.SetLogs(this.UserID, this.Account, "修改訊息管理ID=" + model.ItemID + " Name=" + model.Title);
+                Common.SetLogs(this.UserID, this.Account, "修改部落客文章管理ID=" + model.ItemID + " Name=" + model.Title);
                 return Json(_IModelEventListManager.UpdateItem(model, this.LanguageID, this.Account));
             }
         }

@@ -31,7 +31,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             CheckAuth(System.Reflection.MethodBase.GetCurrentMethod());
             Session["IsFromClick"] = "Y";
-            ViewBag.Title = "訊息管理";
+            ViewBag.Title = "部落客文章管理";
             return View();
         }
         [AuthoridUrl("Model/Index", "")]
@@ -88,13 +88,13 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 int newid = 0;
                 if (mainid == "-1" ||string.IsNullOrEmpty(mainid))
                 {
-                    Common.SetLogs(this.UserID, this.Account, "新增訊息管理單元名稱=" + name);
+                    Common.SetLogs(this.UserID, this.Account, "新增部落客文章管理單元名稱=" + name);
                
                     str = _IMessageManager.AddUnit(name, this.LanguageID, this.Account,ref newid);
                 }
                 else
                 {
-                    Common.SetLogs(this.UserID, this.Account, "修改訊息管理單元名稱 ID=" + mainid + " 改為:" + name);
+                    Common.SetLogs(this.UserID, this.Account, "修改部落客文章管理單元名稱 ID=" + mainid + " 改為:" + name);
                     str = _IMessageManager.UpdateUnit(name, mainid, this.Account);
                 }
                 return Json(str);
@@ -116,7 +116,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                Common.SetLogs(this.UserID, this.Account, "變更訊息管理單元管理排序 ID=" + id + "排序=" + seq);
+                Common.SetLogs(this.UserID, this.Account, "變更部落客文章管理單元管理排序 ID=" + id + "排序=" + seq);
                 return Json(_IMessageManager.UpdateSeq(id.Value, seq, this.LanguageID, this.Account, this.UserName));
             }
             else { return Json("請先登入"); }
@@ -128,7 +128,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                Common.SetLogs(this.UserID, this.Account, "刪除下列訊息管理=" + delaccount);
+                Common.SetLogs(this.UserID, this.Account, "刪除下列部落客文章管理=" + delaccount);
                 return Json(_IMessageManager.Delete(idlist, delaccount, this.LanguageID, this.Account, this.UserName));
             }
             else { return Json("請先登入"); }
@@ -193,12 +193,12 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             if (id == "-1" || id.IsNullorEmpty())
             {
-                Common.SetLogs(this.UserID, this.Account, "新增訊息管理群組名稱=" + name + " mainid=" + mainid);
+                Common.SetLogs(this.UserID, this.Account, "新增部落客文章管理群組名稱=" + name + " mainid=" + mainid);
                 return Json(_IMessageManager.EditGroup(name, id, mainid,this.Account));
             }
             else
             {
-                Common.SetLogs(this.UserID, this.Account, "修改訊息管理群組名稱=" + name + " id=" + id);
+                Common.SetLogs(this.UserID, this.Account, "修改部落客文章管理群組名稱=" + name + " id=" + id);
                 return Json(_IMessageManager.EditGroup(name, id, mainid,this.Account));
             }
 
@@ -210,7 +210,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                Common.SetLogs(this.UserID, this.Account, "變更訊息管理群組排序MainID=" + mainid + " ID =" + id + "排序=" + seq);
+                Common.SetLogs(this.UserID, this.Account, "變更部落客文章管理群組排序MainID=" + mainid + " ID =" + id + "排序=" + seq);
                 return Json(_IMessageManager.UpdateGroupSeq(id.Value, seq, mainid, this.Account, this.UserName));
             }
             else { return Json("請先登入"); }
@@ -222,7 +222,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                Common.SetLogs(this.UserID, this.Account, "刪除訊息管理群組=" + delaccount);
+                Common.SetLogs(this.UserID, this.Account, "刪除部落客文章管理群組=" + delaccount);
                 return Json(_IMessageManager.DeleteGroup(idlist, delaccount, this.Account, this.UserName));
             }
             else { return Json("請先登入"); }
@@ -235,7 +235,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                Common.SetLogs(this.UserID, this.Account, "設定訊息管理群組id=" + id + "為" + status);
+                Common.SetLogs(this.UserID, this.Account, "設定部落客文章管理群組id=" + id + "為" + status);
                 return Json(_IMessageManager.UpdateGroupStatus(id, status, this.Account, this.UserName));
             }
             else { return Json("請先登入"); }
@@ -279,7 +279,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                Common.SetLogs(this.UserID, this.Account, "設定訊息管理單元管理");
+                Common.SetLogs(this.UserID, this.Account, "設定部落客文章管理單元管理");
                 return Json(_IMessageManager.SetUnitModel(model, this.Account));
             }
             else { return Json("請先登入"); }
@@ -300,7 +300,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         #region SaveSEO
         public ActionResult SaveSEO(SEOViewModel model)
         {
-            Common.SetLogs(this.UserID, this.Account, "修改訊息管理SEO");
+            Common.SetLogs(this.UserID, this.Account, "修改部落客文章管理SEO");
             return Json(_IMessageManager.SaveSEO(model, this.LanguageID));
         } 
         #endregion
@@ -396,7 +396,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             model.Title = HttpUtility.UrlDecode(model.Title);
             if (model.ItemID == -1)
             {                
-                Common.SetLogs(this.UserID, this.Account, "新增訊息管理=" + model.Title);
+                Common.SetLogs(this.UserID, this.Account, "新增部落客文章管理=" + model.Title);
                 //return Json(_IMessageManager.CreateItem(model, this.LanguageID, this.Account, HashTag_Type));
                 int result = _IMessageManager.CreateItem(model, this.LanguageID, this.Account, HashTag_Type);
 
@@ -417,7 +417,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             }
             else
             {
-                Common.SetLogs(this.UserID, this.Account, "修改訊息管理ID=" + model.ItemID + " Name=" + model.Title);
+                Common.SetLogs(this.UserID, this.Account, "修改部落客文章管理ID=" + model.ItemID + " Name=" + model.Title);
                 //return Json(_IMessageManager.UpdateItem(model, this.LanguageID, this.Account, HashTag_Type));
                 int result = _IMessageManager.UpdateItem(model, this.LanguageID, this.Account, HashTag_Type);
                 if (result > 0) //result為itemID >0為新增成功
@@ -452,7 +452,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                Common.SetLogs(this.UserID, this.Account, "修改訊息管理排序ID=" + id + " sequence=" + seq);
+                Common.SetLogs(this.UserID, this.Account, "修改部落客文章管理排序ID=" + id + " sequence=" + seq);
                 return Json(_IMessageManager.UpdateItemSeq(modelid,id, seq,this.Account, this.UserName));
             }
             else { return Json("請先登入"); }
@@ -464,7 +464,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                Common.SetLogs(this.UserID, this.Account, "修改訊息管理狀態ID=" + id + " status=" + status);
+                Common.SetLogs(this.UserID, this.Account, "修改部落客文章管理狀態ID=" + id + " status=" + status);
                 return Json(_IMessageManager.SetItemStatus(id, status, this.Account, this.UserName));
             }
             else { return Json("請先登入"); }
@@ -476,7 +476,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                Common.SetLogs(this.UserID, this.Account, "刪除訊息管理=" + delaccount);
+                Common.SetLogs(this.UserID, this.Account, "刪除部落客文章管理=" + delaccount);
                 return Json(_IMessageManager.DeleteItem(idlist, delaccount, this.Account, this.UserName));
             }
             else { return Json("請先登入"); }

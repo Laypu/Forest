@@ -414,7 +414,7 @@ namespace Services.Manager
             catch (Exception ex)
             {
                 NLogManagement.SystemLogInfo("更新ModelWebsiteMapMain排序失敗:" + " error:" + ex.Message);
-                return "更新訊息管理排序失敗:" + " error:" + ex.Message;
+                return "更新部落客文章管理排序失敗:" + " error:" + ex.Message;
             }
         }
         #endregion

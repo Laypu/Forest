@@ -234,7 +234,7 @@
 
 <script>
     $(function () {
-
+        $("#mainNav>li>a").first().addClass("active").parent().siblings().children().removeClass("active");
 
         //點擊maplegend換圖
         $(".bookmark_item>li>a").click(function () {

@@ -110,7 +110,14 @@ function RegisterClicklink(eventclick, eventitem, linkurl, obj,type) {
         });
 }
 
-function RegisterClickAll(eventclick, eventitem, clickinfo) { $(eventclick).click(function () { var thischk = this.checked; $(eventitem).prop('checked', thischk); var totalclick = $(".chksel:checked").length; $(clickinfo).text(totalclick); }); }
+function RegisterClickAll(eventclick, eventitem, clickinfo) {
+    $(eventclick).click(function () {
+        var thischk = this.checked;
+        $(eventitem).prop('checked', thischk);
+        var totalclick = $(".chksel:checked").length;
+        $(clickinfo).text(totalclick);
+    });
+}
 function RegisterOrder(eventid, targetid, posturl, postobj) {
     if (postobj === undefined) {
         postobj = {};

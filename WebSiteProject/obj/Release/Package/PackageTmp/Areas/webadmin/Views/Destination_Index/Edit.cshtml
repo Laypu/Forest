@@ -161,7 +161,7 @@
                                 <div class="col-md-12">
                                     <div style="display:inline">
                                         @Html.ValueFor(model => model.Recommend_Img)<br />
-                                        <input id="file_relateimage" type="file" class="display_inline" name="ImageFile" accept="image/*" />
+                                        <input id="file_relateimage1" type="file" class="display_inline" name="ImageFile" accept="image/*" />
                                         <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度1000 * 225px</div>
                                         @Html.EditorFor(model => model.Recommend_Img, new { htmlAttributes = new { @class="selected", @style = "display:none" } })
                                     </div>
@@ -175,7 +175,7 @@
                                 <div class="col-md-12">
                                     <div style="display:inline">
                                         @Html.ValueFor(model => model.Recommend_Detail_Img)<br />
-                                        <input id="file_relateimage" type="file" class="display_inline" name="ImageFile" accept="image/*" />
+                                        <input id="file_relateimage2" type="file" class="display_inline" name="ImageFile" accept="image/*" />
                                         <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度1000 * 225px</div>
                                         @Html.EditorFor(model => model.Recommend_Detail_Img, new { htmlAttributes = new { @class = "selected", @style = "display:none" } })
                                     </div>
@@ -207,7 +207,7 @@
                     var FareModel = ViewBag.Destination_Fare;
                 }
                 <a class="btn green-meadow" id='btn_add' href="@Url.Action("Createtr","Destination_Index",new {TypeID = DESTypeID,TypeName = DESName})">新增 <i class="fa fa-plus"></i></a>
-                
+
             </div>
 
             <!--table start-->
@@ -218,7 +218,7 @@
                             <label class='mt-checkbox mt-checkbox-single mt-checkbox-outline'>
                                 <input type='checkbox' class='checkboxes' id="chk_all" /><span></span>
                             </label>
-                            <button class="btn red-mint btn-xs" id='btn_del'><i class="glyphicon glyphicon-trash"></i></button>
+                            <button type="button" class="btn red-mint btn-xs" id='btn_del'><i class="glyphicon glyphicon-trash"></i></button>
                         </th>
                         <th class="text-center">@Html.Label("票種")</th>
                         <th class="text-center">@Html.Label("票價")</th>
@@ -230,28 +230,28 @@
                         var x = 0;
                         foreach (var itemF in FareModel)
                         {
-                            
-                                        <tr class="tritem">
-                                            <td class="text-center">
-                                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                                    <input type="checkbox" class="checkboxes chksel">
-                                                    <span></span>
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <input type="hidden" name="DF[@x].ChargeID" id="ChargeID[@x]" value="@itemF.ChargeID" />
-                                                <input type="hidden" name="DF[@x].Destination_Type_ID" id="Destination_Type_ID[@x]" value="@itemF.Destination_Type_ID" />
-                                                <input name="DF[@x].TicketType" id="TicketType[@x]" class = "form-control input-small inline-block" value="@itemF.TicketType" />
-                                            </td>
-                                            <td>
-                                                <input name="DF[@x].Fare" id="Fare[@x]" class = "form-control input-small inline-block" value="@itemF.Fare" />
-                                            </td>
-                                            <td>
-                                                <input name="DF[@x].Description" id="Description[@x]" class = "form-control input-small inline-block" value="@itemF.Description" />
-                                            </td>
-                                            
-                                            
-                                        </tr>
+
+                            <tr class="tritem">
+                                <td class="text-center">
+                                    <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                        <input type="checkbox" class="checkboxes chksel">
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <input type="hidden" name="DF[@x].ChargeID" id="ChargeID[@x]" class="chargeID" value="@itemF.ChargeID" />
+                                    <input type="hidden" name="DF[@x].Destination_Type_ID" id="Destination_Type_ID[@x]" value="@itemF.Destination_Type_ID" />
+                                    <input name="DF[@x].TicketType" id="TicketType[@x]" class="form-control input-small inline-block" value="@itemF.TicketType" />
+                                </td>
+                                <td>
+                                    <input name="DF[@x].Fare" id="Fare[@x]" class="form-control input-small inline-block" value="@itemF.Fare" />
+                                </td>
+                                <td>
+                                    <input name="DF[@x].Description" id="Description[@x]" class="form-control input-small inline-block" value="@itemF.Description" />
+                                </td>
+
+
+                            </tr>
                             x = x + 1;
                         }
 
@@ -285,9 +285,8 @@
                 url: '@Url.Action("Edit", "Destination_Index")',
                 data: $("#editform1,#editform2").serialize(),
                 success: function (data) {
-                    console.log(data);
-                    console.log("success");
-
+                    
+                    alert("修改成功")
                 }
             });
 
@@ -317,6 +316,7 @@
             
 
                 var file_data = $(this).prop('files')[0];
+                console.log(file_data);
                 var form_data = new FormData();  //建構new FormData()
                 form_data.append('Img_File', file_data);
                
@@ -335,6 +335,35 @@
             })
 
         }
+
+        RegisterClickAll("#chk_all", '#faretable tbody .chksel', "#selvalue");
+        $("#btn_del").click(function () {
+            
+            if (confirm('確定要刪除嗎??'))
+            {
+                var farecheck = $("#faretable tbody .chksel:checked");
+                farecheck.each(function () {
+                    var chargeID = $(this).parent().parent().next().children(".chargeID").val();
+                    console.log(chargeID);
+                    var formdata = new FormData();
+                    formdata.append('chargeID', chargeID);
+                    console.log(formdata);
+                    $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("Delete", "Destination_Index")',
+                        data: formdata,
+                        success: function (data) {
+                            
+                            console.log("success");
+
+                        }
+                    });
+                })
+                
+            }
+
+            
+        })
     })
 
 </script>

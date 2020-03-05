@@ -199,8 +199,8 @@ namespace Services.Manager
             }
             catch (Exception ex)
             {
-                NLogManagement.SystemLogInfo("更新訊息管理排序失敗:" + " error:" + ex.Message);
-                return "更新訊息管理排序失敗:" + " error:" + ex.Message;
+                NLogManagement.SystemLogInfo("更新部落客文章管理排序失敗:" + " error:" + ex.Message);
+                return "更新部落客文章管理排序失敗:" + " error:" + ex.Message;
             }
         }
         #endregion
@@ -233,7 +233,7 @@ namespace Services.Manager
                   
                     if (r <= 0)
                     {
-                        NLogManagement.SystemLogInfo("刪除訊息管理單元失敗:ID=" + idlist[idx]);
+                        NLogManagement.SystemLogInfo("刪除部落客文章管理單元失敗:ID=" + idlist[idx]);
                     }
                     else {
                         _ActiveDateRangelitemrepository.DelDataUseWhere("ModelID=@1", new object[] { idlist[idx] });
@@ -277,7 +277,7 @@ namespace Services.Manager
                 var rstr = "";
                 if (r >= 0)
                 {
-                    NLogManagement.SystemLogInfo("刪除訊息管理單元失敗:" + delaccount);
+                    NLogManagement.SystemLogInfo("刪除部落客文章管理單元失敗:" + delaccount);
                     rstr = "刪除成功";
                 }
                 else
@@ -296,7 +296,7 @@ namespace Services.Manager
             }
             catch (Exception ex)
             {
-                NLogManagement.SystemLogInfo("刪除訊息管理單元失敗:" + ex.Message);
+                NLogManagement.SystemLogInfo("刪除部落客文章管理單元失敗:" + ex.Message);
                 return "刪除失敗";
             }
         }
@@ -635,8 +635,8 @@ namespace Services.Manager
             }
             catch (Exception ex)
             {
-                NLogManagement.SystemLogInfo("更新訊息管理排序失敗:" + " error:" + ex.Message);
-                return "更新訊息管理排序失敗:" + " error:" + ex.Message;
+                NLogManagement.SystemLogInfo("更新部落客文章管理排序失敗:" + " error:" + ex.Message);
+                return "更新部落客文章管理排序失敗:" + " error:" + ex.Message;
             }
         }
         #endregion

@@ -233,6 +233,7 @@
         $(".owl-next").attr("title", "@(Common.GetLangText("Next"))").attr("tabindex", "0");
         $(".tp-leftarrow").attr("title", "@(Common.GetLangText("Previous"))");
         $(".tp-rightarrow").attr("title", "@(Common.GetLangText("Next"))");
+        $("#mainNav>li:nth-child(2)").children().addClass("active").parent().siblings().children().removeClass("active");
     }
 </script>
 

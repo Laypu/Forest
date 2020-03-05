@@ -348,18 +348,24 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 
             return RedirectToAction("Destination");
         }
-
-
-        
-
+       
         // POST: webadmin/Destination_Index/Delete/5
         [HttpPost]
         public ActionResult Delete(int? chargeID)
         {
-            Destination_Fare Destination_Fare = db.Destination_Fare.Find(chargeID);
-            db.Destination_Fare.Remove(Destination_Fare);
-            db.SaveChanges();
-            return RedirectToAction("Destination");
+            using (ForestEntities db = new ForestEntities())
+            {
+                
+                    Destination_Fare Destination_Fare = db.Destination_Fare.Find(chargeID);
+                    db.Destination_Fare.Remove(Destination_Fare);
+                    db.SaveChanges();
+                
+
+                return Json(new { success = true, message = "刪除成功" }, JsonRequestBehavior.AllowGet);
+
+
+            }
+            
         }
 
         protected override void Dispose(bool disposing)

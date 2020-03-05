@@ -14,7 +14,7 @@
             <i class="fa fa-circle"></i>
         </li>
         <li>
-            <a href="@Url.Action("Index","Message")">訊息管理</a>
+            <a href="@Url.Action("Index","Message")">部落客文章管理</a>
             <i class="fa fa-circle"></i>
         </li>
         <li>
@@ -34,7 +34,7 @@
             <div class="display_inline">
                 <p class="class_title">管理項目</p>
                 <select class="form-control_1" onChange="window.location.href=this.value">
-                    <option value="@Url.Action("ModelItem",new { mainid=Model.MainID})" selected>訊息管理</option>
+                    <option value="@Url.Action("ModelItem",new { mainid=Model.MainID})" selected>部落客文章管理</option>
                     <option value="#" selected>單元設定</option>
                 </select>
             </div>

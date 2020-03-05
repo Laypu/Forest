@@ -126,7 +126,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                Common.SetLogs(this.UserID, this.Account, "刪除下列訊息管理=" + delaccount);
+                Common.SetLogs(this.UserID, this.Account, "刪除下列部落客文章管理=" + delaccount);
                 return Json(_IModelActiveManager.Delete(idlist, delaccount, this.LanguageID, this.Account, this.UserName));
             }
             else { return Json("請先登入"); }

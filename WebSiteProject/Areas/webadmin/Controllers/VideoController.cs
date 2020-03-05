@@ -382,12 +382,12 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         //    model.Title = HttpUtility.UrlDecode(model.Title);
         //    if (model.ItemID == -1)
         //    {
-        //        Common.SetLogs(this.UserID, this.Account, "新增訊息管理=" + model.Title);
+        //        Common.SetLogs(this.UserID, this.Account, "新增部落客文章管理=" + model.Title);
         //        return Json(_IModelVideoManager.CreateItem(model, this.LanguageID, this.Account));
         //    }
         //    else
         //    {
-        //        Common.SetLogs(this.UserID, this.Account, "修改訊息管理ID=" + model.ItemID + " Name=" + model.Title);
+        //        Common.SetLogs(this.UserID, this.Account, "修改部落客文章管理ID=" + model.ItemID + " Name=" + model.Title);
         //        return Json(_IModelVideoManager.UpdateItem(model, this.LanguageID, this.Account));
         //    }
         //}
@@ -469,12 +469,12 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             model.Title = HttpUtility.UrlDecode(model.Title);
             if (model.ItemID == -1)
             {
-                Common.SetLogs(this.UserID, this.Account, "新增訊息管理=" + model.Title);
+                Common.SetLogs(this.UserID, this.Account, "新增部落客文章管理=" + model.Title);
                 return Json(_IModelVideoManager.CreateItem(model, this.LanguageID, this.Account));
             }
             else
             {
-                Common.SetLogs(this.UserID, this.Account, "修改訊息管理ID=" + model.ItemID + " Name=" + model.Title);
+                Common.SetLogs(this.UserID, this.Account, "修改部落客文章管理ID=" + model.ItemID + " Name=" + model.Title);
                 return Json(_IModelVideoManager.UpdateItem(model, this.LanguageID, this.Account));
             }
         }
@@ -485,7 +485,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                Common.SetLogs(this.UserID, this.Account, "修改訊息管理排序ID=" + id + " sequence=" + seq);
+                Common.SetLogs(this.UserID, this.Account, "修改部落客文章管理排序ID=" + id + " sequence=" + seq);
                 return Json(_IModelVideoManager.UpdateItemSeq(modelid,id, seq,this.Account, this.UserName));
             }
             else { return Json("請先登入"); }
@@ -497,7 +497,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                Common.SetLogs(this.UserID, this.Account, "修改訊息管理狀態ID=" + id + " status=" + status);
+                Common.SetLogs(this.UserID, this.Account, "修改部落客文章管理狀態ID=" + id + " status=" + status);
                 return Json(_IModelVideoManager.SetItemStatus(id, status, this.Account, this.UserName));
             }
             else { return Json("請先登入"); }
@@ -509,7 +509,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             if (Request.IsAuthenticated)
             {
-                Common.SetLogs(this.UserID, this.Account, "刪除訊息管理=" + delaccount);
+                Common.SetLogs(this.UserID, this.Account, "刪除部落客文章管理=" + delaccount);
                 return Json(_IModelVideoManager.DeleteItem(idlist, delaccount, this.Account, this.UserName));
             }
             else { return Json("請先登入"); }

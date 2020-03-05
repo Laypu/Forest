@@ -271,6 +271,7 @@
         $(".owl-next").attr("title", "@(Common.GetLangText("Next"))").attr("tabindex", "0");
         $(".tp-leftarrow").attr("title", "@(Common.GetLangText("Previous"))");
         $(".tp-rightarrow").attr("title", "@(Common.GetLangText("Next"))");
+        $("#mainNav>li>a").first().addClass("active").parent().siblings().children().removeClass("active");
     }
 
     $(function () {
@@ -288,8 +289,8 @@
             $("#MapLeg>div>img").attr('src', MapImg);
             $("#MapLeg>div>img").attr('alt',MapName);
         });
-
-
+        
+        
     });
 
 
