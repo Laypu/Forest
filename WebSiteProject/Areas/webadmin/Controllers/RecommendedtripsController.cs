@@ -392,34 +392,35 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 recommendedTrip.RecommendedTrips_Content= HttpUtility.UrlDecode(recommendedTrip.RecommendedTrips_Content);
             if (recommendedTrip.RecommendedTrips_ID.ToString() == "-1")
             {
-                RecommendedTrip recom = new RecommendedTrip() {
-                  RecommendedTrips_Day_ID = recommendedTrip.RecommendedTrips_Day_ID,
-                  RecommendedTrips_Destinations_ID=recommendedTrip.RecommendedTrips_Destinations_ID,
-                  RecommendedTrips_Img=recommendedTrip.RecommendedTrips_Img,
+                var olddata = db.RecommendedTrips;
+                foreach (var odata in olddata)
+                {
+                    var olddate = db.RecommendedTrips.Find(odata.RecommendedTrips_ID);
+                    olddate.Sort= odata.Sort + 1;
+                    db.Entry(olddate).State = System.Data.Entity.EntityState.Modified;
+                    //_sqlitemrepository.Update("Sort=@1", "ItemID=@2", new object[] { odata.Sort + 1, odata.ItemID });
+                }
+                db.SaveChanges();
+                RecommendedTrip recom = new RecommendedTrip()
+                {
+                    RecommendedTrips_Day_ID = recommendedTrip.RecommendedTrips_Day_ID,
+                    RecommendedTrips_Destinations_ID = recommendedTrip.RecommendedTrips_Destinations_ID,
+                    RecommendedTrips_Img = recommendedTrip.RecommendedTrips_Img,
                     RecommendedTrips_Img_Description = recommendedTrip.RecommendedTrips_Img_Description,
                     RecommendedTrips_Title = recommendedTrip.RecommendedTrips_Title,
                     RecommendedTrips_Content = recommendedTrip.RecommendedTrips_Content,
                     RecommendedTrips_Location = recommendedTrip.RecommendedTrips_Location,
                     RecommendedTrips_HtmContent = recommendedTrip.RecommendedTrips_HtmContent,
-                    RecommendedTrips_StarDay= recommendedTrip.RecommendedTrips_StarDay,
+                    RecommendedTrips_StarDay = recommendedTrip.RecommendedTrips_StarDay,
                     RecommendedTrips_EndDay = recommendedTrip.RecommendedTrips_EndDay,
-                    RecommendedTrips_UploadFileDesc= recommendedTrip.RecommendedTrips_UploadFileDesc,
-                    RecommendedTrips_UploadFileName=recommendedTrip.RecommendedTrips_UploadFileName,
-                    RecommendedTrips_UploadFilePath=recommendedTrip.RecommendedTrips_UploadFilePath,
-                    RecommendedTrips_LinkUrl=recommendedTrip.RecommendedTrips_LinkUrl,
-                    RecommendedTrips_LinkUrlDesc=recommendedTrip.RecommendedTrips_LinkUrlDesc,
-                    Sort=1,
-                    InFront=1,
+                    RecommendedTrips_UploadFileDesc = recommendedTrip.RecommendedTrips_UploadFileDesc,
+                    RecommendedTrips_UploadFileName = recommendedTrip.RecommendedTrips_UploadFileName,
+                    RecommendedTrips_UploadFilePath = recommendedTrip.RecommendedTrips_UploadFilePath,
+                    RecommendedTrips_LinkUrl = recommendedTrip.RecommendedTrips_LinkUrl,
+                    RecommendedTrips_LinkUrlDesc = recommendedTrip.RecommendedTrips_LinkUrlDesc,
+                    Sort = 1,
+                    InFront = 1,
                 };
-                var olddata = db.RecommendedTrips;
-                foreach (var odata in olddata)
-                {
-                    var odd = db.RecommendedTrips.Find(odata.RecommendedTrips_ID);
-                    odata.Sort = odd.Sort + 1;
-                    db.Entry(odata).State = System.Data.Entity.EntityState.Modified;
-                    db.SaveChanges();
-                    //_sqlitemrepository.Update("Sort=@1", "ItemID=@2", new object[] { odata.Sort + 1, odata.ItemID });
-                }
                 db.RecommendedTrips.Add(recom);
                 var r= db.SaveChanges();
                 if(r>0)
