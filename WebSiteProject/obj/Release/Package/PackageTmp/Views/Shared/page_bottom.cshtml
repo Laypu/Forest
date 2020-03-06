@@ -1,0 +1,31 @@
+﻿@{
+    int ID = ViewBag.ID;
+    var url = ViewBag.LinkUrl;
+    var urlDes = ViewBag.LinkUrlDES;
+    var UpfileDes = ViewBag.Upfile;
+    var UpfileName = ViewBag.UpfileDES;
+
+
+}
+@{
+    <div class="page_bottom">
+        @if (url!=null)
+        {
+            <div class="link">
+                <div class="title"><i class="fa fa-link" aria-hidden="true"></i>Link</div>
+                <div class="con_font">
+                    <a href="@url" target="_blank" title="@urlDes (new window)">@urlDes</a>
+                </div>
+            </div>
+        }
+        @if (UpfileName != null)
+        {
+            <div class="download">
+                <div class="title"><i class="fa fa-download" aria-hidden="true"></i>Download</div>
+                <div class="con_font">
+                    <a href="@Url.Action("FileDownLoad",new {itemid=ID})" target="_blank" title="@UpfileDes (new window)">@UpfileName</a>
+                </div>
+            </div>
+        }
+    </div>
+}

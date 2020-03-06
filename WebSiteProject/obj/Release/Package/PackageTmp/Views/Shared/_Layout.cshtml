@@ -275,7 +275,17 @@
 
     <div class="footer_menu">
         <div class="container">
-            @Html.Raw(Model.FooterString)
+            <div class="container">
+                <div class="footer_item">
+                    <div class="footer_title">
+                        footer_item
+                    </div>
+                    <ul>
+                        @Html.Raw(Model.FooterMenu)
+                    </ul>
+                </div>
+                @Html.Raw(Model.FooterString)
+            </div>
         </div>
     </div>
     <!--footer start-->
@@ -351,7 +361,7 @@
 
             
 
-        }
+        });
 
 
 

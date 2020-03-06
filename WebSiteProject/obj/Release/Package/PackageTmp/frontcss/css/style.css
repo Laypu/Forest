@@ -382,6 +382,11 @@ button:focus{
 .header-nav-main .nav-pills>li+li {
     margin-left: 5px;
 }
+.header-nav-main ul > li > a.active {
+    background: #7e2a2c;
+    color: #FFF;
+	border-radius:0!important;
+}
 #header .header-nav-main nav > ul > li:last-child .dropdown-menu{
     right:0;
 }
@@ -1670,7 +1675,7 @@ footer .copyright{
 	line-height:130%;
 }
 .trip_list .font ul li:before{
-	content:url(../../img/page_icon_05_s.png);
+	content:url(../img/page_icon_05_s.png);
 	padding-right:5px;	
 	margin-left: -22px;
 }

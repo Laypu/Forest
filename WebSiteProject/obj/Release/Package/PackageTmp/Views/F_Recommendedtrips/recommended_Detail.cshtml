@@ -198,20 +198,15 @@
             <div class="edit_con">
                 @Html.Raw(HttpUtility.HtmlDecode(ViewBag.HtmlContent))
             </div>
-
-            <!--相關連結+檔案下載 start
-            <script>$.include("blocks/page_bottom.html");</script>-->
+            <!--相關連結+檔案下載 start-->
+            @Html.Partial(Url.Content("~/Views/Shared/page_bottom.cshtml"))
             <!--相關連結+檔案下載 end-->
-
             <div class="back_btn">
                 <a href="javascript:history.back()" title="Back"><span class="btn_01">Back</span></a>
             </div>
 
             <!--start_now start--><!--即刻出發一頁顯示3則行程-->
-          
-                   @Html.Action("RecommendedTrip_Travel_list",new {id=ViewBag.ID, page = ViewBag.NowPag })           
-                
-          
+            @Html.Action("RecommendedTrip_Travel_list", new { id = ViewBag.ID, page = ViewBag.NowPag })
             <!--start_now end-->
 
         </div>

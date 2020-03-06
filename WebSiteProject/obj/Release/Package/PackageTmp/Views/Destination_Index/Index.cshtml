@@ -154,17 +154,17 @@
 <div class="page_content">
 
     <!--page top start-->
-    <div class="page_top">
+    @*<div class="page_top">
         <div class="container">
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                 <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
                 <a href="index.html" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i><a href="things.html">Things to do</a>
             </div>
             <div class="col-md-5 col-sm-6 col-xs-12">
-                <!--<script>$.include("blocks/page_top.html");</script>-->
+                <script>$.include("blocks/page_top.html");</script>
             </div>
         </div>
-    </div>
+    </div>*@
     <!--page top end-->
     <!--map start-->
     <!--map start-->
@@ -193,8 +193,8 @@
         </div>
     </div>
     <!--map end-->
-    <!--map end-->
-    <!--page top start-->
+    
+    @*page top start*@
     <div class="page_top">
         <div class="container">
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
@@ -203,11 +203,11 @@
                 <a href="." title="Destinations">Destinations</a>
             </div>
             <div class="col-md-5 col-sm-6 col-xs-12">
-                <!--<script>$.include("blocks/page_top.html");</script>-->
+                @*<script>$.include("blocks/page_top.html");</script>*@
             </div>
         </div>
     </div>
-    <!--page top end-->
+    @*page top end*@
     <!--page_img_list start-->
     <div class="page_img_list">
         <div class="container">
@@ -233,9 +233,9 @@
                 }
             </ul>
 
-            <div class="con_font w-800">
+            @*<div class="con_font w-800">
                 @Html.Raw(ViewBag.Content)
-            </div>
+            </div>*@
 
 
 
@@ -253,7 +253,7 @@
 <div class="breadcrumbs">
     <div class="container">
         <div class="title">You are here</div>
-        <div class="font"><a href="index.html" title="Home">Home</a> / Things to do</div>
+        <div class="font"><a href="@Url.Action("Index","Home")" title="Home">Home</a> / Destinations</div>
     </div>
 </div>
 <!--breadcrumbs end-->
@@ -271,6 +271,7 @@
         $(".owl-next").attr("title", "@(Common.GetLangText("Next"))").attr("tabindex", "0");
         $(".tp-leftarrow").attr("title", "@(Common.GetLangText("Previous"))");
         $(".tp-rightarrow").attr("title", "@(Common.GetLangText("Next"))");
+        $("#mainNav>li>a").first().addClass("active").parent().siblings().children().removeClass("active");
     }
 
     $(function () {
@@ -288,8 +289,8 @@
             $("#MapLeg>div>img").attr('src', MapImg);
             $("#MapLeg>div>img").attr('alt',MapName);
         });
-
-
+        
+        
     });
 
 

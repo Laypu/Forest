@@ -183,11 +183,11 @@
             </div>
         </div>
         <!--trip_search_btn start-->
-        <ul class="trip_search_btn">
-            <a data-ID="-1" title="All Itineraries"><li>All Itineraries</li></a>
-            <a data-ID="1" title="1 Day"><li>1 Day</li></a>
-            <a data-ID="2" title="2 Days"><li>2 Days</li></a>
-            <a  data-ID="3" title="Special"><li>Special</li></a>
+        <ul class="trip_search_btn" style="background: url(@Url.Content("~/img/trip_search_bg.jpg")); background-size:cover;">
+            <a href="#" data-ID="-1" title="All Itineraries"><li>All Itineraries</li></a>
+            <a href="#" data-ID="1" title="1 Day"><li>1 Day</li></a>
+            <a href="#" data-ID="2" title="2 Days"><li>2 Days</li></a>
+            <a href="#" data-ID="3" title="Special"><li>Special</li></a>
         </ul>
         <!--trip_search_btn end-->
         <!--page_img_list start-->
@@ -234,6 +234,8 @@
         $(".owl-next").attr("title", "@(Common.GetLangText("Next"))").attr("tabindex", "0");
         $(".tp-leftarrow").attr("title", "@(Common.GetLangText("Previous"))");
         $(".tp-rightarrow").attr("title", "@(Common.GetLangText("Next"))");
+        $("#mainNav>li:nth-child(3)").children().addClass("active").parent().siblings().children().removeClass("active");
+
         $(".trip_search_btn > a").click(function () {
             var id = $(this).attr("data-ID");
             location.href = `@Url.Action("recommended_list")/?Day_Id=${id}`

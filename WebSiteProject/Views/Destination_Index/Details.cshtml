@@ -162,8 +162,27 @@
         <div class="container">
 
             <ul class="list">
-                
-                <li data-sr="enter bottom over 1.5s">
+
+                @{
+                    var MessageItems = (IEnumerable<WebSiteProject.Models.MessageItem>)ViewBag.MessageItems;
+                    var Category = ViewBag.Category;
+                    var n = 1;
+                    foreach (var item in MessageItems)
+                    {
+                        <li data-sr="enter bottom over 1.5s">
+                            <div class="img imh_opacity">
+                                <a href="#" title="@item.Title">
+                                    <img src="@Url.Content("~/img/")@item.RelateImageFileOrgName" alt="item.Title" />
+                                </a>
+                            </div>
+                            <div class="font_box">
+                                <div class="title"><a href="#" title="@item.Title">@item.Title</a></div>
+                                <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
+                            </div>
+                        </li>
+                    }
+                }
+                @*<li data-sr="enter bottom over 1.5s">
                     <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_11.jpg" alt="" /></a></div>
                     <div class="font_box">
                         <div class="title"><a href="#" title="">The Liechtenstein Trail: Walking the length of a country in a weekend</a></div>
@@ -205,7 +224,7 @@
                         <div class="title"><a href="#" title="">TExploring Norway’s South Coast</a></div>
                         <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
                     </div>
-                </li>
+                </li>*@
 
             </ul>
         </div>

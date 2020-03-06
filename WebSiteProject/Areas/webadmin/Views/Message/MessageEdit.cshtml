@@ -142,7 +142,7 @@
                                     <div style="display:inline">
                                         <!--<label for="exampleInputFile" class="control-label display_inline">圖片上傳</label>-->
                                         <input id="file_relateimage" type="file" class="display_inline" name="ImageFile" accept="image/*" />
-                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度1000 * 225px</div>
+                                        <span class="required">建議尺寸 450 x 600 px</span>
                                     </div>
                                 </div>
                             </div>
@@ -183,7 +183,7 @@
                                     <label for="ImageFile" class="col-md-2">圖片上傳</label>
                                     <div class="col-md-10">
                                         <input id="file_image" type="file" class="display_inline" name="ImageFile" accept="image/*" />
-                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度400 * 225px</div>
+                                        @*<div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度400 * 225px</div>*@
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -484,6 +484,7 @@
                         }
                     }
                 }
+
                 if (iscon == false) { return false;}
                 $.ajax({
                     url: this.action,

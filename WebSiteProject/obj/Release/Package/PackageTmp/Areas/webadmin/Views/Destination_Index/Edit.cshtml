@@ -342,16 +342,19 @@
             if (confirm('確定要刪除嗎??'))
             {
                 var farecheck = $("#faretable tbody .chksel:checked");
+                var formdata = new FormData();
                 farecheck.each(function () {
                     var chargeID = $(this).parent().parent().next().children(".chargeID").val();
+                    //formdata.append("chargeID", chargeID);
+                    
+
                     console.log(chargeID);
-                    var formdata = new FormData();
+                    //var formdata = new FormData();
                     formdata.append('chargeID', chargeID);
                     console.log(formdata);
                     $.ajax({
                         type: "POST",
-                        url: '@Url.Action("Delete", "Destination_Index")',
-                        data: formdata,
+                        url: '@Url.Action("Delete", "Destination_Index")?' + chargeID,
                         success: function (data) {
                             
                             console.log("success");
@@ -359,6 +362,7 @@
                         }
                     });
                 })
+                @*window.location.href = "@Url.Action("delete","Destination_Index")" + "?chargeID=" + formdata;*@
                 
             }
 

@@ -222,10 +222,10 @@
 <file name="index_banner_04.jpg" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132186067957115037" remote="132186185400000000" Dst="0" />
 <file name="index_banner_05.jpg" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132217372321486354" remote="132217438800000000" Dst="0" />
 <file name="index_banner_06.jpg" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132186152972371151" remote="132186185400000000" Dst="0" />
-<file name="d_map.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132211994181241509" remote="132212207400000000" Dst="0" />
-<file name="d_map_01.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132211998112158360" remote="132212207400000000" Dst="0" />
-<file name="d_map_02.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132211996856251743" remote="132212207400000000" Dst="0" />
-<file name="d_map_03.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132212000316248306" remote="132212207400000000" Dst="0" />
+<file name="d_map.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132224576180000000" remote="132252691800000000" Dst="0" />
+<file name="d_map_01.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132224576180000000" remote="132252691800000000" Dst="0" />
+<file name="d_map_02.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132224576160000000" remote="132252691800000000" Dst="0" />
+<file name="d_map_03.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132224576180000000" remote="132252691800000000" Dst="0" />
 <file name="page_icon_01.jpg" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132188043614234952" remote="132188644200000000" Dst="0" />
 <file name="page_icon_02.jpg" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132188043614694053" remote="132188644200000000" Dst="0" />
 <file name="page_icon_04.jpg" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132188043615222310" remote="132188644800000000" Dst="0" />
@@ -272,8 +272,8 @@
 <file name="banner_d_old.jpg" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132192977594017781" remote="132213102000000000" Dst="0" />
 <file name="page_icon_12.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132212241842499935" remote="132213102000000000" Dst="0" />
 <file name="banner_r_01.jpg" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132212813235421526" remote="132213102000000000" Dst="0" />
-<file name="bg_05.jpg" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="131447551270977213" remote="132215665200000000" Dst="0" />
-<file name="print_banner.jpg" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132215410588579100" remote="132215665200000000" Dst="0" />
+<file name="bg_05.jpg" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="131447551270977213" remote="132252705600000000" Dst="0" />
+<file name="print_banner.jpg" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132215410588579100" remote="132252705600000000" Dst="0" />
 <file name="video_pic_01.jpg" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132215432746010515" remote="132215665200000000" Dst="0" />
 <file name="banner_v.jpg" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132217411847306005" remote="132217438800000000" Dst="0" />
 <file name="video_pic_02.jpg" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132215435894731850" remote="132215665200000000" Dst="0" />
@@ -297,4 +297,12 @@
 <file name="f_pic_09.jpg" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132217313337254334" remote="132217438800000000" Dst="0" />
 <file name="index_pic_11.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132217306442837628" remote="132217438800000000" Dst="0" />
 <file name="index_pic_11_old.jpg" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132168130045188024" remote="132217438800000000" Dst="0" />
+<file name="d_map_m.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132224577980000000" remote="132252691800000000" Dst="0" />
+<file name="d_map_01_m.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132224578000000000" remote="132252691800000000" Dst="0" />
+<file name="d_map_02_m.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132224578000000000" remote="132252691800000000" Dst="0" />
+<file name="d_map_03_m.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132224578000000000" remote="132252691800000000" Dst="0" />
+<file name="d_map_01_old.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132211998112158360" remote="132252747600000000" Dst="0" />
+<file name="d_map_02_old.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132211996856251743" remote="132252747600000000" Dst="0" />
+<file name="d_map_old.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132211994181241509" remote="132252747600000000" Dst="0" />
+<file name="d_map_03_old.png" server="192.168.1.104/demo.laypu.com.tw/SD/travel/" local="132212000316248306" remote="132252747600000000" Dst="0" />
 </dwsync>

@@ -141,6 +141,8 @@ namespace WebSiteProject.Controllers
 
         public ActionResult Details(int? langid,string ImgTitle)
         {
+            ViewBag.Category = ImgTitle;
+            ViewBag.MessageItems = db.MessageItems.ToList();
             var site_id = 3;
             if (Session["LangID"] == null)
             {
@@ -237,6 +239,8 @@ namespace WebSiteProject.Controllers
         #region Destination_List
         public ActionResult Destination_List(int? langid, int Des_Id)
         {
+            
+            
             var site_id = 5; //這是Destination的輪播ID
             var mode_id = 9; //這是Destination的ModeID
             var list_id = 1; //這是Destination的訊息列表ID
@@ -385,7 +389,14 @@ namespace WebSiteProject.Controllers
         }
         #endregion
 
-        
+        public string GetTime()
+        {
+            return DateTime.Now.ToString("h:mm tt", new System.Globalization.CultureInfo("en-US"));
+        }
+        public string GetDate()
+        {
+            return DateTime.Now.ToString("MMMM d,yyyy", new System.Globalization.CultureInfo("en-US"));
+        }
 
     }
 }
