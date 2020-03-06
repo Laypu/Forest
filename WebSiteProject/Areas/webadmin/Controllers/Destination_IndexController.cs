@@ -317,9 +317,9 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     //若有重複則不儲存
                     if (System.IO.File.Exists(path))
                     {
-                        //Random rand = new Random();
-                        //Index_Img_Name = rand.Next().ToString() + "-" + Index_Img_Name;
-                        //path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), Index_Img_Name);
+                        Random rand = new Random();
+                        Index_Img_Name = rand.Next().ToString() + "-" + Index_Img_Name;
+                        path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), Index_Img_Name);
                     }
                     else
                     {
@@ -338,6 +338,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     Destination_Type_CreateDate = DateTime.Now,
                     Destination_Type_Description = F_DES.Destination_Type_Description,
                     Destination_Type_ImgName = F_DES.Destination_Type_ImgName,
+                    Destination_Type_ImgDescription = F_DES.Destination_Type_ImgDescription,
                     Destination_Type_Link = "#"
 
                 });

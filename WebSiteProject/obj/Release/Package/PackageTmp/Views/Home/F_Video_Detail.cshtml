@@ -51,10 +51,29 @@
                     <!--youtube end-->
 
                     <div class="title_02"><i class="fas fa-video"></i>Video introduction</div>
-
+                    <!--文繞圖 start-->
+                    @if (string.IsNullOrEmpty(item.ImageFileOrgName) == false)
+                    {
+                        <!--圖片置左-->
+                            if (item.ImageFileLocation == "1")
+                            {
+                                <img src="@Url.Content("~/UploadImage/VideoItem/")@item.ImageFileOrgName" class="img_padding" alt="@item.ImageFileDesc" align="left">
+                            }
+                            else if (item.ImageFileLocation == "2")
+                            {
+                                <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/VideoItem/")@item.ImageFileOrgName" class="img_padding" alt="@item.ImageFileDesc"></p></div>
+                            }
+                            else if (item.ImageFileLocation == "3")
+                            {
+                                <img src="@Url.Content("~/UploadImage/VideoItem/")@item.ImageFileOrgName" class="img_padding" alt="@item.ImageFileDesc" align="right">
+                            }
+                        
+                    }
+                    
+                    <!--文繞圖 end-->
                     <!--edit_con start-->
                     <div class="edit_con">
-                       @Html.Raw(item.HtmlContent)
+                        @Html.Raw(item.HtmlContent)
                     </div>
                     <!--edit_con end-->
                     <!--相關連結+檔案下載 start-->
@@ -80,7 +99,7 @@
                                 </div>
                             }
 
-                        }                                              
+                        }
                     </div>
                     <!--相關連結+檔案下載 end-->
 

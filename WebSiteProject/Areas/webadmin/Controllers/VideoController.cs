@@ -465,6 +465,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 model.RelateImageName = newfilename;
             }
 
+
             model.HtmlContent = HttpUtility.UrlDecode(model.HtmlContent);
             model.Title = HttpUtility.UrlDecode(model.Title);
             if (model.ItemID == -1)
@@ -528,7 +529,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 //儲存圖片至Server
                 var last = upload.FileName.Split('.').Last();
                 filename = DateTime.Now.Ticks + "." + last;
-                var root = Request.PhysicalApplicationPath + "/UploadImage/VideoItem/";
+                var root = Server.MapPath("~/UploadImage/VideoItem/");
                 if (System.IO.Directory.Exists(root) == false)
                 {
                     System.IO.Directory.CreateDirectory(root);
@@ -559,7 +560,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 //儲存圖片至Server
                 var last = upload.FileName.Split('.').Last();
                 filename = DateTime.Now.Ticks + "." + last;
-                var root = Request.PhysicalApplicationPath + "/UploadImage/VideoItem/";
+                var root = Server.MapPath("~/UploadImage/VideoItem/");
                 if (System.IO.Directory.Exists(root) == false)
                 {
                     System.IO.Directory.CreateDirectory(root);

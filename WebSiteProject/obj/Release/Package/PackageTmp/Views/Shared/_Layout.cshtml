@@ -275,17 +275,25 @@
 
     <div class="footer_menu">
         <div class="container">
-            <div class="container">
-                <div class="footer_item">
-                    <div class="footer_title">
-                        footer_item
-                    </div>
-                    <ul>
-                        @Html.Raw(Model.FooterMenu)
-                    </ul>
-                </div>
-                @Html.Raw(Model.FooterString)
+            <div><a href="#;return false;" title="Footer area" accesskey="B">:::</a></div>
+            <div class="footer_item">
+                <!--固定無後台-->
+                <div class="footer_title">Find us on</div>
+                <ul>
+                    <!--<li><a href="#" title=""><i class="fab fa-twitter" aria-hidden="true"></i> Twitter</a></li>-->
+                    <li><a href="#" title=""><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+                    <li><a href="#" title=""><i class="fab fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+                    <li><a href="#" title=""><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</a></li>
+                </ul>
             </div>
+            <div class="footer_item">
+                <div class="footer_title">Our other sites</div>
+                <ul>
+                    @Html.Raw(Model.FooterMenu)
+                </ul>
+            </div>
+            @Html.Raw(Model.FooterString)
+
         </div>
     </div>
     <!--footer start-->

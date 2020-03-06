@@ -57,7 +57,7 @@
                             <div class="col-md-10 col-sm-4 col-xs-12 bg-white mobile_white">
                                 @Html.TextBoxFor(model => model.Destination_Type_ImgName, new { @id = "file_image", type = "file", @name = "uploadfile", accept = "image/*" })
                                 @*<div id="div_oldfile" style="display:none">@Model.Destination_Type_ImgName<label style="color:blue;margin-left:10px;cursor:pointer" id="delimage">刪除</label></div>
-                                <input id="file_image" type="file" name="uploadfile" accept="image/*" />*@
+                <input id="file_image" type="file" name="uploadfile" accept="image/*" />*@
                                 @if (ViewBag.SType == "P")
                                 {
                                     <span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸4000*850px</span>
@@ -67,6 +67,14 @@
                                     <span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸1200*2000px</span>
                                 }
 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">圖片說明</div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                    @Html.TextAreaFor(model => model.Destination_Type_ImgDescription, new { @style = "height:200px;width:700px;resize:none" })
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">

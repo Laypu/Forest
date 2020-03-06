@@ -183,11 +183,23 @@
                             {
                                 <li class="color hover"><a href="javascript:void(0);" id="page_01" name="page_01" data-imgName="@item.Destination_Img" data-imgNameMoblie="@item.Destination_Img_Mobile"  title="@item.Destination_MAP_LEGEND_Name" class="nav-item ">@item.Destination_MAP_LEGEND_Name</a></li>
                             }
+                            var datetime = DateTime.Now;
+                            var datetimeD = datetime.Date.ToString("MMMM d,yyyy",new System.Globalization.CultureInfo("en-US"));
+                            var datetimeT = datetime.ToString("h:mm tt",new System.Globalization.CultureInfo("en-US"));
                         }
                     </ul>
                 </div>
             </div>
-            <div class="img hidden-xs"><img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModel.First().Destination_Img" alt="@MapModel.First().Destination_Img" /></div><!--建議尺寸800*478px-->
+            <div class="img hidden-xs">
+                <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModel.First().Destination_Img" alt="@MapModel.First().Destination_Img" />
+                <div class="font_box" id="timebox" style="display:none">
+                    <div class="line"></div>
+                    Now the Time in Taiwan<br>
+                    <div class="date">@datetimeD</div>
+                    <div class="time">@datetimeT</div>
+                    GMT+8
+                </div>
+            </div><!--建議尺寸800*478px-->
             <div class="img visible-xs"><img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModel.First().Destination_Img_Mobile" alt="@MapModel.First().Destination_Img" /></div><!--建議尺寸，寬500px-->
 
         </div>
@@ -287,13 +299,53 @@
             var MapImg = `@Url.Content("~/UploadImage/MapLEGEND_Img/")`+$(this).attr("data-imgName");
             var MapName = $(this).attr("title");
             $("#MapLeg>div>img").attr('src', MapImg);
-            $("#MapLeg>div>img").attr('alt',MapName);
+            $("#MapLeg>div>img").attr('alt', MapName);
+            var index = $("#MapL>ul>li").index($(this).parent());
+            if (index == 3) {
+                $("#timebox").css("display", "");
+            }
+            else
+            {
+                $("#timebox").css("display","none")
+            }
         });
-        
+
+        setInterval(GetTime, 6000);
+        setInterval(GetDate, 864000000);
+        function GetTime() {
+            $.ajax({
+                    type:"post",
+                    contentType:"application/json",  
+                    url:"@Url.Action("GetTime","Destination_Index")",
+                success: function (result) {
+
+
+                    $(".time").text(result);
+                    },
+                    error: function() {
+                         
+                    }
+            })
+        }
+        function GetDate() {
+            $.ajax({
+                    type:"post",
+                    contentType:"application/json",  
+                    url:"@Url.Action("GetDate","Destination_Index")",
+                success: function (result) {
+
+                    $('.date').text(result);
+                    
+                    },
+                    error: function() {
+                         
+                    }
+            })
+        }
         
     });
 
-
+    
 
 
     //$(function () {

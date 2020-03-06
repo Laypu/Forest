@@ -52,7 +52,7 @@
                 <div class="form-horizontal form-bordered">
                     <div class="form-body" id="form-body2">
                         <div class="form-group">
-                            <div class="col-md-2 col-sm-12 col-xs-12 search_item">類別名稱</div>
+                            <div class="col-md-2 col-sm-12 col-xs-12 search_item">森林遊樂區類別</div>
                             <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
                                 @Html.DropDownList(@Html.IdFor(m => m.Group_ID).ToString(), (IEnumerable<SelectListItem>)ViewBag.grouplist, new { @class = "form_02" })
                             </div>
@@ -394,6 +394,7 @@
                     $("#" + inputval[idx].name + "-error").show();
                 }
                 if (inputval.length > 0) { return false; }
+
                 var file = $("#file_image");
                 var _validFileExtensions = [".jpg", ".png", ".gif", ".jpeg"];
                 var sFileName = file.val();

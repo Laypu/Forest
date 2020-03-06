@@ -622,8 +622,10 @@
       };
 
     //case 57:  Video
-      function Load_Video() {
-          $("#Partial_Index_MenuLink").append(
+    function Load_Video() {
+        window.location.href = "@Url.Action("ModelItem", "Video", new { mainid = 5 })";
+
+          @*$("#Partial_Index_MenuLink").append(
                 `<div class="portlet light bordered">
                     <!--set item start-->
                     <div class="table-toolbar">
@@ -639,10 +641,11 @@
                         </div>
                     </div>
                 </div>`
-            );
+            );*@
+
 
           //顯示該連結
-          ShowLink();
+          //ShowLink();
       };
 
 

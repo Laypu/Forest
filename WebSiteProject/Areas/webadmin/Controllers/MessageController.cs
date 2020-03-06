@@ -75,6 +75,8 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             //旅遊資訊關聯
             ViewBag.Sub_HashTag = db.F_Sub_HashTag_Type.Where(s => s.MessageItem_ID.ToString() == itemid).ToList();
 
+
+
             return View(model);
         }
         
@@ -332,7 +334,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         #endregion
 
         #region SaveItem
-        public ActionResult SaveItem(MessageEditModel model, List<int> HashTag_Type)
+        public ActionResult SaveItem(MessageEditModel model, List<int> HashTag_Type ,WebSiteProject.Models.F_Destination_Type f_Destination_Type)
         {
             if (model.UploadFile != null)
             {
@@ -411,6 +413,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         db.F_Sub_HashTag_Type.Add(Sub_HashTag);
                         db.SaveChanges();                    
                     };
+                    
                     return Json("成功");
                 };
                 return Json("失敗");

@@ -438,7 +438,7 @@ namespace WebSiteProject.Controllers
 
 
             WebSiteProject.Models.ForestEntities db = new Models.ForestEntities();
-            ViewBag.F_Video = db.VideoItems.Where(f => f.ModelID == 5 && f.Enabled == true && f.IsVerift == true).ToList();
+            ViewBag.F_Video = db.VideoItems.Where(f => f.ModelID == 5 && f.Enabled == true && f.IsVerift == true).OrderBy(f=>f.Sort).ToList();
 
             return View(viewmodel);
         }
