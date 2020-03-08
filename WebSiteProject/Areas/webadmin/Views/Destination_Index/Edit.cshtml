@@ -156,6 +156,20 @@
                         </div>
 
                         <div class="form-group bg-grey_1">
+                            <div class="col-md-2 col-sm-12 search_item">輪播牆圖片</div>
+                            <div class="col-md-10 col-sm-12 bg-white mobile_white">
+                                <div class="col-md-12">
+                                    <div style="display:inline">
+                                        @Html.ValueFor(model => model.Banner_Img)<br />
+                                        <input id="file_relateimage1" type="file" class="display_inline" name="ImageFile" accept="image/*" />
+                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度4000 * 850px</div>
+                                        @Html.EditorFor(model => model.Banner_Img, new { htmlAttributes = new { @class = "selected", @style = "display:none" } })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group bg-grey_1">
                             <div class="col-md-2 col-sm-12 search_item">地點圖片</div>
                             <div class="col-md-10 col-sm-12 bg-white mobile_white">
                                 <div class="col-md-12">
@@ -163,7 +177,7 @@
                                         @Html.ValueFor(model => model.Recommend_Img)<br />
                                         <input id="file_relateimage1" type="file" class="display_inline" name="ImageFile" accept="image/*" />
                                         <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度1000 * 225px</div>
-                                        @Html.EditorFor(model => model.Recommend_Img, new { htmlAttributes = new { @class="selected", @style = "display:none" } })
+                                        @Html.EditorFor(model => model.Recommend_Img, new { htmlAttributes = new { @class = "selected", @style = "display:none" } })
                                     </div>
                                 </div>
                             </div>

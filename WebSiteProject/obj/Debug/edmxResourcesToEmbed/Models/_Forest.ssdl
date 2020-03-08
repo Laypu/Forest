@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="ForestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Message_DesHash">
+    <Key>
+      <PropertyRef Name="Message_DesHashID" />
+    </Key>
+    <Property Name="Message_DesHashID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Destination_Type_ID" Type="int" />
+    <Property Name="MessageItem_ID" Type="int" />
+  </EntityType>
   <EntityType Name="ActiveItem">
     <Key>
       <PropertyRef Name="ItemID" />
@@ -470,6 +478,7 @@
     <Property Name="FPVIII" Type="nvarchar" MaxLength="20" />
     <Property Name="FPIX" Type="nvarchar" MaxLength="20" />
     <Property Name="FPX" Type="nvarchar" MaxLength="20" />
+    <Property Name="Banner_Img" Type="nvarchar(max)" />
     <Property Name="Recommend_Img" Type="nvarchar(max)" />
     <Property Name="Recommend_Detail_Img" Type="nvarchar(max)" />
   </EntityType>
@@ -1706,6 +1715,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Message_DesHash_F_Destination_Type">
+    <End Role="F_Destination_Type" Type="Self.F_Destination_Type" Multiplicity="0..1" />
+    <End Role="Message_DesHash" Type="Self.Message_DesHash" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="F_Destination_Type">
+        <PropertyRef Name="Destination_Type_ID" />
+      </Principal>
+      <Dependent Role="Message_DesHash">
+        <PropertyRef Name="Destination_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_RecommendedTrip_Travel_RecommendedTrip">
     <End Role="RecommendedTrip" Type="Self.RecommendedTrip" Multiplicity="0..1" />
     <End Role="RecommendedTrip_Travel" Type="Self.RecommendedTrip_Travel" Multiplicity="*" />
@@ -1755,6 +1776,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="ForestModelStoreContainer">
+    <EntitySet Name="Message_DesHash" EntityType="Self.Message_DesHash" Schema="DB89846642" store:Type="Tables" />
     <EntitySet Name="ActiveItem" EntityType="Self.ActiveItem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ActivePhoto" EntityType="Self.ActivePhoto" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ActiveUnitSetting" EntityType="Self.ActiveUnitSetting" Schema="dbo" store:Type="Tables" />
@@ -1886,6 +1908,10 @@
     <AssociationSet Name="FK_F_Sub_HashTag_Type_F_HashTag_Type" Association="Self.FK_F_Sub_HashTag_Type_F_HashTag_Type">
       <End Role="F_HashTag_Type" EntitySet="F_HashTag_Type" />
       <End Role="F_Sub_HashTag_Type" EntitySet="F_Sub_HashTag_Type" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_DesHash_F_Destination_Type" Association="Self.FK_Message_DesHash_F_Destination_Type">
+      <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
+      <End Role="Message_DesHash" EntitySet="Message_DesHash" />
     </AssociationSet>
     <AssociationSet Name="FK_RecommendedTrip_Travel_RecommendedTrip" Association="Self.FK_RecommendedTrip_Travel_RecommendedTrip">
       <End Role="RecommendedTrip" EntitySet="RecommendedTrip" />

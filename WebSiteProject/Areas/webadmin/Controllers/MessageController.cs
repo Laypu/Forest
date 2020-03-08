@@ -75,8 +75,18 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             //旅遊資訊關聯
             ViewBag.Sub_HashTag = db.F_Sub_HashTag_Type.Where(s => s.MessageItem_ID.ToString() == itemid).ToList();
 
-
-
+            //目的地關聯
+            var Destinations_ID = new List<SelectListItem>();
+            foreach (var item in db.F_Destination_Type)
+            {
+                Destinations_ID.Add(new SelectListItem()
+                {
+                    Text = item.Destination_Type_Title1 + " " + item.Destination_Type_Title2,
+                    Value = Convert.ToString(item.Destination_Type_ID),
+                    Selected = false
+                });
+            }
+            ViewBag.Destination_Type_ID = Destinations_ID;
             return View(model);
         }
         
@@ -169,6 +179,20 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 }).OrderBy(c => c.HashTag_Type_ID);
                 //var CategoryMID = db.Products.Find(id).CategorySmall.CategoryMID;
                 ViewBag.HashTag = new SelectList(HashTag, "HashTag_Type_ID", "HashTag_Type_Name");
+                
+                
+                var Destinations_ID = new List<SelectListItem>();
+                foreach (var item in db.F_Destination_Type)
+                {
+                    Destinations_ID.Add(new SelectListItem()
+                    {
+                        Text = item.Destination_Type_Title1 + " " + item.Destination_Type_Title2,
+                        Value = Convert.ToString(item.Destination_Type_ID),
+                        Selected = false
+                    });
+                }
+                ViewBag.Destination_Type_ID = Destinations_ID;
+
             }
           
             return View();
@@ -334,7 +358,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         #endregion
 
         #region SaveItem
-        public ActionResult SaveItem(MessageEditModel model, List<int> HashTag_Type ,WebSiteProject.Models.F_Destination_Type f_Destination_Type)
+        public ActionResult SaveItem(MessageEditModel model, List<int> HashTag_Type,int Destination_Type_ID)
         {
             if (model.UploadFile != null)
             {
@@ -414,6 +438,14 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         db.SaveChanges();                    
                     };
                     
+                        WebSiteProject.Models.Message_DesHash MDHash = new Models.Message_DesHash();
+                        MDHash.MessageItem_ID = result;
+                        MDHash.Destination_Type_ID = Destination_Type_ID;
+                        db.Message_DesHash.Add(MDHash);
+                        db.SaveChanges();
+                    
+
+
                     return Json("成功");
                 };
                 return Json("失敗");
@@ -427,11 +459,18 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 {
                     var Old_HashTag = db.F_Sub_HashTag_Type.Where(a => a.MessageItem_ID == model.ItemID).ToList(); ;
                     //先全部刪除舊的
+                    var Old_DesHash = db.Message_DesHash.Where(b => b.MessageItem_ID == model.ItemID).ToList();
                     foreach (var item in Old_HashTag)
                     {
                         var Old_HashTag_Item = db.F_Sub_HashTag_Type.Find(item.Sub_HashTag_Type_ID);
                         db.Entry(Old_HashTag_Item).State = System.Data.Entity.EntityState.Deleted;
                         db.SaveChanges();                        
+                    };
+                    foreach (var item in Old_DesHash)
+                    {
+                        var Old_DesHash_Item = db.Message_DesHash.Find(item.Destination_Type_ID);
+                        db.Entry(Old_DesHash_Item).State = System.Data.Entity.EntityState.Deleted;
+                        db.SaveChanges();
                     };
 
                     //新增加
@@ -443,6 +482,16 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         db.F_Sub_HashTag_Type.Add(Sub_HashTag);
                         db.SaveChanges();
                     };
+                    
+                        WebSiteProject.Models.Message_DesHash MDHash = new Models.Message_DesHash();
+                        MDHash.MessageItem_ID = model.ItemID;
+                        MDHash.Destination_Type_ID = Destination_Type_ID;
+                        db.Message_DesHash.Add(MDHash);
+                        db.SaveChanges();
+                    
+
+
+
                     return Json("成功");
                 };
                 return Json("失敗");
@@ -557,11 +606,18 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 
 
         //===20200109_Select_ThingsToDo
-        public ActionResult ShowThingsToDoList(int? ThingsToDoID)
+        public ActionResult ShowThingsToDoList(int? ThingsToDoID, int? Destination_Type_ID)
         {
             var _ThingsToDo_Data = db.F_Sub_HashTag_Type.Where(f => f.HashTag_Type_ID == ThingsToDoID).Select(f => new { f.MessageItem_ID});
             
             return Json(_ThingsToDo_Data, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult ShowDestination(int? Destination_Type_ID, int? ThingsToDoID)
+        {
+            var DestinationData = db.Message_DesHash.Where(MDH => MDH.Destination_Type_ID == Destination_Type_ID).Select(MDH => new { MDH.MessageItem_ID });
+            return Json(DestinationData, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

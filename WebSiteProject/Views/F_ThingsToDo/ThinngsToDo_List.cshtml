@@ -193,14 +193,14 @@
             <ul class="list">
 
                 @{
-                    var FTModel = (List<WebSiteProject.Models.F_ViewModels.F_ThingsToDo_List_ViewModel>)ViewBag.Five_Thingstodo_List;
+                    var FTModel = (List<WebSiteProject.Models.MessageItem>)ViewBag.Five_Thingstodo_List;
 
                     foreach (var item in FTModel)
                     {
                         <li data-sr="enter bottom over 1.5s">
-                            <div class="img imh_opacity"><a href="@Url.Action("ThingToDo_Detail","F_ThingsToDo",new {listid= item.ItemID})" title="@item.Title"><img src="@Url.Content("~/UploadImage/MessageItem/")@item.RelateImageFileName" alt="@item.Title" /></a></div>
+                            <div class="img imh_opacity"><a href="@Url.Action("ThingToDo_Detail","F_ThingsToDo",new {listid= item.ItemID,TTDTitle = @ViewBag.F_Thingtodo_Title})" title="@item.Title"><img src="@Url.Content("~/UploadImage/MessageItem/")@item.RelateImageFileName" alt="@item.Title" /></a></div>
                             <div class="font_box">
-                                <div class="title"><a href="@Url.Action("ThingToDo_Detail","F_ThingsToDo",new {listid= item.ItemID})" title="@item.Title">@item.Title</a></div>
+                                <div class="title"><a href="@Url.Action("ThingToDo_Detail","F_ThingsToDo",new {listid= item.ItemID,TTDTitle = @ViewBag.F_Thingtodo_Title})" title="@item.Title">@item.Title</a></div>
                                 <div class="link margin0" data-itemID="@item.ItemID">
                                     @*<a href="#" title="">#Walking & Hiking</a> &nbsp;
                                         <a href="#" title="">#Clamping</a>*@
@@ -267,7 +267,7 @@
 <div class="breadcrumbs">
     <div class="container">
         <div class="title">You are here</div>
-        <div class="font"><a href="index.html" title="Home">Home</a> / <a href="things.html" title="Things to do">Things to do</a> / Ecological observation</div>
+        <div class="font"><a href="index.html" title="Home">Home</a> / <a href="things.html" title="Things to do">Things to do</a> /@ViewBag.F_Thingtodo_Title</div>
     </div>
 </div>
 <!--breadcrumbs end-->

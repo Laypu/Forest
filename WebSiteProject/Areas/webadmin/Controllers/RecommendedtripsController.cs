@@ -38,11 +38,11 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         }
         public ActionResult Recommendedtrips_item(string Dstination_typ = "", string Day_Id = "", string F_HashTag="")
         {
-            var Destination_Typ = db.F_Destination_Type;
+            var Destination_Type = db.F_Destination_Type;
             var Day_ID_ = db.RecommendedTrips_Day;
             var F_HashTag_Type_ = db.F_HashTag_Type;
             var Destinations_ID = new List<SelectListItem>();
-            foreach (var item in Destination_Typ)
+            foreach (var item in Destination_Type)
             {
                 Destinations_ID.Add(new SelectListItem()
                 {

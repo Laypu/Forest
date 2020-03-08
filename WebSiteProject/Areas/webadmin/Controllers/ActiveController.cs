@@ -147,6 +147,8 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             var grouplist = _IModelActiveManager.GetAllGroupSelectList(mainid);
             grouplist.Insert(0, new System.Web.Mvc.SelectListItem() { Text = "全部", Value = "" });
             ViewBag.grouplist = grouplist;
+            //WebSiteProject.Models.Message_DesHash M_Des = new Models.Message_DesHash();
+            //ViewBag.Message_DesHash = (M_Des.F_Destination_Type.Destination_Type_Title1 + M_Des.F_Destination_Type.Destination_Type_Title2).ToList();
             ViewBag.mainid = mainid.AntiXssEncode();
            var maindata = _IModelActiveManager.Where(new ModelActiveEditMain()
             {

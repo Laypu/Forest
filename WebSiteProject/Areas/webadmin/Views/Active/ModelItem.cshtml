@@ -8,15 +8,15 @@
 <div class="page-bar">
     <ul class="page-breadcrumb">
         <li>
-            <a href="@Url.Action("Index","Home")">Home</a>
+            <a href="@Url.Action("Index", "Home")">Home</a>
             <i class="fa fa-circle"></i>
         </li>
         <li>
-            <a href="@Url.Action("Index","Model")">模組管理</a>
+            <a href="@Url.Action("Index", "Model")">模組管理</a>
             <i class="fa fa-circle"></i>
         </li>
         <li>
-            <a href="@Url.Action("Index","Active")">活動管理</a>
+            <a href="@Url.Action("Index", "Active")">活動管理</a>
             <i class="fa fa-circle"></i>
         </li>
         <li>
@@ -46,14 +46,14 @@
     <!--management item end-->
     <!--set item start-->
     <div class="table-toolbar">
-        <div class="col-md-6 col-sm-12 col-xs-12">
+        @*<div class="col-md-6 col-sm-12 col-xs-12">
             <div class="display_inline">
                 <p class="class_title">類別</p>
                 @{var grouplist = (IList<SelectListItem>)ViewBag.grouplist;
                 <select class="form-control_1" id="GroupId">@foreach (var g in grouplist) {<option value="@g.Value">@g.Text</option>}</select>}
                 <p class="display_inline"><a href="#" class="btn grey-mint" role="button" id="btn_groupmanager">管理</a></p>
             </div>
-        </div>
+        </div>*@
 
         <div class="col-md-6 col-sm-12 col-xs-12 mobile_left">
             <p class="display_inline">
@@ -98,14 +98,17 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        @*<div class="form-group">
                             <div class="col-md-2 search_item_1">類別</div>
                             <div class="col-md-10 bg-white">
+                                @{ var Message_DesHash = IEnumerable<WebSiteProject.Models.Message_DesHash>Message_DesHash
+                                        
+                                        }
                                 @{ grouplist = (IList<SelectListItem>)ViewBag.grouplist;
                                     <select class="form-control_1" id="GroupId2">@foreach (var g in grouplist)
                                     {<option value="@g.Value">@g.Text</option>}</select>}
                                 </div>
-                        </div>
+                        </div>*@
 
                         <div class="form-group">
                             <div class="col-md-2 search_item_1">是否在顯示區間</div>
@@ -156,7 +159,7 @@
                     <th filed-name='Sort' width="160px" class="text-center" filed-type='numbertextcheck' filed-item-class="sortedit">排序</th>
                     <th filed-name='PublicshDate' width="100px" class="text-center" filed-item-class='text-center'>發佈日期</th>
                     <th filed-name='Title' class="text-center" filed-type='link'>標題</th>
-                    <th filed-name='GroupName' width="150px" class="text-center" filed-item-class='text-center'>類別</th>
+                    @*<th filed-name='GroupName' width="150px" class="text-center" filed-item-class='text-center'>類別</th>*@
                     <th  filed-name='VerifyStr'  width="50px" class="text-center" filed-item-class='text-center'>審核狀態</th>
                     <th filed-name='IsRange' width="80px" class="text-center" filed-item-class='text-center'>是否在顯示區間</th>
                     <th filed-name='Enabled' width="80px" class="text-center" filed-type='checkbox' filed-item-class="checkboxes chkstatus">上架</th>
@@ -211,18 +214,18 @@
                 SearchModelBase.PublicshDateTo = $('#@Html.IdFor(m => m.PublicshDateTo)').val();
                 SearchModelBase.Enabled = $('#@Html.IdFor(m => m.Enabled)' ).val();
                 SearchModelBase.Title = $('#@Html.IdFor(m => m.Title)').val();
-                 SearchModelBase.GroupId = $('#@Html.IdFor(m => m.GroupId)' + '2').val();
+                @*SearchModelBase.GroupId = $('#@Html.IdFor(m => m.GroupId)' + '2').val();*@
                    SearchModelBase.IsRange = $('#@Html.IdFor(m => m.IsRange)').val();
                 SearchModelBase.Search = "Y";
                 mytable.GetData();
             });
-             $("#GroupId").change(function () {
-                 $("#searchForm :input").val('');
-                 var SearchModelBase = mytable.SearchModelBase;
-                 SearchModelBase.GroupId = $('#GroupId').val();
-                 SearchModelBase.Search = "Y";
-                 mytable.GetData();
-             });
+             //$("#GroupId").change(function () {
+             //    $("#searchForm :input").val('');
+             //    var SearchModelBase = mytable.SearchModelBase;
+             //    SearchModelBase.GroupId = $('#GroupId').val();
+             //    SearchModelBase.Search = "Y";
+             //    mytable.GetData();
+             //});
             RegisterOrder("#eventtable", ".sortedit", '@Url.Action("UpdateItemSeq")', obj);
             RegisterClickAll("#chk_all", '#eventtable tbody .chksel', "#selvalue");
             RegisterDelete("#btn_del", '#eventtable .chksel:checked', '@Url.Action("SetItemDelete")', {keyindex:"3"});

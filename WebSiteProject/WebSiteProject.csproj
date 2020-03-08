@@ -445,6 +445,9 @@
     <Compile Include="Models\MessageUnitSetting.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Message_DesHash.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ModelActiveEditMain.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
@@ -525,9 +528,6 @@
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SiteList.cs">
-      <DependentUpon>_Forest.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
@@ -2084,6 +2084,7 @@
     <Content Include="Views\F_Recommendedtrips\recommended_Detail.cshtml" />
     <Content Include="Views\F_Recommendedtrips\RecommendedTrip_Travel_list.cshtml" />
     <Content Include="Views\Shared\page_bottom.cshtml" />
+    <Content Include="Views\Destination_Index\Destination_Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

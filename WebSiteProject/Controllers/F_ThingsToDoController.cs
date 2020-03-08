@@ -271,21 +271,30 @@ namespace WebSiteProject.Controllers
             ViewBag.F_Thingtodo__Description = Server.HtmlDecode(db.F_Thingtodo_Type.Find(F_TTD_Id).F_Thingtodo_Type_Description);
 
             //List
-            ViewBag.Five_Thingstodo_List = db.MessageItems.Join(
-            db.F_Sub_HashTag_Type,
-            f => f.ItemID,
-            f1 => f1.MessageItem_ID,
-            (f, f1) => new WebSiteProject.Models.F_ViewModels.F_ThingsToDo_List_ViewModel
-            {
-                ItemID = f.ItemID,
-                RelateImageFileName = f.RelateImageFileName,
-                Title = f.Title,
-                ModelID = f.ModelID,
-                HashTag_Type_ID = f1.HashTag_Type_ID,
-                Sort = f.Sort,
-                IsVerift = f.IsVerift
-            }
-            ).Where(f => f.ModelID == mode_id && f.HashTag_Type_ID == list_id && f.IsVerift == true).OrderBy(f => f.Sort).ToList();
+            var q = from M in db.MessageItems
+                    join H in db.F_Sub_HashTag_Type
+                    on M.ItemID equals H.MessageItem_ID
+                    where H.HashTag_Type_ID == F_TTD_Id
+                    select M;
+
+            ViewBag.Five_Thingstodo_List = q.ToList();
+
+
+            //ViewBag.Five_Thingstodo_List = db.MessageItems.Join(
+            //db.F_Sub_HashTag_Type,
+            //f => f.ItemID,
+            //f1 => f1.MessageItem_ID,
+            //(f, f1) => new WebSiteProject.Models.F_ViewModels.F_ThingsToDo_List_ViewModel
+            //{
+            //    ItemID = f.ItemID,
+            //    RelateImageFileName = f.RelateImageFileName,
+            //    Title = f.Title,
+            //    ModelID = f.ModelID,
+            //    HashTag_Type_ID = f1.HashTag_Type_ID,
+            //    Sort = f.Sort,
+            //    IsVerift = f.IsVerift
+            //}
+            //).Where(f => f.ModelID == mode_id && f.HashTag_Type_ID == list_id && f.IsVerift == true).OrderBy(f => f.Sort).ToList();
 
 
 
@@ -296,7 +305,7 @@ namespace WebSiteProject.Controllers
 
 
         #region ThingToDo_Detail
-        public ActionResult ThingToDo_Detail(int? langid, int listid)
+        public ActionResult ThingToDo_Detail(int? langid, int listid,string TTDTitle)
         {
             #region 模組勿動
             var site_id = 4; //這是ThingsToDo的輪播ID
@@ -386,6 +395,7 @@ namespace WebSiteProject.Controllers
 
             ViewBag.TTD_Detail = db.MessageItems.Find(listid);
 
+            ViewBag.Category = TTDTitle;
 
 
             return View(viewmodel);

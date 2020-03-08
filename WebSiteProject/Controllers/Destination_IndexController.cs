@@ -142,7 +142,7 @@ namespace WebSiteProject.Controllers
         public ActionResult Details(int? langid,string ImgTitle)
         {
             ViewBag.Category = ImgTitle;
-            ViewBag.MessageItems = db.MessageItems.ToList();
+            //ViewBag.MessageItems = db.MessageItems.ToList();
             var site_id = 3;
             if (Session["LangID"] == null)
             {
@@ -230,6 +230,15 @@ namespace WebSiteProject.Controllers
             ViewBag.F_Destination_Type = db.F_Destination_Type.Where(m => m.Destination_Type_Title1 == ImgTitle).ToList();
             
             ViewBag.Destination_Fare = db.Destination_Fare.Where(F=>F.F_Destination_Type.Destination_Type_Title1 == ImgTitle).ToList();
+
+            var q = from M in db.MessageItems
+                    join H in db.Message_DesHash
+                    on M.ItemID equals H.MessageItem_ID
+                    where H.F_Destination_Type.Destination_Type_Title1 == ImgTitle
+                    select M;
+
+            ViewBag.MessageItems = q.ToList();
+            
             return View(viewmodel);
         }
 
@@ -397,6 +406,9 @@ namespace WebSiteProject.Controllers
         {
             return DateTime.Now.ToString("MMMM d,yyyy", new System.Globalization.CultureInfo("en-US"));
         }
-
+        public ActionResult Destination_Detail(int? langid, string ImgTitle)
+        {
+            return View();
+        }
     }
 }
