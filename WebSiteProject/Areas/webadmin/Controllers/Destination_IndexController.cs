@@ -243,8 +243,8 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 db.SaveChanges();
 
             }
-
-            return RedirectToAction("Destination");
+            TempData["Msg"] = "新增成功";
+            return RedirectToAction("Edit",new {id = DFTR.Destination_Type_ID });
         }
 
         [HttpGet]

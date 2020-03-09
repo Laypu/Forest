@@ -51,6 +51,7 @@
                          data-height="['auto']"
                          data-basealign="slide">
                         <img src="@Url.Content("~/UploadImage/Destination_Img/" +DesModel.First().Banner_Img )" alt="@DesModel.First().Banner_Img">
+
                     </div>
 
                     @*<div class="tp-caption item_box" data-x="30" data-y="170" data-start="500" data-transform_in="y:[100%];opacity:0;s:500;">
@@ -149,8 +150,8 @@
         <div class="container">
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                 <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
-                <a href="index.html" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
-                <a href="destinations.html">Destinations</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="@Url.Action("Index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="@Url.Action("Index","Destination_Index",new {langid = 1 })">Destinations</a><i class="fa fa-angle-right" aria-hidden="true"></i>
                 @BanTitle
             </div>
             <div class="col-md-5 col-sm-6 col-xs-12">
@@ -173,14 +174,16 @@
                     {
                         <li data-sr="enter bottom over 1.5s">
                             <div class="img imh_opacity">
-                                <a href="#" title="@item.Title">
+                                <a href="@Url.Action("Article","Destination_Index",new {langid = 1,Category = BanTitle,ImgTitle = item.Title })" title="@item.Title">
                                     <img src="@Url.Content("~/img/")@item.RelateImageFileOrgName" alt="item.Title" />
                                 </a>
                             </div>
-                            @*<div class="font_box">
-                                <div class="title"><a href="#" title="@item.Title">@item.Title</a></div>
+                            <div class="font_box">
+                                <div class="title">
+                                    <a href="@Url.Action("Article","Destination_Index",new {langid = 1,Category = BanTitle,ImgTitle = item.Title })" title="@item.Title">@item.Title</a>
+                                </div>
                                 <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
-                            </div>*@
+                            </div>
                         </li>
                     }
                 }
@@ -243,7 +246,7 @@
 <div class="breadcrumbs">
     <div class="container">
         <div class="title">You are here</div>
-        <div class="font"><a href="index.html" title="Home">Home</a> / <a href="destinations.html" title="Destinations">Destinations</a> / Hehuanshan Forest Recreation Area</div>
+        <div class="font"><a href="@Url.Action("Index","Home")" title="Home">Home</a> / <a href="@Url.Action("Index","Destination_Index",new {langid = 1 })" title="Destinations">Destinations</a> / @BanTitle</div>
     </div>
 </div>
 <!--breadcrumbs end-->
