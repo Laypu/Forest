@@ -439,6 +439,12 @@
     <Compile Include="Models\Menu.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Message10Hash.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MessageBanner.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\MessageItem.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
@@ -1894,8 +1900,8 @@
     <Content Include="css\fonts\summernote.eot" />
     <Content Include="css\fonts\summernote.ttf" />
     <Content Include="css\fonts\summernote.woff" />
-    <Content Include="Areas\webadmin\Views\Recommendedtrips\RecommendedTrip_Travel_Item.cshtml" />
     <Content Include="Areas\webadmin\Views\Recommendedtrips\RecommendedTrip_Trave_Edit.cshtml" />
+    <Content Include="Areas\webadmin\Views\Recommendedtrips\RecommendedTrip_Travel_Item.cshtml" />
     <None Include="Properties\PublishProfiles\MySkylines.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2007,6 +2013,15 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="UploadFile\VideoItem\263521266-Test.txt" />
     <Content Include="UploadFile\VideoItem\Test.txt" />
+    <Content Include="UploadImage\Destination_Img\banner_d.jpg" />
+    <Content Include="UploadImage\Destination_Img\banner_t_old.jpg" />
+    <Content Include="UploadImage\Destination_Img\bg_3.jpg" />
+    <Content Include="UploadImage\Destination_Img\d_pic_02.jpg" />
+    <Content Include="UploadImage\Destination_Img\index_thing_01.jpg" />
+    <Content Include="UploadImage\Destination_Img\index_thing_02.jpg" />
+    <Content Include="UploadImage\Destination_Img\index_thing_03.jpg" />
+    <Content Include="UploadImage\Destination_Img\r_pic_02.jpg" />
+    <Content Include="UploadImage\Destination_Img\t_pic_05.jpg" />
     <Content Include="UploadImage\RecommendedTrips\637184952690321163_trip_pic_02.jpg" />
     <Content Include="UploadImage\RecommendedTrips\637184970418494734_trip_pic_03.jpg" />
     <Content Include="UploadImage\RecommendedTrips\800x450.png" />
