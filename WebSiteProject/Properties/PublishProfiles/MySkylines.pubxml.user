@@ -34,7 +34,7 @@
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Active/ModelItem.cshtml">
-      <publishTime>02/27/2020 18:32:58</publishTime>
+      <publishTime>03/08/2020 13:01:17</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Active/UnitSetting.cshtml">
       <publishTime>03/05/2020 10:43:55</publishTime>
@@ -91,13 +91,13 @@
       <publishTime>03/06/2020 11:20:14</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Destination_Index/Createtr.cshtml">
-      <publishTime>02/27/2020 18:32:58</publishTime>
+      <publishTime>03/09/2020 10:40:01</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Destination_Index/Destination.cshtml">
       <publishTime>03/03/2020 18:55:07</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Destination_Index/Edit.cshtml">
-      <publishTime>03/05/2020 13:03:11</publishTime>
+      <publishTime>03/09/2020 10:47:04</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Destination_Index/MainTitleAndContent.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -244,10 +244,10 @@
       <publishTime>03/05/2020 10:43:55</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Message/MessageEdit.cshtml">
-      <publishTime>03/06/2020 16:34:01</publishTime>
+      <publishTime>03/08/2020 12:03:27</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Message/ModelItem.cshtml">
-      <publishTime>03/06/2020 13:20:06</publishTime>
+      <publishTime>03/09/2020 09:22:56</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Message/SEOSetting.cshtml">
       <publishTime>03/05/2020 10:43:55</publishTime>
@@ -628,10 +628,10 @@
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="bin/WebSiteProject.dll">
-      <publishTime>03/06/2020 17:01:19</publishTime>
+      <publishTime>03/09/2020 13:30:57</publishTime>
     </File>
     <File Include="bin/WebSiteProject.pdb">
-      <publishTime>03/06/2020 17:01:19</publishTime>
+      <publishTime>03/09/2020 13:30:57</publishTime>
     </File>
     <File Include="bin/zh-Hant/EntityFramework.resources.dll">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -1822,7 +1822,7 @@
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="Models/_Forest.edmx.diagram">
-      <publishTime>03/03/2020 17:51:21</publishTime>
+      <publishTime>03/08/2020 15:25:47</publishTime>
     </File>
     <File Include="NLog.config">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -8856,6 +8856,9 @@
     <File Include="Views/Config/UserListEdit.cshtml">
       <publishTime>11/05/2017 08:54:58</publishTime>
     </File>
+    <File Include="Views/Destination_Index/Article.cshtml">
+      <publishTime>03/09/2020 13:14:45</publishTime>
+    </File>
     <File Include="Views/Destination_Index/Create.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
@@ -8863,7 +8866,7 @@
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="Views/Destination_Index/Details.cshtml">
-      <publishTime>03/05/2020 17:32:05</publishTime>
+      <publishTime>03/09/2020 13:25:54</publishTime>
     </File>
     <File Include="Views/Destination_Index/Index.cshtml">
       <publishTime>03/05/2020 17:08:09</publishTime>
@@ -8917,13 +8920,13 @@
       <publishTime>03/05/2020 13:59:51</publishTime>
     </File>
     <File Include="Views/F_ThingsToDo/Index.cshtml">
-      <publishTime>03/05/2020 13:56:26</publishTime>
+      <publishTime>03/08/2020 15:44:03</publishTime>
     </File>
     <File Include="Views/F_ThingsToDo/ThingToDo_Detail.cshtml">
-      <publishTime>02/27/2020 18:32:58</publishTime>
+      <publishTime>03/08/2020 16:37:51</publishTime>
     </File>
     <File Include="Views/F_ThingsToDo/ThinngsToDo_List.cshtml">
-      <publishTime>02/27/2020 18:32:58</publishTime>
+      <publishTime>03/08/2020 16:34:37</publishTime>
     </File>
     <File Include="Views/Home/F_Video_Detail.cshtml">
       <publishTime>03/06/2020 16:06:06</publishTime>

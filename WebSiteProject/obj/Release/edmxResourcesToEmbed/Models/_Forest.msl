@@ -1721,11 +1721,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Message_DesHash">
+      <EntityTypeMapping TypeName="ForestModel.Message_DesHash">
+        <MappingFragment StoreEntitySet="Message_DesHash">
+          <ScalarProperty Name="MessageItem_ID" ColumnName="MessageItem_ID" />
+          <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
+          <ScalarProperty Name="Message_DesHashID" ColumnName="Message_DesHashID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="F_Destination_Type">
       <EntityTypeMapping TypeName="ForestModel.F_Destination_Type">
         <MappingFragment StoreEntitySet="F_Destination_Type">
           <ScalarProperty Name="Recommend_Detail_Img" ColumnName="Recommend_Detail_Img" />
           <ScalarProperty Name="Recommend_Img" ColumnName="Recommend_Img" />
+          <ScalarProperty Name="Banner_Img" ColumnName="Banner_Img" />
           <ScalarProperty Name="FPX" ColumnName="FPX" />
           <ScalarProperty Name="FPIX" ColumnName="FPIX" />
           <ScalarProperty Name="FPVIII" ColumnName="FPVIII" />

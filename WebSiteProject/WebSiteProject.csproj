@@ -2099,7 +2099,7 @@
     <Content Include="Views\F_Recommendedtrips\recommended_Detail.cshtml" />
     <Content Include="Views\F_Recommendedtrips\RecommendedTrip_Travel_list.cshtml" />
     <Content Include="Views\Shared\page_bottom.cshtml" />
-    <Content Include="Views\Destination_Index\Destination_Detail.cshtml" />
+    <Content Include="Views\Destination_Index\Article.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

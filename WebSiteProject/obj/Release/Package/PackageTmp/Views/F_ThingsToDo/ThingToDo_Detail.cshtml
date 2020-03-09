@@ -32,7 +32,7 @@
                     <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
                     <a href="@Url.Action("Index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
                     <a href="@Url.Action("Index","F_ThingsToDo",new { mid = 24})" title="Things to do">Things to do</a><i class="fa fa-angle-right" aria-hidden="true"></i>
-                    <a href="javascript:history.back()" title="Ecological Observation">Ecological Observation</a><i class="fa fa-angle-right" aria-hidden="true"></i>@TTDModel.Title
+                    <a href="javascript:history.back()" title="@ViewBag.Category">@ViewBag.Category</a><i class="fa fa-angle-right" aria-hidden="true"></i>@TTDModel.Title
                 </div>
                 <div class="col-md-5 col-sm-6 col-xs-12">
                     <div class="page_top_right">
@@ -123,7 +123,7 @@
     <div class="breadcrumbs">
         <div class="container">
             <div class="title">You are here</div>
-            <div class="font"><a href="index.html" title="Home">Home</a> / <a href="things.html" title="Things to do">Things to do</a> / <a href="things_detail_03.html" title="Ecological Observation">Ecological Observation</a> / The Liechtenstein Trail: Walking the length of a country in a weekend</div>
+            <div class="font"><a href="index.html" title="Home">Home</a> / <a href="things.html" title="Things to do">Things to do</a> / <a href="things_detail_03.html" title="@ViewBag.Category">@ViewBag.Category</a> / @TTDModel.Title</div>
         </div>
     </div>
     <!--breadcrumbs end-->

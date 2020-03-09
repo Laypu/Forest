@@ -8,6 +8,12 @@
 <!--header start-->
 @*<script>$.include("blocks/header.html");</script>*@
 <!--header end-->
+
+@{
+    var DesModel = (IEnumerable<WebSiteProject.Models.F_Destination_Type>)ViewBag.F_Destination_Type;
+    var BanTitle = DesModel.First().Destination_Type_Title1 + " " + DesModel.First().Destination_Type_Title2;
+    var FareModel = (IEnumerable<WebSiteProject.Models.Destination_Fare>)ViewBag.Destination_Fare;
+}
 <!--banner start-->
 <div class="page_banner">
     <!--設定檔在theme.js 1190行；電腦版和手機版分開-->
@@ -16,43 +22,44 @@
         <div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 670, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,500], 'parallax': { 'type': 'scroll', 'origo': 'enterpoint', 'speed': 1000, 'levels': [2,3,4,5,6,7,8,9,12,50], 'disable_onmobile': 'on' }, 'navigation' : {'arrows': { 'enable': true }, 'bullets': {'enable': true, 'style': 'bullets-style-1', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
             <ul>
 
-                <li class="slide-overlay" data-transition="fade">
+                @*<li class="slide-overlay" data-transition="fade">
 
-                    <div class="rs-background-video-layer"
-                         data-forcerewind="on"
-                         data-volume="mute"
-                         data-videowidth="100%"
-                         data-videoheight="100%"
-                         data-videomp4="video/M_F_MID.mp4"
-                         data-videopreload="preload"
-                         data-videoloop="loop"
-                         data-forceCover="1"
-                         data-aspectratio="16:9"
-                         data-autoplay="true"
-                         data-autoplayonlyfirsttime="false"
-                         data-nextslideatend="true">
-                    </div>
-                </li>
+                        <div class="rs-background-video-layer"
+                             data-forcerewind="on"
+                             data-volume="mute"
+                             data-videowidth="100%"
+                             data-videoheight="100%"
+                             data-videomp4="video/M_F_MID.mp4"
+                             data-videopreload="preload"
+                             data-videoloop="loop"
+                             data-forceCover="1"
+                             data-aspectratio="16:9"
+                             data-autoplay="true"
+                             data-autoplayonlyfirsttime="false"
+                             data-nextslideatend="true">
+                        </div>
+                    </li>*@
 
-                <!--<li data-transition="fade">
+                <li data-transition="fade">
 
                     <div class="tp-caption tp-resizeme"
-                            data-frames='[{"delay":0,"speed":2000,"frame":"0","from":"opacity:0;x:100%;y:-100%;","to":"o:1;x:0;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
-                            data-type="image"
-                            data-x="center"
-                            data-y="top"
-                            data-width="['auto']"
-                            data-height="['auto']"
-                            data-basealign="slide">
-                        <img src="img/index_banner_05.jpg" alt="">
+                         data-frames='[{"delay":0,"speed":2000,"frame":"0","from":"opacity:0;x:100%;y:-100%;","to":"o:1;x:0;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                         data-type="image"
+                         data-x="center"
+                         data-y="top"
+                         data-width="['auto']"
+                         data-height="['auto']"
+                         data-basealign="slide">
+                        <img src="@Url.Content("~/UploadImage/Destination_Img/" +DesModel.First().Banner_Img )" alt="@DesModel.First().Banner_Img">
+
                     </div>
 
-                    <div class="tp-caption item_box" data-x="30" data-y="170" data-start="500" data-transform_in="y:[100%];opacity:0;s:500;">
-                        <div class="title">0-3000m Hidden treasure of Asia</div>
-                        <div class="con_font">0-3952M To discover these treasures,Is the reason you must visit Taiwan.</div><br />
-                        <div class="btn_box"><a href="#" title=""><span class="btn_01">view</a></div>
-                    </div>
-                </li>-->
+                    @*<div class="tp-caption item_box" data-x="30" data-y="170" data-start="500" data-transform_in="y:[100%];opacity:0;s:500;">
+                            <div class="title">0-3000m Hidden treasure of Asia</div>
+                            <div class="con_font">0-3952M To discover these treasures,Is the reason you must visit Taiwan.</div><br />
+                            <div class="btn_box"><a href="#" title=""><span class="btn_01">view</a></div>
+                        </div>*@
+                </li>
 
             </ul>
         </div>
@@ -67,11 +74,7 @@
             <div><img src="img/index_banner_05.jpg" alt="" /></div>
         </div>
     </noscript>
-    @{
-        var DesModel = (IEnumerable<WebSiteProject.Models.F_Destination_Type>)ViewBag.F_Destination_Type;
-        var BanTitle = DesModel.First().Destination_Type_Title1 + " " + DesModel.First().Destination_Type_Title2;
-        var FareModel = (IEnumerable<WebSiteProject.Models.Destination_Fare>)ViewBag.Destination_Fare;
-    }
+
     <div class="banner_title">
         <h2>@BanTitle</h2>
     </div>
@@ -147,8 +150,8 @@
         <div class="container">
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                 <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
-                <a href="index.html" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
-                <a href="destinations.html">Destinations</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="@Url.Action("Index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="@Url.Action("Index","Destination_Index",new {langid = 1 })">Destinations</a><i class="fa fa-angle-right" aria-hidden="true"></i>
                 @BanTitle
             </div>
             <div class="col-md-5 col-sm-6 col-xs-12">
@@ -171,60 +174,62 @@
                     {
                         <li data-sr="enter bottom over 1.5s">
                             <div class="img imh_opacity">
-                                <a href="#" title="@item.Title">
+                                <a href="@Url.Action("Article","Destination_Index",new {langid = 1,Category = BanTitle,ImgTitle = item.Title })" title="@item.Title">
                                     <img src="@Url.Content("~/img/")@item.RelateImageFileOrgName" alt="item.Title" />
                                 </a>
                             </div>
                             <div class="font_box">
-                                <div class="title"><a href="#" title="@item.Title">@item.Title</a></div>
+                                <div class="title">
+                                    <a href="@Url.Action("Article","Destination_Index",new {langid = 1,Category = BanTitle,ImgTitle = item.Title })" title="@item.Title">@item.Title</a>
+                                </div>
                                 <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
                             </div>
                         </li>
                     }
                 }
                 @*<li data-sr="enter bottom over 1.5s">
-                    <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_11.jpg" alt="" /></a></div>
-                    <div class="font_box">
-                        <div class="title"><a href="#" title="">The Liechtenstein Trail: Walking the length of a country in a weekend</a></div>
-                        <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
-                    </div>
-                </li>
-                <li data-sr="enter bottom over 1.5s">
-                    <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_12.jpg" alt="" /></a></div>
-                    <div class="font_box">
-                        <div class="title"><a href="#" title="">10 of world’s most eco-friendly golf courses</a></div>
-                        <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
-                    </div>
-                </li>
-                <li data-sr="enter bottom over 1.5s">
-                    <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_13.jpg" alt="" /></a></div>
-                    <div class="font_box">
-                        <div class="title"><a href="#" title="">Somewhere special to stay: 7 gorgeous new boutique hotels around the world</a></div>
-                        <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
-                    </div>
-                </li>
-                <li data-sr="enter bottom over 1.5s">
-                    <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_14.jpg" alt="" /></a></div>
-                    <div class="font_box">
-                        <div class="title"><a href="#" title="">Ski Guide: Samoens, France</a></div>
-                        <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
-                    </div>
-                </li>
-                <li data-sr="enter bottom over 1.5s">
-                    <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_15.jpg" alt="" /></a></div>
-                    <div class="font_box">
-                        <div class="title"><a href="#" title="">Walking the Rota Vicentina along Portugal’s Atlantic Coast</a></div>
-                        <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
-                    </div>
-                </li>
+                        <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_11.jpg" alt="" /></a></div>
+                        <div class="font_box">
+                            <div class="title"><a href="#" title="">The Liechtenstein Trail: Walking the length of a country in a weekend</a></div>
+                            <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
+                        </div>
+                    </li>
+                    <li data-sr="enter bottom over 1.5s">
+                        <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_12.jpg" alt="" /></a></div>
+                        <div class="font_box">
+                            <div class="title"><a href="#" title="">10 of world’s most eco-friendly golf courses</a></div>
+                            <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
+                        </div>
+                    </li>
+                    <li data-sr="enter bottom over 1.5s">
+                        <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_13.jpg" alt="" /></a></div>
+                        <div class="font_box">
+                            <div class="title"><a href="#" title="">Somewhere special to stay: 7 gorgeous new boutique hotels around the world</a></div>
+                            <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
+                        </div>
+                    </li>
+                    <li data-sr="enter bottom over 1.5s">
+                        <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_14.jpg" alt="" /></a></div>
+                        <div class="font_box">
+                            <div class="title"><a href="#" title="">Ski Guide: Samoens, France</a></div>
+                            <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
+                        </div>
+                    </li>
+                    <li data-sr="enter bottom over 1.5s">
+                        <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_15.jpg" alt="" /></a></div>
+                        <div class="font_box">
+                            <div class="title"><a href="#" title="">Walking the Rota Vicentina along Portugal’s Atlantic Coast</a></div>
+                            <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
+                        </div>
+                    </li>
 
-                <li data-sr="enter bottom over 1.5s">
-                    <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_16.jpg" alt="" /></a></div>
-                    <div class="font_box">
-                        <div class="title"><a href="#" title="">TExploring Norway’s South Coast</a></div>
-                        <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
-                    </div>
-                </li>*@
+                    <li data-sr="enter bottom over 1.5s">
+                        <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_16.jpg" alt="" /></a></div>
+                        <div class="font_box">
+                            <div class="title"><a href="#" title="">TExploring Norway’s South Coast</a></div>
+                            <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
+                        </div>
+                    </li>*@
 
             </ul>
         </div>
@@ -241,7 +246,7 @@
 <div class="breadcrumbs">
     <div class="container">
         <div class="title">You are here</div>
-        <div class="font"><a href="index.html" title="Home">Home</a> / <a href="destinations.html" title="Destinations">Destinations</a> / Hehuanshan Forest Recreation Area</div>
+        <div class="font"><a href="@Url.Action("Index","Home")" title="Home">Home</a> / <a href="@Url.Action("Index","Destination_Index",new {langid = 1 })" title="Destinations">Destinations</a> / @BanTitle</div>
     </div>
 </div>
 <!--breadcrumbs end-->
@@ -436,7 +441,7 @@
                                 }
 
 
-                                   
+
                             </tbody>
                         </table>
                     </div>`
@@ -456,7 +461,7 @@
 <script type="text/javascript">
     // ProgressBar
     $(function () {
-        
+
     });
 
 </script>
