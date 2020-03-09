@@ -439,6 +439,12 @@
     <Compile Include="Models\Menu.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Message10Hash.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MessageBanner.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\MessageItem.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>

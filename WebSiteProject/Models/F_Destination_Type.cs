@@ -22,11 +22,11 @@ public partial class F_Destination_Type
     public F_Destination_Type()
     {
 
-        this.Message_DesHash = new HashSet<Message_DesHash>();
-
         this.Destination_Fare = new HashSet<Destination_Fare>();
 
         this.RecommendedTrips = new HashSet<RecommendedTrip>();
+
+        this.Message_DesHash = new HashSet<Message_DesHash>();
 
     }
 
@@ -95,15 +95,15 @@ public partial class F_Destination_Type
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
-    public virtual ICollection<Message_DesHash> Message_DesHash { get; set; }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
     public virtual ICollection<Destination_Fare> Destination_Fare { get; set; }
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
     public virtual ICollection<RecommendedTrip> RecommendedTrips { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
+    public virtual ICollection<Message_DesHash> Message_DesHash { get; set; }
 
 }
 

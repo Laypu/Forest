@@ -90,11 +90,13 @@
         <AssociationConnector Association="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day" />
         <EntityTypeShape EntityType="ForestModel.RecommendedTrips_HashTag_Type" Width="1.5" PointX="3" PointY="34.125" />
         <AssociationConnector Association="ForestModel.FK_RecommendedTrips_HashTag_Type_F_HashTag_Type" />
-        <EntityTypeShape EntityType="ForestModel.Message_DesHash" Width="1.5" PointX="34.25" PointY="6.875" />
         <EntityTypeShape EntityType="ForestModel.F_Destination_Type" Width="1.5" PointX="32" PointY="1.875" />
-        <AssociationConnector Association="ForestModel.FK_Message_DesHash_F_Destination_Type" />
         <AssociationConnector Association="ForestModel.FK_Destination_Fare_F_Destination_Type" />
         <AssociationConnector Association="ForestModel.FK_RecommendedTrips_F_Destination_Type" />
+        <EntityTypeShape EntityType="ForestModel.Message_DesHash" Width="1.5" PointX="34.25" PointY="6.5" />
+        <EntityTypeShape EntityType="ForestModel.Message10Hash" Width="1.5" PointX="25.375" PointY="30.75" />
+        <EntityTypeShape EntityType="ForestModel.MessageBanner" Width="1.5" PointX="5.375" PointY="31.75" />
+        <AssociationConnector Association="ForestModel.FK_Message_DesHash_F_Destination_Type" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

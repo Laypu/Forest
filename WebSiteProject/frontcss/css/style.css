@@ -1828,8 +1828,8 @@ footer .copyright{
 }
 .page_con .edit_con{
 	padding:15px 0;
-	float:left;
-	width:100%;
+	/*float:left;
+	width:100%;*/
 }
 .page_con .box_02{
 	clear:both;

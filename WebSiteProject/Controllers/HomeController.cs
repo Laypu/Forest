@@ -433,12 +433,28 @@ namespace WebSiteProject.Controllers
                 Sort = "Sort"
             }).rows;
             #endregion
-            
 
 
+            var date = DateTime.Now;
 
             WebSiteProject.Models.ForestEntities db = new Models.ForestEntities();
-            ViewBag.F_Video = db.VideoItems.Where(f => f.ModelID == 5 && f.Enabled == true && f.IsVerift == true).OrderBy(f=>f.Sort).ToList();
+            if (db.VideoItems.Any(f => f.StDate == null))
+            {
+                if (db.VideoItems.Any(f => f.EdDate == null))
+                {
+                    ViewBag.F_Video = db.VideoItems.Where(f => f.ModelID == 5 && f.Enabled == true && f.IsVerift == true ).OrderBy(f => f.Sort).ToList();
+                }
+                ViewBag.F_Video = db.VideoItems.Where(f => f.ModelID == 5 && f.Enabled == true && f.IsVerift == true && f.EdDate >= date).OrderBy(f => f.Sort).ToList();
+            }
+            else if (db.VideoItems.Any(f => f.EdDate == null))
+            {
+                ViewBag.F_Video = db.VideoItems.Where(f => f.ModelID == 5 && f.Enabled == true && f.IsVerift == true && f.StDate <= date).OrderBy(f => f.Sort).ToList();
+
+            }
+            else {
+                ViewBag.F_Video = db.VideoItems.Where(f => f.ModelID == 5 && f.Enabled == true && f.IsVerift == true && f.StDate <= date && f.EdDate >= date).OrderBy(f => f.Sort).ToList();
+
+            }
 
             return View(viewmodel);
         }

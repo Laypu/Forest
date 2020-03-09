@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="ForestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="Message_DesHash">
-    <Key>
-      <PropertyRef Name="Message_DesHashID" />
-    </Key>
-    <Property Name="Message_DesHashID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Destination_Type_ID" Type="int" />
-    <Property Name="MessageItem_ID" Type="int" />
-  </EntityType>
   <EntityType Name="ActiveItem">
     <Key>
       <PropertyRef Name="ItemID" />
@@ -997,6 +989,41 @@
     <Property Name="DisplayName" Type="varchar" MaxLength="100" />
     <Property Name="ICon" Type="varchar" MaxLength="100" />
   </EntityType>
+  <EntityType Name="Message_DesHash">
+    <Key>
+      <PropertyRef Name="Message_DesHashID" />
+    </Key>
+    <Property Name="Message_DesHashID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Destination_Type_ID" Type="int" />
+    <Property Name="MessageItem_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Message10Hash">
+    <Key>
+      <PropertyRef Name="Message10Hash_ID" />
+    </Key>
+    <Property Name="Message10Hash_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Message10Hash_1H" Type="nvarchar(max)" />
+    <Property Name="Message10Hash_2H" Type="nvarchar(max)" />
+    <Property Name="Message10Hash_3H" Type="nvarchar(max)" />
+    <Property Name="Message10Hash_4H" Type="nvarchar(max)" />
+    <Property Name="Message10Hash_5H" Type="nvarchar(max)" />
+    <Property Name="Message10Hash_6H" Type="nvarchar(max)" />
+    <Property Name="Message10Hash_7H" Type="nvarchar(max)" />
+    <Property Name="Message10Hash_8H" Type="nvarchar(max)" />
+    <Property Name="Message10Hash_9H" Type="nvarchar(max)" />
+    <Property Name="Message10Hash_10H" Type="nvarchar(max)" />
+    <Property Name="MessageItem_ID" Type="int" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'DB67039.dbo.MessageBanner' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="MessageBanner">
+    <Key>
+      <PropertyRef Name="MessageBanner_ID" />
+    </Key>
+    <Property Name="MessageBanner_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MessageBanner_Img" Type="nvarchar(max)" />
+    <Property Name="MessageItem_ID" Type="int" />
+  </EntityType>
   <EntityType Name="MessageItem">
     <Key>
       <PropertyRef Name="ItemID" />
@@ -1776,7 +1803,6 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="ForestModelStoreContainer">
-    <EntitySet Name="Message_DesHash" EntityType="Self.Message_DesHash" Schema="DB89846642" store:Type="Tables" />
     <EntitySet Name="ActiveItem" EntityType="Self.ActiveItem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ActivePhoto" EntityType="Self.ActivePhoto" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ActiveUnitSetting" EntityType="Self.ActiveUnitSetting" Schema="dbo" store:Type="Tables" />
@@ -1824,6 +1850,8 @@
     <EntitySet Name="LangKey" EntityType="Self.LangKey" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LangKeyUnit" EntityType="Self.LangKeyUnit" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Message_DesHash" EntityType="Self.Message_DesHash" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Message10Hash" EntityType="Self.Message10Hash" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MessageItem" EntityType="Self.MessageItem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MessageUnitSetting" EntityType="Self.MessageUnitSetting" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ModelActiveEditMain" EntityType="Self.ModelActiveEditMain" Schema="dbo" store:Type="Tables" />
@@ -1892,6 +1920,13 @@
     [LinkItem].[UpdateName] AS [UpdateName], 
     [LinkItem].[IsVerift] AS [IsVerift]
     FROM [dbo].[LinkItem] AS [LinkItem]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MessageBanner" EntityType="Self.MessageBanner" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MessageBanner].[MessageBanner_ID] AS [MessageBanner_ID], 
+    [MessageBanner].[MessageBanner_Img] AS [MessageBanner_Img], 
+    [MessageBanner].[MessageItem_ID] AS [MessageItem_ID]
+    FROM [dbo].[MessageBanner] AS [MessageBanner]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="ZipCode" EntityType="Self.ZipCode" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 

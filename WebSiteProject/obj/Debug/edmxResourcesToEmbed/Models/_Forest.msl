@@ -1721,15 +1721,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Message_DesHash">
-      <EntityTypeMapping TypeName="ForestModel.Message_DesHash">
-        <MappingFragment StoreEntitySet="Message_DesHash">
-          <ScalarProperty Name="MessageItem_ID" ColumnName="MessageItem_ID" />
-          <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
-          <ScalarProperty Name="Message_DesHashID" ColumnName="Message_DesHashID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="F_Destination_Type">
       <EntityTypeMapping TypeName="ForestModel.F_Destination_Type">
         <MappingFragment StoreEntitySet="F_Destination_Type">
@@ -1763,6 +1754,42 @@
           <ScalarProperty Name="Destination_Type_Title2" ColumnName="Destination_Type_Title2" />
           <ScalarProperty Name="Destination_Type_Title1" ColumnName="Destination_Type_Title1" />
           <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Message_DesHash">
+      <EntityTypeMapping TypeName="ForestModel.Message_DesHash">
+        <MappingFragment StoreEntitySet="Message_DesHash">
+          <ScalarProperty Name="MessageItem_ID" ColumnName="MessageItem_ID" />
+          <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
+          <ScalarProperty Name="Message_DesHashID" ColumnName="Message_DesHashID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Message10Hash">
+      <EntityTypeMapping TypeName="ForestModel.Message10Hash">
+        <MappingFragment StoreEntitySet="Message10Hash">
+          <ScalarProperty Name="MessageItem_ID" ColumnName="MessageItem_ID" />
+          <ScalarProperty Name="Message10Hash_10H" ColumnName="Message10Hash_10H" />
+          <ScalarProperty Name="Message10Hash_9H" ColumnName="Message10Hash_9H" />
+          <ScalarProperty Name="Message10Hash_8H" ColumnName="Message10Hash_8H" />
+          <ScalarProperty Name="Message10Hash_7H" ColumnName="Message10Hash_7H" />
+          <ScalarProperty Name="Message10Hash_6H" ColumnName="Message10Hash_6H" />
+          <ScalarProperty Name="Message10Hash_5H" ColumnName="Message10Hash_5H" />
+          <ScalarProperty Name="Message10Hash_4H" ColumnName="Message10Hash_4H" />
+          <ScalarProperty Name="Message10Hash_3H" ColumnName="Message10Hash_3H" />
+          <ScalarProperty Name="Message10Hash_2H" ColumnName="Message10Hash_2H" />
+          <ScalarProperty Name="Message10Hash_1H" ColumnName="Message10Hash_1H" />
+          <ScalarProperty Name="Message10Hash_ID" ColumnName="Message10Hash_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessageBanners">
+      <EntityTypeMapping TypeName="ForestModel.MessageBanner">
+        <MappingFragment StoreEntitySet="MessageBanner">
+          <ScalarProperty Name="MessageItem_ID" ColumnName="MessageItem_ID" />
+          <ScalarProperty Name="MessageBanner_Img" ColumnName="MessageBanner_Img" />
+          <ScalarProperty Name="MessageBanner_ID" ColumnName="MessageBanner_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
