@@ -32,7 +32,6 @@
     </div>
 </div>
 <a href="@Url.Action("Recommendedtrips_Edit")" class="btn green-meadow">新增<i class="fa fa-plus"></i></a>
-
 <a class="blue search_icon" id="btn_search">搜尋<i class="fa fa-search"></i></a>
 <div class="table-scrollable">
     <table class="table table-bordered table-hover" border="0" cellspacing="0" cellpadding="0"
@@ -44,28 +43,37 @@
            data-max-pagination='10'>
         <thead>
             <tr>
-                <th class="text-center">編號</th>
+                <th class="text-center">排序</th>
                 <th class="text-center">標題</th>
                 <th class="text-center">類別</th>
-                <th class="text-center">編輯</th>
+                @*<th class="text-center">管理</th>*@
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr class="text-center">
-                    <td>@item.RecommendedTrips_ID</td>
-                    <td>@item.RecommendedTrips_Title</td>
-                    <td>@item.RecommendedTrips_Day_Name</td>
-                    <td><a href="@Url.Action("Recommendedtrips_Edit",new {itemid=@item.RecommendedTrips_ID})" class="btn green-meadow">編輯<i class="fa fa-plus"></i></a></td>
-                </tr>
+            <tr class="text-center">
+                <td>
+                    <button name="totop" type="button" class="btn btn-default btn-xs seqindex" value="1" idindex="1329"><i class="fa fa-angle-double-up"></i></button>
+                    <button name="Up" type="button" class="btn btn-default btn-xs seqindex" value="@(item.sort-1)" idindex="1329"><i class="fa fa-angle-up"></i></button>
+                    <button name="Down" type="button" class="btn btn-default btn-xs seqindex" value="@(item.sort+1)" idindex="1329"><i class="fa fa-angle-down"></i></button>
+                    <button name="tobottom" type="button" class="btn btn-default btn-xs seqindex" value="-1" idindex="1329"><i class="fa fa-angle-double-down"></i></button>
+                    <input type="hidden" value="@item.sort" data-pid="@item.RecommendedTrips_ID">
+                    <input class="editinput btn btn-default btn-xs sequence_list sortedit" value="@item.sort" />
+                </td>
+                <td> <a href="@Url.Action("Recommendedtrips_Edit",new {itemid=@item.RecommendedTrips_ID})">@item.RecommendedTrips_Title</a></td>
+                <td>@item.RecommendedTrips_Day_Name</td>
+                @*<td>
+                    <a href="@Url.Action("RecommendedTrip_Travel_Item",new {RecommendedTripID=@item.RecommendedTrips_ID})" class="btn green-meadow">管理<i class="fa fa-plus"></i></a>
+                </td>*@
+            </tr>
             }
         </tbody>
     </table>
 </div>
 
 @section scripts {
-    <script src="@Url.Content("~/Scripts/datatable.js")"></script>
+    @*<script src="@Url.Content("~/Scripts/datatable.js")"></script>*@
     <script src="~/Scripts/jquery.dataTables.js"></script>
     <link href="~/css/jquery.dataTables.css" rel="stylesheet" />
     <script>
@@ -109,6 +117,30 @@
                 var Day_Id = $("#Day_Id").val();
                 var F_HashTag = $("#F_HashTag").val();
                 window.location.href = (`@Url.Action("Recommendedtrips_item", "Recommendedtrips")/?Dstination_typ=${Dstination_typ}&Day_Id=${Day_Id}&F_HashTag=${F_HashTag}`);
+            })
+            //$(".a1").click(function () {
+            //    alert(12)
+            //})
+            $("#table tbody").on("click", ".seqindex", function () {
+                alert($(this).parents("td").children("input[type='hidden']").attr('data-pid') + "" + $(this).val());
+                var seq = $(this).val();
+                var itemid = $(this).parents("td").children("input[type='hidden']").attr('data-pid');
+                $.post("@Url.Action("UpdateSeq")", { itemid: itemid, seq: seq, Type:"btn"},
+                    function (data) {
+                    alert(data);
+            window.location.href ="@Url.Action("Recommendedtrips_item", "Recommendedtrips")"
+                }, "json");
+            })
+            $("#table tbody").on("change", ".sortedit", function () {
+                alert($(this).parents("td").children("input[type='hidden']").attr('data-pid') + "" + $(this).val());
+                var seq = $(this).val();
+                var itemid = $(this).parents("td").children("input[type='hidden']").attr('data-pid');
+                $.post("@Url.Action("UpdateSeq")", { itemid: itemid, seq: seq, Type:"inp"},
+                    function (data) {
+                        alert(data);
+                       window.location.href ="@Url.Action("Recommendedtrips_item", "Recommendedtrips")"
+                   
+                }, "json");
             })
         });
     </script>

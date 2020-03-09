@@ -19,7 +19,10 @@
                string [] keyword=HashData.Count() == 0 ? new string[10] : new string[] {
                         HashData.First().RecommendedTrips_keyword0,HashData.First().RecommendedTrips_keyword1,HashData.First().RecommendedTrips_keyword2,HashData.First().RecommendedTrips_keyword3,HashData.First().RecommendedTrips_keyword4
                     ,HashData.First().RecommendedTrips_keyword5,HashData.First().RecommendedTrips_keyword6,HashData.First().RecommendedTrips_keyword7,HashData.First().RecommendedTrips_keyword8,HashData.First().RecommendedTrips_keyword9};
-            <li class="bg_print" style="background-image:url(img/trip_map_03.png);" data-sr="enter top over 1.5s">
+               if(item.RecommendedTrips_Img_Img!="")
+               { 
+        }
+            <li class="bg_print" style="background-image:url(@Url.Content("~/UploadImage/Destination_Img/")@item.RecommendedTrips_Img_Img);" data-sr="enter top over 1.5s">
                 <!--六大森林遊樂區trip_map_01~06(內洞、奧萬大、合歡山、大雪山、阿里山、墾丁)，後台可以選擇-->
                 <div class="img" style="background:url(@Url.Content("~/UploadImage/RecommendedTrips/")@item.RecommendedTrips_Img)" title="Title_@item.RecommendedTrips_Img_Description">
                     <!--建議尺寸800*800px，圖片會置頂、置中，多餘部份遮住-->

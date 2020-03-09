@@ -1754,18 +1754,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_RecommendedTrip_Travel_RecommendedTrip">
-    <End Role="RecommendedTrip" Type="Self.RecommendedTrip" Multiplicity="0..1" />
-    <End Role="RecommendedTrip_Travel" Type="Self.RecommendedTrip_Travel" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="RecommendedTrip">
-        <PropertyRef Name="RecommendedTrips_ID" />
-      </Principal>
-      <Dependent Role="RecommendedTrip_Travel">
-        <PropertyRef Name="RecommendedTrip_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_RecommendedTrips_F_Destination_Type">
     <End Role="F_Destination_Type" Type="Self.F_Destination_Type" Multiplicity="0..1" />
     <End Role="RecommendedTrip" Type="Self.RecommendedTrip" Multiplicity="*" />
@@ -1947,10 +1935,6 @@
     <AssociationSet Name="FK_Message_DesHash_F_Destination_Type" Association="Self.FK_Message_DesHash_F_Destination_Type">
       <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
       <End Role="Message_DesHash" EntitySet="Message_DesHash" />
-    </AssociationSet>
-    <AssociationSet Name="FK_RecommendedTrip_Travel_RecommendedTrip" Association="Self.FK_RecommendedTrip_Travel_RecommendedTrip">
-      <End Role="RecommendedTrip" EntitySet="RecommendedTrip" />
-      <End Role="RecommendedTrip_Travel" EntitySet="RecommendedTrip_Travel" />
     </AssociationSet>
     <AssociationSet Name="FK_RecommendedTrips_F_Destination_Type" Association="Self.FK_RecommendedTrips_F_Destination_Type">
       <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />

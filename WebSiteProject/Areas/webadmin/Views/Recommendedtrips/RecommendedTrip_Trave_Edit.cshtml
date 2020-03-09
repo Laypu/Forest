@@ -23,14 +23,15 @@
                         <div class="form-body">
                             @Html.HiddenFor(m => m.RecommendedTrip_Travel_ID)
                             @Html.HiddenFor(Model => Model.RecommendedTrip_Travel_Img)
-                            <div class="form-group">
+                            @Html.HiddenFor(m=>m.RecommendedTrip_ID)
+                            @*<div class="form-group">
                                 <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
                                     <span>文章名稱類別</span>
                                 </div>
                                 <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
                                     @Html.DropDownList("RecommendedTrip_ID", (IEnumerable<SelectListItem>)ViewBag.RecommendedTrips_ID, "請選擇", htmlAttributes: new { @class = "form-control", rows = "8", cols = "100", @style = "width:300px" })
                                 </div>
-                            </div>
+                            </div>*@
                             <div class="form-group">
                                 <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
                                     <span>旅遊標題圖片_列表圖片</span>
@@ -41,7 +42,7 @@
                                     <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度800 * 800px</div>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            @*<div class="form-group">
                                 <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
                                     <span>旅遊標題圖片_圖片說明</span>
                                 </div>
@@ -49,7 +50,7 @@
                                     @Html.EditorFor(model => model.RecommendedTrip_Travel_Img_Description, new { htmlAttributes = new { @class = "form-control  inline-block" } })
                                     <div class="red" id="Img_Description_err" hidden>必須要輸入圖片說明</div>
                                 </div>
-                            </div>
+                            </div>*@
                             <div class="form-group">
                                 <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
                                     <span>旅遊標題</span>
@@ -79,12 +80,13 @@
                 </div>
             </div>
         </form>
-        <a class="btn blue" id="btn_save">確認(存檔)</a><a href="@Url.Action("RecommendedTrip_Travel_Item")" class="btn grey-mint">回上一頁</a>
+        <a class="btn blue" id="btn_save">確認(存檔)</a><a href="@Url.Action("Recommendedtrips_Edit",new {itemid=Model.RecommendedTrip_ID })" class="btn grey-mint">回上一頁</a>
     </div>
 </div>
 @section scripts{
-    <script>
-        $(function () {
+<script>
+    $(function () {
+        var id = @Model.RecommendedTrip_ID;
             $("#btn_save").click(function () {
                 var RecommendedTripID = $("#RecommendedTrip_ID").val();
                 var RecommendedTrip_Travel_Img_Description = $("#RecommendedTrip_Travel_Img_Description").val();
@@ -119,17 +121,17 @@
                 var images = $('#fileImag').get(0).files;
                 if (images.length > 0) {
                     formData.append("fileImag", images[0]);
-                    if (RecommendedTrip_Travel_Img_Description == "") {
-                        $("#Img_Description_err").show();
-                        return false;
-                    }
+                    //if (RecommendedTrip_Travel_Img_Description == "") {
+                    //    $("#Img_Description_err").show();
+                    //    return false;
+                    //}
                 } else {
                     formData.append("fileImag", null);
                     if ($('#fileImag').val() != "") {
-                        if (RecommendedTrip_Travel_Img_Description == "") {
-                            $("#Img_Description_err").show();
-                            return false;
-                        }
+                        //if (RecommendedTrip_Travel_Img_Description == "") {
+                        //    $("#Img_Description_err").show();
+                        //    return false;
+                        //}
                     }
                 }
                 $.ajax({
@@ -141,11 +143,11 @@
                     processData: false,
                     success: function (data) {
                         alert(data);
-                        location.href='@Url.Action("RecommendedTrip_Travel_Item", "Recommendedtrips")';
+                        location.href =`@Url.Action("Recommendedtrips_Edit")/?itemid=${id}`;
                     }, error: function () {
-                        // handle error
-                    }
-                });
+                                // handle error
+                            }
+                        });
                 @*$.post("@Url.Action("SaveItem", "Recommendedtrips")", formData)
                     .success(function (data) {
                         alert("data");
@@ -155,5 +157,5 @@
             })
 
         });
-    </script>
+</script>
 }

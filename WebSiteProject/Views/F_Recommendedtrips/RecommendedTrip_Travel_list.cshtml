@@ -18,7 +18,7 @@
         @foreach (var item in Model)
             {
             <li>
-                <div class="img"><img src="@Url.Content("~/UploadImage/RecommendedTrips")/@item.RecommendedTrip_Travel_Img" alt="@item.RecommendedTrip_Travel_Img_Description" /></div><!--建議尺寸800*600px-->
+                <div class="img"><img src="@Url.Content("~/UploadImage/RecommendedTrips")/@item.RecommendedTrip_Travel_Img" alt="@item.RecommendedTrip_Travel_Title" /></div><!--建議尺寸800*600px-->
                 <div class="font">
                     <div class="title">@item.RecommendedTrip_Travel_Title</div>
                     <div class="con_font">@item.RecommendedTrip_Travel_Content</div>
