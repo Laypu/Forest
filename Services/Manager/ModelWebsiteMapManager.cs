@@ -368,13 +368,14 @@ namespace Services.Manager
             savemodel.UpdateName = admin.Count() == 0 ? "" : admin.First().User_Name;
 
             var r=_webSiteMapInfosqlrepository.Create(savemodel);
-            if (r > 0)
-            {
+            
+            //if (r > 0)
+            //{
                 return "設定完成";
-            }
-            else {
-                return "設定失敗";
-            }
+            //}
+            //else {
+            //    return "設定失敗";
+            //}
         } 
         #endregion
     }

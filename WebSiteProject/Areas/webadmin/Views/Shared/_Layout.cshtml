@@ -291,14 +291,14 @@
 
                     </ul>
                 }
-                <ul class="nav navbar-nav">
+                @*<ul class="nav navbar-nav">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="語系切換"><i class="fa fa-language"></i> <span class="top_menu_title">語系切換</span> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             @Html.Raw(WebSiteProject.Code.CacheMapping.LangOption)
                         </ul>
                     </li>
-                </ul>
+                </ul>*@
                 <div class="top-menu hidden-sm hidden-xs">
                     <ul class="nav navbar-nav pull-right">
                         <li class="dropdown dropdown-quick-sidebar-toggler">
@@ -437,9 +437,11 @@
            //取得Index_Id
            //F_ResetOrderIndex();
 
-           //F_Index_Select_Load('24');
-
-        
+        //F_Index_Select_Load('24');
+        $('span[index=57]').attr("href", "@Url.Action("ModelItem", "Video", new { mainid = 5 })");
+       // var content = `<a href="@Url.Action("ModelItem", "Video", new { mainid = 5 })" class="nav-link nav-toggle" title="Video"><i class="fa fa-dot-circle-o" aria-hidden="true"></i><span class="title" index="57">Video</span></a>`;
+        //$('span[index=57]').parent().parent().html(`${content}`)
+        //$('span[index=57]').attr("onclick", "location.href=\"@Url.Action("ModelItem", "Video", new { mainid = 5 })\"");
         
     });
 
@@ -482,13 +484,14 @@
             $("#Index_Partial_Select").children(`option:contains(${str})`).attr("selected", "selected").siblings().removeAttr("selected");
             
        };
-
+    
        //載入Load Select
        function F_Index_Select_Load(indexid) {
            console.log("indexid="  +indexid);
            switch (indexid){
                case '179': //Destinations
                    Load_Destinations();
+                   
                    break;
                 case '24':  //Things to do
                    Load_ThingsToDo();
@@ -501,8 +504,10 @@
                     break;
                 case '57':  //Video
                    Load_Video();
-                    break;
+                   $('span[index=57]').parent().attr("href", "@Url.Action("ModelItem", "Video", new { mainid = 5 })");
+                   break;
            };
+           
        };
 
 
@@ -518,7 +523,7 @@
                                 <div class="display_inline">
                                     <select id="Index_Partial_Select" class="form-control checkitem" onchange="window.location.href=this.value">
                                         <option data-index="0" value="#">請選擇</option>
-                                        <option data-index="1" value="@Url.Action("MenuLinkEdit", "Menu", new { menuid=179 ,MenuType=179 })">連結路徑</option>
+                                        @*<option data-index="1" value="@Url.Action("MenuLinkEdit", "Menu", new { menuid=179 ,MenuType=179 })">連結路徑</option>*@
                                         <option data-index="2" value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 3, MenuType=179})">輪播牆設定(電腦版)</option>
                                         <option data-index="2" value="@Url.Action("Index", "AD", new { type = "main" , stype = "M", site_id = 3, MenuType=179})">輪播牆設定(手機版)</option>
                                         <option data-index="3" value="@Url.Action("MainTitleAndContent", "Destination_Index")">目的地主版設定(標題&文字)</option>
@@ -548,11 +553,11 @@
                             <div class="display_inline">
                                 <select id="Index_Partial_Select" class="form-control checkitem" onchange="window.location.href=this.value">
                                     <option data-index="0" value="#">請選擇</option>
-                                   <option data-index="1" value="@Url.Action("MenuLinkEdit", "Menu", new { menuid=176 ,MenuType=176 })">連結路徑</option>
+                                   @*<option data-index="1" value="@Url.Action("MenuLinkEdit", "Menu", new { menuid=176 ,MenuType=176 })">連結路徑</option>*@
                                    <option data-index="2" value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 11, MenuType=176})">輪播牆設定(電腦版)</option>
                                    <option data-index="3" value="@Url.Action("RecommendedtripsIndex", "Recommendedtrips")">推薦行程主版設定(標題&文字)</option>
                                    <option data-index="4" value="@Url.Action("Recommendedtrips_item", "Recommendedtrips")">推薦行程設定</option>
-                                    <option data-index="2" value="#">Load_RecommendedTrips</option>
+                                    @*<option data-index="2" value="#">Load_RecommendedTrips</option>*@
                                 </select>
                             </div>
                         </div>
@@ -576,12 +581,12 @@
                             <div class="display_inline">
                                 <select id="Index_Partial_Select" class="form-control checkitem" onchange="window.location.href=this.value">
                                     <option data-index="0" value="#">請選擇</option>
-                                    <option data-index="1" value="@Url.Action("MenuLinkEdit", "Menu", new { menuid=24 })">連結路徑</option>
+                                    @*<option data-index="1" value="@Url.Action("MenuLinkEdit", "Menu", new { menuid=24 })">連結路徑</option>*@
                                     <option data-index="2" value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 4, MenuType=24})">輪播牆設定(電腦版)</option>
                                     <option data-index="2" value="@Url.Action("Index", "AD", new { type = "main" , stype = "M", site_id = 4, MenuType=24})">輪播牆設定(手機版)</option>
                                     <option data-index="3" value="@Url.Action("MainTitleAndContent", "F_Thingtodo")">旅遊資訊主版設定(標題&文字)</option>
                                     <option data-index="4" value="@Url.Action("Five_Thingstodo","F_Thingtodo", new { F_MenuType = 24, MenuType=24 })">五大旅遊資訊設定</option>
-                                    <option data-index="6" value="@Url.Action("Five_ThingsToDo_HashTag", "F_Thingtodo", new { mainid = '9' })">旅遊資訊標籤設定</option>
+                                    @*<option data-index="6" value="@Url.Action("Five_ThingsToDo_HashTag", "F_Thingtodo", new { mainid = '9' })">旅遊資訊標籤設定</option>*@
                                     <option data-index="5" value="@Url.Action("ModelItem", "Message",new { mainid = '9' })">旅遊資訊文章設定</option>
                                  </select>
                             </div>
@@ -622,7 +627,11 @@
 
     //case 57:  Video
     function Load_Video() {
-        window.location.href = "@Url.Action("ModelItem", "Video", new { mainid = 5 })";
+        $('span[index=57]').attr("href", "@Url.Action("ModelItem", "Video", new { mainid = 5 })");
+         //var content = `<a href="@Url.Action("ModelItem", "Video", new { mainid = 5 })" class="nav-link nav-toggle" title="Video"><i class="fa fa-dot-circle-o" aria-hidden="true"></i><span class="title" index="57">Video</span></a>`;
+        //$('span[index=57]').parent().parent().html(`${content}`)
+             
+         @*"@Url.Action("ModelItem", "Video", new { mainid = 5 })";*@
 
           @*$("#Partial_Index_MenuLink").append(
                 `<div class="portlet light bordered">
@@ -645,7 +654,9 @@
 
           //顯示該連結
           //ShowLink();
-      };
+    };
+
+    
 
 
       //重設定OrderIndex_________start
@@ -661,9 +672,13 @@
 
               //載入其他頁面
               F_Index_Select_Load(title01_true);
+              $('span[index=57]').attr("href", "@Url.Action("ModelItem", "Video", new { mainid = 5 })");
+              //$('span[index=57]').attr("onclick", "location.href=\"@Url.Action("ModelItem", "Video", new { mainid = 5 })\"");
+        
+              
           };
       };
-      F_time = setInterval(F_ResetOrderIndex, 50); //每0.05秒重新設定Index
+      F_time = setInterval(F_ResetOrderIndex, 500); //每0.5秒重新設定Index
       //重設定OrderIndex_________end
 
 

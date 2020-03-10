@@ -57,15 +57,15 @@
                         <!--圖片置左-->
                             if (item.ImageFileLocation == "1")
                             {
-                                <img src="@Url.Content("~/UploadImage/VideoItem/")@item.ImageFileOrgName" class="img_padding" alt="@item.ImageFileDesc" align="left">
+                                <img src="@Url.Content("~/UploadImage/VideoItem/")@item.ImageFileName" class="img_padding" alt="@item.ImageFileDesc" align="left">
                             }
                             else if (item.ImageFileLocation == "2")
                             {
-                                <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/VideoItem/")@item.ImageFileOrgName" class="img_padding" alt="@item.ImageFileDesc"></p></div>
+                                <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/VideoItem/")@item.ImageFileName" class="img_padding" alt="@item.ImageFileOrgName"></p></div>
                             }
                             else if (item.ImageFileLocation == "3")
                             {
-                                <img src="@Url.Content("~/UploadImage/VideoItem/")@item.ImageFileOrgName" class="img_padding" alt="@item.ImageFileDesc" align="right">
+                                <img src="@Url.Content("~/UploadImage/VideoItem/")@item.ImageFileName" class="img_padding" alt="@item.ImageFileDesc" align="right">
                             }
                         
                     }
@@ -114,7 +114,9 @@
             <div class="breadcrumbs">
                 <div class="container">
                     <div class="title">You are here</div>
-                    <div class="font"><a href="index.html" title="Home">Home</a> / <a href="video.html" title="Vidoe">Video</a> / Seeing the beauty of Taiwan's forests</div>
+                    <div class="font">
+                        <a href="@Url.Action("Index","Home")" title="Home">Home</a> / <a href="@Url.Action("F_Video_Index","Home")">Video</a>/@item.Title
+                    </div>
                 </div>
             </div>
             <!--breadcrumbs end-->

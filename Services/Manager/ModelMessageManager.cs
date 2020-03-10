@@ -911,7 +911,7 @@ namespace Services.Manager
                 RelateImageFileOrgName = model.RelateImageFileOrgName,
                 Introduction = model.Introduction == null ? "" : model.Introduction,
                 CreateName = admin.Count() == 0 ? "" : admin.First().User_Name,
-                IsVerift = false,
+                IsVerift = true,
                 LinkUrlDesc = model.LinkUrlDesc
             };
             if (model.ActiveID.IsNullorEmpty() == false)

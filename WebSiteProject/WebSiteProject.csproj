@@ -2022,7 +2022,6 @@
     <Content Include="UploadImage\Destination_Img\index_thing_03.jpg" />
     <Content Include="UploadImage\Destination_Img\r_pic_02.jpg" />
     <Content Include="UploadImage\Destination_Img\t_pic_05.jpg" />
-    <Content Include="UploadImage\RecommendedTrips\637184952690321163_trip_pic_02.jpg" />
     <Content Include="UploadImage\RecommendedTrips\637184970418494734_trip_pic_03.jpg" />
     <Content Include="UploadImage\RecommendedTrips\800x450.png" />
     <Content Include="Views\Error\FrontPageNotFound.cshtml" />

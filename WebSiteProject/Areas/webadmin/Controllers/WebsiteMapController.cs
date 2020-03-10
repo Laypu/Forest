@@ -213,7 +213,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             return PartialView();
         }
         #endregion
-        #region SaveSelItem
+        #region SaveSelItem(SaveInfo)
         public ActionResult SaveInfo(WebSiteEditModel model)
         {
             model.HtmlContent = HttpUtility.UrlDecode(model.HtmlContent);

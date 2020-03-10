@@ -331,7 +331,7 @@ namespace Services.Manager
                 CreateUser = account,
                 CreateName = admin.Count() == 0 ? "" : admin.First().User_Name,
                 LinkUrlDesc= model.LinkUrlDesc,
-                IsVerift =false
+                IsVerift =true
             };
             if (model.ActiveID.IsNullorEmpty() == false)
             {
