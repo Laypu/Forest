@@ -536,6 +536,7 @@
     <Compile Include="Models\SiteList.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\F_ViewModels\UnitPrint.cs" />
     <Compile Include="Models\User.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
@@ -1902,6 +1903,8 @@
     <Content Include="css\fonts\summernote.woff" />
     <Content Include="Areas\webadmin\Views\Recommendedtrips\RecommendedTrip_Trave_Edit.cshtml" />
     <Content Include="Areas\webadmin\Views\Recommendedtrips\RecommendedTrip_Travel_Item.cshtml" />
+    <Content Include="Areas\webadmin\Views\Recommendedtrips\Index.cshtml" />
+    <Content Include="Areas\webadmin\Views\Recommendedtrips\UnitPrint.cshtml" />
     <None Include="Properties\PublishProfiles\MySkylines.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2099,6 +2102,8 @@
     <Content Include="Views\F_Recommendedtrips\RecommendedTrip_Travel_list.cshtml" />
     <Content Include="Views\Shared\page_bottom.cshtml" />
     <Content Include="Views\Destination_Index\Article.cshtml" />
+    <Content Include="Views\Shared\_page_top.cshtml" />
+    <Content Include="Views\F_Recommendedtrips\Print.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

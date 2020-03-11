@@ -17,6 +17,10 @@ namespace WebSiteProject.Areas.webadmin.Controllers
     {
         ForestEntities db = new ForestEntities();
         // GET: webadmin/Recommendedtrips
+        public ActionResult Index()
+        {
+            return View();
+        }
         public ActionResult RecommendedtripsIndex()
         {
             RecommendedTrips_Index RED = new RecommendedTrips_Index();
@@ -704,6 +708,25 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 return Json("更新作業失敗", JsonRequestBehavior.AllowGet);
             }
             return Json("更新作業失敗", JsonRequestBehavior.AllowGet);
+        }
+        #endregion
+        #region UnitPrint
+        public ActionResult UnitPrint()
+        {
+            var model=db.MessageUnitSettings.Where(p => p.MainID == -1).Select(p => new UnitPrint { isPrint = (bool)p.IsPrint, isForward = (bool)p.IsForward, isRSS = (bool)p.IsRSS, isShare = (bool)p.IsShare,UnitID=p.ID }).FirstOrDefault();
+            return View(model);
+        }
+        #endregion
+        #region SaveUnit
+        public ActionResult SaveUnit(UnitPrint unit)
+        {
+            var Msunit = db.MessageUnitSettings.Find(unit.UnitID);
+            Msunit.IsForward = unit.isForward;
+            Msunit.IsPrint = unit.isPrint;
+            Msunit.IsShare = unit.isShare;
+            db.Entry(Msunit).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+            return Json("修改成功");
         }
         #endregion
     }
