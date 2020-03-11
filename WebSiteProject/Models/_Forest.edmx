@@ -2062,12 +2062,12 @@
             <End Role="RecommendedTrip" EntitySet="RecommendedTrips" />
           </AssociationSet>
           <EntitySet Name="Message10Hash" EntityType="ForestModel.Message10Hash" />
-          <EntitySet Name="MessageBanners" EntityType="ForestModel.MessageBanner" />
           <EntitySet Name="Message_DesHash" EntityType="ForestModel.Message_DesHash" />
           <AssociationSet Name="FK_Message_DesHash_F_Destination_Type" Association="ForestModel.FK_Message_DesHash_F_Destination_Type">
             <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
             <End Role="Message_DesHash" EntitySet="Message_DesHash" />
           </AssociationSet>
+          <EntitySet Name="MessageBanners" EntityType="ForestModel.MessageBanner" />
           </EntityContainer>
         <EntityType Name="ActiveItem">
           <Key>
@@ -3834,14 +3834,6 @@
           <Property Name="Message10Hash_10H" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MessageItem_ID" Type="Int32" />
         </EntityType>
-        <EntityType Name="MessageBanner">
-          <Key>
-            <PropertyRef Name="MessageBanner_ID" />
-          </Key>
-          <Property Name="MessageBanner_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MessageBanner_Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="MessageItem_ID" Type="Int32" />
-        </EntityType>
         <EntityType Name="Message_DesHash">
           <Key>
             <PropertyRef Name="Message_DesHashID" />
@@ -3863,6 +3855,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="MessageBanner">
+          <Key>
+            <PropertyRef Name="MessageBanner_ID" />
+          </Key>
+          <Property Name="MessageBanner_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MessageBanner_Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MessageItem_ID" Type="Int32" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5643,21 +5643,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MessageBanners">
-            <EntityTypeMapping TypeName="ForestModel.MessageBanner">
-              <MappingFragment StoreEntitySet="MessageBanner">
-                <ScalarProperty Name="MessageItem_ID" ColumnName="MessageItem_ID" />
-                <ScalarProperty Name="MessageBanner_Img" ColumnName="MessageBanner_Img" />
-                <ScalarProperty Name="MessageBanner_ID" ColumnName="MessageBanner_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Message_DesHash">
             <EntityTypeMapping TypeName="ForestModel.Message_DesHash">
               <MappingFragment StoreEntitySet="Message_DesHash">
                 <ScalarProperty Name="MessageItem_ID" ColumnName="MessageItem_ID" />
                 <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
                 <ScalarProperty Name="Message_DesHashID" ColumnName="Message_DesHashID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MessageBanners">
+            <EntityTypeMapping TypeName="ForestModel.MessageBanner">
+              <MappingFragment StoreEntitySet="MessageBanner">
+                <ScalarProperty Name="MessageItem_ID" ColumnName="MessageItem_ID" />
+                <ScalarProperty Name="MessageBanner_Img" ColumnName="MessageBanner_Img" />
+                <ScalarProperty Name="MessageBanner_ID" ColumnName="MessageBanner_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

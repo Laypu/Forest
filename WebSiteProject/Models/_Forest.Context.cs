@@ -198,9 +198,9 @@ public partial class ForestEntities : DbContext
 
     public virtual DbSet<Message10Hash> Message10Hash { get; set; }
 
-    public virtual DbSet<MessageBanner> MessageBanners { get; set; }
-
     public virtual DbSet<Message_DesHash> Message_DesHash { get; set; }
+
+    public virtual DbSet<MessageBanner> MessageBanners { get; set; }
 
 }
 
