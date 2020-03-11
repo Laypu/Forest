@@ -13,6 +13,8 @@ namespace ViewModels
         public int? RecommendedTrips_Destinations_ID { get; set; }
         public int? HashTag_Type_ID { get; set; }
         public int? sort { get; set; }
+        public DateTime? starDate { get; set; }
+        public DateTime? EndDate { get; set; }
         public string RecommendedTrips_Day_Name { get; set; }
         public string RecommendedTrips_Title { get; set; }
         public string RecommendedTrips_Index_Content { get; set; }

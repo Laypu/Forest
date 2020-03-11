@@ -63,30 +63,53 @@
                             <th class="text-center">排序</th>
                             <th class="text-center">標題</th>
                             <th class="text-center">類別</th>
+                            <th class="text-center">顯示區間</th>
                             @*<th class="text-center">管理</th>*@
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            <tr class="text-center">
-                                <td>
-                                    <button name="totop" type="button" class="btn btn-default btn-xs seqindex" value="1" idindex="1329"><i class="fa fa-angle-double-up"></i></button>
-                                    <button name="Up" type="button" class="btn btn-default btn-xs seqindex" value="@(item.sort-1)" idindex="1329"><i class="fa fa-angle-up"></i></button>
-                                    <button name="Down" type="button" class="btn btn-default btn-xs seqindex" value="@(item.sort+1)" idindex="1329"><i class="fa fa-angle-down"></i></button>
-                                    <button name="tobottom" type="button" class="btn btn-default btn-xs seqindex" value="-1" idindex="1329"><i class="fa fa-angle-double-down"></i></button>
-                                    <input type="hidden" value="@item.sort" data-pid="@item.RecommendedTrips_ID">
-                                    <input class="editinput btn btn-default btn-xs sequence_list sortedit" value="@item.sort" />
-                                </td>
-                                <td> <a href="@Url.Action("Recommendedtrips_Edit",new {itemid=@item.RecommendedTrips_ID})">@item.RecommendedTrips_Title</a></td>
-                                <td>@item.RecommendedTrips_Day_Name</td>
-                                @*<td>
-                                        <a href="@Url.Action("RecommendedTrip_Travel_Item",new {RecommendedTripID=@item.RecommendedTrips_ID})" class="btn green-meadow">管理<i class="fa fa-plus"></i></a>
-                                    </td>*@
-                            </tr>
+                            bool istrue = false;
+                            if (item.starDate == null && item.EndDate == null)
+                            {
+                                istrue = true;
+                            }
+                            else if ((item.starDate != null && item.EndDate == null) && item.starDate.Value.Date <= DateTime.Now)
+                            {
+                                istrue = true;
+
+                            }
+                            else if ((item.starDate == null && item.EndDate != null) && item.EndDate.Value.Date >= DateTime.Now)
+                            {
+                                istrue = true;
+                            }
+                        <tr class="text-center">
+                            <td>
+                                <button name="totop" type="button" class="btn btn-default btn-xs seqindex" value="1" idindex="1329"><i class="fa fa-angle-double-up"></i></button>
+                                <button name="Up" type="button" class="btn btn-default btn-xs seqindex" value="@(item.sort-1)" idindex="1329"><i class="fa fa-angle-up"></i></button>
+                                <button name="Down" type="button" class="btn btn-default btn-xs seqindex" value="@(item.sort+1)" idindex="1329"><i class="fa fa-angle-down"></i></button>
+                                <button name="tobottom" type="button" class="btn btn-default btn-xs seqindex" value="-1" idindex="1329"><i class="fa fa-angle-double-down"></i></button>
+                                <input type="hidden" value="@item.sort" data-pid="@item.RecommendedTrips_ID">
+                                <input class="editinput btn btn-default btn-xs sequence_list sortedit" value="@item.sort" />
+                            </td>
+                            <td> <a href="@Url.Action("Recommendedtrips_Edit",new {itemid=@item.RecommendedTrips_ID})">@item.RecommendedTrips_Title</a></td>
+                            <td>@item.RecommendedTrips_Day_Name</td>
+                            @if (istrue)
+                            {
+                                <td style="font:600;color:green">是</td>
+                            }
+                            else
+                            {
+                                <td style="font:600;color:red">否</td>
+                            }
+                            @*<td>
+            <a href="@Url.Action("RecommendedTrip_Travel_Item",new {RecommendedTripID=@item.RecommendedTrips_ID})" class="btn green-meadow">管理<i class="fa fa-plus"></i></a>
+        </td>*@
+                        </tr>
                         }
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
             </div>
 
             @section scripts {
