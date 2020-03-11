@@ -155,7 +155,7 @@
                                     <li><a path="@Url.Action("PasswordEdit", "Config")" class="topmenu" title="密碼設定">密碼設定</a></li>
                                     <li><a path="@Url.Action("UserList", "Config")" class="topmenu" title="權限管理">權限管理</a></li>
                                     <li><a path="@Url.Action("SiteFlow", "Config")" class="topmenu" title="流量分析">流量分析</a></li>
-                                    <li><a path="@Url.Action("Verify", "Config")" class="topmenu" title="審核管理">審核管理</a></li>
+                                    @*<li><a path="@Url.Action("Verify", "Config")" class="topmenu" title="審核管理">審核管理</a></li>*@
                                 </ul>
                             </li>
                         }
@@ -224,7 +224,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a path="@Url.Action("SiteLayout", "Site",new { stype = "P" })" class="topmenu" title="網站版面資訊設定">網站版面資訊設定</a></li>
                                     <li><a path="@Url.Action("PageNewsEdit", "Site",new { stype="P" })" class="topmenu" title="入口首頁配置">入口首頁配置</a></li>
-                                    <li><a path="@Url.Action("SiteLangText", "Site")" class="topmenu" title="語系通用文字設定">語系通用文字設定</a></li>
+                                    @*<li><a path="@Url.Action("SiteLangText", "Site")" class="topmenu" title="語系通用文字設定">語系通用文字設定</a></li>*@
                                 </ul>
                             </li>
                         }
@@ -633,7 +633,7 @@
              
          @*"@Url.Action("ModelItem", "Video", new { mainid = 5 })";*@
 
-          @*$("#Partial_Index_MenuLink").append(
+          $("#Partial_Index_MenuLink").append(
                 `<div class="portlet light bordered">
                     <!--set item start-->
                     <div class="table-toolbar">
@@ -642,14 +642,14 @@
                             <div class="display_inline">
                                 <select id="Index_Partial_Select" class="form-control checkitem" onchange="window.location.href=this.value">
                                     <option data-index="0" value="#">請選擇</option>
-                                    <option data-index="1" value="#">連結路徑</option>
-                                    <option data-index="2" value="@Url.Action("ModelItem", "Video", new { mainid = 5 })">Load_Video</option>
+                                    @*<option data-index="1" value="#">連結路徑</option>*@
+                                    <option data-index="2" value="@Url.Action("ModelItem", "Video", new { mainid = 5 })">Video</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                 </div>`
-            );*@
+            );
 
 
           //顯示該連結

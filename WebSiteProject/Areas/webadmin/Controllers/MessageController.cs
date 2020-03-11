@@ -87,6 +87,11 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 });
             }
             ViewBag.Destination_Type_ID = Destinations_ID;
+            
+            
+            ViewBag.Message10Hash = db.Message10Hash.Where(s => s.MessageItem_ID.ToString() == itemid).ToList();
+            
+            ViewBag.MessageBanners = db.MessageBanners.Where(s => s.MessageItem_ID.ToString() == itemid).ToList();
             return View(model);
         }
         
@@ -358,7 +363,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         #endregion
 
         #region SaveItem
-        public ActionResult SaveItem(MessageEditModel model, List<int> HashTag_Type,int Destination_Type_ID)
+        public ActionResult SaveItem(MessageEditModel model, List<int> HashTag_Type,int Destination_Type_ID,WebSiteProject.Models.Message10Hash M10Hash,HttpPostedFileBase BannerImageFile)
         {
             if (model.UploadFile != null)
             {
@@ -418,6 +423,29 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 model.RelateImageName = newfilename;
             }
 
+            var BannerName = "";
+            if (BannerImageFile != null)
+            {
+                var root = Request.PhysicalApplicationPath;
+                
+                var uploadfilepath = ConfigurationManager.AppSettings["UploadFile"];
+                if (uploadfilepath.IsNullorEmpty())
+                {
+                    uploadfilepath = Request.PhysicalApplicationPath + "\\UploadFile";
+                }
+                BannerName = Path.GetFileName(BannerImageFile.FileName);
+                var newfilename = DateTime.Now.Ticks + "_" + BannerName;
+                var path = root + "\\UploadImage\\MessageItem\\" + newfilename;
+                if (System.IO.Directory.Exists(root + "\\UploadImage\\MessageItem\\") == false)
+                {
+                    System.IO.Directory.CreateDirectory(root + "\\UploadImage\\MessageItem\\");
+                }
+                BannerImageFile.SaveAs(path);
+                
+            }
+
+
+
             model.HtmlContent = HttpUtility.UrlDecode(model.HtmlContent);
             model.Title = HttpUtility.UrlDecode(model.Title);
             if (model.ItemID == -1)
@@ -438,13 +466,32 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         db.SaveChanges();                    
                     };
                     
-                        WebSiteProject.Models.Message_DesHash MDHash = new Models.Message_DesHash();
-                        MDHash.MessageItem_ID = result;
-                        MDHash.Destination_Type_ID = Destination_Type_ID;
-                        db.Message_DesHash.Add(MDHash);
-                        db.SaveChanges();
+                    WebSiteProject.Models.Message_DesHash MDHash = new Models.Message_DesHash();
+                    MDHash.MessageItem_ID = result;
+                    MDHash.Destination_Type_ID = Destination_Type_ID;
+                    db.Message_DesHash.Add(MDHash);
+                    
+                    
+                    WebSiteProject.Models.Message10Hash message10Hash = new Models.Message10Hash();
+                    message10Hash.MessageItem_ID = result;
+                    message10Hash.Message10Hash_1H = M10Hash.Message10Hash_1H;
+                    message10Hash.Message10Hash_2H = M10Hash.Message10Hash_2H;
+                    message10Hash.Message10Hash_3H = M10Hash.Message10Hash_3H;
+                    message10Hash.Message10Hash_4H = M10Hash.Message10Hash_4H;
+                    message10Hash.Message10Hash_5H = M10Hash.Message10Hash_5H;
+                    message10Hash.Message10Hash_6H = M10Hash.Message10Hash_6H;
+                    message10Hash.Message10Hash_7H = M10Hash.Message10Hash_7H;
+                    message10Hash.Message10Hash_8H = M10Hash.Message10Hash_8H;
+                    message10Hash.Message10Hash_9H = M10Hash.Message10Hash_9H;
+                    message10Hash.Message10Hash_10H = M10Hash.Message10Hash_10H;
+                    db.Message10Hash.Add(message10Hash);
                     
 
+                    WebSiteProject.Models.MessageBanner messageBanner = new Models.MessageBanner();
+                    messageBanner.MessageItem_ID = result;
+                    messageBanner.MessageBanner_Img = BannerName;
+                    db.MessageBanners.Add(messageBanner);
+                    db.SaveChanges();
 
                     return Json("成功");
                 };
@@ -460,6 +507,10 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     var Old_HashTag = db.F_Sub_HashTag_Type.Where(a => a.MessageItem_ID == model.ItemID).ToList(); ;
                     //先全部刪除舊的
                     var Old_DesHash = db.Message_DesHash.Where(b => b.MessageItem_ID == model.ItemID).ToList();
+
+                    var Old_10Hash = db.Message10Hash.Where(c => c.MessageItem_ID == model.ItemID).ToList();
+
+                    var Old_Banner = db.MessageBanners.Where(d => d.MessageItem_ID == model.ItemID).ToList();
                     foreach (var item in Old_HashTag)
                     {
                         var Old_HashTag_Item = db.F_Sub_HashTag_Type.Find(item.Sub_HashTag_Type_ID);
@@ -489,6 +540,25 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         db.Message_DesHash.Add(MDHash);
                         db.SaveChanges();
                     
+                        WebSiteProject.Models.Message10Hash message10Hash = new Models.Message10Hash();
+                        message10Hash.MessageItem_ID = model.ItemID;
+                        message10Hash.Message10Hash_1H = M10Hash.Message10Hash_1H;
+                        message10Hash.Message10Hash_2H = M10Hash.Message10Hash_2H;
+                        message10Hash.Message10Hash_3H = M10Hash.Message10Hash_3H;
+                        message10Hash.Message10Hash_4H = M10Hash.Message10Hash_4H;
+                        message10Hash.Message10Hash_5H = M10Hash.Message10Hash_5H;
+                        message10Hash.Message10Hash_6H = M10Hash.Message10Hash_6H;
+                        message10Hash.Message10Hash_7H = M10Hash.Message10Hash_7H;
+                        message10Hash.Message10Hash_8H = M10Hash.Message10Hash_8H;
+                        message10Hash.Message10Hash_9H = M10Hash.Message10Hash_9H;
+                        message10Hash.Message10Hash_10H = M10Hash.Message10Hash_10H;
+                        db.Message10Hash.Add(message10Hash);
+                        db.SaveChanges();
+
+                    WebSiteProject.Models.MessageBanner messageBanner = new Models.MessageBanner();
+                    messageBanner.MessageItem_ID = model.ItemID;
+                    messageBanner.MessageBanner_Img = BannerName;
+                    db.MessageBanners.Add(messageBanner);
 
 
 

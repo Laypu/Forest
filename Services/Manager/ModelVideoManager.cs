@@ -1163,7 +1163,7 @@ namespace Services.Manager
                 Link_Mode = 1,
                 Introduction= model.Introduction == null ? "" : model.Introduction,
                 UpdateName    = admin.Count() == 0 ? "" : admin.First().User_Name,
-                IsVerift=false,
+                IsVerift=true,
                 IsShowMoreVideo=model.IsShowMoreVideo,
                  VideoLink=model.VideoLink==null?"": model.VideoLink
             };

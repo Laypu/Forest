@@ -28,11 +28,11 @@
                     </div>
                     <div class="col-md-5 col-sm-6 col-xs-12">
                         <div class="page_top_right">
-                            <a href="forward.html" target="_blank" title="forward(new windown)"><img src="~/img/icon_mail.png" alt=""></a>
-                            <a href="print.html" target="_blank" title="print(new windown)"><img src="~/img/icon_print.png" alt="print"></a>
-                            <a href="#" target="_blank" title="facebook share(new window)"><img src="~/img/icon_facebook.png" alt=""></a>
-                            <a href="#" target="_blank" title="twitter share(new window)"><img src="~/img/icon_twitter.png" alt=""></a>
-                            <a href="#" target="_blank" title="plurk share(new window)"><img src="~/img/icon_plurk.png" alt=""></a>
+                            <a href="forward.html" target="_blank" title="forward(new windown)"><img src="@Url.Content("~/img/icon_mail.png")" alt=""></a>
+                            <a href="print.html" target="_blank" title="print(new windown)"><img src="@Url.Content("~/img/icon_print.png")" alt="print"></a>
+                            <a href="#" target="_blank" title="facebook share(new window)"><img src="@Url.Content("~/img/icon_facebook.png")" alt=""></a>
+                            <a href="#" target="_blank" title="twitter share(new window)"><img src="@Url.Content("~/img/icon_twitter.png")" alt=""></a>
+                            <a href="#" target="_blank" title="plurk share(new window)"><img src="@Url.Content("~/img/icon_plurk.png")" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                 <div class="container">
                     <div class="title">You are here</div>
                     <div class="font">
-                        <a href="@Url.Action("Index","Home")" title="Home">Home</a> / <a href="@Url.Action("F_Video_Index","Home")">Video</a>/@item.Title
+                        <a href="@Url.Action("Index","Home")" title="Home">Home</a> / <a href="@Url.Action("F_Video_Index","Home")">Video</a> / @item.Title
                     </div>
                 </div>
             </div>
