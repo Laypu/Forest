@@ -6,7 +6,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>@Common.GetLangText("國家高速網路與計算中心")</title><!--英文 -->
+    <link rel="icon" href="/forest/img/favicon.ico" type="image/x-icon">
+    <title>@Common.GetLangText("TAIWAN FOREST RECREATION")</title><!--英文 -->
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
@@ -34,49 +35,47 @@
 
 </head>
 <body style="max-width:806px; margin:0 auto; background: url(@Url.Content("~/img/bg_05.jpg"));">
-    <div class="con_box">
-        <div class="con_banner">
-            @if (Model.PrintImageUrl.IsNullorEmpty() == false)
-            {
-                <img src="@Url.Content(Model.PrintImageUrl)" alt="" />
-            }
-            else
-            {
-                <img src="@(Model.LangId=="1"? @Url.Content("~/img/print_banner.jpg") : @Url.Content("~/img/print_banner_en.jpg"))" alt="" />
-            }
-        </div><!--建議尺寸740*185px-->
-
-        <div class="title"><h2>@Model.Title</h2></div>
-        <div class="date">
-            @Model.PublicshDate  @if (@Model.GroupName != "")
-        {<span class="top_class">@Model.GroupName</span>}
+    <div class="trip_info">
+        <div class="container">
+            <div class="item">
+                <div class="img"><img src="@Url.Content("~/img/page_icon_06.png")" alt="day" /></div>
+                <div class="font day">
+                    <span class="big">@ViewBag.day</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img"><img src="@Url.Content("~/UploadImage/Destination_Img")@ViewBag.Recommend_Detail_Img" alt="position" /></div><!--六大森林遊樂區page_icon_07~12(內洞、奧萬大、合歡山、大雪山、阿里山、墾丁)，後台可以選擇-->
+                <div class="font">
+                    @ViewBag.location
+                </div>
+            </div>
+            <div class="item">
+                <div class="img"><img src="@Url.Content("~/img/page_icon_05.png")" alt="attractions" /></div>
+                <div class="font">
+                    @Html.Raw(HttpUtility.HtmlDecode(ViewBag.content))
+                </div>
+            </div>
         </div>
-
-        <!--page content start-->
-        <div class="page_con">
-            @if (string.IsNullOrEmpty(Model.ImageName) == false)
-            {
-                <span>
-                    <!--圖片置左-->
-                    @if (Model.ImageFileLocation == "1")
-                    {
-                        @*<img src="@Url.Content("~/UploadImage/MessageItem/")@Model.ImageName" class="img_padding" alt="" align="left">*@
-                    }
-                    else if (Model.ImageFileLocation == "2")
-                    {
-                        @*<div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/MessageItem/")@Model.ImageName" class="img_padding" alt=""></p></div>*@
-                    }
-                    else if (Model.ImageFileLocation == "3")
-                    {
-                        @*<img src="@Url.Content("~/UploadImage/MessageItem/")@Model.ImageName" class="img_padding" alt="" align="right">*@
-                    }
-                </span>
-            }
-            @Html.Raw(Model.Content)
-        </div>
-        <!--page content end-->
-
     </div>
-    <div class="con_footer">@Html.Raw(Model.PrintContent)</div>
+    <div class="trip_line"></div>
+    <!--trip_info end-->
+    <!--page top start-->
+    <div class="page_top">
+        <div class="container">
+            <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
+                @ViewBag.Title
+            </div>
+            <div class="col-md-5 col-sm-6 col-xs-12">
+
+            </div>
+        </div>
+    </div>
+    <div class="page_con">
+        <div class="container">
+            <div class="edit_con">
+                @Html.Raw(HttpUtility.HtmlDecode(ViewBag.HtmlContent))
+            </div>
+        </div>
+    </div>
 </body>
 </html>

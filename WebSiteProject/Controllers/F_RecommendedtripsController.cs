@@ -262,6 +262,7 @@ namespace WebSiteProject.Controllers
         #region recommended_Detail
         public ActionResult recommended_Detail(int? langid,int RecommendedTrips_ID=1,int nowpage = 0,int jumpPage=0)
         {
+            ViewBag.Unit = db.MessageUnitSettings.Where(p=>p.MainID==-1).Select(p=>new UnitPrint {isPrint=(bool)p.IsPrint,isForward= (bool)p.IsForward,isRSS= (bool)p.IsRSS,isShare= (bool)p.IsShare }).FirstOrDefault();
             #region page action計算
             if (nowpage == 0 && jumpPage != 0)
             {
@@ -272,6 +273,7 @@ namespace WebSiteProject.Controllers
                 nowpage = 1;
             }
             #endregion
+            #region 模組物動
             var site_id = 11; //這是ThingsToDo的輪播ID
             if (Session["LangID"] == null)
             {
@@ -312,6 +314,7 @@ namespace WebSiteProject.Controllers
             viewmodel.ADMain = _IMasterPageManager.GetADMain("P", langid.ToString(), site_id);
             viewmodel.ADMobile = _IMasterPageManager.GetADMain("M", langid.ToString(), site_id);
             viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
+            #endregion
             var model = db.RecommendedTrips;
             ViewBag.ID = model.Find(RecommendedTrips_ID).RecommendedTrips_ID;
             ViewBag.Title = model.Find(RecommendedTrips_ID).RecommendedTrips_Title;
@@ -320,10 +323,12 @@ namespace WebSiteProject.Controllers
             ViewBag.location = model.Find(RecommendedTrips_ID).RecommendedTrips_Location;
             ViewBag.HtmlContent= model.Find(RecommendedTrips_ID).RecommendedTrips_HtmContent;
             ViewBag.NowPag = nowpage;
+            ViewBag.Recommend_Detail_Img = model.Find(RecommendedTrips_ID).F_Destination_Type.Recommend_Detail_Img;
             ViewBag.LinkUrl = model.Find(RecommendedTrips_ID).RecommendedTrips_LinkUrl;
             ViewBag.LinkUrlDES = model.Find(RecommendedTrips_ID).RecommendedTrips_LinkUrlDesc;
             ViewBag.Upfile = model.Find(RecommendedTrips_ID).RecommendedTrips_UploadFileDesc; ;
-            ViewBag.UpfileDES= model.Find(RecommendedTrips_ID).RecommendedTrips_UploadFileName; ;
+            ViewBag.UpfileDES= model.Find(RecommendedTrips_ID).RecommendedTrips_UploadFileName;
+            ViewBag.pageprt=Url.Action("Print", "F_Recommendedtrips", new { id = RecommendedTrips_ID });
             return View(viewmodel);
         }
         #endregion
@@ -334,12 +339,12 @@ namespace WebSiteProject.Controllers
             ViewBag.count = count;
             ViewBag.pageCount = Convert.ToInt16(Math.Ceiling(count / 3));
             var model = db.RecommendedTrip_Travel.Where(p => p.RecommendedTrip_ID == id).OrderBy(p => p.RecommendedTrip_Travel_ID).Skip((page - 1) * 3).Take(3).ToList();
-            var modelindex = model.GroupBy(o => o.RecommendedTrip_Travel_ID).Select((o) => new { o.Key });
-            if (modelindex.FirstOrDefault()!=null)
-            {
-                ViewBag.star = modelindex.FirstOrDefault().Key;
-                ViewBag.end = modelindex.LastOrDefault().Key;
-            }
+            //var modelindex = model.GroupBy(o => o.RecommendedTrip_Travel_ID).Select((o) => new { o.Key });
+            //if (modelindex.FirstOrDefault()!=null)
+            //{
+            //    ViewBag.star = modelindex.FirstOrDefault().Key;
+            //    ViewBag.end = modelindex.LastOrDefault().Key;
+            //}
             ViewBag.NowPag = page;
             return PartialView(model);
         }
@@ -367,6 +372,13 @@ namespace WebSiteProject.Controllers
                 return RedirectToAction("Error");
             }
 
+        }
+        #endregion
+        #region Print
+        public ActionResult Print(int id = 1)
+        {
+            var model = db.RecommendedTrips.Find(id);
+            return View(model);
         }
         #endregion
     }
