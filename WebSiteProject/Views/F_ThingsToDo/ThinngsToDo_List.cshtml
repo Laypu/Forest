@@ -267,7 +267,7 @@
 <div class="breadcrumbs">
     <div class="container">
         <div class="title">You are here</div>
-        <div class="font"><a href="index.html" title="Home">Home</a> / <a href="things.html" title="Things to do">Things to do</a> /@ViewBag.F_Thingtodo_Title</div>
+        <div class="font"><a href="index.html" title="Home">Home</a> / <a href="@Url.Action("Index","F_ThingsToDo",new { mid=24})" title="Things to do">Things to do</a> / @ViewBag.F_Thingtodo_Title</div>
     </div>
 </div>
 <!--breadcrumbs end-->

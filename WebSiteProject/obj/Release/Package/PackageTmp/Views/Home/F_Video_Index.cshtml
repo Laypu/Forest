@@ -170,21 +170,49 @@
         <div class="container">
             <ul>
                 @{
-                        var F_VideoModel = (IEnumerable<WebSiteProject.Models.VideoItem>)ViewBag.F_Video;
+                    var F_VideoModel = (IEnumerable<WebSiteProject.Models.VideoItem>)ViewBag.F_Video;
 
-                        foreach (var item in F_VideoModel)
+                    foreach (var item in F_VideoModel)
+                    {
+
+                        var rang =false;
+                        var date = DateTime.Now;
+                        if (item.StDate == null && item.EdDate == null)
                         {
-                            <li data-sr="enter bottom over 1.5s">
-                                <a href="@Url.Action("F_Video_Detail","Home",new { itemid=item.ItemID })" title="@item.Title">
+                            rang = true;
+                        }
+                        else if (item.StDate <= date && item.EdDate == null)
+                        {
+                            rang = true;
+                        }
+                        else if (item.StDate == null && date <= item.EdDate)
+                        {
+                            rang = true;
+                        }
+                        else if (item.StDate <= date && date <= item.EdDate)
+                        {
+                            rang = true;
+                        }
+                        else
+                        {
+                            rang = false;
+                        }
+
+
+                        if (rang)
+                        {
+                        <li data-sr="enter bottom over 1.5s">
+                                <a href="@Url.Action("F_Video_Detail", "Home", new { itemid = item.ItemID })" title="@item.Title">
                                     <div class="img imh_opacity"><img src="@Url.Content("~/UploadImage/VideoItem/")@item.RelateImageFileName" alt="@item.Title" /></div>
                                     <div class="title">@item.Title</div>
                                 </a>
                             </li>
-                    }
+                        }
+                     }
 
-                    
 
-                }                                         
+
+            }
             </ul>
 
             <!--頁碼 start

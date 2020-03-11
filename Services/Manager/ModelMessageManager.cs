@@ -1167,7 +1167,7 @@ namespace Services.Manager
                 Link_Mode = model.Link_Mode,
                 Introduction= model.Introduction == null ? "" : model.Introduction,
                 UpdateName    = admin.Count() == 0 ? "" : admin.First().User_Name,
-                IsVerift=false
+                IsVerift=true
             };
             if (model.ActiveID.IsNullorEmpty() == false)
             {

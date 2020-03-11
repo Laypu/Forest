@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -71,7 +72,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             return View(DES);
         }
 
-        public ActionResult Upload(HttpPostedFileBase Img_File)
+        public ActionResult Upload(HttpPostedFileBase Img_File,string Img_FileName)
         {
             string Index_Img_Name = "";
 
@@ -88,7 +89,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         
                     }
                     
-                    Index_Img_Name = Path.GetFileName(Img_File.FileName);  //取得檔案名
+                    Index_Img_Name = Img_FileName;  //取得檔案名
                     var path = Path.Combine(Server.MapPath("~/UploadImage/Destination_Img/"), Index_Img_Name);  //取得本機檔案路徑
 
 
@@ -314,17 +315,9 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     var path = Path.Combine(Server.MapPath("~/UploadImage/Destination_Img/"), Index_Img_Name);  //取得本機檔案路徑
 
 
-                    //若有重複則不儲存
-                    if (System.IO.File.Exists(path))
-                    {
-                        Random rand = new Random();
-                        Index_Img_Name = rand.Next().ToString() + "-" + Index_Img_Name;
-                        path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), Index_Img_Name);
-                    }
-                    else
-                    {
-                        Img_File.SaveAs(path);
-                    }
+                    
+                     Img_File.SaveAs(path);
+                    
                 }
             }
 
@@ -368,6 +361,32 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             }
             
         }
+
+        [HttpPost]
+        public ActionResult Destination_IndexDelete(int? Desid)
+        {
+            using (ForestEntities db = new ForestEntities())
+            {
+                if (db.Message_DesHash.Any(m => m.Destination_Type_ID == Desid))
+                {
+                    return Json(new { success = true, message = "刪除失敗,有文章與此目的地有關" }, JsonRequestBehavior.AllowGet);
+                }
+                else 
+                {
+                    F_Destination_Type f_Destination_Type = db.F_Destination_Type.Find(Desid);
+                    db.F_Destination_Type.Remove(f_Destination_Type);
+                    db.SaveChanges();
+                    return Json(new { success = true, message = "刪除成功" }, JsonRequestBehavior.AllowGet);
+                }
+                    
+
+
+            }
+
+        }
+        
+
+
 
         protected override void Dispose(bool disposing)
         {
