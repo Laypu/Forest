@@ -54,7 +54,8 @@
                         <div class="form-group">
                             <div class="col-md-2 col-sm-12 col-xs-12 search_item">森林遊樂區類別</div>
                             <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
-                                @Html.DropDownList("Destination_Type_ID", null, new { @name = "HashDes", @class = "form-control" })
+                                @Html.DropDownList("Destination_Type_ID", null,new { @class = "form-control" })
+                               
                             </div>
                         </div>
                         @{
@@ -167,6 +168,7 @@
                                 <div class="col-md-12">
                                     <div id="div_oldbannerimg" style="display:none"><a href="@Url.Content("~/UploadImage/MessageItem/")@MbanerModel.First().MessageBanner_Img" target="preview">@MbanerModel.First().MessageBanner_Img</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delbannerimage">刪除</label></div>
                                     <div style="display:inline">
+                                        
                                         <input id="file_bannerimage" type="file" class="display_inline" name="ImageFile" accept="image/*" />
                                         <span class="required">建議尺寸 450 x 600 px</span>
                                     </div>
@@ -319,6 +321,7 @@
                                 </div>
                             </div>
                         }
+
                     </div>
                 </div>
             </div>
@@ -351,12 +354,17 @@
                 $("#div_seo").toggle(500);
             });
             $("#btn_return").click(function () { CreatePost('@Url.Action("ModelItem")', { mainid: '@Model.ModelID'});});
-           if ('@Model.ItemID'>0 && '@Model.ImageFileName'!='') {
-                $('#div_oldfile').show();
+            if ('@Model.ItemID'>0 && '@Model.ImageFileName'!='') {
+                    $('#div_oldfile').show();
             }
-              if ('@Model.ItemID'>0 && '@Model.RelateImageName'!='') {
+            if ('@Model.ItemID'>0 && '@Model.RelateImageName'!='') {
                   $('#div_oldrelatefile').show();
             }
+             
+            if ('@Model.ItemID'>0 && "@MbanerModel.First().MessageBanner_Img" != "") {
+                $("#div_oldbannerimg").show();
+            }
+
             $('#delimage').click(function () {
                 $('#div_oldfile').hide();
                 $('#ImageFileName').val('');
@@ -372,9 +380,9 @@
             });
             $('#delbannerimage').click(function () {
                 $('#div_oldbannerimg').hide();
-                $('#ccc').val('');
+                $('#div_oldbannerimg').val('');
             });
-
+            
             
             $('#ActiveID').change(function () {
                 var activeid = $('#ActiveID').val();
@@ -516,12 +524,25 @@
                         }
                     }
                 }
-
+                var banname = "@MbanerModel.First().MessageBanner_Img";
                 var banimages = $('#file_bannerimage').get(0).files;
-                if (banimages.length > 0) {
+                if (banimages.length > 0)
+                {
                     formData.append("BannerImageFile", banimages[0]);
-                } else {
-                    formData.append("BannerImageFile", null);
+                    formData.append("BannerImageFileName","");
+                }
+                else
+                {
+                    if ($("#div_oldbannerimg").is(":hidden")) {
+                        formData.append("BannerImageFile", null);
+                        formData.append("BannerImageFileName","");
+                    }
+                    else
+                    {
+                        formData.append("BannerImageFile", null);
+                        formData.append("BannerImageFileName", banname);
+                    }
+                    
                 }
 
 

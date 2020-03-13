@@ -168,6 +168,7 @@
 
                 @{
                     var MessageItems = (IEnumerable<WebSiteProject.Models.MessageItem>)ViewBag.MessageItems;
+                    var Message10Hash =(IEnumerable<WebSiteProject.Models.Message10Hash>)ViewBag.Message10Hash;
                     var Category = ViewBag.Category;
                     var n = 1;
                     foreach (var item in MessageItems)
@@ -182,7 +183,20 @@
                                 <div class="title">
                                     <a href="@Url.Action("Article","Destination_Index",new {langid = 1,Category = BanTitle,ImgTitle = item.Title })" title="@item.Title">@item.Title</a>
                                 </div>
-                                <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
+                                <div class="link" id="HashTag">
+
+                                    <a href="@Url.Action("Details","Destinations",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H})" title="">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H &nbsp;</a>
+                                    <a href="." title="">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H &nbsp;</a>
+                                    <a href="." title="">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H &nbsp;</a>
+                                    <a href="." title="">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H &nbsp;</a>
+                                    <a href="." title="">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H &nbsp;</a>
+                                    <a href="." title="">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H &nbsp;</a>
+                                    <a href="." title="">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H &nbsp;</a>
+                                    <a href="." title="">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H &nbsp;</a>
+                                    <a href="." title="">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H &nbsp;</a>
+                                    <a href="." title="">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H </a>
+
+                                </div>
                             </div>
                         </li>
                     }
@@ -259,6 +273,8 @@
 <script>
     $(function () {
         $("#mainNav>li>a").first().addClass("active").parent().siblings().children().removeClass("active");
+
+        
 
         //點擊maplegend換圖
         $(".bookmark_item>li>a").click(function () {
@@ -452,8 +468,10 @@
 
 
         })
+        
 
     })
+    
 
 </script>
 <!--ProgressBar start-->

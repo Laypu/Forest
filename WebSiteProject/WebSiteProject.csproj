@@ -2104,6 +2104,7 @@
     <Content Include="Views\Destination_Index\Article.cshtml" />
     <Content Include="Views\Shared\_page_top.cshtml" />
     <Content Include="Views\F_Recommendedtrips\Print.cshtml" />
+    <Content Include="Views\Home\HashTag.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

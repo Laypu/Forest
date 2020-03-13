@@ -238,11 +238,11 @@ namespace WebSiteProject.Controllers
                     select M;
 
             ViewBag.MessageItems = q.ToList();
-            
+
+            ViewBag.Message10Hash = db.Message10Hash.ToList();
+
             return View(viewmodel);
         }
-
-
 
 
         #region Destination_List
@@ -408,7 +408,7 @@ namespace WebSiteProject.Controllers
         }
         public ActionResult Article(int? langid,string Category, string ImgTitle)
         {
-            var site_id = 3; //這是ThingsToDo的輪播ID
+            var site_id = 3; 
             if (Session["LangID"] == null)
             {
                 var DefaultLang = System.Web.Configuration.WebConfigurationManager.AppSettings["DefaultLang"];

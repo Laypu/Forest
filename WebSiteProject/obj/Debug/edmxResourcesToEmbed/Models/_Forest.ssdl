@@ -1014,8 +1014,6 @@
     <Property Name="Message10Hash_10H" Type="nvarchar(max)" />
     <Property Name="MessageItem_ID" Type="int" />
   </EntityType>
-  <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'DB67039.dbo.MessageBanner' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="MessageBanner">
     <Key>
       <PropertyRef Name="MessageBanner_ID" />
@@ -1840,6 +1838,7 @@
     <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Message_DesHash" EntityType="Self.Message_DesHash" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Message10Hash" EntityType="Self.Message10Hash" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MessageBanner" EntityType="Self.MessageBanner" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MessageItem" EntityType="Self.MessageItem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MessageUnitSetting" EntityType="Self.MessageUnitSetting" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ModelActiveEditMain" EntityType="Self.ModelActiveEditMain" Schema="dbo" store:Type="Tables" />
@@ -1908,13 +1907,6 @@
     [LinkItem].[UpdateName] AS [UpdateName], 
     [LinkItem].[IsVerift] AS [IsVerift]
     FROM [dbo].[LinkItem] AS [LinkItem]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="MessageBanner" EntityType="Self.MessageBanner" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [MessageBanner].[MessageBanner_ID] AS [MessageBanner_ID], 
-    [MessageBanner].[MessageBanner_Img] AS [MessageBanner_Img], 
-    [MessageBanner].[MessageItem_ID] AS [MessageItem_ID]
-    FROM [dbo].[MessageBanner] AS [MessageBanner]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="ZipCode" EntityType="Self.ZipCode" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 

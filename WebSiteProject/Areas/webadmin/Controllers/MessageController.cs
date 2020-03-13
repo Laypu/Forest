@@ -12,6 +12,7 @@ using Utilities;
 using System.Configuration;
 using System.IO;
 using WebSiteProject.Code;
+using System.Data.Entity;
 
 namespace WebSiteProject.Areas.webadmin.Controllers
 {
@@ -77,15 +78,37 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 
             //目的地關聯
             var Destinations_ID = new List<SelectListItem>();
-            foreach (var item in db.F_Destination_Type)
+            if (itemid == "-1")
             {
-                Destinations_ID.Add(new SelectListItem()
+                foreach (var item in db.F_Destination_Type)
                 {
-                    Text = item.Destination_Type_Title1 + " " + item.Destination_Type_Title2,
-                    Value = Convert.ToString(item.Destination_Type_ID),
-                    Selected = false
-                });
+
+                    Destinations_ID.Add(new SelectListItem()
+                    {
+                        Text = item.Destination_Type_Title1 + " " + item.Destination_Type_Title2,
+                        Value = item.Destination_Type_ID.ToString(),
+                        Selected = false
+                    });
+                }
             }
+            else
+            {
+                foreach (var item in db.F_Destination_Type)
+                {
+                    
+                    
+                    
+                    Destinations_ID.Add(new SelectListItem()
+                    {
+                        Text = item.Destination_Type_Title1 + " " + item.Destination_Type_Title2,
+                        Value =item.Destination_Type_ID.ToString(),
+                        
+                    });
+                    
+                }
+                Destinations_ID.Where(m => m.Value == db.Message_DesHash.Where(w => w.MessageItem_ID.ToString() == itemid).First().Destination_Type_ID.ToString()).First().Selected = true;
+            }
+            
             ViewBag.Destination_Type_ID = Destinations_ID;
             
             
@@ -363,7 +386,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         #endregion
 
         #region SaveItem
-        public ActionResult SaveItem(MessageEditModel model, List<int> HashTag_Type,int Destination_Type_ID,WebSiteProject.Models.Message10Hash M10Hash,HttpPostedFileBase BannerImageFile)
+        public ActionResult SaveItem(MessageEditModel model, List<int> HashTag_Type,int Destination_Type_ID,WebSiteProject.Models.Message10Hash M10Hash,HttpPostedFileBase BannerImageFile,string BannerImageFileName)
         {
             if (model.UploadFile != null)
             {
@@ -424,6 +447,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             }
 
             var BannerName = "";
+            var BannerFullName = "";
             if (BannerImageFile != null)
             {
                 var root = Request.PhysicalApplicationPath;
@@ -441,7 +465,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     System.IO.Directory.CreateDirectory(root + "\\UploadImage\\MessageItem\\");
                 }
                 BannerImageFile.SaveAs(path);
-                
+                BannerFullName = newfilename;
             }
 
 
@@ -457,14 +481,22 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 if (result > 0) //result為itemID >0為新增成功
                 {
                     //增加欄位
-                    foreach (var item in HashTag_Type)
+                    if (HashTag_Type != null)
                     {
-                        WebSiteProject.Models.F_Sub_HashTag_Type Sub_HashTag = new Models.F_Sub_HashTag_Type();
-                        Sub_HashTag.MessageItem_ID = result;
-                        Sub_HashTag.HashTag_Type_ID = item;
-                        db.F_Sub_HashTag_Type.Add(Sub_HashTag);
-                        db.SaveChanges();                    
-                    };
+                        foreach (var item in HashTag_Type)
+                        {
+                            WebSiteProject.Models.F_Sub_HashTag_Type Sub_HashTag = new Models.F_Sub_HashTag_Type();
+                            Sub_HashTag.MessageItem_ID = result;
+                            Sub_HashTag.HashTag_Type_ID = item;
+                            db.F_Sub_HashTag_Type.Add(Sub_HashTag);
+                            db.SaveChanges();
+                        };
+                    }
+                    else
+                    {
+                        
+                    }
+                    
                     
                     WebSiteProject.Models.Message_DesHash MDHash = new Models.Message_DesHash();
                     MDHash.MessageItem_ID = result;
@@ -489,7 +521,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 
                     WebSiteProject.Models.MessageBanner messageBanner = new Models.MessageBanner();
                     messageBanner.MessageItem_ID = result;
-                    messageBanner.MessageBanner_Img = BannerName;
+                    messageBanner.MessageBanner_Img = BannerFullName;
                     db.MessageBanners.Add(messageBanner);
                     db.SaveChanges();
 
@@ -514,51 +546,49 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     foreach (var item in Old_HashTag)
                     {
                         var Old_HashTag_Item = db.F_Sub_HashTag_Type.Find(item.Sub_HashTag_Type_ID);
-                        db.Entry(Old_HashTag_Item).State = System.Data.Entity.EntityState.Deleted;
+                        db.F_Sub_HashTag_Type.Remove(Old_HashTag_Item);
                         db.SaveChanges();                        
-                    };
-                    foreach (var item in Old_DesHash)
-                    {
-                        var Old_DesHash_Item = db.Message_DesHash.Find(item.Destination_Type_ID);
-                        db.Entry(Old_DesHash_Item).State = System.Data.Entity.EntityState.Deleted;
-                        db.SaveChanges();
                     };
 
                     //新增加
-                    foreach (var item in HashTag_Type)
+                    if (HashTag_Type != null)
                     {
-                        WebSiteProject.Models.F_Sub_HashTag_Type Sub_HashTag = new Models.F_Sub_HashTag_Type();
-                        Sub_HashTag.MessageItem_ID = model.ItemID;
-                        Sub_HashTag.HashTag_Type_ID = item;
-                        db.F_Sub_HashTag_Type.Add(Sub_HashTag);
-                        db.SaveChanges();
-                    };
+                        foreach (var item in HashTag_Type)
+                        {
+                            WebSiteProject.Models.F_Sub_HashTag_Type Sub_HashTag = new Models.F_Sub_HashTag_Type();
+                            Sub_HashTag.MessageItem_ID = model.ItemID;
+                            Sub_HashTag.HashTag_Type_ID = item;
+                            db.F_Sub_HashTag_Type.Add(Sub_HashTag);
+                            db.SaveChanges();
+                        };
+                    }
                     
-                        WebSiteProject.Models.Message_DesHash MDHash = new Models.Message_DesHash();
-                        MDHash.MessageItem_ID = model.ItemID;
-                        MDHash.Destination_Type_ID = Destination_Type_ID;
-                        db.Message_DesHash.Add(MDHash);
-                        db.SaveChanges();
                     
-                        WebSiteProject.Models.Message10Hash message10Hash = new Models.Message10Hash();
-                        message10Hash.MessageItem_ID = model.ItemID;
-                        message10Hash.Message10Hash_1H = M10Hash.Message10Hash_1H;
-                        message10Hash.Message10Hash_2H = M10Hash.Message10Hash_2H;
-                        message10Hash.Message10Hash_3H = M10Hash.Message10Hash_3H;
-                        message10Hash.Message10Hash_4H = M10Hash.Message10Hash_4H;
-                        message10Hash.Message10Hash_5H = M10Hash.Message10Hash_5H;
-                        message10Hash.Message10Hash_6H = M10Hash.Message10Hash_6H;
-                        message10Hash.Message10Hash_7H = M10Hash.Message10Hash_7H;
-                        message10Hash.Message10Hash_8H = M10Hash.Message10Hash_8H;
-                        message10Hash.Message10Hash_9H = M10Hash.Message10Hash_9H;
-                        message10Hash.Message10Hash_10H = M10Hash.Message10Hash_10H;
-                        db.Message10Hash.Add(message10Hash);
-                        db.SaveChanges();
 
-                    WebSiteProject.Models.MessageBanner messageBanner = new Models.MessageBanner();
-                    messageBanner.MessageItem_ID = model.ItemID;
-                    messageBanner.MessageBanner_Img = BannerName;
-                    db.MessageBanners.Add(messageBanner);
+                    
+                    db.Message_DesHash.Where(m => m.MessageItem_ID == model.ItemID).First().Destination_Type_ID = Destination_Type_ID;   
+                    db.SaveChanges();
+
+                    var message10Hash = db.Message10Hash.Where(m => m.MessageItem_ID == model.ItemID).First();
+                        
+                    message10Hash.Message10Hash_1H = M10Hash.Message10Hash_1H;
+                    message10Hash.Message10Hash_2H = M10Hash.Message10Hash_2H;
+                    message10Hash.Message10Hash_3H = M10Hash.Message10Hash_3H;
+                    message10Hash.Message10Hash_4H = M10Hash.Message10Hash_4H;
+                    message10Hash.Message10Hash_5H = M10Hash.Message10Hash_5H;
+                    message10Hash.Message10Hash_6H = M10Hash.Message10Hash_6H;
+                    message10Hash.Message10Hash_7H = M10Hash.Message10Hash_7H;
+                    message10Hash.Message10Hash_8H = M10Hash.Message10Hash_8H;
+                    message10Hash.Message10Hash_9H = M10Hash.Message10Hash_9H;
+                    message10Hash.Message10Hash_10H = M10Hash.Message10Hash_10H;
+                    
+                    db.SaveChanges();
+                    if (BannerImageFileName == "")
+                    {
+                        db.MessageBanners.Where(m => m.MessageItem_ID == model.ItemID).First().MessageBanner_Img = BannerImageFileName;
+                    }
+                        
+                    db.SaveChanges();
 
 
 
