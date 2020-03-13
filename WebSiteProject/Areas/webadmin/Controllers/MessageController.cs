@@ -583,7 +583,11 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     message10Hash.Message10Hash_10H = M10Hash.Message10Hash_10H;
                     
                     db.SaveChanges();
-                    if (BannerImageFileName == "")
+                    if (BannerFullName != "")
+                    {
+                        db.MessageBanners.Where(m => m.MessageItem_ID == model.ItemID).First().MessageBanner_Img = BannerFullName;
+                    }
+                    else 
                     {
                         db.MessageBanners.Where(m => m.MessageItem_ID == model.ItemID).First().MessageBanner_Img = BannerImageFileName;
                     }
