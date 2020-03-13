@@ -92,7 +92,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             ViewBag.F_HashTag_Type = HashTag_Type;
             //var searchmoel =new  List<V_RecommendedTripsForWebadmin>();
             var mode = new List<RecommendedSearchModel>();
-            mode = db.RecommendedTrips.Select(p => new RecommendedSearchModel { RecommendedTrips_ID = p.RecommendedTrips_ID, RecommendedTrips_Title = p.RecommendedTrips_Title, RecommendedTrips_Day_Name = p.RecommendedTrips_Day.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = p.RecommendedTrips_Day.RecommendedTrips_Day_ID, RecommendedTrips_Destinations_ID = p.RecommendedTrips_Destinations_ID,sort=p.Sort }).OrderBy(p=>p.sort).ToList();
+            mode = db.RecommendedTrips.Select(p => new RecommendedSearchModel { RecommendedTrips_ID = p.RecommendedTrips_ID, RecommendedTrips_Title = p.RecommendedTrips_Title, RecommendedTrips_Day_Name = p.RecommendedTrips_Day.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = p.RecommendedTrips_Day.RecommendedTrips_Day_ID, RecommendedTrips_Destinations_ID = p.RecommendedTrips_Destinations_ID,sort=p.Sort,starDate=p.RecommendedTrips_StarDay,EndDate=p.RecommendedTrips_EndDay }).OrderBy(p=>p.sort).ToList();
             //mode = db.V_RecommendedTripsForWebadmin.GroupBy(o=>o.RecommendedTrips_ID).Select(p=>new RecommendedSearchModel {RecommendedTrips_ID=p.Key, RecommendedTrips_Title=p.FirstOrDefault().RecommendedTrips_Title, RecommendedTrips_Day_Name=p.FirstOrDefault().RecommendedTrips_Day_Name,HashTag_Type_ID=p.FirstOrDefault().HashTag_Type_ID,RecommendedTrips_Day_ID=p.FirstOrDefault().RecommendedTrips_Day_ID,RecommendedTrips_Destinations_ID=p.FirstOrDefault().RecommendedTrips_Destinations_ID}).ToList();
             if (Day_Id != "")
             {
@@ -107,7 +107,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 mode = (from t1 in mode
                         join t2 in db.RecommendedTrips_HashTag_Type on t1.RecommendedTrips_ID equals t2.RecommendedTrips_ID
                         where t2.HashTag_Type_ID== Convert.ToInt32(F_HashTag)
-                        select new RecommendedSearchModel { RecommendedTrips_ID=t1.RecommendedTrips_ID, RecommendedTrips_Title=t1.RecommendedTrips_Title, RecommendedTrips_Day_Name=t1.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID= t1.RecommendedTrips_Day_ID, HashTag_Type_ID = t2.HashTag_Type_ID, RecommendedTrips_Destinations_ID=t1.RecommendedTrips_Destinations_ID, sort = t1.sort }
+                        select new RecommendedSearchModel { RecommendedTrips_ID=t1.RecommendedTrips_ID, RecommendedTrips_Title=t1.RecommendedTrips_Title, RecommendedTrips_Day_Name=t1.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID= t1.RecommendedTrips_Day_ID, HashTag_Type_ID = t2.HashTag_Type_ID, RecommendedTrips_Destinations_ID=t1.RecommendedTrips_Destinations_ID, sort = t1.sort, starDate = t1.starDate, EndDate = t1.EndDate }
                         ).OrderBy(p => p.sort).ToList();
             }
             //var mode = new RecommendedSearchModel();        
