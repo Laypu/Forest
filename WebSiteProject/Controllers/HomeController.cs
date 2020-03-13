@@ -761,7 +761,7 @@ namespace WebSiteProject.Controllers
                 Limit = -1,
                 Sort = "Sort"
             }).rows;
-            ViewBag.Category = Category;
+            
             ViewBag.DesHash = db.MessageItems.Where(M => M.Title == ImgTitle).ToList();
             return View(viewmodel);
         }
