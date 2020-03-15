@@ -15,12 +15,13 @@
 
 
 @{
-    var DesModel = (IEnumerable<WebSiteProject.Models.MessageItem>)ViewBag.DesHash;
-
+        var DesModel = (IEnumerable<WebSiteProject.Models.MessageItem>)ViewBag.DesHash;
+        var Banner = ViewBag.MessageBanner;
+        var dat = (DateTime)DesModel.First().PublicshDate;
     <!--banner start-->
     <div class="page_banner one_pic">
         <!--一張封面照；建議尺寸寬2000*600px；後台無上傳圖片時，img不顯示(但div page_banner要保留)；圖片alt=標題-->
-        <img src="@Url.Content("~/UploadImage/MessageItem/")@DesModel.First().ImageFileName" alt="@DesModel.First().Title" />
+        <img src="@Url.Content("~/UploadImage/MessageItem/")@Banner" alt="@DesModel.First().Title" />
     </div>
     <!--banner end-->
     <!--page_content start-->
@@ -55,29 +56,30 @@
             <div class="container">
 
                 <h2>@DesModel.First().Title</h2>
-
-                <div class="date">@DesModel.First().PublicshDate</div>
+                <!--publishdate-->
+                <div class="date">@dat.ToString("yyyy/MM/dd")</div>
 
                 <div>
-                    <!--由後台編輯器編輯-->
                     <!--文繞圖 start-->
-                    <!--<img src="img/pic_01.jpg" class="img_padding" alt="" align="left">置左
-                    <img src="img/pic_01.jpg" class="img_padding" alt="" align="right">置右-->
-                    @*<div align="center">
-                            <img src="img/t_pic_05.jpg" class="img_padding" alt="image Description">
-                        </div>*@
+                    @if (string.IsNullOrEmpty(@DesModel.First().ImageFileOrgName) == false)
+                    {
+                        <!--圖片置左-->
+                        if (@DesModel.First().ImageFileLocation == "1")
+                        {
+                            <img src="@Url.Content("~/UploadImage/MessageItem/")@DesModel.First().ImageFileName" class="img_padding" alt="@DesModel.First().ImageFileDesc" align="left">
+                        }
+                        else if (@DesModel.First().ImageFileLocation == "2")
+                        {
+                            <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/MessageItem/")@DesModel.First().ImageFileName" class="img_padding" alt="@DesModel.First().ImageFileOrgName"></p></div>
+                        }
+                        else if (@DesModel.First().ImageFileLocation == "3")
+                        {
+                            <img src="@Url.Content("~/UploadImage/MessageItem/")@DesModel.First().ImageFileName" class="img_padding" alt="@DesModel.First().ImageFileDesc" align="right">
+                        }
+
+                    }
+
                     <!--文繞圖 end-->
-                    @*Having walked for hours without seeing a soul, it almost came as a surprise when we spotted a couple heading towards us from across the Rhine Valley.<br /><br />
-                        “It’s so nice to see young international tourists enjoying our country!” exclaimed a local man, who, along with his wife, couldn’t contain his genuine excitement at seeing visitors exploring their homeland.<br /><br />
-                        Tourists often receive a mixed reception abroad, but not here. Not in the least-visited country in Europe. Welcome to Liechtenstein.<br /><br />
-                        <div class="text-center">
-                            <img src="img/r_pic_02.jpg" class="img_padding" alt="image Description">
-                        </div>
-                        <div class="w-800">
-                            <div class="title_01">300 years of Liechtenstein</div>
-                            My friends and I had just set off on the newly-created Liechtenstein Trail – a 75km walking route which runs the entire length of the country, from its northeastern border with Austria, down to the far southwest, where the valley bends into Switzerland. It was launched to celebrate the 300th anniversary of Liechtenstein’s independence and can be completed in either direction.<br /><br />
-                            We chose to go from top to bottom as our return flight was from Zurich, and the Swiss city is easily reached from Sargans, near the southern end of Liechtenstein.<br /><br />
-                        </div>*@
                     @Html.Raw(DesModel.First().HtmlContent)
 
 

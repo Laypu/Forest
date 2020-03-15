@@ -241,6 +241,8 @@ namespace WebSiteProject.Controllers
 
             ViewBag.Message10Hash = db.Message10Hash.ToList();
 
+            
+
             return View(viewmodel);
         }
 
@@ -406,7 +408,7 @@ namespace WebSiteProject.Controllers
         {
             return DateTime.Now.ToString("MMMM d,yyyy", new System.Globalization.CultureInfo("en-US"));
         }
-        public ActionResult Article(int? langid,string Category, string ImgTitle)
+        public ActionResult Article(int? langid,string Category, int? Aid)
         {
             var site_id = 3; 
             if (Session["LangID"] == null)
@@ -493,7 +495,9 @@ namespace WebSiteProject.Controllers
                 Sort = "Sort"
             }).rows;
             ViewBag.Category = Category;
-            ViewBag.DesHash = db.MessageItems.Where(M=>M.Title == ImgTitle).ToList();
+            ViewBag.DesHash = db.MessageItems.Where(M=>M.ItemID == Aid).ToList();
+            ViewBag.MessageBanner = db.MessageBanners.Where(B =>B.MessageItem_ID == Aid).First().MessageBanner_Img;
+            
             return View(viewmodel);
         }
     }
