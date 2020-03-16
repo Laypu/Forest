@@ -190,8 +190,6 @@ public partial class ForestEntities : DbContext
 
     public virtual DbSet<RecommendedTrips_HashTag_Type> RecommendedTrips_HashTag_Type { get; set; }
 
-    public virtual DbSet<F_Destination_Type> F_Destination_Type { get; set; }
-
     public virtual DbSet<RecommendedTrip> RecommendedTrips { get; set; }
 
     public virtual DbSet<RecommendedTrip_Travel> RecommendedTrip_Travel { get; set; }
@@ -203,6 +201,8 @@ public partial class ForestEntities : DbContext
     public virtual DbSet<MessageBanner> MessageBanners { get; set; }
 
     public virtual DbSet<ADDestination> ADDestinations { get; set; }
+
+    public virtual DbSet<F_Destination_Type> F_Destination_Type { get; set; }
 
 }
 

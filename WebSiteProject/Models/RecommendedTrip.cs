@@ -56,9 +56,9 @@ public partial class RecommendedTrip
 
 
 
-    public virtual F_Destination_Type F_Destination_Type { get; set; }
-
     public virtual RecommendedTrips_Day RecommendedTrips_Day { get; set; }
+
+    public virtual F_Destination_Type F_Destination_Type { get; set; }
 
 }
 

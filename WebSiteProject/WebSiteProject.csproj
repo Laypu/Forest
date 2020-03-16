@@ -298,6 +298,9 @@
     <Compile Include="Models\ADCenter.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ADDestination.cs">
+      <DependentUpon>_Forest.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ADDown.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
