@@ -28,6 +28,8 @@ public partial class F_Destination_Type
 
         this.Message_DesHash = new HashSet<Message_DesHash>();
 
+        this.ADDestinations = new HashSet<ADDestination>();
+
     }
 
 
@@ -104,6 +106,10 @@ public partial class F_Destination_Type
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
     public virtual ICollection<Message_DesHash> Message_DesHash { get; set; }
+
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+
+    public virtual ICollection<ADDestination> ADDestinations { get; set; }
 
 }
 

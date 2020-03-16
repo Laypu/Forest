@@ -124,6 +124,38 @@
           <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
           <Property Name="SType" Type="char" MaxLength="1" />
         </EntityType>
+        <EntityType Name="ADDestination">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Destination_Type_ID" Type="int" />
+          <Property Name="Lang_ID" Type="int" />
+          <Property Name="Site_ID" Type="int" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Type_ID" Type="nvarchar" MaxLength="10" />
+          <Property Name="StDate" Type="datetime" />
+          <Property Name="EdDate" Type="datetime" />
+          <Property Name="AD_Name" Type="nvarchar" MaxLength="300" />
+          <Property Name="Img_Show_Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Img_Name_Ori" Type="nvarchar" MaxLength="255" />
+          <Property Name="Img_Name_Thumb" Type="nvarchar" MaxLength="255" />
+          <Property Name="AD_Width" Type="int" />
+          <Property Name="AD_Height" Type="int" />
+          <Property Name="Link_Href" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Link_Mode" Type="nvarchar" MaxLength="1" />
+          <Property Name="Fixed" Type="bit" />
+          <Property Name="Review_Date" Type="datetime" />
+          <Property Name="Enabled" Type="bit" />
+          <Property Name="Create_Date" Type="datetime" />
+          <Property Name="UpdateDatetime" Type="datetime" />
+          <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+          <Property Name="SType" Type="char" MaxLength="1" />
+          <Property Name="UploadVideoFileName" Type="nvarchar" MaxLength="100" />
+          <Property Name="UploadVideoFilePath" Type="varchar" MaxLength="100" />
+          <Property Name="UploadVideoFileDesc" Type="nvarchar" MaxLength="100" />
+          <Property Name="ADDesc" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
         <EntityType Name="ADDown">
           <Key>
             <PropertyRef Name="ID" />
@@ -1721,6 +1753,18 @@
           <Property Name="Town" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Code" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK_ADDestination_F_Destination_Type">
+          <End Role="F_Destination_Type" Type="Self.F_Destination_Type" Multiplicity="0..1" />
+          <End Role="ADDestination" Type="Self.ADDestination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="F_Destination_Type">
+              <PropertyRef Name="Destination_Type_ID" />
+            </Principal>
+            <Dependent Role="ADDestination">
+              <PropertyRef Name="Destination_Type_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Destination_Fare_F_Destination_Type">
           <End Role="F_Destination_Type" Type="Self.F_Destination_Type" Multiplicity="0..1" />
           <End Role="Destination_Fare" Type="Self.Destination_Fare" Multiplicity="*" />
@@ -1798,6 +1842,7 @@
           <EntitySet Name="ActivePhoto" EntityType="Self.ActivePhoto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ActiveUnitSetting" EntityType="Self.ActiveUnitSetting" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ADCenter" EntityType="Self.ADCenter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ADDestination" EntityType="Self.ADDestination" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ADDown" EntityType="Self.ADDown" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ADMain" EntityType="Self.ADMain" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ADMobile" EntityType="Self.ADMobile" Schema="dbo" store:Type="Tables" />
@@ -1921,6 +1966,10 @@
     [ZipCode].[Code] AS [Code]
     FROM [dbo].[ZipCode] AS [ZipCode]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK_ADDestination_F_Destination_Type" Association="Self.FK_ADDestination_F_Destination_Type">
+            <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
+            <End Role="ADDestination" EntitySet="ADDestination" />
+          </AssociationSet>
           <AssociationSet Name="FK_Destination_Fare_F_Destination_Type" Association="Self.FK_Destination_Fare_F_Destination_Type">
             <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
             <End Role="Destination_Fare" EntitySet="Destination_Fare" />
@@ -2060,6 +2109,11 @@
             <End Role="Message_DesHash" EntitySet="Message_DesHash" />
           </AssociationSet>
           <EntitySet Name="MessageBanners" EntityType="ForestModel.MessageBanner" />
+          <EntitySet Name="ADDestinations" EntityType="ForestModel.ADDestination" />
+          <AssociationSet Name="FK_ADDestination_F_Destination_Type" Association="ForestModel.FK_ADDestination_F_Destination_Type">
+            <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
+            <End Role="ADDestination" EntitySet="ADDestinations" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="ActiveItem">
           <Key>
@@ -3730,6 +3784,7 @@
           <NavigationProperty Name="Destination_Fare" Relationship="ForestModel.FK_Destination_Fare_F_Destination_Type" FromRole="F_Destination_Type" ToRole="Destination_Fare" />
           <NavigationProperty Name="RecommendedTrips" Relationship="ForestModel.FK_RecommendedTrips_F_Destination_Type" FromRole="F_Destination_Type" ToRole="RecommendedTrip" />
           <NavigationProperty Name="Message_DesHash" Relationship="ForestModel.FK_Message_DesHash_F_Destination_Type" FromRole="F_Destination_Type" ToRole="Message_DesHash" />
+          <NavigationProperty Name="ADDestinations" Relationship="ForestModel.FK_ADDestination_F_Destination_Type" FromRole="F_Destination_Type" ToRole="ADDestination" />
         </EntityType>
         <Association Name="FK_Destination_Fare_F_Destination_Type">
           <End Type="ForestModel.F_Destination_Type" Role="F_Destination_Type" Multiplicity="0..1" />
@@ -3855,6 +3910,51 @@
           <Property Name="MessageBanner_Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MessageItem_ID" Type="Int32" />
         </EntityType>
+        <EntityType Name="ADDestination">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Destination_Type_ID" Type="Int32" />
+          <Property Name="Lang_ID" Type="Int32" />
+          <Property Name="Site_ID" Type="Int32" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="Type_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="StDate" Type="DateTime" Precision="3" />
+          <Property Name="EdDate" Type="DateTime" Precision="3" />
+          <Property Name="AD_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Img_Show_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Img_Name_Ori" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Img_Name_Thumb" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AD_Width" Type="Int32" />
+          <Property Name="AD_Height" Type="Int32" />
+          <Property Name="Link_Href" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Link_Mode" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Fixed" Type="Boolean" />
+          <Property Name="Review_Date" Type="DateTime" Precision="3" />
+          <Property Name="Enabled" Type="Boolean" />
+          <Property Name="Create_Date" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UploadVideoFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UploadVideoFilePath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UploadVideoFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ADDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="F_Destination_Type" Relationship="ForestModel.FK_ADDestination_F_Destination_Type" FromRole="ADDestination" ToRole="F_Destination_Type" />
+        </EntityType>
+        <Association Name="FK_ADDestination_F_Destination_Type">
+          <End Type="ForestModel.F_Destination_Type" Role="F_Destination_Type" Multiplicity="0..1" />
+          <End Type="ForestModel.ADDestination" Role="ADDestination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="F_Destination_Type">
+              <PropertyRef Name="Destination_Type_ID" />
+            </Principal>
+            <Dependent Role="ADDestination">
+              <PropertyRef Name="Destination_Type_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5650,6 +5750,39 @@
                 <ScalarProperty Name="MessageItem_ID" ColumnName="MessageItem_ID" />
                 <ScalarProperty Name="MessageBanner_Img" ColumnName="MessageBanner_Img" />
                 <ScalarProperty Name="MessageBanner_ID" ColumnName="MessageBanner_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ADDestinations">
+            <EntityTypeMapping TypeName="ForestModel.ADDestination">
+              <MappingFragment StoreEntitySet="ADDestination">
+                <ScalarProperty Name="ADDesc" ColumnName="ADDesc" />
+                <ScalarProperty Name="UploadVideoFileDesc" ColumnName="UploadVideoFileDesc" />
+                <ScalarProperty Name="UploadVideoFilePath" ColumnName="UploadVideoFilePath" />
+                <ScalarProperty Name="UploadVideoFileName" ColumnName="UploadVideoFileName" />
+                <ScalarProperty Name="SType" ColumnName="SType" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="Review_Date" ColumnName="Review_Date" />
+                <ScalarProperty Name="Fixed" ColumnName="Fixed" />
+                <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
+                <ScalarProperty Name="Link_Href" ColumnName="Link_Href" />
+                <ScalarProperty Name="AD_Height" ColumnName="AD_Height" />
+                <ScalarProperty Name="AD_Width" ColumnName="AD_Width" />
+                <ScalarProperty Name="Img_Name_Thumb" ColumnName="Img_Name_Thumb" />
+                <ScalarProperty Name="Img_Name_Ori" ColumnName="Img_Name_Ori" />
+                <ScalarProperty Name="Img_Show_Name" ColumnName="Img_Show_Name" />
+                <ScalarProperty Name="AD_Name" ColumnName="AD_Name" />
+                <ScalarProperty Name="EdDate" ColumnName="EdDate" />
+                <ScalarProperty Name="StDate" ColumnName="StDate" />
+                <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+                <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+                <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

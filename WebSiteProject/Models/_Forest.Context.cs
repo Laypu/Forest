@@ -202,6 +202,8 @@ public partial class ForestEntities : DbContext
 
     public virtual DbSet<MessageBanner> MessageBanners { get; set; }
 
+    public virtual DbSet<ADDestination> ADDestinations { get; set; }
+
 }
 
 }
