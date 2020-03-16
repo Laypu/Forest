@@ -115,27 +115,27 @@
                            {
                                htmlAttributes = new
                                {@*placeholder = "春天",*@@class = "form-control input-small inline-block"
-}
-})｜
+                               }
+                           })｜
                                 @Html.Label("夏天", new { htmlAttributes = new { @class = "inline-block" } })
                                 @Html.EditorFor(model => model.Temp_Summer, new
                            {
                                htmlAttributes = new { @class = "form-control input-small inline-block" }
-                                })｜
+                           })｜
                                 @Html.Label("秋天", new { htmlAttributes = new { @class = "inline-block" } })
                                 @Html.EditorFor(model => model.Temp_Autumn, new
                            {
                                htmlAttributes = new
                                {@*placeholder = "秋天",*@@class = "form-control input-small inline-block"
-}
-})｜
+                               }
+                           })｜
                                 @Html.Label("冬天", new { htmlAttributes = new { @class = "inline-block" } })
                                 @Html.EditorFor(model => model.Temp_Winter, new
                            {
                                htmlAttributes = new
                                {@*placeholder = "冬天",*@@class = "form-control input-small inline-block"
-}
-})
+                               }
+                           })
                             </div>
                         </div>
 
@@ -220,7 +220,7 @@
                     var DESName = ViewBag.TypeName;
                     var FareModel = ViewBag.Destination_Fare;
                 }
-                <a class="btn green-meadow" id='btn_add' href="@Url.Action("Createtr","Destination_Index",new {TypeID = DESTypeID,TypeName = DESName})">新增 <i class="fa fa-plus"></i></a>
+                <a class="btn green-meadow" id='btn_add' href="@Url.Action("Createtr", "Destination_Index", new { TypeID = DESTypeID, TypeName = DESName })">新增 <i class="fa fa-plus"></i></a>
 
             </div>
 
@@ -275,63 +275,99 @@
             </table>
             
         </div>
+    </form>
+    <form class="form-horizontal form-bordered" method="Post" id="editform3" enctype="multipart/form-data" style="padding:20px">
+
+        @{
+
+            var ADModel = ViewBag.ADDestinations;
+        }
         <div class="form-group">
             <div class="display_inline margin_bottom">
-               
-                <a class="btn green-meadow" id='btn_add' href="@Url.Action("Createtr","Destination_Index",new {TypeID = DESTypeID,TypeName = DESName})">新增 <i class="fa fa-plus"></i></a>
+
+                <a class="btn green-meadow" id='btn_add' href="@Url.Action("CreateAD", "Destination_Index", new { TypeID = DESTypeID, TypeName = DESName })">新增 <i class="fa fa-plus"></i></a>
 
             </div>
-            <table class="table table-bordered table-hover" border="0" cellspacing="0" cellpadding="0" id="eventtable" data-url="/forest/webadmin/AD/Paging?site_id=3" data-sort-name="Sort" data-page-size="10" data-filed-id="ID" data-max-pagination="10">
+            <table class="table table-bordered table-hover" border="0" cellspacing="0" cellpadding="0" id="ADtable" >
                 <thead>
                     <tr class="bg-grey_1" filed-class="odd gradeX">
                         <th width="80" class="text-center" filed-type="delcheckbox">
                             <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                <input type="checkbox" class="checkboxes" id="chk_all"><span></span>
+                                <input type="checkbox" class="checkboxes" id="chkAD_all"><span></span>
                             </label>
-                            <button class="btn red-mint btn-xs" id="btn_del"><i class="glyphicon glyphicon-trash"></i></button>
+                            <button class="btn red-mint btn-xs" id="btn_delAD"><i class="glyphicon glyphicon-trash"></i></button>
                         </th>
                         <th filed-name="Sort" width="160px" class="text-center" filed-type="numbertextcheck" filed-item-class="sortedit">排序</th>
                         <th filed-name="AD_Name" class="text-center" filed-type="link">廣告名稱</th>
-                        <th filed-name="IsRange" width="80px" class="text-center" filed-item-class="text-center">是否在顯示區間</th>
                         <th filed-name="Enabled" width="80px" class="text-center" filed-type="checkbox" filed-item-class="checkboxes chkstatus">顯示</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr id="tr_1" class="odd gradeX">
-                        <td class="text-center">
-                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                <input type="checkbox" class="checkboxes chksel" value="1015" index="1"><span></span>
-                            </label>
-                        </td>
-                        <td class="text-center delete_th">
-                            <button type="button" class="btn btn-default btn-xs seqindex" value="0" idindex="1015"><i class="fa fa-angle-double-up"></i></button>
-                            <button type="button" class="btn btn-default btn-xs seqindex" value="15" idindex="1015"><i class="fa fa-angle-up"></i></button>
-                            <button type="button" class="btn btn-default btn-xs seqindex" value="17" idindex="1015"><i class="fa fa-angle-down"></i></button>
-                            <button type="button" class="btn btn-default btn-xs seqindex" value="1" idindex="1015"><i class="fa fa-angle-double-down"></i></button>
-                            <input type="hidden" value="">
-                            <input type="text" value="" class="editinput btn btn-default btn-xs sequence_list sortedit" idindex="1015">
-                            <span class="required seqerror" style="color:red;display:none;margin-left:5px;font-size:12px"></span>
-                        </td>
-                        <td>
-                            <a href="#" class="edit" value="1015">Find your treasure in Taiwan!1</a>
-                        </td>
-                        <td class="text-center">
-                            是
-                        </td>
-                        <td class="text-center">
-                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                <input type="checkbox" class="checkboxes chkstatus" checked="checked" value="1015" index="1"><span></span>
-                            </label>
-                        </td>
-                    </tr>
+                    @{
+                        var y = 0;
+
+                        foreach (var itemAD in ADModel)
+                        {
+                                <tr id="tr_1" class="odd gradeX">
+
+
+
+                                    <td class="text-center">
+                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                            <input type="checkbox" class="checkboxes chksel"><span></span>
+                                        </label>
+                                    </td>
+                                    <td class="text-center delete_th">
+                                        <input type="hidden" class="ADid" value="@itemAD.ID" />
+                                        <button type="button" class="btn btn-default btn-xs seqindex"><i class="fa fa-angle-double-up"></i></button>
+                                        <button type="button" class="btn btn-default btn-xs seqindex"><i class="fa fa-angle-up"></i></button>
+                                        <button type="button" class="btn btn-default btn-xs seqindex"><i class="fa fa-angle-down"></i></button>
+                                        <button type="button" class="btn btn-default btn-xs seqindex"><i class="fa fa-angle-double-down"></i></button>
+
+                                        <input type="text" value="@itemAD.Sort" class="editinput btn btn-default btn-xs sequence_list sortedit">
+                                        <span class="required seqerror" style="color:red;display:none;margin-left:5px;font-size:12px"></span>
+                                    </td>
+                                    <td>
+                                        <a href="@Url.Action("CreateAD", "Destination_Index", new { TypeID = DESTypeID, TypeName = DESName ,AdID = itemAD.ID})" class="edit">@itemAD.AD_Name</a>
+                                    </td>
+                                    @if (@itemAD.Enabled == true)
+                                    {
+                                        <td class="text-center">
+                                            
+                                            <input type="checkbox" class="checkboxes chkstatus" checked="checked" name="AD_Des[@y].Enabled">
+                                            
+                                        </td>
+
+                                    }
+                                    else 
+                                    {
+                                        <td class="text-center">
+                                           
+                                                <input type="checkbox" class="checkboxes chkstatus" name="AD_Des[@y].Enabled">
+                                            
+                                        </td>
+                                    }
+
+
+
+
+
+                                </tr>
+
+                            y = y + 1;
+
+                        }
+
+                    }
+
                 </tbody>
             </table>
         </div>
-            <script>
+        <script>
 
-            </script>
+        </script>
 
-            @*@Html.Action("_FarePartial", new { id = vid, Name = vName })*@
+        @*@Html.Action("_FarePartial", new { id = vid, Name = vName })*@
     </form>
     <div class="text-center search_padding" id="div_buttons">
         <button type="button" class="btn blue" id="btn_submit">確認送出</button>
@@ -341,24 +377,34 @@
 </div>
 <script>
     $(function () {
+        $(".chkstatus").change(function () {
+            if ($(this).prop("checked") == true) {
+                $(this).val(true);
+            }
+            else
+            {
+                $(this).val(false);
+            }
+        });
+
 
         ShowImg()
         //送出表單
         $("#btn_submit").click(function () {
-
+            i
 
             $.ajax({
                 type: "POST",
                 url: '@Url.Action("Edit", "Destination_Index")',
-                data: $("#editform1,#editform2").serialize(),
+                data: $("#editform1,#editform2,#editform3").serialize(),
                 success: function (data) {
-                    
+
                     alert("修改成功")
                 }
             });
 
-           
-        })
+
+        });
 
         $("#btn_return").click(function () {
             history.go(-1);
@@ -409,6 +455,8 @@
 
         RegisterClickAll("#chk_all", '#faretable tbody .chksel', "#selvalue");
 
+        
+        
         $("#btn_del").click(function () {
             
             if (confirm('確定要刪除嗎??'))
@@ -437,6 +485,39 @@
 
             
         })
+
+        RegisterClickAll("#chkAD_all", '#ADtable tbody .chksel', "#selvalue");
+
+        $("#btn_delAD").click(function () {
+            
+            if (confirm('確定要刪除嗎??'))
+            {
+                var ADcheck = $("#ADtable tbody .chksel:checked");
+                
+                farecheck.each(function () {
+                    var chargeID = $(this).parent().parent().next().children(".ADid").val();
+                    //formdata.append("chargeID", chargeID);
+                   
+                    $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("DeleteAD", "Destination_Index")',
+                        dataType:'json',
+                        data: { ADid: ADid},
+                        success: function (data) {
+                            
+                            $("#editform3").load(location.href + " #editform3");//location.href + " #editform2"內的" #editform2"#前的空白很重要
+
+                        }
+                    });
+                })
+                @*window.location.href = "@Url.Action("delete","Destination_Index")" + "?chargeID=" + formdata;*@
+                
+            }
+
+            
+        })
+        
+
     })
 
 </script>
