@@ -147,6 +147,13 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             //旅遊資訊標籤
             ViewBag.HashTag = db.F_HashTag_Type.ToList();
             var model = db.RecommendedTrips.Where(p => p.RecommendedTrips_ID.ToString() == itemid);
+            if(itemid!="-1")
+            {
+                if(model.FirstOrDefault()==null)
+                {
+                    return RedirectToAction("Recommendedtrips_item");
+                }
+            }
             if(model.FirstOrDefault() !=null)
             { 
               if (model.FirstOrDefault().RecommendedTrips_Day_ID != null)
@@ -274,9 +281,9 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         #endregion
         #region SaveItem_Trave
         [HttpPost]
-        public ActionResult SaveItem_Trave(RecommendedTrip_Travel recommendedTrip_Travel, HttpPostedFileBase fileImag)
+        public ActionResult SaveItem_Trave(RecommendedTrip_Travel recommendedTrip_Travel, HttpPostedFileBase fileImag, string imagecheck = "")
         {
-
+            var imge = recommendedTrip_Travel.RecommendedTrip_Travel_Img;
             if (fileImag != null)
             {
                 var root = Request.PhysicalApplicationPath;
@@ -315,10 +322,24 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             }
             else
             {
+                if (imagecheck == "True")
+                {
+                    var old_SizeChart = imge;
+                    if (old_SizeChart != null)
+                    {
+                        string fullpath = Request.MapPath("~/UploadImage/RecommendedTrips/" + old_SizeChart);
+                        if (System.IO.File.Exists(fullpath))
+                        {
+                            System.IO.File.Delete(fullpath);
+                        }
+                    }
+                    recommendedTrip_Travel.RecommendedTrip_Travel_Img = "";
+                    recommendedTrip_Travel.RecommendedTrip_Travel_Img_Description = "";
+                }
                 if (fileImag != null)
                 {
 
-                    var old_SizeChart = db.RecommendedTrips.Find(recommendedTrip_Travel.RecommendedTrip_Travel_ID).RecommendedTrips_Img;
+                    var old_SizeChart = imge;
                     if (old_SizeChart != null)
                     {
                         string fullpath = Request.MapPath("~/UploadImage/RecommendedTrips/" + old_SizeChart);
@@ -341,7 +362,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         #endregion
         #region SaveItem
         [HttpPost]
-        public ActionResult SaveItem(RecommendedTrip recommendedTrip,HttpPostedFileBase fileImag, HttpPostedFileBase uploadfile, List<int> HashTag_Type,List<string> Keywords)
+        public ActionResult SaveItem(RecommendedTrip recommendedTrip, HttpPostedFileBase fileImag, HttpPostedFileBase uploadfile, List<int> HashTag_Type, List<string> Keywords, string Sdate = "", string Edate = "", string filecheck = "",string imagecheck="")
         {
             var iswriteseo = false;
             var isHash = false;
@@ -396,6 +417,14 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 recommendedTrip.RecommendedTrips_HtmContent = HttpUtility.UrlDecode(recommendedTrip.RecommendedTrips_HtmContent);
                 recommendedTrip.RecommendedTrips_Title = HttpUtility.UrlDecode(recommendedTrip.RecommendedTrips_Title);
                 recommendedTrip.RecommendedTrips_Content= HttpUtility.UrlDecode(recommendedTrip.RecommendedTrips_Content);
+               if(Sdate.IsNullorEmpty()==false)
+            {
+                recommendedTrip.RecommendedTrips_StarDay = DateTime.Parse(Sdate);
+            }
+            if (Edate.IsNullorEmpty() == false)
+            {
+                recommendedTrip.RecommendedTrips_EndDay = DateTime.Parse(Edate);
+            }
             if (recommendedTrip.RecommendedTrips_ID.ToString() == "-1")
             {
                 var olddata = db.RecommendedTrips;
@@ -467,6 +496,35 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             }
             else
             {
+                if(imagecheck=="True")
+                {
+                    var old_SizeChart = imgname;
+                    if (old_SizeChart != null)
+                    {
+                        string fullpath = Request.MapPath("~/UploadImage/RecommendedTrips/" + old_SizeChart);
+                        if (System.IO.File.Exists(fullpath))
+                        {
+                            System.IO.File.Delete(fullpath);
+                        }
+                    }
+                    recommendedTrip.RecommendedTrips_Img = "";
+                    recommendedTrip.RecommendedTrips_Img_Description = "";
+                }
+                if(filecheck== "True")
+                {
+                    var old_SizeChart = filname;
+                    if (old_SizeChart != null)
+                    {
+                        string fullpath = Request.MapPath("~/UploadFile/RecommendedTrips/" + old_SizeChart);
+                        if (System.IO.File.Exists(fullpath))
+                        {
+                            System.IO.File.Delete(fullpath);
+                        }
+                        recommendedTrip.RecommendedTrips_UploadFileName = "";
+                        recommendedTrip.RecommendedTrips_UploadFileDesc = "";
+                        recommendedTrip.RecommendedTrips_UploadFilePath = "";
+                    }
+                }
                 if (uploadfile != null)
                 {
                     var old_SizeChart = filname;
@@ -669,12 +727,44 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 seq = seq == 0 ? 1 : seq;
                 if (Type == "btn")
                 {
-                    seq = seq > maxsort ? maxsort : seq;
-                    if (seq == -1)
+                   if(seq==-1)
                     {
-
-                        seq = maxsort;
-                    }     
+                        var ToUpSeq = db.RecommendedTrips.Where(p => p.Sort < nowseq);
+                        foreach(var item in ToUpSeq)
+                        {
+                            item.Sort = item.Sort + 1;
+                        }
+                        fromseq.Sort = 1;
+                        db.Entry(fromseq).State = System.Data.Entity.EntityState.Modified;
+                        var r1=db.SaveChanges();
+                        if (r1 > 0)
+                        {
+                            return Json("更新作業成功", JsonRequestBehavior.AllowGet);
+                        }
+                        else
+                        {
+                            return Json("更新作業失敗", JsonRequestBehavior.AllowGet);
+                        }
+                    }
+                    if(seq==-2)
+                    {
+                        var ToDownSeq = db.RecommendedTrips.Where(p => p.Sort > nowseq);
+                        foreach (var item in ToDownSeq)
+                        {
+                            item.Sort = item.Sort - 1;
+                        }
+                        fromseq.Sort = maxsort;
+                        db.Entry(fromseq).State = System.Data.Entity.EntityState.Modified;
+                        var r1 = db.SaveChanges();
+                        if (r1 > 0)
+                        {
+                            return Json("更新作業成功", JsonRequestBehavior.AllowGet);
+                        }
+                        else
+                        {
+                            return Json("更新作業失敗", JsonRequestBehavior.AllowGet);
+                        }
+                    }
                 }
                 else
                 {
@@ -688,6 +778,22 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         return Json("更新作業失敗", JsonRequestBehavior.AllowGet);
                     }
                     if(seq <0)
+                    {
+                        return Json("更新作業失敗", JsonRequestBehavior.AllowGet);
+                    }
+                    var ToInptSeq = db.RecommendedTrips.Where(p => p.Sort >= seq && p.Sort< nowseq);
+                    foreach (var item in ToInptSeq)
+                    {
+                        item.Sort = item.Sort + 1;
+                    }
+                    fromseq.Sort = seq;
+                    db.Entry(fromseq).State = System.Data.Entity.EntityState.Modified;
+                    var r1 = db.SaveChanges();
+                    if (r1 > 0)
+                    {
+                        return Json("更新作業成功", JsonRequestBehavior.AllowGet);
+                    }
+                    else
                     {
                         return Json("更新作業失敗", JsonRequestBehavior.AllowGet);
                     }
@@ -727,6 +833,102 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             db.Entry(Msunit).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
             return Json("修改成功");
+        }
+        #endregion
+        #region DeleteItem
+        public ActionResult DeleteItem(List<int> Itemid, string Type)
+        {
+            var msg = "";
+            try {
+            if (Type== "Trip")
+            {
+                foreach(var item in Itemid)
+                {
+                    var ReTravel = db.RecommendedTrip_Travel.Where(p => p.RecommendedTrip_ID == item);
+                    var ReHashTage = db.RecommendedTrips_HashTag.Where(p => p.RecommendedTrips_Id == item).FirstOrDefault();
+                    var ReHashTage_Type = db.RecommendedTrips_HashTag_Type.Where(p => p.RecommendedTrips_ID == item);
+                    var Trip = db.RecommendedTrips.Find(item);
+
+                    if (Trip.RecommendedTrips_Img.IsNullorEmpty() == false)
+                    {
+                        string fullpath = Request.MapPath("~/UploadImage/RecommendedTrips/" + Trip.RecommendedTrips_Img);
+                        if (System.IO.File.Exists(fullpath))
+                        {
+                            System.IO.File.Delete(fullpath);
+                        }
+
+                    }
+                    if (Trip.RecommendedTrips_UploadFileName.IsNullorEmpty() == false)
+                    {
+                        string fullpath = Request.MapPath("~/UploadFile/RecommendedTrips/" + Trip.RecommendedTrips_UploadFileName);
+                        if (System.IO.File.Exists(fullpath))
+                        {
+                            System.IO.File.Delete(fullpath);
+                        }
+
+                    }
+                    msg += "刪除標題為:" + Trip.RecommendedTrips_Title + "\n";
+                    db.Entry(Trip).State = System.Data.Entity.EntityState.Deleted;
+
+                   var  r = db.SaveChanges();
+                    if (r > 0)
+                    {
+                        if (ReTravel.FirstOrDefault() != null)
+                        {
+                            foreach (var Travel in ReTravel)
+                            {
+                                var Old_Travel = db.RecommendedTrip_Travel.Find(Travel.RecommendedTrip_Travel_ID);
+                                db.Entry(Old_Travel).State = System.Data.Entity.EntityState.Deleted;
+                                db.SaveChanges();
+                            }
+                        }
+                        if (ReHashTage != null)
+                        {
+                            var ReHashtage = db.RecommendedTrips_HashTag_Type.Find(ReHashTage.RecommendedTrips_HashTag_Id);
+                            db.Entry(ReHashtage).State = System.Data.Entity.EntityState.Deleted;
+                            db.SaveChanges();
+                        }
+                        if (ReHashTage_Type.FirstOrDefault() != null)
+                        {
+                            foreach (var Tage_Type in ReHashTage_Type)
+                            {
+                                var Old_Tage_Typ = db.RecommendedTrips_HashTag_Type.Find(Tage_Type.RecommendedTrips_HashTag_ID);
+                                db.Entry(Old_Tage_Typ).State = System.Data.Entity.EntityState.Deleted;
+                                db.SaveChanges();
+                            }
+                        }
+                    }
+                    
+                }
+                msg += "共" + Itemid.Count() + "筆\n"+"刪除成功";
+                return Json(msg, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                foreach (var item in Itemid)
+                {
+                        var Old_Travel = db.RecommendedTrip_Travel.Find(item);
+                        if (Old_Travel.RecommendedTrip_Travel_Img.IsNullorEmpty() == false)
+                        {
+                            string fullpath = Request.MapPath("~/UploadImage/RecommendedTrips/" + Old_Travel.RecommendedTrip_Travel_Img);
+                            if (System.IO.File.Exists(fullpath))
+                            {
+                                System.IO.File.Delete(fullpath);
+                            }
+
+                        }
+                        msg += "刪除標題為:" + Old_Travel.RecommendedTrip_Travel_Title + "\n";
+                    db.Entry(Old_Travel).State = System.Data.Entity.EntityState.Deleted;
+                    db.SaveChanges();
+                }
+                    msg += "共" + Itemid.Count() + "筆\n" + "刪除成功";
+                    return Json(msg, JsonRequestBehavior.AllowGet);
+             }
+            }
+            catch(Exception ex)
+            {
+                return Json("刪除作業失敗", JsonRequestBehavior.AllowGet);
+            }
         }
         #endregion
     }
