@@ -183,3 +183,12 @@ D:\GITHUB\Forest\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
 D:\GITHUB\Forest\Utilities\obj\Debug\Utilities.csproj.CopyComplete
 D:\GITHUB\Forest\Utilities\obj\Debug\Utilities.dll
 D:\GITHUB\Forest\Utilities\obj\Debug\Utilities.pdb
+C:\Users\203\Documents\GitHub\Forest\Utilities\bin\Debug\Utilities.dll.config
+C:\Users\203\Documents\GitHub\Forest\Utilities\bin\Debug\Utilities.dll
+C:\Users\203\Documents\GitHub\Forest\Utilities\bin\Debug\Utilities.pdb
+C:\Users\203\Documents\GitHub\Forest\Utilities\bin\Debug\NLog.dll
+C:\Users\203\Documents\GitHub\Forest\Utilities\bin\Debug\NLog.xml
+C:\Users\203\Documents\GitHub\Forest\Utilities\obj\Debug\Utilities.csprojAssemblyReference.cache
+C:\Users\203\Documents\GitHub\Forest\Utilities\obj\Debug\Utilities.csproj.CopyComplete
+C:\Users\203\Documents\GitHub\Forest\Utilities\obj\Debug\Utilities.dll
+C:\Users\203\Documents\GitHub\Forest\Utilities\obj\Debug\Utilities.pdb

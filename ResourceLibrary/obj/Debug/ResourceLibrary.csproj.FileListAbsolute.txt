@@ -292,3 +292,13 @@ D:\GITHUB\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.csproj.CoreCompileInp
 D:\GITHUB\Forest\ResourceLibrary\obj\Debug\en-US\ResourceLibrary.resources.dll
 D:\GITHUB\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.dll
 D:\GITHUB\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.pdb
+C:\Users\203\Documents\GitHub\Forest\ResourceLibrary\bin\Debug\ResourceLibrary.dll
+C:\Users\203\Documents\GitHub\Forest\ResourceLibrary\bin\Debug\ResourceLibrary.pdb
+C:\Users\203\Documents\GitHub\Forest\ResourceLibrary\bin\Debug\en-US\ResourceLibrary.resources.dll
+C:\Users\203\Documents\GitHub\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.csprojAssemblyReference.cache
+C:\Users\203\Documents\GitHub\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.Resource.resources
+C:\Users\203\Documents\GitHub\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.Resource.en-US.resources
+C:\Users\203\Documents\GitHub\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.csproj.GenerateResource.cache
+C:\Users\203\Documents\GitHub\Forest\ResourceLibrary\obj\Debug\en-US\ResourceLibrary.resources.dll
+C:\Users\203\Documents\GitHub\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.dll
+C:\Users\203\Documents\GitHub\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.pdb
