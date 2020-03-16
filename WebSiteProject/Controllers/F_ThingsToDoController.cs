@@ -296,7 +296,7 @@ namespace WebSiteProject.Controllers
             //}
             //).Where(f => f.ModelID == mode_id && f.HashTag_Type_ID == list_id && f.IsVerift == true).OrderBy(f => f.Sort).ToList();
 
-
+            ViewBag.Message10Hash = db.Message10Hash.ToList();
 
 
             return View(viewmodel);
@@ -304,8 +304,8 @@ namespace WebSiteProject.Controllers
         #endregion
 
 
-        #region ThingToDo_Detail
-        public ActionResult ThingToDo_Detail(int? langid, int listid,string TTDTitle)
+        #region Article
+        public ActionResult Article(int? langid, int listid,string TTDTitle)
         {
             #region 模組勿動
             var site_id = 4; //這是ThingsToDo的輪播ID
@@ -394,7 +394,7 @@ namespace WebSiteProject.Controllers
             #endregion
 
             ViewBag.TTD_Detail = db.MessageItems.Find(listid);
-
+            ViewBag.MessageBanner = db.MessageBanners.Where(m => m.MessageItem_ID == listid).FirstOrDefault().MessageBanner_Img;
             ViewBag.Category = TTDTitle;
 
 

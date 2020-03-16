@@ -129,23 +129,34 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             if (ModelState.IsValid)
             {
                 //int Des_ID;
+                var OldDT = "";
                 for (int i = 0; i < F_DES.Length; i++)
                 {
 
                     //Des_ID = F_DES[i].Destination_Type_ID;
                     //db.Entry(F_DES[i]).State = EntityState.Detached;
-                    if (F_DES[i].Destination_Type_ImgName == null)
-                    {
-                        db.Entry(F_DES[i]).State = System.Data.Entity.EntityState.Modified;
-                        db.SaveChanges();
-                    }
-                    else
-                    {
-                        
-                        db.Entry(F_DES[i]).State = System.Data.Entity.EntityState.Modified;
+                    //if (F_DES[i].Destination_Type_ImgName == null)
+                    //{
 
-                        db.SaveChanges();
-                    }
+                    //db.F_Destination_Type.Find(F_DES[i].Destination_Type_ID).Destination_Type_Title1 = F_DES[i].Destination_Type_Title1;
+                    //db.F_Destination_Type.Find(F_DES[i].Destination_Type_ID).Destination_Type_Title2 = F_DES[i].Destination_Type_Title2;
+                    ////db.F_Destination_Type.Find(F_DES[i].Destination_Type_ID).
+                    //OldDT = db.F_Destination_Type.Find(F_DES[i].Destination_Type_ID).Destination_Type_Title1;
+
+
+                    db.Entry(F_DES[i]).State = System.Data.Entity.EntityState.Modified;
+                    
+                    db.SiteLists.Where(s => s.SiteList_Name_en == OldDT).First().SiteList_Name_en = F_DES[i].Destination_Type_Title1;
+                    db.SiteLists.Where(s => s.SiteList_Name_en == OldDT).First().SiteList_Name_ch = "目的地";
+                    db.SaveChanges();
+                    //}
+                    //else
+                    //{
+                        
+                    //    db.Entry(F_DES[i]).State = System.Data.Entity.EntityState.Modified;
+
+                    //    db.SaveChanges();
+                    //}
 
                 }
                 TempData["Msg"] = "作業完成";
@@ -335,6 +346,12 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     Destination_Type_Link = "#"
 
                 });
+                db.SiteLists.Add(new Models.SiteList
+                {
+                    Sort = db.SiteLists.Max(SL=>SL.SiteList_ID)+1,
+                    SiteList_Name_ch = "目的地",
+                    SiteList_Name_en = F_DES.Destination_Type_Title1
+                });
                
                 db.SaveChanges();
                 
@@ -384,9 +401,8 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             }
 
         }
+
         
-
-
 
         protected override void Dispose(bool disposing)
         {
@@ -398,53 +414,6 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         }
 
 
-        [HttpPost]
-        public ActionResult Five_ThingsToDo_HashTag_Edit(int? HashTag_ID, string HashTag_Name, string HashTag_Link, int IsCreate = 0)
-        {
-            try
-            {
-                if (HashTag_Name.Trim() == "")
-                {
-                    TempData["Msg"] = "名稱不得為空值";
-                    return RedirectToAction("Five_ThingsToDo_HashTag");
-                }
-                else
-                {
-                    if (IsCreate != 1)
-                    {
-                        var DESH = db.F_HashTag_Type.Find(HashTag_ID);
-                        DESH.HashTag_Type_Name = HashTag_Name;
-                        DESH.HashTag_Type_Link = HashTag_Link;
-                        db.Entry(DESH).State = System.Data.Entity.EntityState.Modified;
-                        db.SaveChanges();
-                    }
-                    else
-                    {
-                        F_HashTag_Type DESH = new F_HashTag_Type();
-                        DESH.HashTag_Type_Name = HashTag_Name;
-                        DESH.HashTag_Type_Link = HashTag_Link;
-                        db.F_HashTag_Type.Add(DESH);
-                        db.SaveChanges();
-                    }
-                }
-            }
-            catch
-            {
-                TempData["Msg"] = "失敗";
-                return RedirectToAction("Five_ThingsToDo_HashTag");
-            }
-            TempData["Msg"] = "成功";
-            return RedirectToAction("Five_ThingsToDo_HashTag");
-        }
-
-        public ActionResult Five_ThingsToDo_HashTag_Delete(int id)
-        {
-            var DESH = db.F_HashTag_Type.Find(id);
-            db.Entry(DESH).State = System.Data.Entity.EntityState.Deleted;
-            db.SaveChanges();
-
-            return RedirectToAction("Five_ThingsToDo_HashTag");
-        }
 
 
     }
