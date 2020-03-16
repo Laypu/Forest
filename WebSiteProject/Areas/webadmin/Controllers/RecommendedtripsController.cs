@@ -555,7 +555,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 {
                     if (isHash)
                     {
-                        var Old_HashTag = db.RecommendedTrips_HashTag_Type.Where(a => a.RecommendedTrips_ID == recommendedTrip.RecommendedTrips_ID).ToList(); ;
+                        var Old_HashTag = db.RecommendedTrips_HashTag_Type.Where(a => a.RecommendedTrips_ID == recommendedTrip.RecommendedTrips_ID).ToList();
                         if (Old_HashTag.Count() != 0)
                         {
                             //先全部刪除舊的
@@ -566,6 +566,18 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                                 db.SaveChanges();
                             };
 
+                            //新增加
+                            foreach (var item in HashTag_Type)
+                            {
+                                RecommendedTrips_HashTag_Type Sub_HashTag = new RecommendedTrips_HashTag_Type();
+                                Sub_HashTag.RecommendedTrips_ID = recommendedTrip.RecommendedTrips_ID;
+                                Sub_HashTag.HashTag_Type_ID = item;
+                                db.RecommendedTrips_HashTag_Type.Add(Sub_HashTag);
+                                db.SaveChanges();
+                            };
+                        }
+                        else
+                        {
                             //新增加
                             foreach (var item in HashTag_Type)
                             {
@@ -844,9 +856,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             {
                 foreach(var item in Itemid)
                 {
-                    var ReTravel = db.RecommendedTrip_Travel.Where(p => p.RecommendedTrip_ID == item);
-                    var ReHashTage = db.RecommendedTrips_HashTag.Where(p => p.RecommendedTrips_Id == item).FirstOrDefault();
-                    var ReHashTage_Type = db.RecommendedTrips_HashTag_Type.Where(p => p.RecommendedTrips_ID == item);
+                  
                     var Trip = db.RecommendedTrips.Find(item);
 
                     if (Trip.RecommendedTrips_Img.IsNullorEmpty() == false)
@@ -873,27 +883,41 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                    var  r = db.SaveChanges();
                     if (r > 0)
                     {
-                        if (ReTravel.FirstOrDefault() != null)
+                            if (db.RecommendedTrips.Count() > 0)
+                            {
+                                var mode = db.RecommendedTrips.OrderBy(p=>p.Sort);
+                                var i = 1;
+                                foreach (var item2 in mode)
+                                {
+                                    item2.Sort = i;
+                                    i++;
+                                }
+                                db.SaveChanges();
+                            }
+                            var ReTravel = db.RecommendedTrip_Travel.Where(p => p.RecommendedTrip_ID == item).ToList();
+                            var ReHashTage = db.RecommendedTrips_HashTag.Where(p => p.RecommendedTrips_Id == item).FirstOrDefault();
+                            var ReHashTage_Type = db.RecommendedTrips_HashTag_Type.Where(p => p.RecommendedTrips_ID == item).ToList(); ;
+                            if (ReTravel.FirstOrDefault() != null)
                         {
                             foreach (var Travel in ReTravel)
                             {
-                                var Old_Travel = db.RecommendedTrip_Travel.Find(Travel.RecommendedTrip_Travel_ID);
-                                db.Entry(Old_Travel).State = System.Data.Entity.EntityState.Deleted;
+                                    var OLD_Travel = db.RecommendedTrip_Travel.Find(Travel.RecommendedTrip_Travel_ID);
+                                db.Entry(OLD_Travel).State = System.Data.Entity.EntityState.Deleted;
                                 db.SaveChanges();
                             }
                         }
                         if (ReHashTage != null)
                         {
-                            var ReHashtage = db.RecommendedTrips_HashTag_Type.Find(ReHashTage.RecommendedTrips_HashTag_Id);
-                            db.Entry(ReHashtage).State = System.Data.Entity.EntityState.Deleted;
+                                //var ReHashtage = ReHashTage.RecommendedTrips_HashTag_Id;
+                                db.Entry(ReHashTage).State = System.Data.Entity.EntityState.Deleted;
                             db.SaveChanges();
                         }
                         if (ReHashTage_Type.FirstOrDefault() != null)
                         {
                             foreach (var Tage_Type in ReHashTage_Type)
                             {
-                                var Old_Tage_Typ = db.RecommendedTrips_HashTag_Type.Find(Tage_Type.RecommendedTrips_HashTag_ID);
-                                db.Entry(Old_Tage_Typ).State = System.Data.Entity.EntityState.Deleted;
+                                    var OLD_Tage_Type = db.RecommendedTrips_HashTag_Type.Find(Tage_Type.RecommendedTrips_HashTag_ID);
+                                    db.Entry(OLD_Tage_Type).State = System.Data.Entity.EntityState.Deleted;
                                 db.SaveChanges();
                             }
                         }

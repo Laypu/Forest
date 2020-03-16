@@ -779,7 +779,38 @@ namespace Services.Manager
             return retuernList;
         }
         #endregion
+        #region GetADMain_Article
+        public IList<ADBase> GetADMain_Article(string stype, string langid, int? site_id, string Type)
+        {
+            var admainmax = _adsetsqlrepository.GetByWhere("Lang_ID=@1 and Type_ID='main' and SType=@2", new object[] { langid, stype }).ToList();
+            var admain = _adminsqlrepository.GetByWhere("Lang_ID=@1 and Enabled=@2  and Stype=@3 Order By Sort", new object[] { langid, true, stype });
+            if (admain.Count() == 0) { return new List<ADBase>(); }
+            var maxnum = admainmax.Count() == 0 ? 4 : admainmax.First().Max_Num.Value;
+            var retuernList = new List<ADBase>();
+            if (admain.Count() > 0)
+            {
+                admain = admain.Where(v => (v.StDate == null || v.StDate <= DateTime.Now) && (v.EdDate == null || v.EdDate.Value.AddDays(1) >= DateTime.Now));
+                //var fixlist = admain.Where(v => v.Fixed == true).OrderBy(v => v.Sort).Take(maxnum);
+                var fixlist = admain.Where(v => v.Fixed == true && v.Site_ID == site_id&&v.Type_ID== Type).OrderBy(v => v.Sort).Take(maxnum);
 
+                foreach (var v in fixlist) { retuernList.Add(v); }
+                if (retuernList.Count() < maxnum)
+                {
+                    //var nofix = admain.Where(v => v.Fixed == false).OrderBy(v => v.Sort).Take(maxnum).ToList();
+                    var nofix = admain.Where(v => v.Fixed == false).OrderBy(v => v.Sort).ToList();
+                    var random = new Random();
+                    while (retuernList.Count() < maxnum)
+                    {
+                        if (nofix.Count() == 0) { break; }
+                        int index = random.Next(nofix.Count());
+                        retuernList.Add(nofix[index]);
+                        nofix.RemoveAt(index);
+                    }
+                }
+            }
+            return retuernList;
+        }
+#endregion
         #region GetPageUrl
         public string GetPageUrl(IDictionary<string, string> menuurl, Menu _menu, UrlHelper helper,int reallevel)
         {

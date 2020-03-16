@@ -7,11 +7,31 @@
 <!--page bar start-->
 <div class="page-bar all_width">
     <ul class="page-breadcrumb">
-        <li>
-            <a href="@Url.Action("Index", "Home")">Home</a>
-            <i class="fa fa-circle"></i>
-        </li>
         @{
+            if (ViewBag.MenuType == 176)
+            {
+                <li>
+                    <a href="@Url.Action("Index", "Recommendedtrips")">Home</a>
+                    <i class="fa fa-circle"></i>
+                </li>
+            }
+            else if (ViewBag.sitid == 17)
+            {
+                <li>
+                    <a href="@Url.Action("Recommendedtrips_item", "Recommendedtrips")">Recommendedtrips_item</a>
+                    <i class="fa fa-circle"></i>
+                </li>
+                
+            }
+            else
+            {
+                <li>
+                    <a href="@Url.Action("Index", "Home")">Home</a>
+                    <i class="fa fa-circle"></i>
+                </li>
+            }
+
+
             if (ViewBag.MenuType == 179)
             {
                 <li>Destinations<i class="fa fa-circle"></i></li>
@@ -20,9 +40,21 @@
             {
                 <li>Things to do<i class="fa fa-circle"></i></li>
             }
+            else if (ViewBag.MenuType == 176)
+            {
+                <li>RecommendTrip_Banner</li>
+            }
+            else if (ViewBag.sitid == 17)
+            {
+                <li>RecommendTrip_Article_Banner</li>
+            }
+            else
+            {
+                <li>@ViewBag.Title</li>
+            }
         }
 
-        <li>@ViewBag.Title</li>
+
     </ul>
 </div>
 <!--page bar end-->
@@ -35,26 +67,23 @@
             <!--.......-->
         </div>
     }
-    else if (ViewBag.MenuType == 0 || (int)Session["F_MenuType"] == 0)
+    if (ViewBag.MenuType == 0 || (int)Session["F_MenuType"] == 0)
     {
         <div class="title_01">Home</div>
         <div id="Partial_Index">
 
         </div>
     }
-    else if (ViewBag.MenuType == 179 || (int)Session["F_MenuType"] == 179)
+   if (ViewBag.MenuType == 179 || (int)Session["F_MenuType"] == 179)
     {
         <div class="title_01">Destinations</div>
         <div id="Partial_Index_MenuLink">
             <!--.......-->
         </div>
     }
-    else if (ViewBag.MenuType == 176 || (int)Session["F_MenuType"] == 176)
+     if (ViewBag.MenuType == 176 || (int)Session["F_MenuType"] == 176)
     {
-        <div class="title_01">Recommended trips</div>
-        <div id="Partial_Index_MenuLink">
-            <!--.......-->
-        </div>
+
     }
 }
 
@@ -65,20 +94,28 @@
 
     <div class="table-toolbar">
         <div class="col-md-6 col-sm-12 col-xs-12">
+            @if (ViewBag.MenuType == 176 || (int)Session["F_MenuType"] == 176 || ViewBag.sitid == 17)
+            {
+                @ViewBag.SiteTile;
+            }
+            else
+            {
+                <p class="class_title">管理項目</p>
+                <div class="display_inline">
+                    @Html.DropDownList("ID", (SelectList)ViewBag.SiteList, "請選擇", new { @class = "form-control checkitem" })
+
+
+
+                </div>
+            }
             @*<p class="display_inline" >
                     <label>前台最多顯示</label>
                     <input id="txt_ShowCount" type="text" class="form-control input-xsmall" style="display:inline" value="@ViewBag.MaxNum"/>
                     <label>則</label>
                     <button class="btn blue" id="btn_changeMaxNum" onclick="changeMaxNum()">確定 </button>
                 </p>*@
-            <p class="class_title">管理項目</p>
-            <div class="display_inline">
-                @Html.DropDownList("ID", (SelectList)ViewBag.SiteList, "請選擇", new { @class = "form-control checkitem" })
-                
 
-                
-            </div>
-            
+
         </div>
         <div class="col-md-6 col-sm-12 col-xs-12 mobile_left">
             <p class="display_inline">
@@ -170,15 +207,30 @@
             var obj = {};
             obj.type = langtype;
             obj.stype = stype;
+            obj.maintype=@ViewBag.MenuType;
             RegisterOrder("#eventtable", ".sortedit", '@Url.Action("EditADSeq")', obj);
             RegisterClickAll("#chk_all", '#eventtable tbody .chksel', "#selvalue");
             RegisterDelete("#btn_del", '#eventtable .chksel:checked', '@Url.Action("SetADDelete")', obj);
-            RegisterClicklink("#eventtable", ".edit", '@Url.Action("ADEdit")', obj);
+            if (@ViewBag.sitid== 15 ||@ViewBag.sitid== 17) {
+                    obj.siteid = @ViewBag.sitid;
+                    RegisterClicklink("#eventtable", ".edit", '@Url.Action("ADEdit")', obj);
+                }
+                else {
+                     RegisterClicklink("#eventtable", ".edit", '@Url.Action("ADEdit")', obj);
+                }
+
 
             RegisterClick("#eventtable", ".chkstatus", '@Url.Action("SetStatus")', obj);
             RegisterClick("#eventtable", ".chkfixed", '@Url.Action("SetFixed")', obj);
             $("#btn_add").click(function () {
-                CreatePost('@Url.Action("ADEdit")', obj);
+                if (@ViewBag.sitid== 15 ||@ViewBag.sitid== 17) {
+                     obj.siteid = @ViewBag.sitid;
+                    CreatePost('@Url.Action("ADEdit")', obj);
+                }
+                else {
+                     CreatePost('@Url.Action("ADEdit")', obj);
+                }
+
             });
 
 

@@ -43,7 +43,7 @@ namespace WebSiteProject.Controllers
         // GET: F_Recommendedtrips
         public ActionResult Index(int? langid)
         {
-            var site_id = 11; //這是ThingsToDo的輪播ID
+            var site_id = 15; //這是Recommendedtrips的輪播ID
             if (Session["LangID"] == null)
             {
                 var DefaultLang = System.Web.Configuration.WebConfigurationManager.AppSettings["DefaultLang"];
@@ -238,10 +238,11 @@ namespace WebSiteProject.Controllers
         public ActionResult show_list(RecommendSearchViewmodel recommendSearch)
         {
             var mode = new List<RecommendedSearchModel>();
+            var datetime = DateTime.Now.Date;
             mode = db.RecommendedTrips.Where(p=>(p.RecommendedTrips_StarDay==null && p.RecommendedTrips_EndDay == null)
-            ||((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay == null)&& DbFunctions.TruncateTime(p.RecommendedTrips_StarDay).Value<=DateTime.Now.Date)
-             || ((p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay).Value >= DateTime.Now.Date)
-            || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay).Value <= DateTime.Now.Date && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay).Value >= DateTime.Now.Date)).Select(p => new RecommendedSearchModel { RecommendedTrips_ID = p.RecommendedTrips_ID, RecommendedTrips_Title = p.RecommendedTrips_Title, RecommendedTrips_Day_Name = p.RecommendedTrips_Day.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = p.RecommendedTrips_Day.RecommendedTrips_Day_ID, RecommendedTrips_Destinations_ID = p.RecommendedTrips_Destinations_ID,RecommendedTrips_Index_Content=p.RecommendedTrips_Content,RecommendedTrips_Img=p.RecommendedTrips_Img,RecommendedTrips_Img_Description=p.RecommendedTrips_Img_Description, RecommendedTrips_Img_Img=p.F_Destination_Type.Recommend_Img}).ToList();
+            ||((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay == null)&& DbFunctions.TruncateTime(p.RecommendedTrips_StarDay)<= datetime)
+             || ((p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)
+            || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay)>= datetime)).Select(p => new RecommendedSearchModel { RecommendedTrips_ID = p.RecommendedTrips_ID, RecommendedTrips_Title = p.RecommendedTrips_Title, RecommendedTrips_Day_Name = p.RecommendedTrips_Day.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = p.RecommendedTrips_Day.RecommendedTrips_Day_ID, RecommendedTrips_Destinations_ID = p.RecommendedTrips_Destinations_ID,RecommendedTrips_Index_Content=p.RecommendedTrips_Content,RecommendedTrips_Img=p.RecommendedTrips_Img,RecommendedTrips_Img_Description=p.RecommendedTrips_Img_Description, RecommendedTrips_Img_Img=p.F_Destination_Type.Recommend_Img}).ToList();
             //mode = db.V_RecommendedTripsForWebadmin.GroupBy(o=>o.RecommendedTrips_ID).Select(p=>new RecommendedSearchModel {RecommendedTrips_ID=p.Key, RecommendedTrips_Title=p.FirstOrDefault().RecommendedTrips_Title, RecommendedTrips_Day_Name=p.FirstOrDefault().RecommendedTrips_Day_Name,HashTag_Type_ID=p.FirstOrDefault().HashTag_Type_ID,RecommendedTrips_Day_ID=p.FirstOrDefault().RecommendedTrips_Day_ID,RecommendedTrips_Destinations_ID=p.FirstOrDefault().RecommendedTrips_Destinations_ID}).ToList();
             if (recommendSearch.Day_Id != "-1")
             {
@@ -279,7 +280,7 @@ namespace WebSiteProject.Controllers
             }
             #endregion
             #region 模組物動
-            var site_id = 11; //這是ThingsToDo的輪播ID
+            var site_id = 17; //這是ThingsToDo的輪播ID
             if (Session["LangID"] == null)
             {
                 var DefaultLang = System.Web.Configuration.WebConfigurationManager.AppSettings["DefaultLang"];
@@ -314,25 +315,35 @@ namespace WebSiteProject.Controllers
 
             HomeViewModel viewmodel = new HomeViewModel();
             //讀取logo圖片
+            var Type_ID = db.ADMains.Where(p => p.Type_ID == RecommendedTrips_ID.ToString()).FirstOrDefault();
+            var Type = "main";
+            if(Type_ID!=null)
+            {
+                Type = Type_ID.Type_ID;
+            }
             _IMasterPageManager.SetModel<HomeViewModel>(ref viewmodel, "P", langid.ToString(), "");
             viewmodel.SEOScript = _IMasterPageManager.GetSEOData("", "", langid.ToString());
-            viewmodel.ADMain = _IMasterPageManager.GetADMain("P", langid.ToString(), site_id);
+            viewmodel.ADMain = _IMasterPageManager.GetADMain_Article("P", langid.ToString(), site_id, Type);
             viewmodel.ADMobile = _IMasterPageManager.GetADMain("M", langid.ToString(), site_id);
             viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
             #endregion
-            var model = db.RecommendedTrips;
-            ViewBag.ID = model.Find(RecommendedTrips_ID).RecommendedTrips_ID;
-            ViewBag.Title = model.Find(RecommendedTrips_ID).RecommendedTrips_Title;
-            ViewBag.day = model.Find(RecommendedTrips_ID).RecommendedTrips_Day.RecommendedTrips_Day_Name;
-            ViewBag.content = model.Find(RecommendedTrips_ID).RecommendedTrips_Content;
-            ViewBag.location = model.Find(RecommendedTrips_ID).RecommendedTrips_Location;
-            ViewBag.HtmlContent= model.Find(RecommendedTrips_ID).RecommendedTrips_HtmContent;
+            var model = db.RecommendedTrips.Find(RecommendedTrips_ID);
+            if(db.RecommendedTrips.Where(p=>p.RecommendedTrips_ID==RecommendedTrips_ID).FirstOrDefault()==null)
+            {
+                return RedirectToAction("recommended_list");
+            }
+            ViewBag.ID = model.RecommendedTrips_ID;
+            ViewBag.Title = model.RecommendedTrips_Title;
+            ViewBag.day = model.RecommendedTrips_Day.RecommendedTrips_Day_Name;
+            ViewBag.content = model.RecommendedTrips_Content;
+            ViewBag.location = model.RecommendedTrips_Location;
+            ViewBag.HtmlContent= model.RecommendedTrips_HtmContent;
             ViewBag.NowPag = nowpage;
-            ViewBag.Recommend_Detail_Img = model.Find(RecommendedTrips_ID).F_Destination_Type.Recommend_Detail_Img;
-            ViewBag.LinkUrl = model.Find(RecommendedTrips_ID).RecommendedTrips_LinkUrl;
-            ViewBag.LinkUrlDES = model.Find(RecommendedTrips_ID).RecommendedTrips_LinkUrlDesc;
-            ViewBag.Upfile = model.Find(RecommendedTrips_ID).RecommendedTrips_UploadFileDesc; ;
-            ViewBag.UpfileDES= model.Find(RecommendedTrips_ID).RecommendedTrips_UploadFileName;
+            ViewBag.Recommend_Detail_Img = model.F_Destination_Type.Recommend_Detail_Img;
+            ViewBag.LinkUrl = model.RecommendedTrips_LinkUrl;
+            ViewBag.LinkUrlDES = model.RecommendedTrips_LinkUrlDesc;
+            ViewBag.Upfile = model.RecommendedTrips_UploadFileDesc; ;
+            ViewBag.UpfileDES= model.RecommendedTrips_UploadFileName;
             ViewBag.pageprt=Url.Action("Print", "F_Recommendedtrips", new { id = RecommendedTrips_ID });
             return View(viewmodel);
         }

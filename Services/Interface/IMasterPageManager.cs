@@ -15,6 +15,7 @@ namespace Services.Interface
         void SetModel<T>(ref T model, string stype, string langid, string menuid) where T : MasterPageModel;
         MasterPageModel GetModel(string stype, string langid, string menuid);
         IList<ADBase> GetADMain(string stype, string langid, int? site_id);
+        IList<ADBase> GetADMain_Article(string stype, string langid, int? site_id,string Type);
         string GetSubString(string langid, string mid, Dictionary<string, string> langkey, IDictionary<string, string> menuurl = null);
         string GetAdminMenuString(string langid, string menutype, string groupid, string role, string openmenuid);
         string GetLinkString(string langid, string menutype, string groupid, string role, string openmenuid);

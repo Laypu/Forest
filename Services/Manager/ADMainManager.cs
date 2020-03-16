@@ -40,9 +40,12 @@ namespace Services.Manager
             idx += 1;
             wherestr.Add("SType=@" + idx);
             whereobj.Add(model.SType);
-
+            idx += 1;
             wherestr.Add($"Site_ID={site_id}");
             whereobj.Add(model.Site_ID.ToString());
+            idx += 1;
+            wherestr.Add("Type_ID=@" + idx);
+            whereobj.Add(model.ADType);
 
 
 
