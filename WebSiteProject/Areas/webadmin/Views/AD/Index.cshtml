@@ -207,16 +207,17 @@
             var obj = {};
             obj.type = langtype;
             obj.stype = stype;
-            obj.maintype=@ViewBag.MenuType;
+       obj.maintype=@ViewBag.MenuType;
             RegisterOrder("#eventtable", ".sortedit", '@Url.Action("EditADSeq")', obj);
             RegisterClickAll("#chk_all", '#eventtable tbody .chksel', "#selvalue");
-            RegisterDelete("#btn_del", '#eventtable .chksel:checked', '@Url.Action("SetADDelete")', obj);
             if (@ViewBag.sitid== 15 ||@ViewBag.sitid== 17) {
-                    obj.siteid = @ViewBag.sitid;
-                    RegisterClicklink("#eventtable", ".edit", '@Url.Action("ADEdit")', obj);
+                obj.siteid = @ViewBag.sitid;
+                RegisterClicklink("#eventtable", ".edit", '@Url.Action("ADEdit")', obj);
+                 RegisterDelete("#btn_del", '#eventtable .chksel:checked', '@Url.Action("SetADDelete")', obj);
                 }
                 else {
-                     RegisterClicklink("#eventtable", ".edit", '@Url.Action("ADEdit")', obj);
+                RegisterClicklink("#eventtable", ".edit", '@Url.Action("ADEdit")', obj);
+                  RegisterDelete("#btn_del", '#eventtable .chksel:checked', '@Url.Action("SetADDelete")', obj);
                 }
 
 
@@ -224,7 +225,8 @@
             RegisterClick("#eventtable", ".chkfixed", '@Url.Action("SetFixed")', obj);
             $("#btn_add").click(function () {
                 if (@ViewBag.sitid== 15 ||@ViewBag.sitid== 17) {
-                     obj.siteid = @ViewBag.sitid;
+                    obj.siteid = @ViewBag.sitid;
+                    obj.maintype=@ViewBag.MenuType;
                     CreatePost('@Url.Action("ADEdit")', obj);
                 }
                 else {

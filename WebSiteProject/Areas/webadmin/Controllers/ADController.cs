@@ -115,6 +115,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     model.AD_Height = imgdata.First().height;
                     model.AD_Width = imgdata.First().width;
                 }
+                ViewBag.mantype = maintype;
                 model.Site_ID = siteid;
                 return View(model);
             }
@@ -401,6 +402,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 {
                     _IADManager = new ADMobileBlockManager(new SQLRepository<ADMobileBlock>(connectionstr));
                 }
+                _IADManager = new ADMainManager(new SQLRepository<ADMain>(connectionstr));
                 return Json(_IADManager.Delete(idlist, delaccount,this.LanguageID, account.Value, name));
             }
             else { return Json("請先登入"); }
