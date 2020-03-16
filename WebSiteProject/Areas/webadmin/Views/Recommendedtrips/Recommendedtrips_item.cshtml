@@ -60,6 +60,12 @@
                        data-max-pagination='10'>
                     <thead>
                         <tr>
+                            <th class="col-md-1 col-sm-12 col-xs-12 text-center">
+
+                                <input type='checkbox' class='checkboxes inline' id="chk_all" />
+
+                                <button type="button" class="btn red-mint btn-xs" id='btn_del'><i class="glyphicon glyphicon-trash"></i></button>
+                            </th>
                             <th class="text-center">排序</th>
                             <th class="text-center">標題</th>
                             <th class="text-center">類別</th>
@@ -75,21 +81,26 @@
                             {
                                 istrue = true;
                             }
-                            else if ((item.starDate != null && item.EndDate == null) && item.starDate.Value.Date <= DateTime.Now)
+                            else if ((item.starDate != null && item.EndDate == null) && item.starDate.Value.Date <= DateTime.Now.Date)
                             {
                                 istrue = true;
 
                             }
-                            else if ((item.starDate == null && item.EndDate != null) && item.EndDate.Value.Date >= DateTime.Now)
+                            else if ((item.starDate == null && item.EndDate != null) && item.EndDate.Value.Date >= DateTime.Now.Date)
+                            {
+                                istrue = true;
+                            }
+                              else if ((item.starDate != null && item.EndDate != null) && item.starDate.Value.Date <= DateTime.Now.Date && item.EndDate.Value.Date >= DateTime.Now.Date)
                             {
                                 istrue = true;
                             }
                         <tr class="text-center">
+                            <td><input type="checkbox" class="checkboxes chksel" value="@item.RecommendedTrips_ID" /></td>
                             <td>
-                                <button name="totop" type="button" class="btn btn-default btn-xs seqindex" value="1" idindex="1329"><i class="fa fa-angle-double-up"></i></button>
+                                <button name="totop" type="button" class="btn btn-default btn-xs seqindex" value="-1" idindex="1329"><i class="fa fa-angle-double-up"></i></button>
                                 <button name="Up" type="button" class="btn btn-default btn-xs seqindex" value="@(item.sort-1)" idindex="1329"><i class="fa fa-angle-up"></i></button>
                                 <button name="Down" type="button" class="btn btn-default btn-xs seqindex" value="@(item.sort+1)" idindex="1329"><i class="fa fa-angle-down"></i></button>
-                                <button name="tobottom" type="button" class="btn btn-default btn-xs seqindex" value="-1" idindex="1329"><i class="fa fa-angle-double-down"></i></button>
+                                <button name="tobottom" type="button" class="btn btn-default btn-xs seqindex" value="-2" idindex="1329"><i class="fa fa-angle-double-down"></i></button>
                                 <input type="hidden" value="@item.sort" data-pid="@item.RecommendedTrips_ID">
                                 <input class="editinput btn btn-default btn-xs sequence_list sortedit" value="@item.sort" />
                             </td>
@@ -113,11 +124,34 @@
             </div>
 
             @section scripts {
-                @*<script src="@Url.Content("~/Scripts/datatable.js")"></script>*@
+                <script src="@Url.Content("~/Scripts/datatable.js")"></script>
                 <script src="~/Scripts/jquery.dataTables.js"></script>
                 <link href="~/css/jquery.dataTables.css" rel="stylesheet" />
                 <script>
-        $(function () {
+                    $(function () {
+                  //選取全部
+            RegisterClickAll("#chk_all", '#table tbody .chksel', "#selvalue");
+            //選取刪除
+            $("#btn_del").click(function () {
+            
+                if (confirm('確定要刪除嗎??'))
+                {
+                    var Descheck = $("#table tbody .chksel:checked");
+                    var Itemid = [];
+                    Descheck.each(function () {
+                        var Desid = $(this).val();
+                        Itemid.push(Desid);
+                    })
+                    @*window.location.href = "@Url.Action("delete","Destination_Index")" + "?chargeID=" + formdata;*@
+                    alert(Itemid)
+                    $.post("@Url.Action("DeleteItem", "Recommendedtrips")", { Itemid: Itemid, Type:"Trip" })
+                        .success(function (data) {
+                            alert(data);
+                          window.location.href ="@Url.Action("Recommendedtrips_item", "Recommendedtrips")"
+                        })
+                
+                }
+                })
             //$("#table").DataTable();
             $("#table").DataTable({
                 searching: false, //關閉filter功能
@@ -162,7 +196,7 @@
             //    alert(12)
             //})
             $("#table tbody").on("click", ".seqindex", function () {
-                alert($(this).parents("td").children("input[type='hidden']").attr('data-pid') + "" + $(this).val());
+                //alert($(this).parents("td").children("input[type='hidden']").attr('data-pid') + "" + $(this).val());
                 var seq = $(this).val();
                 var itemid = $(this).parents("td").children("input[type='hidden']").attr('data-pid');
                 $.post("@Url.Action("UpdateSeq")", { itemid: itemid, seq: seq, Type:"btn"},
@@ -172,7 +206,7 @@
                 }, "json");
             })
             $("#table tbody").on("change", ".sortedit", function () {
-                alert($(this).parents("td").children("input[type='hidden']").attr('data-pid') + "" + $(this).val());
+                //alert($(this).parents("td").children("input[type='hidden']").attr('data-pid') + "" + $(this).val());
                 var seq = $(this).val();
                 var itemid = $(this).parents("td").children("input[type='hidden']").attr('data-pid');
                 $.post("@Url.Action("UpdateSeq")", { itemid: itemid, seq: seq, Type:"inp"},
