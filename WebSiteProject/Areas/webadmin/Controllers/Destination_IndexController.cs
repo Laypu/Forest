@@ -170,20 +170,6 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             }
         }
 
-        [HttpGet]
-        public ActionResult AD(int? id, string Name)
-        {
-            ViewBag.TypeID = id;
-            ViewBag.TypeName = Name;
-            //ViewBag.Destination_Type_ID = new SelectList(db.F_Destination_Type, "Destination_Type_ID", "Destination_Type_Title");
-            //using (ForestEntities db = new ForestEntities())
-            //    {
-
-            return View(db.Destination_Fare.Where(x => x.Destination_Type_ID == id).ToList());
-            //}
-
-
-        }
 
 
 
@@ -191,6 +177,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         public ActionResult Edit(int? id)
         {
             ViewBag.Destination_Fare = db.Destination_Fare.Where(m =>m.Destination_Type_ID == id).ToList();
+            ViewBag.ADDestinations = db.ADDestinations.Where(m => m.Destination_Type_ID == id).OrderBy(M=>M.Sort).ToList();
             ViewBag.TypeID = id;
             ViewBag.TypeName = db.F_Destination_Type.Where(m=>m.Destination_Type_ID==id).First().Destination_Type_Title1;
 
@@ -211,7 +198,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         // 詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(F_Destination_Type Destination_Type, Destination_Fare[] DF)
+        public ActionResult Edit(F_Destination_Type Destination_Type, Destination_Fare[] DF ,ADDestination[] AD_Des)
         {
             if (ModelState.IsValid)
             {
@@ -223,6 +210,13 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     for (var i = 0; i < DF.Length; i++)
                     {
                         db.Entry(DF[i]).State = EntityState.Modified;
+                    }
+                }
+                if (AD_Des != null)
+                {
+                    for (var i = 0; i < AD_Des.Length; i++)
+                    {
+                        db.Entry(AD_Des[i]).State = EntityState.Modified;
                     }
                 }
 
@@ -403,7 +397,99 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         }
 
         
+        [HttpGet]
+        public ActionResult CreateAD(int? TypeID, string TypeName , int? AdID)
+        {
+            ViewBag.DesTypeName = TypeName;
+            ViewBag.DesTypeID = TypeID;
+            if (AdID != null)
+            {
+                var ADC = db.ADDestinations.Find(AdID);
+                //ViewBag.Destination_Type_ID = new SelectList(db.F_Destination_Type, "Destination_Type_ID", "Destination_Type_Title1" + " " + "Destination_Type_Title2");
+                
+                return View(ADC);
+            }
+            else
+            {
+                return View();
+            }
+            
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateAD(ADDestination AD_Des,HttpPostedFileBase Img_File, HttpPostedFileBase Video_File)
+        {
+            string Index_Img_Name = "";
+
+            if (Img_File != null) //判斷是否有檔案
+            {
+                if (Img_File.ContentLength > 0)  //若檔案不為空檔案
+                {
+
+                    // 如果UploadFiles文件夾不存在則先創建
+
+                    if (!Directory.Exists(Server.MapPath("~/UploadImage/Destination_AD/")))
+                    {
+                        Directory.CreateDirectory(Server.MapPath("~/UploadImage/Destination_AD/"));
+
+                    }
+
+                    Index_Img_Name = Path.GetFileName(Img_File.FileName);  //取得檔案名
+                    var newfilename = DateTime.Now.Ticks + "_" + Index_Img_Name;
+                    var path = Path.Combine(Server.MapPath("~/UploadImage/Destination_Img/"), newfilename);  //取得本機檔案路徑
+
+
+
+                    Img_File.SaveAs(path);
+
+                }
+            }
+
+
+            var sort = db.ADDestinations.Where(m => m.Destination_Type_ID == AD_Des.Destination_Type_ID).Count() + 1;
+            if (ModelState.IsValid)
+            {
+               
+                 db.ADDestinations.Add(new ADDestination 
+                 {
+                    
+                    Destination_Type_ID= AD_Des.Destination_Type_ID,
+                    StDate = AD_Des.StDate,
+                    EdDate= AD_Des.EdDate,
+                    AD_Name = AD_Des.AD_Name,
+                    Img_Name_Ori = AD_Des.Img_Name_Ori,
+                    UploadVideoFileName = AD_Des.UploadVideoFileName,
+                    Link_Href = AD_Des.Link_Href,
+                    Link_Mode = AD_Des.Link_Mode,
+                    Create_Date = DateTime.Now,
+                    Sort = sort,
+                    Enabled = true
+                 });
+                db.SaveChanges();
+
+            }
+            TempData["Msg"] = "新增成功";
+            return RedirectToAction("Edit", new { id = AD_Des.Destination_Type_ID });
+        }
+
+        [HttpPost]
+        public ActionResult DeleteAD(int? ADid)
+        {
+            using (ForestEntities db = new ForestEntities())
+            {
+
+                ADDestination adDestination = db.ADDestinations.Find(ADid);
+                db.ADDestinations.Remove(adDestination);
+                db.SaveChanges();
+
+
+                return Json(new { success = true, message = "刪除成功" }, JsonRequestBehavior.AllowGet);
+
+
+            }
+
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

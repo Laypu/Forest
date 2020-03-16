@@ -1,0 +1,197 @@
+﻿@model WebSiteProject.Models.ADDestination
+
+<script src="@Url.Content("~/Scripts/components-date-time-pickers.min.js")"></script>
+<script src="@Url.Content("~/Scripts/bootstrap-datepicker.min.js")"></script>
+<script src="@Url.Content("~/Scripts/custom.js")"></script>
+<!--page bar start-->
+<div class="page-bar all_width">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="@Url.Action("Index", "Home")">Home</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            Destinations
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            目的地設定
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>目的地詳細資料設定</li>
+    </ul>
+</div>
+<!--page bar end-->
+
+<div class="title_01">Destinations</div>
+<div id="Partial_Index_MenuLink">
+    <!--.......-->
+</div>
+
+<div class="portlet light bordered">
+
+    <form class="form-horizontal form-bordered" method="Post" id="editform" action="@Url.Action("CreateAD","Destination_Index")" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+        @{
+            var DESid = ViewBag.DesTypeID;
+            var DESName = ViewBag.DesTypeName;
+        }
+
+
+        @*<input data-val="true" data-val-number="欄位 ID 必須是數字。" data-val-required="ID 欄位是必要項。" id="ID" name="ID" type="hidden" value="1016">*@
+        @Html.HiddenFor(model=>model.Type_ID)
+        @*<input id="Type" name="Type" type="hidden" value="main">*@
+
+        <input id="Img_Name_Ori" name="Img_Name_Ori" type="hidden" value="">
+        <input id="Img_Name_Thumb" name="Img_Name_Thumb" type="hidden" value="">
+        <input id="UploadVideoFileName" name="UploadVideoFileName" type="hidden" value="M_F_MID.mp4">
+        <input id="UploadVideoFilePath" name="UploadVideoFilePath" type="hidden" value="\video\ADEdit\637135609257382171.mp4">
+        <input id="SType" name="SType" type="hidden" value="P">
+        <input id="hid_isAdd" type="hidden" name="isAdd">
+        <div class="portlet light form-fit bordered">
+            <div class="portlet-body form">
+                <div class="form-horizontal form-bordered">
+                    <div class="form-body" id="form-body">
+
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">目的地</div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                @Html.TextBoxFor(model => model.Destination_Type_ID, new { @Value = @DESid,@Name="AD_Des.Destination_Type_ID", style = "display:none" })
+
+                                <label>@DESName</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">顯示日期</div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                <div class="input-group input-large" style="float:left">
+                                    <div class="date-picker input-daterange" data-date-format="yyyy/mm/dd">
+                                        @Html.TextBoxFor(model => model.StDate, new { @class = "form-control text-box single-line", placeholder = "開始日期", @Name = "AD_Des.StDate" })
+                                        @*<input class="form-control text-box single-line" id="StDateStr" name="StDateStr" placeholder="開始日期" type="text" value="">*@
+                                    </div>
+                                    <span class="input-group-addon"> to </span>
+                                    <div class="date-picker input-daterange" data-date-format="yyyy/mm/dd">
+                                        @Html.TextBoxFor(model => model.EdDate, new { @class = "form-control text-box single-line", placeholder = "結束日期", @Name = "AD_Des.EdDate" })
+                                        @*<input class="form-control text-box single-line" id="EdDateStr" name="EdDateStr" placeholder="結束日期" type="text" value="">*@
+                                    </div>
+
+                                </div>
+                                <div class="" style="float:left">
+                                    <button type="button" class="btn blue" id="btn_clear">清空</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 search_item"><span class="red">*</span>廣告名稱</div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                @Html.TextBoxFor(model => model.AD_Name, new { @class = "form-control checkitem text-box single-line", @Name = "AD_Des.AD_Name" })
+                                @*<input class="form-control checkitem text-box single-line" id="AD_Name" name="AD_Name" type="text" value="Find your treasure in Taiwan3!">*@
+                                <span class="required" id="AD_Name-error" style="display:none">廣告名稱必須輸入</span>
+                            </div>
+                        </div>
+                        <div class="form-group" id="F_Description">
+                            <div class="col-md-2 col-sm-2 col-xs-12 search_item">廣告描述</div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                @Html.TextAreaFor(model => model.ADDesc, new { @class = "form-control text-box single-line", @Name = "AD_Des.ADDesc" })
+                                @*<textarea cols="80" id="ADDesc" rows="3" class="form-control" maxlength="500">0-3952M To discover these treasure, Is the reason you must visit Taiwan.</textarea>*@
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 search_item">廣告圖片上傳</div>
+                            <div class="col-md-10 col-sm-4 col-xs-12 bg-white mobile_white">
+
+                                <div id="div_oldimg" style="display:none">
+                                    <a href="." target="preview"></a>
+                                    <label style="color:blue;margin-left:10px;cursor:pointer" id="delimage">刪除</label>
+                                </div>
+                                <input id="file_image" type="file" name="Img_File" accept="image/*">
+                                @Html.TextBoxFor(model => model.Img_Name_Ori, new { @Name = "AD_Des.Img_Name_Ori" ,@class="selected"})
+                                <span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸4000*850px</span>
+                            </div>
+                        </div>
+                        <div class="form-group" id="F_Video">
+                            <div class="col-md-2 col-sm-12 search_item">影片上傳</div>
+                            <div class="col-md-10 col-sm-12 bg-white mobile_white">
+                                
+                                <div id="div_oldvideo" style="display:none">
+                                    <a href="." target="preview">M_F_MID.mp4</a>
+                                    <label style="color:blue;margin-left:10px;cursor:pointer" id="delvideo">刪除</label>
+                                </div>
+                                <div id="div_nofile" style="display:inline">
+                                    <div class="col-md-10">
+                                        <input type="file" id="uploadvideofile" class="display_inline" name="Video_File" accept="video/*">
+                                        @Html.TextBoxFor(model => model.UploadVideoFileName,new{@Name="AD_Des.UploadVideoFileName",@class="selected" })
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 search_item">連結路徑</div>
+                            <div class="col-md-10 col-sm-4 col-xs-12 bg-white mobile_white">
+                                @*<input class="form-control text-box single-line" id="Link_Href" name="Link_Href" type="text" value="">*@
+                                @Html.TextBoxFor(model => model.Link_Href, new { @class = "form-control text-box single-line", @Name = "AD_Des.Link_Href" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2 col-sm-2 col-xs-12 search_item">開啟方式</div>
+                            <div class="col-md-10  col-xs-12 bg-white mobile_white">
+                                @Html.RadioButtonFor(model => model.Link_Mode, "1", new { @checked = "checked",@Name = "AD_Des.Link_Mode" })原視窗
+                                @Html.RadioButtonFor(model => model.Link_Mode, "2", new { @Name = "AD_Des.Link_Mode"})新視窗
+                                @*<input checked="checked" id="Link_Mode" name="Link_Mode" style="margin-left :0px" type="radio" value="1">原視窗
+                                    <input id="Link_Mode" name="Link_Mode" style="margin-left :40px" type="radio" value="2"> 新視窗*@
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center search_padding">
+            <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+            <button type="button" class="btn grey-mint" id="btn_return">返回列表</button>
+        </div>
+    </form>
+
+</div>
+<script>
+    $(function () {
+
+
+
+        //送出表單
+        $("#editform").submit(function () {
+
+            $.ajax({
+                type: "POST",
+                url: form.action,
+                data: $(form).serialize(),
+                success: function (data) {
+                    alert("新增成功");
+
+                }
+            });
+
+        })
+
+        $("input[type='file']").change(function () {
+
+
+            var reader = new FileReader();
+            reader.readAsDataURL(this.files[0]);
+            var p = this.files[0].name;
+            $(this).parent().children(".selected").val(p);
+
+        });
+        $('#delimage').click(function () {
+            $('#div_oldimg').hide();
+            $(this).parent().children(".selected").val("");
+        });
+        $('#delvideo').click(function () {
+            $('#div_oldvideo').hide();
+            $(this).parent().children(".selected").val("");
+        });
+    })
+</script>

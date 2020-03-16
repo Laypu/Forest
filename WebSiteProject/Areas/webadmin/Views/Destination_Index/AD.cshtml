@@ -12,43 +12,7 @@
     }
 }
 
-<style>
 
-    hr {
-        margin: 0px;
-        border-top: 0px solid #eee;
-    }
-
-    .Five_Thingtodo_Header {
-        background-color: lightgray;
-        font-weight: bolder;
-    }
-</style>
-
-<!--page bar start-->
-<div class="page-bar all_width">
-    <ul class="page-breadcrumb">
-        <li>
-            <a href="@Url.Action("Index", "Home")">Home</a>
-            <i class="fa fa-circle"></i>
-        </li>
-        <li>
-            Destinations
-            <i class="fa fa-circle"></i>
-        </li>
-        <li>
-            目的地設定
-            <i class="fa fa-circle"></i>
-        </li>
-        <li>目的地詳細資料設定</li>
-    </ul>
-</div>
-<!--page bar end-->
-
-<div class="title_01">Destinations</div>
-<div id="Partial_Index_MenuLink">
-    <!--.......-->
-</div>
 
 
 <form class="form-horizontal form-bordered" method="Post" id="editform" action="/forest/webadmin/AD/Save" enctype="multipart/form-data">
@@ -64,26 +28,12 @@
         <div class="portlet-body form">
             <div class="form-horizontal form-bordered">
                 <div class="form-body" id="form-body">
-
                     <div class="form-group">
-                        <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">選擇類別</div>
+                        <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">目的地</div>
                         <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
-                            <select class="form-control checkitem" data-val="true" data-val-number="欄位 Site_ID 必須是數字。" data-val-required="Site_ID 欄位是必要項。" id="Site_ID" name="Site_ID">
-                                <option value="">請選擇</option>
-                                <option value="1">首頁(一)－Home_Index(1)</option>
-                                <option value="2">首頁(二)－Home_Index(2)</option>
-                                <option value="3">目的地－Destinations_Index</option>
-                                <option value="4">旅遊資訊－ThingsToDo_Index</option>
-                                <option value="15">推薦行程－RecommendTrip</option>
-                                <option value="14">事實－FACT</option>
-                                <option value="10">影片專區－Video</option>
-                                <option value="5">旅遊資訊_首要必看必做－ThingsToDo_TopThingsToSeeDo</option>
-                                <option value="6">旅遊資訊_鐵路森林文化－ThingsToDo_ForestryCultureRailway</option>
-                                <option value="7">旅遊資訊_步行登山－ThingsToDo_WalkingHiking</option>
-                                <option value="8">旅遊資訊_生態觀測－ThingsToDo_EcologicalObservation</option>
-                                <option value="9">旅遊資訊_文化體驗－ThingsToDo_CultureExerience</option>
-                                <option value="16">文章－Article</option>
-                            </select>
+                            @Html.TextBoxFor(model => model.Destination_Type_ID, new { @Value = @DESid, style = "display:none" })
+                            @*<input type="hidden" name="DFTR.Destination_Type_ID" value="@DESid"/>*@
+                            <label>@DESName</label>
                         </div>
                     </div>
 
@@ -155,8 +105,8 @@
                         </div>
                     </div>
 
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
     <div class="text-center search_padding">
