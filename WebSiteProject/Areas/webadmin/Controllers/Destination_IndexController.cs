@@ -403,6 +403,30 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         }
 
         
+        [HttpGet]
+        public ActionResult CreateAD(int? TypeID=1, string TypeName= "Neidong")
+        {
+            //ViewBag.Destination_Type_ID = new SelectList(db.F_Destination_Type, "Destination_Type_ID", "Destination_Type_Title1" + " " + "Destination_Type_Title2");
+            ViewBag.DesTypeName = TypeName;
+            ViewBag.DesTypeID = TypeID;
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateAD(ADDestination AD_Des)
+        {
+
+            if (ModelState.IsValid)
+            {
+                db.ADDestinations.Add(AD_Des);
+                db.SaveChanges();
+
+            }
+            TempData["Msg"] = "新增成功";
+            return RedirectToAction("Edit", new { id = AD_Des.Destination_Type_ID });
+        }
+
 
         protected override void Dispose(bool disposing)
         {

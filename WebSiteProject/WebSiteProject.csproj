@@ -1908,6 +1908,7 @@
     <Content Include="Areas\webadmin\Views\Recommendedtrips\RecommendedTrip_Travel_Item.cshtml" />
     <Content Include="Areas\webadmin\Views\Recommendedtrips\Index.cshtml" />
     <Content Include="Areas\webadmin\Views\Recommendedtrips\UnitPrint.cshtml" />
+    <Content Include="Areas\webadmin\Views\Destination_Index\CreateAD.cshtml" />
     <None Include="Properties\PublishProfiles\MySkylines.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
