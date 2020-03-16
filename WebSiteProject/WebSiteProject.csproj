@@ -1881,7 +1881,7 @@
     <Content Include="Areas\webadmin\Views\Destination_MapLegend\Details.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_MapLegend\Edit.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_MapLegend\Index.cshtml" />
-    <Content Include="Areas\webadmin\Views\Destination_Index\_FarePartial.cshtml" />
+    <Content Include="Areas\webadmin\Views\Destination_Index\AD.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\Createtr.cshtml" />
     <Content Include="Areas\webadmin\Views\Recommendedtrips\RecommendedtripsIndex.cshtml" />
     <Content Include="Areas\webadmin\Views\Recommendedtrips\Recommendedtrips_item.cshtml" />

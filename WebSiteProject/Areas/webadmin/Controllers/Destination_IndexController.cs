@@ -171,7 +171,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         }
 
         [HttpGet]
-        public ActionResult _FarePartial(int? id, string Name)
+        public ActionResult AD(int? id, string Name)
         {
             ViewBag.TypeID = id;
             ViewBag.TypeName = Name;
@@ -179,7 +179,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             //using (ForestEntities db = new ForestEntities())
             //    {
 
-            return PartialView(db.Destination_Fare.Where(x => x.Destination_Type_ID == id).ToList());
+            return View(db.Destination_Fare.Where(x => x.Destination_Type_ID == id).ToList());
             //}
 
 

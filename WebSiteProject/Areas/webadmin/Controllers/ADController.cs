@@ -198,6 +198,12 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     _IADManager = new ADMobileBlockManager(new SQLRepository<ADMobileBlock>(connectionstr));
                     ViewBag.Title = "輪播廣告管理(手機版-各區塊)";
                 }
+                else if (type == "Article")
+                {
+                    _IADManager = new ADMainManager(new SQLRepository<ADMain>(connectionstr));
+                    ViewBag.Title = "文章輪播廣告管理(主廣告)";
+                    if (stype == "M") { ViewBag.Title = "文章輪播廣告管理(手機版-主廣告)"; }
+                }
                 var adset = _IADManager.GetADSet(this.LanguageID, type, stype);
                 ViewBag.MaxNum = adset.Max_Num;
 
@@ -245,6 +251,10 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             else if (searchModel.ADType == "mobileblock")
             {
                 _IADManager = new ADMobileBlockManager(new SQLRepository<ADMobileBlock>(connectionstr));
+            }
+            else if (searchModel.ADType == "Article")
+            {
+                _IADManager = new ADMobileManager(new SQLRepository<ADMobile>(connectionstr));
             }
             return Json(_IADManager.Paging(site_id ,searchModel));
         }
@@ -460,6 +470,10 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 else if (model.Type == "mobileblock")
                 {
                     _IADManager = new ADMobileBlockManager(new SQLRepository<ADMobileBlock>(connectionstr));
+                }
+                else if (model.Type == "Article")
+                {
+                    _IADManager = new ADMainManager(new SQLRepository<ADMain>(connectionstr));
                 }
                 model.Lang_ID =int.Parse( this.LanguageID);
                 model.ADDesc = HttpUtility.UrlDecode(model.ADDesc);

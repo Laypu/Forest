@@ -210,9 +210,9 @@
     </form>
     
 
-    <form class="form-horizontal form-bordered" method="Post" id="editform2" enctype="multipart/form-data">
+    <form class="form-horizontal form-bordered" method="Post" id="editform2" enctype="multipart/form-data" style="padding:20px">
 
-        
+
         <div class="form-group">
             <div class="display_inline margin_bottom">
                 @{
@@ -273,12 +273,65 @@
 
                 </tbody>
             </table>
+            
         </div>
-        <script>
+        <div class="form-group">
+            <div class="display_inline margin_bottom">
+               
+                <a class="btn green-meadow" id='btn_add' href="@Url.Action("Createtr","Destination_Index",new {TypeID = DESTypeID,TypeName = DESName})">新增 <i class="fa fa-plus"></i></a>
 
-        </script>
+            </div>
+            <table class="table table-bordered table-hover" border="0" cellspacing="0" cellpadding="0" id="eventtable" data-url="/forest/webadmin/AD/Paging?site_id=3" data-sort-name="Sort" data-page-size="10" data-filed-id="ID" data-max-pagination="10">
+                <thead>
+                    <tr class="bg-grey_1" filed-class="odd gradeX">
+                        <th width="80" class="text-center" filed-type="delcheckbox">
+                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                <input type="checkbox" class="checkboxes" id="chk_all"><span></span>
+                            </label>
+                            <button class="btn red-mint btn-xs" id="btn_del"><i class="glyphicon glyphicon-trash"></i></button>
+                        </th>
+                        <th filed-name="Sort" width="160px" class="text-center" filed-type="numbertextcheck" filed-item-class="sortedit">排序</th>
+                        <th filed-name="AD_Name" class="text-center" filed-type="link">廣告名稱</th>
+                        <th filed-name="IsRange" width="80px" class="text-center" filed-item-class="text-center">是否在顯示區間</th>
+                        <th filed-name="Enabled" width="80px" class="text-center" filed-type="checkbox" filed-item-class="checkboxes chkstatus">顯示</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="tr_1" class="odd gradeX">
+                        <td class="text-center">
+                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                <input type="checkbox" class="checkboxes chksel" value="1015" index="1"><span></span>
+                            </label>
+                        </td>
+                        <td class="text-center delete_th">
+                            <button type="button" class="btn btn-default btn-xs seqindex" value="0" idindex="1015"><i class="fa fa-angle-double-up"></i></button>
+                            <button type="button" class="btn btn-default btn-xs seqindex" value="15" idindex="1015"><i class="fa fa-angle-up"></i></button>
+                            <button type="button" class="btn btn-default btn-xs seqindex" value="17" idindex="1015"><i class="fa fa-angle-down"></i></button>
+                            <button type="button" class="btn btn-default btn-xs seqindex" value="1" idindex="1015"><i class="fa fa-angle-double-down"></i></button>
+                            <input type="hidden" value="">
+                            <input type="text" value="" class="editinput btn btn-default btn-xs sequence_list sortedit" idindex="1015">
+                            <span class="required seqerror" style="color:red;display:none;margin-left:5px;font-size:12px"></span>
+                        </td>
+                        <td>
+                            <a href="#" class="edit" value="1015">Find your treasure in Taiwan!1</a>
+                        </td>
+                        <td class="text-center">
+                            是
+                        </td>
+                        <td class="text-center">
+                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                <input type="checkbox" class="checkboxes chkstatus" checked="checked" value="1015" index="1"><span></span>
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+            <script>
 
-        @*@Html.Action("_FarePartial", new { id = vid, Name = vName })*@
+            </script>
+
+            @*@Html.Action("_FarePartial", new { id = vid, Name = vName })*@
     </form>
     <div class="text-center search_padding" id="div_buttons">
         <button type="button" class="btn blue" id="btn_submit">確認送出</button>
