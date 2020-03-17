@@ -4,11 +4,14 @@ using SQLModel;
 using SQLModel.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Configuration;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using Utilities;
@@ -395,6 +398,237 @@ namespace WebSiteProject.Controllers
         {
             var model = db.RecommendedTrips.Find(id);
             return View(model);
+        }
+        #endregion
+        #region Forward
+        public ActionResult Forward(string itemid)
+        {
+            itemid = Server.HtmlEncode(itemid);
+            //if (Session["ForwardInfo"] != null)
+            //{
+            //    var info = (Dictionary<string, string>)Session["ForwardInfo"];
+            //    if (info.ContainsKey("result")) { ViewBag.result = info["result"]; }
+            //    if (info.ContainsKey("Sender")) { ViewBag.SenderError = "Y"; }
+            //    if (info.ContainsKey("SenderEMail")) { ViewBag.SenderEMailError = "Y"; }
+            //    if (info.ContainsKey("SenderEMailFormat")) { ViewBag.SenderEMailFormatError = "Y"; }
+            //    if (info.ContainsKey("ForwardEMail")) { ViewBag.ForwardEMailError = "Y"; }
+            //    if (info.ContainsKey("ForwardEMailFormat")) { ViewBag.ForwardEMailFormatError = "Y"; }
+            //    if (info.ContainsKey("errorinfo")) { ViewBag.errorinfo = info["errorinfo"]; }
+
+            //}
+            ViewBag.itemid = itemid;
+            var itemmodel = db.RecommendedTrips.Find(int.Parse(itemid));
+                if (itemmodel == null) { return RedirectToAction("Index", "Home"); }
+                if (itemmodel != null)
+                {
+                    ViewBag.Title = itemmodel.RecommendedTrips_Title;
+                }
+
+            var hostUrl = string.Format("{0}://{1}",
+              Request.Url.Scheme,
+              Request.Url.Authority);
+            if(string.IsNullOrEmpty(itemid)==false)
+            {
+                ViewBag.Url = hostUrl + Url.Action("recommended_Detail", "F_Recommendedtrips", new { RecommendedTrips_ID = int.Parse(Server.HtmlEncode(itemid))});
+            }
+            //if (sitemenuid != "-1")
+            //{
+            //    ViewBag.Url = hostUrl + Url.Action("MessageView", "Message", new { id = Server.HtmlEncode(itemid), mid = Server.HtmlEncode(mid), sitemenuid = Server.HtmlEncode(sitemenuid), menutype = Server.HtmlEncode(menutype) });
+            //}
+            //else if (string.IsNullOrEmpty(mid) == false)
+            //{
+            //    ViewBag.Url = hostUrl + Url.Action("MessageView", "Message", new { id = Server.HtmlEncode(itemid), mid = Server.HtmlEncode(mid) });
+            //}
+            //else
+            //{
+            //    ViewBag.Url = hostUrl + Url.Action("MessageView", "Message", new { id = Server.HtmlEncode(itemid) });
+            //}
+            //ViewBag.LinkStr = _MasterPageManager.GetFrontLinkString(itemid, mid, itemmodel.Title, "");
+            //model.SEOScript = _MasterPageManager.GetSEOData("", "", LangID, itemmodel.Title, true);
+            return View();
+        }
+        #endregion
+        #region SendMail
+        //[ValidateAntiForgeryToken]
+        public ActionResult SendMail(string Sender, string SenderEMail, string ForwardEMail, string ForwardMessage, string Url, string Title)
+        {
+            var info = new Dictionary<string, string>();
+            try
+            {
+                var echeck = new EmailAddressAttribute();
+
+                if (Sender.IsNullorEmpty())
+                {
+                    info.Add("Sender", "");
+                }
+                if (SenderEMail.IsNullorEmpty())
+                {
+                    info.Add("SenderEMail", "");
+                }
+                else
+                {
+                    if (echeck.IsValid(SenderEMail) == false)
+                    {
+                        info.Add("SenderEMailFormat", "");
+                    }
+                }
+                if (ForwardEMail.IsNullorEmpty())
+                {
+                    info.Add("ForwardEMail", "");
+                }
+                else
+                {
+                    var fsplit = ForwardEMail.Split(';');
+                    foreach (var v in fsplit)
+                    {
+                        if (echeck.IsValid(v) == false)
+                        {
+                            if (v == "") { continue; }
+                            info.Add("ForwardEMailFormat", "");
+                        }
+                    }
+                }
+                if (info.Count() == 0)
+                {
+                    var host = System.Web.Configuration.WebConfigurationManager.AppSettings["smtphost"];
+                    var mailfrom = System.Web.Configuration.WebConfigurationManager.AppSettings["mailfrom"];
+                    var NoticeSenderEMail = mailfrom;
+                    var NoticeSubject = Title;
+                    var slist = ForwardEMail.Split(';');
+                    MailMessage message = new MailMessage();
+                    message.From = new MailAddress(SenderEMail, Sender);
+                    foreach (var sender in slist)
+                    {
+                        message.To.Add(new MailAddress(sender));
+                    }
+                    message.SubjectEncoding = System.Text.Encoding.UTF8;
+                    message.Subject = NoticeSubject;
+                    message.BodyEncoding = System.Text.Encoding.UTF8;
+                    string body = Sender + Common.GetLangText("寄了一則訊息給你喔") + "<br/> " + Common.GetLangText("給您的訊息") + ":" + ForwardMessage +
+                        "<br/>" + Url;
+                    message.Body = body;
+                    message.IsBodyHtml = true;
+                    message.Priority = MailPriority.High;
+                    var ur = System.Web.Configuration.WebConfigurationManager.AppSettings["mailuser"];
+                    var pw = System.Web.Configuration.WebConfigurationManager.AppSettings["mailpassword"];
+                    var port = System.Web.Configuration.WebConfigurationManager.AppSettings["mailport"];
+                    if (string.IsNullOrEmpty(pw) == false)
+                    {
+                        SmtpClient client = new SmtpClient(host, int.Parse(port));
+                        client.EnableSsl = true;
+                        client.Credentials = new NetworkCredential(ur, pw);
+                        client.Send(message);
+                    }
+                    else
+                    {
+                        SmtpClient client2 = new SmtpClient(host);
+                        client2.Send(message);
+                    }
+                    info.Add("result", "ok");
+                    return Json("send_success");
+                }
+                else
+                {
+                    info.Add("result", "error");
+                    return Json("send_error");
+                }
+            }
+            catch (Exception ex)
+            {
+                info.Add("result", "exception");
+                info.Add("errorinfo", "寄信失敗:" + ex.Message);
+                return Json("send_error");
+            }
+            return Json("send_error");
+        }
+        #endregion
+        #region Forward_OK
+        public ActionResult Forward_OK(int? langid)
+        {
+            var site_id = 15; //這是Recommendedtrips的輪播ID
+            if (Session["LangID"] == null)
+            {
+                var DefaultLang = System.Web.Configuration.WebConfigurationManager.AppSettings["DefaultLang"];
+                _ILangManager = serviceinstance.LangManager;
+                var alllang = _ILangManager.GetAll();
+                if (alllang != null)
+                {
+                    if (alllang.Any(v => v.Lang_Name == DefaultLang))
+                    {
+                        langid = alllang.Where(v => v.Lang_Name == DefaultLang).First().ID.Value;
+                    }
+                }
+                Session["LangID"] = langid.ToString();
+                Session.Timeout = 600;
+            }
+            else
+            {
+                if (langid == null)
+                {
+                    int _langid = 1;
+                    if (int.TryParse(Session["LangID"].ToString(), out _langid) == false)
+                    {
+                        langid = 1;
+                    }
+                    else { langid = _langid; }
+                }
+                else
+                {
+                    Session["LangID"] = langid.ToString();
+                }
+            }
+
+            HomeViewModel viewmodel = new HomeViewModel();
+            //讀取logo圖片
+            _IMasterPageManager.SetModel<HomeViewModel>(ref viewmodel, "P", langid.ToString(), "");
+            viewmodel.SEOScript = _IMasterPageManager.GetSEOData("", "", langid.ToString());
+            viewmodel.ADMain = _IMasterPageManager.GetADMain("P", langid.ToString(), site_id);
+            viewmodel.ADMobile = _IMasterPageManager.GetADMain("M", langid.ToString(), site_id);
+            viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
+
+            var sitemenu = _ISiteLayoutManager.PagingMain(new ViewModels.SearchModelBase()
+            {
+                Limit = 100,
+                Key = Device,
+                NowPage = 1,
+                Offset = 0,
+                Sort = "ID",
+                LangId = langid.ToString()
+            });
+            if (sitemenu.total > 0)
+            {
+                var layoutpagelist = ((List<PageLayout>)sitemenu.rows);
+                if (layoutpagelist.Any(v => v.Title == "焦點新聞"))
+                {
+                    viewmodel.PageLayoutModel1 = _IMasterPageManager.GetSiteLayout(sitemenu.rows, "焦點新聞", langid.ToString()).First();
+                }
+                else { viewmodel.PageLayoutModel1 = new HomePageLayoutModel(); }
+                if (layoutpagelist.Any(v => v.Title == "活動專區"))
+                {
+                    viewmodel.PageLayoutModel2 = _IMasterPageManager.GetSiteLayout(sitemenu.rows, "活動專區", langid.ToString()).First();
+                }
+                else { viewmodel.PageLayoutModel2 = new HomePageLayoutModel(); }
+            }
+            else
+            {
+                viewmodel.PageLayoutModel1 = new HomePageLayoutModel();
+                viewmodel.PageLayoutModel2 = new HomePageLayoutModel();
+                ViewBag.sitemenu = new List<PageLayout>();
+                ViewBag.sitemenupart = "";
+            }
+            viewmodel.BannerImage = "";
+            viewmodel.PageLayoutOP1 = _ISiteLayoutManager.GetPageLayoutOP1Edit(langid.ToString());
+            viewmodel.PageLayoutOP2 = _ISiteLayoutManager.GetPageLayoutOP2Edit(langid.ToString());
+            viewmodel.PageLayoutOP3 = _ISiteLayoutManager.GetPageLayoutOP3Edit(langid.ToString());
+            viewmodel.PageLayoutActivityModel = _ISiteLayoutManager.PageLayoutActivity(langid.ToString());
+
+            viewmodel.LinkItems = _IModelLinkManager.PagingItem("Y", new SearchModelBase()
+            {
+                LangId = this.LangID,
+                Limit = -1,
+                Sort = "Sort"
+            }).rows;
+            return View(viewmodel);
         }
         #endregion
     }
