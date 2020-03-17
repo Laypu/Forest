@@ -535,54 +535,29 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult DeleteAD(int? ADid)
+        public ActionResult DeleteAD(List<int> ADids,int DESTypeID)
         {
             using (ForestEntities db = new ForestEntities())
             {
-
-                ADDestination adDestination = db.ADDestinations.Find(ADid);
-                var AdDesID = db.ADDestinations.Where(m => m.Destination_Type_ID == adDestination.Destination_Type_ID).First().Destination_Type_ID;
-                db.ADDestinations.Remove(adDestination);
-                db.SaveChanges();
-                var Newdb = new List<ADDestination>();
-                Newdb = db.ADDestinations.Where(m => m.Destination_Type_ID == AdDesID).ToList();
-                var deldb = db.ADDestinations.Where(m => m.Destination_Type_ID == AdDesID);
-                
-                foreach (var item in deldb)
+                foreach (var item1 in ADids)
                 {
-                    //先刪除
-                    var del = db.ADDestinations.Find(item.ID);
-                    db.ADDestinations.Remove(del);
-                    
+                    ADDestination adDestination = db.ADDestinations.Find(item1);
+                    db.ADDestinations.Remove(adDestination);
+                    db.SaveChanges();
+
                 }
-                db.SaveChanges();
-
-                var sort = 1;
-                foreach (var item in Newdb)
+                if (db.ADDestinations.Where(m => m.Destination_Type_ID == DESTypeID).Count() > 0)
                 {
-                    
-                    db.ADDestinations.Add(new ADDestination
+                    var Newdb = db.ADDestinations.Where(m => m.Destination_Type_ID == DESTypeID).OrderBy(m => m.Sort);
+                    var i = 1;
+                    foreach (var item2 in Newdb)
                     {
-                        Destination_Type_ID = item.Destination_Type_ID,
-                        StDate = item.StDate,
-                        EdDate = item.EdDate,
-                        AD_Name = item.AD_Name,
-                        Img_Name_Ori = item.Img_Name_Ori,
-                        UploadVideoFileName = item.UploadVideoFileName,
-                        Link_Href = item.Link_Href,
-                        Link_Mode = item.Link_Mode,
-                        Create_Date = item.Create_Date,
-                        Sort = sort,
-                        Enabled = item.Enabled
-
-
-
-
-                    });
-
-                    sort = sort + 1;
+                        item2.Sort = i;
+                        i++;
+                    }
+                    db.SaveChanges();
                 }
-                db.SaveChanges();
+
                 return Json(new { success = true, message = "刪除成功" }, JsonRequestBehavior.AllowGet);
 
 

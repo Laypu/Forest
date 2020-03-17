@@ -58,7 +58,15 @@
                                 <div class="tp-caption item_box" data-x="0" data-y="500" data-start="500" data-transform_in="y:[100%];opacity:0;s:500;">
                                     <div class="title">@ad.AD_Name</div>
                                     <div class="con_font">@Html.Raw(ad.ADDesc)</div><br />
-                                    <div class="btn_box"><a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")"><span class="btn_01">@Common.GetLangText("View")<i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span></a></div>
+                                    <div class="btn_box">
+                                        <a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")">
+                                            <span class="btn_01">@Common.GetLangText("View")
+                                                <i class="fas fa-arrow-alt-circle-right" aria-hidden="true">
+
+                                                </i>
+                                            </span>
+                                        </a>
+                                    </div>
                                 </div>
                             </li>
                         }

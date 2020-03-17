@@ -141,6 +141,8 @@ namespace WebSiteProject.Controllers
 
         public ActionResult Details(int? langid,string ImgTitle)
         {
+
+            ViewBag.ADDestinations = db.ADDestinations.Where(m=>m.F_Destination_Type.Destination_Type_Title1==ImgTitle).ToList();
             ViewBag.Category = ImgTitle;
             //ViewBag.MessageItems = db.MessageItems.ToList();
             var site_id = 3;

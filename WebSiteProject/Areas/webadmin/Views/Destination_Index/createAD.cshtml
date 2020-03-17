@@ -46,12 +46,7 @@
 
         @Html.HiddenFor(m => m.Sort, new { @Name = "AD_Des.Sort" })
         @Html.HiddenFor(m => m.Enabled, new { @Name = "AD_Des.Enabled" })
-        <input id="Img_Name_Ori" name="Img_Name_Ori" type="hidden" value="">
-        <input id="Img_Name_Thumb" name="Img_Name_Thumb" type="hidden" value="">
-        <input id="UploadVideoFileName" name="UploadVideoFileName" type="hidden" value="M_F_MID.mp4">
-        <input id="UploadVideoFilePath" name="UploadVideoFilePath" type="hidden" value="\video\ADEdit\637135609257382171.mp4">
-        <input id="SType" name="SType" type="hidden" value="P">
-        <input id="hid_isAdd" type="hidden" name="isAdd">
+        
         <div class="portlet light form-fit bordered">
             <div class="portlet-body form">
                 <div class="form-horizontal form-bordered">
@@ -94,7 +89,7 @@
                         <div class="form-group">
                             <div class="col-md-2 col-sm-2 col-xs-12 search_item"><span class="red">*</span>廣告名稱</div>
                             <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
-                                @Html.TextBoxFor(model => model.AD_Name, new { @class = "form-control checkitem text-box single-line", @Name = "AD_Des.AD_Name" })
+                                @Html.TextBoxFor(model => model.AD_Name, new { @class = "form-control checkitem text-box single-line", @Name = "AD_Des.AD_Name" ,@id = "AD_Name"})
                                 @*<input class="form-control checkitem text-box single-line" id="AD_Name" name="AD_Name" type="text" value="Find your treasure in Taiwan3!">*@
                                 <span class="required" id="AD_Name-error" style="display:none">廣告名稱必須輸入</span>
                             </div>
@@ -120,7 +115,7 @@
                                     </div>
                                 }
                                 <input id="file_image" type="file" name="Img_File" accept="image/*">
-                                @Html.TextBoxFor(model => model.Img_Name_Ori, new { @Name = "AD_Des.Img_Name_Ori", @class = "selected", @type = "hidden" })
+                                @Html.TextBoxFor(model => model.Img_Name_Ori, new { @Name = "AD_Des.Img_Name_Ori", @class = "selected", @type = "hidden",@id="ADImg" })
                                 <span style="color:red; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸4000*850px</span>
                             </div>
                         </div>
@@ -138,7 +133,7 @@
                                 <div id="div_nofile" style="display:inline">
                                     <div class="col-md-10">
                                         <input type="file" id="file_video" class="display_inline" name="Video_File" accept="video/*">
-                                        @Html.TextBoxFor(model => model.UploadVideoFileName, new { @Name = "AD_Des.UploadVideoFileName", @class = "selected", @type = "hidden" })
+                                        @Html.TextBoxFor(model => model.UploadVideoFileName, new { @Name = "AD_Des.UploadVideoFileName", @class = "selected", @type = "hidden" ,@id="ADVideo"})
                                     </div>
                                 </div>
 
@@ -175,11 +170,39 @@
 <script>
     $(function () {
 
-       
+
+        $("#btn_return").click(function () {
+            history.go(-1);
+        });
         //送出表單
         $("#editform").submit(function () {
+            var flag;
+            if ($("#AD_Name").val() == "") {
+                $("#AD_Name-error").show();
+                alert("請輸入廣告名稱")
+                flag = false;
+            }
+            else {
+                $("#AD_Name-error").hide();
+                flag = true;
+            }
+
+            if (flag == true)
+            {
+                if ($("#ADImg").val() == "" && $("#ADVideo").val() == "")
+                {
+                    alert("請至少上傳一個圖片或影片")
+                    flag = false;
+                }
+            }
             
-            $.ajax({
+
+            
+
+            if (flag == false) { return false; }
+            else
+            {
+                $.ajax({
                 type: "POST",
                 url: form.action,
                 data: $(form).serialize(),
@@ -188,6 +211,8 @@
 
                 }
             });
+            }
+            
 
         })
 
