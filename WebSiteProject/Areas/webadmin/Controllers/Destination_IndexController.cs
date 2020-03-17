@@ -400,6 +400,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         [HttpGet]
         public ActionResult CreateAD(int? TypeID, string TypeName , int? AdID)
         {
+            ViewBag.ADid = AdID;
             ViewBag.DesTypeName = TypeName;
             ViewBag.DesTypeID = TypeID;
             if (AdID != null)
@@ -417,11 +418,11 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult CreateAD(ADDestination AD_Des,HttpPostedFileBase Img_File, HttpPostedFileBase Video_File)
+        public ActionResult CreateAD(ADDestination AD_Des,HttpPostedFileBase Img_File, HttpPostedFileBase Video_File,string OldImg,string OldVideo)
         {
+            
             string Index_Img_Name = "";
-
+            var NewImgFile = "";
             if (Img_File != null) //判斷是否有檔案
             {
                 if (Img_File.ContentLength > 0)  //若檔案不為空檔案
@@ -436,8 +437,8 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     }
 
                     Index_Img_Name = Path.GetFileName(Img_File.FileName);  //取得檔案名
-                    var newfilename = DateTime.Now.Ticks + "_" + Index_Img_Name;
-                    var path = Path.Combine(Server.MapPath("~/UploadImage/Destination_Img/"), newfilename);  //取得本機檔案路徑
+                    NewImgFile = DateTime.Now.Ticks + "_" + Index_Img_Name;
+                    var path = Path.Combine(Server.MapPath("~/UploadImage/Destination_AD/"), NewImgFile);  //取得本機檔案路徑
 
 
 
@@ -446,30 +447,90 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 }
             }
 
+            string Index_Video_Name = "";
+            var NewVideoFile = "";
+            if (Video_File != null) //判斷是否有檔案
+            {
+                if (Video_File.ContentLength > 0)  //若檔案不為空檔案
+                {
+
+                    // 如果UploadFiles文件夾不存在則先創建
+
+                    if (!Directory.Exists(Server.MapPath("~/UploadImage/Destination_AD/")))
+                    {
+                        Directory.CreateDirectory(Server.MapPath("~/UploadImage/Destination_AD/"));
+
+                    }
+
+                    Index_Video_Name = Path.GetFileName(Video_File.FileName);  //取得檔案名
+                    NewVideoFile = DateTime.Now.Ticks + "_" + Index_Video_Name;
+                    var path = Path.Combine(Server.MapPath("~/UploadImage/Destination_AD/"), NewVideoFile);  //取得本機檔案路徑
+
+
+
+                    Video_File.SaveAs(path);
+
+                }
+            }
+
+
 
             var sort = db.ADDestinations.Where(m => m.Destination_Type_ID == AD_Des.Destination_Type_ID).Count() + 1;
             if (ModelState.IsValid)
             {
-               
-                 db.ADDestinations.Add(new ADDestination 
-                 {
+                if (AD_Des.ID <= 0)
+                {
+                    db.ADDestinations.Add(new ADDestination
+                    {
+
+                        Destination_Type_ID = AD_Des.Destination_Type_ID,
+                        StDate = AD_Des.StDate,
+                        EdDate = AD_Des.EdDate,
+                        AD_Name = AD_Des.AD_Name,
+                        Img_Name_Ori = NewImgFile,
+                        UploadVideoFileName = NewVideoFile,
+                        Link_Href = AD_Des.Link_Href,
+                        Link_Mode = AD_Des.Link_Mode,
+                        Create_Date = DateTime.Now,
+                        Sort = sort,
+                        Enabled = true
+                    });
                     
-                    Destination_Type_ID= AD_Des.Destination_Type_ID,
-                    StDate = AD_Des.StDate,
-                    EdDate= AD_Des.EdDate,
-                    AD_Name = AD_Des.AD_Name,
-                    Img_Name_Ori = AD_Des.Img_Name_Ori,
-                    UploadVideoFileName = AD_Des.UploadVideoFileName,
-                    Link_Href = AD_Des.Link_Href,
-                    Link_Mode = AD_Des.Link_Mode,
-                    Create_Date = DateTime.Now,
-                    Sort = sort,
-                    Enabled = true
-                 });
-                db.SaveChanges();
+                    db.SaveChanges();
+                    TempData["Msg"] = "新增成功";
+                    
+
+                }
+                else
+                {
+
+                    db.Entry(AD_Des).State = EntityState.Modified;
+                    if (NewImgFile == "")
+                    {
+                        db.ADDestinations.Where(m=>m.ID == AD_Des.ID).First().Img_Name_Ori = OldImg;
+                    }
+                    else
+                    {
+                        db.ADDestinations.Where(m => m.ID == AD_Des.ID).First().Img_Name_Ori = NewImgFile;
+                       
+                    }
+
+                    if (NewVideoFile == "")
+                    {
+                        db.ADDestinations.Where(m => m.ID == AD_Des.ID).First().UploadVideoFileName = OldVideo;
+                    }
+                    else
+                    {
+                        db.ADDestinations.Where(m => m.ID == AD_Des.ID).First().UploadVideoFileName = NewVideoFile;
+                        
+                    }
+                    db.SaveChanges();
+                    TempData["Msg"] = "修改成功";
+                    
+                }
+                 
 
             }
-            TempData["Msg"] = "新增成功";
             return RedirectToAction("Edit", new { id = AD_Des.Destination_Type_ID });
         }
 
@@ -480,10 +541,48 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             {
 
                 ADDestination adDestination = db.ADDestinations.Find(ADid);
+                var AdDesID = db.ADDestinations.Where(m => m.Destination_Type_ID == adDestination.Destination_Type_ID).First().Destination_Type_ID;
                 db.ADDestinations.Remove(adDestination);
                 db.SaveChanges();
+                var Newdb = new List<ADDestination>();
+                Newdb = db.ADDestinations.Where(m => m.Destination_Type_ID == AdDesID).ToList();
+                var deldb = db.ADDestinations.Where(m => m.Destination_Type_ID == AdDesID);
+                
+                foreach (var item in deldb)
+                {
+                    //先刪除
+                    var del = db.ADDestinations.Find(item.ID);
+                    db.ADDestinations.Remove(del);
+                    
+                }
+                db.SaveChanges();
+
+                var sort = 1;
+                foreach (var item in Newdb)
+                {
+                    
+                    db.ADDestinations.Add(new ADDestination
+                    {
+                        Destination_Type_ID = item.Destination_Type_ID,
+                        StDate = item.StDate,
+                        EdDate = item.EdDate,
+                        AD_Name = item.AD_Name,
+                        Img_Name_Ori = item.Img_Name_Ori,
+                        UploadVideoFileName = item.UploadVideoFileName,
+                        Link_Href = item.Link_Href,
+                        Link_Mode = item.Link_Mode,
+                        Create_Date = item.Create_Date,
+                        Sort = sort,
+                        Enabled = item.Enabled
 
 
+
+
+                    });
+
+                    sort = sort + 1;
+                }
+                db.SaveChanges();
                 return Json(new { success = true, message = "刪除成功" }, JsonRequestBehavior.AllowGet);
 
 

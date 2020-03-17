@@ -277,7 +277,7 @@
         </div>
     </form>
     <form class="form-horizontal form-bordered" method="Post" id="editform3" enctype="multipart/form-data" style="padding:20px">
-
+        
         @{
 
             var ADModel = ViewBag.ADDestinations;
@@ -288,14 +288,14 @@
                 <a class="btn green-meadow" id='btn_add' href="@Url.Action("CreateAD", "Destination_Index", new { TypeID = DESTypeID, TypeName = DESName })">新增 <i class="fa fa-plus"></i></a>
 
             </div>
-            <table class="table table-bordered table-hover" border="0" cellspacing="0" cellpadding="0" id="ADtable" >
+            <table class="table table-bordered table-hover" border="0" cellspacing="0" cellpadding="0" id="ADtable">
                 <thead>
                     <tr class="bg-grey_1" filed-class="odd gradeX">
                         <th width="80" class="text-center" filed-type="delcheckbox">
                             <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
                                 <input type="checkbox" class="checkboxes" id="chkAD_all"><span></span>
                             </label>
-                            <button class="btn red-mint btn-xs" id="btn_delAD"><i class="glyphicon glyphicon-trash"></i></button>
+                            <button class="btn red-mint btn-xs" type="button" id="btn_delAD"><i class="glyphicon glyphicon-trash"></i></button>
                         </th>
                         <th filed-name="Sort" width="160px" class="text-center" filed-type="numbertextcheck" filed-item-class="sortedit">排序</th>
                         <th filed-name="AD_Name" class="text-center" filed-type="link">廣告名稱</th>
@@ -308,51 +308,51 @@
 
                         foreach (var itemAD in ADModel)
                         {
-                                <tr id="tr_1" class="odd gradeX">
+                            <tr id="tr_1" class="odd gradeX">
 
 
 
+                                <td class="text-center">
+                                    <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                        <input type="checkbox" class="checkboxes chksel"><span></span>
+                                    </label>
+                                </td>
+                                <td class="text-center delete_th">
+                                    <input type="hidden" class="ADid" value="@itemAD.ID" />
+                                    <button type="button" class="btn btn-default btn-xs seqindex"><i class="fa fa-angle-double-up"></i></button>
+                                    <button type="button" class="btn btn-default btn-xs seqindex"><i class="fa fa-angle-up"></i></button>
+                                    <button type="button" class="btn btn-default btn-xs seqindex"><i class="fa fa-angle-down"></i></button>
+                                    <button type="button" class="btn btn-default btn-xs seqindex"><i class="fa fa-angle-double-down"></i></button>
+
+                                    <input type="text" value="@itemAD.Sort" class="editinput btn btn-default btn-xs sequence_list sortedit">
+                                    <span class="required seqerror" style="color:red;display:none;margin-left:5px;font-size:12px"></span>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("CreateAD", "Destination_Index", new { TypeID = DESTypeID, TypeName = DESName ,AdID = itemAD.ID})" class="edit">@itemAD.AD_Name</a>
+                                </td>
+                                @if (@itemAD.Enabled == true)
+                                {
                                     <td class="text-center">
-                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
-                                            <input type="checkbox" class="checkboxes chksel"><span></span>
-                                        </label>
+
+                                        <input type="checkbox" class="checkboxes chkstatus" checked="checked" name="AD_Des[@y].Enabled">
+
                                     </td>
-                                    <td class="text-center delete_th">
-                                        <input type="hidden" class="ADid" value="@itemAD.ID" />
-                                        <button type="button" class="btn btn-default btn-xs seqindex"><i class="fa fa-angle-double-up"></i></button>
-                                        <button type="button" class="btn btn-default btn-xs seqindex"><i class="fa fa-angle-up"></i></button>
-                                        <button type="button" class="btn btn-default btn-xs seqindex"><i class="fa fa-angle-down"></i></button>
-                                        <button type="button" class="btn btn-default btn-xs seqindex"><i class="fa fa-angle-double-down"></i></button>
 
-                                        <input type="text" value="@itemAD.Sort" class="editinput btn btn-default btn-xs sequence_list sortedit">
-                                        <span class="required seqerror" style="color:red;display:none;margin-left:5px;font-size:12px"></span>
+                                }
+                                else
+                                {
+                                    <td class="text-center">
+
+                                        <input type="checkbox" class="checkboxes chkstatus" name="AD_Des[@y].Enabled">
+
                                     </td>
-                                    <td>
-                                        <a href="@Url.Action("CreateAD", "Destination_Index", new { TypeID = DESTypeID, TypeName = DESName ,AdID = itemAD.ID})" class="edit">@itemAD.AD_Name</a>
-                                    </td>
-                                    @if (@itemAD.Enabled == true)
-                                    {
-                                        <td class="text-center">
-                                            
-                                            <input type="checkbox" class="checkboxes chkstatus" checked="checked" name="AD_Des[@y].Enabled">
-                                            
-                                        </td>
-
-                                    }
-                                    else 
-                                    {
-                                        <td class="text-center">
-                                           
-                                                <input type="checkbox" class="checkboxes chkstatus" name="AD_Des[@y].Enabled">
-                                            
-                                        </td>
-                                    }
+                                }
 
 
 
 
 
-                                </tr>
+                            </tr>
 
                             y = y + 1;
 
@@ -391,7 +391,7 @@
         ShowImg()
         //送出表單
         $("#btn_submit").click(function () {
-            i
+            
 
             $.ajax({
                 type: "POST",
@@ -474,7 +474,7 @@
                         data: { chargeID:chargeID },
                         success: function (data) {
                             
-                            $("#editform2").load(location.href + " #editform2");//location.href + " #editform2"內的" #editform2"#前的空白很重要
+                            $("#editform2").load(location.href + " #editform2 >*");//location.href + " #editform2"內的" #editform2"#前的空白很重要
 
                         }
                     });
@@ -493,19 +493,22 @@
             if (confirm('確定要刪除嗎??'))
             {
                 var ADcheck = $("#ADtable tbody .chksel:checked");
-                
-                farecheck.each(function () {
-                    var chargeID = $(this).parent().parent().next().children(".ADid").val();
+                var DESTypeID = DESTypeID;
+                ADcheck.each(function () {
+                    var ADid = $(this).parent().parent().next().children(".ADid").val();
                     //formdata.append("chargeID", chargeID);
                    
                     $.ajax({
                         type: "POST",
                         url: '@Url.Action("DeleteAD", "Destination_Index")',
                         dataType:'json',
-                        data: { ADid: ADid},
+                        data: {
+                            ADid: ADid,
+                             
+                        },
                         success: function (data) {
                             
-                            $("#editform3").load(location.href + " #editform3");//location.href + " #editform2"內的" #editform2"#前的空白很重要
+                            $("#editform3").load(location.href + " #editform3>*");//location.href + " #editform2"內的" #editform2"#前的空白很重要
 
                         }
                     });
