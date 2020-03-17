@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = WebSiteProject.Code.Common.GetIndexLayout(Model.LangId);
+}
+
+@model HomeViewModel
+<!DOCTYPE html>
+
+<div class="page_banner one_pic">
+    <!--一張封面照；建議尺寸寬2000*600px；後台無上傳圖片時，img不顯示(但div page_banner要保留)；圖片alt=標題-->
+    <img src="@Url.Content("~/img/index_banner_05.jpg")" alt="Banner" />
+</div>
+<!--banner end-->
+<!--page_content start-->
+<div class="page_content">
+
+    <!--page top start-->
+    <div class="page_top">
+        <div class="container">
+            <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
+                <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
+                <a href="index.html" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                Forward
+            </div>
+            <div class="col-md-5 col-sm-6 col-xs-12">
+                <!--<script>$.include("blocks/page_top.html");</script>-->
+            </div>
+        </div>
+    </div>
+    <!--page top end-->
+    <!--page_con start-->
+    <div class="page_con">
+        <div class="container">
+
+            <h2>Forward succes；Forward failure</h2>
+
+        </div>
+    </div>
+    <!--page_con end-->
+
+</div>
+<!--page_content end-->
+<!--breadcrumbs start-->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="title">You are here</div>
+        <div class="font"><a href="index.html" title="Home">Home</a> / <a href="things.html" title="Things to do">Things to do</a> / <a href="things_detail_03.html" title="Ecological Observation">Ecological Observation</a> / The Liechtenstein Trail: Walking the length of a country in a weekend</div>
+    </div>
+</div>

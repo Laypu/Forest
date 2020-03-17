@@ -2110,6 +2110,8 @@
     <Content Include="Views\F_Recommendedtrips\Print.cshtml" />
     <Content Include="Views\Home\HashTag.cshtml" />
     <Content Include="Views\Home\Article.cshtml" />
+    <Content Include="Views\F_Recommendedtrips\Forward.cshtml" />
+    <Content Include="Views\F_Recommendedtrips\Forward_OK.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -2176,7 +2178,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>17473</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54337/forest</IISUrl>
+          <IISUrl>http://localhost:54338/forest</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

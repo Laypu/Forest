@@ -29,7 +29,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 
         #region ADEdit
         [AuthoridUrl("AD/Index", "type,stype")]
-        public ActionResult ADEdit(string type,string id,string stype)
+        public ActionResult ADEdit(string type,string id,string stype,int siteid=1,int maintype=-1)
         {
             
             //20191230_Forest客製化
@@ -70,7 +70,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             else if (type == "main")
             {
                 _IADManager = new ADMainManager(new SQLRepository<ADMain>(connectionstr));
-                ViewBag.Title = "輪播廣告管理("+ prestr+"主廣告)";
+                    ViewBag.Title = "輪播廣告管理(" + prestr + "主廣告)";
                 imageadpath = "ad_main";
                 pathstr = "ADMain";
             }
@@ -102,18 +102,29 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 imageadpath = "ad_mobileblock";
                 pathstr = "ADMobileBlock";
             }
+            else if (siteid == 17)
+            {
+                _IADManager = new ADMainManager(new SQLRepository<ADMain>(connectionstr));
+                ViewBag.Title = "RecommendTrip_Article_Banner(" + prestr + "Master)";
+                imageadpath = "ad_main";
+                pathstr = "ADMain";
+            }
             if (id.IsNullorEmpty()) {
                 var imgdata = _imgsqlrepository.GetByWhere("item=@1", new object[] { imageadpath });
                 if (imgdata.Count() > 0) {
                     model.AD_Height = imgdata.First().height;
                     model.AD_Width = imgdata.First().width;
                 }
+                ViewBag.mantype = maintype;
+                model.Site_ID = siteid;
                 return View(model);
             }
             model = _IADManager.GetModel(id);
             model.ImageUrl = Url.Content("~/UploadImage/"+ pathstr +"/" + model.Img_Name_Thumb);
             model.Type = type;
             model.SType = stype;
+            model.Site_ID = siteid;
+            ViewBag.mantype = maintype;
             return View(model);
         }
         #endregion
@@ -121,7 +132,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 
         #region Index
         [AuthoridUrl("AD/Index", "type,stype")]
-        public ActionResult Index(string type,string stype, int? site_id, int? MenuType )
+        public ActionResult Index(string type,string stype, int? site_id, int MenuType=0 )
         {
             //20191230_Forest客製化__Start
             #region 20191230_Forest客製化
@@ -131,12 +142,16 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             {
                 TempData["site_id"] = site_id;
             }
-
+            ViewBag.sitid = -1;
             var SiteList = db.SiteLists.Select(s => new { ID = s.SiteList_ID, Name = s.SiteList_Name_ch + "－" + s.SiteList_Name_en, s.Sort }).OrderBy(s => s.Sort);            
             ViewBag.SiteList = new SelectList(SiteList, "ID", "Name", siteid);
-
-            ViewBag.MenuType = MenuType?? Session["F_MenuType"]?? 0;
-            Session["F_MenuType"] = MenuType?? Session["F_MenuType"]?? 0; 
+            if(site_id!=null)
+            {
+                ViewBag.SiteTile = db.SiteLists.Where(p => p.SiteList_ID == site_id).FirstOrDefault().SiteList_Name_en;
+                ViewBag.sitid = site_id;
+            }
+            Session["F_MenuType"] = MenuType==0? 0: MenuType;
+            ViewBag.MenuType = MenuType == 0 ? 0 : Session["F_MenuType"];
 
             #endregion
             //20191230_Forest客製化__End
@@ -204,6 +219,10 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     ViewBag.Title = "文章輪播廣告管理(主廣告)";
                     if (stype == "M") { ViewBag.Title = "文章輪播廣告管理(手機版-主廣告)"; }
                 }
+                else if(site_id==17)
+                {
+                    _IADManager = new ADMainManager(new SQLRepository<ADMain>(connectionstr));
+                }
                 var adset = _IADManager.GetADSet(this.LanguageID, type, stype);
                 ViewBag.MaxNum = adset.Max_Num;
 
@@ -255,6 +274,10 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             else if (searchModel.ADType == "Article")
             {
                 _IADManager = new ADMobileManager(new SQLRepository<ADMobile>(connectionstr));
+            }
+            else if (searchModel.Site_ID == 17)
+            {
+                _IADManager = new ADMainManager(new SQLRepository<ADMain>(connectionstr));
             }
             return Json(_IADManager.Paging(site_id ,searchModel));
         }
@@ -379,6 +402,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 {
                     _IADManager = new ADMobileBlockManager(new SQLRepository<ADMobileBlock>(connectionstr));
                 }
+                _IADManager = new ADMainManager(new SQLRepository<ADMain>(connectionstr));
                 return Json(_IADManager.Delete(idlist, delaccount,this.LanguageID, account.Value, name));
             }
             else { return Json("請先登入"); }
@@ -472,6 +496,10 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     _IADManager = new ADMobileBlockManager(new SQLRepository<ADMobileBlock>(connectionstr));
                 }
                 else if (model.Type == "Article")
+                {
+                    _IADManager = new ADMainManager(new SQLRepository<ADMain>(connectionstr));
+                }
+                else if (model.Site_ID==17)
                 {
                     _IADManager = new ADMainManager(new SQLRepository<ADMain>(connectionstr));
                 }

@@ -4,11 +4,14 @@ using SQLModel;
 using SQLModel.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Configuration;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using Utilities;
@@ -43,7 +46,7 @@ namespace WebSiteProject.Controllers
         // GET: F_Recommendedtrips
         public ActionResult Index(int? langid)
         {
-            var site_id = 11; //這是ThingsToDo的輪播ID
+            var site_id = 15; //這是Recommendedtrips的輪播ID
             if (Session["LangID"] == null)
             {
                 var DefaultLang = System.Web.Configuration.WebConfigurationManager.AppSettings["DefaultLang"];
@@ -238,10 +241,11 @@ namespace WebSiteProject.Controllers
         public ActionResult show_list(RecommendSearchViewmodel recommendSearch)
         {
             var mode = new List<RecommendedSearchModel>();
+            var datetime = DateTime.Now.Date;
             mode = db.RecommendedTrips.Where(p=>(p.RecommendedTrips_StarDay==null && p.RecommendedTrips_EndDay == null)
-            ||((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay == null)&& DbFunctions.TruncateTime(p.RecommendedTrips_StarDay).Value<=DateTime.Now.Date)
-             || ((p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay).Value >= DateTime.Now.Date)
-            || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay).Value <= DateTime.Now.Date && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay).Value >= DateTime.Now.Date)).Select(p => new RecommendedSearchModel { RecommendedTrips_ID = p.RecommendedTrips_ID, RecommendedTrips_Title = p.RecommendedTrips_Title, RecommendedTrips_Day_Name = p.RecommendedTrips_Day.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = p.RecommendedTrips_Day.RecommendedTrips_Day_ID, RecommendedTrips_Destinations_ID = p.RecommendedTrips_Destinations_ID,RecommendedTrips_Index_Content=p.RecommendedTrips_Content,RecommendedTrips_Img=p.RecommendedTrips_Img,RecommendedTrips_Img_Description=p.RecommendedTrips_Img_Description, RecommendedTrips_Img_Img=p.F_Destination_Type.Recommend_Img}).ToList();
+            ||((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay == null)&& DbFunctions.TruncateTime(p.RecommendedTrips_StarDay)<= datetime)
+             || ((p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)
+            || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay)>= datetime)).Select(p => new RecommendedSearchModel { RecommendedTrips_ID = p.RecommendedTrips_ID, RecommendedTrips_Title = p.RecommendedTrips_Title, RecommendedTrips_Day_Name = p.RecommendedTrips_Day.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = p.RecommendedTrips_Day.RecommendedTrips_Day_ID, RecommendedTrips_Destinations_ID = p.RecommendedTrips_Destinations_ID,RecommendedTrips_Index_Content=p.RecommendedTrips_Content,RecommendedTrips_Img=p.RecommendedTrips_Img,RecommendedTrips_Img_Description=p.RecommendedTrips_Img_Description, RecommendedTrips_Img_Img=p.F_Destination_Type.Recommend_Img}).ToList();
             //mode = db.V_RecommendedTripsForWebadmin.GroupBy(o=>o.RecommendedTrips_ID).Select(p=>new RecommendedSearchModel {RecommendedTrips_ID=p.Key, RecommendedTrips_Title=p.FirstOrDefault().RecommendedTrips_Title, RecommendedTrips_Day_Name=p.FirstOrDefault().RecommendedTrips_Day_Name,HashTag_Type_ID=p.FirstOrDefault().HashTag_Type_ID,RecommendedTrips_Day_ID=p.FirstOrDefault().RecommendedTrips_Day_ID,RecommendedTrips_Destinations_ID=p.FirstOrDefault().RecommendedTrips_Destinations_ID}).ToList();
             if (recommendSearch.Day_Id != "-1")
             {
@@ -279,7 +283,7 @@ namespace WebSiteProject.Controllers
             }
             #endregion
             #region 模組物動
-            var site_id = 11; //這是ThingsToDo的輪播ID
+            var site_id = 17; //這是ThingsToDo的輪播ID
             if (Session["LangID"] == null)
             {
                 var DefaultLang = System.Web.Configuration.WebConfigurationManager.AppSettings["DefaultLang"];
@@ -314,25 +318,35 @@ namespace WebSiteProject.Controllers
 
             HomeViewModel viewmodel = new HomeViewModel();
             //讀取logo圖片
+            var Type_ID = db.ADMains.Where(p => p.Type_ID == RecommendedTrips_ID.ToString()).FirstOrDefault();
+            var Type = "main";
+            if(Type_ID!=null)
+            {
+                Type = Type_ID.Type_ID;
+            }
             _IMasterPageManager.SetModel<HomeViewModel>(ref viewmodel, "P", langid.ToString(), "");
             viewmodel.SEOScript = _IMasterPageManager.GetSEOData("", "", langid.ToString());
-            viewmodel.ADMain = _IMasterPageManager.GetADMain("P", langid.ToString(), site_id);
+            viewmodel.ADMain = _IMasterPageManager.GetADMain_Article("P", langid.ToString(), site_id, Type);
             viewmodel.ADMobile = _IMasterPageManager.GetADMain("M", langid.ToString(), site_id);
             viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
             #endregion
-            var model = db.RecommendedTrips;
-            ViewBag.ID = model.Find(RecommendedTrips_ID).RecommendedTrips_ID;
-            ViewBag.Title = model.Find(RecommendedTrips_ID).RecommendedTrips_Title;
-            ViewBag.day = model.Find(RecommendedTrips_ID).RecommendedTrips_Day.RecommendedTrips_Day_Name;
-            ViewBag.content = model.Find(RecommendedTrips_ID).RecommendedTrips_Content;
-            ViewBag.location = model.Find(RecommendedTrips_ID).RecommendedTrips_Location;
-            ViewBag.HtmlContent= model.Find(RecommendedTrips_ID).RecommendedTrips_HtmContent;
+            var model = db.RecommendedTrips.Find(RecommendedTrips_ID);
+            if(db.RecommendedTrips.Where(p=>p.RecommendedTrips_ID==RecommendedTrips_ID).FirstOrDefault()==null)
+            {
+                return RedirectToAction("recommended_list");
+            }
+            ViewBag.ID = model.RecommendedTrips_ID;
+            ViewBag.Title = model.RecommendedTrips_Title;
+            ViewBag.day = model.RecommendedTrips_Day.RecommendedTrips_Day_Name;
+            ViewBag.content = model.RecommendedTrips_Content;
+            ViewBag.location = model.RecommendedTrips_Location;
+            ViewBag.HtmlContent= model.RecommendedTrips_HtmContent;
             ViewBag.NowPag = nowpage;
-            ViewBag.Recommend_Detail_Img = model.Find(RecommendedTrips_ID).F_Destination_Type.Recommend_Detail_Img;
-            ViewBag.LinkUrl = model.Find(RecommendedTrips_ID).RecommendedTrips_LinkUrl;
-            ViewBag.LinkUrlDES = model.Find(RecommendedTrips_ID).RecommendedTrips_LinkUrlDesc;
-            ViewBag.Upfile = model.Find(RecommendedTrips_ID).RecommendedTrips_UploadFileDesc; ;
-            ViewBag.UpfileDES= model.Find(RecommendedTrips_ID).RecommendedTrips_UploadFileName;
+            ViewBag.Recommend_Detail_Img = model.F_Destination_Type.Recommend_Detail_Img;
+            ViewBag.LinkUrl = model.RecommendedTrips_LinkUrl;
+            ViewBag.LinkUrlDES = model.RecommendedTrips_LinkUrlDesc;
+            ViewBag.Upfile = model.RecommendedTrips_UploadFileDesc; ;
+            ViewBag.UpfileDES= model.RecommendedTrips_UploadFileName;
             ViewBag.pageprt=Url.Action("Print", "F_Recommendedtrips", new { id = RecommendedTrips_ID });
             return View(viewmodel);
         }
@@ -384,6 +398,237 @@ namespace WebSiteProject.Controllers
         {
             var model = db.RecommendedTrips.Find(id);
             return View(model);
+        }
+        #endregion
+        #region Forward
+        public ActionResult Forward(string itemid)
+        {
+            itemid = Server.HtmlEncode(itemid);
+            //if (Session["ForwardInfo"] != null)
+            //{
+            //    var info = (Dictionary<string, string>)Session["ForwardInfo"];
+            //    if (info.ContainsKey("result")) { ViewBag.result = info["result"]; }
+            //    if (info.ContainsKey("Sender")) { ViewBag.SenderError = "Y"; }
+            //    if (info.ContainsKey("SenderEMail")) { ViewBag.SenderEMailError = "Y"; }
+            //    if (info.ContainsKey("SenderEMailFormat")) { ViewBag.SenderEMailFormatError = "Y"; }
+            //    if (info.ContainsKey("ForwardEMail")) { ViewBag.ForwardEMailError = "Y"; }
+            //    if (info.ContainsKey("ForwardEMailFormat")) { ViewBag.ForwardEMailFormatError = "Y"; }
+            //    if (info.ContainsKey("errorinfo")) { ViewBag.errorinfo = info["errorinfo"]; }
+
+            //}
+            ViewBag.itemid = itemid;
+            var itemmodel = db.RecommendedTrips.Find(int.Parse(itemid));
+                if (itemmodel == null) { return RedirectToAction("Index", "Home"); }
+                if (itemmodel != null)
+                {
+                    ViewBag.Title = itemmodel.RecommendedTrips_Title;
+                }
+
+            var hostUrl = string.Format("{0}://{1}",
+              Request.Url.Scheme,
+              Request.Url.Authority);
+            if(string.IsNullOrEmpty(itemid)==false)
+            {
+                ViewBag.Url = hostUrl + Url.Action("recommended_Detail", "F_Recommendedtrips", new { RecommendedTrips_ID = int.Parse(Server.HtmlEncode(itemid))});
+            }
+            //if (sitemenuid != "-1")
+            //{
+            //    ViewBag.Url = hostUrl + Url.Action("MessageView", "Message", new { id = Server.HtmlEncode(itemid), mid = Server.HtmlEncode(mid), sitemenuid = Server.HtmlEncode(sitemenuid), menutype = Server.HtmlEncode(menutype) });
+            //}
+            //else if (string.IsNullOrEmpty(mid) == false)
+            //{
+            //    ViewBag.Url = hostUrl + Url.Action("MessageView", "Message", new { id = Server.HtmlEncode(itemid), mid = Server.HtmlEncode(mid) });
+            //}
+            //else
+            //{
+            //    ViewBag.Url = hostUrl + Url.Action("MessageView", "Message", new { id = Server.HtmlEncode(itemid) });
+            //}
+            //ViewBag.LinkStr = _MasterPageManager.GetFrontLinkString(itemid, mid, itemmodel.Title, "");
+            //model.SEOScript = _MasterPageManager.GetSEOData("", "", LangID, itemmodel.Title, true);
+            return View();
+        }
+        #endregion
+        #region SendMail
+        //[ValidateAntiForgeryToken]
+        public ActionResult SendMail(string Sender, string SenderEMail, string ForwardEMail, string ForwardMessage, string Url, string Title)
+        {
+            var info = new Dictionary<string, string>();
+            try
+            {
+                var echeck = new EmailAddressAttribute();
+
+                if (Sender.IsNullorEmpty())
+                {
+                    info.Add("Sender", "");
+                }
+                if (SenderEMail.IsNullorEmpty())
+                {
+                    info.Add("SenderEMail", "");
+                }
+                else
+                {
+                    if (echeck.IsValid(SenderEMail) == false)
+                    {
+                        info.Add("SenderEMailFormat", "");
+                    }
+                }
+                if (ForwardEMail.IsNullorEmpty())
+                {
+                    info.Add("ForwardEMail", "");
+                }
+                else
+                {
+                    var fsplit = ForwardEMail.Split(';');
+                    foreach (var v in fsplit)
+                    {
+                        if (echeck.IsValid(v) == false)
+                        {
+                            if (v == "") { continue; }
+                            info.Add("ForwardEMailFormat", "");
+                        }
+                    }
+                }
+                if (info.Count() == 0)
+                {
+                    var host = System.Web.Configuration.WebConfigurationManager.AppSettings["smtphost"];
+                    var mailfrom = System.Web.Configuration.WebConfigurationManager.AppSettings["mailfrom"];
+                    var NoticeSenderEMail = mailfrom;
+                    var NoticeSubject = Title;
+                    var slist = ForwardEMail.Split(';');
+                    MailMessage message = new MailMessage();
+                    message.From = new MailAddress(SenderEMail, Sender);
+                    foreach (var sender in slist)
+                    {
+                        message.To.Add(new MailAddress(sender));
+                    }
+                    message.SubjectEncoding = System.Text.Encoding.UTF8;
+                    message.Subject = NoticeSubject;
+                    message.BodyEncoding = System.Text.Encoding.UTF8;
+                    string body = Sender + Common.GetLangText("寄了一則訊息給你喔") + "<br/> " + Common.GetLangText("給您的訊息") + ":" + ForwardMessage +
+                        "<br/>" + Url;
+                    message.Body = body;
+                    message.IsBodyHtml = true;
+                    message.Priority = MailPriority.High;
+                    var ur = System.Web.Configuration.WebConfigurationManager.AppSettings["mailuser"];
+                    var pw = System.Web.Configuration.WebConfigurationManager.AppSettings["mailpassword"];
+                    var port = System.Web.Configuration.WebConfigurationManager.AppSettings["mailport"];
+                    if (string.IsNullOrEmpty(pw) == false)
+                    {
+                        SmtpClient client = new SmtpClient(host, int.Parse(port));
+                        client.EnableSsl = true;
+                        client.Credentials = new NetworkCredential(ur, pw);
+                        client.Send(message);
+                    }
+                    else
+                    {
+                        SmtpClient client2 = new SmtpClient(host);
+                        client2.Send(message);
+                    }
+                    info.Add("result", "ok");
+                    return Json("send_success");
+                }
+                else
+                {
+                    info.Add("result", "error");
+                    return Json("send_error");
+                }
+            }
+            catch (Exception ex)
+            {
+                info.Add("result", "exception");
+                info.Add("errorinfo", "寄信失敗:" + ex.Message);
+                return Json("send_error");
+            }
+            return Json("send_error");
+        }
+        #endregion
+        #region Forward_OK
+        public ActionResult Forward_OK(int? langid)
+        {
+            var site_id = 15; //這是Recommendedtrips的輪播ID
+            if (Session["LangID"] == null)
+            {
+                var DefaultLang = System.Web.Configuration.WebConfigurationManager.AppSettings["DefaultLang"];
+                _ILangManager = serviceinstance.LangManager;
+                var alllang = _ILangManager.GetAll();
+                if (alllang != null)
+                {
+                    if (alllang.Any(v => v.Lang_Name == DefaultLang))
+                    {
+                        langid = alllang.Where(v => v.Lang_Name == DefaultLang).First().ID.Value;
+                    }
+                }
+                Session["LangID"] = langid.ToString();
+                Session.Timeout = 600;
+            }
+            else
+            {
+                if (langid == null)
+                {
+                    int _langid = 1;
+                    if (int.TryParse(Session["LangID"].ToString(), out _langid) == false)
+                    {
+                        langid = 1;
+                    }
+                    else { langid = _langid; }
+                }
+                else
+                {
+                    Session["LangID"] = langid.ToString();
+                }
+            }
+
+            HomeViewModel viewmodel = new HomeViewModel();
+            //讀取logo圖片
+            _IMasterPageManager.SetModel<HomeViewModel>(ref viewmodel, "P", langid.ToString(), "");
+            viewmodel.SEOScript = _IMasterPageManager.GetSEOData("", "", langid.ToString());
+            viewmodel.ADMain = _IMasterPageManager.GetADMain("P", langid.ToString(), site_id);
+            viewmodel.ADMobile = _IMasterPageManager.GetADMain("M", langid.ToString(), site_id);
+            viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
+
+            var sitemenu = _ISiteLayoutManager.PagingMain(new ViewModels.SearchModelBase()
+            {
+                Limit = 100,
+                Key = Device,
+                NowPage = 1,
+                Offset = 0,
+                Sort = "ID",
+                LangId = langid.ToString()
+            });
+            if (sitemenu.total > 0)
+            {
+                var layoutpagelist = ((List<PageLayout>)sitemenu.rows);
+                if (layoutpagelist.Any(v => v.Title == "焦點新聞"))
+                {
+                    viewmodel.PageLayoutModel1 = _IMasterPageManager.GetSiteLayout(sitemenu.rows, "焦點新聞", langid.ToString()).First();
+                }
+                else { viewmodel.PageLayoutModel1 = new HomePageLayoutModel(); }
+                if (layoutpagelist.Any(v => v.Title == "活動專區"))
+                {
+                    viewmodel.PageLayoutModel2 = _IMasterPageManager.GetSiteLayout(sitemenu.rows, "活動專區", langid.ToString()).First();
+                }
+                else { viewmodel.PageLayoutModel2 = new HomePageLayoutModel(); }
+            }
+            else
+            {
+                viewmodel.PageLayoutModel1 = new HomePageLayoutModel();
+                viewmodel.PageLayoutModel2 = new HomePageLayoutModel();
+                ViewBag.sitemenu = new List<PageLayout>();
+                ViewBag.sitemenupart = "";
+            }
+            viewmodel.BannerImage = "";
+            viewmodel.PageLayoutOP1 = _ISiteLayoutManager.GetPageLayoutOP1Edit(langid.ToString());
+            viewmodel.PageLayoutOP2 = _ISiteLayoutManager.GetPageLayoutOP2Edit(langid.ToString());
+            viewmodel.PageLayoutOP3 = _ISiteLayoutManager.GetPageLayoutOP3Edit(langid.ToString());
+            viewmodel.PageLayoutActivityModel = _ISiteLayoutManager.PageLayoutActivity(langid.ToString());
+
+            viewmodel.LinkItems = _IModelLinkManager.PagingItem("Y", new SearchModelBase()
+            {
+                LangId = this.LangID,
+                Limit = -1,
+                Sort = "Sort"
+            }).rows;
+            return View(viewmodel);
         }
         #endregion
     }
