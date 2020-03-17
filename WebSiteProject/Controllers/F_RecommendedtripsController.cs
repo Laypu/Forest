@@ -401,7 +401,7 @@ namespace WebSiteProject.Controllers
         }
         #endregion
         #region Forward
-        public ActionResult Forward(string itemid)
+        public ActionResult Forward(string itemid )
         {
             itemid = Server.HtmlEncode(itemid);
             //if (Session["ForwardInfo"] != null)
