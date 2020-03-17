@@ -19,7 +19,7 @@
         <div class="container">
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                 <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
-                <a href="index.html" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="@Url.Action("Index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
                 Forward
             </div>
             <div class="col-md-5 col-sm-6 col-xs-12">
@@ -32,7 +32,7 @@
     <div class="page_con">
         <div class="container">
 
-            <h2>Forward succes；Forward failure</h2>
+            <h2>@ViewBag.mess</h2>
 
         </div>
     </div>
@@ -44,6 +44,6 @@
 <div class="breadcrumbs">
     <div class="container">
         <div class="title">You are here</div>
-        <div class="font"><a href="index.html" title="Home">Home</a> / <a href="things.html" title="Things to do">Things to do</a> / <a href="things_detail_03.html" title="Ecological Observation">Ecological Observation</a> / The Liechtenstein Trail: Walking the length of a country in a weekend</div>
+        <div class="font"><a href="@Url.Action("Index","Home")" title="Home">Home</a> /@ViewBag.mess</div>
     </div>
 </div>

@@ -13,5 +13,7 @@ namespace WebSiteProject.Models.F_ViewModels
         public string ForwardMessage { get; set; }
         public string Url { get; set; }
         public string Title { get; set; }
+        public string btn { get; set; }
+        public string ErroMessage { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model WebSiteProject.Models.F_ViewModels.Forward_model
+@{
     Layout = null;
 }
 
@@ -29,7 +30,7 @@
         <script src="@Url.Content("~/js/scrollReveal.js")"></script>*@
         <script>
             $(function () {
-                $("#submit").click(function () {
+                @*$("#submit").click(function () {
                     $(".required").hide();
                     var inputval = $(".form_a :input").filter(function () { return $(this).val() == "" && $(this).hasClass('checkitem'); });
                         for (var idx = 0; idx < inputval.length; idx++) {
@@ -66,7 +67,7 @@
             function validateEmail(email) {
                 var re = /^(([^<>()\[\]\\.,;:\s@@"]+(\.[^<>()\[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return re.test(String(email).toLowerCase());
-            }
+            }*@
         </script>
         <noscript>
             <link rel="stylesheet" href="@Url.Content("~/frontcss/css/noscript.css")">
@@ -78,59 +79,82 @@
         <div class="con_banner"><img src="@Url.Content("~/img/print_banner.jpg")" alt="" /></div><!--建議尺寸740*185px-->
 
         <h2>The Liechtenstein Trail: Walking the length of a country in a weekend</h2>
-
-        <!--page content start-->
-        <div class="con_float">
-            <div class="form_con">
-                <div class="table form_box">
-                    <input type="hidden" value="@ViewBag.Title" />
-                    <input type="hidden" value="@ViewBag.Url" id="Url"/>
-                    <div class="table-row">
-                        <div class="form_q"><label for="sender_s"><span style="color:red">* </span>Sender</label></div><!--標題label for值需與對應input id值相同-->
-                        <div class="form_a">
-                            <input id="sender_s" name="Sender" type="text" class="form-control checkitem">
-                            <span class="required" id="Sender-error" style="display:none;">@Common.GetLangText("Sender") @Common.GetLangText("required")！</span>
+        <form action="@Url.Action("Forward")" method="post">
+            <!--page content start-->
+            <div class="con_float">
+                <div class="form_con">
+                    <div class="table form_box">
+                        @Html.HiddenFor(m => m.Title)
+                        @Html.HiddenFor(m => m.Url)
+                        <input type="hidden" value="@ViewBag.itemid" name="itemid"/>
+                        <div class="table-row">
+                            <div class="form_q"><label for="sender_s"><span style="color:red">* </span>Sender</label></div><!--標題label for值需與對應input id值相同-->
+                            <div class="form_a">
+                                <input id="sender_s" name="Sender" type="text" @(Model.btn == "Sender" ? "autofocus" : "") class="form-control checkitem" value="@Model.Sender">
+                                @if (Model.btn == "Sender")
+                                {
+                                    <span style="color:red">@Model.ErroMessage</span>
+                                }
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="table-row">
-                        <div class="form_q"><label for="sender_mail"><span style="color:red">* </span>Sender's Email</label></div>
-                        <div class="form_a">
-                            <input id="sender_mail" name="SenderEMail" type="text" class="form-control checkitem">
-                            <span class="required" id="SenderEMail-error" style="display:none;">@Common.GetLangText("SenderEMail") @Common.GetLangText("required")！</span>
-                            <span class="required" id="SenderEMail-check" style="display:none;">@(Common.GetLangText("SenderEMail"))@(Common.GetLangText("formal erro"))！</span>
+                        <div class="table-row">
+                            <div class="form_q"><label for="sender_mail"><span style="color:red">* </span>Sender's Email</label></div>
+                            <div class="form_a">
+                                <input id="sender_mail" name="SenderEMail" @(Model.btn == "SenderEMail"||Model.btn=="SenderEMail_Erro" ? "autofocus" : "") type="text" class="form-control checkitem" value="@Model.SenderEMail">
+                                @if (Model.btn == "SenderEMail")
+                                {
+                                    <span style="color:red">@Model.ErroMessage</span>
+                                }
+                                @if (Model.btn == "SenderEMail_Erro")
+                                {
+                                    <span style="color:red">@Model.ErroMessage</span>
+                                }
+                               
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="table-row">
-                        <div class="form_q"><label for="receive_email"><span style="color:red">* </span>Receive Email</label></div>
-                        <div class="form_a">
-                            <input id="receive_email" name="ForwardEMail" type="text" class="form-control checkitem">
-                            <div class="required">Multiple sets of mail please;</div>
-                            <span class="required" id="ForwardEMail-error" style="display:none;">@Common.GetLangText("ForwardEMail") @Common.GetLangText("required")！</span>
-                            <span class="required" id="ForwardEMail-check" style="display:none;">@(Common.GetLangText("ForwardEMail"))@(Common.GetLangText("formal erro"))！</span>
+                        <div class="table-row">
+                            <div class="form_q"><label for="receive_email"><span style="color:red">* </span>Receive Email</label></div>
+                            <div class="form_a">
+                                <input id="receive_email" name="ForwardEMail" @(Model.btn == "ForwardEMail"||Model.btn == "ForwardEMail_Erro" ? "autofocus" : "") type="text" class="form-control checkitem" value="@Model.ForwardEMail">
+                                <div class="required">Multiple sets of mail please;</div>
+                                @if (Model.btn == "ForwardEMail")
+                                {
+                                    <span style="color:red">@Model.ErroMessage</span>
+                                }
+                                @if (Model.btn == "ForwardEMail_Erro")
+                                {
+                                    <span style="color:red">@Model.ErroMessage</span>
+                                }
+                                
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="table-row">
-                        <div class="form_q"><label for="message">Give friends a message</label></div>
-                        <div class="form_a">
-                            <textarea id="message" rows="5" class="form-control checkitem" type="text"></textarea>
+                        <div class="table-row">
+                            <div class="form_q"><label for="message">Give friends a message</label></div>
+                            <div class="form_a">
+                                <textarea id="message" name="ForwardMessage" @(Model.btn == "ForwardMessage" ? "autofocus" : "") rows="5" class="form-control checkitem" type="text" value="@Model.ForwardEMail"></textarea>
+                                @if (Model.btn == "ForwardMessage")
+                                {
+                                    <span style="color:red">@Model.ErroMessage</span>
+                                }
+                            </div>
                         </div>
-                    </div>
 
+                    </div>
+                </div>
+
+                <div class="submit_btn">
+                    <label for="submit">
+                        <input id="submit" title="submit" type="submit" class="btn_01" name="btn" value="submit">
+                    </label>
+                    <label for="cancel">
+                        <input id="cancel" title="cancel" type="button" class="btn_01" onClick="window.close();" value="cancel">
+                    </label>
                 </div>
             </div>
-
-            <div class="submit_btn">
-                <label for="submit">
-                    <input id="submit" title="submit"   type="button" class="btn_01"  value="submit">
-                </label>
-                <label for="cancel">
-                    <input id="cancel" title="cancel" type="button" class="btn_01" onClick="window.close();" value="cancel">
-                </label>
-            </div>
-        </div>
+        </form>
         <!--page content end-->
 
     </div>
