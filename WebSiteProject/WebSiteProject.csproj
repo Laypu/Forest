@@ -400,6 +400,7 @@
     <Compile Include="Models\F_Thingtodo_Type.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\F_ViewModels\Forward_model.cs" />
     <Compile Include="Models\F_ViewModels\F_Recommendedtrips_List_HashTag_ViewMode.cs" />
     <Compile Include="Models\F_ViewModels\F_ThingsToDo_List_ViewModel.cs" />
     <Compile Include="Models\F_ViewModels\RecommendedTrip_Travel_ViewModel.cs" />
