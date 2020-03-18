@@ -1047,7 +1047,7 @@ namespace Services.Manager
                 RelateImageFileOrgName = model.RelateImageFileOrgName,
                 Introduction = model.Introduction == null ? "" : model.Introduction,
                 CreateName = admin.Count() == 0 ? "" : admin.First().User_Name,
-                IsVerift = false,
+                IsVerift = true,
                 LinkUrlDesc = model.LinkUrlDesc
             };
             if (model.PublicshStr.IsNullorEmpty() == false)
@@ -1089,7 +1089,7 @@ namespace Services.Manager
                     ModelItemID = savemodel.ItemID,
                     ModelName = savemodel.Title,
                     ModelMainID = savemodel.ModelID.Value,
-                    VerifyStatus = 0,
+                    VerifyStatus = 1,
                     ModelStatus = 1,
                     UpdateDateTime = DateTime.Now,
                     UpdateUser = admin.Count() == 0 ? "" : admin.First().User_Name,
@@ -1184,7 +1184,7 @@ namespace Services.Manager
                 Link_Mode = model.Link_Mode,
                 Introduction = model.Introduction == null ? "" : model.Introduction,
                 UpdateName = admin.Count() == 0 ? "" : admin.First().User_Name,
-                IsVerift = false
+                IsVerift = true
             };
             if (model.PublicshStr.IsNullorEmpty() == false)
             {
@@ -1231,7 +1231,7 @@ namespace Services.Manager
                         ModelItemID = savemodel.ItemID,
                         ModelName = savemodel.Title,
                         ModelMainID = savemodel.ModelID.Value,
-                        VerifyStatus = 0,
+                        VerifyStatus = 1,
                         ModelStatus = 2,
                         UpdateDateTime = DateTime.Now,
                         UpdateUser = admin.Count() == 0 ? "" : admin.First().User_Name,
@@ -1402,7 +1402,7 @@ namespace Services.Manager
                     GroupName = gname.Count() > 0 ? gname.First().Group_Name : "無分類",
                     PublicshDate = d.PublicshDate == null ? "" : d.PublicshDate.Value.ToString("yyyy/MM/dd"),
                     Sort = d.Sort.Value,
-                    VerifyStr = vdata.Count() == 0 ?(d.IsVerift.Value? "已通過" : "審核中") : vdata.First().VerifyStatus == 0 ? "審核中" : (vdata.First().VerifyStatus == 1 ? "已通過" : "未通過"),
+                    //VerifyStr = vdata.Count() == 0 ?(d.IsVerift.Value? "已通過" : "審核中") : vdata.First().VerifyStatus == 0 ? "審核中" : (vdata.First().VerifyStatus == 1 ? "已通過" : "未通過"),
                 });
 
             }

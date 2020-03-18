@@ -19,7 +19,7 @@
              $.post("@Model.RefreshUrl", { @Model.TokenParameterName: $('#@Model.TokenElementId').val() },
                  function (data) {
                      var d = $('#CaptchaDeText').val();
-                     $('#i_voice').prop('href', '@Url.Action("PlayVoice")?token=' + d);
+                     $('#i_voice').prop('href', '@Url.Action("PlayVoice","F_Recommendedtrips")?token=' + d);
                      $('#@id').show();
                      $('#@Model.InputElementId').focus();
             });
@@ -60,7 +60,7 @@ reorganize">
             <i class="fa fa-refresh" aria-hidden="true"></i>
             reorganize
         </a>
-        <a href="@Url.Action("PlayVoice")?token=@Model.TokenValue" target="voice" title="Voice playback" id="i_voice">
+        <a href="@Url.Action("PlayVoice","F_Recommendedtrips")?token=@Model.TokenValue" target="voice" title="Voice playback" id="i_voice">
             <i class="fa fa-volume-up" aria-hidden="true" style="cursor:pointer"></i><span class="sr-only">Voice playback</span>
         </a>
     </span>

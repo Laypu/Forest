@@ -5,7 +5,7 @@
     @{
         if (unit.isForward)
         {
-            <a href="@Url.Action("Forward",new {Title=ViewBag.Title,Url=ViewBag.url})" target="_blank" title="forward(new windown)"><img src="@Url.Content("~/img/icon_mail.png")" alt=""></a>
+            <a href="@Url.Action("Forward","F_Recommendedtrips",new {Title=ViewBag.Title,Url=ViewBag.url})" target="_blank" title="forward(new windown)"><img src="@Url.Content("~/img/icon_mail.png")" alt=""></a>
         }
         if (unit.isPrint)
         {

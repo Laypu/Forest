@@ -29,7 +29,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         {
             CheckAuth(System.Reflection.MethodBase.GetCurrentMethod());
             Session["IsFromClick"] = "Y";
-            ViewBag.Title = "活動管理";
+            ViewBag.Title = "Facts";
             return View();
         }
         [AuthoridUrl("Model/Index", "")]

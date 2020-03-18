@@ -460,7 +460,7 @@ namespace WebSiteProject.Controllers
         }
         #endregion
         #region Forward
-        public ActionResult Forward(string itemid,Forward_model model,string btn="",string CaptchaInputText="")
+        public ActionResult Forward(Forward_model model,string btn="",string CaptchaInputText="")
         {
             string ErroMessage = string.Empty;
             if (btn=="")
