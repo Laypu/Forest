@@ -403,6 +403,10 @@ namespace WebSiteProject.Controllers
             ViewBag.Upfile = model.RecommendedTrips_UploadFileDesc; ;
             ViewBag.UpfileDES= model.RecommendedTrips_UploadFileName;
             ViewBag.pageprt=Url.Action("Print", "F_Recommendedtrips", new { id = RecommendedTrips_ID });
+            var hostUrl = string.Format("{0}://{1}",
+        Request.Url.Scheme,
+        Request.Url.Authority);
+            ViewBag.url = hostUrl + Url.Action("recommended_Detail", "F_Recommendedtrips", new { RecommendedTrips_ID = RecommendedTrips_ID });
             return View(viewmodel);
         }
         #endregion
@@ -456,28 +460,26 @@ namespace WebSiteProject.Controllers
         }
         #endregion
         #region Forward
-        public ActionResult Forward(string itemid,Forward_model model=null,string btn="",string CaptchaInputText="")
+        public ActionResult Forward(string itemid,Forward_model model,string btn="",string CaptchaInputText="")
         {
             string ErroMessage = string.Empty;
             if (btn=="")
             { 
-            itemid = Server.HtmlEncode(itemid);
+            //itemid = Server.HtmlEncode(itemid);
 
-            ViewBag.itemid = itemid;
-            var itemmodel = db.RecommendedTrips.Find(int.Parse(itemid));
-                if (itemmodel == null) { return RedirectToAction("Index", "Home"); }
-                if (itemmodel != null)
-                {
-                    model.Title = itemmodel.RecommendedTrips_Title;
-                }
+            //ViewBag.itemid = itemid;
+            //var itemmodel = db.RecommendedTrips.Find(int.Parse(itemid));
+            //    if (itemmodel == null) { return RedirectToAction("Index", "Home"); }
+            //    if (itemmodel != null)
+            //    {
+            //        model.Title = itemmodel.RecommendedTrips_Title;
+            //    }
 
-            var hostUrl = string.Format("{0}://{1}",
-              Request.Url.Scheme,
-              Request.Url.Authority);
-            if(string.IsNullOrEmpty(itemid)==false)
-            {
-                model.Url = hostUrl + Url.Action("recommended_Detail", "F_Recommendedtrips", new { RecommendedTrips_ID = int.Parse(Server.HtmlEncode(itemid))});
-            }
+      
+            //if(string.IsNullOrEmpty(itemid)==false)
+            //{
+            //    model.Url =
+            //}
             return View(model);
             }
             else

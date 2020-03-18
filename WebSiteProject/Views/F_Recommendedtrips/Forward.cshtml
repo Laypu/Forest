@@ -79,7 +79,7 @@
     <div class="con_box">
         <div class="con_banner"><img src="@Url.Content("~/img/print_banner.jpg")" alt="" /></div><!--建議尺寸740*185px-->
 
-        <h2>The Liechtenstein Trail: Walking the length of a country in a weekend</h2>
+        <h2>@Model.Title</h2>
         <form action="@Url.Action("Forward")" method="post">
             <!--page content start-->
             <div class="con_float">
@@ -87,7 +87,7 @@
                     <div class="table form_box">
                         @Html.HiddenFor(m => m.Title)
                         @Html.HiddenFor(m => m.Url)
-                        <input type="hidden" value="@ViewBag.itemid" name="itemid" />
+                        
                         <div class="table-row">
                             <div class="form_q"><label for="sender_s"><span class="required">* </span>Sender</label></div><!--標題label for值需與對應input id值相同-->
                             <div class="form_a">
