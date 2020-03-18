@@ -37,36 +37,46 @@
                                                           {"data-val", "true"},
                                                           {"data-val-required", Model.RequiredMessage},
                                                           {"class","form-control input-small float_left" },
-                                                          {"placeholder","請輸入驗證碼" }
+                                                          {"placeholder","please enter Verification code" }
                                                       })
     }
     else
     {
-        <input type="text" 
-               @(ViewData["submitBtn"] != null && ViewData["submitBtn"].ToString() =="Captcha"?"autofocus":"")
-               id="@Model.InputElementId" 
-               name="@Model.InputElementId" 
+        <input type="text"
+               @(ViewData["submitBtn"] != null && ViewData["submitBtn"].ToString() == "Captcha" ? "autofocus" : "")
+               id="@Model.InputElementId"
+               name="@Model.InputElementId"
                class="form-control input-small float_left"
-               placeholder = "請輸入驗證碼" />
+               placeholder="please enter Verification code" />
 
 
         @*@Html.TextBox(Model.InputElementId, null, new { @class = "form-control input-small float_left", @placeholder = "請輸入驗證碼" })*@
     }
-    
+
     <span class="verification_code">
-        <img id="@Model.ImageElementId" style="width:75px;height:25px" src="@Model.ImageUrl" alt="驗證碼圖片" />
-        <a href="#" id="@id" style="display:none" onclick="@functionName" title="重新整理">
-            <i class="fa fa-refresh" aria-hidden="true"></i>重新整理
+        <img id="@Model.ImageElementId" style="width:75px;height:25px" src="@Model.ImageUrl" alt="Verify image" />
+        <a href="#" id="@id" style="display:none" onclick="@functionName" title="
+reorganize">
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+            reorganize
         </a>
-        <a href="@Url.Action("PlayVoice","Form")?token=@Model.TokenValue"  target="voice" title="語音播放" id="i_voice">
-            <i class="fa fa-volume-up" aria-hidden="true" style="cursor:pointer"></i><span class="sr-only">語音播放</span>
+        <a href="@Url.Action("PlayVoice","Form")?token=@Model.TokenValue" target="voice" title="Voice playback" id="i_voice">
+            <i class="fa fa-volume-up" aria-hidden="true" style="cursor:pointer"></i><span class="sr-only">Voice playback</span>
         </a>
     </span>
-    @if(ViewData["submitBtn"] != null && ViewData["submitBtn"].ToString() == "Captcha")
+    @if (ViewData["submitBtn"] != null && ViewData["submitBtn"].ToString() == "Captcha")
     {
-        <div class="required">請輸入驗證碼</div>
+        <div class="required">
+            please enter Verification code
+        </div>
+    }
+    @if (ViewData["submitBtn"] != null && ViewData["submitBtn"].ToString() == "Captcha_v")
+    {
+        <div class="required">
+           Verification code erro
+        </div>
     }
     @Html.Hidden(Model.TokenElementId, Model.TokenValue)
 
-    @Html.ValidationMessage(Model.InputElementId,new {@class="required" })
+    @*@Html.ValidationMessage(Model.InputElementId,new {@class="required" })*@
 </div>

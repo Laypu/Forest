@@ -179,7 +179,7 @@
             </div>*@
 
             <div class="con_font w-800">
-                @Html.Raw(ViewBag.Content)
+                @Html.Raw(HttpUtility.HtmlDecode(ViewBag.Content))
             </div>
         </div>
         <!--trip_search_btn start-->

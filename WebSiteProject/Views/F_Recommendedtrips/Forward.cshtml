@@ -145,6 +145,9 @@
                         <div class="table-row">
                             <div class="form_q"><label for="CaptchaInputText"><span style="color:red">* </span>Verification code</label></div>
                             <div class="form_a">
+                                @{
+                                    ViewData["submitBtn"] = Model.btn;
+                                }
                                 @Html.Captcha(4, "Captcha", ViewData, new CaptchaMvc.Models.ParameterModel("btn", Model.btn))
                             </div>
                         </div>
@@ -165,5 +168,9 @@
 
     </div>
 </body>
-
+<script type="text/javascript">
+    if ('@Model.btn' == 'Captcha') {
+        $('#CaptchaInputText').focus();
+    }
+</script>
 

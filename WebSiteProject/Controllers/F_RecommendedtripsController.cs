@@ -1,4 +1,7 @@
-﻿using Services.Interface;
+﻿using CaptchaMvc.HtmlHelpers;
+using NAudio.Lame;
+using NAudio.Wave;
+using Services.Interface;
 using Services.Manager;
 using SQLModel;
 using SQLModel.Models;
@@ -12,6 +15,8 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Speech.Synthesis;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Utilities;
@@ -450,7 +455,7 @@ namespace WebSiteProject.Controllers
         }
         #endregion
         #region Forward
-        public ActionResult Forward(string itemid,Forward_model model=null,string btn="")
+        public ActionResult Forward(string itemid,Forward_model model=null,string btn="",string CaptchaInputText="")
         {
             string ErroMessage = string.Empty;
             if (btn=="")
@@ -526,6 +531,20 @@ namespace WebSiteProject.Controllers
                                 return View(model);
                             }
                         }
+                    }
+                    if(CaptchaInputText.IsNullorEmpty())
+                    {
+                        info.Add("Captcha", "");
+                        model.btn = "Captcha";
+
+                        return View(model);
+                    }
+                    if (!this.IsCaptchaValid("驗證失敗!"))
+                    {
+                        info.Add("Captcha_v", "");
+                        model.btn = "Captcha_v";
+
+                        return View(model);
                     }
                     if (info.Count() == 0)
                     {
@@ -682,6 +701,78 @@ namespace WebSiteProject.Controllers
             return View(viewmodel);
         }
         #endregion
+        //    public async Task<ActionResult> PlayVoice(string token)
+        //    {
+        //        try
+        //        {
+        //            var a = CaptchaMvc.HtmlHelpers.CaptchaHelper.GetCaptchaManager(this);
+        //            var c = a.StorageProvider.Value(token, CaptchaMvc.Interface.TokenType.Validation);
+
+        //            string speak = "1234";
+        //            if (c != null)
+        //            {
+        //                speak = c.Value.ToString();
+        //            }
+
+        //            logger.Debug("1.播放聲音，播放數字：" + speak);
+
+        //            Task<FileContentResult> task = Task.Run(() =>
+        //            {
+        //                using (SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer())
+        //                {
+        //                    MemoryStream stream = new MemoryStream();
+
+        //                    speechSynthesizer.SetOutputToWaveStream(stream);
+
+        //                    var textarr = speak.ToArray();
+
+        //                    foreach (var t in textarr)
+        //                    {
+        //                        speechSynthesizer.Speak(t.ToString());
+        //                    }
+
+        //                    var bytes = stream.GetBuffer();
+        //                    var mp3bytes = ConvertWavStreamToMp3File(ref stream, Server.MapPath("/UploadImage/fileName.mp3"));
+
+        //                    return File(mp3bytes, "audio/mpeg");
+
+        //                }
+        //            });
+
+        //            return await task;
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            logger.Debug(ex, "播放聲音異常，error:" + ex.ToString());
+        //            throw ex;
+        //        }
+
+        //    }
+
+        //    private byte[] ConvertWavStreamToMp3File(ref MemoryStream ms, string savetofilename)
+        //    {
+        //        CheckAddBinPath();
+        //        ms.Seek(0, SeekOrigin.Begin);
+        //        MemoryStream msmp3 = new MemoryStream();
+        //        using (var retMs = new MemoryStream())
+        //        using (var rdr = new WaveFileReader(ms))
+        //        using (var wtr = new LameMP3FileWriter(msmp3, rdr.WaveFormat, LAMEPreset.VBR_90))
+        //        {
+        //            rdr.CopyTo(wtr);
+        //        }
+        //        return msmp3.ToArray();
+        //    }
+
+        //    public void CheckAddBinPath()
+        //    {
+        //        var binPath = Path.Combine(new string[] { AppDomain.CurrentDomain.BaseDirectory, "bin" });
+        //        var path = Environment.GetEnvironmentVariable("PATH") ?? "";
+        //        if (!path.Split(Path.PathSeparator).Contains(binPath, StringComparer.CurrentCultureIgnoreCase))
+        //        {
+        //            path = string.Join(Path.PathSeparator.ToString(), new string[] { path, binPath });
+        //            Environment.SetEnvironmentVariable("PATH", path);
+        //        }
+        //    }
     }
 
 }
