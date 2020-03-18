@@ -1,34 +1,35 @@
-﻿@model WebSiteProject.Models.F_ViewModels.Forward_model
+﻿@using CaptchaMvc.HtmlHelpers
+@model WebSiteProject.Models.F_ViewModels.Forward_model
 @{
     Layout = null;
 }
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="icon" href="/forest/img/favicon.ico" type="image/x-icon">
-        <title>@Common.GetLangText("TAIWAN FOREST RECREATION")</title><!--英文 -->
-        <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/bootstrap.min.css")">
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/theme.css")">
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/theme-elements.css")/">
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/settings.css")" media="screen">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/forest/img/favicon.ico" type="image/x-icon">
+    <title>@Common.GetLangText("TAIWAN FOREST RECREATION")</title><!--英文 -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/bootstrap.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/theme.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/theme-elements.css")/">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/settings.css")" media="screen">
 
-        <!--fontawesome start-->
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/font-awesome.min.css")">
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/fontawesome.min.css")">
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/brands.min.css")">
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/solid.min.css")">
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/regular.min.css")">
-        <!--fontawesome end-->
+    <!--fontawesome start-->
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/font-awesome.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/fontawesome.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/brands.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/solid.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/regular.min.css")">
+    <!--fontawesome end-->
 
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/style.css")">
-        <script src="@Url.Content("~/js/jquery.js")"></script>
-        @*<script src="@Url.Content("~/js/main.js")"></script>
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/style.css")">
+    <script src="@Url.Content("~/js/jquery.js")"></script>
+    @*<script src="@Url.Content("~/js/main.js")"></script>
         <script src="@Url.Content("~/js/scrollReveal.js")"></script>*@
-        <script>
+    <script>
             $(function () {
                 @*$("#submit").click(function () {
                     $(".required").hide();
@@ -68,12 +69,12 @@
                 var re = /^(([^<>()\[\]\\.,;:\s@@"]+(\.[^<>()\[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return re.test(String(email).toLowerCase());
             }*@
-        </script>
-        <noscript>
-            <link rel="stylesheet" href="@Url.Content("~/frontcss/css/noscript.css")">
-        </noscript>
+    </script>
+    <noscript>
+        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/noscript.css")">
+    </noscript>
 
-    </head>
+</head>
 <body style="max-width:806px; margin:0 auto; background: url(img/bg_05.jpg);">
     <div class="con_box">
         <div class="con_banner"><img src="@Url.Content("~/img/print_banner.jpg")" alt="" /></div><!--建議尺寸740*185px-->
@@ -86,48 +87,48 @@
                     <div class="table form_box">
                         @Html.HiddenFor(m => m.Title)
                         @Html.HiddenFor(m => m.Url)
-                        <input type="hidden" value="@ViewBag.itemid" name="itemid"/>
+                        <input type="hidden" value="@ViewBag.itemid" name="itemid" />
                         <div class="table-row">
-                            <div class="form_q"><label for="sender_s"><span style="color:red">* </span>Sender</label></div><!--標題label for值需與對應input id值相同-->
+                            <div class="form_q"><label for="sender_s"><span class="required">* </span>Sender</label></div><!--標題label for值需與對應input id值相同-->
                             <div class="form_a">
                                 <input id="sender_s" name="Sender" type="text" @(Model.btn == "Sender" ? "autofocus" : "") class="form-control checkitem" value="@Model.Sender">
                                 @if (Model.btn == "Sender")
                                 {
-                                    <span style="color:red">@Model.ErroMessage</span>
+                                    <span class="required">@Model.ErroMessage</span>
                                 }
                             </div>
                         </div>
 
                         <div class="table-row">
-                            <div class="form_q"><label for="sender_mail"><span style="color:red">* </span>Sender's Email</label></div>
+                            <div class="form_q"><label for="sender_mail"><span class="required">* </span>Sender's Email</label></div>
                             <div class="form_a">
-                                <input id="sender_mail" name="SenderEMail" @(Model.btn == "SenderEMail"||Model.btn=="SenderEMail_Erro" ? "autofocus" : "") type="text" class="form-control checkitem" value="@Model.SenderEMail">
+                                <input id="sender_mail" name="SenderEMail" @(Model.btn == "SenderEMail" || Model.btn == "SenderEMail_Erro" ? "autofocus" : "") type="text" class="form-control checkitem" value="@Model.SenderEMail">
                                 @if (Model.btn == "SenderEMail")
                                 {
-                                    <span style="color:red">@Model.ErroMessage</span>
+                                    <span class="required">@Model.ErroMessage</span>
                                 }
                                 @if (Model.btn == "SenderEMail_Erro")
                                 {
-                                    <span style="color:red">@Model.ErroMessage</span>
+                                    <span class="required">@Model.ErroMessage</span>
                                 }
-                               
+
                             </div>
                         </div>
 
                         <div class="table-row">
                             <div class="form_q"><label for="receive_email"><span style="color:red">* </span>Receive Email</label></div>
                             <div class="form_a">
-                                <input id="receive_email" name="ForwardEMail" @(Model.btn == "ForwardEMail"||Model.btn == "ForwardEMail_Erro" ? "autofocus" : "") type="text" class="form-control checkitem" value="@Model.ForwardEMail">
-                                <div class="required">Multiple sets of mail please;</div>
+                                <input id="receive_email" name="ForwardEMail" @(Model.btn == "ForwardEMail" || Model.btn == "ForwardEMail_Erro" ? "autofocus" : "") type="text" class="form-control checkitem" value="@Model.ForwardEMail">
+                                <span class="required block">Multiple sets of mail please;</span></br>
                                 @if (Model.btn == "ForwardEMail")
                                 {
-                                    <span style="color:red">@Model.ErroMessage</span>
+                                    <span class="required">@Model.ErroMessage</span>
                                 }
                                 @if (Model.btn == "ForwardEMail_Erro")
                                 {
-                                    <span style="color:red">@Model.ErroMessage</span>
+                                    <span class="required block">@Model.ErroMessage</span>
                                 }
-                                
+
                             </div>
                         </div>
 
@@ -137,11 +138,16 @@
                                 <textarea id="message" name="ForwardMessage" @(Model.btn == "ForwardMessage" ? "autofocus" : "") rows="5" class="form-control checkitem" type="text" value="@Model.ForwardEMail"></textarea>
                                 @if (Model.btn == "ForwardMessage")
                                 {
-                                    <span style="color:red">@Model.ErroMessage</span>
+                                    <span class="required">@Model.ErroMessage</span>
                                 }
                             </div>
                         </div>
-
+                        <div class="table-row">
+                            <div class="form_q"><label for="CaptchaInputText"><span style="color:red">* </span>Verification code</label></div>
+                            <div class="form_a">
+                                @Html.Captcha(4, "Captcha", ViewData, new CaptchaMvc.Models.ParameterModel("btn", Model.btn))
+                            </div>
+                        </div>
                     </div>
                 </div>
 

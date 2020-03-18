@@ -4,21 +4,12 @@
 <script src="@Url.Content("~/Scripts/custom.js")"></script>
 <script src="@Url.Content("~/Scripts/ckeditor/ckeditor.js")"></script>
 <script src="@Url.Content("~/Scripts/bootbox.min.js")"></script>
+<script src="@Url.Content("~/Scripts/_html.js")"></script>
 @{
     ViewBag.Title = "RecommendedtripsIndex";
     Layout = "~/Areas/webadmin/Views/Shared/_Layout.cshtml";
 }
-@{
-    if (TempData["Msg"] != null)
-    {
-        <script>
-            $(function () {
-                var Msg = @Html.Raw(Json.Encode(TempData["Msg"]));
-                alert(Msg);
-            });
-        </script>
-    }
-}
+
 <div class="page-bar">
     <ul class="page-breadcrumb">
         <li>
@@ -35,46 +26,47 @@
 
     <div class="form-horizontal form-bordered">
 
-        <form id="editform" method="post" action="@Url.Action("RecommendedtripsIndex_Edit","Recommendedtrips")" enctype="multipart/form-data">
+        <form id="editform" enctype="multipart/form-data">
             <div class="portlet light form-fit bordered">
                 <div class="portlet-body form">
                     <div class="form-horizontal form-bordered">
                         <div class="form-body">
                             <input name="RecommendedTrips_Index_ID" type="hidden" value="@Model.RecommendedTrips_Index_ID" />
                             @*<div class="form-group">
-                                    <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
-                                        <span>標題名稱</span>
-                                    </div>
-                                    <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                        <textarea id="_Thingtodo_Index_Title" name="_Thingtodo_Index_Title" class="form-control" style="height:50px;resize:none">@Model.RecommendedTrips_Index_Title</textarea>
+                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                    <span>標題名稱</span>
+                                </div>
+                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                    <textarea id="_Thingtodo_Index_Title" name="_Thingtodo_Index_Title" class="form-control" style="height:50px;resize:none">@Model.RecommendedTrips_Index_Title</textarea>
 
-                                    </div>
-                                </div>*@
+                                </div>
+                            </div>*@
                             <div class="form-group">
                                 <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
                                     <span>內容</span>
                                 </div>
                                 <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    <textarea cols="80" id="RecommendedTrips_Index_Content" name="RecommendedTrips_Index_Content" class="form-control f_textarea" style="height:250px;resize:none">@Model.RecommendedTrips_Index_Content</textarea>
+                                    <textarea cols="80" id="RecommendedTrips_Index_Content" class="form-control f_textarea" style="height:250px;resize:none">@HttpUtility.HtmlDecode(Model.RecommendedTrips_Index_Content)</textarea>
                                     @*<span>
-                                            <a id="addbr" class="btn btn-primary">加入換行符號</a>
-                                        </span>
-                                        <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>*@
+                                        <a id="addbr" class="btn btn-primary">加入換行符號</a>
+                                    </span>
+                                    <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>*@
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="col-md-5 col-sm-12 col-xs-12 bg-white mobile_white text-center">
 
-                                </div>
-                                <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white text-center">
-                                    <button name="Btn_Thingtodo_Index_Edit" class="form-control btn blue text-center" type="submit">確認送出</button>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </form>
+        <div class="form-group">
+            <div class="col-md-5 col-sm-12 col-xs-12 bg-white mobile_white text-center">
+
+            </div>
+            <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white text-center">
+                <button class="form-control btn blue text-center" id="btn-sub">確認送出</button>
+            </div>
+        </div>
 
     </div>
 
@@ -111,29 +103,30 @@
                         breakBeforeClose: false,
                         breakAfterClose: false
                     });
-            }); 
-
-            //$('#editform').submit(function (event) {
-            //    var formData = new FormData();
-            //    var array = $('#editform').serializeArray();
-            //    $.each(array, function () {
-            //        formData.append(this.name, this.value);
-            //    });
-            //    formData.append("RecommendedTrips_Index_Content", encodeURIComponent(CKEDITOR.instances.HtmlContent.getData()));
-            //    $.ajax({
-            //        url: this.action,
-            //        data: formData,
-            //        type: 'POST',
-            //        cache: false,
-            //        contentType: false,
-            //        processData: false,
-            //        success: function (data) {
-            //            alert(data);
-            //        }, error: function () {
-            //            // handle error
-            //        }
-            //    });
-            //});
+            });
+            $("#btn-sub").click(function () {
+                 var formData = new FormData();
+                var array = $('#editform').serializeArray();
+                $.each(array, function () {
+                    formData.append(this.name, this.value);
+                });
+                var ckedval = CKEDITOR.instances.RecommendedTrips_Index_Content.getData();
+                
+                formData.append("RecommendedTrips_Index_Content", _html.encode(ckedval));
+                $.ajax({
+                    url:"@Url.Action("RecommendedtripsIndex_Edit","Recommendedtrips")",
+                    data: formData,
+                    type: 'POST',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        alert(data);
+                    }, error: function () {
+                        // handle error
+                    }
+                });
+            })
         });
     </script>
 }

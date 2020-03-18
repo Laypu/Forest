@@ -67,6 +67,9 @@
       <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CaptchaMvc, Version=2.5.0.0, Culture=neutral, PublicKeyToken=fe46ad421dd3b0e6, processorArchitecture=MSIL">
+      <HintPath>..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
+    </Reference>
     <Reference Include="ECPay.Payment.Integration, Version=1.0.0.8, Culture=neutral, PublicKeyToken=afb33c1e6a3b1bbd, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Users\shaok\Desktop\5.1.訂單產生\5.1.訂單產生\AioCheckOut\bin\ECPay.Payment.Integration.dll</HintPath>
@@ -2113,6 +2116,7 @@
     <Content Include="Views\Home\Article.cshtml" />
     <Content Include="Views\F_Recommendedtrips\Forward.cshtml" />
     <Content Include="Views\F_Recommendedtrips\Forward_OK.cshtml" />
+    <Content Include="Views\Shared\Captcha.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -2179,7 +2183,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>17473</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:5438/forest</IISUrl>
+          <IISUrl>http://localhost:5439/forest</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

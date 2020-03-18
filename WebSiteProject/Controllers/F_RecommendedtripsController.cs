@@ -43,6 +43,7 @@ namespace WebSiteProject.Controllers
             _IModelLinkManager = serviceinstance.ModelLinkManager;
             _ADRightDownManager = new ADRightDownManager(new SQLRepository<ADRightDown>(connectionstr)); 
         }
+        #region Index
         // GET: F_Recommendedtrips
         public ActionResult Index(int? langid)
         {
@@ -137,13 +138,15 @@ namespace WebSiteProject.Controllers
             ViewBag.Content = Server.HtmlDecode(db.RecommendedTrips_Index.FirstOrDefault().RecommendedTrips_Index_Content);
 
             //五大標題+圖
-            ViewBag.F_Thingtodo_Type = db.F_Thingtodo_Type.ToList();
+            ViewBag.F_Destination_Type = db.F_Destination_Type.ToList();
 
             return View(viewmodel);
         }
+#endregion
         #region recommended_list
         public ActionResult recommended_list(int? langid, RecommendSearchViewmodel search)
         {
+            #region 基本模組
             if (Session["LangID"] == null)
             {
                 var DefaultLang = System.Web.Configuration.WebConfigurationManager.AppSettings["DefaultLang"];
@@ -181,7 +184,7 @@ namespace WebSiteProject.Controllers
             _IMasterPageManager.SetModel<HomeViewModel>(ref viewmodel, "P", langid.ToString(), "");
             viewmodel.SEOScript = _IMasterPageManager.GetSEOData("", "", langid.ToString());
             viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
-
+            #endregion
             var Destination_Typ = db.F_Destination_Type;
             var Day_ID_ = db.RecommendedTrips_Day;
             var F_HashTag_Type_ = db.F_HashTag_Type;
@@ -215,6 +218,17 @@ namespace WebSiteProject.Controllers
                     Selected = false
                 });
             }
+            if(!search.HashTag.IsNullorEmpty())
+            {
+                search.Day_Id = "-1";
+                search.Dstination_typ = "-1";
+                search.F_HashTag = "-1";
+                ViewBag.HashTag = search.HashTag.AntiXss();
+            }
+            else
+            {
+                ViewBag.HashTag = "";
+            }
             ViewBag.day_id = search.Day_Id == "" || search.Day_Id ==null? "-1" : search.Day_Id;
             ViewBag.dstination_typ = search.Dstination_typ == "" || search.Dstination_typ == null ? "-1" : search.Dstination_typ;
             ViewBag.f_HashTag = search.F_HashTag == "" || search.F_HashTag == null ? "-1" : search.F_HashTag;
@@ -242,11 +256,46 @@ namespace WebSiteProject.Controllers
         {
             var mode = new List<RecommendedSearchModel>();
             var datetime = DateTime.Now.Date;
-            mode = db.RecommendedTrips.Where(p=>(p.RecommendedTrips_StarDay==null && p.RecommendedTrips_EndDay == null)
-            ||((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay == null)&& DbFunctions.TruncateTime(p.RecommendedTrips_StarDay)<= datetime)
-             || ((p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)
-            || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay)>= datetime)).Select(p => new RecommendedSearchModel { RecommendedTrips_ID = p.RecommendedTrips_ID, RecommendedTrips_Title = p.RecommendedTrips_Title, RecommendedTrips_Day_Name = p.RecommendedTrips_Day.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = p.RecommendedTrips_Day.RecommendedTrips_Day_ID, RecommendedTrips_Destinations_ID = p.RecommendedTrips_Destinations_ID,RecommendedTrips_Index_Content=p.RecommendedTrips_Content,RecommendedTrips_Img=p.RecommendedTrips_Img,RecommendedTrips_Img_Description=p.RecommendedTrips_Img_Description, RecommendedTrips_Img_Img=p.F_Destination_Type.Recommend_Img}).ToList();
-            //mode = db.V_RecommendedTripsForWebadmin.GroupBy(o=>o.RecommendedTrips_ID).Select(p=>new RecommendedSearchModel {RecommendedTrips_ID=p.Key, RecommendedTrips_Title=p.FirstOrDefault().RecommendedTrips_Title, RecommendedTrips_Day_Name=p.FirstOrDefault().RecommendedTrips_Day_Name,HashTag_Type_ID=p.FirstOrDefault().HashTag_Type_ID,RecommendedTrips_Day_ID=p.FirstOrDefault().RecommendedTrips_Day_ID,RecommendedTrips_Destinations_ID=p.FirstOrDefault().RecommendedTrips_Destinations_ID}).ToList();
+            if (!recommendSearch.HashTag.IsNullorEmpty())
+            {
+                var HasT = recommendSearch.HashTag.ToUpper();
+                var Has = db.RecommendedTrips_HashTag.Where(p => p.RecommendedTrips_keyword0.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword1.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword2.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword3.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword4.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword5.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword6.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword7.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword8.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword9.ToUpper() == HasT).Select(p=>p.RecommendedTrips_Id).ToList();
+                var Re = db.RecommendedTrips.Where(p => (p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay == null)
+                             || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay == null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime)
+                              || ((p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)
+                             || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)).ToList();
+                
+                foreach(var item in Has)
+                {
+                    RecommendedSearchModel re = new RecommendedSearchModel();
+                    var m = Re.Where(p => p.RecommendedTrips_ID == item).FirstOrDefault();
+                    re.RecommendedTrips_ID = m.RecommendedTrips_ID;
+                    re.RecommendedTrips_Title = m.RecommendedTrips_Title;
+                    re.RecommendedTrips_Day_Name = m.RecommendedTrips_Day.RecommendedTrips_Day_Name;
+                   re.RecommendedTrips_Day_ID = m.RecommendedTrips_Day.RecommendedTrips_Day_ID;
+                    re.RecommendedTrips_Destinations_ID = m.RecommendedTrips_Destinations_ID;
+                   re.RecommendedTrips_Index_Content = m.RecommendedTrips_Content;
+                   re.RecommendedTrips_Img = m.RecommendedTrips_Img;
+                   re.RecommendedTrips_Img_Description = m.RecommendedTrips_Img_Description;
+                    re.RecommendedTrips_Img_Img = m.F_Destination_Type.Recommend_Img;
+                    mode.Add(re);
+                }
+            }
+            else { 
+             mode = db.RecommendedTrips.Where(p => (p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay == null)
+                           || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay == null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime)
+                            || ((p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)
+                           || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)).Select(p => new RecommendedSearchModel { RecommendedTrips_ID = p.RecommendedTrips_ID, RecommendedTrips_Title = p.RecommendedTrips_Title, RecommendedTrips_Day_Name = p.RecommendedTrips_Day.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = p.RecommendedTrips_Day.RecommendedTrips_Day_ID, RecommendedTrips_Destinations_ID = p.RecommendedTrips_Destinations_ID, RecommendedTrips_Index_Content = p.RecommendedTrips_Content, RecommendedTrips_Img = p.RecommendedTrips_Img, RecommendedTrips_Img_Description = p.RecommendedTrips_Img_Description, RecommendedTrips_Img_Img = p.F_Destination_Type.Recommend_Img }).ToList();
+            }
             if (recommendSearch.Day_Id != "-1")
             {
                 mode = mode.Where(p => p.RecommendedTrips_Day_ID == Convert.ToInt32(recommendSearch.Day_Id)).ToList();
@@ -327,7 +376,7 @@ namespace WebSiteProject.Controllers
             _IMasterPageManager.SetModel<HomeViewModel>(ref viewmodel, "P", langid.ToString(), "");
             viewmodel.SEOScript = _IMasterPageManager.GetSEOData("", "", langid.ToString());
             viewmodel.ADMain = _IMasterPageManager.GetADMain_Article("P", langid.ToString(), site_id, Type);
-            viewmodel.ADMobile = _IMasterPageManager.GetADMain("M", langid.ToString(), site_id);
+            viewmodel.ADMobile = _IMasterPageManager.GetADMain_Article("M", langid.ToString(), site_id, Type);
             viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
             #endregion
             var model = db.RecommendedTrips.Find(RecommendedTrips_ID);
@@ -436,7 +485,7 @@ namespace WebSiteProject.Controllers
                     {
                         info.Add("Sender", "");
                         model.btn = "Sender";
-                        model.ErroMessage += "Sender " + " required";
+                        model.ErroMessage += "Sender" + " required";
                         return View(model);
                     }
                     if (model.SenderEMail.IsNullorEmpty())
@@ -533,13 +582,6 @@ namespace WebSiteProject.Controllers
             }
         }
         #endregion
-        //#region SendMail
-        ////[ValidateAntiForgeryToken]
-        //public ActionResult SendMail(string itemid, Forward_model model)
-        //{
-
-        //}
-        //#endregion
         #region Forward_OK
         public ActionResult Forward_OK(int? langid,string check="")
         {
@@ -629,12 +671,12 @@ namespace WebSiteProject.Controllers
             string mess = "";
             if(check=="True")
             {
-                mess = "Forward succes；Forward success";
+                mess = "Forward success";
                 ViewBag.mess = mess.AntiXss();
             }
             else
             {
-                mess = "Forward succes；Forward failure";
+                mess = "Forward  failure";
                 ViewBag.mess = mess.AntiXss();
             }
             return View(viewmodel);

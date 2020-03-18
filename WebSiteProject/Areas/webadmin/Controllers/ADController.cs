@@ -53,6 +53,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             var imageadpath = "";
             var pathstr = "";
             var prestr = stype == "M" ? "手機板-" : "";
+            var prestr2 = stype == "M" ? "Phome-" : "";
             if (type == "right")
             {
                 _IADManager = new ADRightManager(new SQLRepository<ADRight>(connectionstr));       
@@ -70,7 +71,15 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             else if (type == "main")
             {
                 _IADManager = new ADMainManager(new SQLRepository<ADMain>(connectionstr));
+                
+                if (maintype==176)
+                {
+                    ViewBag.Title = "RecommendTrip_Banner(" + prestr2 + "Master)";
+                }
+                else
+                {
                     ViewBag.Title = "輪播廣告管理(" + prestr + "主廣告)";
+                }
                 imageadpath = "ad_main";
                 pathstr = "ADMain";
             }
@@ -105,7 +114,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             else if (siteid == 17)
             {
                 _IADManager = new ADMainManager(new SQLRepository<ADMain>(connectionstr));
-                ViewBag.Title = "RecommendTrip_Article_Banner(" + prestr + "Master)";
+                ViewBag.Title = "RecommendTrip_Article_Banner(" + prestr2 + "Master)";
                 imageadpath = "ad_main";
                 pathstr = "ADMain";
             }
@@ -190,6 +199,8 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     _IADManager = new ADMainManager(new SQLRepository<ADMain>(connectionstr));
                     ViewBag.Title = "輪播廣告管理(主廣告)";
                     if (stype == "M") { ViewBag.Title = "輪播廣告管理(手機版-主廣告)"; }
+                    ViewBag.ReTitle = "RecommendTrip_Banner(Master)";
+                    if (stype == "M") { ViewBag.ReTitle = "RecommendTrip_Banner(Phone-Master)"; }
                 }
                 else if (type == "down")
                 {
@@ -221,6 +232,8 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 }
                 else if(site_id==17)
                 {
+                    ViewBag.ReTitle = "RecommendTrip_Article_Banner(Master)";
+                    if (stype == "M") { ViewBag.ReTitle = "RecommendTrip_Article_Banner(Phone-Master)"; }
                     _IADManager = new ADMainManager(new SQLRepository<ADMain>(connectionstr));
                 }
                 var adset = _IADManager.GetADSet(this.LanguageID, type, stype);

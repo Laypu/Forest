@@ -1,15 +1,15 @@
 ﻿@{
     int ID = ViewBag.ID;
-    var url = ViewBag.LinkUrl;
+    var url = ViewBag.LinkUrl==null||ViewBag.LinkUrl==""?"":ViewBag.LinkUrl;
     var urlDes = ViewBag.LinkUrlDES;
+    var UpfileName = ViewBag.UpfileDES==null||ViewBag.UpfileDES==""?"":ViewBag.UpfileDES;
     var UpfileDes = ViewBag.Upfile;
-    var UpfileName = ViewBag.UpfileDES;
 
 
 }
 @{
     <div class="page_bottom">
-        @if (url!=null)
+        @if (url!="")
         {
             <div class="link">
                 <div class="title"><i class="fa fa-link" aria-hidden="true"></i>Link</div>
@@ -18,7 +18,7 @@
                 </div>
             </div>
         }
-        @if (UpfileName != null)
+        @if (UpfileName!="")
         {
             <div class="download">
                 <div class="title"><i class="fa fa-download" aria-hidden="true"></i>Download</div>
