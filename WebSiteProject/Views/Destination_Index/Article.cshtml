@@ -38,15 +38,45 @@
                     @DesModel.First().Title
                 </div>
                 <div class="col-md-5 col-sm-6 col-xs-12">
+                    @{
+                        WebSiteProject.Models.F_ViewModels.UnitPrint unit = ViewBag.Unit;
+                    }
                     <div class="page_top_right">
+                        @{
+                            if (unit.isForward)
+                            {
+                                <a href="#" @*target="_blank"="*@ onclick="window.open('@Url.Action("Forward","Message" ,new {Title=@DesModel.First().Title,link=Request.Url.ToString() })', 'forward', config='height=750,width=650')"  title="forward(new windown)"><img src="@Url.Content("~/img/icon_mail.png")" alt=""></a>
+                            }
+                            if (unit.isPrint)
+                            {
+                                <a href="@Url.Action(" Print","Message",new { mid=179,id =DesModel.First().ItemID})" target="_blank" title="print(new windown)"><img src="@Url.Content("~/img/icon_print.png")" alt="print"></a>
+                            }
+                            <!--<a href="#" target="_blank" title="link - web name(new window)"><img src="img/icon_link.png" alt=""></a>
+                            <a href="#" target="_blank" title="download - file name(new window)"><img src="img/icon_download.png" alt=""></a>-->
+                            if (unit.isShare)
+                            {
+                                <a href="http://www.facebook.com/share.php?u=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="facebook share(new window)"><img src="~/img/icon_facebook.png" alt=""></a>
+                                <a href="https://twitter.com/share?text=@ViewBag.Title&url=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="twitter share(new window)"><img src="~/img/icon_twitter.png" alt=""></a>
+                            }
+                            if (unit.isRSS)
+                            {
+                                <a href="http://plurk.com/?qualifier=shares&status=[分享]@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))(@ViewBag.Titlee&url)" target="_blank" title="plurk share(new window)"><img src="~/img/icon_plurk.png" alt=""></a>
+                            }
+                        }
+                    </div>
+                    
+                    
+                    
+                    
+                    @*<div class="page_top_right">
                         <a href="forward.html" target="_blank" title="forward(new windown)"><img src="~/img/icon_mail.png" alt=""></a>
                         <a href="@Url.Action("Print","Message",new { mid=179,id=DesModel.First().ItemID})" target="_blank" title="print(new windown)"><img src="~/img/icon_print.png" alt="print"></a>
-                        <!--<a href="#" target="_blank" title="link - web name(new window)"><img src="img/icon_link.png" alt=""></a>
-                        <a href="#" target="_blank" title="download - file name(new window)"><img src="img/icon_download.png" alt=""></a>-->
+                        <a href="#" target="_blank" title="link - web name(new window)"><img src="img/icon_link.png" alt=""></a>
+                        <a href="#" target="_blank" title="download - file name(new window)"><img src="img/icon_download.png" alt=""></a>
                         <a href="http://www.facebook.com/share.php?u=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="facebook share(new window)"><img src="~/img/icon_facebook.png" alt=""></a>
                         <a href="https://twitter.com/share?text=@DesModel.First().Title&url=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="twitter share(new window)"><img src="~/img/icon_twitter.png" alt=""></a>
                         <a href="http://plurk.com/?qualifier=shares&status=[分享]@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))(@DesModel.First().Title&url)" target="_blank" title="plurk share(new window)"><img src="~/img/icon_plurk.png" alt=""></a>
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>
@@ -112,7 +142,8 @@
                     }
 
 
-                </div>                <!--相關連結+檔案下載 end-->
+                </div>                
+                <!--相關連結+檔案下載 end-->
 
                 <div class="back_btn">
                     <a href="javascript:history.back()" title="Back"><span class="btn_01">Back</span></a>

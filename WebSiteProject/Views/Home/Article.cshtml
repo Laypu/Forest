@@ -1,7 +1,155 @@
-﻿
+﻿ <!--banner start-->
 @{
-    ViewBag.Title = "Article";
+    Layout = WebSiteProject.Code.Common.GetIndexLayout(Model.LangId);
 }
 
-<h2>Article</h2>
+@model HomeViewModel
+
+
+<style>
+
+    .F_img_center {
+        margin: 0px auto;
+    }
+</style>
+
+
+@{
+    var Hashtag =  ViewBag.HashTagName;
+    var DesModel = (IEnumerable<WebSiteProject.Models.MessageItem>)ViewBag.DesHash;
+    var Banner = ViewBag.MessageBanner;
+    var dat = (DateTime)DesModel.First().PublicshDate;
+    <!--banner start-->
+    <div class="page_banner one_pic">
+        <!--一張封面照；建議尺寸寬2000*600px；後台無上傳圖片時，img不顯示(但div page_banner要保留)；圖片alt=標題-->
+        <img src="@Url.Content("~/UploadImage/MessageItem/")@Banner" alt="@DesModel.First().Title" />
+    </div>
+    <!--banner end-->
+    <!--page_content start-->
+    <div class="page_content">
+
+        <!--page top start-->
+        <div class="page_top">
+            <div class="container">
+                <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
+                    <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
+                    <a href="@Url.Action("Index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <a href="javascript:history.back()" title="@Hashtag">@Hashtag</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                    @DesModel.First().Title
+                </div>
+                <div class="col-md-5 col-sm-6 col-xs-12">
+                    <div class="page_top_right">
+                        @Html.Partial(Url.Content("~/Views/Home/_unit.cshtml"))
+
+                        @*<a href="forward.html" target="_blank" title="forward(new windown)"><img src="~/img/icon_mail.png" alt=""></a>
+        <a href="@Url.Action("Print","Message",new { mid=179,id=DesModel.First().ItemID})" target="_blank" title="print(new windown)"><img src="~/img/icon_print.png" alt="print"></a>
+        <a href="#" target="_blank" title="link - web name(new window)"><img src="img/icon_link.png" alt=""></a>
+        <a href="#" target="_blank" title="download - file name(new window)"><img src="img/icon_download.png" alt=""></a>
+        <a href="http://www.facebook.com/share.php?u=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="facebook share(new window)"><img src="~/img/icon_facebook.png" alt=""></a>
+        <a href="https://twitter.com/share?text=@DesModel.First().Title&url=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="twitter share(new window)"><img src="~/img/icon_twitter.png" alt=""></a>
+        <a href="http://plurk.com/?qualifier=shares&status=[分享]@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))(@DesModel.First().Title&url)" target="_blank" title="plurk share(new window)"><img src="~/img/icon_plurk.png" alt=""></a>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--page top end-->
+        <!--page_con start-->
+        <div class="page_con">
+            <div class="container">
+
+                <h2>@DesModel.First().Title</h2>
+                <!--publishdate-->
+                <div class="date">@dat.ToString("yyyy/MM/dd")</div>
+
+                <div>
+                    <!--文繞圖 start-->
+                    @if (string.IsNullOrEmpty(@DesModel.First().ImageFileOrgName) == false)
+                    {
+                        <!--圖片置左-->
+                        if (@DesModel.First().ImageFileLocation == "1")
+                        {
+                            <img src="@Url.Content("~/UploadImage/MessageItem/")@DesModel.First().ImageFileName" class="img_padding" alt="@DesModel.First().ImageFileDesc" align="left">
+                        }
+                        else if (@DesModel.First().ImageFileLocation == "2")
+                        {
+                            <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/MessageItem/")@DesModel.First().ImageFileName" class="img_padding" alt="@DesModel.First().ImageFileOrgName"></p></div>
+                        }
+                        else if (@DesModel.First().ImageFileLocation == "3")
+                        {
+                            <img src="@Url.Content("~/UploadImage/MessageItem/")@DesModel.First().ImageFileName" class="img_padding" alt="@DesModel.First().ImageFileDesc" align="right">
+                        }
+
+                    }
+
+                    <!--文繞圖 end-->
+                    @Html.Raw(DesModel.First().HtmlContent)
+
+
+                </div>
+
+                <!--相關連結+檔案下載 start-->
+                <div class="page_bottom">
+
+                    @{
+                        if (DesModel.First().LinkUrl != null && DesModel.First().LinkUrl != "")
+                        {
+                            <div class="link">
+                                <div class="title"><i class="fa fa-link" aria-hidden="true"></i>Link</div>
+                                <div class="con_font">
+                                    <a href="@DesModel.First().LinkUrl" target="_blank" title="@DesModel.First().LinkUrlDesc (new window)">@DesModel.First().LinkUrlDesc</a>
+                                </div>
+                            </div>
+                        }
+
+                        if (DesModel.First().UploadFileName != null && DesModel.First().UploadFileName != "")
+                        {
+                            <div class="download">
+                                <div class="title"><i class="fa fa-download" aria-hidden="true"></i>Download</div>
+                                <div class="con_font">
+                                    <a href="@Url.Action("FileDownLoad","Message")?itemid=@DesModel.First().ItemID" target="_blank" title="@DesModel.First().UploadFileDesc (new window)">@DesModel.First().UploadFileName</a>
+                                </div>
+                            </div>
+                        }
+
+                    }
+
+
+                </div>
+                <!--相關連結+檔案下載 end-->
+
+                <div class="back_btn">
+                    <a href="javascript:history.back()" title="Back"><span class="btn_01">Back</span></a>
+                </div>
+            </div>
+        </div>
+        <!--page_con end-->
+
+    </div>
+    <!--page_content end-->
+    <!--breadcrumbs start-->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="title">You are here</div>
+            <div class="font">
+                <a href="@Url.Action("Index","Home")" title="Home">Home</a> / 
+                <a href="javascript:history.back()" title="@Hashtag">@Hashtag</a> / @DesModel.First().Title
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+
+}
+
+
+
+<script>
+    $(document).ready(function () {
+        $("img").parent("p").addClass("text-center");
+
+
+
+    });
+</script>
+
+
 
