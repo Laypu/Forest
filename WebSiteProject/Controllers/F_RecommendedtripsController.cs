@@ -416,6 +416,7 @@ namespace WebSiteProject.Controllers
             double count = (double)db.RecommendedTrip_Travel.Where(p => p.RecommendedTrip_ID == id).Count();
             ViewBag.count = count;
             ViewBag.pageCount = Convert.ToInt16(Math.Ceiling(count / 3));
+            ViewBag.NowPag = page;
             var model = db.RecommendedTrip_Travel.Where(p => p.RecommendedTrip_ID == id).OrderBy(p => p.RecommendedTrip_Travel_ID).Skip((page - 1) * 3).Take(3).ToList();
             //var modelindex = model.GroupBy(o => o.RecommendedTrip_Travel_ID).Select((o) => new { o.Key });
             //if (modelindex.FirstOrDefault()!=null)
@@ -423,7 +424,7 @@ namespace WebSiteProject.Controllers
             //    ViewBag.star = modelindex.FirstOrDefault().Key;
             //    ViewBag.end = modelindex.LastOrDefault().Key;
             //}
-            ViewBag.NowPag = page;
+            
             return PartialView(model);
         }
         #endregion

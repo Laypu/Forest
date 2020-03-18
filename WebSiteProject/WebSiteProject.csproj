@@ -2025,6 +2025,8 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="UploadFile\VideoItem\263521266-Test.txt" />
     <Content Include="UploadFile\VideoItem\Test.txt" />
+    <Content Include="UploadImage\ActiveItem\637201525122401601_f_pic_02.jpg" />
+    <Content Include="UploadImage\ActiveItem\637201536487881822_article_pic_02.jpg" />
     <Content Include="UploadImage\Destination_Img\banner_d.jpg" />
     <Content Include="UploadImage\Destination_Img\banner_t_old.jpg" />
     <Content Include="UploadImage\Destination_Img\bg_3.jpg" />
@@ -2120,6 +2122,7 @@
     <Content Include="Views\Home\Article.cshtml" />
     <Content Include="Views\Message\Forward.cshtml" />
     <Content Include="Views\Shared\Captcha.cshtml" />
+    <Content Include="Views\Facts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -2132,7 +2135,6 @@
     <Folder Include="UploadImage\Config\" />
     <Folder Include="UploadImage\Editor\" />
     <Folder Include="UploadImage\Notice\" />
-    <Folder Include="Views\Facts\" />
     <Folder Include="Views\Recommendedtrips\" />
   </ItemGroup>
   <ItemGroup>
