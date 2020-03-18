@@ -1,0 +1,177 @@
+﻿<!--banner start-->
+
+@model HomeViewModel
+
+<!--banner start-->
+
+    <div class="page_banner one_pic">
+        <img src="@Url.Content("~/img/index_banner_05.jpg")" alt="HashTag Banner" />
+    </div>
+<!--banner end-->
+<!--page_content start-->
+<div class="page_content">
+    @{
+        var HashTagName = ViewBag.HashTagName;
+    }
+    <!--page top start-->
+    @*<div class="page_top">
+            <div class="container">
+                <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
+                    <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
+                    <a href="index.html" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i><a href="things.html">Things to do</a>
+                </div>
+                <div class="col-md-5 col-sm-6 col-xs-12">
+                    <script>$.include("blocks/page_top.html");</script>
+                </div>
+            </div>
+        </div>*@
+    <!--page top end-->
+    <!--map start-->
+    @*page top start*@
+    <div class="page_top">
+        <div class="container">
+            <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
+                <a href="#;return false;" title="Main content area" accesskey="C" id="main-content">:::</a> &nbsp;
+                <a href="index.html" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                @HashTagName
+            </div>
+
+        </div>
+    </div>
+    @*page top end*@
+    <div class="page_con">
+        <h2 data-sr="enter left over 1.5s">@HashTagName</h2>
+
+    </div>
+    <!--article_list start-->
+    <div class="article_list">
+        <div class="container">
+            
+           
+
+            <ul class="list">
+
+                @{
+
+                    var MessageItems = (IEnumerable<WebSiteProject.Models.MessageItem>)ViewBag.Hash;
+                    var Message10Hash = (IEnumerable<WebSiteProject.Models.Message10Hash>)ViewBag.Message10Hash;
+                    
+                    var n = 1;
+                    foreach (var item in MessageItems)
+                    {
+                        <li data-sr="enter bottom over 1.5s">
+                            <div class="img imh_opacity">
+                                <a href="@Url.Action("Article","Home",new {langid = 1,Aid = item.ItemID,Hashtag= @HashTagName})" title="@item.Title">
+                                    <img src="@Url.Content("~/img/")@item.RelateImageFileOrgName" alt="item.Title" />
+                                </a>
+                            </div>
+                            <div class="font_box">
+                                <div class="title">
+                                    <a href="@Url.Action("Article","Home",new {langid = 1,ImgTitle = item.Title })" title="@item.Title">@item.Title</a>
+                                </div>
+                                <!--Hastag-->
+                                <div class="link" id="HashTag">
+
+                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H &nbsp;</a>
+                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H &nbsp;</a>
+                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H &nbsp;</a>
+                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H &nbsp;</a>
+                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H &nbsp;</a>
+                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H &nbsp;</a>
+                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H &nbsp;</a>
+                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H &nbsp;</a>
+                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H &nbsp;</a>
+                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H </a>
+
+                                </div>
+                            </div>
+                        </li>
+                    }
+                }
+
+            </ul>
+        </div>
+    </div>
+    <!--article_list end-->
+</div>
+<!--page_content end-->
+<!--breadcrumbs start-->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="title">You are here</div>
+        <div class="font"><a href="@Url.Action("Index","Home")" title="Home">Home</a> / @HashTagName</div>
+    </div>
+</div>
+<!--breadcrumbs end-->
+
+
+
+
+
+<script src="js/bootstrap.js"></script>
+
+<script>
+
+    window.onload = function () {
+        $(".owl-prev").attr("title", "@(Common.GetLangText("Previous"))").attr("tabindex", "0");
+        $(".owl-next").attr("title", "@(Common.GetLangText("Next"))").attr("tabindex", "0");
+        $(".tp-leftarrow").attr("title", "@(Common.GetLangText("Previous"))");
+        $(".tp-rightarrow").attr("title", "@(Common.GetLangText("Next"))");
+        $("#mainNav>li>a").first().addClass("active").parent().siblings().children().removeClass("active");
+    }
+
+    $(function () {
+
+        setInterval(GetTime, 6000);
+        setInterval(GetDate, 864000000);
+        function GetTime() {
+            $.ajax({
+                    type:"post",
+                    contentType:"application/json",
+                    url:"@Url.Action("GetTime","Destination_Index")",
+                success: function (result) {
+
+
+                    $(".time").text(result);
+                    },
+                    error: function() {
+
+                    }
+            })
+        }
+        function GetDate() {
+            $.ajax({
+                    type:"post",
+                    contentType:"application/json",
+                    url:"@Url.Action("GetDate","Destination_Index")",
+                success: function (result) {
+
+                    $('.date').text(result);
+
+                    },
+                    error: function() {
+
+                    }
+            })
+        }
+
+    });
+
+
+
+
+    //$(function () {
+    //    //maplegend 圖片更改
+    //    for (var i = 1; i <= 4; i++)
+    //    {
+    //        $(`#MapL${i}`).click()
+    //        {
+    //            $("#MapL > ul> li").removeAttr("class")
+    //            this.attr("class", "active");
+    //        }
+    //    }
+    //})
+
+
+</script>
+

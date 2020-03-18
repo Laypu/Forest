@@ -12,7 +12,7 @@ using System.Web;
 using System.Web.Mvc;
 using ViewModels;
 using WebSiteProject.Code;
-
+using WebSiteProject.Models.F_ViewModels;
 
 namespace WebSiteProject.Controllers
 {
@@ -499,7 +499,10 @@ namespace WebSiteProject.Controllers
             ViewBag.Category = Category;
             ViewBag.DesHash = db.MessageItems.Where(M=>M.ItemID == Aid).ToList();
             ViewBag.MessageBanner = db.MessageBanners.Where(B =>B.MessageItem_ID == Aid).First().MessageBanner_Img;
-            
+
+            ViewBag.Unit = db.MessageUnitSettings.Where(p => p.MainID == 9).Select(p => new UnitPrint { isPrint = (bool)p.IsPrint, isForward = (bool)p.IsForward, isRSS = (bool)p.IsRSS, isShare = (bool)p.IsShare }).FirstOrDefault();
+
+
             return View(viewmodel);
         }
     }
