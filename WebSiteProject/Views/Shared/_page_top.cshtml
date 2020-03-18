@@ -5,7 +5,7 @@
     @{
         if (unit.isForward)
         {
-            <a href="#" @*target="_blank"*@onclick="window.open('@Url.Action("Forward",new {itemid=ViewBag.ID}) ', 'forward', config='height=750,width=650')"; title="forward(new windown)"><img src="@Url.Content("~/img/icon_mail.png")" alt=""></a>
+            <a href="@Url.Action("Forward",new {itemid=ViewBag.ID})" target="_blank" title="forward(new windown)"><img src="@Url.Content("~/img/icon_mail.png")" alt=""></a>
         }
         if (unit.isPrint)
         {
