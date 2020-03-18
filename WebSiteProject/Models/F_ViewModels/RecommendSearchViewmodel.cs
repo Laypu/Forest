@@ -16,5 +16,7 @@ namespace WebSiteProject.Models.F_ViewModels
        public string Dstination_typ { get; set; }
         public string Day_Id { get; set; }
         public string F_HashTag { get; set; }
+
+        public string HashTag { get; set; }
     }
 }

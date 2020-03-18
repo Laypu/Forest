@@ -1,0 +1,82 @@
+﻿
+@{
+    Layout = null;
+}
+@model CaptchaMvc.Models.DefaultBuildInfoModel
+@{
+    string id = Guid.NewGuid().ToString("N");
+    string functionName = string.Format("______{0}________()", Guid.NewGuid().ToString("N"));
+    <script type="text/javascript">
+
+        $(function () {
+            $('#@id').show();
+            $('#i_voice').show();
+    });
+
+
+    function @functionName {
+            $('#@id').hide();
+             $.post("@Model.RefreshUrl", { @Model.TokenParameterName: $('#@Model.TokenElementId').val() },
+                 function (data) {
+                     var d = $('#CaptchaDeText').val();
+                     $('#i_voice').prop('href', '@Url.Action("PlayVoice")?token=' + d);
+                     $('#@id').show();
+                     $('#@Model.InputElementId').focus();
+            });
+        return false;
+    }
+    </script>
+
+
+}
+<div>
+    @if (Model.IsRequired)
+    {
+        @Html.TextBox(Model.InputElementId, null, new Dictionary<string, object>
+                                                      {
+                                                          {"data-val", "true"},
+                                                          {"data-val-required", Model.RequiredMessage},
+                                                          {"class","form-control input-small float_left" },
+                                                          {"placeholder","please enter Verification code" }
+                                                      })
+    }
+    else
+    {
+        <input type="text"
+               @(ViewData["submitBtn"] != null && ViewData["submitBtn"].ToString() == "Captcha"||ViewData["submitBtn"] != null && ViewData["submitBtn"].ToString() == "Captcha_v" ? "autofocus" : "")
+               id="@Model.InputElementId"
+               name="@Model.InputElementId"
+               class="form-control input-small float_left"
+               placeholder="please enter Verification code" />
+
+
+        @*@Html.TextBox(Model.InputElementId, null, new { @class = "form-control input-small float_left", @placeholder = "請輸入驗證碼" })*@
+    }
+
+    <span class="verification_code">
+        <img id="@Model.ImageElementId" style="width:75px;height:25px" src="@Model.ImageUrl" alt="Verify image" />
+        <a href="#" id="@id" style="display:none" onclick="@functionName" title="
+reorganize">
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+            reorganize
+        </a>
+        <a href="@Url.Action("PlayVoice")?token=@Model.TokenValue" target="voice" title="Voice playback" id="i_voice">
+            <i class="fa fa-volume-up" aria-hidden="true" style="cursor:pointer"></i><span class="sr-only">Voice playback</span>
+        </a>
+    </span>
+    @if (ViewData["submitBtn"] != null && ViewData["submitBtn"].ToString() == "Captcha")
+    {
+        <div class="required">
+            please enter Verification code
+        </div>
+    }
+    @if (ViewData["submitBtn"] != null && ViewData["submitBtn"].ToString() == "Captcha_v")
+    {
+        <div class="required">
+           Verification code erro
+        </div>
+    }
+    @Html.Hidden(Model.TokenElementId, Model.TokenValue)
+
+    @*@Html.ValidationMessage(Model.InputElementId,new {@class="required" })*@
+</div>

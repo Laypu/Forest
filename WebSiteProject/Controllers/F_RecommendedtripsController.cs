@@ -1,4 +1,7 @@
-﻿using Services.Interface;
+﻿using CaptchaMvc.HtmlHelpers;
+using NAudio.Lame;
+using NAudio.Wave;
+using Services.Interface;
 using Services.Manager;
 using SQLModel;
 using SQLModel.Models;
@@ -8,10 +11,13 @@ using System.ComponentModel.DataAnnotations;
 using System.Configuration;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Speech.Synthesis;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Utilities;
@@ -43,6 +49,7 @@ namespace WebSiteProject.Controllers
             _IModelLinkManager = serviceinstance.ModelLinkManager;
             _ADRightDownManager = new ADRightDownManager(new SQLRepository<ADRightDown>(connectionstr)); 
         }
+        #region Index
         // GET: F_Recommendedtrips
         public ActionResult Index(int? langid)
         {
@@ -137,13 +144,15 @@ namespace WebSiteProject.Controllers
             ViewBag.Content = Server.HtmlDecode(db.RecommendedTrips_Index.FirstOrDefault().RecommendedTrips_Index_Content);
 
             //五大標題+圖
-            ViewBag.F_Thingtodo_Type = db.F_Thingtodo_Type.ToList();
+            ViewBag.F_Destination_Type = db.F_Destination_Type.ToList();
 
             return View(viewmodel);
         }
+#endregion
         #region recommended_list
         public ActionResult recommended_list(int? langid, RecommendSearchViewmodel search)
         {
+            #region 基本模組
             if (Session["LangID"] == null)
             {
                 var DefaultLang = System.Web.Configuration.WebConfigurationManager.AppSettings["DefaultLang"];
@@ -181,7 +190,7 @@ namespace WebSiteProject.Controllers
             _IMasterPageManager.SetModel<HomeViewModel>(ref viewmodel, "P", langid.ToString(), "");
             viewmodel.SEOScript = _IMasterPageManager.GetSEOData("", "", langid.ToString());
             viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
-
+            #endregion
             var Destination_Typ = db.F_Destination_Type;
             var Day_ID_ = db.RecommendedTrips_Day;
             var F_HashTag_Type_ = db.F_HashTag_Type;
@@ -215,6 +224,17 @@ namespace WebSiteProject.Controllers
                     Selected = false
                 });
             }
+            if(!search.HashTag.IsNullorEmpty())
+            {
+                search.Day_Id = "-1";
+                search.Dstination_typ = "-1";
+                search.F_HashTag = "-1";
+                ViewBag.HashTag = search.HashTag.AntiXss();
+            }
+            else
+            {
+                ViewBag.HashTag = "";
+            }
             ViewBag.day_id = search.Day_Id == "" || search.Day_Id ==null? "-1" : search.Day_Id;
             ViewBag.dstination_typ = search.Dstination_typ == "" || search.Dstination_typ == null ? "-1" : search.Dstination_typ;
             ViewBag.f_HashTag = search.F_HashTag == "" || search.F_HashTag == null ? "-1" : search.F_HashTag;
@@ -242,11 +262,46 @@ namespace WebSiteProject.Controllers
         {
             var mode = new List<RecommendedSearchModel>();
             var datetime = DateTime.Now.Date;
-            mode = db.RecommendedTrips.Where(p=>(p.RecommendedTrips_StarDay==null && p.RecommendedTrips_EndDay == null)
-            ||((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay == null)&& DbFunctions.TruncateTime(p.RecommendedTrips_StarDay)<= datetime)
-             || ((p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)
-            || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay)>= datetime)).Select(p => new RecommendedSearchModel { RecommendedTrips_ID = p.RecommendedTrips_ID, RecommendedTrips_Title = p.RecommendedTrips_Title, RecommendedTrips_Day_Name = p.RecommendedTrips_Day.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = p.RecommendedTrips_Day.RecommendedTrips_Day_ID, RecommendedTrips_Destinations_ID = p.RecommendedTrips_Destinations_ID,RecommendedTrips_Index_Content=p.RecommendedTrips_Content,RecommendedTrips_Img=p.RecommendedTrips_Img,RecommendedTrips_Img_Description=p.RecommendedTrips_Img_Description, RecommendedTrips_Img_Img=p.F_Destination_Type.Recommend_Img}).ToList();
-            //mode = db.V_RecommendedTripsForWebadmin.GroupBy(o=>o.RecommendedTrips_ID).Select(p=>new RecommendedSearchModel {RecommendedTrips_ID=p.Key, RecommendedTrips_Title=p.FirstOrDefault().RecommendedTrips_Title, RecommendedTrips_Day_Name=p.FirstOrDefault().RecommendedTrips_Day_Name,HashTag_Type_ID=p.FirstOrDefault().HashTag_Type_ID,RecommendedTrips_Day_ID=p.FirstOrDefault().RecommendedTrips_Day_ID,RecommendedTrips_Destinations_ID=p.FirstOrDefault().RecommendedTrips_Destinations_ID}).ToList();
+            if (!recommendSearch.HashTag.IsNullorEmpty())
+            {
+                var HasT = recommendSearch.HashTag.ToUpper();
+                var Has = db.RecommendedTrips_HashTag.Where(p => p.RecommendedTrips_keyword0.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword1.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword2.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword3.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword4.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword5.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword6.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword7.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword8.ToUpper() == HasT ||
+                                                               p.RecommendedTrips_keyword9.ToUpper() == HasT).Select(p=>p.RecommendedTrips_Id).ToList();
+                var Re = db.RecommendedTrips.Where(p => (p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay == null)
+                             || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay == null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime)
+                              || ((p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)
+                             || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)).ToList();
+                
+                foreach(var item in Has)
+                {
+                    RecommendedSearchModel re = new RecommendedSearchModel();
+                    var m = Re.Where(p => p.RecommendedTrips_ID == item).FirstOrDefault();
+                    re.RecommendedTrips_ID = m.RecommendedTrips_ID;
+                    re.RecommendedTrips_Title = m.RecommendedTrips_Title;
+                    re.RecommendedTrips_Day_Name = m.RecommendedTrips_Day.RecommendedTrips_Day_Name;
+                   re.RecommendedTrips_Day_ID = m.RecommendedTrips_Day.RecommendedTrips_Day_ID;
+                    re.RecommendedTrips_Destinations_ID = m.RecommendedTrips_Destinations_ID;
+                   re.RecommendedTrips_Index_Content = m.RecommendedTrips_Content;
+                   re.RecommendedTrips_Img = m.RecommendedTrips_Img;
+                   re.RecommendedTrips_Img_Description = m.RecommendedTrips_Img_Description;
+                    re.RecommendedTrips_Img_Img = m.F_Destination_Type.Recommend_Img;
+                    mode.Add(re);
+                }
+            }
+            else { 
+             mode = db.RecommendedTrips.Where(p => (p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay == null)
+                           || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay == null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime)
+                            || ((p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)
+                           || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)).Select(p => new RecommendedSearchModel { RecommendedTrips_ID = p.RecommendedTrips_ID, RecommendedTrips_Title = p.RecommendedTrips_Title, RecommendedTrips_Day_Name = p.RecommendedTrips_Day.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = p.RecommendedTrips_Day.RecommendedTrips_Day_ID, RecommendedTrips_Destinations_ID = p.RecommendedTrips_Destinations_ID, RecommendedTrips_Index_Content = p.RecommendedTrips_Content, RecommendedTrips_Img = p.RecommendedTrips_Img, RecommendedTrips_Img_Description = p.RecommendedTrips_Img_Description, RecommendedTrips_Img_Img = p.F_Destination_Type.Recommend_Img }).ToList();
+            }
             if (recommendSearch.Day_Id != "-1")
             {
                 mode = mode.Where(p => p.RecommendedTrips_Day_ID == Convert.ToInt32(recommendSearch.Day_Id)).ToList();
@@ -327,7 +382,7 @@ namespace WebSiteProject.Controllers
             _IMasterPageManager.SetModel<HomeViewModel>(ref viewmodel, "P", langid.ToString(), "");
             viewmodel.SEOScript = _IMasterPageManager.GetSEOData("", "", langid.ToString());
             viewmodel.ADMain = _IMasterPageManager.GetADMain_Article("P", langid.ToString(), site_id, Type);
-            viewmodel.ADMobile = _IMasterPageManager.GetADMain("M", langid.ToString(), site_id);
+            viewmodel.ADMobile = _IMasterPageManager.GetADMain_Article("M", langid.ToString(), site_id, Type);
             viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
             #endregion
             var model = db.RecommendedTrips.Find(RecommendedTrips_ID);
@@ -348,6 +403,10 @@ namespace WebSiteProject.Controllers
             ViewBag.Upfile = model.RecommendedTrips_UploadFileDesc; ;
             ViewBag.UpfileDES= model.RecommendedTrips_UploadFileName;
             ViewBag.pageprt=Url.Action("Print", "F_Recommendedtrips", new { id = RecommendedTrips_ID });
+            var hostUrl = string.Format("{0}://{1}",
+        Request.Url.Scheme,
+        Request.Url.Authority);
+            ViewBag.url = hostUrl + Url.Action("recommended_Detail", "F_Recommendedtrips", new { RecommendedTrips_ID = RecommendedTrips_ID });
             return View(viewmodel);
         }
         #endregion
@@ -401,28 +460,26 @@ namespace WebSiteProject.Controllers
         }
         #endregion
         #region Forward
-        public ActionResult Forward(string itemid,Forward_model model=null,string btn="")
+        public ActionResult Forward(string itemid,Forward_model model,string btn="",string CaptchaInputText="")
         {
             string ErroMessage = string.Empty;
             if (btn=="")
             { 
-            itemid = Server.HtmlEncode(itemid);
+            //itemid = Server.HtmlEncode(itemid);
 
-            ViewBag.itemid = itemid;
-            var itemmodel = db.RecommendedTrips.Find(int.Parse(itemid));
-                if (itemmodel == null) { return RedirectToAction("Index", "Home"); }
-                if (itemmodel != null)
-                {
-                    model.Title = itemmodel.RecommendedTrips_Title;
-                }
+            //ViewBag.itemid = itemid;
+            //var itemmodel = db.RecommendedTrips.Find(int.Parse(itemid));
+            //    if (itemmodel == null) { return RedirectToAction("Index", "Home"); }
+            //    if (itemmodel != null)
+            //    {
+            //        model.Title = itemmodel.RecommendedTrips_Title;
+            //    }
 
-            var hostUrl = string.Format("{0}://{1}",
-              Request.Url.Scheme,
-              Request.Url.Authority);
-            if(string.IsNullOrEmpty(itemid)==false)
-            {
-                model.Url = hostUrl + Url.Action("recommended_Detail", "F_Recommendedtrips", new { RecommendedTrips_ID = int.Parse(Server.HtmlEncode(itemid))});
-            }
+      
+            //if(string.IsNullOrEmpty(itemid)==false)
+            //{
+            //    model.Url =
+            //}
             return View(model);
             }
             else
@@ -436,7 +493,7 @@ namespace WebSiteProject.Controllers
                     {
                         info.Add("Sender", "");
                         model.btn = "Sender";
-                        model.ErroMessage += "Sender " + " required";
+                        model.ErroMessage += "Sender" + " required";
                         return View(model);
                     }
                     if (model.SenderEMail.IsNullorEmpty())
@@ -477,6 +534,20 @@ namespace WebSiteProject.Controllers
                                 return View(model);
                             }
                         }
+                    }
+                    if(CaptchaInputText.IsNullorEmpty())
+                    {
+                        info.Add("Captcha", "");
+                        model.btn = "Captcha";
+
+                        return View(model);
+                    }
+                    if (!this.IsCaptchaValid("驗證失敗!"))
+                    {
+                        info.Add("Captcha_v", "");
+                        model.btn = "Captcha_v";
+
+                        return View(model);
                     }
                     if (info.Count() == 0)
                     {
@@ -533,13 +604,6 @@ namespace WebSiteProject.Controllers
             }
         }
         #endregion
-        //#region SendMail
-        ////[ValidateAntiForgeryToken]
-        //public ActionResult SendMail(string itemid, Forward_model model)
-        //{
-
-        //}
-        //#endregion
         #region Forward_OK
         public ActionResult Forward_OK(int? langid,string check="")
         {
@@ -629,17 +693,96 @@ namespace WebSiteProject.Controllers
             string mess = "";
             if(check=="True")
             {
-                mess = "Forward succes；Forward success";
+                mess = "Forward success";
                 ViewBag.mess = mess.AntiXss();
             }
             else
             {
-                mess = "Forward succes；Forward failure";
+                mess = "Forward  failure";
                 ViewBag.mess = mess.AntiXss();
             }
             return View(viewmodel);
         }
         #endregion
+        public async Task<ActionResult> PlayVoice(string token)
+        {
+            try
+            {
+                var a = CaptchaMvc.HtmlHelpers.CaptchaHelper.GetCaptchaManager(this);
+                var c = a.StorageProvider.Value(token, CaptchaMvc.Interface.TokenType.Validation);
+
+                string speak = "1234";
+                if (c != null)
+                {
+                    speak = c.Value.ToString();
+                }
+
+                logger.Debug("1.播放聲音，播放數字：" + speak);
+
+                Task<FileContentResult> task = Task.Run(() =>
+                {
+                using (SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer())
+                {
+                        //CultureInfo keyboardCulture = System.Windows.Forms.InputLanguage.CurrentInputLanguage.Culture;
+                        //InstalledVoice neededVoice = speechSynthesizer.GetInstalledVoices(keyboardCulture).FirstOrDefault();
+                       //var check=speechSynthesizer.GetInstalledVoices().Where(v => v.VoiceInfo.Name == "Microsoft Zira Desktop").FirstOrDefault();
+                       // if(check!=null)
+                       // {
+                       //     speechSynthesizer.SelectVoice("Microsoft Zira Desktop");
+                       // }
+                        MemoryStream stream = new MemoryStream();
+
+                        speechSynthesizer.SetOutputToWaveStream(stream);
+                        
+                        var textarr = speak.ToArray();
+
+                        foreach (var t in textarr)
+                        {
+                            speechSynthesizer.Speak(t.ToString());
+                        }
+
+                        var bytes = stream.GetBuffer();
+                        var mp3bytes = ConvertWavStreamToMp3File(ref stream, Server.MapPath("//UploadImage/fileName.mp3"));
+
+                        return File(mp3bytes, "audio/mpeg");
+
+                    }
+                });
+
+                return await task;
+            }
+            catch (Exception ex)
+            {
+                logger.Debug(ex, "播放聲音異常，error:" + ex.ToString());
+                throw ex;
+            }
+
+        }
+
+        private byte[] ConvertWavStreamToMp3File(ref MemoryStream ms, string savetofilename)
+        {
+            CheckAddBinPath();
+            ms.Seek(0, SeekOrigin.Begin);
+            MemoryStream msmp3 = new MemoryStream();
+            using (var retMs = new MemoryStream())
+            using (var rdr = new WaveFileReader(ms))
+            using (var wtr = new LameMP3FileWriter(msmp3, rdr.WaveFormat, LAMEPreset.VBR_90))
+            {
+                rdr.CopyTo(wtr);
+            }
+            return msmp3.ToArray();
+        }
+
+        public void CheckAddBinPath()
+        {
+            var binPath = Path.Combine(new string[] { AppDomain.CurrentDomain.BaseDirectory, "bin" });
+            var path = Environment.GetEnvironmentVariable("PATH") ?? "";
+            if (!path.Split(Path.PathSeparator).Contains(binPath, StringComparer.CurrentCultureIgnoreCase))
+            {
+                path = string.Join(Path.PathSeparator.ToString(), new string[] { path, binPath });
+                Environment.SetEnvironmentVariable("PATH", path);
+            }
+        }
     }
 
 }

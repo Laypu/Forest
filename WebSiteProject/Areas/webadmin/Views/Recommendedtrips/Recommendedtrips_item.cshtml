@@ -117,7 +117,8 @@
                             @*<td>
             <a href="@Url.Action("RecommendedTrip_Travel_Item",new {RecommendedTripID=@item.RecommendedTrips_ID})" class="btn green-meadow">管理<i class="fa fa-plus"></i></a>
         </td>*@
-                            <td><a class="btn green-meadow" href="@Url.Action("Index", "AD", new { type = @item.RecommendedTrips_ID.ToString() , stype = "P", site_id = 17,MenuType=-1})">輪播管理<i class="fa fa-plus"></i></a></td>
+                            <td><a class="btn green-meadow" href="@Url.Action("Index", "AD", new { type = @item.RecommendedTrips_ID.ToString() , stype = "P", site_id = 17,MenuType=-1})">輪播管理<i class="fa fa-plus"></i></a>
+                                <a class="btn green-meadow" href="@Url.Action("Index", "AD", new { type = @item.RecommendedTrips_ID.ToString() , stype = "M", site_id = 17,MenuType=-1})">手機輪播管理<i class="fa fa-plus"></i></a></td>
                         </tr>
                         }
                         </tbody>

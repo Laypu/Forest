@@ -483,3 +483,6 @@ C:\Users\203\Documents\GitHub\Forest\WebSiteProject\obj\Debug\WebSiteProject.csp
 C:\Users\203\Documents\GitHub\Forest\WebSiteProject\obj\Debug\WebSiteProject.csproj.CopyComplete
 C:\Users\203\Documents\GitHub\Forest\WebSiteProject\obj\Debug\WebSiteProject.dll
 C:\Users\203\Documents\GitHub\Forest\WebSiteProject\obj\Debug\WebSiteProject.pdb
+C:\Users\203\Documents\GitHub\Forest\WebSiteProject\bin\CaptchaMvc.dll
+C:\Users\203\Documents\GitHub\Forest\WebSiteProject\bin\CaptchaMvc.pdb
+C:\Users\203\Documents\GitHub\Forest\WebSiteProject\bin\CaptchaMvc.xml

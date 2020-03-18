@@ -29,16 +29,15 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             RED.RecommendedTrips_Index_ID = db.RecommendedTrips_Index.FirstOrDefault().RecommendedTrips_Index_ID;
             return View(RED);
         }
-        [ValidateInput(false)]
+        
         public ActionResult RecommendedtripsIndex_Edit(int RecommendedTrips_Index_ID, string RecommendedTrips_Index_Content)
         {
             RecommendedTrips_Index_ID = 1;
             var RED = db.RecommendedTrips_Index.Find(RecommendedTrips_Index_ID);
-            RED.RecommendedTrips_Index_Content = Server.HtmlEncode(RecommendedTrips_Index_Content);
+            RED.RecommendedTrips_Index_Content = HttpUtility.UrlDecode(RecommendedTrips_Index_Content);
             db.Entry(RED).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
-            TempData["Msg"] = "修改成功";
-            return RedirectToAction("RecommendedtripsIndex");
+            return Json("修改成功", JsonRequestBehavior.AllowGet);
         }
         public ActionResult Recommendedtrips_item(string Dstination_typ = "", string Day_Id = "", string F_HashTag="")
         {
@@ -333,10 +332,13 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                             System.IO.File.Delete(fullpath);
                         }
                     }
-                    recommendedTrip_Travel.RecommendedTrip_Travel_Img = "";
-                    recommendedTrip_Travel.RecommendedTrip_Travel_Img_Description = "";
+                    if(recommendedTrip_Travel.RecommendedTrip_Travel_Img== imagecheck)
+                    {
+                        recommendedTrip_Travel.RecommendedTrip_Travel_Img = "";
+                        recommendedTrip_Travel.RecommendedTrip_Travel_Img_Description = "";
+                    }
                 }
-                if (fileImag != null)
+                if (fileImag != null&& imagecheck=="")
                 {
 
                     var old_SizeChart = imge;
@@ -507,8 +509,11 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                             System.IO.File.Delete(fullpath);
                         }
                     }
+                    if(recommendedTrip.RecommendedTrips_Img== imgname)
+                    { 
                     recommendedTrip.RecommendedTrips_Img = "";
                     recommendedTrip.RecommendedTrips_Img_Description = "";
+                    }
                 }
                 if(filecheck== "True")
                 {
@@ -520,12 +525,16 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         {
                             System.IO.File.Delete(fullpath);
                         }
-                        recommendedTrip.RecommendedTrips_UploadFileName = "";
-                        recommendedTrip.RecommendedTrips_UploadFileDesc = "";
-                        recommendedTrip.RecommendedTrips_UploadFilePath = "";
+                        if (recommendedTrip.RecommendedTrips_UploadFileName == filname)
+                        {
+                            recommendedTrip.RecommendedTrips_UploadFileName = "";
+                            recommendedTrip.RecommendedTrips_UploadFileDesc = "";
+                            recommendedTrip.RecommendedTrips_UploadFilePath = "";
+                        }
+                
                     }
                 }
-                if (uploadfile != null)
+                if (uploadfile != null && imagecheck=="")
                 {
                     var old_SizeChart = filname;
                     if (old_SizeChart != null)
@@ -537,7 +546,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         }
                     }
                 }
-                if (fileImag != null)
+                if (fileImag != null && filecheck=="")
                 {
                     var old_SizeChart = imgname;
                     if (old_SizeChart != null)
