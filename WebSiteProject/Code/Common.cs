@@ -368,7 +368,6 @@ namespace WebSiteProject.Code
             return value;
         }
         #endregion
-
         #region GetAntiForgeryToken
         public static string GetAntiForgeryToken()
         {
