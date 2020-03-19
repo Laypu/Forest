@@ -924,7 +924,16 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         }
 
                     }
-                    msg += "刪除標題為:" + Trip.RecommendedTrips_Title + "\n";
+                        if (Trip.ImageFileName.IsNullorEmpty() == false)
+                        {
+                            string fullpath = Request.MapPath("~/UploadFile/RecommendedTrips/" + Trip.ImageFileName);
+                            if (System.IO.File.Exists(fullpath))
+                            {
+                                System.IO.File.Delete(fullpath);
+                            }
+
+                        }
+                        msg += "刪除標題為:" + Trip.RecommendedTrips_Title + "\n";
                     db.Entry(Trip).State = System.Data.Entity.EntityState.Deleted;
 
                    var  r = db.SaveChanges();

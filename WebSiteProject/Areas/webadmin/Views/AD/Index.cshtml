@@ -57,6 +57,10 @@
             }
             else if (ViewBag.sitid == 17)
             {
+                <li>
+                    @ViewBag.RecommendedTrips_Title
+                    <i class="fa fa-circle"></i>
+                </li>
                 <li>@ViewBag.ReTitle</li>
             }
             else
@@ -85,16 +89,29 @@
 
         </div>
     }
-   if (ViewBag.MenuType == 179 || (int)Session["F_MenuType"] == 179)
+    if (ViewBag.MenuType == 179 || (int)Session["F_MenuType"] == 179)
     {
         <div class="title_01">Destinations</div>
         <div id="Partial_Index_MenuLink">
             <!--.......-->
         </div>
     }
-     if (ViewBag.MenuType == 176 || (int)Session["F_MenuType"] == 176)
+    if (ViewBag.MenuType == 176 || (int)Session["F_MenuType"] == 176)
     {
-
+        <div id="Partial_Index_MenuLink">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="class_title">管理項目</p>
+                <div class="display_inline">
+                    <div class="display_inline">
+                        <select id="Index_Partial_Select" class="form-control checkitem" onchange="window.location.href=this.value">
+                            <option data-index="1" value="#" selected>輪播牆設定(電腦版)</option>
+                            <option data-index="2" value="@Url.Action("RecommendedtripsIndex", "Recommendedtrips")">推薦行程主版設定(標題&文字)</option>
+                            <option data-index="3" value="@Url.Action("Recommendedtrips_item", "Recommendedtrips")">推薦行程設定</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
     }
 }
 
@@ -105,7 +122,7 @@
 
     <div class="table-toolbar">
         <div class="col-md-6 col-sm-12 col-xs-12">
-            @if (ViewBag.MenuType == 176 || (int)Session["F_MenuType"] == 176 || ViewBag.sitid == 17||ViewBag.MenuType == 45 || (int)Session["F_MenuType"] == 45 )
+            @if (ViewBag.MenuType == 176 || (int)Session["F_MenuType"] == 176 || ViewBag.sitid == 17 || ViewBag.MenuType == 45 || (int)Session["F_MenuType"] == 45)
             {
                 @ViewBag.SiteTile;
             }

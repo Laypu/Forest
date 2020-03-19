@@ -62,7 +62,7 @@
             }
 
             <!--文繞圖 end-->
-            @Html.Raw(Model.HtmlContent)
+            @Html.Raw(Model.HtmlContent.safeHtmlFragment())
         </div>
 
     </div>
