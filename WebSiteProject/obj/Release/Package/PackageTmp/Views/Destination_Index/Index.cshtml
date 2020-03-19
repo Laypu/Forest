@@ -212,7 +212,7 @@
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                 <a href="#;return false;" title="Main content area" accesskey="C" id="main-content">:::</a> &nbsp;
                 <a href="index.html" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
-                <a href="." title="Destinations">Destinations</a>
+                @*<a href="." title="Destinations">*@Destinations@*</a>*@
             </div>
             <div class="col-md-5 col-sm-6 col-xs-12">
                 @*<script>$.include("blocks/page_top.html");</script>*@
@@ -232,7 +232,7 @@
                         //"@item.Destination_Type_Title1 @item.Destination_Type_Title2"
                         var titleford = @item.Destination_Type_Title1 + " " + @item.Destination_Type_Title2;
                         <li>
-                            <a href="@Url.Action("Details", "Destination_Index",new { ImgTitle =item.Destination_Type_Title1})" title="@titleford">
+                            <a href="@Url.Action("Details", "Destination_Index",new { ImgTitle =@item.Destination_Type_Title1})" title="@titleford">
 
                                 <div class="img"><img src="@Url.Content("~/img/600x800.png")" alt="@item.Destination_Type_Title1" style="background:url(@Url.Content("~/UploadImage/Destination_Img/" + item.Destination_Type_ImgName))" /></div><!--建議尺寸600*800px-->
                                 <div class="font_box">

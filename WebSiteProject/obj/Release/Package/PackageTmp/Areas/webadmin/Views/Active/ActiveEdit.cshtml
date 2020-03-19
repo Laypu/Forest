@@ -19,7 +19,7 @@
             <i class="fa fa-circle"></i>
         </li>
         <li>
-            <a href="@Url.Action("Index","Active")">活動管理</a>
+            <a href="@Url.Action("Index","Active")">Facts</a>
             <i class="fa fa-circle"></i>
         </li>
         <li>
@@ -46,16 +46,19 @@
         @Html.HiddenFor(Model => Model.UploadFilePath)
         @Html.HiddenFor(Model => Model.ImageFileName)
         @Html.HiddenFor(Model => Model.RelateImageName)
+        <input type="hidden" value="0" name="Group_ID" id="Group_ID" />
+        <input type="hidden" value="1" name="ImageFileLocation" id="ImageFileLocation" />
+        
         <div class="portlet light form-fit bordered">
             <div class="portlet-body form">
                 <div class="form-horizontal form-bordered">
                     <div class="form-body" id="form-body2">
-                        <div class="form-group">
+                        @*<div class="form-group">
                             <div class="col-md-2 col-sm-12 col-xs-12 search_item">類別名稱</div>
                             <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
                                 @Html.DropDownList(@Html.IdFor(m => m.Group_ID).ToString(), (IEnumerable<SelectListItem>)ViewBag.grouplist, new { @class = "form_02" })
                             </div>
-                        </div>
+                        </div>*@
                         <div class="form-group">
                             <div class="col-md-2 col-sm-12 col-xs-12 search_item"><span class="red">*</span>發佈日期</div>
                             <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
@@ -98,7 +101,7 @@
                                     <div style="display:inline">
                                         <!--<label for="exampleInputFile" class="control-label display_inline">圖片上傳</label>-->
                                         <input id="file_relateimage" type="file" class="display_inline" name="ImageFile" accept="image/*" />
-                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度400 * 225px</div>
+                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度450 * 600px</div>
                                     </div>
                                 </div>
                             </div>
@@ -133,14 +136,14 @@
                         </div>
 
                         <div class="form-group bg-grey_1">
-                            <div class="col-md-2 col-sm-12 search_item">圖片上傳</div>
+                            <div class="col-md-2 col-sm-12 search_item">內頁主圖片上傳</div>
                             <div class="col-md-10 col-sm-12 bg-white mobile_white">
                                 <div class="col-md-12">
                                     <div id="div_oldfile" style="display:none"><a href="@Model.ImageUrl" target="preview">@Html.Raw(Model.ImageFileOrgName)</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delimage">刪除</label></div>
-                                    <label for="ImageFile" class="col-md-2">圖片上傳</label>
+                                    <label for="ImageFile" class="col-md-2">內頁主圖片上傳</label>
                                     <div class="col-md-10">
                                         <input id="file_image" type="file" class="display_inline" name="ImageFile" accept="image/*" />
-                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度400 * 225px</div>
+                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小5MB內，尺寸寬度2000 * 600px</div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -150,12 +153,12 @@
                                         <span class="required" id="ImageFileDesc-error" style="display:none;">圖片說明 必須填寫！</span>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                @*<div class="col-md-12">
                                     <label class="col-md-2">圖片位置</label>
                                     <div class="col-md-10">
                                         <select name="@Html.IdFor(model=>model.ImageFileLocation)" id="@Html.IdFor(model=>model.ImageFileLocation)" class="form-control w-auto"><option value="1">左</option><option value="2">中</option><option value="3">右</option></select>
                                     </div>
-                                </div>
+                                </div>*@
                             </div>
                         </div>
 
@@ -202,13 +205,13 @@
                             </div>
                         </div>
 
-                        <div class="form-group" id="div_selitem">
+                        @*<div class="form-group" id="div_selitem">
                             <div class="col-md-2 col-sm-12 search_item">活動區間</div>
                             <div class="col-md-10 col-sm-12 bg-white mobile_white">
                                 <button type="button" class="btn green-meadow margin_bottom" id="btn_seladd">新增 <i class="fa fa-plus"></i></button>
                                 <button type="button" class="btn red-mint margin_bottom" id="btn_del">刪除 <i class="glyphicon glyphicon-trash"></i></button>
                                 <br>
-                                <!--投票項目列表 start-->
+                                投票項目列表 start
                                 <div class="table-scrollable">
                                     <table class="table table-bordered table-hover table_color_2" border="0" cellspacing="0" cellpadding="0" id="table_selContent">
                                         <thead>
@@ -251,10 +254,10 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <!--投票項目列表 end-->
+                                投票項目列表 end
                             </div>
-                        </div>
-                        @if (Model.ItemID >= 0)
+                        </div>*@
+                        @*@if (Model.ItemID >= 0)
                         {
                             <div class="form-group">
                                 <div class="col-md-2 col-sm-12 col-xs-12 search_item">審核狀態</div>
@@ -301,7 +304,7 @@
                                     </div>
                                 </div>
                             </div>
-                        }
+                        }*@
                     </div>
                 </div>
             </div>

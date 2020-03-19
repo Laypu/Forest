@@ -1,0 +1,177 @@
+﻿@using CaptchaMvc.HtmlHelpers
+@model WebSiteProject.Models.F_ViewModels.Forward_model
+@{
+    Layout = null;
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/forest/img/favicon.ico" type="image/x-icon">
+    <title>@Common.GetLangText("TAIWAN FOREST RECREATION")</title><!--英文 -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/bootstrap.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/theme.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/theme-elements.css")/">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/settings.css")" media="screen">
+
+    <!--fontawesome start-->
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/font-awesome.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/fontawesome.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/brands.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/solid.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/regular.min.css")">
+    <!--fontawesome end-->
+
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/style.css")">
+    <script src="@Url.Content("~/js/jquery.js")"></script>
+    @*<script src="@Url.Content("~/js/main.js")"></script>
+        <script src="@Url.Content("~/js/scrollReveal.js")"></script>*@
+    @*<script>
+            $(function () {
+                $("#submit").click(function () {
+                    $(".required").hide();
+                    var inputval = $(".form_a :input").filter(function () { return $(this).val() == "" && $(this).hasClass('checkitem'); });
+                        for (var idx = 0; idx < inputval.length; idx++) {
+                            $("#" + inputval[idx].name + "-error").show();
+                    }
+                     var obj = {};
+            obj.Sender = $("#sender_s").val();
+            obj.SenderEMail = $("#sender_mail").val();
+            obj.ForwardEMail = $("#receive_email").val();
+            obj.ForwardMessage = $("#message").val();
+            obj.Title = '@ViewBag.Title';
+            obj.Url = $("#Url").val();
+                     var iscon = true;
+            if (validateEmail(obj.SenderEMail )==false) {
+                $("#SenderEMail-check").show();
+                iscon= false;
+            }
+            var emails = obj.ForwardEMail .split(";");
+            emails.forEach(function (email) {
+                if (validateEmail(email) == false) {
+                    $("#ForwardEMail-check").show();
+                    iscon = false;
+                }
+            });
+                    if (iscon == false) { return false; }
+
+                       $.post('@Url.Action("SendMail","F_Recommendedtrips")', obj, function (data) {
+                if (data == "send_success") {
+                    alert('@Common.GetLangText("send_success")'); $(".form_a :input").val('');
+                }else { alert(data); }
+                 });
+              })
+            })
+            function validateEmail(email) {
+                var re = /^(([^<>()\[\]\\.,;:\s@@"]+(\.[^<>()\[\]\\.,;:\s@@"]+)*)|(".+"))@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+    </script>*@
+    <noscript>
+        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/noscript.css")">
+    </noscript>
+
+</head>
+<body style="max-width:806px; margin:0 auto; background: url(img/bg_05.jpg);">
+    <div class="con_box">
+        <div class="con_banner"><img src="@Url.Content("~/img/print_banner.jpg")" alt="" /></div><!--建議尺寸740*185px-->
+
+        <h2>@Model.Title</h2>
+        <form action="@Url.Action("Forward")" method="post">
+            <!--page content start-->
+            <div class="con_float">
+                <div class="form_con">
+                    <div class="table form_box">
+                        @Html.HiddenFor(m => m.Title)
+                        @Html.HiddenFor(m => m.Url)
+                        
+                        <div class="table-row">
+                            <div class="form_q"><label for="sender_s"><span class="required">* </span>Sender</label></div><!--標題label for值需與對應input id值相同-->
+                            <div class="form_a">
+                                <input id="sender_s" name="Sender" type="text" @(Model.btn == "Sender" ? "autofocus" : "") class="form-control checkitem" value="@Model.Sender">
+                                @if (Model.btn == "Sender")
+                                {
+                                    <span class="required">@Model.ErroMessage</span>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="table-row">
+                            <div class="form_q"><label for="sender_mail"><span class="required">* </span>Sender's Email</label></div>
+                            <div class="form_a">
+                                <input id="sender_mail" name="SenderEMail" @(Model.btn == "SenderEMail" || Model.btn == "SenderEMail_Erro" ? "autofocus" : "") type="text" class="form-control checkitem" value="@Model.SenderEMail">
+                                @if (Model.btn == "SenderEMail")
+                                {
+                                    <span class="required">@Model.ErroMessage</span>
+                                }
+                                @if (Model.btn == "SenderEMail_Erro")
+                                {
+                                    <span class="required">@Model.ErroMessage</span>
+                                }
+
+                            </div>
+                        </div>
+
+                        <div class="table-row">
+                            <div class="form_q"><label for="receive_email"><span style="color:red">* </span>Receive Email</label></div>
+                            <div class="form_a">
+                                <input id="receive_email" name="ForwardEMail" @(Model.btn == "ForwardEMail" || Model.btn == "ForwardEMail_Erro" ? "autofocus" : "") type="text" class="form-control checkitem" value="@Model.ForwardEMail">
+                                <span class="required block">Multiple sets of mail please;</span></br>
+                                @if (Model.btn == "ForwardEMail")
+                                {
+                                    <span class="required">@Model.ErroMessage</span>
+                                }
+                                @if (Model.btn == "ForwardEMail_Erro")
+                                {
+                                    <span class="required block">@Model.ErroMessage</span>
+                                }
+
+                            </div>
+                        </div>
+
+                        <div class="table-row">
+                            <div class="form_q"><label for="message">Give friends a message</label></div>
+                            <div class="form_a">
+                                <textarea id="message" name="ForwardMessage" @(Model.btn == "ForwardMessage" ? "autofocus" : "") rows="5" class="form-control checkitem" type="text" value="@Model.ForwardEMail"></textarea>
+                                @if (Model.btn == "ForwardMessage")
+                                {
+                                    <span class="required">@Model.ErroMessage</span>
+                                }
+                            </div>
+                        </div>
+                        <div class="table-row">
+                            <div class="form_q"><label for="CaptchaInputText"><span style="color:red">* </span>Verification code</label></div>
+                            <div class="form_a">
+                                @{
+                                    ViewData["submitBtn"] = Model.btn;
+                                }
+                                @Html.Captcha(4, "Captcha", ViewData, new CaptchaMvc.Models.ParameterModel("btn", Model.btn))
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="submit_btn">
+                    <label for="submit">
+                        <input id="submit" title="submit" type="submit" class="btn_01" name="btn" value="submit">
+                    </label>
+                    <label for="cancel">
+                        <input id="cancel" title="cancel" type="button" class="btn_01" onClick="window.close();" value="cancel">
+                    </label>
+                </div>
+            </div>
+        </form>
+        <!--page content end-->
+
+    </div>
+    <iframe name="voice" style="display:none" title="語音播放"></iframe>
+</body>
+<script type="text/javascript">
+    @*if ('@Model.btn' == 'Captcha') {
+        $('#CaptchaInputText').focus();
+    }*@
+</script>
+

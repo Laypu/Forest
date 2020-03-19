@@ -22,7 +22,7 @@
       <publishTime>03/04/2020 12:40:33</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Active/ActiveEdit.cshtml">
-      <publishTime>02/27/2020 18:32:58</publishTime>
+      <publishTime>03/19/2020 09:05:43</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Active/AddSelItem.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -31,19 +31,19 @@
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Active/Index.cshtml">
-      <publishTime>02/27/2020 18:32:58</publishTime>
+      <publishTime>03/19/2020 09:05:43</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Active/ModelItem.cshtml">
-      <publishTime>03/08/2020 13:01:17</publishTime>
+      <publishTime>03/19/2020 09:05:43</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Active/UnitSetting.cshtml">
-      <publishTime>03/05/2020 10:43:55</publishTime>
+      <publishTime>03/19/2020 09:05:43</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/AD/ADEdit.cshtml">
-      <publishTime>02/27/2020 18:32:58</publishTime>
+      <publishTime>03/17/2020 15:34:07</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/AD/Index.cshtml">
-      <publishTime>03/02/2020 20:49:15</publishTime>
+      <publishTime>03/18/2020 17:47:05</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Config/GroupAuth.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -87,17 +87,23 @@
     <File Include="Areas/webadmin/Views/Default/Index.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
+    <File Include="Areas/webadmin/Views/Destination_Index/AD.cshtml">
+      <publishTime>03/16/2020 10:51:02</publishTime>
+    </File>
     <File Include="Areas/webadmin/Views/Destination_Index/Create.cshtml">
       <publishTime>03/06/2020 11:20:14</publishTime>
     </File>
+    <File Include="Areas/webadmin/Views/Destination_Index/CreateAD.cshtml">
+      <publishTime>03/17/2020 18:23:01</publishTime>
+    </File>
     <File Include="Areas/webadmin/Views/Destination_Index/Createtr.cshtml">
-      <publishTime>03/09/2020 10:40:01</publishTime>
+      <publishTime>03/17/2020 18:22:45</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Destination_Index/Destination.cshtml">
-      <publishTime>03/10/2020 16:10:37</publishTime>
+      <publishTime>03/11/2020 15:29:03</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Destination_Index/Edit.cshtml">
-      <publishTime>03/09/2020 10:47:04</publishTime>
+      <publishTime>03/18/2020 09:09:36</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Destination_Index/MainTitleAndContent.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -244,7 +250,7 @@
       <publishTime>03/05/2020 10:43:55</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Message/MessageEdit.cshtml">
-      <publishTime>03/08/2020 12:03:27</publishTime>
+      <publishTime>03/12/2020 16:16:06</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Message/ModelItem.cshtml">
       <publishTime>03/09/2020 09:22:56</publishTime>
@@ -253,10 +259,10 @@
       <publishTime>03/05/2020 10:43:55</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Message/UnitSetting.cshtml">
-      <publishTime>03/05/2020 10:43:55</publishTime>
+      <publishTime>03/18/2020 16:42:42</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Model/Index.cshtml">
-      <publishTime>03/06/2020 10:07:46</publishTime>
+      <publishTime>03/19/2020 09:05:43</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Model/IndexSetting.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -291,20 +297,26 @@
     <File Include="Areas/webadmin/Views/Patent/UnitSetting.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
+    <File Include="Areas/webadmin/Views/Recommendedtrips/Index.cshtml">
+      <publishTime>03/18/2020 17:47:05</publishTime>
+    </File>
     <File Include="Areas/webadmin/Views/Recommendedtrips/RecommendedtripsIndex.cshtml">
-      <publishTime>02/28/2020 11:37:04</publishTime>
+      <publishTime>03/18/2020 17:47:05</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Recommendedtrips/Recommendedtrips_Edit.cshtml">
-      <publishTime>03/09/2020 20:10:42</publishTime>
+      <publishTime>03/18/2020 17:47:05</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Recommendedtrips/Recommendedtrips_item.cshtml">
-      <publishTime>03/09/2020 20:10:42</publishTime>
+      <publishTime>03/18/2020 17:47:05</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Recommendedtrips/RecommendedTrip_Travel_Item.cshtml">
-      <publishTime>03/09/2020 20:10:42</publishTime>
+      <publishTime>03/17/2020 15:34:07</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Recommendedtrips/RecommendedTrip_Trave_Edit.cshtml">
-      <publishTime>03/09/2020 20:10:42</publishTime>
+      <publishTime>03/16/2020 15:01:40</publishTime>
+    </File>
+    <File Include="Areas/webadmin/Views/Recommendedtrips/UnitPrint.cshtml">
+      <publishTime>03/17/2020 15:34:07</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/SEO/Index.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -313,7 +325,7 @@
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Shared/_Layout.cshtml">
-      <publishTime>03/10/2020 17:48:31</publishTime>
+      <publishTime>03/17/2020 15:34:07</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Site/FowardSetting.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -364,7 +376,7 @@
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Video/Index.cshtml">
-      <publishTime>02/27/2020 18:32:58</publishTime>
+      <publishTime>03/13/2020 15:40:07</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Video/ModelItem.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -420,11 +432,17 @@
     <File Include="bin/AutoMapper.dll">
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
+    <File Include="bin/CaptchaMvc.dll">
+      <publishTime>03/18/2020 17:47:05</publishTime>
+    </File>
+    <File Include="bin/CaptchaMvc.pdb">
+      <publishTime>03/18/2020 17:47:05</publishTime>
+    </File>
     <File Include="bin/ECPay.Payment.Integration.dll">
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="bin/en-US/ResourceLibrary.resources.dll">
-      <publishTime>03/05/2020 10:07:46</publishTime>
+      <publishTime>03/19/2020 09:07:05</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -514,10 +532,10 @@
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="bin/ResourceLibrary.dll">
-      <publishTime>03/05/2020 10:07:46</publishTime>
+      <publishTime>03/19/2020 09:07:04</publishTime>
     </File>
     <File Include="bin/ResourceLibrary.pdb">
-      <publishTime>03/05/2020 10:07:46</publishTime>
+      <publishTime>03/19/2020 09:07:04</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -556,16 +574,16 @@
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="bin/Services.dll">
-      <publishTime>03/10/2020 17:49:32</publishTime>
+      <publishTime>03/19/2020 09:07:06</publishTime>
     </File>
     <File Include="bin/Services.pdb">
-      <publishTime>03/10/2020 17:49:32</publishTime>
+      <publishTime>03/19/2020 09:07:06</publishTime>
     </File>
     <File Include="bin/SQLModel.dll">
-      <publishTime>03/05/2020 10:07:47</publishTime>
+      <publishTime>03/19/2020 09:07:05</publishTime>
     </File>
     <File Include="bin/SQLModel.pdb">
-      <publishTime>03/05/2020 10:07:47</publishTime>
+      <publishTime>03/19/2020 09:07:05</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -610,28 +628,28 @@
       <publishTime>12/13/2017 13:31:08</publishTime>
     </File>
     <File Include="bin/Utilities.dll">
-      <publishTime>03/05/2020 10:07:46</publishTime>
+      <publishTime>03/19/2020 09:07:04</publishTime>
     </File>
     <File Include="bin/Utilities.dll.config">
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="bin/Utilities.pdb">
-      <publishTime>03/05/2020 10:07:46</publishTime>
+      <publishTime>03/19/2020 09:07:04</publishTime>
     </File>
     <File Include="bin/ViewModels.dll">
-      <publishTime>03/10/2020 15:49:42</publishTime>
+      <publishTime>03/19/2020 09:07:05</publishTime>
     </File>
     <File Include="bin/ViewModels.pdb">
-      <publishTime>03/10/2020 15:49:42</publishTime>
+      <publishTime>03/19/2020 09:07:05</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="bin/WebSiteProject.dll">
-      <publishTime>03/10/2020 17:49:37</publishTime>
+      <publishTime>03/19/2020 09:07:11</publishTime>
     </File>
     <File Include="bin/WebSiteProject.pdb">
-      <publishTime>03/10/2020 17:49:37</publishTime>
+      <publishTime>03/19/2020 09:07:11</publishTime>
     </File>
     <File Include="bin/zh-Hant/EntityFramework.resources.dll">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -1822,13 +1840,13 @@
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="Models/_Forest.edmx.diagram">
-      <publishTime>03/10/2020 09:30:19</publishTime>
+      <publishTime>03/16/2020 09:59:30</publishTime>
     </File>
     <File Include="NLog.config">
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>02/27/2020 18:32:58</publishTime>
+      <publishTime>03/18/2020 17:47:05</publishTime>
     </File>
     <File Include="Scripts/amcharts.js">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -8712,6 +8730,12 @@
     <File Include="UploadFile/VideoItem/Test.txt">
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
+    <File Include="UploadImage/ActiveItem/637201525122401601_f_pic_02.jpg">
+      <publishTime>03/19/2020 09:05:43</publishTime>
+    </File>
+    <File Include="UploadImage/ActiveItem/637201536487881822_article_pic_02.jpg">
+      <publishTime>03/19/2020 09:05:43</publishTime>
+    </File>
     <File Include="UploadImage/Destination_Img/banner_d.jpg">
       <publishTime>03/08/2020 15:32:39</publishTime>
     </File>
@@ -8884,7 +8908,7 @@
       <publishTime>11/05/2017 08:54:58</publishTime>
     </File>
     <File Include="Views/Destination_Index/Article.cshtml">
-      <publishTime>03/09/2020 13:14:45</publishTime>
+      <publishTime>03/18/2020 18:20:49</publishTime>
     </File>
     <File Include="Views/Destination_Index/Create.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -8893,10 +8917,10 @@
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="Views/Destination_Index/Details.cshtml">
-      <publishTime>03/09/2020 13:25:54</publishTime>
+      <publishTime>03/18/2020 10:49:57</publishTime>
     </File>
     <File Include="Views/Destination_Index/Index.cshtml">
-      <publishTime>03/05/2020 17:08:09</publishTime>
+      <publishTime>03/18/2020 09:26:28</publishTime>
     </File>
     <File Include="Views/Destination_Index/_MapLegendPartial.cshtml">
       <publishTime>02/28/2020 15:28:34</publishTime>
@@ -8922,6 +8946,9 @@
     <File Include="Views/Event/Index.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
+    <File Include="Views/Facts/Index.cshtml">
+      <publishTime>03/19/2020 09:05:43</publishTime>
+    </File>
     <File Include="Views/Form/ConfirmContent.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
@@ -8931,38 +8958,59 @@
     <File Include="Views/Form/IndexNoJs.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
+    <File Include="Views/F_Recommendedtrips/Forward.cshtml">
+      <publishTime>03/18/2020 17:47:05</publishTime>
+    </File>
+    <File Include="Views/F_Recommendedtrips/Forward_OK.cshtml">
+      <publishTime>03/17/2020 20:03:18</publishTime>
+    </File>
     <File Include="Views/F_Recommendedtrips/Index.cshtml">
-      <publishTime>03/05/2020 14:56:45</publishTime>
+      <publishTime>03/18/2020 17:47:05</publishTime>
+    </File>
+    <File Include="Views/F_Recommendedtrips/Print.cshtml">
+      <publishTime>03/17/2020 15:34:07</publishTime>
     </File>
     <File Include="Views/F_Recommendedtrips/RecommendedTrip_Travel_list.cshtml">
-      <publishTime>03/09/2020 20:10:42</publishTime>
+      <publishTime>03/11/2020 17:37:48</publishTime>
     </File>
     <File Include="Views/F_Recommendedtrips/recommended_Detail.cshtml">
-      <publishTime>03/05/2020 13:59:51</publishTime>
+      <publishTime>03/11/2020 17:14:43</publishTime>
     </File>
     <File Include="Views/F_Recommendedtrips/recommended_list.cshtml">
-      <publishTime>03/02/2020 20:49:15</publishTime>
+      <publishTime>03/18/2020 17:47:05</publishTime>
     </File>
     <File Include="Views/F_Recommendedtrips/show_list.cshtml">
-      <publishTime>03/09/2020 20:10:42</publishTime>
+      <publishTime>03/18/2020 17:47:05</publishTime>
+    </File>
+    <File Include="Views/F_ThingsToDo/Article.cshtml">
+      <publishTime>03/13/2020 11:17:40</publishTime>
     </File>
     <File Include="Views/F_ThingsToDo/Index.cshtml">
-      <publishTime>03/08/2020 15:44:03</publishTime>
+      <publishTime>03/10/2020 18:16:15</publishTime>
     </File>
     <File Include="Views/F_ThingsToDo/ThingToDo_Detail.cshtml">
       <publishTime>03/08/2020 16:37:51</publishTime>
     </File>
     <File Include="Views/F_ThingsToDo/ThinngsToDo_List.cshtml">
-      <publishTime>03/08/2020 16:34:37</publishTime>
+      <publishTime>03/18/2020 10:52:40</publishTime>
+    </File>
+    <File Include="Views/Home/Article.cshtml">
+      <publishTime>03/18/2020 12:07:18</publishTime>
+    </File>
+    <File Include="Views/Home/ArticleSearch.cshtml">
+      <publishTime>03/18/2020 11:29:22</publishTime>
     </File>
     <File Include="Views/Home/F_Video_Detail.cshtml">
-      <publishTime>03/10/2020 17:35:38</publishTime>
+      <publishTime>03/10/2020 18:04:23</publishTime>
     </File>
     <File Include="Views/Home/F_Video_Index.cshtml">
       <publishTime>03/10/2020 17:39:50</publishTime>
     </File>
+    <File Include="Views/Home/HashTag.cshtml">
+      <publishTime>03/12/2020 19:35:54</publishTime>
+    </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>03/05/2020 12:30:09</publishTime>
+      <publishTime>03/17/2020 16:35:38</publishTime>
     </File>
     <File Include="Views/Home/IndexCh.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -9030,6 +9078,9 @@
     <File Include="Views/Message/Edit.cshtml">
       <publishTime>05/09/2017 12:03:56</publishTime>
     </File>
+    <File Include="Views/Message/Forward.cshtml">
+      <publishTime>03/18/2020 17:46:31</publishTime>
+    </File>
     <File Include="Views/Message/GroupEdit.cshtml">
       <publishTime>12/11/2017 20:34:54</publishTime>
     </File>
@@ -9052,7 +9103,7 @@
       <publishTime>12/11/2017 12:31:02</publishTime>
     </File>
     <File Include="Views/Message/Print.cshtml">
-      <publishTime>02/27/2020 18:32:58</publishTime>
+      <publishTime>03/11/2020 17:27:09</publishTime>
     </File>
     <File Include="Views/Message/SelectIndustry.cshtml">
       <publishTime>04/22/2017 16:38:30</publishTime>
@@ -9120,11 +9171,14 @@
     <File Include="Views/SEO/Index.cshtml">
       <publishTime>12/06/2017 11:42:44</publishTime>
     </File>
+    <File Include="Views/Shared/Captcha.cshtml">
+      <publishTime>03/19/2020 09:05:43</publishTime>
+    </File>
     <File Include="Views/Shared/Lockout.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="Views/Shared/page_bottom.cshtml">
-      <publishTime>03/05/2020 13:59:51</publishTime>
+      <publishTime>03/18/2020 17:47:05</publishTime>
     </File>
     <File Include="Views/Shared/XXXXX_Layout.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -9133,7 +9187,7 @@
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>03/09/2020 16:19:56</publishTime>
+      <publishTime>03/18/2020 17:47:05</publishTime>
     </File>
     <File Include="Views/Shared/_Layout2.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -9152,6 +9206,9 @@
     </File>
     <File Include="Views/Shared/_MemberLayout.cshtml">
       <publishTime>09/06/2017 09:09:28</publishTime>
+    </File>
+    <File Include="Views/Shared/_page_top.cshtml">
+      <publishTime>03/19/2020 09:05:43</publishTime>
     </File>
     <File Include="Views/Videos/Index.cshtml">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -9178,7 +9235,7 @@
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/05/2020 14:58:15</publishTime>
+      <publishTime>03/19/2020 09:07:12</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -10,7 +10,10 @@
 <script src="@Url.Content("~/Scripts/bootbox.min.js")"></script>
 <script src="@Url.Content("~/Scripts/_html.js")"></script>
 <h2>推薦行程</h2>
-
+@{ 
+    var sdate = Model.RecommendedTrips_StarDay == null ? "" : Model.RecommendedTrips_StarDay.Value.ToString("yyyy/MM/dd");
+     var endate = Model.RecommendedTrips_EndDay== null ? "" : Model.RecommendedTrips_EndDay.Value.ToString("yyyy/MM/dd");
+}
 <div class="portlet light bordered">
     <div class="title_04">推薦行程設定</div>
 
@@ -90,11 +93,13 @@
                                 <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
                                     <div class="input-group input-large" style="float:left">
                                         <div class="date-picker input-daterange" data-date-format="yyyy/mm/dd">
-                                            @Html.EditorFor(model => model.RecommendedTrips_StarDay, new { htmlAttributes = new { @class = "form-control", placeholder = "開始日期" } })
+                                            <input class=""form-control" id="Sdate" name="Sdate" value="@sdate" placeholder="開始日期" />
+                                            @*@Html.EditorFor(model => model.RecommendedTrips_StarDay, new { htmlAttributes = new { @class = "form-control", placeholder = "開始日期" } })*@
                                         </div>
                                         <span class="input-group-addon"> to </span>
                                         <div class="date-picker input-daterange" data-date-format="yyyy/mm/dd">
-                                            @Html.EditorFor(model => model.RecommendedTrips_EndDay, new { htmlAttributes = new { @class = "form-control", placeholder = "結束日期" } })
+                                            <input class="" form-control" id="Edate" name="Edate" value="@endate" placeholder="結束日期" />
+                                            @*@Html.EditorFor(model => model.RecommendedTrips_EndDay, new { htmlAttributes = new { @class = "form-control", placeholder = "結束日期" } })*@
                                         </div>
                                     </div>
                                     <div class="" style="float:left; padding-left:5px;">
@@ -108,7 +113,7 @@
                                     <div class="col-md-12">
                                         <label class="col-md-2">行程圖片_列表圖片</label>
                                         <div class="col-md-10">
-                                            <div id="div_oldrelatefile" style="display:none"><a href="/forest/UploadImage/RecommendedTrips/@Model.RecommendedTrips_Img" target="preview" id="aimg">@Model.RecommendedTrips_Img</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delrelateimage">刪除</label></div>
+                                            <div id="div_oldrelateimg" style="display:none"><a href="/forest/UploadImage/RecommendedTrips/@Model.RecommendedTrips_Img" target="preview" id="aimg">@Model.RecommendedTrips_Img</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delrelateimage">刪除</label></div>
                                             <input type="file" class="form-control" accept="image/*" name="fileImag" id="fileImag" />
                                             <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度800 * 800px</div>
                                         </div>
@@ -162,7 +167,7 @@
                                     <div class="col-md-12">
                                         <label class="col-md-2">相關檔案</label>
                                         <div class="col-md-10">
-                                            <div id="div_olduploadfile" style="display:none"><a href="@Url.Action("FileDownLoad",new {itemid=Model.RecommendedTrips_ID})" target="preview">@Model.RecommendedTrips_UploadFileName</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delrelateimage">刪除</label></div>
+                                            <div id="div_olduploadfile" style="display:none"><a href="@Url.Action("FileDownLoad",new {itemid=Model.RecommendedTrips_ID})" target="preview">@Model.RecommendedTrips_UploadFileName</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delrelatefile">刪除</label></div>
                                             <input type="file" class="form-control" name="uploadfile" id="uploadfile" />
                                             <div class="red">檔案限制5MB以內</div>
                                         </div>
@@ -212,6 +217,36 @@
 @section scripts{
     <script>
         $(function () {
+            var ID =@Model.RecommendedTrips_ID;
+             var imagecheck = "";
+            var filecheck = "";
+                    //選取全部
+            RegisterClickAll("#chk_all", '#table tbody .chksel', "#selvalue");
+            //選取刪除
+            $("#btn_del").click(function () {
+            
+                if (confirm('確定要刪除嗎??'))
+                {
+                    var Descheck = $("#table tbody .chksel:checked");
+                    var Itemid = [];
+                    Descheck.each(function () {
+                        var Desid = $(this).val();
+                        Itemid.push(Desid);
+                    })
+                    @*window.location.href = "@Url.Action("delete","Destination_Index")" + "?chargeID=" + formdata;*@
+                    alert(Itemid)
+                    $.post("@Url.Action("DeleteItem", "Recommendedtrips")", { Itemid: Itemid, Type:"Travel" })
+                        .success(function (data) {
+                            alert(data);
+                          window.location.href =`@Url.Action("Recommendedtrips_Edit")/?itemid=${ID}`
+                        })
+                
+                }
+            })
+            $("#btn_clear").click(function () {
+                $("#Sdate").val('');
+                $("#Edate").val('');
+            })
              var fileupload = '@Model.RecommendedTrips_UploadFileName';
              var selactiveitem = '@Model.RecommendedTrips_Img';
              if (fileupload != '')
@@ -219,8 +254,16 @@
                  $("#div_olduploadfile").show();
              }
              if (selactiveitem != '') {
-                 $("#div_oldrelatefile").show();
-             }
+                 $("#div_oldrelateimg").show();
+            }
+            $("#delrelatefile").click(function () {
+                $("#div_olduploadfile").hide();
+                filecheck="True"
+            })
+               $("#delrelateimage").click(function () {
+                $("#div_oldrelateimg").hide();
+                imagecheck="True"
+            })
             var ckedit = CKEDITOR.replace('RecommendedTrips_HtmContent', {
                 height: 300,
                filebrowserImageUploadUrl: '@Url.Action("Upload")?command=QuickUpload&type=Images',
@@ -249,6 +292,8 @@
                     });
             });
             $("#btn_save").click(function () {
+               var sdate=  $("#Sdate").val();
+               var edate= $("#Edate").val();
                 var RecommendedTrips_Day_ID = $("#RecommendedTrips_Day_ID").val();
                 var RecommendedTrips_Destinations_ID = $("#RecommendedTrips_Destinations_ID").val();
                 var RecommendedTrips_Img_Description = $("#RecommendedTrips_Img_Description").val();
@@ -264,6 +309,10 @@
                 //    alert("請確實輸入圖片說明")
                 //    return false;
                 //}
+                if ((sdate != "" && edate != "") && (sdate > edate)) {
+                    alert("結束日期不可以小於開始日期")
+                    return false;
+                }
                 var sFileName = rfile.val();
                 if (sFileName.length > 0) {
                     var blnValid = false;
@@ -282,7 +331,7 @@
                 }
                 var LinkUrl = $("#RecommendedTrips_LinkUrl").val();
                 var LinkUrlDes = $("#RecommendedTrips_LinkUrlDesc").val();
-                if (LinkUrlDes != '') {
+                if (LinkUrl != '') {
                     if (LinkUrlDes == '')
                         {
                         $('#UploadFileDesc-error').show();
@@ -298,6 +347,8 @@
                 formData.append("RecommendedTrips_HtmContent", _html.encode(ckedval))
                 formData.append("RecommendedTrips_Title", _html.encode($('#RecommendedTrips_Title').val()));
                 formData.append("RecommendedTrips_Content", _html.encode($('#RecommendedTrips_Content').val()));
+                formData.append("filecheck", filecheck);
+                formData.append("imagecheck", imagecheck);
                 var images = $('#fileImag').get(0).files;
                 if (images.length > 0) {
                     formData.append("fileImag", images[0]);

@@ -119,6 +119,38 @@
     <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
     <Property Name="SType" Type="char" MaxLength="1" />
   </EntityType>
+  <EntityType Name="ADDestination">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Destination_Type_ID" Type="int" />
+    <Property Name="Lang_ID" Type="int" />
+    <Property Name="Site_ID" Type="int" />
+    <Property Name="Sort" Type="int" />
+    <Property Name="Type_ID" Type="nvarchar" MaxLength="10" />
+    <Property Name="StDate" Type="datetime" />
+    <Property Name="EdDate" Type="datetime" />
+    <Property Name="AD_Name" Type="nvarchar" MaxLength="300" />
+    <Property Name="Img_Show_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Img_Name_Ori" Type="nvarchar" MaxLength="255" />
+    <Property Name="Img_Name_Thumb" Type="nvarchar" MaxLength="255" />
+    <Property Name="AD_Width" Type="int" />
+    <Property Name="AD_Height" Type="int" />
+    <Property Name="Link_Href" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Link_Mode" Type="nvarchar" MaxLength="1" />
+    <Property Name="Fixed" Type="bit" />
+    <Property Name="Review_Date" Type="datetime" />
+    <Property Name="Enabled" Type="bit" />
+    <Property Name="Create_Date" Type="datetime" />
+    <Property Name="UpdateDatetime" Type="datetime" />
+    <Property Name="UpdateUser" Type="varchar" MaxLength="20" />
+    <Property Name="SType" Type="char" MaxLength="1" />
+    <Property Name="UploadVideoFileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="UploadVideoFilePath" Type="varchar" MaxLength="100" />
+    <Property Name="UploadVideoFileDesc" Type="nvarchar" MaxLength="100" />
+    <Property Name="ADDesc" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
   <EntityType Name="ADDown">
     <Key>
       <PropertyRef Name="ID" />
@@ -1014,8 +1046,6 @@
     <Property Name="Message10Hash_10H" Type="nvarchar(max)" />
     <Property Name="MessageItem_ID" Type="int" />
   </EntityType>
-  <!--產生期間發現錯誤:
-警告 6002: 資料表/檢視 'DB67039.dbo.MessageBanner' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
   <EntityType Name="MessageBanner">
     <Key>
       <PropertyRef Name="MessageBanner_ID" />
@@ -1718,6 +1748,18 @@
     <Property Name="Town" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Code" Type="int" Nullable="false" />
   </EntityType>
+  <Association Name="FK_ADDestination_F_Destination_Type">
+    <End Role="F_Destination_Type" Type="Self.F_Destination_Type" Multiplicity="0..1" />
+    <End Role="ADDestination" Type="Self.ADDestination" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="F_Destination_Type">
+        <PropertyRef Name="Destination_Type_ID" />
+      </Principal>
+      <Dependent Role="ADDestination">
+        <PropertyRef Name="Destination_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Destination_Fare_F_Destination_Type">
     <End Role="F_Destination_Type" Type="Self.F_Destination_Type" Multiplicity="0..1" />
     <End Role="Destination_Fare" Type="Self.Destination_Fare" Multiplicity="*" />
@@ -1795,6 +1837,7 @@
     <EntitySet Name="ActivePhoto" EntityType="Self.ActivePhoto" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ActiveUnitSetting" EntityType="Self.ActiveUnitSetting" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ADCenter" EntityType="Self.ADCenter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ADDestination" EntityType="Self.ADDestination" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ADDown" EntityType="Self.ADDown" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ADMain" EntityType="Self.ADMain" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ADMobile" EntityType="Self.ADMobile" Schema="dbo" store:Type="Tables" />
@@ -1840,6 +1883,7 @@
     <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Message_DesHash" EntityType="Self.Message_DesHash" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Message10Hash" EntityType="Self.Message10Hash" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MessageBanner" EntityType="Self.MessageBanner" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MessageItem" EntityType="Self.MessageItem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MessageUnitSetting" EntityType="Self.MessageUnitSetting" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ModelActiveEditMain" EntityType="Self.ModelActiveEditMain" Schema="dbo" store:Type="Tables" />
@@ -1909,13 +1953,6 @@
     [LinkItem].[IsVerift] AS [IsVerift]
     FROM [dbo].[LinkItem] AS [LinkItem]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="MessageBanner" EntityType="Self.MessageBanner" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [MessageBanner].[MessageBanner_ID] AS [MessageBanner_ID], 
-    [MessageBanner].[MessageBanner_Img] AS [MessageBanner_Img], 
-    [MessageBanner].[MessageItem_ID] AS [MessageItem_ID]
-    FROM [dbo].[MessageBanner] AS [MessageBanner]</DefiningQuery>
-    </EntitySet>
     <EntitySet Name="ZipCode" EntityType="Self.ZipCode" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [ZipCode].[CountryId] AS [CountryId], 
@@ -1924,6 +1961,10 @@
     [ZipCode].[Code] AS [Code]
     FROM [dbo].[ZipCode] AS [ZipCode]</DefiningQuery>
     </EntitySet>
+    <AssociationSet Name="FK_ADDestination_F_Destination_Type" Association="Self.FK_ADDestination_F_Destination_Type">
+      <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
+      <End Role="ADDestination" EntitySet="ADDestination" />
+    </AssociationSet>
     <AssociationSet Name="FK_Destination_Fare_F_Destination_Type" Association="Self.FK_Destination_Fare_F_Destination_Type">
       <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
       <End Role="Destination_Fare" EntitySet="Destination_Fare" />

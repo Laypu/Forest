@@ -26,20 +26,26 @@
         @Html.HiddenFor(Model => Model.Img_Name_Thumb) 
         @Html.HiddenFor(Model => Model.UploadVideoFileName)
         @Html.HiddenFor(Model => Model.UploadVideoFilePath)
-        @Html.HiddenFor(Model => Model.SType)
+        @Html.HiddenFor(Model => Model.SType) 
         <input id="hid_isAdd" type="hidden" name="isAdd" value='@ViewBag.IsAdd' />
         <div class="portlet light form-fit bordered">
             <div class="portlet-body form">
                 <div class="form-horizontal form-bordered">
                     <div class="form-body" id="form-body">
-
-                        <div class="form-group">
-                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">選擇類別</div>
-                            <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
-                               @Html.DropDownListFor(model => model.Site_ID, (SelectList)ViewBag.SiteList, "請選擇", new { @class = "form-control checkitem" })          
+                        @if (Model.Site_ID == 15 || Model.Site_ID == 17)
+                        {
+                            @Html.HiddenFor(Model => Model.Site_ID)
+                        }
+                        else
+                        {
+                            <div class="form-group">
+                                <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">選擇類別</div>
+                                <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                                    @Html.DropDownListFor(model => model.Site_ID, (SelectList)ViewBag.SiteList, "請選擇", new { @class = "form-control checkitem" })
+                                </div>
                             </div>
-                        </div>
 
+                        }
                         <div class="form-group">
                             <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">顯示日期</div>
                             <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
@@ -77,7 +83,7 @@
                             <div class="col-md-10 col-sm-4 col-xs-12 bg-white mobile_white">
 
                                 <div id="div_oldfile" style="display:none"><a href="@Model.ImageUrl" target="preview">@Model.Img_Show_Name</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delimage">刪除</label></div>
-                                <input id="file_image" type="file"  name="uploadfile" accept="image/*" />
+                                <input id="file_image" type="file" name="uploadfile" accept="image/*" />
                                 @if (Model.SType == "P")
                                 {<span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸4000*850px</span>
                                 }
@@ -112,13 +118,13 @@
                             </div>
                         </div>
                         @*<div class="form-group">
-                            <div class="col-md-2 col-sm-2 col-xs-12 search_item">固定顯示</div>
-                            <div class="col-md-10 col-sm-4 col-xs-12 bg-white mobile_white">
-                                <label class='mt-checkbox mt-checkbox-single mt-checkbox-outline' style=" margin-bottom:15px">
-                                    @Html.CheckBoxFor(m => m.Fixed, new { @class = "checkboxes chkstatus" })<span></span>
-                                </label>
-                            </div>
-                        </div>*@
+            <div class="col-md-2 col-sm-2 col-xs-12 search_item">固定顯示</div>
+            <div class="col-md-10 col-sm-4 col-xs-12 bg-white mobile_white">
+                <label class='mt-checkbox mt-checkbox-single mt-checkbox-outline' style=" margin-bottom:15px">
+                    @Html.CheckBoxFor(m => m.Fixed, new { @class = "checkboxes chkstatus" })<span></span>
+                </label>
+            </div>
+        </div>*@
                     </div>
                 </div>
             </div>
@@ -133,6 +139,7 @@
 @section scripts {
     <script>
         $(function () {
+            var mentype = @ViewBag.mantype;
             var fileupload = '@Model.UploadVideoFileName';
             if (fileupload !== "") {
                 $("#div_olduploadfile").show();
@@ -150,7 +157,7 @@
                 $('#EdDateStr').val('');
             });
             $('#btn_return').click(function () {
-                CreatePost('@Url.Action("Index")', { type: $("#Type").val(), stype:$("#SType").val()});
+                CreatePost('@Url.Action("Index")', { type: $("#Type").val(), stype:$("#SType").val(), site_id: $("#Site_ID").val(),MenuType: mentype});
             });
             $('#delupfile').click(function () {
                 $('#div_olduploadfile').hide();
@@ -195,7 +202,7 @@
                 }
                 if (images.length > 0) {
                     formData.append("ImageFile", images[0]);
-                } 
+                }
                 if (images.length == 0 && uploadvideofile.length == 0) {
                     if ($('#Img_Name_Ori').val() == '' && $('#UploadVideoFileName').val() == '') {
                         alert("必須上傳廣告圖片或是影片");
@@ -214,7 +221,7 @@
                     processData: false,
                     success: function (data) {
                         alert(data);
-                      CreatePost('@Url.Action("Index")', { type: $("#Type").val(), stype:$("#SType").val()});
+                        CreatePost('@Url.Action("Index")', { type: $("#Type").val(), stype: $("#SType").val(), site_id: $("#Site_ID").val(),MenuType: mentype});
                     }, error: function () {
                         // handle error
                     }

@@ -54,7 +54,7 @@
 
     <form class="form-horizontal form-bordered" method="Post" id="editform1" enctype="multipart/form-data">
         @Html.AntiForgeryToken()
-        @Html.HiddenFor(Model => Model.Destination_Type_ID)
+        @Html.HiddenFor(Model => Model.Destination_Type_ID, new { @id = "Typeid" })
         @Html.HiddenFor(Model => Model.Destination_Type_Title1)
         @Html.HiddenFor(Model => Model.Destination_Type_Title2)
         @Html.HiddenFor(Model => Model.Destination_Type_ImgName)
@@ -82,7 +82,7 @@
                         <div class="form-group">
                             <div class="col-md-2 col-sm-12 col-xs-12 search_item">目的地地址</div>
                             <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
-                                @Html.EditorFor(model => model.Destination_Type_Location, new { htmlAttributes = new { @class = "form-control input-small" } })
+                                @Html.TextAreaFor(model => model.Destination_Type_Location, new { @class = "form-control" })
                             </div>
                         </div>
 
@@ -115,27 +115,27 @@
                            {
                                htmlAttributes = new
                                {@*placeholder = "春天",*@@class = "form-control input-small inline-block"
-}
-})｜
+       }
+   })｜
                                 @Html.Label("夏天", new { htmlAttributes = new { @class = "inline-block" } })
                                 @Html.EditorFor(model => model.Temp_Summer, new
                            {
                                htmlAttributes = new { @class = "form-control input-small inline-block" }
-                                })｜
+                           })｜
                                 @Html.Label("秋天", new { htmlAttributes = new { @class = "inline-block" } })
                                 @Html.EditorFor(model => model.Temp_Autumn, new
                            {
                                htmlAttributes = new
                                {@*placeholder = "秋天",*@@class = "form-control input-small inline-block"
-}
-})｜
+       }
+   })｜
                                 @Html.Label("冬天", new { htmlAttributes = new { @class = "inline-block" } })
                                 @Html.EditorFor(model => model.Temp_Winter, new
                            {
                                htmlAttributes = new
                                {@*placeholder = "冬天",*@@class = "form-control input-small inline-block"
-}
-})
+       }
+   })
                             </div>
                         </div>
 
@@ -155,7 +155,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group bg-grey_1">
+                        @*<div class="form-group bg-grey_1">
                             <div class="col-md-2 col-sm-12 search_item">輪播牆圖片</div>
                             <div class="col-md-10 col-sm-12 bg-white mobile_white">
                                 <div class="col-md-12">
@@ -167,7 +167,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>*@
 
                         <div class="form-group bg-grey_1">
                             <div class="col-md-2 col-sm-12 search_item">地點圖片</div>
@@ -210,7 +210,7 @@
     </form>
     
 
-    <form class="form-horizontal form-bordered" method="Post" id="editform2" enctype="multipart/form-data">
+    <form class="form-horizontal form-bordered" method="Post" id="editform2" enctype="multipart/form-data" style="padding:20px">
 
         
         <div class="form-group">
@@ -220,7 +220,7 @@
                     var DESName = ViewBag.TypeName;
                     var FareModel = ViewBag.Destination_Fare;
                 }
-                <a class="btn green-meadow" id='btn_add' href="@Url.Action("Createtr","Destination_Index",new {TypeID = DESTypeID,TypeName = DESName})">新增 <i class="fa fa-plus"></i></a>
+                <a class="btn green-meadow" id='btn_add' href="@Url.Action("Createtr", "Destination_Index", new { TypeID = DESTypeID, TypeName = DESName })">新增 <i class="fa fa-plus"></i></a>
 
             </div>
 
@@ -228,15 +228,15 @@
             <table class="table table-bordered nomarginbottom" id="faretable" border="0" cellspacing="0" cellpadding="0">
                 <thead>
                     <tr>
-                        <th width="80" class="text-center delete_th" filed-type='delcheckbox'>
+                        <th width="10%" class="text-center delete_th" filed-type='delcheckbox'>
                             <label class='mt-checkbox mt-checkbox-single mt-checkbox-outline'>
                                 <input type='checkbox' class='checkboxes' id="chk_all" /><span></span>
                             </label>
                             <button type="button" class="btn red-mint btn-xs" id='btn_del'><i class="glyphicon glyphicon-trash"></i></button>
                         </th>
-                        <th class="text-center">@Html.Label("票種")</th>
-                        <th class="text-center">@Html.Label("票價")</th>
-                        <th class="text-center">@Html.Label("詳細內容")</th>
+                        <th width="25%" class="text-center">@Html.Label("票種")</th>
+                        <th width="25%" class="text-center">@Html.Label("票價")</th>
+                        <th width="40%" class="text-center">@Html.Label("詳細內容")</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -255,18 +255,116 @@
                                 <td>
                                     <input type="hidden" name="DF[@x].ChargeID" id="ChargeID[@x]" class="chargeID" value="@itemF.ChargeID" />
                                     <input type="hidden" name="DF[@x].Destination_Type_ID" id="Destination_Type_ID[@x]" value="@itemF.Destination_Type_ID" />
-                                    <input name="DF[@x].TicketType" id="TicketType[@x]" class="form-control input-small inline-block" value="@itemF.TicketType" />
+                                    <input name="DF[@x].TicketType" id="TicketType[@x]" class="form-control input-medium inline-block" value="@itemF.TicketType" />
                                 </td>
                                 <td>
-                                    <input name="DF[@x].Fare" id="Fare[@x]" class="form-control input-small inline-block" value="@itemF.Fare" />
+                                    NT$&nbsp;&nbsp;<input name="DF[@x].Fare" id="Fare[@x]" class="form-control input-small inline-block" value="@itemF.Fare" />
                                 </td>
                                 <td>
-                                    <input name="DF[@x].Description" id="Description[@x]" class="form-control input-small inline-block" value="@itemF.Description" />
+                                    <textarea name="DF[@x].Description" id="Description[@x]" class="form-control" style="width:98% ;resize:none">@itemF.Description</textarea>
                                 </td>
 
 
                             </tr>
                             x = x + 1;
+                        }
+
+                    }
+
+                </tbody>
+            </table>
+
+        </div>
+    </form>
+    <form class="form-horizontal form-bordered" method="Post" id="editform3" enctype="multipart/form-data" style="padding:20px">
+        
+        @{
+
+            var ADModel = ViewBag.ADDestinations;
+        }
+        <div class="form-group">
+            <div class="display_inline margin_bottom">
+
+                <a class="btn green-meadow" id='btn_add' href="@Url.Action("CreateAD", "Destination_Index", new { TypeID = DESTypeID, TypeName = DESName })">新增 <i class="fa fa-plus"></i></a>
+
+            </div>
+            <table class="table table-bordered table-hover" border="0" cellspacing="0" cellpadding="0" id="ADtable">
+                <thead>
+                    <tr class="bg-grey_1" filed-class="odd gradeX">
+                        <th width="10%" class="text-center" filed-type="delcheckbox">
+                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                <input type="checkbox" class="checkboxes" id="chkAD_all"><span></span>
+                            </label>
+                            <button class="btn red-mint btn-xs" type="button" id="btn_delAD"><i class="glyphicon glyphicon-trash"></i></button>
+                        </th>
+                        <th width="15%" filed-name="Sort" class="text-center" filed-type="numbertextcheck" filed-item-class="sortedit">排序</th>
+                        <th width="65%" filed-name="AD_Name" class="text-center" filed-type="link">廣告名稱</th>
+                        <th width="10%" filed-name="Enabled" class="text-center" filed-type="checkbox" filed-item-class="checkboxes chkstatus">顯示</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var y = 0;
+
+                        foreach (var itemAD in ADModel)
+                        {
+                            <tr id="tr_1" class="odd gradeX">
+
+                                
+                                <td class="text-center">
+                                    <input type="hidden" value="@itemAD.StDate" name="AD_Des[@y].StDate" />
+                                    <input type="hidden" value="@itemAD.EdDate" name="AD_Des[@y].EdDate" />
+                                    <input type="hidden" value="@itemAD.AD_Name" name="AD_Des[@y].AD_Name" />
+                                    <input type="hidden" value="@itemAD.ADDesc" name="AD_Des[@y].ADDesc" />
+                                    <input type="hidden" value="@itemAD.Img_Name_Ori" name="AD_Des[@y].Img_Name_Ori" />
+                                    <input type="hidden" value="@itemAD.UploadVideoFileName" name="AD_Des[@y].UploadVideoFileName" />
+                                    <input type="hidden" value="@itemAD.Link_Href" name="AD_Des[@y].Link_Href" />
+                                    <input type="hidden" value="@itemAD.Link_Mode" name="AD_Des[@y].Link_Mode" />
+                                    <input type="hidden" value="@itemAD.Destination_Type_ID" name="AD_Des[@y].Destination_Type_ID"/>
+                                    
+                                    <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                        <input type="checkbox" class="checkboxes chksel"><span></span>
+                                    </label>
+                                </td>
+                                <td class="text-center delete_th">
+                                    <input type="hidden" class="ADid" value="@itemAD.ID" name="AD_Des[@y].ID" />
+                                    <button type="button" class="btn btn-default btn-xs seqindex"><i class="fa fa-angle-double-up"></i></button>
+                                    <button type="button" class="btn btn-default btn-xs seqindex"><i class="fa fa-angle-up"></i></button>
+                                    <button type="button" class="btn btn-default btn-xs seqindex"><i class="fa fa-angle-down"></i></button>
+                                    <button type="button" class="btn btn-default btn-xs seqindex"><i class="fa fa-angle-double-down"></i></button>
+
+                                    <input type="text" value="@itemAD.Sort" class="editinput btn btn-default btn-xs sequence_list sortedit" name="AD_Des[@y].Sort">
+                                    <span class="required seqerror" style="color:red;display:none;margin-left:5px;font-size:12px"></span>
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("CreateAD", "Destination_Index", new { TypeID = DESTypeID, TypeName = DESName ,AdID = itemAD.ID})" class="edit">@itemAD.AD_Name</a>
+                                </td>
+                                @if (@itemAD.Enabled == true)
+                                {
+                                    <td class="text-center">
+
+                                        <input type="checkbox" class="checkboxes chkstatus" checked="checked" name="AD_Des[@y].Enabled" value="true">
+
+                                    </td>
+
+                                }
+                                else
+                                {
+                                    <td class="text-center">
+
+                                        <input type="checkbox" class="checkboxes chkstatus" name="AD_Des[@y].Enabled" value="false">
+
+                                    </td>
+                                }
+
+
+
+
+
+                            </tr>
+
+                            y = y + 1;
+
                         }
 
                     }
@@ -288,30 +386,39 @@
 </div>
 <script>
     $(function () {
+        
+
 
         ShowImg()
         //送出表單
         $("#btn_submit").click(function () {
-
-
+            
             $.ajax({
                 type: "POST",
                 url: '@Url.Action("Edit", "Destination_Index")',
-                data: $("#editform1,#editform2").serialize(),
+                data: $("#editform1,#editform2,#editform3").serialize(),
                 success: function (data) {
-                    
+
                     alert("修改成功")
                 }
             });
 
-           
-        })
 
-        $("#btn_return").click(function () {
-            history.go(-1);
         });
 
+        $("#btn_return").click(function () {
+            location.href="@Url.Action("Destination","Destination_Index",new {F_MenuType=179,MenuType=179 })"
+        });
 
+        $(".chkstatus").change(function () {
+            if ($(this).is(":checked")) {
+                $(this).attr("value","true");
+            }
+            else
+            {
+                $(this).attr("value","false");
+            }
+        });
         function ShowImg() {
 
             $("input[type='file']").change(function () {
@@ -319,7 +426,9 @@
                 var imgid = $(this).attr("data-imgid");
                 var reader = new FileReader();
                 reader.readAsDataURL(this.files[0]);
+
                 var p = this.files[0].name;
+                
                 $(this).parent().children(".selected").val(p)
                 reader.onload = function (e) {
 
@@ -327,10 +436,12 @@
 
                     
                 };
-            
+                
 
                 var file_data = $(this).prop('files')[0];
-                console.log(file_data);
+
+                
+
                 var form_data = new FormData();  //建構new FormData()
                 form_data.append('Img_File', file_data);
                
@@ -352,6 +463,8 @@
 
         RegisterClickAll("#chk_all", '#faretable tbody .chksel', "#selvalue");
 
+        
+        
         $("#btn_del").click(function () {
             
             if (confirm('確定要刪除嗎??'))
@@ -369,7 +482,7 @@
                         data: { chargeID:chargeID },
                         success: function (data) {
                             
-                            $("#editform2").load(location.href + " #editform2");//location.href + " #editform2"內的" #editform2"#前的空白很重要
+                            $("#editform2").load(location.href + " #editform2 >*");//location.href + " #editform2"內的" #editform2"#前的空白很重要
 
                         }
                     });
@@ -380,6 +493,45 @@
 
             
         })
+
+        RegisterClickAll("#chkAD_all", '#ADtable tbody .chksel', "#selvalue");
+
+        $("#btn_delAD").click(function () {
+            
+            if (confirm('確定要刪除嗎??'))
+            {
+                var ADcheck = $("#ADtable tbody .chksel:checked");
+                var DESTypeID = $("#Typeid").val();
+                var ADids =[]
+                ADcheck.each(function () {
+                    var ADid = $(this).parent().parent().next().children(".ADid").val();
+                    //formdata.append("chargeID", chargeID);
+                    ADids.push(ADid);
+                    
+                })
+
+                $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("DeleteAD", "Destination_Index")',
+                        dataType:'json',
+                        data: {
+                            ADids: ADids,
+                             DESTypeID:DESTypeID
+                        },
+                        success: function (data) {
+                            
+                            $("#editform3").load(location.href + " #editform3>*");//location.href + " #editform2"內的" #editform2"#前的空白很重要
+
+                        }
+                    });
+                @*window.location.href = "@Url.Action("delete","Destination_Index")" + "?chargeID=" + formdata;*@
+                
+            }
+
+            
+        })
+        
+
     })
 
 </script>
