@@ -26,18 +26,13 @@
 </div>
 <!--page bar end-->
 <!--message start-->
-
-@if (ViewBag.HashTag != null)
-{
-    
-    <div id="Partial_Index_MenuLink">
-        <!--.......-->
-    </div>
-}
-else
-{
-    <div class="title_01">@ViewBag.Title</div>
-}
+@if (ViewBag.MenuType == 179 || (int)Session["F_MenuType"] == 179)
+    {
+        <div class="title_01">Destinations</div>
+        <div id="Partial_Index_MenuLink">
+            <!--.......-->
+        </div>
+    }
 
 <div class="portlet light bordered">
 
@@ -62,28 +57,15 @@ else
     <!--management item end-->
     <!--set item start-->
     <div class="table-toolbar">
-        
 
-        @*<div class="col-md-6 col-sm-12 col-xs-12">
-            <div class="display_inline">
-                <p class="class_title">@(ViewBag.HashTag!=null? "森林遊樂區類別":"類別") </p>
-                @{var grouplist = (IList<SelectListItem>)ViewBag.grouplist;
-                <select class="form-control_1" id="GroupId">@foreach (var g in grouplist) {<option value="@g.Value">@g.Text</option>}</select>}
-                <p class="display_inline"><a href="#" class="btn grey-mint" role="button" id="btn_groupmanager">管理</a></p>
-            </div>
-        </div>*@
-        
-
-    </div>
-    <div class="table-toolbar">
         <div class="col-md-6 col-sm-12 col-xs-12">
             <div class="display_inline">
                 <p class="class_title">森林遊樂區類別</p>
-                @Html.DropDownList("Destination_Type_ID",null,"全部", new { @class = "form-control_1" })
+                @Html.DropDownList("Destination_Type_ID", null, "全部", new { @class = "form-control_1" })
             </div>
-              
-            
-            
+
+
+
             @{
                 if (ViewBag.HashTag != null)
                 {
@@ -94,24 +76,40 @@ else
                     </div>
                 }
             }
-          </div>
+        </div>
+
+
+        @*<div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="display_inline">
+                    <p class="class_title">@(ViewBag.HashTag!=null? "森林遊樂區類別":"類別") </p>
+                    @{var grouplist = (IList<SelectListItem>)ViewBag.grouplist;
+                    <select class="form-control_1" id="GroupId">@foreach (var g in grouplist) {<option value="@g.Value">@g.Text</option>}</select>}
+                    <p class="display_inline"><a href="#" class="btn grey-mint" role="button" id="btn_groupmanager">管理</a></p>
+                </div>
+            </div>*@
+
+
+    </div>
+    <hr>
+    <div>
+
 
         @{
             if (ViewBag.HashTag != null)
             {
-                <div class="col-md-6 col-sm-12 col-xs-12 mobile_left">
-                    <p class="display_inline">
-                        @*<button class="btn blue search_icon">搜尋 <i class="fa fa-search"></i></button>*@
-                        <button class="btn green-meadow" id='btn_add'>新增 <i class="fa fa-plus"></i></button>
-                    </p>
+                <div class="col-md-6 col-sm-12 col-xs-12 mobile_left" style="float:right;padding-bottom:10px">
+
+                    @*<button class="btn blue search_icon">搜尋 <i class="fa fa-search"></i></button>*@
+                    <button class="btn green-meadow" id='btn_add'>新增 <i class="fa fa-plus"></i></button>
+
                 </div>
             }
         }
-        
+
     </div>
-    
-    
-    
+
+
+
     <!--set item end-->
     <!--search item start-->
     <div class="search_menu" style="display: none;">
@@ -151,10 +149,10 @@ else
                         <div class="form-group">
                             <div class="col-md-2 search_item_1">森林遊樂區類別</div>
                             <div class="col-md-10 bg-white">
-                                @Html.DropDownList("Destination_Type_ID",null, new { @class = "form-control_1" })
+                                @Html.DropDownList("Destination_Type_ID", null, new { @class = "form-control_1" })
                             </div>
-                         </div>
-                           
+                        </div>
+
 
                         @{
                             if (ViewBag.HashTag != null)
@@ -201,7 +199,7 @@ else
     <!--table start-->
     <div class="table-scrollable">
         <table class="table table-bordered table-hover" border="0" cellspacing="0" cellpadding="0"
-                id="eventtable"
+               id="eventtable"
                data-url="@Url.Action("PagingItem")"
                data-sort-name='Sort'
                data-page-size='10'
@@ -219,7 +217,7 @@ else
                     <th filed-name='PublicshDate' width="100px" class="text-center">發佈日期</th>
                     <th filed-name='Title' class="text-center" filed-type='link'>標題</th>
                     @*<th filed-name='GroupName' width="150px" class="text-center" filed-item-class='text-center'>類別</th>*@
-                    <th  filed-name='VerifyStr'  width="50px" class="text-center" filed-item-class='text-center'>審核狀態</th>
+                    <th filed-name='VerifyStr' width="50px" class="text-center" filed-item-class='text-center'>審核狀態</th>
                     <th filed-name='IsRange' width="80px" class="text-center" filed-item-class='text-center'>是否在顯示區間</th>
                     <th filed-name='Enabled' width="80px" class="text-center" filed-type='checkbox' filed-item-class="checkboxes chkstatus">上架</th>
                 </tr>
@@ -243,7 +241,7 @@ else
 <!--message end-->
 <!--message end-->
 @section scripts {
-<script>
+    <script>
         $(document).ready(function () {
             $("#btn_return").hide();
             if ('@ViewBag.IsFromClick' == 'Y') {
@@ -420,7 +418,7 @@ else
                 $("tr[id^='tr_']").removeClass("hidden");
             } else {
 
-                               
+
                     $.ajax({
                       url: `@Url.Action("ShowThingsToDoList", "Message")`,
                       type: 'POST',
@@ -462,5 +460,5 @@ else
 
 
 
-</script>
+    </script>
 }

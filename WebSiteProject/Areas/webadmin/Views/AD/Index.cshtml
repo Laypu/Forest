@@ -85,16 +85,19 @@
 
         </div>
     }
-   if (ViewBag.MenuType == 179 || (int)Session["F_MenuType"] == 179)
+    if (ViewBag.MenuType == 179 || (int)Session["F_MenuType"] == 179)
     {
         <div class="title_01">Destinations</div>
         <div id="Partial_Index_MenuLink">
             <!--.......-->
         </div>
     }
-     if (ViewBag.MenuType == 176 || (int)Session["F_MenuType"] == 176)
+    if (ViewBag.MenuType == 176 || (int)Session["F_MenuType"] == 176)
     {
-
+        <div class="title_01">Recommended trips</div>
+        <div id="Partial_Index_MenuLink">
+            <!--.......-->
+        </div>
     }
 }
 
@@ -105,11 +108,11 @@
 
     <div class="table-toolbar">
         <div class="col-md-6 col-sm-12 col-xs-12">
-            @if (ViewBag.MenuType == 176 || (int)Session["F_MenuType"] == 176 || ViewBag.sitid == 17||ViewBag.MenuType == 45 || (int)Session["F_MenuType"] == 45 )
+            @if (ViewBag.MenuType == 176 || (int)Session["F_MenuType"] == 176 || ViewBag.sitid == 17 || ViewBag.MenuType == 45 || (int)Session["F_MenuType"] == 45)
             {
                 @ViewBag.SiteTile;
             }
-            else
+            @*else
             {
                 <p class="class_title">管理項目</p>
                 <div class="display_inline">
@@ -118,7 +121,7 @@
 
 
                 </div>
-            }
+            }*@
             @*<p class="display_inline" >
                     <label>前台最多顯示</label>
                     <input id="txt_ShowCount" type="text" class="form-control input-xsmall" style="display:inline" value="@ViewBag.MaxNum"/>
@@ -176,8 +179,12 @@
     <script>
         var langtype = '@ViewBag.type'
           var stype='@ViewBag.stype'
-          $(document).ready(function () {
-
+        $(document).ready(function () {
+            if ($(".table-toolbar option").attr("data-index") == "2")
+            {
+                console.log($(".table-toolbar option").attr("selected"));
+            }
+                
               LoadAD();
 
               AD_SelectChange()
