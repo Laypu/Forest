@@ -368,6 +368,12 @@ namespace WebSiteProject.Code
             return value;
         }
         #endregion
+        #region safeHtmlFragment
+        public static string safeHtmlFragment(this string value)
+        {
+            return Microsoft.Security.Application.Sanitizer.GetSafeHtmlFragment(value);
+        }
+        #endregion
         #region GetAntiForgeryToken
         public static string GetAntiForgeryToken()
         {

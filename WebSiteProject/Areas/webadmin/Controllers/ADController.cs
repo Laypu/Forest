@@ -134,7 +134,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             }
             model = _IADManager.GetModel(id);
             model.ImageUrl = Url.Content("~/UploadImage/"+ pathstr +"/" + model.Img_Name_Thumb);
-            model.Type = type
+            model.Type = type;
             model.SType = stype;
             model.Site_ID = siteid;
             ViewBag.mantype = maintype;
