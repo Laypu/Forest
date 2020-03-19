@@ -30,6 +30,7 @@
                             @Html.HiddenFor(m => m.Sort)
                             @Html.HiddenFor(m => m.InFront)
                             @Html.HiddenFor(m => m.RecommendedTrips_UploadFilePath)
+                            @Html.HiddenFor(m => m.ImageFileName)
                             <div class="form-group">
                                 <div class="col-md-2 col-sm-12 col-xs-12 search_item text-center">旅遊天數</div>
                                 <div class="col-md-10  col-sm-12 col-xs-12 bg-white mobile_white">
@@ -93,7 +94,7 @@
                                 <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
                                     <div class="input-group input-large" style="float:left">
                                         <div class="date-picker input-daterange" data-date-format="yyyy/mm/dd">
-                                            <input class=""form-control" id="Sdate" name="Sdate" value="@sdate" placeholder="開始日期" />
+                                            <input class="" form-control" id="Sdate" name="Sdate" value="@sdate" placeholder="開始日期" />
                                             @*@Html.EditorFor(model => model.RecommendedTrips_StarDay, new { htmlAttributes = new { @class = "form-control", placeholder = "開始日期" } })*@
                                         </div>
                                         <span class="input-group-addon"> to </span>
@@ -162,6 +163,32 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <div class="col-md-2 col-sm-12 col-xs-12 search_item text-center">圖片上傳</div>
+                                <div class="col-md-10 col-sm-12 bg-white mobile_white">
+                                    <div class="col-md-12">
+                                        <div id="div_oldfile" style="display:none"><a href="/forest/UploadImage/RecommendedTrips/@Model.ImageFileName" target="preview">@Html.Raw(Model.ImageFileName)</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delimage">刪除</label></div>
+                                        <label for="ImageFile" class="col-md-2">圖片上傳</label>
+                                        <div class="col-md-10">
+                                            <input id="file_image" type="file" class="display_inline" name="ImageFile" accept="image/*" />
+                                            <div class="red">檔案類型jpg、png、gif，建議檔案大小5MB內，尺寸寬度400 * 600px</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label class="col-md-2">圖片說明</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ImageFileDesc, new { htmlAttributes = new { @class = "form-control mobile_input display_inline" } })
+                                            <span class="required" id="ImageFileDesc-error" style="display:none;">圖片說明 必須填寫！</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label class="col-md-2">圖片位置</label>
+                                        <div class="col-md-10">
+                                            <select name="@Html.IdFor(model=>model.ImageFileLocation)" id="@Html.IdFor(model=>model.ImageFileLocation)" class="form-control w-auto"><option value="1">左</option><option value="2">中</option><option value="3">右</option></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <div class="col-md-2 col-sm-12 col-xs-12 search_item text-center">檔案上傳</div>
                                 <div class="col-md-10  col-sm-12 col-xs-12 bg-white mobile_white">
                                     <div class="col-md-12">
@@ -220,6 +247,10 @@
             var ID =@Model.RecommendedTrips_ID;
              var imagecheck = "";
             var filecheck = "";
+             if ('@Model.RecommendedTrips_ID'>0 && '@Model.ImageFileName'!='') {
+                $('#div_oldfile').show();
+            }
+             $('#ImageFileLocation').val('@Model.ImageFileLocation');
                     //選取全部
             RegisterClickAll("#chk_all", '#table tbody .chksel', "#selvalue");
             //選取刪除
@@ -263,7 +294,11 @@
                $("#delrelateimage").click(function () {
                 $("#div_oldrelateimg").hide();
                 imagecheck="True"
-            })
+               })
+             $('#delimage').click(function () {
+                $('#div_oldfile').hide();
+                $('#ImageFileName').val('');
+            });
             var ckedit = CKEDITOR.replace('RecommendedTrips_HtmContent', {
                 height: 300,
                filebrowserImageUploadUrl: '@Url.Action("Upload")?command=QuickUpload&type=Images',
@@ -313,6 +348,24 @@
                     alert("結束日期不可以小於開始日期")
                     return false;
                 }
+                           var file = $("#file_image");
+                var _validFileExtensions = [".jpg", ".png", ".gif", ".jpeg"];
+                var FileName = file.val();
+                if (FileName.length > 0) {
+                    var blnValid = false;
+                    for (var j = 0; j < _validFileExtensions.length; j++) {
+                        var sCurExtension = _validFileExtensions[j];
+                        if (FileName.substr(FileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+                            blnValid = true;
+                            break;
+                        }
+                    }
+                    if (!blnValid) {
+                        alert("只能上傳Image檔案");
+                        file.outerHTML = file.outerHTML;
+                        return false;
+                    }
+                }
                 var sFileName = rfile.val();
                 if (sFileName.length > 0) {
                     var blnValid = false;
@@ -325,7 +378,7 @@
                     }
                     if (!blnValid) {
                         alert("相關圖片只能上傳Image檔案");
-                        file.outerHTML = file.outerHTML;
+                        rfile.outerHTML = rfile.outerHTML;
                         return false;
                     }
                 }
@@ -349,6 +402,22 @@
                 formData.append("RecommendedTrips_Content", _html.encode($('#RecommendedTrips_Content').val()));
                 formData.append("filecheck", filecheck);
                 formData.append("imagecheck", imagecheck);
+                var image2 = $('#file_image').get(0).files;
+                if (image2.length > 0) {
+                    formData.append("ImageFile", image2[0]);
+                    if ($('#ImageFileDesc').val() == "") {
+                        $('#ImageFileDesc-error').show();
+                        return false;
+                    }
+                } else {
+                    formData.append("ImageFile", null);
+                    if ($('#ImageFileName').val() != "") {
+                        if ($('#ImageFileDesc').val() == "") {
+                            $('#ImageFileDesc-error').show();
+                            return false;
+                        }
+                    }
+                }
                 var images = $('#fileImag').get(0).files;
                 if (images.length > 0) {
                     formData.append("fileImag", images[0]);

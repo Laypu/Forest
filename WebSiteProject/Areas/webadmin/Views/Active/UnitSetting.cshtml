@@ -48,37 +48,37 @@
                     <div class="form-body">
                         @Html.HiddenFor(Model => Model.MainID)
                         @Html.HiddenFor(Model => Model.ID)
-                        <div class="form-group">
-                            <div class="col-md-2 col-sm-12 search_item">功能提供</div>
-                            <div class="col-md-10 col-sm-12 bg-white mobile_white">
-                                <label class="mt-checkbox mt-checkbox-outline">
-                                    @Html.CheckBoxFor(m => m.IsPrint, new { @class = "checkboxes" })友善列印
-                                    <span></span>
-                                </label>
+                            <div class="form-group">
+                                <div class="col-md-2 col-sm-12 search_item">功能提供</div>
+                                <div class="col-md-10 col-sm-12 bg-white mobile_white">
+                                    <label class="mt-checkbox mt-checkbox-outline">
+                                        @Html.CheckBoxFor(m => m.IsPrint, new { @class = "checkboxes" })友善列印
+                                        <span></span>
+                                    </label>
 
-                                <label class="mt-checkbox mt-checkbox-outline">
-                                    @Html.CheckBoxFor(m => m.IsForward, new { @class = "checkboxes" })分享好友
-                                    <span></span>
-                                </label>
-                                <label class="mt-checkbox mt-checkbox-outline">
-                                    @Html.CheckBoxFor(m => m.IsShare, new { @class = "checkboxes" })分享網站
-                                    <span></span>
-                                </label>
+                                    <label class="mt-checkbox mt-checkbox-outline">
+                                        @Html.CheckBoxFor(m => m.IsForward, new { @class = "checkboxes" })分享好友
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox mt-checkbox-outline">
+                                        @Html.CheckBoxFor(m => m.IsShare, new { @class = "checkboxes" })分享網站
+                                        <span></span>
+                                    </label>
+                                </div>
                             </div>
+                            @*<div class="form-group">
+                        <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">每頁顯示筆數</div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 bg-white mobile_white">
+
+                            <select class="form_02" id="ShowCount" name="ShowCount">
+                <option value="12"></option>
+                <option value="24">24</option>
+                <option value="36">36</option>
+                <option value="-1">全部</option>
+            </select>
                         </div>
-                        @*<div class="form-group">
-                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">每頁顯示筆數</div>
-                            <div class="col-md-4 col-sm-4 col-xs-12 bg-white mobile_white">
-
-                                <select class="form_02" id="ShowCount" name="ShowCount">
-                    <option value="12"></option>
-                    <option value="24">24</option>
-                    <option value="36">36</option>
-                    <option value="-1">全部</option>
-                </select>
-                            </div>
-                            <div class="col-md-6 col-sm-6 hidden-xs bg-white">&nbsp;</div>
-                        </div>*@
+                        <div class="col-md-6 col-sm-6 hidden-xs bg-white">&nbsp;</div>
+                    </div>*@
                     </div>
                 </div>
             </div>

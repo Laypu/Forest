@@ -357,6 +357,19 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     model.ImageFile.SaveAs(path);
                     model.ImageFileName = newfilename;
                 }
+                if (model.ImageBanner != null)
+                {
+                    var root = Request.PhysicalApplicationPath;
+                    model.ImageBannerOrgName = model.ImageBanner.FileName.Split('\\').Last();
+                    var newfilename = DateTime.Now.Ticks + "_" + model.ImageBannerOrgName;
+                    var path = root + "\\UploadImage\\ActiveItem\\" + newfilename;
+                    if (System.IO.Directory.Exists(root + "\\UploadImage\\ActiveItem\\") == false)
+                    {
+                        System.IO.Directory.CreateDirectory(root + "\\UploadImage\\ActiveItem\\");
+                    }
+                    model.ImageBanner.SaveAs(path);
+                    model.ImageBannerName = newfilename;
+                }
                 if (model.RelateImageFile != null)
                 {
                     var root = Request.PhysicalApplicationPath;
@@ -374,12 +387,12 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 model.Title = HttpUtility.UrlDecode(model.Title);
                 if (model.ItemID == -1)
                 {
-                    Common.SetLogs(this.UserID, this.Account, "新增活動管理=" + model.Title);
+                    Common.SetLogs(this.UserID, this.Account, "新增Fact=" + model.Title);
                     return Json(_IModelActiveManager.CreateItem(model, this.LanguageID, this.Account));
                 }
                 else
                 {
-                    Common.SetLogs(this.UserID, this.Account, "修改活動管理ID=" + model.ItemID + " Name=" + model.Title);
+                    Common.SetLogs(this.UserID, this.Account, "修改FactID=" + model.ItemID + " Name=" + model.Title);
                     return Json(_IModelActiveManager.UpdateItem(model, this.LanguageID, this.Account));
                 }
             }

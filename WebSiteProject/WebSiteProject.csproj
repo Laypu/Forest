@@ -2123,6 +2123,8 @@
     <Content Include="Views\Message\Forward.cshtml" />
     <Content Include="Views\Shared\Captcha.cshtml" />
     <Content Include="Views\Facts\Index.cshtml" />
+    <Content Include="Views\Facts\Fact_Detail.cshtml" />
+    <Content Include="Views\Facts\Print.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -2189,7 +2191,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>17473</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54339/forest</IISUrl>
+          <IISUrl>http://localhost:54340/forest</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

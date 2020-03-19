@@ -982,6 +982,10 @@ namespace Services.Manager
                     RelateImageFileOrgName = fdata.RelateImageFileOrgName,
                     RelateImageName = fdata.RelateImageFileName,
                     RelateImagelUrl = VirtualPathUtility.ToAbsolute("~/UploadImage/ActiveItem/" + fdata.RelateImageFileName),
+                    ImageBannerName=fdata.ImageBannerName,
+                    ImageBannerOrgName = fdata.ImageBannerOrgName,
+                    ImageBannerUrl = VirtualPathUtility.ToAbsolute("~/UploadImage/ActiveItem/" + fdata.ImageBannerName),
+
                 };
                 var hasvdata = _verifydatasqlrepository.GetByWhere("ModelID=@1 and ModelMainID=@2 and ModelItemID=@3", new object[] {
                      3, fdata.ModelID.Value,fdata.ItemID
@@ -1045,6 +1049,8 @@ namespace Services.Manager
                 Link_Mode = model.Link_Mode,
                 RelateImageFileName = model.RelateImageName,
                 RelateImageFileOrgName = model.RelateImageFileOrgName,
+                ImageBannerName = model.ImageBannerName,
+                ImageBannerOrgName=model.ImageBannerOrgName,
                 Introduction = model.Introduction == null ? "" : model.Introduction,
                 CreateName = admin.Count() == 0 ? "" : admin.First().User_Name,
                 IsVerift = true,
@@ -1167,6 +1173,8 @@ namespace Services.Manager
                 ImageFileLocation = model.ImageFileLocation == null ? "" : model.ImageFileLocation,
                 RelateImageFileName = model.RelateImageName,
                 RelateImageFileOrgName = model.RelateImageFileOrgName,
+                ImageBannerName = model.ImageBannerName,
+                ImageBannerOrgName = model.ImageBannerOrgName,
                 ModelID = model.ModelID,
                 ImageFileOrgName = model.ImageFileOrgName,
                 LinkUrl = model.LinkUrl == null ? "" : model.LinkUrl == null ? "" : model.LinkUrl,

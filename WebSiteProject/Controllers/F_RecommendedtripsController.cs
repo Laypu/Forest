@@ -391,11 +391,12 @@ namespace WebSiteProject.Controllers
                 return RedirectToAction("recommended_list");
             }
             ViewBag.ID = model.RecommendedTrips_ID;
-            ViewBag.Title = model.RecommendedTrips_Title;
+            //ViewBag.Title = model.RecommendedTrips_Title;
             ViewBag.day = model.RecommendedTrips_Day.RecommendedTrips_Day_Name;
-            ViewBag.content = model.RecommendedTrips_Content;
-            ViewBag.location = model.RecommendedTrips_Location;
-            ViewBag.HtmlContent= model.RecommendedTrips_HtmContent;
+            //ViewBag.content = model.RecommendedTrips_Content;
+            //ViewBag.location = model.RecommendedTrips_Location;
+            //ViewBag.HtmlContent= model.RecommendedTrips_HtmContent;
+            ViewBag.Remode = model;
             ViewBag.NowPag = nowpage;
             ViewBag.Recommend_Detail_Img = model.F_Destination_Type.Recommend_Detail_Img;
             ViewBag.LinkUrl = model.RecommendedTrips_LinkUrl;
@@ -403,10 +404,10 @@ namespace WebSiteProject.Controllers
             ViewBag.Upfile = model.RecommendedTrips_UploadFileDesc; ;
             ViewBag.UpfileDES= model.RecommendedTrips_UploadFileName;
             ViewBag.pageprt=Url.Action("Print", "F_Recommendedtrips", new { id = RecommendedTrips_ID });
-            var hostUrl = string.Format("{0}://{1}",
-        Request.Url.Scheme,
-        Request.Url.Authority);
-            ViewBag.url = hostUrl + Url.Action("recommended_Detail", "F_Recommendedtrips", new { RecommendedTrips_ID = RecommendedTrips_ID });
+        //    var hostUrl = string.Format("{0}://{1}",
+        //Request.Url.Scheme,
+        //Request.Url.Authority);
+        //    ViewBag.url = hostUrl + Url.Action("recommended_Detail", "F_Recommendedtrips", new { RecommendedTrips_ID = RecommendedTrips_ID });
             return View(viewmodel);
         }
         #endregion

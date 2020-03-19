@@ -2,7 +2,9 @@
 @{
     Layout = WebSiteProject.Code.Common.GetIndexLayout(Model.LangId);
 }
-
+@{ 
+    var Redmode = (WebSiteProject.Models.RecommendedTrip)ViewBag.Remode;
+}
 <!--banner start-->
 
 <div class="page_banner">
@@ -75,7 +77,7 @@
         <div class="slider-container rev_slider_wrapper">
             <div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 670, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,500], 'parallax': { 'type': 'scroll', 'origo': 'enterpoint', 'speed': 1000, 'levels': [2,3,4,5,6,7,8,9,12,50], 'disable_onmobile': 'on' }, 'navigation' : {'arrows': { 'enable': true }, 'bullets': {'enable': true, 'style': 'bullets-style-1', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
                 <ul>
-                    @foreach (var ad in Model.ADMobile)
+                    @foreach (var ad in Model.ADMain)
                     {
                         string target = ad.Link_Mode == "1" ? "_self" : "_blank";
                         if (string.IsNullOrEmpty(ad.Img_Name_Ori) == false)
@@ -168,7 +170,7 @@
             <div class="item">
                 <div class="img"><img src="@Url.Content("~/img/page_icon_05.png")" alt="attractions" /></div>
                 <div class="font">
-                    @Html.Raw(HttpUtility.HtmlDecode(ViewBag.content))
+                    @Html.Raw(HttpUtility.HtmlDecode(Redmode.RecommendedTrips_Content))
                 </div>
             </div>
         </div>
@@ -182,7 +184,7 @@
                 <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
                 <a href="" @Url.Action("Index", "Home") " title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
                 <a href="@Url.Action("Index")" title="Recommended trips">Recommended trips</a><i class="fa fa-angle-right" aria-hidden="true"></i>
-                @ViewBag.Title
+                @Redmode.RecommendedTrips_Title
             </div>
             <div class="col-md-5 col-sm-6 col-xs-12">
                 @Html.Partial(Url.Content("~/Views/Shared/_page_top.cshtml"))
@@ -195,7 +197,24 @@
         <div class="container">
 
             <div class="edit_con">
-                @Html.Raw(HttpUtility.HtmlDecode(ViewBag.HtmlContent))
+                @if (string.IsNullOrEmpty(Redmode.ImageFileName) == false)
+                {
+                    <!--圖片置左-->
+                    if (Redmode.ImageFileLocation == "1")
+                    {
+                        <img src="@Url.Content("~/UploadImage/RecommendedTrips/")@Redmode.ImageFileName" class="img_padding" alt="@Redmode.ImageFileDesc" align="left">
+                    }
+                    else if (Redmode.ImageFileLocation == "2")
+                    {
+                        <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/RecommendedTrips/")@Redmode.ImageFileName" class="img_padding" alt="center"></p></div>
+                    }
+                    else if (Redmode.ImageFileLocation == "3")
+                    {
+                        <img src="@Url.Content("~/UploadImage/RecommendedTrips/")@Redmode.ImageFileName" class="img_padding" alt="@Redmode.ImageFileDesc" align="right">
+                    }
+
+                }
+                @Html.Raw(HttpUtility.HtmlDecode(Redmode.RecommendedTrips_HtmContent))
             </div>
             <!--相關連結+檔案下載 start-->
             @Html.Partial(Url.Content("~/Views/Shared/page_bottom.cshtml"))
