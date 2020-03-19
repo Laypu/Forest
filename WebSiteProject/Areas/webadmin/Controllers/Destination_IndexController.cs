@@ -129,36 +129,16 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             if (ModelState.IsValid)
             {
                 //int Des_ID;
-                var OldDT = "";
-                for (int i = 0; i < F_DES.Length; i++)
+                //var OldDT = "";
+                if (F_DES != null)
                 {
-
-                    //Des_ID = F_DES[i].Destination_Type_ID;
-                    //db.Entry(F_DES[i]).State = EntityState.Detached;
-                    //if (F_DES[i].Destination_Type_ImgName == null)
-                    //{
-
-                    //db.F_Destination_Type.Find(F_DES[i].Destination_Type_ID).Destination_Type_Title1 = F_DES[i].Destination_Type_Title1;
-                    //db.F_Destination_Type.Find(F_DES[i].Destination_Type_ID).Destination_Type_Title2 = F_DES[i].Destination_Type_Title2;
-                    ////db.F_Destination_Type.Find(F_DES[i].Destination_Type_ID).
-                    //OldDT = db.F_Destination_Type.Find(F_DES[i].Destination_Type_ID).Destination_Type_Title1;
-
-
-                    db.Entry(F_DES[i]).State = System.Data.Entity.EntityState.Modified;
-                    
-                    db.SiteLists.Where(s => s.SiteList_Name_en == OldDT).First().SiteList_Name_en = F_DES[i].Destination_Type_Title1;
-                    db.SiteLists.Where(s => s.SiteList_Name_en == OldDT).First().SiteList_Name_ch = "目的地";
-                    db.SaveChanges();
-                    //}
-                    //else
-                    //{
-                        
-                    //    db.Entry(F_DES[i]).State = System.Data.Entity.EntityState.Modified;
-
-                    //    db.SaveChanges();
-                    //}
-
+                    for (var i = 0; i < F_DES.Length; i++)
+                    {
+                        db.Entry(F_DES[i]).State = EntityState.Modified;
+                    }
                 }
+
+                db.SaveChanges();
                 TempData["Msg"] = "作業完成";
                 return RedirectToAction("Destination");
 
@@ -166,7 +146,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             else 
             {
                 TempData["Msg"] = "作業失敗";
-                return RedirectToAction("Destination");
+                return Json(new { success = true, message = "作業失敗" }, JsonRequestBehavior.AllowGet);
             }
         }
 
@@ -225,7 +205,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 return RedirectToAction("Destination");
             }
             TempData["Msg"] = "作業失敗";
-            return View(Destination_Type);
+            return Json(new { success = true, message = "作業失敗" }, JsonRequestBehavior.AllowGet);
         }
 
 

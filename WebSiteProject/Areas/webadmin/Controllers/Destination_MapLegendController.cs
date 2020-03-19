@@ -71,7 +71,8 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     }
 
                     Index_Img_Name = Path.GetFileName(Img_File.FileName);  //取得檔案名
-                    var path = Path.Combine(Server.MapPath("~/UploadImage/MapLEGEND_Img/"), Index_Img_Name);  //取得本機檔案路徑
+                    var NewImgName = DateTime.Now.Ticks + "_" + Index_Img_Name;
+                    var path = Path.Combine(Server.MapPath("~/UploadImage/MapLEGEND_Img/"), NewImgName);  //取得本機檔案路徑
 
 
                     //若有重複則不儲存

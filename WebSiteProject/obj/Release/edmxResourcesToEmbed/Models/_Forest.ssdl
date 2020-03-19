@@ -38,6 +38,8 @@
     <Property Name="UpdateName" Type="nvarchar" MaxLength="20" />
     <Property Name="IsVerift" Type="bit" />
     <Property Name="LinkUrlDesc" Type="nvarchar" MaxLength="200" />
+    <Property Name="ImageBannerName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ImageBannerOrgName" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="ActivePhoto">
     <Key>
@@ -1483,6 +1485,9 @@
     <Property Name="RecommendedTrips_EndDay" Type="datetime" />
     <Property Name="Sort" Type="int" />
     <Property Name="InFront" Type="int" />
+    <Property Name="ImageFileName" Type="varchar" MaxLength="1000" />
+    <Property Name="ImageFileDesc" Type="varchar" MaxLength="1000" />
+    <Property Name="ImageFileLocation" Type="varchar" MaxLength="1" />
   </EntityType>
   <EntityType Name="RecommendedTrip_Travel">
     <Key>
