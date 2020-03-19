@@ -119,3 +119,6 @@ C:\Users\PC003\Desktop\git\Forest\WebSiteProject\obj\Release\WebSiteProject.cspr
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\obj\Release\WebSiteProject.dll
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\obj\Release\WebSiteProject.pdb
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\obj\Release\WebSiteProject.csprojAssemblyReference.cache
+C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\CaptchaMvc.dll
+C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\CaptchaMvc.pdb
+C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\CaptchaMvc.xml

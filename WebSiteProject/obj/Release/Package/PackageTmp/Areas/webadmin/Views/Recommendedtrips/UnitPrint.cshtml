@@ -1,0 +1,83 @@
+﻿@model  WebSiteProject.Models.F_ViewModels.UnitPrint
+@{
+    ViewBag.Title = "Recommendedtrips";
+    Layout = "~/Areas/webadmin/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <a href="@Url.Action("Index","Recommendedtrips")">Home</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="@Url.Action("Recommendedtrips_item","Recommendedtrips")">推薦行程</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>單元設定<i class="fa fa-circle"></i></li>
+        </ul>
+    </div>
+    <div class="table-toolbar">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="display_inline">
+                <p class="class_title">管理項目</p>
+                <select class="form-control_1" onChange="window.location.href=this.value">
+                    <option value="@Url.Action("Recommendedtrips_item","Recommendedtrips")">推薦行程</option>
+                    <option value="#" selected>單元設定</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="portlet light bordered">
+        <form class="form-horizontal form-bordered" method="Post" id="editform" action='@Url.Action("SaveUnit")'>
+            <div class="portlet light form-fit bordered">
+                <div class="portlet-body form">
+                    <div class="form-horizontal form-bordered">
+                        <div class="form-body">
+                            @Html.HiddenFor(Model => Model.UnitID)
+                            <div class="form-group">
+                                <div class="col-md-2 col-sm-12 search_item">功能提供</div>
+                                <div class="col-md-10 col-sm-12 bg-white mobile_white">
+                                    <label class="mt-checkbox mt-checkbox-outline">
+                                        @Html.CheckBoxFor(m => m.isPrint, new { @class = "checkboxes" })友善列印
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox mt-checkbox-outline">
+                                        @Html.CheckBoxFor(m => m.isForward, new { @class = "checkboxes" })分享朋友
+                                        <span></span>
+                                    </label>
+                                    <label class="mt-checkbox mt-checkbox-outline">
+                                        @Html.CheckBoxFor(m => m.isShare, new { @class = "checkboxes" })分享網站
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center search_padding">
+                <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+            </div>
+        </form>
+    </div>
+@section scripts {
+    <script>
+        $(function () {
+             $('#editform').submit(function (event) {
+                    $.ajax({
+                        url: this.action,
+                        type: this.method,
+                        data: $(this).serialize(),
+                        success: function (result) {
+                            alert(result);
+                        }
+                   });
+                    return false;
+            })
+        });
+
+    </script>
+
+}

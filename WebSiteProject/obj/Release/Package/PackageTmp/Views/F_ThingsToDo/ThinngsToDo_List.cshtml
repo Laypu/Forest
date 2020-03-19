@@ -194,16 +194,29 @@
 
                 @{
                     var FTModel = (List<WebSiteProject.Models.MessageItem>)ViewBag.Five_Thingstodo_List;
-
+                    var Message10Hash =(IEnumerable<WebSiteProject.Models.Message10Hash>)ViewBag.Message10Hash;
                     foreach (var item in FTModel)
                     {
                         <li data-sr="enter bottom over 1.5s">
-                            <div class="img imh_opacity"><a href="@Url.Action("ThingToDo_Detail","F_ThingsToDo",new {listid= item.ItemID,TTDTitle = @ViewBag.F_Thingtodo_Title})" title="@item.Title"><img src="@Url.Content("~/UploadImage/MessageItem/")@item.RelateImageFileName" alt="@item.Title" /></a></div>
+                            <div class="img imh_opacity"><a href="@Url.Action("Article","F_ThingsToDo",new {listid= item.ItemID,TTDTitle = @ViewBag.F_Thingtodo_Title})" title="@item.Title"><img src="@Url.Content("~/UploadImage/MessageItem/")@item.RelateImageFileName" alt="@item.Title" /></a></div>
                             <div class="font_box">
-                                <div class="title"><a href="@Url.Action("ThingToDo_Detail","F_ThingsToDo",new {listid= item.ItemID,TTDTitle = @ViewBag.F_Thingtodo_Title})" title="@item.Title">@item.Title</a></div>
+                                <div class="title"><a href="@Url.Action("Article","F_ThingsToDo",new {listid= item.ItemID,TTDTitle = @ViewBag.F_Thingtodo_Title})" title="@item.Title">@item.Title</a></div>
                                 <div class="link margin0" data-itemID="@item.ItemID">
-                                    @*<a href="#" title="">#Walking & Hiking</a> &nbsp;
-                                        <a href="#" title="">#Clamping</a>*@
+                                    <!--Hastag-->
+                                    <div class="link" id="HashTag">
+
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H </a>
+
+                                    </div>
                                 </div>
                             </div>
                         </li>
@@ -267,7 +280,7 @@
 <div class="breadcrumbs">
     <div class="container">
         <div class="title">You are here</div>
-        <div class="font"><a href="index.html" title="Home">Home</a> / <a href="things.html" title="Things to do">Things to do</a> /@ViewBag.F_Thingtodo_Title</div>
+        <div class="font"><a href="index.html" title="Home">Home</a> / <a href="@Url.Action("Index","F_ThingsToDo",new { mid=24})" title="Things to do">Things to do</a> / @ViewBag.F_Thingtodo_Title</div>
     </div>
 </div>
 <!--breadcrumbs end-->
@@ -275,11 +288,11 @@
 <script>
     $(function () {
         //取得HashTag
-        gethasgtag();
+        //gethasgtag();
     });
 
 
-    function gethasgtag() {
+    @*function gethasgtag() {
         var List = $(".margin0");
         console.log(List);
 
@@ -307,6 +320,6 @@
             });
 
         });
-    }
+    }*@
 
 </script>

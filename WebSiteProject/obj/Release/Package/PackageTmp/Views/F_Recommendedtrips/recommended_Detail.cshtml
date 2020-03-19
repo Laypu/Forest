@@ -150,7 +150,6 @@
 <!--banner end-->
 <!--page_content start-->
 <div class="page_content">
-
     <!--trip_info start-->
     <div class="trip_info">
         <div class="container">
@@ -161,7 +160,7 @@
                 </div>
             </div>
             <div class="item">
-                <div class="img"><img src="@Url.Content("~/img/page_icon_10.png")" alt="position" /></div><!--六大森林遊樂區page_icon_07~12(內洞、奧萬大、合歡山、大雪山、阿里山、墾丁)，後台可以選擇-->
+                <div class="img"><img src="@Url.Content("~/UploadImage/Destination_Img")@ViewBag.Recommend_Detail_Img" alt="position" /></div><!--六大森林遊樂區page_icon_07~12(內洞、奧萬大、合歡山、大雪山、阿里山、墾丁)，後台可以選擇-->
                 <div class="font">
                     @ViewBag.location
                 </div>
@@ -181,12 +180,12 @@
         <div class="container">
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                 <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
-                <a href=""@Url.Action("Index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="" @Url.Action("Index", "Home") " title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
                 <a href="@Url.Action("Index")" title="Recommended trips">Recommended trips</a><i class="fa fa-angle-right" aria-hidden="true"></i>
                 @ViewBag.Title
             </div>
             <div class="col-md-5 col-sm-6 col-xs-12">
-                <script>$.include("blocks/page_top.html");</script>
+                @Html.Partial(Url.Content("~/Views/Shared/_page_top.cshtml"))
             </div>
         </div>
     </div>
@@ -202,7 +201,7 @@
             @Html.Partial(Url.Content("~/Views/Shared/page_bottom.cshtml"))
             <!--相關連結+檔案下載 end-->
             <div class="back_btn">
-                <a href="javascript:history.back()" title="Back"><span class="btn_01">Back</span></a>
+                <a href="@Url.Action("recommended_list")" title="Back"><span class="btn_01">Back</span></a>
             </div>
 
             <!--start_now start--><!--即刻出發一頁顯示3則行程-->
@@ -219,7 +218,7 @@
 <div class="breadcrumbs">
     <div class="container">
         <div class="title">You are here</div>
-        <div class="font"><a href="index.html" title="Home">Home</a> / <a href="recommended.html" title="Recommended trips">Recommended trips</a> / Daisetsuzan National Forest Recreation Area Experts lead the way bird watching</div>
+        <div class="font"><a href="@Url.Action("Index","Home")" title="Home">Home</a> / <a href="@Url.Action("Index")" title="Recommended trips">Recommended trips</a></div>
     </div>
 </div>
 <!--breadcrumbs end-->

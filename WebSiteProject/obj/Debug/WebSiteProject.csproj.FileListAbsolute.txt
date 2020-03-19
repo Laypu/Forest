@@ -486,3 +486,6 @@ C:\Users\203\Documents\GitHub\Forest\WebSiteProject\obj\Debug\WebSiteProject.pdb
 C:\Users\203\Documents\GitHub\Forest\WebSiteProject\bin\CaptchaMvc.dll
 C:\Users\203\Documents\GitHub\Forest\WebSiteProject\bin\CaptchaMvc.pdb
 C:\Users\203\Documents\GitHub\Forest\WebSiteProject\bin\CaptchaMvc.xml
+C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\CaptchaMvc.dll
+C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\CaptchaMvc.pdb
+C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\CaptchaMvc.xml

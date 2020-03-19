@@ -1,0 +1,50 @@
+﻿@model WebSiteProject.Models.RecommendedTrip
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/forest/img/favicon.ico" type="image/x-icon">
+    <title>@Common.GetLangText("TAIWAN FOREST RECREATION")</title><!--英文 -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/bootstrap.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/theme.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/theme-elements.css")/">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/settings.css")" media="screen">
+
+    <!--fontawesome start-->
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/font-awesome.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/fontawesome.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/brands.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/solid.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/regular.min.css")">
+    <!--fontawesome end-->
+
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/style.css")">
+    <script src="@Url.Content("~/js/jquery.js")"></script>
+    <script src="@Url.Content("~/js/main.js")"></script>
+    <script src="@Url.Content("~/js/scrollReveal.js")"></script>
+    <noscript>
+        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/noscript.css")">
+    </noscript>
+
+</head>
+<body style="max-width:806px; margin:0 auto; background: url(@Url.Content("~/img/bg_05.jpg"));">
+    <div class="con_box">
+        <div class="con_banner"><img src="@Url.Content("~/img/print_banner.jpg")" alt="" /></div><!--建議尺寸740*185px-->
+        <h2>@Model.RecommendedTrips_Title</h2>
+        <div class="date">@DateTime.Now.ToShortDateString()</div>
+
+        <div class="edit_con">
+            @Html.Raw(HttpUtility.HtmlDecode(Model.RecommendedTrips_HtmContent))
+        </div>
+
+    </div>
+    <div class="con_footer">Copyright &copy; 2020 Forestry Bureau All rights reserved</div>
+</body>
+</html>

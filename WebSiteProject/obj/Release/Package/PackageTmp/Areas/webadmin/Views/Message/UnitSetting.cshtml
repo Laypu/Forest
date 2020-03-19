@@ -55,7 +55,10 @@
                                     @Html.CheckBoxFor(m => m.IsPrint, new { @class = "checkboxes" })友善列印
                                     <span></span>
                                 </label>
-
+                                <label class="mt-checkbox mt-checkbox-outline">
+                                    @Html.CheckBoxFor(m => m.IsForward, new { @class = "checkboxes" })分享朋友
+                                    <span></span>
+                                </label>
                                 <label class="mt-checkbox mt-checkbox-outline">
                                     @Html.CheckBoxFor(m => m.IsShare, new { @class = "checkboxes" })分享網站
                                     <span></span>

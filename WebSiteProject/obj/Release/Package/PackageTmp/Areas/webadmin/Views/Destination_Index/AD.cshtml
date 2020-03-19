@@ -1,0 +1,116 @@
+﻿
+
+@{
+    if (TempData["Msg"] != null)
+    {
+        <script>
+            $(function () {
+                var Msg = @Html.Raw(Json.Encode(TempData["Msg"]));
+                alert(Msg);
+            });
+        </script>
+    }
+}
+
+
+
+
+<form class="form-horizontal form-bordered" method="Post" id="editform" action="/forest/webadmin/AD/Save" enctype="multipart/form-data">
+    <input data-val="true" data-val-number="欄位 ID 必須是數字。" data-val-required="ID 欄位是必要項。" id="ID" name="ID" type="hidden" value="-1">
+    <input id="Type" name="Type" type="hidden" value="main">
+    <input id="Img_Name_Ori" name="Img_Name_Ori" type="hidden" value="">
+    <input id="Img_Name_Thumb" name="Img_Name_Thumb" type="hidden" value="">
+    <input id="UploadVideoFileName" name="UploadVideoFileName" type="hidden" value="">
+    <input id="UploadVideoFilePath" name="UploadVideoFilePath" type="hidden" value="">
+    <input id="SType" name="SType" type="hidden" value="P">
+    <input id="hid_isAdd" type="hidden" name="isAdd">
+    <div class="portlet light form-fit bordered">
+        <div class="portlet-body form">
+            <div class="form-horizontal form-bordered">
+                <div class="form-body" id="form-body">
+                    <div class="form-group">
+                        <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">目的地</div>
+                        <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                            @Html.TextBoxFor(model => model.Destination_Type_ID, new { @Value = @DESid, style = "display:none" })
+                            @*<input type="hidden" name="DFTR.Destination_Type_ID" value="@DESid"/>*@
+                            <label>@DESName</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">顯示日期</div>
+                        <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                            <div class="input-group input-large" style="float:left">
+                                <div class="date-picker input-daterange" data-date-format="yyyy/mm/dd">
+                                    <input class="form-control text-box single-line" id="StDateStr" name="StDateStr" placeholder="開始日期" type="text" value="">
+                                </div>
+                                <span class="input-group-addon"> to </span>
+                                <div class="date-picker input-daterange" data-date-format="yyyy/mm/dd">
+                                    <input class="form-control text-box single-line" id="EdDateStr" name="EdDateStr" placeholder="結束日期" type="text" value="">
+                                </div>
+
+                            </div>
+                            <div class="" style="float:left">
+                                <button type="button" class="btn blue" id="btn_clear">清空</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-2 col-sm-2 col-xs-12 search_item"><span class="red">*</span>廣告名稱</div>
+                        <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                            <input class="form-control checkitem text-box single-line" id="AD_Name" name="AD_Name" type="text" value="">
+                            <span class="required" id="AD_Name-error" style="display:none">廣告名稱必須輸入</span>
+                        </div>
+                    </div>
+                    <div class="form-group" id="F_Description">
+                        <div class="col-md-2 col-sm-2 col-xs-12 search_item">廣告描述</div>
+                        <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                            <textarea cols="80" id="ADDesc" rows="3" class="form-control" maxlength="500"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2 col-sm-2 col-xs-12 search_item">廣告圖片上傳</div>
+                        <div class="col-md-10 col-sm-4 col-xs-12 bg-white mobile_white">
+
+                            <div id="div_oldfile" style="display:none"><a target="preview"></a><label style="color:blue;margin-left:10px;cursor:pointer" id="delimage">刪除</label></div>
+                            <input id="file_image" type="file" name="uploadfile" accept="image/*">
+                            <span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸1200*2000px</span>
+                        </div>
+                    </div>
+                    <div class="form-group" id="F_Video">
+                        <div class="col-md-2 col-sm-12 search_item">影片上傳</div>
+                        <div class="col-md-10 col-sm-12 bg-white mobile_white">
+                            <div class="col-md-12">
+                                <div id="div_olduploadfile" style="display:none"><a href="/forest/webadmin/AD/VideoDownLoad/-1" target="preview"></a><label style="color:blue;margin-left:10px;cursor:pointer" id="delupfile">刪除</label></div>
+                                <div id="div_nofile" style="display:inline">
+                                    <div class="col-md-10">
+                                        <input type="file" id="uploadvideofile" class="display_inline" name="UploadVideoFile" accept="video/*">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2 col-sm-2 col-xs-12 search_item">連結路徑</div>
+                        <div class="col-md-10 col-sm-4 col-xs-12 bg-white mobile_white">
+                            <input class="form-control text-box single-line" id="Link_Href" name="Link_Href" type="text" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2 col-sm-2 col-xs-12 search_item">開啟方式</div>
+                        <div class="col-md-10  col-xs-12 bg-white mobile_white">
+                            <input checked="checked" id="Link_Mode" name="Link_Mode" style="margin-left :0px" type="radio" value="1">原視窗
+                            <input id="Link_Mode" name="Link_Mode" style="margin-left :40px" type="radio" value="2"> 新視窗
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="text-center search_padding">
+        <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+        <button type="button" class="btn grey-mint" id="btn_return">返回列表</button>
+    </div>
+</form>

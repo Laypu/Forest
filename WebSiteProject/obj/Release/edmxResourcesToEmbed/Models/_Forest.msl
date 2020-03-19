@@ -1679,42 +1679,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="F_Destination_Type">
-      <EntityTypeMapping TypeName="ForestModel.F_Destination_Type">
-        <MappingFragment StoreEntitySet="F_Destination_Type">
-          <ScalarProperty Name="Recommend_Detail_Img" ColumnName="Recommend_Detail_Img" />
-          <ScalarProperty Name="Recommend_Img" ColumnName="Recommend_Img" />
-          <ScalarProperty Name="Banner_Img" ColumnName="Banner_Img" />
-          <ScalarProperty Name="FPX" ColumnName="FPX" />
-          <ScalarProperty Name="FPIX" ColumnName="FPIX" />
-          <ScalarProperty Name="FPVIII" ColumnName="FPVIII" />
-          <ScalarProperty Name="FPVII" ColumnName="FPVII" />
-          <ScalarProperty Name="FPVI" ColumnName="FPVI" />
-          <ScalarProperty Name="FPV" ColumnName="FPV" />
-          <ScalarProperty Name="FPIV" ColumnName="FPIV" />
-          <ScalarProperty Name="FPIII" ColumnName="FPIII" />
-          <ScalarProperty Name="FPII" ColumnName="FPII" />
-          <ScalarProperty Name="FPI" ColumnName="FPI" />
-          <ScalarProperty Name="Temp_Winter" ColumnName="Temp_Winter" />
-          <ScalarProperty Name="Temp_Autumn" ColumnName="Temp_Autumn" />
-          <ScalarProperty Name="Temp_Summer" ColumnName="Temp_Summer" />
-          <ScalarProperty Name="Temp_Spring" ColumnName="Temp_Spring" />
-          <ScalarProperty Name="Destination_Type_Altitude" ColumnName="Destination_Type_Altitude" />
-          <ScalarProperty Name="Destination_Type_Area" ColumnName="Destination_Type_Area" />
-          <ScalarProperty Name="Destination_Type_ServiceHours" ColumnName="Destination_Type_ServiceHours" />
-          <ScalarProperty Name="Destination_Type_Location" ColumnName="Destination_Type_Location" />
-          <ScalarProperty Name="Destination_Type_MapName" ColumnName="Destination_Type_MapName" />
-          <ScalarProperty Name="Destination_Type_Description" ColumnName="Destination_Type_Description" />
-          <ScalarProperty Name="Destination_Type_Link" ColumnName="Destination_Type_Link" />
-          <ScalarProperty Name="Destination_Type_ImgDescription" ColumnName="Destination_Type_ImgDescription" />
-          <ScalarProperty Name="Destination_Type_ImgName" ColumnName="Destination_Type_ImgName" />
-          <ScalarProperty Name="Destination_Type_CreateDate" ColumnName="Destination_Type_CreateDate" />
-          <ScalarProperty Name="Destination_Type_Title2" ColumnName="Destination_Type_Title2" />
-          <ScalarProperty Name="Destination_Type_Title1" ColumnName="Destination_Type_Title1" />
-          <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="RecommendedTrips">
       <EntityTypeMapping TypeName="ForestModel.RecommendedTrip">
         <MappingFragment StoreEntitySet="RecommendedTrip">
@@ -1775,6 +1739,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Message_DesHash">
+      <EntityTypeMapping TypeName="ForestModel.Message_DesHash">
+        <MappingFragment StoreEntitySet="Message_DesHash">
+          <ScalarProperty Name="MessageItem_ID" ColumnName="MessageItem_ID" />
+          <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
+          <ScalarProperty Name="Message_DesHashID" ColumnName="Message_DesHashID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="MessageBanners">
       <EntityTypeMapping TypeName="ForestModel.MessageBanner">
         <MappingFragment StoreEntitySet="MessageBanner">
@@ -1784,12 +1757,72 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Message_DesHash">
-      <EntityTypeMapping TypeName="ForestModel.Message_DesHash">
-        <MappingFragment StoreEntitySet="Message_DesHash">
-          <ScalarProperty Name="MessageItem_ID" ColumnName="MessageItem_ID" />
+    <EntitySetMapping Name="ADDestinations">
+      <EntityTypeMapping TypeName="ForestModel.ADDestination">
+        <MappingFragment StoreEntitySet="ADDestination">
+          <ScalarProperty Name="ADDesc" ColumnName="ADDesc" />
+          <ScalarProperty Name="UploadVideoFileDesc" ColumnName="UploadVideoFileDesc" />
+          <ScalarProperty Name="UploadVideoFilePath" ColumnName="UploadVideoFilePath" />
+          <ScalarProperty Name="UploadVideoFileName" ColumnName="UploadVideoFileName" />
+          <ScalarProperty Name="SType" ColumnName="SType" />
+          <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+          <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+          <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Review_Date" ColumnName="Review_Date" />
+          <ScalarProperty Name="Fixed" ColumnName="Fixed" />
+          <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
+          <ScalarProperty Name="Link_Href" ColumnName="Link_Href" />
+          <ScalarProperty Name="AD_Height" ColumnName="AD_Height" />
+          <ScalarProperty Name="AD_Width" ColumnName="AD_Width" />
+          <ScalarProperty Name="Img_Name_Thumb" ColumnName="Img_Name_Thumb" />
+          <ScalarProperty Name="Img_Name_Ori" ColumnName="Img_Name_Ori" />
+          <ScalarProperty Name="Img_Show_Name" ColumnName="Img_Show_Name" />
+          <ScalarProperty Name="AD_Name" ColumnName="AD_Name" />
+          <ScalarProperty Name="EdDate" ColumnName="EdDate" />
+          <ScalarProperty Name="StDate" ColumnName="StDate" />
+          <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Site_ID" ColumnName="Site_ID" />
+          <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
           <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
-          <ScalarProperty Name="Message_DesHashID" ColumnName="Message_DesHashID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="F_Destination_Type">
+      <EntityTypeMapping TypeName="ForestModel.F_Destination_Type">
+        <MappingFragment StoreEntitySet="F_Destination_Type">
+          <ScalarProperty Name="Recommend_Detail_Img" ColumnName="Recommend_Detail_Img" />
+          <ScalarProperty Name="Recommend_Img" ColumnName="Recommend_Img" />
+          <ScalarProperty Name="Banner_Img" ColumnName="Banner_Img" />
+          <ScalarProperty Name="FPX" ColumnName="FPX" />
+          <ScalarProperty Name="FPIX" ColumnName="FPIX" />
+          <ScalarProperty Name="FPVIII" ColumnName="FPVIII" />
+          <ScalarProperty Name="FPVII" ColumnName="FPVII" />
+          <ScalarProperty Name="FPVI" ColumnName="FPVI" />
+          <ScalarProperty Name="FPV" ColumnName="FPV" />
+          <ScalarProperty Name="FPIV" ColumnName="FPIV" />
+          <ScalarProperty Name="FPIII" ColumnName="FPIII" />
+          <ScalarProperty Name="FPII" ColumnName="FPII" />
+          <ScalarProperty Name="FPI" ColumnName="FPI" />
+          <ScalarProperty Name="Temp_Winter" ColumnName="Temp_Winter" />
+          <ScalarProperty Name="Temp_Autumn" ColumnName="Temp_Autumn" />
+          <ScalarProperty Name="Temp_Summer" ColumnName="Temp_Summer" />
+          <ScalarProperty Name="Temp_Spring" ColumnName="Temp_Spring" />
+          <ScalarProperty Name="Destination_Type_Altitude" ColumnName="Destination_Type_Altitude" />
+          <ScalarProperty Name="Destination_Type_Area" ColumnName="Destination_Type_Area" />
+          <ScalarProperty Name="Destination_Type_ServiceHours" ColumnName="Destination_Type_ServiceHours" />
+          <ScalarProperty Name="Destination_Type_Location" ColumnName="Destination_Type_Location" />
+          <ScalarProperty Name="Destination_Type_MapName" ColumnName="Destination_Type_MapName" />
+          <ScalarProperty Name="Destination_Type_Description" ColumnName="Destination_Type_Description" />
+          <ScalarProperty Name="Destination_Type_Link" ColumnName="Destination_Type_Link" />
+          <ScalarProperty Name="Destination_Type_ImgDescription" ColumnName="Destination_Type_ImgDescription" />
+          <ScalarProperty Name="Destination_Type_ImgName" ColumnName="Destination_Type_ImgName" />
+          <ScalarProperty Name="Destination_Type_CreateDate" ColumnName="Destination_Type_CreateDate" />
+          <ScalarProperty Name="Destination_Type_Title2" ColumnName="Destination_Type_Title2" />
+          <ScalarProperty Name="Destination_Type_Title1" ColumnName="Destination_Type_Title1" />
+          <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
