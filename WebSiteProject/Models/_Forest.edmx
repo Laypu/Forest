@@ -43,6 +43,8 @@
           <Property Name="UpdateName" Type="nvarchar" MaxLength="20" />
           <Property Name="IsVerift" Type="bit" />
           <Property Name="LinkUrlDesc" Type="nvarchar" MaxLength="200" />
+          <Property Name="ImageBannerName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImageBannerOrgName" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="ActivePhoto">
           <Key>
@@ -1488,6 +1490,9 @@
           <Property Name="RecommendedTrips_EndDay" Type="datetime" />
           <Property Name="Sort" Type="int" />
           <Property Name="InFront" Type="int" />
+          <Property Name="ImageFileName" Type="varchar" MaxLength="1000" />
+          <Property Name="ImageFileDesc" Type="varchar" MaxLength="1000" />
+          <Property Name="ImageFileLocation" Type="varchar" MaxLength="1" />
         </EntityType>
         <EntityType Name="RecommendedTrip_Travel">
           <Key>
@@ -2000,7 +2005,6 @@
     <edmx:ConceptualModels>
       <Schema Namespace="ForestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="ForestEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ActiveItems" EntityType="ForestModel.ActiveItem" />
           <EntitySet Name="ActivePhotoes" EntityType="ForestModel.ActivePhoto" />
           <EntitySet Name="ActiveUnitSettings" EntityType="ForestModel.ActiveUnitSetting" />
           <EntitySet Name="ADCenters" EntityType="ForestModel.ADCenter" />
@@ -2087,12 +2091,7 @@
             <End Role="F_HashTag_Type" EntitySet="F_HashTag_Type" />
             <End Role="RecommendedTrips_HashTag_Type" EntitySet="RecommendedTrips_HashTag_Type" />
           </AssociationSet>
-          <EntitySet Name="RecommendedTrips" EntityType="ForestModel.RecommendedTrip" />
           <EntitySet Name="RecommendedTrip_Travel" EntityType="ForestModel.RecommendedTrip_Travel" />
-          <AssociationSet Name="FK_RecommendedTrips_RecommendedTrips_Day" Association="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day">
-            <End Role="RecommendedTrips_Day" EntitySet="RecommendedTrips_Day" />
-            <End Role="RecommendedTrip" EntitySet="RecommendedTrips" />
-          </AssociationSet>
           <EntitySet Name="Message10Hash" EntityType="ForestModel.Message10Hash" />
           <EntitySet Name="Message_DesHash" EntityType="ForestModel.Message_DesHash" />
           <EntitySet Name="MessageBanners" EntityType="ForestModel.MessageBanner" />
@@ -2110,50 +2109,17 @@
             <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
             <End Role="Message_DesHash" EntitySet="Message_DesHash" />
           </AssociationSet>
+          <EntitySet Name="ActiveItems" EntityType="ForestModel.ActiveItem" />
+          <EntitySet Name="RecommendedTrips" EntityType="ForestModel.RecommendedTrip" />
           <AssociationSet Name="FK_RecommendedTrips_F_Destination_Type" Association="ForestModel.FK_RecommendedTrips_F_Destination_Type">
             <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
             <End Role="RecommendedTrip" EntitySet="RecommendedTrips" />
           </AssociationSet>
+          <AssociationSet Name="FK_RecommendedTrips_RecommendedTrips_Day" Association="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day">
+            <End Role="RecommendedTrips_Day" EntitySet="RecommendedTrips_Day" />
+            <End Role="RecommendedTrip" EntitySet="RecommendedTrips" />
+          </AssociationSet>
           </EntityContainer>
-        <EntityType Name="ActiveItem">
-          <Key>
-            <PropertyRef Name="ItemID" />
-          </Key>
-          <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ModelID" Type="Int32" />
-          <Property Name="Lang_ID" Type="Int32" />
-          <Property Name="GroupID" Type="Int32" />
-          <Property Name="Sort" Type="Int32" />
-          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="HtmlContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ClickCnt" Type="Int32" />
-          <Property Name="UploadFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="UploadFilePath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="UploadFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ImageFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ImageFileOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ImageFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ImageFileLocation" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="LinkUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="StDate" Type="DateTime" Precision="3" />
-          <Property Name="EdDate" Type="DateTime" Precision="3" />
-          <Property Name="PublicshDate" Type="DateTime" Precision="3" />
-          <Property Name="Enabled" Type="Boolean" />
-          <Property Name="ActiveID" Type="Int32" />
-          <Property Name="ActiveItemID" Type="Int32" />
-          <Property Name="Link_Mode" Type="Int32" />
-          <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
-          <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="RelateImageFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="RelateImageFileOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Introduction" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="CreateDatetime" Type="DateTime" Precision="3" />
-          <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="CreateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="UpdateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="IsVerift" Type="Boolean" />
-          <Property Name="LinkUrlDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="ActivePhoto">
           <Key>
             <PropertyRef Name="PID" />
@@ -3747,31 +3713,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="RecommendedTrip">
-          <Key>
-            <PropertyRef Name="RecommendedTrips_ID" />
-          </Key>
-          <Property Name="RecommendedTrips_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RecommendedTrips_Day_ID" Type="Int32" />
-          <Property Name="RecommendedTrips_Destinations_ID" Type="Int32" />
-          <Property Name="RecommendedTrips_Img" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="RecommendedTrips_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="RecommendedTrips_Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="RecommendedTrips_Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="RecommendedTrips_HtmContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="RecommendedTrips_Img_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="RecommendedTrips_UploadFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="RecommendedTrips_UploadFilePath" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="RecommendedTrips_UploadFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="RecommendedTrips_LinkUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="RecommendedTrips_LinkUrlDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="RecommendedTrips_StarDay" Type="DateTime" Precision="3" />
-          <Property Name="RecommendedTrips_EndDay" Type="DateTime" Precision="3" />
-          <Property Name="Sort" Type="Int32" />
-          <Property Name="InFront" Type="Int32" />
-          <NavigationProperty Name="RecommendedTrips_Day" Relationship="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day" FromRole="RecommendedTrip" ToRole="RecommendedTrips_Day" />
-          <NavigationProperty Name="F_Destination_Type" Relationship="ForestModel.FK_RecommendedTrips_F_Destination_Type" FromRole="RecommendedTrip" ToRole="F_Destination_Type" />
-        </EntityType>
         <EntityType Name="RecommendedTrip_Travel">
           <Key>
             <PropertyRef Name="RecommendedTrip_Travel_ID" />
@@ -3789,18 +3730,6 @@
           <Property Name="Sort" Type="Int32" />
           <Property Name="InFront" Type="Int32" />
         </EntityType>
-        <Association Name="FK_RecommendedTrips_RecommendedTrips_Day">
-          <End Type="ForestModel.RecommendedTrips_Day" Role="RecommendedTrips_Day" Multiplicity="0..1" />
-          <End Type="ForestModel.RecommendedTrip" Role="RecommendedTrip" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="RecommendedTrips_Day">
-              <PropertyRef Name="RecommendedTrips_Day_ID" />
-            </Principal>
-            <Dependent Role="RecommendedTrip">
-              <PropertyRef Name="RecommendedTrips_Day_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Message10Hash">
           <Key>
             <PropertyRef Name="Message10Hash_ID" />
@@ -3943,6 +3872,75 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ActiveItem">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModelID" Type="Int32" />
+          <Property Name="Lang_ID" Type="Int32" />
+          <Property Name="GroupID" Type="Int32" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HtmlContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClickCnt" Type="Int32" />
+          <Property Name="UploadFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UploadFilePath" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UploadFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ImageFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ImageFileOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ImageFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ImageFileLocation" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="LinkUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="StDate" Type="DateTime" Precision="3" />
+          <Property Name="EdDate" Type="DateTime" Precision="3" />
+          <Property Name="PublicshDate" Type="DateTime" Precision="3" />
+          <Property Name="Enabled" Type="Boolean" />
+          <Property Name="ActiveID" Type="Int32" />
+          <Property Name="ActiveItemID" Type="Int32" />
+          <Property Name="Link_Mode" Type="Int32" />
+          <Property Name="UpdateDatetime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RelateImageFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RelateImageFileOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Introduction" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDatetime" Type="DateTime" Precision="3" />
+          <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CreateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IsVerift" Type="Boolean" />
+          <Property Name="LinkUrlDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ImageBannerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ImageBannerOrgName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RecommendedTrip">
+          <Key>
+            <PropertyRef Name="RecommendedTrips_ID" />
+          </Key>
+          <Property Name="RecommendedTrips_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RecommendedTrips_Day_ID" Type="Int32" />
+          <Property Name="RecommendedTrips_Destinations_ID" Type="Int32" />
+          <Property Name="RecommendedTrips_Img" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RecommendedTrips_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RecommendedTrips_Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RecommendedTrips_Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RecommendedTrips_HtmContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RecommendedTrips_Img_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RecommendedTrips_UploadFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RecommendedTrips_UploadFilePath" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RecommendedTrips_UploadFileDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RecommendedTrips_LinkUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="RecommendedTrips_LinkUrlDesc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RecommendedTrips_StarDay" Type="DateTime" Precision="3" />
+          <Property Name="RecommendedTrips_EndDay" Type="DateTime" Precision="3" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="InFront" Type="Int32" />
+          <Property Name="ImageFileName" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ImageFileDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ImageFileLocation" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="F_Destination_Type" Relationship="ForestModel.FK_RecommendedTrips_F_Destination_Type" FromRole="RecommendedTrip" ToRole="F_Destination_Type" />
+          <NavigationProperty Name="RecommendedTrips_Day" Relationship="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day" FromRole="RecommendedTrip" ToRole="RecommendedTrips_Day" />
+        </EntityType>
         <Association Name="FK_RecommendedTrips_F_Destination_Type">
           <End Type="ForestModel.F_Destination_Type" Role="F_Destination_Type" Multiplicity="0..1" />
           <End Type="ForestModel.RecommendedTrip" Role="RecommendedTrip" Multiplicity="*" />
@@ -3955,52 +3953,24 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_RecommendedTrips_RecommendedTrips_Day">
+          <End Type="ForestModel.RecommendedTrips_Day" Role="RecommendedTrips_Day" Multiplicity="0..1" />
+          <End Type="ForestModel.RecommendedTrip" Role="RecommendedTrip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RecommendedTrips_Day">
+              <PropertyRef Name="RecommendedTrips_Day_ID" />
+            </Principal>
+            <Dependent Role="RecommendedTrip">
+              <PropertyRef Name="RecommendedTrips_Day_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="ForestModelStoreContainer" CdmEntityContainer="ForestEntities">
-          <EntitySetMapping Name="ActiveItems">
-            <EntityTypeMapping TypeName="ForestModel.ActiveItem">
-              <MappingFragment StoreEntitySet="ActiveItem">
-                <ScalarProperty Name="LinkUrlDesc" ColumnName="LinkUrlDesc" />
-                <ScalarProperty Name="IsVerift" ColumnName="IsVerift" />
-                <ScalarProperty Name="UpdateName" ColumnName="UpdateName" />
-                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
-                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
-                <ScalarProperty Name="CreateDatetime" ColumnName="CreateDatetime" />
-                <ScalarProperty Name="Introduction" ColumnName="Introduction" />
-                <ScalarProperty Name="RelateImageFileOrgName" ColumnName="RelateImageFileOrgName" />
-                <ScalarProperty Name="RelateImageFileName" ColumnName="RelateImageFileName" />
-                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
-                <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
-                <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
-                <ScalarProperty Name="ActiveItemID" ColumnName="ActiveItemID" />
-                <ScalarProperty Name="ActiveID" ColumnName="ActiveID" />
-                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
-                <ScalarProperty Name="PublicshDate" ColumnName="PublicshDate" />
-                <ScalarProperty Name="EdDate" ColumnName="EdDate" />
-                <ScalarProperty Name="StDate" ColumnName="StDate" />
-                <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
-                <ScalarProperty Name="ImageFileLocation" ColumnName="ImageFileLocation" />
-                <ScalarProperty Name="ImageFileDesc" ColumnName="ImageFileDesc" />
-                <ScalarProperty Name="ImageFileOrgName" ColumnName="ImageFileOrgName" />
-                <ScalarProperty Name="ImageFileName" ColumnName="ImageFileName" />
-                <ScalarProperty Name="UploadFileDesc" ColumnName="UploadFileDesc" />
-                <ScalarProperty Name="UploadFilePath" ColumnName="UploadFilePath" />
-                <ScalarProperty Name="UploadFileName" ColumnName="UploadFileName" />
-                <ScalarProperty Name="ClickCnt" ColumnName="ClickCnt" />
-                <ScalarProperty Name="HtmlContent" ColumnName="HtmlContent" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Sort" ColumnName="Sort" />
-                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
-                <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
-                <ScalarProperty Name="ModelID" ColumnName="ModelID" />
-                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ActivePhotoes">
             <EntityTypeMapping TypeName="ForestModel.ActivePhoto">
               <MappingFragment StoreEntitySet="ActivePhoto">
@@ -5639,30 +5609,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="RecommendedTrips">
-            <EntityTypeMapping TypeName="ForestModel.RecommendedTrip">
-              <MappingFragment StoreEntitySet="RecommendedTrip">
-                <ScalarProperty Name="InFront" ColumnName="InFront" />
-                <ScalarProperty Name="Sort" ColumnName="Sort" />
-                <ScalarProperty Name="RecommendedTrips_EndDay" ColumnName="RecommendedTrips_EndDay" />
-                <ScalarProperty Name="RecommendedTrips_StarDay" ColumnName="RecommendedTrips_StarDay" />
-                <ScalarProperty Name="RecommendedTrips_LinkUrlDesc" ColumnName="RecommendedTrips_LinkUrlDesc" />
-                <ScalarProperty Name="RecommendedTrips_LinkUrl" ColumnName="RecommendedTrips_LinkUrl" />
-                <ScalarProperty Name="RecommendedTrips_UploadFileDesc" ColumnName="RecommendedTrips_UploadFileDesc" />
-                <ScalarProperty Name="RecommendedTrips_UploadFilePath" ColumnName="RecommendedTrips_UploadFilePath" />
-                <ScalarProperty Name="RecommendedTrips_UploadFileName" ColumnName="RecommendedTrips_UploadFileName" />
-                <ScalarProperty Name="RecommendedTrips_Img_Description" ColumnName="RecommendedTrips_Img_Description" />
-                <ScalarProperty Name="RecommendedTrips_HtmContent" ColumnName="RecommendedTrips_HtmContent" />
-                <ScalarProperty Name="RecommendedTrips_Location" ColumnName="RecommendedTrips_Location" />
-                <ScalarProperty Name="RecommendedTrips_Content" ColumnName="RecommendedTrips_Content" />
-                <ScalarProperty Name="RecommendedTrips_Title" ColumnName="RecommendedTrips_Title" />
-                <ScalarProperty Name="RecommendedTrips_Img" ColumnName="RecommendedTrips_Img" />
-                <ScalarProperty Name="RecommendedTrips_Destinations_ID" ColumnName="RecommendedTrips_Destinations_ID" />
-                <ScalarProperty Name="RecommendedTrips_Day_ID" ColumnName="RecommendedTrips_Day_ID" />
-                <ScalarProperty Name="RecommendedTrips_ID" ColumnName="RecommendedTrips_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="RecommendedTrip_Travel">
             <EntityTypeMapping TypeName="ForestModel.RecommendedTrip_Travel">
               <MappingFragment StoreEntitySet="RecommendedTrip_Travel">
@@ -5783,6 +5729,75 @@
                 <ScalarProperty Name="Destination_Type_Title2" ColumnName="Destination_Type_Title2" />
                 <ScalarProperty Name="Destination_Type_Title1" ColumnName="Destination_Type_Title1" />
                 <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActiveItems">
+            <EntityTypeMapping TypeName="ForestModel.ActiveItem">
+              <MappingFragment StoreEntitySet="ActiveItem">
+                <ScalarProperty Name="ImageBannerOrgName" ColumnName="ImageBannerOrgName" />
+                <ScalarProperty Name="ImageBannerName" ColumnName="ImageBannerName" />
+                <ScalarProperty Name="LinkUrlDesc" ColumnName="LinkUrlDesc" />
+                <ScalarProperty Name="IsVerift" ColumnName="IsVerift" />
+                <ScalarProperty Name="UpdateName" ColumnName="UpdateName" />
+                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateDatetime" ColumnName="CreateDatetime" />
+                <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+                <ScalarProperty Name="RelateImageFileOrgName" ColumnName="RelateImageFileOrgName" />
+                <ScalarProperty Name="RelateImageFileName" ColumnName="RelateImageFileName" />
+                <ScalarProperty Name="UpdateUser" ColumnName="UpdateUser" />
+                <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+                <ScalarProperty Name="Link_Mode" ColumnName="Link_Mode" />
+                <ScalarProperty Name="ActiveItemID" ColumnName="ActiveItemID" />
+                <ScalarProperty Name="ActiveID" ColumnName="ActiveID" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="PublicshDate" ColumnName="PublicshDate" />
+                <ScalarProperty Name="EdDate" ColumnName="EdDate" />
+                <ScalarProperty Name="StDate" ColumnName="StDate" />
+                <ScalarProperty Name="LinkUrl" ColumnName="LinkUrl" />
+                <ScalarProperty Name="ImageFileLocation" ColumnName="ImageFileLocation" />
+                <ScalarProperty Name="ImageFileDesc" ColumnName="ImageFileDesc" />
+                <ScalarProperty Name="ImageFileOrgName" ColumnName="ImageFileOrgName" />
+                <ScalarProperty Name="ImageFileName" ColumnName="ImageFileName" />
+                <ScalarProperty Name="UploadFileDesc" ColumnName="UploadFileDesc" />
+                <ScalarProperty Name="UploadFilePath" ColumnName="UploadFilePath" />
+                <ScalarProperty Name="UploadFileName" ColumnName="UploadFileName" />
+                <ScalarProperty Name="ClickCnt" ColumnName="ClickCnt" />
+                <ScalarProperty Name="HtmlContent" ColumnName="HtmlContent" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="Lang_ID" ColumnName="Lang_ID" />
+                <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RecommendedTrips">
+            <EntityTypeMapping TypeName="ForestModel.RecommendedTrip">
+              <MappingFragment StoreEntitySet="RecommendedTrip">
+                <ScalarProperty Name="ImageFileLocation" ColumnName="ImageFileLocation" />
+                <ScalarProperty Name="ImageFileDesc" ColumnName="ImageFileDesc" />
+                <ScalarProperty Name="ImageFileName" ColumnName="ImageFileName" />
+                <ScalarProperty Name="InFront" ColumnName="InFront" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="RecommendedTrips_EndDay" ColumnName="RecommendedTrips_EndDay" />
+                <ScalarProperty Name="RecommendedTrips_StarDay" ColumnName="RecommendedTrips_StarDay" />
+                <ScalarProperty Name="RecommendedTrips_LinkUrlDesc" ColumnName="RecommendedTrips_LinkUrlDesc" />
+                <ScalarProperty Name="RecommendedTrips_LinkUrl" ColumnName="RecommendedTrips_LinkUrl" />
+                <ScalarProperty Name="RecommendedTrips_UploadFileDesc" ColumnName="RecommendedTrips_UploadFileDesc" />
+                <ScalarProperty Name="RecommendedTrips_UploadFilePath" ColumnName="RecommendedTrips_UploadFilePath" />
+                <ScalarProperty Name="RecommendedTrips_UploadFileName" ColumnName="RecommendedTrips_UploadFileName" />
+                <ScalarProperty Name="RecommendedTrips_Img_Description" ColumnName="RecommendedTrips_Img_Description" />
+                <ScalarProperty Name="RecommendedTrips_HtmContent" ColumnName="RecommendedTrips_HtmContent" />
+                <ScalarProperty Name="RecommendedTrips_Location" ColumnName="RecommendedTrips_Location" />
+                <ScalarProperty Name="RecommendedTrips_Content" ColumnName="RecommendedTrips_Content" />
+                <ScalarProperty Name="RecommendedTrips_Title" ColumnName="RecommendedTrips_Title" />
+                <ScalarProperty Name="RecommendedTrips_Img" ColumnName="RecommendedTrips_Img" />
+                <ScalarProperty Name="RecommendedTrips_Destinations_ID" ColumnName="RecommendedTrips_Destinations_ID" />
+                <ScalarProperty Name="RecommendedTrips_Day_ID" ColumnName="RecommendedTrips_Day_ID" />
+                <ScalarProperty Name="RecommendedTrips_ID" ColumnName="RecommendedTrips_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

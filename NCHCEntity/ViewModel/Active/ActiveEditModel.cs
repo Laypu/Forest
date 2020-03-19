@@ -41,8 +41,10 @@ namespace ViewModels
         public string ImageFileOrgName { get; set; }
         public string ImageFileName { get; set; }
 
-
-        public string RelateImagelUrl { get; set; }
+        public HttpPostedFileBase ImageBanner { get; set; }
+        public string ImageBannerName { get; set; }
+      public string  ImageBannerOrgName { get; set; }
+    public string RelateImagelUrl { get; set; }
         public HttpPostedFileBase RelateImageFile { get; set; }
         public string RelateImageFileOrgName { get; set; }
         public string RelateImageName { get; set; }
