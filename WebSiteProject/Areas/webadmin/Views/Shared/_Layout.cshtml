@@ -613,8 +613,9 @@
                             <div class="display_inline">
                                 <select id="Index_Partial_Select" class="form-control checkitem" onchange="window.location.href=this.value">
                                     <option data-index="0" value="#">請選擇</option>
-                                    <option data-index="1" value="#">連結路徑</option>
-                                    <option data-index="2" value="#">Load_Facts</option>
+                                    <option data-index="1" value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 14, MenuType=45})">輪播牆設定(電腦版)</option>
+                                    <option data-index="2" value="@Url.Action("ModelItem","Active")">Facts文章管理</option>
+                                    
                                 </select>
                             </div>
                         </div>

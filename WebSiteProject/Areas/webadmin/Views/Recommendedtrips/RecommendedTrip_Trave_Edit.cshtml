@@ -10,7 +10,7 @@
 <script src="@Url.Content("~/Scripts/ckeditor/ckeditor.js")"></script>
 <script src="@Url.Content("~/Scripts/bootbox.min.js")"></script>
 <script src="@Url.Content("~/Scripts/_html.js")"></script>
-<h2>推薦行程</h2>
+
 
 <div class="portlet light bordered">
     <div class="title_04">推薦行程設定</div>
@@ -26,13 +26,13 @@
                             @Html.HiddenFor(Model => Model.RecommendedTrip_Travel_Img)
                             @Html.HiddenFor(m => m.RecommendedTrip_ID)
                             @*<div class="form-group">
-                                    <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
-                                        <span>文章名稱類別</span>
-                                    </div>
-                                    <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                        @Html.DropDownList("RecommendedTrip_ID", (IEnumerable<SelectListItem>)ViewBag.RecommendedTrips_ID, "請選擇", htmlAttributes: new { @class = "form-control", rows = "8", cols = "100", @style = "width:300px" })
-                                    </div>
-                                </div>*@
+                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                    <span>文章名稱類別</span>
+                                </div>
+                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                    @Html.DropDownList("RecommendedTrip_ID", (IEnumerable<SelectListItem>)ViewBag.RecommendedTrips_ID, "請選擇", htmlAttributes: new { @class = "form-control", rows = "8", cols = "100", @style = "width:300px" })
+                                </div>
+                            </div>*@
                             <div class="form-group">
                                 <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
                                     <span>旅遊標題圖片_列表圖片</span>
@@ -42,19 +42,19 @@
                                         <a href="/forest/UploadImage/RecommendedTrips/@Model.RecommendedTrip_Travel_Img" target="preview" id="aimg">@Model.RecommendedTrip_Travel_Img</a>
                                         <label style="color:blue;margin-left:10px;cursor:pointer" id="delrelateimage">刪除</label>
                                     </div>
-                                        <input type="file" class="form-control" accept="image/*" name="fileImag" id="fileImag" />
-                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度800 * 800px</div>
-                                    </div>
+                                    <input type="file" class="form-control" accept="image/*" name="fileImag" id="fileImag" />
+                                    <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度800 * 800px</div>
+                                </div>
                             </div>
                             @*<div class="form-group">
-                                    <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
-                                        <span>旅遊標題圖片_圖片說明</span>
-                                    </div>
-                                    <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                        @Html.EditorFor(model => model.RecommendedTrip_Travel_Img_Description, new { htmlAttributes = new { @class = "form-control  inline-block" } })
-                                        <div class="red" id="Img_Description_err" hidden>必須要輸入圖片說明</div>
-                                    </div>
-                                </div>*@
+                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                    <span>旅遊標題圖片_圖片說明</span>
+                                </div>
+                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                    @Html.EditorFor(model => model.RecommendedTrip_Travel_Img_Description, new { htmlAttributes = new { @class = "form-control  inline-block" } })
+                                    <div class="red" id="Img_Description_err" hidden>必須要輸入圖片說明</div>
+                                </div>
+                            </div>*@
                             <div class="form-group">
                                 <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
                                     <span>旅遊標題</span>
@@ -84,7 +84,11 @@
                 </div>
             </div>
         </form>
-        <a class="btn blue" id="btn_save">確認(存檔)</a><a href="@Url.Action("Recommendedtrips_Edit",new {itemid=Model.RecommendedTrip_ID })" class="btn grey-mint">回上一頁</a>
+        <div class="text-center search_padding" id="div_buttons">
+            <a class="btn blue" id="btn_save">確認送出</a>
+            <a href="@Url.Action("Recommendedtrips_Edit",new {itemid=Model.RecommendedTrip_ID })" class="btn grey-mint">回上一頁</a>
+        </div>
+        
     </div>
 </div>
 @section scripts{

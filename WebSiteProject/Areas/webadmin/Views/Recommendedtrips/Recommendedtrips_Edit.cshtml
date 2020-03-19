@@ -9,7 +9,7 @@
 <script src="@Url.Content("~/Scripts/ckeditor/ckeditor.js")"></script>
 <script src="@Url.Content("~/Scripts/bootbox.min.js")"></script>
 <script src="@Url.Content("~/Scripts/_html.js")"></script>
-<h2>推薦行程</h2>
+
 @{ 
     var sdate = Model.RecommendedTrips_StarDay == null ? "" : Model.RecommendedTrips_StarDay.Value.ToString("yyyy/MM/dd");
      var endate = Model.RecommendedTrips_EndDay== null ? "" : Model.RecommendedTrips_EndDay.Value.ToString("yyyy/MM/dd");
@@ -231,7 +231,11 @@
                 </div>
             </div>
         </form>
-        <a class="btn blue" id="btn_save">確認(存檔)</a><a href="@Url.Action("Recommendedtrips_item")" class="btn grey-mint">回上一頁</a>
+        <div class="text-center search_padding" id="div_buttons">
+            <a  class="btn blue" id="btn_save">確認送出</a>
+            <a href="@Url.Action("Recommendedtrips_item")" class="btn grey-mint">回上一頁</a>
+        </div>
+        
     </div>
     @{
         if (Model.RecommendedTrips_ID.ToString() != "-1")

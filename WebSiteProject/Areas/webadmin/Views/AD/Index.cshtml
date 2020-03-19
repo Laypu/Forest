@@ -25,7 +25,7 @@
             else if (ViewBag.sitid == 17)
             {
                 <li>
-                    <a href="@Url.Action("Recommendedtrips_item", "Recommendedtrips")">Recommendedtrips_item</a>
+                    <a href="@Url.Action("Index", "Active")">Home</a>
                     <i class="fa fa-circle"></i>
                 </li>
 
@@ -41,11 +41,19 @@
 
             if (ViewBag.MenuType == 179)
             {
-                <li>Destinations<i class="fa fa-circle"></i></li>
+                <li>
+                    Destinations
+                    <i class="fa fa-circle"></i>
+                </li>
+
             }
             else if (ViewBag.MenuType == 24)
             {
-                <li>Things to do<i class="fa fa-circle"></i></li>
+                <li>
+                    Things to do
+                    <i class="fa fa-circle"></i>
+                </li>
+
             }
             else if (ViewBag.MenuType == 176)
             {
@@ -58,15 +66,17 @@
             else if (ViewBag.sitid == 17)
             {
                 <li>
-                    @ViewBag.RecommendedTrips_Title
+                    <a href="@Url.Action("Recommendedtrips_item", "Recommendedtrips")">Recommendedtrips_item</a>
                     <i class="fa fa-circle"></i>
                 </li>
+
                 <li>@ViewBag.ReTitle</li>
             }
             else
             {
                 <li>@ViewBag.Title</li>
             }
+            <li>輪播牆</li>
         }
 
 
@@ -77,9 +87,25 @@
 @{
     if (ViewBag.MenuType == 24 || (int)Session["F_MenuType"] == 24)
     {
-        <div class="title_01">Things to do</div>
+        <div class="title_01">Things To Do輪播牆</div>
         <div id="Partial_Index_MenuLink">
-            <!--.......-->
+            <div class="portlet light bordered">
+                <!--set item start-->
+                <div class="table-toolbar">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <p class="class_title">管理項目</p>
+                        <div class="display_inline">
+                            <select id="Index_Partial_Select" class="form-control checkitem" onchange="window.location.href=this.value">
+                                @*<option data-index="0" value="#">請選擇</option>*@
+                                <option data-index="1" value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 4, MenuType=24})" selected>輪播牆設定(電腦版)</option>
+                                <option data-index="2" value="@Url.Action("MainTitleAndContent", "F_Thingtodo")">旅遊資訊主版設定(標題&文字)</option>
+                                <option data-index="3" value="@Url.Action("Five_Thingstodo","F_Thingtodo", new { F_MenuType = 24, MenuType=24 })">五大旅遊資訊設定</option>
+                                <option data-index="4" value="@Url.Action("ModelItem", "Message",new { mainid = '9' })">旅遊資訊文章設定</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     }
     if (ViewBag.MenuType == 0 || (int)Session["F_MenuType"] == 0)
@@ -91,27 +117,73 @@
     }
     if (ViewBag.MenuType == 179 || (int)Session["F_MenuType"] == 179)
     {
-        <div class="title_01">Destinations</div>
+        <div class="title_01">Destinations輪播牆</div>
         <div id="Partial_Index_MenuLink">
-            <!--.......-->
+            <div class="portlet light bordered">
+                <!--set item start-->
+                <div class="table-toolbar">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <p class="class_title">管理項目</p>
+                        <div class="display_inline">
+                            <select id="Index_Partial_Select" class="form-control checkitem" onchange="window.location.href=this.value">
+                                @*<option data-index="0" value="#">請選擇</option>*@
+                                <option data-index="1" value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 3, MenuType=179})" selected>輪播牆設定(電腦版)</option>
+                                <option data-index="2" value="@Url.Action("MainTitleAndContent", "Destination_Index")">目的地主版設定(標題&文字)</option>
+                                <option data-index="3" value="@Url.Action("Destination","Destination_Index", new { F_MenuType = 179,MenuType=179})">目的地設定</option>
+                                <option data-index="4" value="@Url.Action("Index","Destination_MapLegend", new { F_MenuType = 179,MenuType=179})">MapLegend設定</option>
+                                <option data-index="5" value="@Url.Action("ModelItem", "Message",new { mainid = '9' })">旅遊資訊文章設定</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     }
     if (ViewBag.MenuType == 176 || (int)Session["F_MenuType"] == 176)
     {
+        <div class="title_01">Recommendedtrips輪播牆</div>
         <div id="Partial_Index_MenuLink">
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <p class="class_title">管理項目</p>
-                <div class="display_inline">
+            <div class="portlet light bordered">
+                <div class="table-toolbar">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <p class="class_title">管理項目</p>
+                        <div class="display_inline">
+                            <select id="Index_Partial_Select" class="form-control checkitem" onchange="window.location.href=this.value">
+                                <option data-index="1" value="#" selected>輪播牆設定(電腦版)</option>
+                                <option data-index="2" value="@Url.Action("RecommendedtripsIndex", "Recommendedtrips")">推薦行程主版設定(標題&文字)</option>
+                                <option data-index="3" value="@Url.Action("Recommendedtrips_item", "Recommendedtrips")">推薦行程設定</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    if (ViewBag.MenuType == 45 || (int)Session["F_MenuType"] == 45)
+    {
+        <div class="title_01">Facts輪播牆</div>
+        <div class="portlet light bordered">
+            <!--set item start-->
+            <div class="table-toolbar">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <p class="class_title">管理項目</p>
                     <div class="display_inline">
                         <select id="Index_Partial_Select" class="form-control checkitem" onchange="window.location.href=this.value">
-                            <option data-index="1" value="#" selected>輪播牆設定(電腦版)</option>
-                            <option data-index="2" value="@Url.Action("RecommendedtripsIndex", "Recommendedtrips")">推薦行程主版設定(標題&文字)</option>
-                            <option data-index="3" value="@Url.Action("Recommendedtrips_item", "Recommendedtrips")">推薦行程設定</option>
+
+                            <option data-index="1" value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 14, MenuType=45})" selected>輪播牆設定(電腦版)</option>
+                            <option data-index="2" value="@Url.Action("ModelItem","Active")">Facts文章管理</option>
+
                         </select>
                     </div>
                 </div>
             </div>
         </div>
+    }
+
+    if (ViewBag.sitid == 17 || (int)Session["F_MenuType"] == 17)
+    {
+        <div class="title_01">@ViewBag.RecommendedTrips_Title</div>
+
     }
 }
 
@@ -122,20 +194,20 @@
 
     <div class="table-toolbar">
         <div class="col-md-6 col-sm-12 col-xs-12">
-            @if (ViewBag.MenuType == 176 || (int)Session["F_MenuType"] == 176 || ViewBag.sitid == 17 || ViewBag.MenuType == 45 || (int)Session["F_MenuType"] == 45)
-            {
-                @ViewBag.SiteTile;
-            }
+            @*@if (ViewBag.MenuType == 176 || (int)Session["F_MenuType"] == 176 || ViewBag.sitid == 17 || ViewBag.MenuType == 45 || (int)Session["F_MenuType"] == 45)
+                {
+                    @ViewBag.SiteTile;
+                }*@
             @*else
-            {
-                <p class="class_title">管理項目</p>
-                <div class="display_inline">
-                    @Html.DropDownList("ID", (SelectList)ViewBag.SiteList, "請選擇", new { @class = "form-control checkitem" })
+                {
+                    <p class="class_title">管理項目</p>
+                    <div class="display_inline">
+                        @Html.DropDownList("ID", (SelectList)ViewBag.SiteList, "請選擇", new { @class = "form-control checkitem" })
 
 
 
-                </div>
-            }*@
+                    </div>
+                }*@
             @*<p class="display_inline" >
                     <label>前台最多顯示</label>
                     <input id="txt_ShowCount" type="text" class="form-control input-xsmall" style="display:inline" value="@ViewBag.MaxNum"/>
@@ -194,11 +266,8 @@
         var langtype = '@ViewBag.type'
           var stype='@ViewBag.stype'
         $(document).ready(function () {
-            if ($(".table-toolbar option").attr("data-index") == "2")
-            {
-                console.log($(".table-toolbar option").attr("selected"));
-            }
-                
+
+
               LoadAD();
 
               AD_SelectChange()
