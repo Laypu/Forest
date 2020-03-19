@@ -59,7 +59,7 @@
                 }
 
             }
-            @Html.Raw(HttpUtility.HtmlDecode(Model.RecommendedTrips_HtmContent))
+            @Html.Raw(HttpUtility.HtmlDecode(Model.RecommendedTrips_HtmContent).safeHtmlFragment())
         </div>
 
     </div>

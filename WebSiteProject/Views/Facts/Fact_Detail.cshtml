@@ -84,7 +84,7 @@
                 }
 
                 <!--文繞圖 end-->
-                @Html.Raw(ActiveItem.HtmlContent)
+                @Html.Raw(ActiveItem.HtmlContent.safeHtmlFragment())
 
 
             </div>

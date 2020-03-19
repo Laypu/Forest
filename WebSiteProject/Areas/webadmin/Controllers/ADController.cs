@@ -162,6 +162,11 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             {
                 ViewBag.SiteTile = db.SiteLists.Where(p => p.SiteList_ID == site_id).FirstOrDefault().SiteList_Name_en;
                 ViewBag.sitid = site_id;
+                if(site_id == 17)
+                {
+                    var id = Int32.Parse(type);
+                   ViewBag.RecommendedTrips_Title = db.RecommendedTrips.Where(p => p.RecommendedTrips_ID == id).FirstOrDefault().RecommendedTrips_Title;
+                }
             }
             Session["F_MenuType"] = MenuType==0? 0: MenuType;
             ViewBag.MenuType = MenuType == 0 ? 0 : Session["F_MenuType"];

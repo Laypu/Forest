@@ -93,55 +93,9 @@ namespace WebSiteProject.Controllers
             viewmodel.ADMain = _IMasterPageManager.GetADMain("P", langid.ToString(), site_id);
             viewmodel.ADMobile = _IMasterPageManager.GetADMain("M", langid.ToString(), site_id);
             viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
-
-            var sitemenu = _ISiteLayoutManager.PagingMain(new ViewModels.SearchModelBase()
-            {
-                Limit = 100,
-                Key = Device,
-                NowPage = 1,
-                Offset = 0,
-                Sort = "ID",
-                LangId = langid.ToString()
-            });
-            if (sitemenu.total > 0)
-            {
-                var layoutpagelist = ((List<PageLayout>)sitemenu.rows);
-                if (layoutpagelist.Any(v => v.Title == "焦點新聞"))
-                {
-                    viewmodel.PageLayoutModel1 = _IMasterPageManager.GetSiteLayout(sitemenu.rows, "焦點新聞", langid.ToString()).First();
-                }
-                else { viewmodel.PageLayoutModel1 = new HomePageLayoutModel(); }
-                if (layoutpagelist.Any(v => v.Title == "活動專區"))
-                {
-                    viewmodel.PageLayoutModel2 = _IMasterPageManager.GetSiteLayout(sitemenu.rows, "活動專區", langid.ToString()).First();
-                }
-                else { viewmodel.PageLayoutModel2 = new HomePageLayoutModel(); }
-            }
-            else
-            {
-                viewmodel.PageLayoutModel1 = new HomePageLayoutModel();
-                viewmodel.PageLayoutModel2 = new HomePageLayoutModel();
-                ViewBag.sitemenu = new List<PageLayout>();
-                ViewBag.sitemenupart = "";
-            }
-            viewmodel.BannerImage = "";
-            viewmodel.PageLayoutOP1 = _ISiteLayoutManager.GetPageLayoutOP1Edit(langid.ToString());
-            viewmodel.PageLayoutOP2 = _ISiteLayoutManager.GetPageLayoutOP2Edit(langid.ToString());
-            viewmodel.PageLayoutOP3 = _ISiteLayoutManager.GetPageLayoutOP3Edit(langid.ToString());
-            viewmodel.PageLayoutActivityModel = _ISiteLayoutManager.PageLayoutActivity(langid.ToString());
-
-            viewmodel.LinkItems = _IModelLinkManager.PagingItem("Y", new SearchModelBase()
-            {
-                LangId = this.LangID,
-                Limit = -1,
-                Sort = "Sort"
-            }).rows;
-
-
-
             ////標題和內容
             //ViewBag.Title = Server.HtmlDecode(db.RecommendedTrips_Index.FirstOrDefault().RecommendedTrips_Index_Title);
-            ViewBag.Content = Server.HtmlDecode(db.RecommendedTrips_Index.FirstOrDefault().RecommendedTrips_Index_Content);
+            ViewBag.Content = Server.HtmlDecode(db.RecommendedTrips_Index.FirstOrDefault().RecommendedTrips_Index_Content).safeHtmlFragment();
 
             //五大標題+圖
             ViewBag.F_Destination_Type = db.F_Destination_Type.ToList();
