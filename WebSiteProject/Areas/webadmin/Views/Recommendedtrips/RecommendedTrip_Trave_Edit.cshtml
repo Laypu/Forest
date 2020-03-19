@@ -60,7 +60,8 @@
                                     <span>旅遊標題</span>
                                 </div>
                                 <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    @Html.EditorFor(model => model.RecommendedTrip_Travel_Title, new { htmlAttributes = new { @class = "form-control  inline-block" } })
+                                    @Html.EditorFor(model => model.RecommendedTrip_Travel_Title, new { htmlAttributes = new { @class = "form-control  inline-block",id="Title" } })
+                                    <span class="required" id="Title-error" style="display:none;">標題 必須填寫！</span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -99,7 +100,10 @@
                 $("#delrelateimage").click(function () {
                 $("#div_oldrelateimg").hide();
                 imagecheck="True"
-            })
+                })
+
+
+
             $("#btn_save").click(function () {
                 var RecommendedTripID = $("#RecommendedTrip_ID").val();
                 var RecommendedTrip_Travel_Img_Description = $("#RecommendedTrip_Travel_Img_Description").val();
@@ -108,6 +112,13 @@
                 if (RecommendedTripID == "")
                 {
                     alert("請確實文章類別")
+                    return false;
+                }
+                var titlevalue = $("#Title").val();
+                if (titlevalue == "")
+                {
+                    $("#Title-error").show();
+                    alert("請更正錯誤\n *必須填寫");
                     return false;
                 }
                 var sFileName = rfile.val();

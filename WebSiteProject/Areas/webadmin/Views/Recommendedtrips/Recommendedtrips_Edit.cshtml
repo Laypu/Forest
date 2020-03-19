@@ -129,12 +129,14 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-2 col-sm-12 col-xs-12 search_item text-center">行程標題</div>
+                                <div class="col-md-2 col-sm-12 col-xs-12 search_item text-center"><span class="red">*</span>行程標題</div>
                                 <div class="col-md-10  col-sm-12 col-xs-12 bg-white mobile_white">
                                     <div class="col-md-12">
-                                        @Html.EditorFor(model => model.RecommendedTrips_Title, new { htmlAttributes = new { @class = "form-control  inline-block" } })
+                                        @Html.EditorFor(model => model.RecommendedTrips_Title, new { htmlAttributes = new { @class = "form-control  inline-block",@id="Title" } })
+                                        <span class="required" id="Title-error" style="display:none;">標題 必須填寫！</span>
                                     </div>
                                 </div>
+                                
                             </div>
                             <div class="form-group">
                                 <div class="col-md-2 col-sm-12 col-xs-12 search_item text-center">行程特色</div>
@@ -330,6 +332,7 @@
                         breakAfterClose: false
                     });
             });
+
             $("#btn_save").click(function () {
                var sdate=  $("#Sdate").val();
                var edate= $("#Edate").val();
@@ -350,6 +353,13 @@
                 //}
                 if ((sdate != "" && edate != "") && (sdate > edate)) {
                     alert("結束日期不可以小於開始日期")
+                    return false;
+                }
+                var titlevalue = $("#Title").val();
+                if (titlevalue == "")
+                {
+                    $("#Title-error").show();
+                    alert("請更正錯誤\n *必須填寫");
                     return false;
                 }
                            var file = $("#file_image");
