@@ -1,0 +1,232 @@
+﻿@{
+    Layout = WebSiteProject.Code.Common.GetIndexLayout(Model.LangId);
+}
+@{
+
+    var pageCount = (int)ViewBag.pageCount;
+    var nowPage = (int)ViewBag.NowPag;
+    var Total = (int)ViewBag.count;
+    var ShowCount = (int)ViewBag.ShowCount;
+    var ActiveItem = (IEnumerable<WebSiteProject.Models.ActiveItem>)ViewBag.Facts;
+}
+@model HomeViewModel
+<div class="page_banner">
+    <!--設定檔在theme.js 1190行；電腦版和手機版分開-->
+    <!--pc start--><!--圖片建議尺寸2600*1000px-->
+    <div class="hidden-xs">
+        <div class="slider-container rev_slider_wrapper">
+            <div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 670, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,500], 'parallax': { 'type': 'scroll', 'origo': 'enterpoint', 'speed': 1000, 'levels': [2,3,4,5,6,7,8,9,12,50], 'disable_onmobile': 'on' }, 'navigation' : {'arrows': { 'enable': true }, 'bullets': {'enable': true, 'style': 'bullets-style-1', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
+                <ul>
+                    @{
+                        var uploadfilepath = System.Configuration.ConfigurationManager.AppSettings["UploadFile"];
+                    }
+                    @foreach (var ad in Model.ADMain)
+                    {
+                        string target = ad.Link_Mode == "1" ? "_self" : "_blank";
+                        if (string.IsNullOrEmpty(ad.Img_Name_Ori) == false)
+                        {
+                            <li data-transition="fade">
+                                <div class="tp-caption tp-resizeme"
+                                     data-frames='[{"delay":0,"speed":2000,"frame":"0","from":"opacity:0;x:100%;y:-100%;","to":"o:1;x:0;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                                     data-type="image"
+                                     data-x="center"
+                                     data-y="top"
+                                     data-width="['auto']"
+                                     data-height="['auto']"
+                                     data-basealign="slide">
+                                    <img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="@ad.AD_Name">
+                                </div>
+
+                                @*<div class="tp-caption item_box" data-x="0" data-y="500" data-start="500" data-transform_in="y:[100%];opacity:0;s:500;">
+                                        <div class="title">@ad.AD_Name</div>
+                                        <div class="con_font">@Html.Raw(ad.ADDesc)</div><br />
+                                        <div class="btn_box"><a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more") @(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")"><span class="btn_01">@Common.GetLangText("View")<i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span></a></div>
+                                    </div>*@
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="slide-overlay" data-transition="fade">
+                                <div class="rs-background-video-layer"
+                                     data-forcerewind="on"
+                                     data-volume="mute"
+                                     data-videowidth="100%"
+                                     data-videoheight="100%"
+                                     data-videomp4="@VirtualPathUtility.ToAbsolute("~"+ad.UploadVideoFilePath)"
+                                     data-videopreload="preload"
+                                     data-videoloop="loop"
+                                     data-forceCover="1"
+                                     data-aspectratio="16:9"
+                                     data-autoplay="true"
+                                     data-autoplayonlyfirsttime="false"
+                                     data-nextslideatend="true">
+                                </div>
+
+                                @*<div class="tp-caption item_box" data-x="0" data-y="500" data-start="500" data-transform_in="y:[100%];opacity:0;s:500;">
+                                        <div class="title">@ad.AD_Name</div>
+                                        <div class="con_font">@Html.Raw(ad.ADDesc)</div><br />
+                                        <div class="btn_box"><a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")"><span class="btn_01">@Common.GetLangText("View")<i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span></a></div>
+                                    </div>*@
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--pc end-->
+    <!--mobile start--><!--圖片建議尺寸1200*2000px-->
+    <div class="visible-xs">
+        <div class="slider-container rev_slider_wrapper">
+            <div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 670, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,500], 'parallax': { 'type': 'scroll', 'origo': 'enterpoint', 'speed': 1000, 'levels': [2,3,4,5,6,7,8,9,12,50], 'disable_onmobile': 'on' }, 'navigation' : {'arrows': { 'enable': true }, 'bullets': {'enable': true, 'style': 'bullets-style-1', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
+                <ul>
+                    @foreach (var ad in Model.ADMain)
+                    {
+                        string target = ad.Link_Mode == "1" ? "_self" : "_blank";
+                        if (string.IsNullOrEmpty(ad.Img_Name_Ori) == false)
+                        {
+                            <li data-transition="fade">
+                                <div class="tp-caption tp-resizeme"
+                                     data-frames='[{"delay":0,"speed":2000,"frame":"0","from":"opacity:0;x:100%;y:-100%;","to":"o:1;x:0;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                                     data-type="image"
+                                     data-x="center"
+                                     data-y="top"
+                                     data-width="['auto']"
+                                     data-height="['auto']"
+                                     data-basealign="slide">
+                                    <img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="@ad.AD_Name">
+                                </div>
+                                @*<div class="tp-caption item_box" data-x="30" data-y="220" data-start="0" data-transform_in="y:[0%];opacity:0;s:0;">
+                                        <div class="title">@ad.AD_Name</div>
+                                        <div class="con_font">@Html.Raw(ad.ADDesc)</div><br />
+                                        <div class="btn_box"><a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")"><span class="btn_01">@Common.GetLangText("View")<i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span></a></div>
+                                    </div>*@
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="slide-overlay" data-transition="fade">
+                                <div class="rs-background-video-layer"
+                                     data-forcerewind="on"
+                                     data-volume="mute"
+                                     data-videowidth="100%"
+                                     data-videoheight="100%"
+                                     data-videomp4="@VirtualPathUtility.ToAbsolute("~"+ad.UploadVideoFilePath)"
+                                     data-videopreload="preload"
+                                     data-videoloop="loop"
+                                     data-forceCover="1"
+                                     data-aspectratio="16:9"
+                                     data-autoplay="true"
+                                     data-autoplayonlyfirsttime="false"
+                                     data-nextslideatend="true">
+                                </div>
+
+                                @*<div class="tp-caption item_box" data-x="30" data-y="220" data-start="0" data-transform_in="y:[0%];opacity:0;s:0;">
+                                        <div class="title">@ad.AD_Name</div>
+                                        <div class="con_font">@Html.Raw(ad.ADDesc)</div><br />
+                                        <div class="btn_box"><a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")"><span class="btn_01">@Common.GetLangText("View")<i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span></a></div>
+                                    </div>*@
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--mobile end-->
+    <noscript>
+        <!--僅顯示圖片，影片不置入-->
+        <div class="noscrip_banner defaultimg" style="width:100%">
+            <img src="@Url.Content("~/img/index_banner_fake.jpg")" alt="banner">
+            @foreach (var ad in Model.ADMain)
+            {
+                if (string.IsNullOrEmpty(ad.Img_Name_Ori) == false)
+                {
+                    <div><img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="@ad.AD_Name" /></div>
+                }
+            }
+        </div>
+    </noscript>
+</div>
+<div class="page_content">
+
+<!--page top start-->
+<div class="page_top">
+    <div class="container">
+        <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
+            <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
+            <a href="index.html" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i><a href="facts.html">Facts</a>
+        </div>
+        <div class="col-md-5 col-sm-6 col-xs-12">
+            <!--<script>$.include("blocks/page_top.html");</script>-->
+        </div>
+    </div>
+</div>
+<!--page top end-->
+<!--page_img_list start-->
+<div class="page_img_list">
+    <div class="container">
+
+        <ul class="list">
+            @foreach (var item in ActiveItem)
+            {
+            <li data-sr="enter bottom over 1.5s">
+                @if (item.ModelID == 1)
+                {
+                    <a href="#">
+                        <div class="img"><img src="@Url.Content("~//UploadImage/ActiveItem/")@item.RelateImageFileName" alt="" /></div><!--建議尺寸450*600px-->
+                        <div class="font_box">
+                            <div class="title_big">@item.Title</div>
+                        </div>
+                    </a>
+                }
+                else
+                {
+                    <a href="#">
+                        <div class="img"><img src="@Url.Content("~//UploadImage/ActiveItem/")@item.RelateImageFileName" alt="" /></div><!--建議尺寸450*600px-->
+                        <div class="font_box">
+                            <div class="title_big">@item.Title</div>
+                        </div>
+                    </a>
+                }
+
+            </li>
+            }
+        </ul>
+
+        <!--頁碼 start-->
+        <form method="post" action="@Url.Action("Index")">
+            <div class="col-md-4 col-sm-12 col-xs-12 page_total" data-sr="enter left over 1.5s">Total：@Total，Display：@((nowPage - 1) *ShowCount + 1)~@(nowPage * ShowCount < Total ? nowPage * ShowCount : Total)</div>
+            <div class="col-md-8 col-sm-12 col-xs-12 page_icon" data-sr="enter right over 1.5s">
+                <div class="btn-group">
+                    <button type="submit" class="btn_page accesskey" name="nowpage" value="1" title="First"><i class="fa fa-angle-double-left" aria-hidden="true"></i><span class="sr-only">First</span></button>
+                    <button type="submit" class="btn_page accesskey" name="nowpage" value="@(nowPage==1?1:nowPage-1)" title="Prev"><i class="fa fa-angle-left" aria-hidden="true"></i><span class="sr-only">Prev</span></button>
+                    @{
+                        <select class="form-control page_list accesskey" name="jumpPage">
+                            @for (int i = 1; i <= pageCount; i++)
+                            {
+                                <option value="@i" @(i == nowPage ? "selected" : "")>@i</option>
+                            }
+                        </select>
+                    }
+                    <button type="submit" class="btn_page accesskey" title="GO">GO</button><!--英文GO-->
+                    <button type="submit" class="btn_page accesskey" name="nowpage" value="@(nowPage<pageCount?nowPage+1:nowPage)" title="Next"><i class="fa fa-angle-right" aria-hidden="true"></i><span class="sr-only">Next</span></button>
+                    <button type="submit" class="btn_page accesskey" name="nowpage" value="@Total" title="Last"><i class="fa fa-angle-double-right" aria-hidden="true"></i><span class="sr-only">Last</span></button>
+                </div>
+            </div>
+        </form>
+        <!--頁碼 end-->
+
+    </div>
+</div>
+<!--page_img_list end-->
+    </div>
+<!--page_content end-->
+<!--breadcrumbs start-->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="title">You are here</div>
+        <div class="font"><a href="@Url.Action("Index","Home")" title="Home">Home</a> / Facts</div>
+    </div>
+</div>
+<!--breadcrumbs end-->
