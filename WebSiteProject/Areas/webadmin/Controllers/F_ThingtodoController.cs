@@ -63,9 +63,11 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     {
                         Directory.CreateDirectory(uploadPath);
                     }
-
+                    
                     Index_Img_Name = Path.GetFileName(Img_File.FileName);  //取得檔案名
-                    var path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), Index_Img_Name);  //取得本機檔案路徑
+                    
+                    var NewImgFile = DateTime.Now.Ticks + "_" + Index_Img_Name;
+                    var path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), NewImgFile);  //取得本機檔案路徑
 
 
                     //若有重複則不儲存

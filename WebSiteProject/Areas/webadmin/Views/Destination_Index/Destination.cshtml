@@ -71,7 +71,7 @@
                     <div class="form-body" id="form-body">
 
                         <form method="post" action="@Url.Action("Destination","Destination_Index")" class="Five_Thingtodo_Header" id="editform">
-                            <table class="form-group " id="Destable">
+                            <table class="table nomarginbottom " id="Destable">
                                 <thead>
                                     <tr>
                                         <th class="col-md-1 col-sm-12 col-xs-12 text-center">
@@ -96,7 +96,7 @@
                                             <span class="display_inline">圖片說明</span>
                                         </th>
                                         <th class="col-md-2 col-sm-12 col-xs-12 text-center">
-                                            <span class="display_inline">說明</span>
+                                            <span class="display_inline">地點說明</span>
                                         </th>
                                         <th class="col-md-1 col-sm-12 col-xs-12 text-center">
                                         </th>
@@ -182,7 +182,6 @@
 
                                                 <td class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center">
                                                     <button type="button" class="btn grey-mint">@Html.ActionLink("管理", "Edit", new { id = item.Destination_Type_ID }, new { style = "color:white" })</button>
-
 
                                                 </td>
                                             </tr>
