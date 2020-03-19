@@ -63,6 +63,9 @@
     <Reference Include="AngleSharp.Css">
       <HintPath>..\..\..\..\Downloads\HtmlSanitizer-master\HtmlSanitizer-master\src\HtmlSanitizer\bin\Debug\net46\AngleSharp.Css.dll</HintPath>
     </Reference>
+    <Reference Include="AntiXssLibrary, Version=4.3.0.0, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AntiXSS.4.3.0\lib\net40\AntiXssLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
@@ -73,6 +76,9 @@
     <Reference Include="ECPay.Payment.Integration, Version=1.0.0.8, Culture=neutral, PublicKeyToken=afb33c1e6a3b1bbd, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Users\shaok\Desktop\5.1.訂單產生\5.1.訂單產生\AioCheckOut\bin\ECPay.Payment.Integration.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizationLibrary, Version=4.3.0.0, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AntiXSS.4.3.0\lib\net40\HtmlSanitizationLibrary.dll</HintPath>
     </Reference>
     <Reference Include="HtmlSanitizer">
       <HintPath>..\..\..\..\Downloads\HtmlSanitizer-master\HtmlSanitizer-master\src\HtmlSanitizer\bin\Debug\net46\HtmlSanitizer.dll</HintPath>
@@ -2123,6 +2129,8 @@
     <Content Include="Views\Message\Forward.cshtml" />
     <Content Include="Views\Shared\Captcha.cshtml" />
     <Content Include="Views\Facts\Index.cshtml" />
+    <Content Include="Views\Facts\Fact_Detail.cshtml" />
+    <Content Include="Views\Facts\Print.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -2189,7 +2197,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>17473</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54339/forest</IISUrl>
+          <IISUrl>http://localhost:54340/forest</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

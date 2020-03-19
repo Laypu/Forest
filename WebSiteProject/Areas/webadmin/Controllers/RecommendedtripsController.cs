@@ -185,6 +185,9 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 RE.RecommendedTrips_EndDay = ReD.RecommendedTrips_EndDay;
                 RE.Sort = ReD.Sort;
                 RE.InFront = ReD.InFront;
+                RE.ImageFileDesc = ReD.ImageFileDesc;
+                RE.ImageFileLocation = ReD.ImageFileLocation;
+                RE.ImageFileName = ReD.ImageFileName;
             }
             else
             {
@@ -198,6 +201,9 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 RE.RecommendedTrips_UploadFilePath = "";
                 RE.RecommendedTrips_UploadFileDesc = "";
                 RE.RecommendedTrips_UploadFileName = "";
+                RE.ImageFileDesc = "";
+                RE.ImageFileLocation = "1";
+                RE.ImageFileName = "";
             }
             //旅遊資訊關聯
             var seodata = db.RecommendedTrips_HashTag.Where(p => p.RecommendedTrips_Id.ToString() == itemid);
@@ -364,7 +370,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
         #endregion
         #region SaveItem
         [HttpPost]
-        public ActionResult SaveItem(RecommendedTrip recommendedTrip, HttpPostedFileBase fileImag, HttpPostedFileBase uploadfile, List<int> HashTag_Type, List<string> Keywords, string Sdate = "", string Edate = "", string filecheck = "",string imagecheck="")
+        public ActionResult SaveItem(RecommendedTrip recommendedTrip, HttpPostedFileBase fileImag, HttpPostedFileBase uploadfile, HttpPostedFileBase ImageFile, List<int> HashTag_Type, List<string> Keywords, string Sdate = "", string Edate = "", string filecheck = "",string imagecheck="")
         {
             var iswriteseo = false;
             var isHash = false;
@@ -377,6 +383,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 isHash = true;
             }
             var imgname = recommendedTrip.RecommendedTrips_Img;
+            var imgname2 = recommendedTrip.ImageFileName;
             var filname = recommendedTrip.RecommendedTrips_UploadFileName;
             if (fileImag != null)
                 {
@@ -394,6 +401,23 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     }
                     fileImag.SaveAs(path);
                     recommendedTrip.RecommendedTrips_Img = newfilename;
+            }
+            if (ImageFile != null)
+            {
+                var root = Request.PhysicalApplicationPath;
+                //var uploadfilepath = ConfigurationManager.AppSettings["UploadFile"];
+                //if (uploadfilepath.IsNullorEmpty())
+                //{
+                //    uploadfilepath = Request.PhysicalApplicationPath + "\\UploadFile";
+                //}
+                var newfilename = DateTime.Now.Ticks + "_" + ImageFile.FileName;
+                var path = root + "\\UploadImage\\RecommendedTrips\\" + newfilename;
+                if (System.IO.Directory.Exists(root + "\\UploadImage\\RecommendedTrips\\") == false)
+                {
+                    System.IO.Directory.CreateDirectory(root + "\\UploadImage\\RecommendedTrips\\");
+                }
+                ImageFile.SaveAs(path);
+                recommendedTrip.ImageFileName = newfilename;
             }
             if (uploadfile != null)
                 {
@@ -455,6 +479,8 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     RecommendedTrips_UploadFilePath = recommendedTrip.RecommendedTrips_UploadFilePath,
                     RecommendedTrips_LinkUrl = recommendedTrip.RecommendedTrips_LinkUrl,
                     RecommendedTrips_LinkUrlDesc = recommendedTrip.RecommendedTrips_LinkUrlDesc,
+                    ImageFileLocation= recommendedTrip.ImageFileLocation,
+                    ImageFileDesc= recommendedTrip.ImageFileLocation,
                     Sort = 1,
                     InFront = 1,
                 };
@@ -558,7 +584,19 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         }
                     }
                 }
-                    db.Entry(recommendedTrip).State = System.Data.Entity.EntityState.Modified;
+                if (ImageFile != null)
+                {
+                    var old_SizeChart = imgname2;
+                    if (old_SizeChart != null)
+                    {
+                        string fullpath = Request.MapPath("~/UploadImage/RecommendedTrips/" + old_SizeChart);
+                        if (System.IO.File.Exists(fullpath))
+                        {
+                            System.IO.File.Delete(fullpath);
+                        }
+                    }
+                }
+                db.Entry(recommendedTrip).State = System.Data.Entity.EntityState.Modified;
                 var r = db.SaveChanges();
                 if (r > 0) //result為itemID >0為新增成功
                 {

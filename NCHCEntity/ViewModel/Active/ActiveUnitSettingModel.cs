@@ -13,7 +13,7 @@ namespace ViewModels
         public ActiveUnitSettingModel()
         {
             ID = -1;
-            ShowCount = 12;
+            ShowCount = 9;
             UnitSettingColumnList = new List<UnitSettingColumn>();
         }
         [Key]

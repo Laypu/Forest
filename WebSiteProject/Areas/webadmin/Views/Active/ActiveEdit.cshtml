@@ -45,10 +45,11 @@
         @Html.HiddenFor(Model => Model.UploadFileName)
         @Html.HiddenFor(Model => Model.UploadFilePath)
         @Html.HiddenFor(Model => Model.ImageFileName)
+        @Html.HiddenFor(Model => Model.ImageBannerName)
         @Html.HiddenFor(Model => Model.RelateImageName)
         <input type="hidden" value="0" name="Group_ID" id="Group_ID" />
-        <input type="hidden" value="1" name="ImageFileLocation" id="ImageFileLocation" />
-        
+        @*<input type="hidden" value="1" name="ImageFileLocation" id="ImageFileLocation" />*@
+
         <div class="portlet light form-fit bordered">
             <div class="portlet-body form">
                 <div class="form-horizontal form-bordered">
@@ -134,16 +135,28 @@
                             </div>
 
                         </div>
-
                         <div class="form-group bg-grey_1">
                             <div class="col-md-2 col-sm-12 search_item">內頁主圖片上傳</div>
                             <div class="col-md-10 col-sm-12 bg-white mobile_white">
                                 <div class="col-md-12">
+                                    <div id="div_oldbannerfile" style="display:none"><a href="@Model.ImageBannerUrl" target="preview">@Html.Raw(Model.ImageBannerOrgName)</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delbanerimage">刪除</label></div>
+                                    <label for="ImageBanner" class="col-md-2">內頁主圖片上傳</label>
+                                    <div class="col-md-10">
+                                        <input id="ImageBanner" type="file" class="display_inline" name="ImageBanner" accept="image/*" />
+                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小5MB內，尺寸寬度2000 * 600px</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group bg-grey_1">
+                            <div class="col-md-2 col-sm-12 search_item">圖片上傳</div>
+                            <div class="col-md-10 col-sm-12 bg-white mobile_white">
+                                <div class="col-md-12">
                                     <div id="div_oldfile" style="display:none"><a href="@Model.ImageUrl" target="preview">@Html.Raw(Model.ImageFileOrgName)</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delimage">刪除</label></div>
-                                    <label for="ImageFile" class="col-md-2">內頁主圖片上傳</label>
+                                    <label for="ImageFile" class="col-md-2">圖片上傳</label>
                                     <div class="col-md-10">
                                         <input id="file_image" type="file" class="display_inline" name="ImageFile" accept="image/*" />
-                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小5MB內，尺寸寬度2000 * 600px</div>
+                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小5MB內，尺寸寬度400 * 600px</div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -153,12 +166,12 @@
                                         <span class="required" id="ImageFileDesc-error" style="display:none;">圖片說明 必須填寫！</span>
                                     </div>
                                 </div>
-                                @*<div class="col-md-12">
+                                <div class="col-md-12">
                                     <label class="col-md-2">圖片位置</label>
                                     <div class="col-md-10">
                                         <select name="@Html.IdFor(model=>model.ImageFileLocation)" id="@Html.IdFor(model=>model.ImageFileLocation)" class="form-control w-auto"><option value="1">左</option><option value="2">中</option><option value="3">右</option></select>
                                     </div>
-                                </div>*@
+                                </div>
                             </div>
                         </div>
 
@@ -348,9 +361,16 @@
               if ('@Model.ItemID'>0 && '@Model.RelateImageName'!='') {
                   $('#div_oldrelatefile').show();
             }
+             if ('@Model.ItemID'>0 && '@Model.ImageBannerName'!='') {
+                  $('#div_oldbannerfile').show();
+            }
             $('#delimage').click(function () {
                 $('#div_oldfile').hide();
                 $('#ImageFileName').val('');
+            });
+              $('#delbanerimage').click(function () {
+                $('#div_oldbannerfile').hide();
+                $('#ImageBannerName').val('');
             });
             $('#delupfile').click(function () {
                 $('#div_olduploadfile').hide();
@@ -413,7 +433,25 @@
                     $("#" + inputval[idx].name + "-error").show();
                 }
                 if (inputval.length > 0) { return false; }
-                var file = $("#file_image");
+                var ImageBanner = $("#ImageBanner");
+                var _validFileExtensions = [".jpg", ".png", ".gif", ".jpeg"];
+                var sFileName = ImageBanner.val();
+                if (sFileName.length > 0) {
+                    var blnValid = false;
+                    for (var j = 0; j < _validFileExtensions.length; j++) {
+                        var sCurExtension = _validFileExtensions[j];
+                        if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+                            blnValid = true;
+                            break;
+                        }
+                    }
+                    if (!blnValid) {
+                        alert("只能上傳Image檔案");
+                        ImageBanner.outerHTML = ImageBanner.outerHTML;
+                        return false;
+                    }
+                }
+                          var file = $("#file_image");
                 var _validFileExtensions = [".jpg", ".png", ".gif", ".jpeg"];
                 var sFileName = file.val();
                 if (sFileName.length > 0) {
@@ -431,7 +469,6 @@
                         return false;
                     }
                 }
-
                 var rfile = $("#file_relateimage");
                 sFileName = rfile.val();
                 if (sFileName.length > 0) {
@@ -463,6 +500,8 @@
                     iscon = false;
                 }
                 var images = $('#file_image').get(0).files;
+                var imagesBanner = $('#ImageBanner').get(0).files;
+                formData.append("ImageBanner", imagesBanner[0]);
                 if (images.length > 0) {
                     formData.append("ImageFile", images[0]);
                     if ($('#ImageFileDesc').val() == "") {

@@ -27,6 +27,8 @@ namespace SQLModel.Models
         public string ImageFileOrgName { get; set; }
         public string ImageFileDesc { get; set; }
         public string ImageFileLocation { get; set; }
+        public string ImageBannerName { get; set; }
+        public string ImageBannerOrgName { get; set; }
         public string LinkUrl { get; set; }
         public bool? Enabled { get; set; }
         [EmptyNull]

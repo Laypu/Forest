@@ -15,13 +15,20 @@
                     <i class="fa fa-circle"></i>
                 </li>
             }
+            else if (ViewBag.MenuType == 45)
+            {
+                <li>
+                    <a href="@Url.Action("Index", "Active")">Home</a>
+                    <i class="fa fa-circle"></i>
+                </li>
+            }
             else if (ViewBag.sitid == 17)
             {
                 <li>
                     <a href="@Url.Action("Recommendedtrips_item", "Recommendedtrips")">Recommendedtrips_item</a>
                     <i class="fa fa-circle"></i>
                 </li>
-                
+
             }
             else
             {
@@ -41,6 +48,10 @@
                 <li>Things to do<i class="fa fa-circle"></i></li>
             }
             else if (ViewBag.MenuType == 176)
+            {
+                <li>@ViewBag.ReTitle</li>
+            }
+            else if (ViewBag.MenuType == 45)
             {
                 <li>@ViewBag.ReTitle</li>
             }
@@ -94,7 +105,7 @@
 
     <div class="table-toolbar">
         <div class="col-md-6 col-sm-12 col-xs-12">
-            @if (ViewBag.MenuType == 176 || (int)Session["F_MenuType"] == 176 || ViewBag.sitid == 17)
+            @if (ViewBag.MenuType == 176 || (int)Session["F_MenuType"] == 176 || ViewBag.sitid == 17||ViewBag.MenuType == 45 || (int)Session["F_MenuType"] == 45 )
             {
                 @ViewBag.SiteTile;
             }
@@ -207,10 +218,10 @@
             var obj = {};
             obj.type = langtype;
             obj.stype = stype;
-       obj.maintype=@ViewBag.MenuType;
+            obj.maintype =@ViewBag.MenuType;
             RegisterOrder("#eventtable", ".sortedit", '@Url.Action("EditADSeq")', obj);
             RegisterClickAll("#chk_all", '#eventtable tbody .chksel', "#selvalue");
-            if (@ViewBag.sitid== 15 ||@ViewBag.sitid== 17) {
+            if (@ViewBag.sitid== 15 ||@ViewBag.sitid== 17 || @ViewBag.sitid== 14) {
                 obj.siteid = @ViewBag.sitid;
                 RegisterClicklink("#eventtable", ".edit", '@Url.Action("ADEdit")', obj);
                  RegisterDelete("#btn_del", '#eventtable .chksel:checked', '@Url.Action("SetADDelete")', obj);
@@ -224,7 +235,7 @@
             RegisterClick("#eventtable", ".chkstatus", '@Url.Action("SetStatus")', obj);
             RegisterClick("#eventtable", ".chkfixed", '@Url.Action("SetFixed")', obj);
             $("#btn_add").click(function () {
-                if (@ViewBag.sitid== 15 ||@ViewBag.sitid== 17) {
+                if (@ViewBag.sitid== 15 ||@ViewBag.sitid== 17|| @ViewBag.sitid== 14) {
                     obj.siteid = @ViewBag.sitid;
                     obj.maintype=@ViewBag.MenuType;
                     CreatePost('@Url.Action("ADEdit")', obj);

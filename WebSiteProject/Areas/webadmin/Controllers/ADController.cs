@@ -76,6 +76,10 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 {
                     ViewBag.Title = "RecommendTrip_Banner(" + prestr2 + "Master)";
                 }
+                else if(maintype == 45)
+                {
+                    ViewBag.Title = "Fact_Banner(" + prestr2 + "Master)";
+                }
                 else
                 {
                     ViewBag.Title = "輪播廣告管理(" + prestr + "主廣告)";
@@ -199,8 +203,13 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     _IADManager = new ADMainManager(new SQLRepository<ADMain>(connectionstr));
                     ViewBag.Title = "輪播廣告管理(主廣告)";
                     if (stype == "M") { ViewBag.Title = "輪播廣告管理(手機版-主廣告)"; }
+                  
                     ViewBag.ReTitle = "RecommendTrip_Banner(Master)";
                     if (stype == "M") { ViewBag.ReTitle = "RecommendTrip_Banner(Phone-Master)"; }
+                    if (MenuType == 45)
+                    {
+                        ViewBag.ReTitle = "Fact_Banner(Master)";
+                    }
                 }
                 else if (type == "down")
                 {
