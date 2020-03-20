@@ -7,7 +7,7 @@
                 var RTModel = (List<WebSiteProject.Models.RecommendedTrips_HashTag>)ViewBag.HashTage;
                 if (ViewBag.count == 0)
                 {
-        <div class="text-center va-middle">目前暫無此推薦行程</div>
+    <div class="text-center va-middle">There is  no any currently recommended itinerary</div>
         }
     else
     {
@@ -24,7 +24,7 @@
                 <div class="img" style="background:url(@Url.Content("~/UploadImage/RecommendedTrips/")@item.RecommendedTrips_Img)" title="Title_@item.RecommendedTrips_Img_Description">
                     <!--建議尺寸800*800px，圖片會置頂、置中，多餘部份遮住-->
                     <div class="type">@item.RecommendedTrips_Day_Name</div>
-                    <img src="@Url.Content("~/img/800x450.png")" alt="" />
+                    <img src="@Url.Content("~/img/800x450.png")" alt="@item.RecommendedTrips_Title" />
                 </div>
                 <div class="font">
                     <div class="title"><a href="@Url.Action("recommended_Detail",new {item.RecommendedTrips_ID })" title="Title_@item.RecommendedTrips_Title">@item.RecommendedTrips_Title</a></div>

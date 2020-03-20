@@ -198,12 +198,12 @@ namespace WebSiteProject.Controllers
             }
             if (ViewBag.dstination_typ != "-1" )
                 {
-                    HashTag_Type.Where(q => q.Value == ViewBag.dstination_typ).First().Selected = true;
+                Destinations_ID.Where(q => q.Value == ViewBag.dstination_typ).First().Selected = true;
                 }
              
            if (ViewBag.f_HashTag != "-1")
             {
-                Destinations_ID.Where(q => q.Value == ViewBag.f_HashTag).First().Selected = true;
+                HashTag_Type.Where(q => q.Value == ViewBag.f_HashTag).First().Selected = true;
             }
             ViewBag.RecommendedTrips_Day_ID = Day_ID;
             ViewBag.RecommendedTrips_Destinations_ID = Destinations_ID;
