@@ -72,7 +72,7 @@
                     }
                 </span>
             }
-            @Html.Raw(Model.Content)
+            @Html.Raw(Model.Content.safeHtmlFragment())
         </div>
         <!--page content end-->
 

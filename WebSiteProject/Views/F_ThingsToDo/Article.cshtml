@@ -77,7 +77,7 @@
                     }
 
                     <!--文繞圖 end-->
-                    @Html.Raw(TTDModel.HtmlContent)
+                    @Html.Raw(TTDModel.HtmlContent.safeHtmlFragment())
 
 
                 </div>

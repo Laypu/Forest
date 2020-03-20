@@ -93,7 +93,7 @@ namespace WebSiteProject.Controllers
             #endregion
             int ShowCount = (int)db.ActiveUnitSettings.Where(p => p.MainID==8).FirstOrDefault().ShowCount;
             var datetime = DateTime.Now.Date;
-            var model=db.ActiveItems.Where(p => (DbFunctions.TruncateTime(p.PublicshDate) <= datetime || (p.StDate == null && p.EdDate == null)
+            var model=db.ActiveItems.Where(p => (DbFunctions.TruncateTime(p.PublicshDate) <= datetime && (p.StDate == null && p.EdDate == null)
                                || ((p.StDate != null && p.EdDate == null) && DbFunctions.TruncateTime(p.StDate) <= datetime)
                                 || ((p.StDate == null && p.EdDate != null) && DbFunctions.TruncateTime(p.StDate) >= datetime)
                                || ((p.StDate != null && p.EdDate != null) && DbFunctions.TruncateTime(p.StDate) <= datetime && DbFunctions.TruncateTime(p.EdDate) >= datetime))

@@ -110,7 +110,7 @@
                     }
 
                     <!--文繞圖 end-->
-                    @Html.Raw(DesModel.First().HtmlContent)
+                    @Html.Raw(DesModel.FirstOrDefault().HtmlContent.safeHtmlFragment())
 
 
                 </div>
