@@ -16,7 +16,7 @@
 </div>
 <!--page bar end-->
 
-<div class="title_01">Destinations目的地主版設定</div>
+<div class="title_01">Destinations目的地主版</div>
 <div id="Partial_Index_MenuLink">
     <div class="portlet light bordered">
         <!--set item start-->
@@ -35,51 +35,50 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<div class="portlet light bordered">
-    <div class="title_04" style="display:none">目的地主版設定(標題&文字)</div>
 
-    <div class="form-horizontal form-bordered" id="editform" enctype="multipart/form-data">
+        <div class="title_04" style="display:none">目的地主版設定(標題&文字)</div>
 
-        <form method="post" action="@Url.Action("MainTitleAndContent_Edit", "Destination_Index")">
-            <div class="portlet light form-fit bordered">
-                <div class="portlet-body form">
-                    <div class="form-horizontal form-bordered">
-                        <div class="form-body">
-                            <input name="_Destination_Index_ID" type="hidden" value="@Model.Destination_ID" />
-                            <div class="form-group">
-                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
-                                    <span>標題名稱</span>
-                                </div>
-                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    <textarea id="_Destination_Index_Title" name="_Destination_Index_Title" class="form-control" style="height:50px;resize:none">@Model.Destination_Title</textarea>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
-                                    <span>內容</span>
-                                </div>
-                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    <textarea id="_Destination_Index_Context" name="_Destination_Index_Context" class="form-control f_textarea" style="height:250px;resize:none">@Model.Destination_Context</textarea>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-5 col-sm-12 col-xs-12 bg-white mobile_white text-center">
+        <div class="form-horizontal form-bordered" id="editform" enctype="multipart/form-data">
 
+            <form method="post" action="@Url.Action("MainTitleAndContent_Edit", "Destination_Index")">
+                <div class="portlet light form-fit bordered">
+                    <div class="portlet-body form">
+                        <div class="form-horizontal form-bordered">
+                            <div class="form-body">
+                                <input name="_Destination_Index_ID" type="hidden" value="@Model.Destination_ID" />
+                                <div class="form-group">
+                                    <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                        <span>標題名稱</span>
+                                    </div>
+                                    <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                        <textarea id="_Destination_Index_Title" name="_Destination_Index_Title" class="form-control" style="height:50px;resize:none">@Model.Destination_Title</textarea>
+                                    </div>
                                 </div>
-                                <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white text-center">
-                                    <button name="Btn_Destination_Index_Edit" class="form-control btn blue text-center" data-id="@Model.Destination_ID" data-name="@Model.Destination_Title">確認送出</button>
+                                <div class="form-group">
+                                    <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                        <span>內容</span>
+                                    </div>
+                                    <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                        <textarea id="_Destination_Index_Context" name="_Destination_Index_Context" class="form-control f_textarea" style="height:250px;resize:none">@Model.Destination_Context</textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-5 col-sm-12 col-xs-12 bg-white mobile_white text-center">
 
+                                    </div>
+                                    <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white text-center">
+                                        <button name="Btn_Destination_Index_Edit" class="form-control btn blue text-center" data-id="@Model.Destination_ID" data-name="@Model.Destination_Title">確認送出</button>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
 
+        </div>
     </div>
 
 </div>

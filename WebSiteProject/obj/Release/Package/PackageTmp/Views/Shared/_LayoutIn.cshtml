@@ -24,14 +24,16 @@
     <link rel="stylesheet" href="@Url.Content("~/frontcss/css/regular.min.css")">
     <!--fontawesome end-->
     <link rel="stylesheet" href="@Url.Content("~/frontcss/css/style.css")">
-    <script src="@Url.Content("~/js/jquery.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-migrate-3.0.0.min.js")"></script>
+    @*<script src="@Url.Content("~/js/jquery.js")"></script>*@
     <script src="@Url.Content("~/js/main.js")"></script>
     <script src="@Url.Content("~/Scripts/custom.js")"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120661325-6"></script>
     @if (Model.SEOScript != null)
     {
         if (Model.SEOScript.Length > 3) { Model.SEOTitleOrg = Model.SEOScript[3]; }
-        else { Model.SEOTitleOrg = Model.SEOTitle;  }
+        else { Model.SEOTitleOrg = Model.SEOTitle; }
 
         if (string.IsNullOrEmpty(Model.SEOScript[2]) == false)
         {
@@ -53,7 +55,7 @@
     }
     else
     {
-        Model.SEOTitleOrg= Model.SEOTitle;
+        Model.SEOTitleOrg = Model.SEOTitle;
         <title>@Model.SEOTitle</title>
     }
     @if (ViewBag.SEOScript == "")

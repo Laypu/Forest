@@ -45,10 +45,10 @@
 </div>
 <!--page bar end-->
 
-<div class="title_01">Destinations</div>
-<div id="Partial_Index_MenuLink">
-    <!--.......-->
-</div>
+<div class="title_01">Destinations目的地設定</div>
+@*<div id="Partial_Index_MenuLink">
+    .......
+</div>*@
 
 <div class="portlet light bordered">
 
@@ -197,6 +197,7 @@
                             </div>
                         </div>
 
+
                     </div>
 
                 </div>
@@ -212,9 +213,11 @@
 
     <form class="form-horizontal form-bordered" method="Post" id="editform2" enctype="multipart/form-data" style="padding:20px">
 
-        
+        <hr />
         <div class="form-group">
             <div class="display_inline margin_bottom">
+                
+                <div class="title_04">票價設定</div>
                 @{
                     var DESTypeID = ViewBag.TypeID;
                     var DESName = ViewBag.TypeName;
@@ -276,6 +279,7 @@
 
         </div>
     </form>
+    
     <form class="form-horizontal form-bordered" method="Post" id="editform3" enctype="multipart/form-data" style="padding:20px">
         
         @{
@@ -284,7 +288,8 @@
         }
         <div class="form-group">
             <div class="display_inline margin_bottom">
-
+                <hr />
+                <div class="title_04">目的地主視覺圖設定</div>
                 <a class="btn green-meadow" id='btn_add' href="@Url.Action("CreateAD", "Destination_Index", new { TypeID = DESTypeID, TypeName = DESName })">新增 <i class="fa fa-plus"></i></a>
 
             </div>

@@ -14,7 +14,28 @@
     var sdate = Model.RecommendedTrips_StarDay == null ? "" : Model.RecommendedTrips_StarDay.Value.ToString("yyyy/MM/dd");
      var endate = Model.RecommendedTrips_EndDay== null ? "" : Model.RecommendedTrips_EndDay.Value.ToString("yyyy/MM/dd");
 }
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="@Url.Action("Index", "Home")">Home</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            <a href="@Url.Action("Index","Recommendedtrips")">Recommend trip</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>推薦行程設定
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>推薦行程設定</li>
+    </ul>
+
+
+</div>
+
+
 <div class="portlet light bordered">
+    
     <div class="title_04">推薦行程設定</div>
 
     <div class="form-horizontal form-bordered">

@@ -205,13 +205,13 @@
                     {
                         <li data-sr="enter bottom over 1.5s">
                             <div class="img imh_opacity">
-                                <a href="@Url.Action("Article","Destination_Index",new {langid = 1,Category = BanTitle,Aid = item.ItemID, })" title="@item.Title">
+                                <a href="@Url.Action("Article","Destination_Index",new {langid = 1,Category = BanTitle,Aid = item.ItemID })" title="@item.Title">
                                     <img src="@Url.Content("~/img/")@item.RelateImageFileOrgName" alt="item.Title" />
                                 </a>
                             </div>
                             <div class="font_box">
                                 <div class="title">
-                                    <a href="@Url.Action("Article","Destination_Index",new {langid = 1,Category = BanTitle,ImgTitle = item.Title })" title="@item.Title">@item.Title</a>
+                                    <a href="@Url.Action("Article","Destination_Index",new {langid = 1,Category = BanTitle,Aid = item.ItemID })" title="@item.Title">@item.Title</a>
                                 </div>
                                 <!--Hastag-->
                                 <div class="link" id="HashTag">

@@ -7,10 +7,17 @@
     var ActiveItem = (WebSiteProject.Models.ActiveItem)ViewBag.ActiveItemDetail;
 }
 <!--banner start-->
-<div class="page_banner one_pic">
-    <!--一張封面照；建議尺寸寬2000*600px；後台無上傳圖片時，img不顯示(但div page_banner要保留)；圖片alt=標題-->
-    <img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageBannerName" alt="@ActiveItem.Title" />
-</div>
+    <div class="page_banner one_pic">
+        <!--一張封面照；建議尺寸寬2000*600px；後台無上傳圖片時，img不顯示(但div page_banner要保留)；圖片alt=標題-->
+        @if ((ActiveItem.ImageBannerName).IsNullorEmpty())
+        {
+
+        }
+        else
+        {
+            <img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageBannerName" alt="@ActiveItem.Title" />
+        }
+    </div>
 <!--banner end-->
 <!--page_content start-->
 <div class="page_content">
@@ -74,7 +81,7 @@
                     }
                     else if (ActiveItem.ImageFileLocation == "2")
                     {
-                        <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="center"></p></div>
+                        <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="@ActiveItem.ImageFileDesc"></p></div>
                     }
                     else if (ActiveItem.ImageFileLocation == "3")
                     {

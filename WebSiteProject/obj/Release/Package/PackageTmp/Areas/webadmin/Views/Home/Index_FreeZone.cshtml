@@ -27,8 +27,8 @@
         
     }
     .addfreezone {
-        margin: 10px auto;
-        font-size:150%;
+        margin: 10px;
+        
     }
     .addbr{
         color:indianred;
@@ -36,142 +36,162 @@
     }
 
 </style>
-
-<div class="title_01">Home</div>
-<div id="Partial_Index">
-    <!--...-->
+<div class="page-bar all_width">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="@Url.Action("Index", "Home")">Home</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>入口首頁配置
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            @(ViewBag.FreeZoneTitleID == 1 ? "自由編輯區一" : "自由編輯區二")
+        </li>
+    </ul>
 </div>
 
-
-<!--set item start 目前是隱藏狀態-->
-<div class="table-toolbar" style="display:none">
-    <div class="col-md-6 col-sm-12 col-xs-12">
-        <p class="class_title">選擇自由編輯區</p>
-        <div class="display_inline">
-            <select id="Index_FreeZone_Select" class="form-control checkitem" onchange="window.location.href=this.value">
-                <option value="@Url.Action("Index_FreeZone","Home",new { id=1 })" @(ViewBag.FreeZoneTitleID==1? "selected":"")>自由編輯區一</option>
-                <option value="@Url.Action("Index_FreeZone","Home",new { id=2 })" @(ViewBag.FreeZoneTitleID==2? "selected":"")>自由編輯區二</option>
-            </select>
-        </div>
-    </div>
-</div>
+        <div class="title_01">入口首頁配置</div>
 
 
 
+        <div class="portlet light bordered">
+            <div class="table-toolbar">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <p class="class_title">管理項目</p>
 
-<div class="portlet light bordered">
-    <div class="title_04">@(ViewBag.FreeZoneTitleID == 1 ? "自由編輯區一" : "自由編輯區二")</div>
+                    <div class="display_inline">
 
-    <div class="form-horizontal form-bordered"  id="editform"  enctype="multipart/form-data">          
-        
-        <form method="post" action="@Url.Action("Index_FreeZoneTitle_Edit","Home")">
-            <div class="title_01">標題</div>
-            <div class="portlet light form-fit bordered">
-                <div class="portlet-body form">
-                    <div class="form-horizontal form-bordered">
-                        <div class="form-body">
-                            <input name="_FreeZoneID" type="hidden" value="@ViewBag.FreeZoneTitleID"/>
-                            <div class="form-group">
-                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
-                                    <span>標題名稱</span>
+                        <select id="Index_FreeZone_Select" class="form-control checkitem" onchange="window.location.href=this.value">
+                            <option value="@Url.Action("Index_ADMain","Home", new { home_type = "main", home_stype = "P"})">主視覺輪播圖</option>
+                            <option value="@Url.Action("Index_FreeZone","Home",new { id=1 })" @(ViewBag.FreeZoneTitleID == 1 ? "selected" : "")>自由編輯區一</option>
+                            <option value="@Url.Action("Index_ADMain2", "Home", new { home_type = "main", home_stype = "P"})">廣告輪播圖</option>
+                            <option value="@Url.Action("Index_FreeZone","Home",new { id=2 })" @(ViewBag.FreeZoneTitleID == 2 ? "selected" : "")>自由編輯區二</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="title_04" style="display:none">@(ViewBag.FreeZoneTitleID == 1 ? "自由編輯區一" : "自由編輯區二")</div>
+
+            <div class="form-horizontal form-bordered" id="editform" enctype="multipart/form-data">
+
+                <form method="post" action="@Url.Action("Index_FreeZoneTitle_Edit","Home")">
+                    <div class="title_01">標題</div>
+                    <div class="portlet light form-fit bordered">
+                        <div class="portlet-body form">
+                            <div class="form-horizontal form-bordered">
+                                <div class="form-body">
+                                    <input name="_FreeZoneID" type="hidden" value="@ViewBag.FreeZoneTitleID" />
+                                    <div class="form-group">
+                                        <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                            <span>標題名稱</span>
+                                        </div>
+                                        <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                            <input name="_FreeZoneTitle" type="text" value="@ViewBag.FreeZoneTitle" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                            <span>內容</span>
+                                        </div>
+                                        <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                            <textarea id="_FreeZoneTitleContent" name="_FreeZoneTitleContent" class="form-control f_textarea">@ViewBag.FreeZoneTitleContent</textarea>
+                                            @*<span >
+                                                <a id="addbr" class="btn btn blue">加入換行符號</a>
+                                            </span>*@
+                                            <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-5 col-sm-12 col-xs-12 bg-white mobile_white text-center">
+
+                                        </div>
+                                        <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white text-center">
+                                            <button name="Btn_FreeZoneTitleEdit" type="button" class="form-control btn blue text-center" data-id="@ViewBag.FreeZoneTitleID" data-name="@ViewBag.FreeZoneTitle">修改</button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    <input  name="_FreeZoneTitle" type="text" value="@ViewBag.FreeZoneTitle" class="form-control" />
-                                </div>                                
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
-                                    <span>內容</span>
-                                </div>
-                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    <textarea id="_FreeZoneTitleContent" name="_FreeZoneTitleContent" class="form-control f_textarea">@ViewBag.FreeZoneTitleContent</textarea>
-                                    <span>
-                                        <a id="addbr" class="btn btn-primary">加入換行符號</a>
-                                    </span>
-                                    <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>
-                                </div>                                
-                            </div>
-                            <div class="form-group">  
-                                <div class="col-md-5 col-sm-12 col-xs-12 bg-white mobile_white text-center">
-                                    
-                                </div> 
-                                <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white text-center">
-                                    <button name="Btn_FreeZoneTitleEdit" class="form-control btn-warning text-center" data-id="@ViewBag.FreeZoneTitleID" data-name="@ViewBag.FreeZoneTitle">修改</button>
-                                </div>            
                             </div>
                         </div>
                     </div>
+                </form>
+
+                <hr />
+
+
+                <div class="title_01" style="margin-bottom:15px">
+                    超連結<button type="button" class="btn green-meadow addmenu addfreezone" index="179" nextlevel="2" style="float:right">新增<i class="fa fa-plus"></i></button>
                 </div>
-            </div>
-        </form>
-        
 
 
-        <div class="title_01">超連結</div>
-        <div class="portlet light form-fit bordered">
-            <div class="portlet-body form">
-                <div class="form-horizontal form-bordered">                    
-                    <div class="form-body" id="form-body">
 
-                        @foreach (var item in Model)
-                        {
-                            <form method="post" action="@Url.Action("Index_FreeZone_Edit","Home")">
-                                <div class="form-group">
-                                    <input type="hidden" name="FreeZoneContentID" value="@item.FreeZoneContentID"/>
-                                    <div class="col-md-3 col-sm-12 col-xs-12 text-center search_item">
-                                        <span class="display_inline">超連結名稱 : </span>
-                                        <span class="display_inline">
-                                            <input type="text" name="LinkName" value="@item.LinkName" class="form-control"/>
-                                        </span>
-                                    </div>
-                                    <div class="col-md-7 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center">
-                                        <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white">
-                                            <span class="display_inline">超連結 : </span>
+                <div class="portlet light form-fit bordered">
+
+                    <div class="portlet-body form">
+
+                        <div class="form-horizontal form-bordered">
+                            <div class="form-body" id="form-body">
+
+                                @foreach (var item in Model)
+                                {
+                                    <form method="post" action="@Url.Action("Index_FreeZone_Edit","Home")">
+                                        <div class="form-group">
+                                            <input type="hidden" name="FreeZoneContentID" value="@item.FreeZoneContentID" />
+                                            <div class="col-md-3 col-sm-12 col-xs-12 text-center search_item">
+                                                <span class="display_inline">超連結名稱 : </span>
+                                                <span class="display_inline">
+                                                    <input type="text" name="LinkName" value="@item.LinkName" class="form-control" />
+                                                </span>
+                                            </div>
+                                            <div class="col-md-7 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center">
+                                                <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white">
+                                                    <span class="display_inline">超連結 : </span>
+                                                </div>
+                                                <div class="col-md-11 col-sm-12 col-xs-12 bg-white mobile_white forest_link">
+                                                    <input type="text" name="Link" value="@item.Link" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white ">
+
+                                                <button type="button" class="form-control btn blue text-center">確認</button>
+                                            </div>
+
+                                            <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white">
+                                                <a href="@Url.Action("Index_FreeZone_Delete","Home",new { id = item.FreeZoneContentID})" class="form-control btn red-mint btn-xs text-center" onclick="return confirm('確定要刪除嗎?')">刪除<i class="glyphicon glyphicon-trash"></i></a>
+                                            </div>
                                         </div>
-                                        <div class="col-md-11 col-sm-12 col-xs-12 bg-white mobile_white forest_link">
-                                            <input type="text" name="Link" value="@item.Link" class="form-control" />
-                                        </div>
-                                    </div>                                    
-                                    <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                        <button class="form-control btn-warning text-center">修改</button>
-                                    </div>
-                                    <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white">
-                                        <a href="@Url.Action("Index_FreeZone_Delete","Home",new { id = item.FreeZoneContentID})" class="form-control btn-danger text-center" onclick="return confirm('確定要刪除嗎?')">刪除</a>
-                                    </div>
-                                </div>
-                                <hr/>
-                            </form>
-                            
+                                        <hr />
+                                    </form>
 
-                        }  
-                        
 
+                                }
+
+
+                            </div>
+
+
+                        </div>
                     </div>
-
-                    <div class="text-center">
-                        <button type="button" class="btn green-meadow btn-xs addmenu addfreezone" index="179" nextlevel="2"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                    </div>                   
                 </div>
+
+
+                @*<div class="text-center search_padding">
+                    <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+                </div>*@
             </div>
+
         </div>
 
-
-        @*<div class="text-center search_padding">
-            <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
-        </div>*@
-    </div>
-
-</div>
-
-@section scripts{
-    <script>
+        @section scripts{
+            <script>
         $(function () {
 
             //增加新連結
             add();
 
             //加入換行符號
-            addbr();            
+            addbr();
 
         });
 
@@ -198,10 +218,10 @@
                                     </div>
                                 </div>
                                 <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    <button class="form-control btn-success text-center">新增</button>
+                                    <button class="form-control btn green-meadow text-center">確認</button>
                                 </div>
                                 <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white">
-                                    <a class="form-control btn-danger text-center" onclick="$(this).closest('form').remove()">刪除</a>
+                                    <a class="form-control btn red-mint btn-xs text-center" onclick="$(this).closest('form').remove()">刪除<i class="glyphicon glyphicon-trash"></i></a>
                                 </div>
                             </div>
                             <hr/>
@@ -239,8 +259,8 @@
             }
         }
 
-        
 
-    </script>            
-}
+
+            </script>
+        }
 

@@ -26,7 +26,9 @@
     <!--fontawesome end-->
 
     <link rel="stylesheet" href="@Url.Content("~/frontcss/css/style.css")">
-    <script src="@Url.Content("~/js/jquery.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-migrate-3.0.0.min.js")"></script>
+    @*<script src="@Url.Content("~/js/jquery.js")"></script>*@
     <script src="@Url.Content("~/js/main.js")"></script>
     <script src="@Url.Content("~/js/scrollReveal.js")"></script>
     <noscript>
@@ -52,7 +54,7 @@
                 }
                 else if (Model.ImageFileLocation == "2")
                 {
-                    <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/MessageItem/")@Model.ImageFileName" class="img_padding" alt="center"></p></div>
+                    <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/MessageItem/")@Model.ImageFileName" class="img_padding" alt="@Model.ImageFileDesc"></p></div>
                 }
                 else if (Model.ImageFileLocation == "3")
                 {
