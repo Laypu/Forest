@@ -53,7 +53,7 @@
                         @{
                             if (unit.isForward)
                             {
-                                <a href="#" @*target="_blank"="*@ onclick="window.open('@Url.Action("Forward","F_Recommendedtrips" ,new {Title=@DesModel.First().Title,Url=Request.Url.ToString() })', 'forward', config='height=750,width=650')"  title="forward(new windown)"><img src="@Url.Content("~/img/icon_mail.png")" alt=""></a>
+                                <a href="#" @*target="_blank"="*@ onclick="window.open('@Url.Action("Forward","F_Recommendedtrips" ,new {Title=@DesModel.First().Title,Url=Request.Url.ToString() })', 'forward', config='height=750,width=650')"  title="forward(new windown)"><img src="@Url.Content("~/img/icon_mail.png")" alt="icon_mail.png"></a>
                             }
                             if (unit.isPrint)
                             {
@@ -104,15 +104,15 @@
                         <!--圖片置左-->
                         if (@DesModel.First().ImageFileLocation == "1")
                         {
-                            <img src="@Url.Content("~/UploadImage/MessageItem/")@DesModel.First().ImageFileName" class="img_padding" alt="@DesModel.First().ImageFileDesc" align="left">
+                            <img src="@Url.Content("~/UploadImage/MessageItem/")@DesModel.First().ImageFileName" class="img_padding" alt="@DesModel.First().ImageFileDesc" title="@DesModel.First().ImageFileDesc" align="left">
                         }
                         else if (@DesModel.First().ImageFileLocation == "2")
                         {
-                            <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/MessageItem/")@DesModel.First().ImageFileName" class="img_padding" alt="@DesModel.First().ImageFileOrgName"></p></div>
+                            <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/MessageItem/")@DesModel.First().ImageFileName" class="img_padding" title="@DesModel.First().ImageFileDesc" alt="@DesModel.First().ImageFileOrgName"></p></div>
                         }
                         else if (@DesModel.First().ImageFileLocation == "3")
                         {
-                            <img src="@Url.Content("~/UploadImage/MessageItem/")@DesModel.First().ImageFileName" class="img_padding" alt="@DesModel.First().ImageFileDesc" align="right">
+                            <img src="@Url.Content("~/UploadImage/MessageItem/")@DesModel.First().ImageFileName" class="img_padding" alt="@DesModel.First().ImageFileDesc" title="@DesModel.First().ImageFileDesc" align="right">
                         }
 
                     }

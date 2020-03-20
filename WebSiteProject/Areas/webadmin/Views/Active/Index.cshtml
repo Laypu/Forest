@@ -10,28 +10,48 @@
             <a href="@Url.Action("Index","Home")">Home</a>
             <i class="fa fa-circle"></i>
         </li>
-        <li>
+        @*<li>
             <a href="@Url.Action("Index","Model")">模組管理</a>
+            <i class="fa fa-circle"></i>
+        </li>*@
+        <li>
+            Facts
             <i class="fa fa-circle"></i>
         </li>
         <li>
-            Facts
+            文章管理
         </li>
+
     </ul>
 </div>
 <!--page bar end-->
-<div class="title_01">@ViewBag.Title</div>
+@*<div class="title_01">@ViewBag.Title</div>*@
+<div class="title_01">@ViewBag.Title 文章管理</div>
+<div class="title_04" style="display:none">Facts文章管理</div>
 <div class="portlet light bordered">
     <!--set item start-->
     <div class="table-toolbar">
         <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="table-toolbar">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <p class="class_title">管理項目</p>
+                    <div class="display_inline">
+                        <select id="Index_Partial_Select" class="form-control checkitem" onchange="window.location.href=this.value">
 
+                            <option data-index="1" value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 14, MenuType=45})" selected>輪播圖設定</option>
+                            <option data-index="2" value="@Url.Action("ModelItem","Active")" selected>Facts文章管理</option>
+
+                        </select>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="col-md-6 col-sm-12 col-xs-12 mobile_left">
+        @*<div class="col-md-6 col-sm-12 col-xs-12 mobile_left">
             <p class="display_inline">
                 <a class="btn green-meadow" href="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 14,MenuType=45})">輪播管理<i class="fa fa-plus"></i></a>
             </p>
-        </div>
+        </div>*@
     </div>
     <div class="table-scrollable">
         <table class="table table-bordered table-hover" border="0" cellspacing="0" cellpadding="0"

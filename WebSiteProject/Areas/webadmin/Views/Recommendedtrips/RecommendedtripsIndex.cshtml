@@ -12,17 +12,21 @@
         <div class="page-bar">
             <ul class="page-breadcrumb">
                 <li>
-                    <a href="@Url.Action("Index","Recommendedtrips")">Home</a>
-                    <i class="fa fa-circle"></i>
+                    <a href="@Url.Action("Index", "Home")">Home</a>
+                        <i class="fa fa-circle"></i>
                 </li>
-                <li>推薦行程主版設定(標題&文字)</li>
+                <li>
+                    <a href="@Url.Action("Index","Recommendedtrips")">Recommend trip</a>
+                        <i class="fa fa-circle"></i>
+                </li>
+                <li>推薦行程主版設定</li>
             </ul>
 
         </div>
         <div class="title_01">推薦行程主版設定(標題&文字)</div>
         <div id="Partial_Index_MenuLink">
             <div class="portlet light bordered">
-            <!--set item start-->
+                <!--set item start-->
                 <div class="table-toolbar">
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <p class="class_title">管理項目</p>
@@ -37,59 +41,58 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-            <div class="portlet light bordered">
-                
-
                 <div class="form-horizontal form-bordered">
-                    <div class="title_04" style="display:none">推薦行程主版設定(標題&文字)</div>
+                        <div class="title_04" style="display:none">推薦行程主版設定(標題&文字)</div>
 
-                    <form id="editform" enctype="multipart/form-data">
-                        <div class="portlet light form-fit bordered">
-                            <div class="portlet-body form">
-                                <div class="form-horizontal form-bordered">
-                                    <div class="form-body">
-                                        <input name="RecommendedTrips_Index_ID" type="hidden" value="@Model.RecommendedTrips_Index_ID" />
-                                        @*<div class="form-group">
-                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
-                                    <span>標題名稱</span>
-                                </div>
-                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    <textarea id="_Thingtodo_Index_Title" name="_Thingtodo_Index_Title" class="form-control" style="height:50px;resize:none">@Model.RecommendedTrips_Index_Title</textarea>
-
-                                </div>
-                            </div>*@
-                                        <div class="form-group">
-                                            <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
-                                                <span>內容</span>
-                                            </div>
-                                            <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                                <textarea cols="80" id="RecommendedTrips_Index_Content" class="form-control f_textarea" style="height:250px;resize:none">@HttpUtility.HtmlDecode(Model.RecommendedTrips_Index_Content)</textarea>
-                                                @*<span>
-                                        <a id="addbr" class="btn btn-primary">加入換行符號</a>
-                                    </span>
-                                    <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>*@
-                                            </div>
+                        <form id="editform" enctype="multipart/form-data">
+                            <div class="portlet light form-fit bordered">
+                                <div class="portlet-body form">
+                                    <div class="form-horizontal form-bordered">
+                                        <div class="form-body">
+                                            <input name="RecommendedTrips_Index_ID" type="hidden" value="@Model.RecommendedTrips_Index_ID" />
+                                            @*<div class="form-group">
+                                        <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                            <span>標題名稱</span>
                                         </div>
+                                        <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                            <textarea id="_Thingtodo_Index_Title" name="_Thingtodo_Index_Title" class="form-control" style="height:50px;resize:none">@Model.RecommendedTrips_Index_Title</textarea>
 
+                                        </div>
+                                    </div>*@
+                                            <div class="form-group">
+                                                <div class="col-md-3 col-sm-12 col-xs-12 search_item text-center">
+                                                    <span>內容</span>
+                                                </div>
+                                                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                                                    <textarea cols="80" id="RecommendedTrips_Index_Content" class="form-control f_textarea" style="height:250px;resize:none">@HttpUtility.HtmlDecode(Model.RecommendedTrips_Index_Content)</textarea>
+                                                    @*<span>
+                                                <a id="addbr" class="btn btn-primary">加入換行符號</a>
+                                            </span>
+                                            <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>*@
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
-                    <div class="form-group">
-                        <div class="col-md-5 col-sm-12 col-xs-12 bg-white mobile_white text-center">
+                        </form>
+                        <div class="form-group">
+                            <div class="col-md-5 col-sm-12 col-xs-12 bg-white mobile_white text-center">
 
+                            </div>
+                            <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white text-center">
+                                <button class="form-control btn blue text-center" id="btn-sub">確認送出</button>
+                            </div>
                         </div>
-                        <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white text-center">
-                            <button class="form-control btn blue text-center" id="btn-sub">確認送出</button>
-                        </div>
-                    </div>
+
+                   
 
                 </div>
 
             </div>
+        </div>
+            
 
 
             @section scripts{

@@ -3,16 +3,22 @@
     ViewBag.Title = "Recommendedtrips";
     Layout = "~/Areas/webadmin/Views/Shared/_Layout.cshtml";
 }
-<div class="page-bar">
-    <ul class="page-breadcrumb">
-        <li>
-            <a href="@Url.Action("Index","Recommendedtrips")">Home</a>
-            <i class="fa fa-circle"></i>
-        </li>
-        <li>推薦行程</li>
-    </ul>
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <a href="@Url.Action("Index", "Home")">Home</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>
+                <a href="@Url.Action("Index","Recommendedtrips")">Recommend trip</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>推薦行程設定</li>
 
-</div>
+        </ul>
+
+
+    </div>
 
 
 <div id="Partial_Index_MenuLink">

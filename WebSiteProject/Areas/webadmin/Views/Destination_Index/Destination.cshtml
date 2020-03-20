@@ -55,179 +55,182 @@
                     <select id="Index_Partial_Select" class="form-control checkitem" onchange="window.location.href=this.value">
                         @*<option data-index="0" value="#">請選擇</option>*@
                         <option data-index="1" value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 3, MenuType=179})">輪播牆設定(電腦版)</option>
-                        <option data-index="2" value="@Url.Action("MainTitleAndContent", "Destination_Index")" >目的地主版設定(標題&文字)</option>
+                        <option data-index="2" value="@Url.Action("MainTitleAndContent", "Destination_Index")">目的地主版設定(標題&文字)</option>
                         <option data-index="3" value="@Url.Action("Destination","Destination_Index", new { F_MenuType = 179,MenuType=179})" selected>目的地設定</option>
                         <option data-index="4" value="@Url.Action("Index","Destination_MapLegend", new { F_MenuType = 179,MenuType=179})">MapLegend設定</option>
                         <option data-index="5" value="@Url.Action("ModelItem", "Message",new { mainid = '9' ,F_MenuType = 179,MenuType=179})">旅遊資訊文章設定</option>
                     </select>
                 </div>
+
             </div>
+            <div class="col-md-6 col-sm-12 col-xs-12" >
+                <button class="btn green-meadow" id="datacreat" style="float:right" onclick="location.href='@Url.Action("Create","Destination_Index")'">
+                    新增 <i class="fa fa-plus"></i>
+                </button>
+
+            </div>
+
+         </div>
+            
+
+        <div style="padding-bottom:10px">
+            <div class="title_04" style="display:none">
+                @(ViewBag.FreeZoneTitleID == 2 ? "自由編輯區一" : "目的地設定")
+
+            </div>
+
+
         </div>
-    </div>
-</div>
 
 
 
 
-<div class="portlet light bordered" style="padding-bottom:50px">
-    <div style="padding-bottom:10px">
-        <div class="title_04" style="display:none">
-            @(ViewBag.FreeZoneTitleID == 2 ? "自由編輯區一" : "目的地設定")
+            <div class="form-horizontal form-bordered" enctype="multipart/form-data">
 
-        </div>
+                <div class="portlet light form-fit ">
+                    <div class="portlet-body ">
+                        <div class="form-horizontal bordered " style="padding-bottom:20px">
+                            <div class="form-body" id="form-body">
 
-    </div>
-    <button class="btn green-meadow" id="datacreat" style="float:right ;margin:10px" onclick="location.href='@Url.Action("Create","Destination_Index")'">
-        新增 <i class="fa fa-plus"></i>
-    </button>
+                                <form method="post" action="@Url.Action("Destination","Destination_Index")" class="Five_Thingtodo_Header" id="editform">
+                                    <table class="table nomarginbottom " id="Destable">
+                                        <thead>
+                                            <tr>
+                                                <th class="col-md-1 col-sm-12 col-xs-12 text-center">
 
+                                                    <input type='checkbox' class='checkboxes inline' id="chk_all" />
 
-    <div class="form-horizontal form-bordered" enctype="multipart/form-data">
-
-        <div class="portlet light form-fit bordered">
-            <div class="portlet-body form">
-                <div class="form-horizontal form-bordered">
-                    <div class="form-body" id="form-body">
-
-                        <form method="post" action="@Url.Action("Destination","Destination_Index")" class="Five_Thingtodo_Header" id="editform">
-                            <table class="table nomarginbottom " id="Destable">
-                                <thead>
-                                    <tr>
-                                        <th class="col-md-1 col-sm-12 col-xs-12 text-center">
-
-                                            <input type='checkbox' class='checkboxes inline' id="chk_all" />
-
-                                            <button type="button" class="btn red-mint btn-xs" id='btn_del'><i class="glyphicon glyphicon-trash"></i></button>
-                                        </th>
-                                        @*<div class="col-md-1 col-sm-12 col-xs-12 text-center">
+                                                    <button type="button" class="btn red-mint btn-xs" id='btn_del'><i class="glyphicon glyphicon-trash"></i></button>
+                                                </th>
+                                                @*<div class="col-md-1 col-sm-12 col-xs-12 text-center">
                                                 <span class="display_inline">序號</span>
                                             </div>*@
-                                        <th class="col-md-2 col-sm-12 col-xs-12 text-center">
-                                            <span class="display_inline">標題(上)</span>
-                                        </th>
-                                        <th class="col-md-2 col-sm-12 col-xs-12 text-center">
-                                            <span class="display_inline">標題(下)</span>
-                                        </th>
-                                        <th class="col-md-2 col-sm-12 col-xs-12 text-center">
-                                            <span class="display_inline">圖片</span>
-                                        </th>
-                                        <th class="col-md-2 col-sm-12 col-xs-12 text-center">
-                                            <span class="display_inline">圖片說明</span>
-                                        </th>
-                                        <th class="col-md-2 col-sm-12 col-xs-12 text-center">
-                                            <span class="display_inline">地點說明</span>
-                                        </th>
-                                        <th class="col-md-1 col-sm-12 col-xs-12 text-center">
-                                        </th>
-                                    </tr>
+                                                <th class="col-md-2 col-sm-12 col-xs-12 text-center">
+                                                    <span class="display_inline">標題(上)</span>
+                                                </th>
+                                                <th class="col-md-2 col-sm-12 col-xs-12 text-center">
+                                                    <span class="display_inline">標題(下)</span>
+                                                </th>
+                                                <th class="col-md-2 col-sm-12 col-xs-12 text-center">
+                                                    <span class="display_inline">圖片</span>
+                                                </th>
+                                                <th class="col-md-2 col-sm-12 col-xs-12 text-center">
+                                                    <span class="display_inline">圖片說明</span>
+                                                </th>
+                                                <th class="col-md-2 col-sm-12 col-xs-12 text-center">
+                                                    <span class="display_inline">地點說明</span>
+                                                </th>
+                                                <th class="col-md-1 col-sm-12 col-xs-12 text-center">
+                                                </th>
+                                            </tr>
 
 
-                                </thead>
-                                <tbody>
-                                    @{
+                                        </thead>
+                                        <tbody>
+                                            @{
 
-                                        var x = 0;
-                                        foreach (var item in Model)
-                                        {
-                                            ViewBag.id = item.Destination_Type_ID;
-                                            <tr style="background-color:white ;border:1px solid lightgray">
-                                                <td class="col-md-1 col-sm-12 col-xs-12 text-center">
-                                                    <input type="hidden" name="F_DES[@x].Destination_Type_ID" id="Destination_Type_ID[@x]" value="@item.Destination_Type_ID" class="desid" />
-                                                    <input type="hidden" name="F_DES[@x].Destination_Type_Link" id="Destination_Type_Link[@x]" value="@item.Destination_Type_Link" />
-                                                    <input type="hidden" name="F_DES[@x].Destination_Type_CreateDate" id="Destination_Type_CreateDate[@x]" value="@item.Destination_Type_CreateDate" />
-                                                    <input type="hidden" name="F_DES[@x].Destination_Type_ServiceHours" id="Destination_Type_ServiceHours[@x]" value="@item.Destination_Type_ServiceHours" />
-                                                    <input type="hidden" name="F_DES[@x].Destination_Type_Altitude" id="Destination_Type_Altitude[@x]" value="@item.Destination_Type_Altitude" />
-                                                    <input type="hidden" name="F_DES[@x].Destination_Type_MapName" id="Destination_Type_MapName[@x]" value="@item.Destination_Type_MapName" />
-                                                    <input type="hidden" name="F_DES[@x].Destination_Type_Area" id="Destination_Type_Area[@x]" value="@item.Destination_Type_Area" />
-                                                    <input type="hidden" name="F_DES[@x].Destination_Type_Location" id="Destination_Type_Location[@x]" value="@item.Destination_Type_Location" />
-                                                    <input type="hidden" name="F_DES[@x].FPI" id="FPI[@x]" value="@item.FPI" />
-                                                    <input type="hidden" name="F_DES[@x].FPII" id="FPII[@x]" value="@item.FPII" />
-                                                    <input type="hidden" name="F_DES[@x].FPIII" id="FPIII[@x]" value="@item.FPIII" />
-                                                    <input type="hidden" name="F_DES[@x].FPIV" id="FPIV[@x]" value="@item.FPIV" />
-                                                    <input type="hidden" name="F_DES[@x].FPV" id="FPV[@x]" value="@item.FPV" />
-                                                    <input type="hidden" name="F_DES[@x].FPVI" id="FPVI[@x]" value="@item.FPVI" />
-                                                    <input type="hidden" name="F_DES[@x].FPVII" id="FPVII[@x]" value="@item.FPVII" />
-                                                    <input type="hidden" name="F_DES[@x].FPVIII" id="FPVIII[@x]" value="@item.FPVIII" />
-                                                    <input type="hidden" name="F_DES[@x].FPIX" id="FPIX[@x]" value="@item.FPIX" />
-                                                    <input type="hidden" name="F_DES[@x].FPX" id="FPX[@x]" value="@item.FPX" />
-                                                    <input type="hidden" name="F_DES[@x].Temp_Spring" id="Temp_Spring[@x]" value="@item.Temp_Spring" />
-                                                    <input type="hidden" name="F_DES[@x].Temp_Summer" id="Temp_Summer[@x]" value="@item.Temp_Summer" />
-                                                    <input type="hidden" name="F_DES[@x].Temp_Autumn" id="Temp_Autumn[@x]" value="@item.Temp_Autumn" />
-                                                    <input type="hidden" name="F_DES[@x].Temp_Winter" id="Temp_Winter[@x]" value="@item.Temp_Winter" />
-
-
-                                                    <input type="checkbox" class="checkboxes chksel">
+                                                var x = 0;
+                                                foreach (var item in Model)
+                                                {
+                                                    ViewBag.id = item.Destination_Type_ID;
+                                                    <tr style="background-color:white ;border:1px solid lightgray">
+                                                        <td class="col-md-1 col-sm-12 col-xs-12 text-center">
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_ID" id="Destination_Type_ID[@x]" value="@item.Destination_Type_ID" class="desid" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_Link" id="Destination_Type_Link[@x]" value="@item.Destination_Type_Link" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_CreateDate" id="Destination_Type_CreateDate[@x]" value="@item.Destination_Type_CreateDate" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_ServiceHours" id="Destination_Type_ServiceHours[@x]" value="@item.Destination_Type_ServiceHours" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_Altitude" id="Destination_Type_Altitude[@x]" value="@item.Destination_Type_Altitude" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_MapName" id="Destination_Type_MapName[@x]" value="@item.Destination_Type_MapName" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_Area" id="Destination_Type_Area[@x]" value="@item.Destination_Type_Area" />
+                                                            <input type="hidden" name="F_DES[@x].Destination_Type_Location" id="Destination_Type_Location[@x]" value="@item.Destination_Type_Location" />
+                                                            <input type="hidden" name="F_DES[@x].FPI" id="FPI[@x]" value="@item.FPI" />
+                                                            <input type="hidden" name="F_DES[@x].FPII" id="FPII[@x]" value="@item.FPII" />
+                                                            <input type="hidden" name="F_DES[@x].FPIII" id="FPIII[@x]" value="@item.FPIII" />
+                                                            <input type="hidden" name="F_DES[@x].FPIV" id="FPIV[@x]" value="@item.FPIV" />
+                                                            <input type="hidden" name="F_DES[@x].FPV" id="FPV[@x]" value="@item.FPV" />
+                                                            <input type="hidden" name="F_DES[@x].FPVI" id="FPVI[@x]" value="@item.FPVI" />
+                                                            <input type="hidden" name="F_DES[@x].FPVII" id="FPVII[@x]" value="@item.FPVII" />
+                                                            <input type="hidden" name="F_DES[@x].FPVIII" id="FPVIII[@x]" value="@item.FPVIII" />
+                                                            <input type="hidden" name="F_DES[@x].FPIX" id="FPIX[@x]" value="@item.FPIX" />
+                                                            <input type="hidden" name="F_DES[@x].FPX" id="FPX[@x]" value="@item.FPX" />
+                                                            <input type="hidden" name="F_DES[@x].Temp_Spring" id="Temp_Spring[@x]" value="@item.Temp_Spring" />
+                                                            <input type="hidden" name="F_DES[@x].Temp_Summer" id="Temp_Summer[@x]" value="@item.Temp_Summer" />
+                                                            <input type="hidden" name="F_DES[@x].Temp_Autumn" id="Temp_Autumn[@x]" value="@item.Temp_Autumn" />
+                                                            <input type="hidden" name="F_DES[@x].Temp_Winter" id="Temp_Winter[@x]" value="@item.Temp_Winter" />
 
 
-                                                </td>
+                                                            <input type="checkbox" class="checkboxes chksel">
 
-                                                @*<div class="col-md-1 col-sm-12 col-xs-12 text-center">
+
+                                                        </td>
+
+                                                        @*<div class="col-md-1 col-sm-12 col-xs-12 text-center">
                                                         <span class="display_inline">
                                                             <label type="text" name="F_DES[@x].Destination_Type_ID" id="Destination_Type_ID[@x]"> @item.Destination_Type_ID</label>
                                                         </span>
                                                     </div>*@
 
-                                                <td class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center " style="padding:10px">
+                                                        <td class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center " style="padding:10px">
 
-                                                    <input type="text" name="F_DES[@x].Destination_Type_Title1" id="Destination_Type_Title1T[@x]" value="@item.Destination_Type_Title1" class="form-control" />
+                                                            <input type="text" name="F_DES[@x].Destination_Type_Title1" id="Destination_Type_Title1T[@x]" value="@item.Destination_Type_Title1" class="form-control" />
 
-                                                </td>
+                                                        </td>
 
-                                                <td class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center " style="padding:10px">
+                                                        <td class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center " style="padding:10px">
 
-                                                    <input type="text" name="F_DES[@x].Destination_Type_Title2" id="Destination_Type_Title2T[@x]" value="@item.Destination_Type_Title2" class="form-control" />
+                                                            <input type="text" name="F_DES[@x].Destination_Type_Title2" id="Destination_Type_Title2T[@x]" value="@item.Destination_Type_Title2" class="form-control" />
 
-                                                </td>
+                                                        </td>
 
-                                                <td class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center align-center" style="padding:10px">
-                                                    <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/Destination_Img/")@item.Destination_Type_ImgName" />
-                                                    <br />
+                                                        <td class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center align-center" style="padding:10px">
+                                                            <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/Destination_Img/")@item.Destination_Type_ImgName" />
+                                                            <br />
 
-                                                    <input data-imgid="Index_Img_File@(x)" name="Img_File" type="file" accept=".jpeg,.jpg,.gif,.png" />
-                                                    <label for="Index_Img_File@(x)" style="display:none"></label>
-                                                    <input id="Img_FileName@(x)" name="F_DES[@x].Destination_Type_ImgName" class="selected" value="@item.Destination_Type_ImgName" style="display:none">
+                                                            <input data-imgid="Index_Img_File@(x)" name="Img_File" type="file" accept=".jpeg,.jpg,.gif,.png" />
+                                                            <label for="Index_Img_File@(x)" style="display:none"></label>
+                                                            <input id="Img_FileName@(x)" name="F_DES[@x].Destination_Type_ImgName" class="selected" value="@item.Destination_Type_ImgName" style="display:none">
 
-                                                </td>
+                                                        </td>
 
-                                                <td class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center " style="padding:10px">
+                                                        <td class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center " style="padding:10px">
 
-                                                    <textarea name="F_DES[@x].Destination_Type_ImgDescription" id="Destination_Type_ImgDescription[@x]" style="resize:none; height:160px" class="form-control">@item.Destination_Type_ImgDescription</textarea>
+                                                            <textarea name="F_DES[@x].Destination_Type_ImgDescription" id="Destination_Type_ImgDescription[@x]" style="resize:none; height:160px" class="form-control">@item.Destination_Type_ImgDescription</textarea>
 
-                                                </td>
+                                                        </td>
 
-                                                <td class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center" style="padding:10px">
-                                                    <textarea name="F_DES[@x].Destination_Type_Description" id="Destination_Type_Description[@x]" style="resize:none; height:160px" class="form-control">@item.Destination_Type_Description</textarea>
-                                                </td>
+                                                        <td class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center" style="padding:10px">
+                                                            <textarea name="F_DES[@x].Destination_Type_Description" id="Destination_Type_Description[@x]" style="resize:none; height:160px" class="form-control">@item.Destination_Type_Description</textarea>
+                                                        </td>
 
-                                                <td class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center">
-                                                    <button type="button" class="btn grey-mint">@Html.ActionLink("管理", "Edit", new { id = item.Destination_Type_ID }, new { style = "color:white" })</button>
+                                                        <td class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center">
+                                                            <button type="button" class="btn grey-mint">@Html.ActionLink("管理", "Edit", new { id = item.Destination_Type_ID }, new { style = "color:white" })</button>
 
-                                                </td>
-                                            </tr>
+                                                        </td>
+                                                    </tr>
 
-                                            @*</form>*@
-                                            x = x + 1;
-                                        }
+                                                    @*</form>*@
+                                                    x = x + 1;
+                                                }
 
-                                    }
+                                            }
 
-                                </tbody>
-                            </table>
-                            <div class="col-md-10 col-sm-12 col-xs-12  text-center " id="div_buttons" style="margin:10px;padding:10px">
-                                <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+                                        </tbody>
+                                    </table>
+                                    <div class="col-md-10 col-sm-12 col-xs-12  text-center " id="div_buttons" style="margin-bottom:50px;padding:10px">
+                                        <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
 
-        @*<div class="text-center search_padding">
+                @*<div class="text-center search_padding">
                 <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
             </div>*@
-    </div>
-
+            </div>
+        </div>
 </div>
 
 

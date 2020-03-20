@@ -70,15 +70,15 @@
                         <!--圖片置左-->
                         if (@TTDModel.ImageFileLocation == "1")
                         {
-                            <img src="@Url.Content("~/UploadImage/MessageItem/")@TTDModel.ImageFileName" class="img_padding" alt="@TTDModel.ImageFileDesc" align="left">
+                            <img src="@Url.Content("~/UploadImage/MessageItem/")@TTDModel.ImageFileName" class="img_padding" alt="@TTDModel.ImageFileDesc" title="@TTDModel.ImageFileDesc" align="left">
                         }
                         else if (@TTDModel.ImageFileLocation == "2")
                         {
-                            <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/MessageItem/")@TTDModel.ImageFileName" class="img_padding" alt="@TTDModel.ImageFileOrgName"></p></div>
+                            <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/MessageItem/")@TTDModel.ImageFileName" class="img_padding" title="@TTDModel.ImageFileDesc" alt="@TTDModel.ImageFileOrgName"></p></div>
                         }
                         else if (@TTDModel.ImageFileLocation == "3")
                         {
-                            <img src="@Url.Content("~/UploadImage/MessageItem/")@TTDModel.ImageFileName" class="img_padding" alt="@TTDModel.ImageFileDesc" align="right">
+                            <img src="@Url.Content("~/UploadImage/MessageItem/")@TTDModel.ImageFileName" class="img_padding" alt="@TTDModel.ImageFileDesc" title="@TTDModel.ImageFileDesc" align="right">
                         }
 
                     }
