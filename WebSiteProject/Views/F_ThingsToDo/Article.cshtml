@@ -17,9 +17,16 @@
     var TTDModel = (WebSiteProject.Models.MessageItem)ViewBag.TTD_Detail;
     var banner = ViewBag.MessageBanner;
     <!--banner start-->
-    <div class="page_banner one_pic">
-        <!--一張封面照；建議尺寸寬2000*600px；後台無上傳圖片時，img不顯示(但div page_banner要保留)；圖片alt=標題-->
+<div class="page_banner one_pic">
+    <!--一張封面照；建議尺寸寬2000*600px；後台無上傳圖片時，img不顯示(但div page_banner要保留)；圖片alt=標題-->
+    @if (@banner == "" || banner == null)
+    {
+
+    }
+    else
+    {
         <img src="@Url.Content("~/UploadImage/MessageItem/")@banner" alt="@TTDModel.Title" />
+    }
     </div>
     <!--banner end-->
     <!--page_content start-->

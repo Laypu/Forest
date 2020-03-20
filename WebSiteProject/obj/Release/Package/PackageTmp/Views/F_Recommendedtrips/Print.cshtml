@@ -41,7 +41,25 @@
         <div class="date">@DateTime.Now.ToShortDateString()</div>
 
         <div class="edit_con">
-            @Html.Raw(HttpUtility.HtmlDecode(Model.RecommendedTrips_HtmContent))
+            <!--文繞圖 start-->
+            @if (string.IsNullOrEmpty(Model.ImageFileName) == false)
+            {
+                <!--圖片置左-->
+                if (Model.ImageFileLocation == "1")
+                {
+                    <img src="@Url.Content("~/UploadImage/RecommendedTrips/")@Model.ImageFileName" class="img_padding" alt="@Model.ImageFileDesc" align="left">
+                }
+                else if (Model.ImageFileLocation == "2")
+                {
+                    <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/RecommendedTrips/")@Model.ImageFileName" class="img_padding" alt="center"></p></div>
+                }
+                else if (Model.ImageFileLocation == "3")
+                {
+                    <img src="@Url.Content("~/UploadImage/RecommendedTrips/")@Model.ImageFileName" class="img_padding" alt="@Model.ImageFileDesc" align="right">
+                }
+
+            }
+            @Html.Raw(HttpUtility.HtmlDecode(Model.RecommendedTrips_HtmContent).safeHtmlFragment())
         </div>
 
     </div>

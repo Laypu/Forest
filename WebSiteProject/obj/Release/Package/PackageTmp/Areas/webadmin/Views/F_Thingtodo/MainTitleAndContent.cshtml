@@ -1,13 +1,43 @@
 ﻿@model WebSiteProject.Models.F_Thingtodo_Index
+<!--page bar start-->
+<div class="page-bar all_width">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="@Url.Action("Index", "Home")">Home</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            Things to do
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>旅遊資訊主版設定</li>
+    </ul>
+</div>
+<!--page bar end-->
 
-
-<div class="title_01">Things to do</div>
+<div class="title_01">Things To Do標題及文字設定</div>
 <div id="Partial_Index_MenuLink">
-    <!--.......-->   
+    <div class="portlet light bordered">
+        <!--set item start-->
+        <div class="table-toolbar">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <p class="class_title">管理項目</p>
+                <div class="display_inline">
+                    <select id="Index_Partial_Select" class="form-control checkitem" onchange="window.location.href=this.value">
+                        <option data-index="0" value="#">請選擇</option>
+                        <option data-index="2" value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 4, MenuType=24})">輪播牆設定(電腦版)</option>
+                        <option data-index="3" value="@Url.Action("MainTitleAndContent", "F_Thingtodo")" selected>旅遊資訊主版設定(標題&文字)</option>
+                        <option data-index="4" value="@Url.Action("Five_Thingstodo","F_Thingtodo", new { F_MenuType = 24, MenuType=24 })">五大旅遊資訊設定</option>
+                        <option data-index="5" value="@Url.Action("ModelItem", "Message",new { mainid = '9' })">旅遊資訊文章設定</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="portlet light bordered">
-    <div class="title_04">旅遊資訊主版設定(標題&文字)</div>
+    <div class="title_04" style="display:none">旅遊資訊主版設定(標題&文字)</div>
 
     <div class="form-horizontal form-bordered" id="editform" enctype="multipart/form-data">
 
@@ -22,11 +52,11 @@
                                     <span>標題名稱</span>
                                 </div>
                                 <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                    <textarea id="_Thingtodo_Index_Title" name="_Thingtodo_Index_Title"  class="form-control" style="height:50px;resize:none">@Model.F_Thingtodo_Index_Title</textarea>
+                                    <textarea id="_Thingtodo_Index_Title" name="_Thingtodo_Index_Title" class="form-control" style="height:50px;resize:none">@Model.F_Thingtodo_Index_Title</textarea>
                                     @*<span>
-                                        <a id="addbr1" class="btn btn-primary">加入換行符號</a>
-                                    </span>
-                                    <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>*@
+                                            <a id="addbr1" class="btn btn-primary">加入換行符號</a>
+                                        </span>
+                                        <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>*@
                                 </div>
                             </div>
                             <div class="form-group">
@@ -36,9 +66,9 @@
                                 <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
                                     <textarea id="_Thingtodo_Index_Content" name="_Thingtodo_Index_Content" class="form-control f_textarea" style="height:250px;resize:none">@Model.F_Thingtodo_Index_Content</textarea>
                                     @*<span>
-                                        <a id="addbr" class="btn btn-primary">加入換行符號</a>
-                                    </span>
-                                    <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>*@
+                                            <a id="addbr" class="btn btn-primary">加入換行符號</a>
+                                        </span>
+                                        <span class="addbr"> ( 換行符號為 &lt;/br&gt; ) </span>*@
                                 </div>
                             </div>
                             <div class="form-group">
@@ -53,7 +83,7 @@
                     </div>
                 </div>
             </div>
-        </form>        
+        </form>
 
     </div>
 
@@ -135,7 +165,7 @@
                 obj.value = str;
             }
         }
-        
+
 
 
     </script>

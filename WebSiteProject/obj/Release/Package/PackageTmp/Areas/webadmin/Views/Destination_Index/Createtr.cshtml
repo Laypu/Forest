@@ -73,7 +73,7 @@
                     <div class="form-group">
                         <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">票種</div>
                         <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
-                            @Html.TextBoxFor(model => model.TicketType,new {@name = "DFTR.TicketType" ,@class ="form-control text-box single-line" })
+                            @Html.TextBoxFor(model => model.TicketType,new {@name = "DFTR.TicketType" ,@class ="form-control  input-medium text-box single-line" })
                         </div>
                     </div>
 
@@ -81,7 +81,8 @@
                         <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">票價</div>
                         <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
                             <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
-                                NT$ &nbsp;&nbsp;@Html.TextBoxFor(model => model.Fare, new { @name = "DFTR.Fare", @class = "form-control input-small text-box single-line" })
+                                <div style="display:inline">NT$</div>
+                                @Html.TextBoxFor(model => model.Fare, new { @name = "DFTR.Fare", @class = "form-control input-small text-box single-line" })
                             </div>
                         </div>
                     </div>

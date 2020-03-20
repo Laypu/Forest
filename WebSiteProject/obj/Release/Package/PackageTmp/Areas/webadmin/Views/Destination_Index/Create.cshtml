@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">標題(上)</div>
                             <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
-                                @Html.TextBoxFor(model => model.Destination_Type_Title1)
+                                @Html.TextBoxFor(model => model.Destination_Type_Title1,new {@class = "form-control input-medium" })
                             </div>
                         </div>
 
@@ -46,7 +46,7 @@
                             <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">標題(下)</div>
                             <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
                                 <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
-                                    @Html.TextBoxFor(model => model.Destination_Type_Title2)
+                                    @Html.TextBoxFor(model => model.Destination_Type_Title2,new {@class = "form-control input-medium" })
                                 </div>
                             </div>
                         </div>
@@ -73,15 +73,15 @@
                             <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">圖片說明</div>
                             <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
                                 <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
-                                    @Html.TextAreaFor(model => model.Destination_Type_ImgDescription, new { @style = "height:200px;width:700px;resize:none" })
+                                    @Html.TextAreaFor(model => model.Destination_Type_ImgDescription, new { @style = "height:200px;width:700px;resize:none",@class = "form-control"  })
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">說明</div>
+                            <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">地點說明</div>
                             <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
                                 <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
-                                    @Html.TextAreaFor(model => model.Destination_Type_Description, new { @style = "height:200px;width:700px;resize:none" })
+                                    @Html.TextAreaFor(model => model.Destination_Type_Description, new { @style = "height:200px;width:700px;resize:none",@class = "form-control"  })
                                 </div>
                             </div>
                         </div>
