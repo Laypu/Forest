@@ -9,137 +9,158 @@
             <a href="@Url.Action("Index","Recommendedtrips")">Home</a>
             <i class="fa fa-circle"></i>
         </li>
-        <li>推薦行程<i class="fa fa-circle"></i></li>
+        <li>推薦行程</li>
     </ul>
 
 </div>
+
+
 <div id="Partial_Index_MenuLink">
-    <div class="col-md-6 col-sm-12 col-xs-12">
-        <p class="class_title">管理項目</p>
-        <div class="display_inline">
-            <div class="display_inline">
-                <select id="Index_Partial_Select" class="form-control checkitem" onchange="window.location.href=this.value">
-                    <option data-index="1" value="#" selected>推薦行程設定</option>
-                    <option data-index="2" value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 15, MenuType=176})">輪播牆設定(電腦版)</option>
-                    <option data-index="3" value="@Url.Action("RecommendedtripsIndex", "Recommendedtrips")">推薦行程主版設定(標題&文字)</option>
-                </select>
+    <div class="portlet light bordered">
+        <div class="title_04">推薦行程文章設定</div>
+
+        <!--set item start-->
+        <div class="table-toolbar">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="display_inline">
+                    <p class="class_title">管理項目</p>
+                    <select class="form-control_1" onchange="window.location.href=this.value">
+                        <option value="#" selected>推薦行程</option>
+                        <option value="@Url.Action("UnitPrint","Recommendedtrips")">單元設定</option>
+                    </select>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<div class="table-toolbar">
-    <div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="display_inline">
-            <p class="class_title">管理項目</p>
-            <select class="form-control_1" onChange="window.location.href=this.value">
-                <option value="#" selected>推薦行程</option>
-                <option value="@Url.Action("UnitPrint","Recommendedtrips")">單元設定</option>
-            </select>
+        <hr />
+        <div style="width:60%">
+            <div class="form-group">
+                <p class="class_title" style="width:70px">
+                    <span>旅遊天數 </span>
+                </p>
+                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white">
+                    @Html.DropDownList("Day_Id", (IEnumerable<SelectListItem>)ViewBag.RecommendedTrips_Day_ID, "請選擇", htmlAttributes: new { @class = "form-control", rows = "8", cols = "100", @style = "width:300px" })
+                </div>
+            </div>
+            <div class="form-group">
+                <p class="class_title" style="width:70px">
+                    <span>目的地 </span>
+                </p>
+
+                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
+                    @Html.DropDownList("Dstination_typ", (IEnumerable<SelectListItem>)ViewBag.RecommendedTrips_Destinations_ID, "請選擇", htmlAttributes: new { @class = "form-control", rows = "8", cols = "100", @style = "width:300px" })
+                </div>
+            </div>
+            <div class="form-group">
+                <p class="class_title" style="width:70px">
+                    <span>旅遊類別</span>
+                </p>
+
+                <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white display-inline">
+                    @Html.DropDownList("F_HashTag", (IEnumerable<SelectListItem>)ViewBag.F_HashTag_Type, "請選擇", htmlAttributes: new { @class = "form-control", rows = "8", cols = "100", @style = "width:300px" })
+
+                </div>
+
+            </div>
         </div>
-    </div>
-</div>
-<div class="form-group">
-    <div class="col-md-1 col-sm-12 col-xs-12 search_item text-center">
-        <span>旅遊天數</span>
-    </div>
-    <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white">
-        @Html.DropDownList("Day_Id", (IEnumerable<SelectListItem>)ViewBag.RecommendedTrips_Day_ID, "請選擇", htmlAttributes: new { @class = "form-control", rows = "8", cols = "100", @style = "width:300px" })
-    </div>
-</div>
-<div class="form-group">
-    <div class="col-md-1 col-sm-12 col-xs-12 search_item text-center">
-        <span>目的地</span>
-    </div>
-    <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-        @Html.DropDownList("Dstination_typ", (IEnumerable<SelectListItem>)ViewBag.RecommendedTrips_Destinations_ID, "請選擇", htmlAttributes: new { @class = "form-control", rows = "8", cols = "100", @style = "width:300px" })
-    </div>
-</div>
-<div class="form-group">
-    <div class="col-md-1 col-sm-12 col-xs-12 search_item text-center">
-        <span>旅遊類別</span>
-    </div>
-    <div class="col-md-9 col-sm-12 col-xs-12 bg-white mobile_white ">
-        @Html.DropDownList("F_HashTag", (IEnumerable<SelectListItem>)ViewBag.F_HashTag_Type, "請選擇", htmlAttributes: new { @class = "form-control", rows = "8", cols = "100", @style = "width:300px" })
-    </div>
-</div>
-<a href="@Url.Action("Recommendedtrips_Edit")" class="btn green-meadow">新增<i class="fa fa-plus"></i></a>
-<a class="blue search_icon" id="btn_search">搜尋<i class="fa fa-search"></i></a>
-<div class="table-scrollable">
-    <table class="table table-bordered table-hover" border="0" cellspacing="0" cellpadding="0"
-           id="table"
-           data-url="#"
-           data-sort-name='Sort'
-           data-page-size='10'
-           data-filed-id='RecommendedTrips_ID'
-           data-max-pagination='10'>
-        <thead>
-            <tr>
-                <th class="col-md-1 col-sm-12 col-xs-12 text-center">
+        <div style="width:30%">
+            <a class="btn blue search_icon" id="btn_search">搜尋<i class="fa fa-search"></i></a>
+        </div>
+        
+        <hr />
 
-                    <input type='checkbox' class='checkboxes inline' id="chk_all" />
 
-                    <button type="button" class="btn red-mint btn-xs" id='btn_del'><i class="glyphicon glyphicon-trash"></i></button>
-                </th>
-                <th class="text-center">排序</th>
-                <th class="text-center">標題</th>
-                <th class="text-center">類別</th>
-                <th class="text-center">顯示區間</th>
-                <th class="text-center">輪播管理</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                bool istrue = false;
-                if (item.starDate == null && item.EndDate == null)
-                {
-                    istrue = true;
-                }
-                else if ((item.starDate != null && item.EndDate == null) && item.starDate.Value.Date <= DateTime.Now.Date)
-                {
-                    istrue = true;
 
-                }
-                else if ((item.starDate == null && item.EndDate != null) && item.EndDate.Value.Date >= DateTime.Now.Date)
-                {
-                    istrue = true;
-                }
-                else if ((item.starDate != null && item.EndDate != null) && item.starDate.Value.Date <= DateTime.Now.Date && item.EndDate.Value.Date >= DateTime.Now.Date)
-                {
-                    istrue = true;
-                }
-                <tr class="text-center">
-                    <td><input type="checkbox" class="checkboxes chksel" value="@item.RecommendedTrips_ID" /></td>
-                    <td>
-                        <button name="totop" type="button" class="btn btn-default btn-xs seqindex" value="-1" idindex="1329"><i class="fa fa-angle-double-up"></i></button>
-                        <button name="Up" type="button" class="btn btn-default btn-xs seqindex" value="@(item.sort-1)" idindex="1329"><i class="fa fa-angle-up"></i></button>
-                        <button name="Down" type="button" class="btn btn-default btn-xs seqindex" value="@(item.sort+1)" idindex="1329"><i class="fa fa-angle-down"></i></button>
-                        <button name="tobottom" type="button" class="btn btn-default btn-xs seqindex" value="-2" idindex="1329"><i class="fa fa-angle-double-down"></i></button>
-                        <input type="hidden" value="@item.sort" data-pid="@item.RecommendedTrips_ID">
-                        <input class="editinput btn btn-default btn-xs sequence_list sortedit" value="@item.sort" />
-                    </td>
-                    <td> <a href="@Url.Action("Recommendedtrips_Edit",new {itemid=@item.RecommendedTrips_ID})">@item.RecommendedTrips_Title</a></td>
-                    <td>@item.RecommendedTrips_Day_Name</td>
-                    @if (istrue)
+        <div class="table-scrollable">
+            <span style="float:right">
+                <a href="@Url.Action("Recommendedtrips_Edit")" class="btn green-meadow">新增<i class="fa fa-plus"></i></a>
+            </span>
+            <table class="table table-bordered table-hover" border="0" cellspacing="0" cellpadding="0"
+                   id="table"
+                   data-url="#"
+                   data-sort-name='Sort'
+                   data-page-size='10'
+                   data-filed-id='RecommendedTrips_ID'
+                   data-max-pagination='10'>
+
+                <thead>
+
+                    <tr>
+                        <th class="col-md-1 col-sm-12 col-xs-12 text-center">
+
+                            <input type='checkbox' class='checkboxes inline' id="chk_all" />
+
+                            <button type="button" class="btn red-mint btn-xs" id='btn_del'><i class="glyphicon glyphicon-trash"></i></button>
+                        </th>
+                        <th class="text-center">排序</th>
+                        <th class="text-center">標題</th>
+                        <th class="text-center">類別</th>
+                        <th class="text-center">顯示區間</th>
+                        <th class="text-center">輪播管理</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
                     {
-                        <td style="font:600;color:green">是</td>
+                        bool istrue = false;
+                        if (item.starDate == null && item.EndDate == null)
+                        {
+                            istrue = true;
+                        }
+                        else if ((item.starDate != null && item.EndDate == null) && item.starDate.Value.Date <= DateTime.Now.Date)
+                        {
+                            istrue = true;
+
+                        }
+                        else if ((item.starDate == null && item.EndDate != null) && item.EndDate.Value.Date >= DateTime.Now.Date)
+                        {
+                            istrue = true;
+                        }
+                        else if ((item.starDate != null && item.EndDate != null) && item.starDate.Value.Date <= DateTime.Now.Date && item.EndDate.Value.Date >= DateTime.Now.Date)
+                        {
+                            istrue = true;
+                        }
+                        <tr class="text-center">
+                            <td><input type="checkbox" class="checkboxes chksel" value="@item.RecommendedTrips_ID" /></td>
+                            <td>
+                                <button name="totop" type="button" class="btn btn-default btn-xs seqindex" value="-1" idindex="1329"><i class="fa fa-angle-double-up"></i></button>
+                                <button name="Up" type="button" class="btn btn-default btn-xs seqindex" value="@(item.sort-1)" idindex="1329"><i class="fa fa-angle-up"></i></button>
+                                <button name="Down" type="button" class="btn btn-default btn-xs seqindex" value="@(item.sort+1)" idindex="1329"><i class="fa fa-angle-down"></i></button>
+                                <button name="tobottom" type="button" class="btn btn-default btn-xs seqindex" value="-2" idindex="1329"><i class="fa fa-angle-double-down"></i></button>
+                                <input type="hidden" value="@item.sort" data-pid="@item.RecommendedTrips_ID">
+                                <input class="editinput btn btn-default btn-xs sequence_list sortedit" value="@item.sort" />
+                            </td>
+                            <td> <a href="@Url.Action("Recommendedtrips_Edit",new {itemid=@item.RecommendedTrips_ID})">@item.RecommendedTrips_Title</a></td>
+                            <td>@item.RecommendedTrips_Day_Name</td>
+                            @if (istrue)
+                            {
+                                <td style="font:600;color:green">是</td>
+                            }
+                            else
+                            {
+                                <td style="font:600;color:red">否</td>
+                            }
+                            @*<td>
+                                <a href="@Url.Action("RecommendedTrip_Travel_Item",new {RecommendedTripID=@item.RecommendedTrips_ID})" class="btn green-meadow">管理<i class="fa fa-plus"></i></a>
+                            </td>*@
+                            <td>
+                                <a class="btn grey-mint" href="@Url.Action("Index", "AD", new { type = @item.RecommendedTrips_ID.ToString() , stype = "P", site_id = 17,MenuType=-1})">管理</a>
+                                @*<a class="btn green-meadow" href="@Url.Action("Index", "AD", new { type = @item.RecommendedTrips_ID.ToString() , stype = "M", site_id = 17,MenuType=-1})">手機輪播管理<i class="fa fa-plus"></i></a>*@
+                            </td>
+                        </tr>
                     }
-                    else
-                    {
-                        <td style="font:600;color:red">否</td>
-                    }
-                    @*<td>
-                            <a href="@Url.Action("RecommendedTrip_Travel_Item",new {RecommendedTripID=@item.RecommendedTrips_ID})" class="btn green-meadow">管理<i class="fa fa-plus"></i></a>
-                        </td>*@
-                    <td>
-                        <a class="btn green-meadow" href="@Url.Action("Index", "AD", new { type = @item.RecommendedTrips_ID.ToString() , stype = "P", site_id = 17,MenuType=-1})">輪播管理<i class="fa fa-plus"></i></a>
-                        @*<a class="btn green-meadow" href="@Url.Action("Index", "AD", new { type = @item.RecommendedTrips_ID.ToString() , stype = "M", site_id = 17,MenuType=-1})">手機輪播管理<i class="fa fa-plus"></i></a>*@
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+
+    </div>
 </div>
+
+
+
 
 @section scripts {
     <script src="@Url.Content("~/Scripts/datatable.js")"></script>

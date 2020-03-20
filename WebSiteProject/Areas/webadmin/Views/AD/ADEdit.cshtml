@@ -197,7 +197,11 @@
                 for (var idx = 0; idx < inputval.length; idx++) {
                     $("#" + inputval[idx].name + "-error").show();
                 }
-                if (inputval.length > 0) { return false; }
+                if (inputval.length > 0)
+                {
+                    alert("請更正錯誤\n *必須填寫");
+                    return false;
+                }
                 var file = $("#file_image");
                 var _validFileExtensions = [".jpg", ".png", ".gif", ".jpeg"];
                 var sFileName = file.val();

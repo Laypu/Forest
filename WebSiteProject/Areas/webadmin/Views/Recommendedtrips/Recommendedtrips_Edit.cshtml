@@ -9,7 +9,7 @@
 <script src="@Url.Content("~/Scripts/ckeditor/ckeditor.js")"></script>
 <script src="@Url.Content("~/Scripts/bootbox.min.js")"></script>
 <script src="@Url.Content("~/Scripts/_html.js")"></script>
-<h2>推薦行程</h2>
+
 @{ 
     var sdate = Model.RecommendedTrips_StarDay == null ? "" : Model.RecommendedTrips_StarDay.Value.ToString("yyyy/MM/dd");
      var endate = Model.RecommendedTrips_EndDay== null ? "" : Model.RecommendedTrips_EndDay.Value.ToString("yyyy/MM/dd");
@@ -129,12 +129,14 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-2 col-sm-12 col-xs-12 search_item text-center">行程標題</div>
+                                <div class="col-md-2 col-sm-12 col-xs-12 search_item text-center"><span class="red">*</span>行程標題</div>
                                 <div class="col-md-10  col-sm-12 col-xs-12 bg-white mobile_white">
                                     <div class="col-md-12">
-                                        @Html.EditorFor(model => model.RecommendedTrips_Title, new { htmlAttributes = new { @class = "form-control  inline-block" } })
+                                        @Html.EditorFor(model => model.RecommendedTrips_Title, new { htmlAttributes = new { @class = "form-control  inline-block",@id="Title" } })
+                                        <span class="required" id="Title-error" style="display:none;">標題 必須填寫！</span>
                                     </div>
                                 </div>
+                                
                             </div>
                             <div class="form-group">
                                 <div class="col-md-2 col-sm-12 col-xs-12 search_item text-center">行程特色</div>
@@ -231,7 +233,11 @@
                 </div>
             </div>
         </form>
-        <a class="btn blue" id="btn_save">確認(存檔)</a><a href="@Url.Action("Recommendedtrips_item")" class="btn grey-mint">回上一頁</a>
+        <div class="text-center search_padding" id="div_buttons">
+            <a  class="btn blue" id="btn_save">確認送出</a>
+            <a href="@Url.Action("Recommendedtrips_item")" class="btn grey-mint">回上一頁</a>
+        </div>
+        
     </div>
     @{
         if (Model.RecommendedTrips_ID.ToString() != "-1")
@@ -326,6 +332,7 @@
                         breakAfterClose: false
                     });
             });
+
             $("#btn_save").click(function () {
                var sdate=  $("#Sdate").val();
                var edate= $("#Edate").val();
@@ -346,6 +353,13 @@
                 //}
                 if ((sdate != "" && edate != "") && (sdate > edate)) {
                     alert("結束日期不可以小於開始日期")
+                    return false;
+                }
+                var titlevalue = $("#Title").val();
+                if (titlevalue == "")
+                {
+                    $("#Title-error").show();
+                    alert("請更正錯誤\n *必須填寫");
                     return false;
                 }
                            var file = $("#file_image");
