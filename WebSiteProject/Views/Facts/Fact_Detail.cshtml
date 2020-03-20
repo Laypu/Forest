@@ -81,7 +81,7 @@
                     }
                     else if (ActiveItem.ImageFileLocation == "2")
                     {
-                        <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="center"></p></div>
+                        <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="@ActiveItem.ImageFileDesc"></p></div>
                     }
                     else if (ActiveItem.ImageFileLocation == "3")
                     {
