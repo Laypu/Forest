@@ -111,7 +111,7 @@
                             <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
                                 <div class="date-picker input-daterange" data-date-format="yyyy/mm/dd">
                                     @Html.EditorFor(model => model.PublicshStr, new { htmlAttributes = new { @class = "form-control checkitem input-small", placeholder = "發佈日期" } })
-                                    <span class="required" id="PublicshStr-error" style="display:none;">發佈日期 必須填寫！</span>
+                                    <span class="required" id="PublicshStr_error" style="display:none;">發佈日期 必須填寫！</span>
                                 </div>
                             </div>
                         </div>
@@ -170,7 +170,7 @@
                                     <div style="display:inline">
                                         
                                         <input id="file_bannerimage" type="file" class="display_inline" name="ImageFile" accept="image/*" />
-                                        <span class="required">建議尺寸 450 x 600 px</span>
+                                        <span class="required">建議尺寸 2000 x 600 px</span>
                                     </div>
                                 </div>
                             </div>
@@ -273,7 +273,7 @@
                             </div>
                         </div>
 
-                        @if (Model.ItemID >= 0)
+                        @*@if (Model.ItemID >= 0)
                         {
                             <div class="form-group">
                                 <div class="col-md-2 col-sm-12 col-xs-12 search_item">審核狀態</div>
@@ -320,8 +320,8 @@
                                     </div>
                                 </div>
                             </div>
-                        }
-
+                        }*@
+                        
                     </div>
                 </div>
             </div>
@@ -424,16 +424,22 @@
                         breakAfterClose: false
                     });
             });
+
             //indent : false, breakBeforeOpen : false, breakAfterOpen : false, breakBeforeClose : false, breakAfterClose : true}
             $('#editform').submit(function (event) {
 
-               $(".required").hide();
+               
                  var inputval = $("#form-body2 :input").filter(function () { return $(this).val() == "" && $(this).hasClass('checkitem'); });
                 for (var idx = 0; idx < inputval.length; idx++) {
-                    $("#" + inputval[idx].name + "-error").show();
+                    $("#" + inputval[idx].id + "-error").show();
                 }
-                if (inputval.length > 0) { return false; }
-
+                if (inputval.length > 0)
+                {
+                    
+                    alert("請更正錯誤\n *必須填寫");
+                    return false;
+                }
+                
                 var file = $("#file_image");
                 var _validFileExtensions = [".jpg", ".png", ".gif", ".jpeg"];
                 var sFileName = file.val();
@@ -544,7 +550,7 @@
                     }
                     
                 }
-
+                
 
 
                 if (iscon == false) { return false;}

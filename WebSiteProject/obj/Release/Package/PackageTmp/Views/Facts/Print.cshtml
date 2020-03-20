@@ -1,4 +1,4 @@
-﻿@model WebSiteProject.Models.RecommendedTrip
+﻿@model WebSiteProject.Models.ActiveItem
 @{
     Layout = null;
 }
@@ -37,29 +37,32 @@
 <body style="max-width:806px; margin:0 auto; background: url(@Url.Content("~/img/bg_05.jpg"));">
     <div class="con_box">
         <div class="con_banner"><img src="@Url.Content("~/img/print_banner.jpg")" alt="" /></div><!--建議尺寸740*185px-->
-        <h2>@Model.RecommendedTrips_Title</h2>
-        <div class="date">@DateTime.Now.ToShortDateString()</div>
+
+        <h2>@Model.Title</h2>
+        <div class="date">@Model.PublicshDate.Value.ToString("yyyy/MM/dd")</div>
 
         <div class="edit_con">
             <!--文繞圖 start-->
-            @if (string.IsNullOrEmpty(Model.ImageFileName) == false)
+            @if (string.IsNullOrEmpty(Model.ImageFileOrgName) == false)
             {
                 <!--圖片置左-->
                 if (Model.ImageFileLocation == "1")
                 {
-                    <img src="@Url.Content("~/UploadImage/RecommendedTrips/")@Model.ImageFileName" class="img_padding" alt="@Model.ImageFileDesc" align="left">
+                    <img src="@Url.Content("~/UploadImage/ActiveItem/")@Model.ImageFileName" class="img_padding" alt="@Model.ImageFileDesc" align="left">
                 }
                 else if (Model.ImageFileLocation == "2")
                 {
-                    <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/RecommendedTrips/")@Model.ImageFileName" class="img_padding" alt="center"></p></div>
+                    <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/MessageItem/")@Model.ImageFileName" class="img_padding" alt="center"></p></div>
                 }
                 else if (Model.ImageFileLocation == "3")
                 {
-                    <img src="@Url.Content("~/UploadImage/RecommendedTrips/")@Model.ImageFileName" class="img_padding" alt="@Model.ImageFileDesc" align="right">
+                    <img src="@Url.Content("~/UploadImage/MessageItem/")@Model.ImageFileName" class="img_padding" alt="@Model.ImageFileDesc" align="right">
                 }
 
             }
-            @Html.Raw(HttpUtility.HtmlDecode(Model.RecommendedTrips_HtmContent).safeHtmlFragment())
+
+            <!--文繞圖 end-->
+            @Html.Raw(Model.HtmlContent.safeHtmlFragment())
         </div>
 
     </div>

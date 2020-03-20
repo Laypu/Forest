@@ -469,8 +469,8 @@
                                     <option data-index="4" value="@Url.Action("Index_ADMain2", "Home", new { home_type = "main", home_stype = "P"})">首頁輪播牆二(電腦版)</option>
                                     <option data-index="4" value="@Url.Action("Index_ADMain2", "Home", new { home_type = "main", home_stype = "M" })">首頁輪播牆二(手機版)</option>
 
-                                    <option data-index="5" value="@Url.Action("Index_FreeZone","Home",new { id=2 })">自由編輯區二</option>
-                                    <option data-index="6" value="@Url.Action("Index_Img", "Home", new { })">圖片區一</option>
+                                    @*<option data-index="5" value="@Url.Action("Index_FreeZone","Home",new { id=2 })">自由編輯區二</option>
+                                    <option data-index="6" value="@Url.Action("Index_Img", "Home", new { })">圖片區一</option>*@
                                 </select>
                             </div>
                         </div>
@@ -525,12 +525,12 @@
                                         <option data-index="0" value="#">請選擇</option>
                                         @*<option data-index="1" value="@Url.Action("MenuLinkEdit", "Menu", new { menuid=179 ,MenuType=179 })">連結路徑</option>*@
                                         <option data-index="2" value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 3, MenuType=179})">輪播牆設定(電腦版)</option>
-                                        <option data-index="2" value="@Url.Action("Index", "AD", new { type = "main" , stype = "M", site_id = 3, MenuType=179})">輪播牆設定(手機版)</option>
+                                        @*<option data-index="2" value="@Url.Action("Index", "AD", new { type = "main" , stype = "M", site_id = 3, MenuType=179})">輪播牆設定(手機版)</option>*@
                                         <option data-index="3" value="@Url.Action("MainTitleAndContent", "Destination_Index")">目的地主版設定(標題&文字)</option>
                                         <option data-index="4" value="@Url.Action("Destination","Destination_Index", new { F_MenuType = 179,MenuType=179})">目的地設定</option>
                                         <option data-index="5" value="@Url.Action("Index","Destination_MapLegend", new { F_MenuType = 179,MenuType=179})">MapLegend設定</option>
-                                        <option data-index="6" value="@Url.Action("Index", "AD", new { type = "Article" ,stype = "P", site_id = 16, MenuType=179})">文章輪播牆設定(電腦版)</option>
-                                        <option data-index="6" value="@Url.Action("Index", "AD", new { type = "Article" ,stype = "M", site_id = 16, MenuType=179})">文章輪播牆設定(手機版)</option>
+                                        @*<option data-index="6" value="@Url.Action("Index", "AD", new { type = "Article" ,stype = "P", site_id = 16, MenuType=179})">文章輪播牆設定(電腦版)</option>
+                                        <option data-index="6" value="@Url.Action("Index", "AD", new { type = "Article" ,stype = "M", site_id = 16, MenuType=179})">文章輪播牆設定(手機版)</option>*@
                                         <option data-index="7" value="@Url.Action("ModelItem", "Message",new { mainid = '9' })">旅遊資訊文章設定</option>
                                     </select>
                                 </div>
@@ -556,8 +556,8 @@
                                     <option data-index="0" value="#">請選擇</option>
                                    @*<option data-index="1" value="@Url.Action("MenuLinkEdit", "Menu", new { menuid=176 ,MenuType=176 })">連結路徑</option>*@
                                    <option data-index="2" value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 15, MenuType=176})">輪播牆設定(電腦版)</option>
-                                   <option data-index="3" value="@Url.Action("RecommendedtripsIndex", "Recommendedtrips")">推薦行程主版設定(標題&文字)</option>
-                                   <option data-index="4" value="@Url.Action("Recommendedtrips_item", "Recommendedtrips")">推薦行程設定</option>
+                                   <option data-index="3" value="@Url.Action("RecommendedtripsIndex", "Recommendedtrips", new { F_MenuType = 176,MenuType=176})">推薦行程主版設定(標題&文字)</option>
+                                   <option data-index="4" value="@Url.Action("Recommendedtrips_item", "Recommendedtrips", new { F_MenuType = 176,MenuType=176})">推薦行程設定</option>
                                     @*<option data-index="2" value="#">Load_RecommendedTrips</option>*@
                                 </select>
                             </div>
@@ -584,7 +584,7 @@
                                     <option data-index="0" value="#">請選擇</option>
                                     @*<option data-index="1" value="@Url.Action("MenuLinkEdit", "Menu", new { menuid=24 })">連結路徑</option>*@
                                     <option data-index="2" value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 4, MenuType=24})">輪播牆設定(電腦版)</option>
-                                    <option data-index="2" value="@Url.Action("Index", "AD", new { type = "main" , stype = "M", site_id = 4, MenuType=24})">輪播牆設定(手機版)</option>
+                                    @*<option data-index="2" value="@Url.Action("Index", "AD", new { type = "main" , stype = "M", site_id = 4, MenuType=24})">輪播牆設定(手機版)</option>*@
                                     <option data-index="3" value="@Url.Action("MainTitleAndContent", "F_Thingtodo")">旅遊資訊主版設定(標題&文字)</option>
                                     <option data-index="4" value="@Url.Action("Five_Thingstodo","F_Thingtodo", new { F_MenuType = 24, MenuType=24 })">五大旅遊資訊設定</option>
                                     @*<option data-index="6" value="@Url.Action("Five_ThingsToDo_HashTag", "F_Thingtodo", new { mainid = '9' })">旅遊資訊標籤設定</option>*@
@@ -613,8 +613,9 @@
                             <div class="display_inline">
                                 <select id="Index_Partial_Select" class="form-control checkitem" onchange="window.location.href=this.value">
                                     <option data-index="0" value="#">請選擇</option>
-                                    <option data-index="1" value="#">連結路徑</option>
-                                    <option data-index="2" value="#">Load_Facts</option>
+                                    <option data-index="1" value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 14, MenuType=45})">輪播牆設定(電腦版)</option>
+                                    <option data-index="2" value="@Url.Action("ModelItem","Active")">Facts文章管理</option>
+                                    
                                 </select>
                             </div>
                         </div>

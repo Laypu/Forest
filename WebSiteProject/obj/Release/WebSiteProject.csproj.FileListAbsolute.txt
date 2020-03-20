@@ -122,3 +122,7 @@ C:\Users\PC003\Desktop\git\Forest\WebSiteProject\obj\Release\WebSiteProject.cspr
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\CaptchaMvc.dll
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\CaptchaMvc.pdb
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\CaptchaMvc.xml
+C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\AntiXssLibrary.dll
+C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\HtmlSanitizationLibrary.dll
+C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\AntiXssLibrary.xml
+C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\HtmlSanitizationLibrary.xml

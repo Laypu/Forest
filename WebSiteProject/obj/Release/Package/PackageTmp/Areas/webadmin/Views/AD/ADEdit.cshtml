@@ -5,12 +5,35 @@
 <!--page bar start-->
 <div class="page-bar all_width">
     <ul class="page-breadcrumb">
-        <li>
-            <a href="@Url.Action("Index","Home")">Home</a>
-            <i class="fa fa-circle"></i>
-        </li>
-        <li>模組元件<i class="fa fa-circle"></i></li>
-        <li>@ViewBag.Title</li>
+        @if (Model.Site_ID != 17)
+        {
+
+            <li>
+                <a href="@Url.Action("Index", "Home")"> Home </a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li>模組元件<i class="fa fa-circle"></i></li>
+            <li>@ViewBag.Title</li>
+        }
+        else
+        {
+            <li>
+                <a href="@Url.Action("Index",new {type=Model.Type_ID,site_id=Model.Site_ID,MenuType="-1",stype="P"})"> Home </a>
+                <i class="fa fa-circle"></i>
+            </li>
+            if (Model.ID == -1)
+            {
+                <li>ADD</li>
+            }
+            else
+            {
+                <li>@Model.AD_Name<i class="fa fa-circle"></i></li>
+                <li>Eiit</li>
+            }
+
+        }
+
+
     </ul>
 </div>
 <!--page bar end-->
@@ -32,7 +55,7 @@
             <div class="portlet-body form">
                 <div class="form-horizontal form-bordered">
                     <div class="form-body" id="form-body">
-                        @if (Model.Site_ID == 15 || Model.Site_ID == 17)
+                        @if (Model.Site_ID == 15 || Model.Site_ID == 17 ||Model.Site_ID == 14)
                         {
                             @Html.HiddenFor(Model => Model.Site_ID)
                         }
@@ -84,11 +107,17 @@
 
                                 <div id="div_oldfile" style="display:none"><a href="@Model.ImageUrl" target="preview">@Model.Img_Show_Name</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delimage">刪除</label></div>
                                 <input id="file_image" type="file" name="uploadfile" accept="image/*" />
-                                @if (Model.SType == "P")
-                                {<span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸4000*850px</span>
+                                @if (Model.Site_ID == 15 || Model.Site_ID == 17 || Model.Site_ID == 14)
+                                {
+                                 <span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸4000*850px</span>
+                                }
+                                else if (Model.SType == "P")
+                                {
+                                    <span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸4000*850px</span>
                                 }
                                 else
                                 {<span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸1200*2000px</span>}
+
                             </div>
                         </div>
                         <div class="form-group" id="F_Video">
@@ -168,7 +197,11 @@
                 for (var idx = 0; idx < inputval.length; idx++) {
                     $("#" + inputval[idx].name + "-error").show();
                 }
-                if (inputval.length > 0) { return false; }
+                if (inputval.length > 0)
+                {
+                    alert("請更正錯誤\n *必須填寫");
+                    return false;
+                }
                 var file = $("#file_image");
                 var _validFileExtensions = [".jpg", ".png", ".gif", ".jpeg"];
                 var sFileName = file.val();

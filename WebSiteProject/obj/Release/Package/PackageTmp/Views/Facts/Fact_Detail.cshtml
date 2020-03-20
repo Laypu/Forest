@@ -1,0 +1,140 @@
+﻿@model HomeViewModel
+@{
+    Layout = WebSiteProject.Code.Common.GetIndexLayout(Model.LangId);
+}
+@{
+
+    var ActiveItem = (WebSiteProject.Models.ActiveItem)ViewBag.ActiveItemDetail;
+}
+<!--banner start-->
+<div class="page_banner one_pic">
+    <!--一張封面照；建議尺寸寬2000*600px；後台無上傳圖片時，img不顯示(但div page_banner要保留)；圖片alt=標題-->
+    <img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageBannerName" alt="@ActiveItem.Title" />
+</div>
+<!--banner end-->
+<!--page_content start-->
+<div class="page_content">
+
+    <!--page top start-->
+    <div class="page_top">
+        <div class="container">
+            <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
+                <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
+                <a href="@Url.Action("Index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="@Url.Action("Index",new {nowpage=TempData["Page"] })" title="Fact">Fact</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                @ActiveItem.Title
+            </div>
+            <div class="col-md-5 col-sm-6 col-xs-12">
+                @{
+                    WebSiteProject.Models.F_ViewModels.UnitPrint unit = ViewBag.Unit;
+                }
+                <div class="page_top_right">
+                    @{ 
+                        if (unit.isForward)
+                        {
+                            <a href="#" target="_blank" onclick="window.open('@Url.Action("Forward","F_Recommendedtrips" ,new {Title=ActiveItem.Title,Url=Request.Url.ToString() })', 'forward', config='height=750,width=650')" title="forward(new windown)"><img src="@Url.Content("~/img/icon_mail.png")" alt=""></a>
+                        }
+                        if (unit.isPrint)
+                        {
+                            <a href="@Url.Action("Print",new { ItemID=ActiveItem.ItemID,ModelID =ActiveItem.ModelID})" target="_blank" title="print(new windown)"><img src="@Url.Content("~/img/icon_print.png")" alt="print"></a>
+                        }
+                        <a href="#" target="_blank" title="link - web name(new window)"><img src="img/icon_link.png" alt=""></a>
+                        <a href="#" target="_blank" title="download - file name(new window)"><img src="img/icon_download.png" alt=""></a>
+                        if (unit.isShare)
+                        {
+                            <a href="http://www.facebook.com/share.php?u=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="facebook share(new window)"><img src="@Url.Content("~/img/icon_facebook.png")" alt=""></a>
+                            <a href="https://twitter.com/share?text=@ActiveItem.Title&url=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="twitter share(new window)"><img src="@Url.Content("~/img/icon_twitter.png")"alt=""></a>
+                        }
+                        if (unit.isRSS)
+                        {
+                            <a href="http://plurk.com/?qualifier=shares&status=[分享]@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))(@ActiveItem.Title&url)" target="_blank" title="plurk share(new window)"><img src="~/img/icon_plurk.png" alt=""></a>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--page top end-->
+    <!--page_con start-->
+    <div class="page_con">
+        <div class="container">
+
+            <h2>@ActiveItem.Title</h2>
+            <!--publishdate-->
+            <div class="date">@ActiveItem.PublicshDate.Value.ToString("yyyy/MM/dd")</div>
+
+            <div>
+                <!--文繞圖 start-->
+                @if (string.IsNullOrEmpty(ActiveItem.ImageFileOrgName) == false)
+                {
+                    <!--圖片置左-->
+                    if (ActiveItem.ImageFileLocation == "1")
+                    {
+                        <img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="@ActiveItem.ImageFileDesc" align="left">
+                    }
+                    else if (ActiveItem.ImageFileLocation == "2")
+                    {
+                        <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="center"></p></div>
+                    }
+                    else if (ActiveItem.ImageFileLocation == "3")
+                    {
+                        <img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="@ActiveItem.ImageFileDesc" align="right">
+                    }
+
+                }
+
+                <!--文繞圖 end-->
+                @Html.Raw(ActiveItem.HtmlContent.safeHtmlFragment())
+
+
+            </div>
+
+            <!--相關連結+檔案下載 start-->
+            <div class="page_bottom">
+
+                @{
+                    if (ActiveItem.LinkUrl != null && ActiveItem.LinkUrl != "")
+                    {
+                        <div class="link">
+                            <div class="title"><i class="fa fa-link" aria-hidden="true"></i>Link</div>
+                            <div class="con_font">
+                                <a href="@ActiveItem.LinkUrl" target="_blank" title="@ActiveItem.LinkUrlDesc (new window)">@ActiveItem.LinkUrlDesc</a>
+                            </div>
+                        </div>
+                    }
+
+                    if (ActiveItem.UploadFileName != null && ActiveItem.UploadFileName != "")
+                    {
+                        <div class="download">
+                            <div class="title"><i class="fa fa-download" aria-hidden="true"></i>Download</div>
+                            <div class="con_font">
+                                <a href="@Url.Action("FileDownLoad")?itemid=@ActiveItem.ItemID" target="_blank" title="@ActiveItem.UploadFileDesc (new window)">@ActiveItem.UploadFileName</a>
+                            </div>
+                        </div>
+                    }
+
+                }
+
+
+            </div>
+            <!--相關連結+檔案下載 end-->
+
+            <div class="back_btn">
+                <a href="@Url.Action("Index",new {nowpage=TempData["Page"] })" title="Back"><span class="btn_01">Back</span></a>
+            </div>
+        </div>
+    </div>
+    <!--page_con end-->
+
+</div>
+<!--page_content end-->
+<!--breadcrumbs start-->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="title">You are here</div>
+        <div class="font">
+            <a href="@Url.Action("Index","Home")" title="Home">Home</a> / <a href="@Url.Action("Index",new {nowpage=TempData["Page"] })" title="Fact">Fact</a> /@ActiveItem.Title
+        </div>
+    </div>
+</div>
+<!--breadcrumbs end-->
