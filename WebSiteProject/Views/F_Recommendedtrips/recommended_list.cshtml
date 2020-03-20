@@ -19,7 +19,7 @@
         <form method="post" action="@Url.Action("recommended_list")">
             <div class="container">
 
-                <label for="trip_day">
+                <label for="Day_Id">
                     I'd like to visit Taiwan for
                     @Html.DropDownList("Day_Id", (IEnumerable<SelectListItem>)ViewBag.RecommendedTrips_Day_ID, "all ltineraries", htmlAttributes: new { @class = "form-control w-auto display_inline", rows = "8", cols = "100" })
                     @*<select class="form-control w-auto display_inline" id="trip_day">
@@ -30,7 +30,7 @@
                 </select>*@
                 </label><br />
 
-                <label for="trip_area">
+                <label for="Dstination_typ">
                     I want to tour
                     @Html.DropDownList("Dstination_typ", (IEnumerable<SelectListItem>)ViewBag.RecommendedTrips_Destinations_ID, "all ltineraries", htmlAttributes: new { @class = "form-control w-auto display_inline", rows = "8", cols = "100" })
                     @*<select class="form-control w-auto display_inline" id="trip_area">
@@ -43,7 +43,7 @@
                 </select>*@
                 </label><br />
 
-                <label for="trip_do">
+                <label for="F_HashTag">
                     and I'm interested in
                     @Html.DropDownList("F_HashTag", (IEnumerable<SelectListItem>)ViewBag.F_HashTag_Type, "all ltineraries", htmlAttributes: new { @class = "form-control w-auto display_inline", rows = "8", cols = "100" })
                     @*<select class="form-control w-auto display_inline" id="trip_do">
@@ -55,7 +55,7 @@
                 </select>*@
                 </label>
 
-                <button class="btn_01 display_inline" id="btn_search" type="submit">Find trips</button>
+                <button class="btn_01 display_inline" id="btn_search" type="submit" title="Find trips">Find trips</button>
             </div>
         </form>
     </div>
@@ -65,7 +65,8 @@
         <div class="container">
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                 <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
-                <a href="@Url.Action("Index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i><a href="@Url.Action("Index")" title="Recommended trips">Recommended trips</a><i class="fa fa-angle-right" aria-hidden="true"></i><span>@(ViewBag.HashTag != "" ? ViewBag.HashTag : "")</span>
+                <a href="@Url.Action("Index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i><a href="@Url.Action("Index")" title="Recommended trips">Recommended trips</a>
+                <i class="fa fa-angle-right" aria-hidden="true"></i><span>@(ViewBag.HashTag != "" ? ViewBag.HashTag : "")</span>
             </div>
             <div class="col-md-5 col-sm-6 col-xs-12">
                 <!--<script>$.include("blocks/page_top.html");</script>-->

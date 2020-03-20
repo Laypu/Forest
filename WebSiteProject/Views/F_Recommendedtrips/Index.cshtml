@@ -145,7 +145,7 @@
     </noscript>
 
     <div class="banner_title">
-        <h2>RecommendedTrips</h2>
+        <h2>Recommended Trips</h2>
     </div>
 
 </div>
@@ -201,7 +201,7 @@
                         //"@item.Destination_Type_Title1 @item.Destination_Type_Title2"
                         var titleford = @item.Destination_Type_Title1 + " " + @item.Destination_Type_Title2;
                         <li>
-                            <a href="@Url.Action("Details", "Destination_Index",new { ImgTitle =item.Destination_Type_Title1})" title="@titleford">
+                            <a href="@Url.Action("recommended_list", "F_Recommendedtrips",new { Dstination_typ =item.Destination_Type_ID})" title="@titleford">
 
                                 <div class="img"><img src="@Url.Content("~/img/600x800.png")" alt="@item.Destination_Type_Title1" style="background:url(@Url.Content("~/UploadImage/Destination_Img/" + item.Destination_Type_ImgName))" /></div><!--建議尺寸600*800px-->
                                 <div class="font_box">
@@ -215,7 +215,7 @@
             </ul>
         </div>
         <!--page_img_list end-->
-    </div>s
+    </div>
     <!--page_img_list end-->
 </div>
 <!--page_content end-->

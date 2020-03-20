@@ -912,7 +912,6 @@
     <Content Include="js\fontswitch.js" />
     <Content Include="js\jquery.appear.min.js" />
     <Content Include="js\jquery.easypiechart.min.js" />
-    <Content Include="js\jquery.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\jquery.themepunch.revolution.min.js" />
     <Content Include="js\jquery.themepunch.tools.min.js" />

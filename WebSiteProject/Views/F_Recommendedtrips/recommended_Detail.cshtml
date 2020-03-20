@@ -145,7 +145,7 @@
         </div>
     </noscript>
     <div class="banner_title">
-        <h2>@ViewBag.Title</h2>
+        <h2>@Redmode.RecommendedTrips_Title</h2>
     </div>
 
 </div>
@@ -164,7 +164,7 @@
             <div class="item">
                 <div class="img"><img src="@Url.Content("~/UploadImage/Destination_Img")@ViewBag.Recommend_Detail_Img" alt="position" /></div><!--六大森林遊樂區page_icon_07~12(內洞、奧萬大、合歡山、大雪山、阿里山、墾丁)，後台可以選擇-->
                 <div class="font">
-                    @ViewBag.location
+                    @Redmode.RecommendedTrips_Location
                 </div>
             </div>
             <div class="item">
@@ -206,7 +206,7 @@
                     }
                     else if (Redmode.ImageFileLocation == "2")
                     {
-                        <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/RecommendedTrips/")@Redmode.ImageFileName" class="img_padding" alt="center"></p></div>
+                        <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/RecommendedTrips/")@Redmode.ImageFileName" class="img_padding" alt="@Redmode.ImageFileDesc"></p></div>
                     }
                     else if (Redmode.ImageFileLocation == "3")
                     {

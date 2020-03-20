@@ -177,21 +177,37 @@
             <li data-sr="enter bottom over 1.5s">
                 @if (item.Link_Mode == 1)
                 {
-                    <a href="@Url.Action("Fact_Detail",new {ItemID=item.ItemID,ModelID=item.ModelID })">
+                <a href="@Url.Action("Fact_Detail",new {ItemID=item.ItemID,ModelID=item.ModelID })" title="@item.Title">
+                    @if (item.RelateImageFileName.IsNullorEmpty())
+                    {
+                        <div class="img"><img src="@Url.Content("~//img/preset_pic")"  alt=""/></div><!--建議尺寸450*600px-->
+                    }
+                    else
+                    {
                         <div class="img"><img src="@Url.Content("~//UploadImage/ActiveItem/")@item.RelateImageFileName" alt="" /></div><!--建議尺寸450*600px-->
-                        <div class="font_box">
-                            <div class="title_big">@item.Title</div>
-                        </div>
-                    </a>
+                    }
+
+                    <div class="font_box">
+                        <div class="title_big">@item.Title</div>
+                    </div>
+                </a>
                 }
                 else
                 {
-                    <a href="#">
-                        <div class="img"><img src="@Url.Content("~//UploadImage/ActiveItem/")@item.RelateImageFileName" alt="" /></div><!--建議尺寸450*600px-->
-                        <div class="font_box">
-                            <div class="title_big">@item.Title</div>
-                        </div>
-                    </a>
+            <a href="#" title="@item.Title">
+                @if (item.RelateImageFileName.IsNullorEmpty())
+                {
+                    <div class="img"><img src="@Url.Content("~//img/preset_pic")" alt="" /></div><!--建議尺寸450*600px-->
+                }
+                else
+                {
+                    <div class="img"><img src="@Url.Content("~//UploadImage/ActiveItem/")@item.RelateImageFileName" alt="" /></div><!--建議尺寸450*600px-->
+                }
+
+                <div class="font_box">
+                    <div class="title_big">@item.Title</div>
+                </div>
+            </a>
                 }
 
             </li>
