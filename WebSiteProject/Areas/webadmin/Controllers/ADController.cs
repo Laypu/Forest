@@ -155,6 +155,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             {
                 TempData["site_id"] = site_id;
             }
+            
             ViewBag.sitid = -1;
             var SiteList = db.SiteLists.Select(s => new { ID = s.SiteList_ID, Name = s.SiteList_Name_ch + "－" + s.SiteList_Name_en, s.Sort }).OrderBy(s => s.Sort);            
             ViewBag.SiteList = new SelectList(SiteList, "ID", "Name", siteid);
@@ -215,6 +216,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     {
                         ViewBag.ReTitle = "Fact_Banner(Master)";
                     }
+                    ViewBag.siteid = siteid;
                 }
                 else if (type == "down")
                 {
@@ -253,8 +255,8 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 var adset = _IADManager.GetADSet(this.LanguageID, type, stype);
                 ViewBag.MaxNum = adset.Max_Num;
 
-               
 
+                ViewBag.HomeId = siteid;
 
                 return View();
             }

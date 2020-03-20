@@ -223,7 +223,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="版面設定"><i class="icon-puzzle"></i> <span class="top_menu_title">版面設定</span> <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li><a path="@Url.Action("SiteLayout", "Site",new { stype = "P" })" class="topmenu" title="網站版面資訊設定">網站版面資訊設定</a></li>
-                                    <li><a path="@Url.Action("Index_FreeZone","Home")" class="topmenu" title="入口首頁配置">入口首頁配置</a></li>
+                                    <li><a path="@Url.Action("Index_ADMain", "Home", new { home_type = "main", home_stype = "P" })" class="topmenu" title="入口首頁配置">入口首頁配置</a></li>
                                     @*<li><a path="@Url.Action("PageNewsEdit", "Site",new { stype="P" })" class="topmenu" title="入口首頁配置">入口首頁配置</a></li>*@
                                     @*<li><a path="@Url.Action("SiteLangText", "Site")" class="topmenu" title="語系通用文字設定">語系通用文字設定</a></li>*@
                                 </ul>
@@ -256,7 +256,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a path="@Url.Action("Index", "SEO")" class="topmenu" title="SEO優化設定">SEO優化設定</a></li>
                                     <li><a path="@Url.Action("Index", "Model")" class="topmenu" title="選單程式模組管理">選單程式模組管理</a></li>
-                                    <li><a path="@Url.Action("Index", "AD",new { type = "main" ,stype="P" })" class="topmenu" title="輪播廣告管理(主廣告)">輪播廣告管理(主廣告)</a></li>
+                                    @*<li><a path="@Url.Action("Index", "AD",new { type = "main" ,stype="P" })" class="topmenu" title="輪播廣告管理(主廣告)">輪播廣告管理(主廣告)</a></li>*@
                                     @*<li><a path="@Url.Action("Index", "AD",new { type = "main" ,stype="M" })" class="topmenu" title="輪播廣告管理(手機版-主廣告)">輪播廣告管理(手機版-主廣告)</a></li>*@
                                     <li><a path="@Url.Action("IndexSetting", "Model")" class="topmenu" title="全文檢索管理">全文檢索管理</a></li>
                                 </ul>
