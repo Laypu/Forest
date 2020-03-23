@@ -1162,7 +1162,27 @@ namespace Services.Manager
                     }
                 }
             }
+            if (model.ImageBannerName.IsNullorEmpty())
+            {
 
+                if (System.IO.File.Exists(oldroot + "\\" + olddata.First().ImageBannerName))
+                {
+                    System.IO.File.Delete(oldroot + "\\" + olddata.First().ImageBannerName);
+                }
+                model.ImageBannerOrgName = "";
+                model.ImageBannerName = "";
+            }
+            else
+            {
+
+                if (olddata.First().ImageBannerName != model.ImageBannerName)
+                {
+                    if (System.IO.File.Exists(oldroot + "\\" + olddata.First().ImageBannerName))
+                    {
+                        System.IO.File.Delete(oldroot + "\\" + olddata.First().ImageBannerName);
+                    }
+                }
+            }
             _seosqlrepository.DelDataUseWhere("TypeName='ActiveItem' and TypeID=@1", new object[] { model.ItemID });
             var admin = _Usersqlrepository.GetByWhere("Account=@1", new object[] { account });
             var savemodel = new ActiveItem()
