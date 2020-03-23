@@ -174,9 +174,9 @@
                             <div class="col-md-10 col-sm-12 bg-white mobile_white">
                                 <div class="col-md-12">
                                     <div style="display:inline">
-                                        @Html.ValueFor(model => model.Recommend_Img)<br />
-                                        <input id="file_relateimage1" type="file" class="display_inline" name="ImageFile" accept="image/*" />
-                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度1000 * 225px</div>
+                                        <a href="@Url.Content("~/UploadImage/Destination_Img/")@Model.Recommend_Img">@Html.ValueFor(model => model.Recommend_Img)</a><br />
+                                        <input id="file_relateimage1" type="file" class="display_inline" name="Img_File" accept="image/*" />
+                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內</div>
                                         @Html.EditorFor(model => model.Recommend_Img, new { htmlAttributes = new { @class = "selected", @style = "display:none" } })
                                     </div>
                                 </div>
@@ -188,9 +188,10 @@
                             <div class="col-md-10 col-sm-12 bg-white mobile_white">
                                 <div class="col-md-12">
                                     <div style="display:inline">
-                                        @Html.ValueFor(model => model.Recommend_Detail_Img)<br />
-                                        <input id="file_relateimage2" type="file" class="display_inline" name="ImageFile" accept="image/*" />
-                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸寬度1000 * 225px</div>
+                                        <a href="@Url.Content("~/UploadImage/Destination_Img/")@Model.Recommend_Detail_Img">@Html.ValueFor(model => model.Recommend_Detail_Img)</a><br />
+                                        
+                                        <input id="file_relateimage2" type="file" class="display_inline" name="Img_File" accept="image/*" />
+                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內</div>
                                         @Html.EditorFor(model => model.Recommend_Detail_Img, new { htmlAttributes = new { @class = "selected", @style = "display:none" } })
                                     </div>
                                 </div>
@@ -394,7 +395,7 @@
         
 
 
-        ShowImg()
+        ShowImg();
         //送出表單
         $("#btn_submit").click(function () {
             
@@ -428,28 +429,21 @@
 
             $("input[type='file']").change(function () {
 
-                var imgid = $(this).attr("data-imgid");
-                var reader = new FileReader();
-                reader.readAsDataURL(this.files[0]);
+                
                 var date = new Date();
                 var time = date.getTime();
                 var p =  time+this.files[0].name;
-                $(this).parent().children(".selected").val(p)
-                reader.onload = function (e) {
-
-                    $(`#${imgid}`).attr("src", e.target.result)
-
-                    
-                };
+                $(this).parent().children(".selected").val(p);
+                
                 
 
                 var file_data = $(this).prop('files')[0];
-
                 
 
                 var form_data = new FormData();  //建構new FormData()
+
                 form_data.append('Img_File', file_data);
-               
+                form_data.append('Img_FileName', p);
                     $.ajax({
                         type: "POST",
                         url: `@Url.Action("Upload","Destination_Index")`,

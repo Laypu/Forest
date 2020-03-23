@@ -55,20 +55,21 @@
             <div class="portlet-body form">
                 <div class="form-horizontal form-bordered">
                     <div class="form-body" id="form-body">
-                        @if (Model.Site_ID == 15 || Model.Site_ID == 17 ||Model.Site_ID == 14)
-                        {
-                            @Html.HiddenFor(Model => Model.Site_ID)
-                        }
-                        else
-                        {
-                            <div class="form-group">
-                                <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">選擇類別</div>
-                                <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
-                                    @Html.DropDownListFor(model => model.Site_ID, (SelectList)ViewBag.SiteList, "請選擇", new { @class = "form-control checkitem" })
-                                </div>
-                            </div>
+                        @*@if (Model.Site_ID == 15 || Model.Site_ID == 17 ||Model.Site_ID == 14)
+        {*@
 
-                        }
+                        @*}
+        else
+        {
+            <div class="form-group">
+                <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">選擇類別</div>
+                <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                    @Html.DropDownListFor(model => model.Site_ID, (SelectList)ViewBag.SiteList, "請選擇", new { @class = "form-control checkitem" })
+                </div>
+            </div>
+
+        }*@
+                        @Html.HiddenFor(Model => Model.Site_ID)
                         <div class="form-group">
                             <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">顯示日期</div>
                             <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
@@ -109,7 +110,7 @@
                                 <input id="file_image" type="file" name="uploadfile" accept="image/*" />
                                 @if (Model.Site_ID == 15 || Model.Site_ID == 17 || Model.Site_ID == 14)
                                 {
-                                 <span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸4000*850px</span>
+                                    <span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸4000*850px</span>
                                 }
                                 else if (Model.SType == "P")
                                 {
