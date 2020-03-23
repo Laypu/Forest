@@ -234,7 +234,16 @@
                         <li>
                             <a href="@Url.Action("Details", "Destination_Index",new { ImgTitle =@item.Destination_Type_Title1})" title="@titleford">
 
-                                <div class="img"><img src="@Url.Content("~/img/600x800.png")" alt="@item.Destination_Type_Title1" style="background:url(@Url.Content("~/UploadImage/Destination_Img/" + item.Destination_Type_ImgName))" /></div><!--建議尺寸600*800px-->
+                                @if (item.Destination_Type_ImgName.IsNullorEmpty())
+                                {
+                                    <div class="img"><img src="@Url.Content("~/Img/preset_pic.jpg")" alt="@item.Destination_Type_Title1" /></div><!--建議尺寸600*800px-->
+                                
+                                }
+                                else 
+                                {
+                                    <div class="img"><img src="@Url.Content("~/UploadImage/Destination_Img/" + item.Destination_Type_ImgName)" alt="@item.Destination_Type_Title1" /></div><!--建議尺寸600*800px-->
+                                
+                                }
                                 <div class="font_box">
                                     <div class="title">@item.Destination_Type_Title1<div class="second_line">@item.Destination_Type_Title2</div></div>
                                 </div>

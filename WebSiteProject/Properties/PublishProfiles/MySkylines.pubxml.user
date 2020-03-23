@@ -652,10 +652,10 @@
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="bin/WebSiteProject.dll">
-      <publishTime>03/20/2020 17:31:13</publishTime>
+      <publishTime>03/20/2020 18:16:58</publishTime>
     </File>
     <File Include="bin/WebSiteProject.pdb">
-      <publishTime>03/20/2020 17:31:13</publishTime>
+      <publishTime>03/20/2020 18:16:58</publishTime>
     </File>
     <File Include="bin/zh-Hant/EntityFramework.resources.dll">
       <publishTime>02/27/2020 18:32:58</publishTime>
@@ -8926,7 +8926,7 @@
       <publishTime>03/20/2020 14:32:05</publishTime>
     </File>
     <File Include="Views/Destination_Index/Index.cshtml">
-      <publishTime>03/18/2020 09:26:28</publishTime>
+      <publishTime>03/20/2020 18:15:33</publishTime>
     </File>
     <File Include="Views/Destination_Index/_MapLegendPartial.cshtml">
       <publishTime>02/28/2020 15:28:34</publishTime>
@@ -8977,7 +8977,7 @@
       <publishTime>03/17/2020 20:03:18</publishTime>
     </File>
     <File Include="Views/F_Recommendedtrips/Index.cshtml">
-      <publishTime>03/20/2020 16:06:10</publishTime>
+      <publishTime>03/20/2020 18:15:59</publishTime>
     </File>
     <File Include="Views/F_Recommendedtrips/Print.cshtml">
       <publishTime>03/20/2020 16:06:10</publishTime>

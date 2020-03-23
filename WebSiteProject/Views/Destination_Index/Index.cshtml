@@ -236,12 +236,12 @@
 
                                 @if (item.Destination_Type_ImgName.IsNullorEmpty())
                                 {
-                                    <div class="img"><img src="@Url.Content("~/Img/preset_pic.jpg")" alt="@item.Destination_Type_Title1" /></div><!--建議尺寸600*800px-->
+                                    <div class="img"><img src="@Url.Content("~/Img/preset_pic.jpg")" alt="@item.Destination_Type_Title1" width=450 height=600/></div><!--建議尺寸450*600px-->
                                 
                                 }
                                 else 
                                 {
-                                    <div class="img"><img src="@Url.Content("~/UploadImage/Destination_Img/" + item.Destination_Type_ImgName))" alt="@item.Destination_Type_Title1" /></div><!--建議尺寸600*800px-->
+                                    <div class="img"><img src="@Url.Content("~/UploadImage/Destination_Img/" + item.Destination_Type_ImgName)" alt="@item.Destination_Type_Title1" width=450 height=600/></div><!--建議尺寸600*800px-->
                                 
                                 }
                                 <div class="font_box">
