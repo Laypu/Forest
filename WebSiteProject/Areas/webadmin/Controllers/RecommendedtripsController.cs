@@ -840,6 +840,26 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     {
                         return Json("更新作業失敗", JsonRequestBehavior.AllowGet);
                     }
+                    if(nowseq==1)
+                    {
+                        var ToInptSeq2 = db.RecommendedTrips.Where(p => p.Sort > nowseq && p.Sort <= seq);
+
+                        foreach (var item in ToInptSeq2)
+                        {
+                            item.Sort = item.Sort - 1;
+                        }
+                        fromseq.Sort = seq;
+                        db.Entry(fromseq).State = System.Data.Entity.EntityState.Modified;
+                        var r2 = db.SaveChanges();
+                        if (r2 > 0)
+                        {
+                            return Json("更新作業成功", JsonRequestBehavior.AllowGet);
+                        }
+                        else
+                        {
+                            return Json("更新作業失敗", JsonRequestBehavior.AllowGet);
+                        }
+                    }
                     var ToInptSeq = db.RecommendedTrips.Where(p => p.Sort >= seq && p.Sort< nowseq);
                     foreach (var item in ToInptSeq)
                     {
