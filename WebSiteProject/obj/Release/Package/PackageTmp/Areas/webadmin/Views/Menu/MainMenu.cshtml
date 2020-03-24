@@ -29,7 +29,10 @@
 
     <!--set item start-->
     <div class="table-toolbar">
+        @*if為客製判斷*@
+        
         <button class="btn green-meadow" id="Btn_AddMenu">新增主選單<i class="fa fa-plus"></i></button>
+        
     </div>
     <!--set item end-->
     <!--課程類別列程 start-->
@@ -65,11 +68,25 @@
                                     {
                                         <td class='class_03' rowspan='@l1rowcount'>
                                             <div class='display_inline' style='float:left'>
-                                                @if (ViewBag.onlylevle1 != "Y")
+                                                @*@if (ViewBag.onlylevle1 != "Y")
+        {
+
+            <button type='button' class='btn green-meadow btn-xs addmenu' index='@l1.ID' nextlevel='@(l1.MenuLevel + 1)'><i class='fa fa-plus' aria-hidden='true'></i></button>
+
+
+        }*@
+                                                @if (@l1.ID == 24){ }
+                                                else if (@l1.ID == 179) { }
+                                                else if (@l1.ID == 176) { }
+                                                else if (@l1.ID == 57) { }
+                                                else if (@l1.ID == 45) { }
+                                                else if (@l1.ID == 154) { }
+                                                else if (@l1.ID == 155) { }
+                                                else
                                                 {
-                                                    <button type='button' class='btn green-meadow btn-xs addmenu' index='@l1.ID' nextlevel='@(l1.MenuLevel + 1)'><i class='fa fa-plus' aria-hidden='true'></i></button>
+                                                    <button type='button' class='btn red-mint btn-xs delmenu' index='@l1.ID'><i class='glyphicon glyphicon-trash' aria-hidden='true'></i></button>
                                                 }
-                                                <button type='button' class='btn red-mint btn-xs delmenu' index='@l1.ID'><i class='glyphicon glyphicon-trash' aria-hidden='true'></i></button>
+
                                                 @if (l1.Status.Value)
                                                 {
                                                     <button type='button' class='btn yellow btn-xs menudisable' index='@l1.ID'><i class='fa fa-check-square' aria-hidden='true'></i></button>}

@@ -79,20 +79,20 @@
 
                 <li>
                     @ViewBag.ReTitle
-                <i class="fa fa-circle"></i>
-            </li>
+                    <i class="fa fa-circle"></i>
+                </li>
 
-        }
-        else
-        {
-    <li>
-        @*@ViewBag.Title*@
-        入口首頁配置
-        <i class="fa fa-circle"></i>
-    </li>
+            }
+            else
+            {
+                <li>
+                    @*@ViewBag.Title*@
+                    入口首頁配置
+                    <i class="fa fa-circle"></i>
+                </li>
 
-    }
-    <li>輪播圖設定</li>
+            }
+            <li>輪播圖設定</li>
         }
 
 
@@ -101,7 +101,7 @@
 <!--page bar end-->
 @if (ViewBag.MenuType == 24 || (int)Session["F_MenuType"] == 24)
 {
-    <div class="title_01">Things To Do輪圖</div>
+    <div class="title_01">Things To Do輪播圖</div>
 }
 @if (ViewBag.MenuType == 179 || (int)Session["F_MenuType"] == 179)
 {
@@ -123,6 +123,14 @@
 {
     <div class="title_01">入口首頁配置</div>
 }
+@*@if (ViewBag.sitid == 5 || (int)Session["F_MenuType"] == 5 ||
+     ViewBag.sitid == 6 || (int)Session["F_MenuType"] == 6 ||
+     ViewBag.sitid == 7 || (int)Session["F_MenuType"] == 7 ||
+     ViewBag.sitid == 8 || (int)Session["F_MenuType"] == 8 ||
+     ViewBag.sitid == 9 || (int)Session["F_MenuType"] == 9)
+{
+    <div class="title_01">Things To Do輪播圖</div>
+}*@
 
 
 
@@ -247,6 +255,7 @@
 
                     </div>
                 }
+
 
 
             }
@@ -386,7 +395,14 @@
             RegisterClick("#eventtable", ".chkstatus", '@Url.Action("SetStatus")', obj);
             RegisterClick("#eventtable", ".chkfixed", '@Url.Action("SetFixed")', obj);
             $("#btn_add").click(function () {
-                if (@ViewBag.sitid== 15 ||@ViewBag.sitid== 17|| @ViewBag.sitid== 14) {
+                if (@ViewBag.sitid == 15 ||
+                    @ViewBag.sitid == 17 ||
+                    @ViewBag.sitid == 14 ||
+                    @ViewBag.sitid == 5 ||
+                    @ViewBag.sitid == 6 ||
+                    @ViewBag.sitid == 7 ||
+                    @ViewBag.sitid == 8 ||
+                    @ViewBag.sitid == 9) {
                     obj.siteid = @ViewBag.sitid;
                     obj.maintype=@ViewBag.MenuType;
                     CreatePost('@Url.Action("ADEdit")', obj);

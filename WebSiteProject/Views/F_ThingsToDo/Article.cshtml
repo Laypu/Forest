@@ -16,6 +16,7 @@
 @{
     var TTDModel = (WebSiteProject.Models.MessageItem)ViewBag.TTD_Detail;
     var banner = ViewBag.MessageBanner;
+    var dat = (DateTime)TTDModel.PublicshDate;
     <!--banner start-->
 <div class="page_banner one_pic">
     <!--一張封面照；建議尺寸寬2000*600px；後台無上傳圖片時，img不顯示(但div page_banner要保留)；圖片alt=標題-->
@@ -61,7 +62,7 @@
 
                 <h2>@TTDModel.Title</h2>
 
-                <div class="date">@TTDModel.PublicshDate</div>
+                <div class="date">@dat.ToString("yyyy/MM/dd")</div>
 
                 <div>
                     <!--文繞圖 start-->
@@ -143,7 +144,7 @@
 <script>
     $(document).ready(function () {
         $("img").parent("p").addClass("text-center");
-
+        $("#mainNav>li:nth-child(2)").children().addClass("active").parent().siblings().children().removeClass("active");
 
 
     });
