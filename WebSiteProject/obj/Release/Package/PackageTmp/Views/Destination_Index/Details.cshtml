@@ -51,7 +51,7 @@
                                         <div class="title">@ad.AD_Name</div>
                                         <div class="con_font">@Html.Raw(ad.ADDesc)</div><br />
                                         <div class="btn_box">
-                                            <a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")">
+                                            <a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode == "1" ? "" : "(" + Common.GetLangText("New Window") + ")")" target="@(ad.Link_Mode == "1" ? "" : "_black")">
                                                 <span class="btn_01">
                                                     @Common.GetLangText("View")
                                                 <i class="fas fa-arrow-alt-circle-right" aria-hidden="true">
@@ -180,8 +180,8 @@
         <div class="container">
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                 <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
-                <a href="@Url.Action("Index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
-                <a href="@Url.Action("Index","Destination_Index",new {langid = 1 })">Destinations</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="@Url.Action("Index", "Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="@Url.Action("Index", "Destination_Index", new { langid = 1 })">Destinations</a><i class="fa fa-angle-right" aria-hidden="true"></i>
                 @BanTitle
             </div>
             <div class="col-md-5 col-sm-6 col-xs-12">
@@ -194,89 +194,136 @@
     <div class="article_list">
         <div class="container">
 
-            <ul class="list">
+                <ul class="list" id="Article">
+                    @{
+                        var MessageItems = (IEnumerable<WebSiteProject.Models.MessageItem>)ViewBag.MessageItems;
+                        //文章有幾篇
+                        var TotalCount = MessageItems.Count();
+                        //分幾頁
+                        int PageCount;
+                        if (TotalCount % 9 == 0)
+                        {
+                            PageCount = TotalCount / 9;
+                        }
+                        else
+                        {
+                            PageCount = TotalCount / 9 + 1;
+                        }
+                        //var NewMessageItems = MessageItems.Skip((NowPage - 1) * 9).Take(9);
 
-                @{
-                    var MessageItems = (IEnumerable<WebSiteProject.Models.MessageItem>)ViewBag.MessageItems;
-                    var Message10Hash =(IEnumerable<WebSiteProject.Models.Message10Hash>)ViewBag.Message10Hash;
-                    var Category = ViewBag.Category;
-                    var n = 1;
-                    foreach (var item in MessageItems)
-                    {
-                        <li data-sr="enter bottom over 1.5s">
-                            <div class="img imh_opacity">
-                                <a href="@Url.Action("Article","Destination_Index",new {langid = 1,Category = BanTitle,Aid = item.ItemID })" title="@item.Title">
-                                    <img src="@Url.Content("~/UploadImage/MessageItem/")@item.RelateImageFileName" alt="@item.Title" />
-                                </a>
-                            </div>
-                            <div class="font_box">
-                                <div class="title">
-                                    <a href="@Url.Action("Article","Destination_Index",new {langid = 1,Category = BanTitle,Aid = item.ItemID })" title="@item.Title">@item.Title</a>
+
+                        var Message10Hash = (IEnumerable<WebSiteProject.Models.Message10Hash>)ViewBag.Message10Hash;
+                        var Category = ViewBag.Category;
+                        var n = 1;
+                        foreach (var item in MessageItems)
+                        {
+                            <li data-sr="enter bottom over 1.5s">
+                                <div class="img imh_opacity">
+                                    <a href="@Url.Action("Article","Destination_Index",new {langid = 1,Category = BanTitle,Aid = item.ItemID })" title="@item.Title">
+                                        @if (item.RelateImageFileName.IsNullorEmpty())
+                                        {
+                                            <img src="@Url.Content("~/Img/preset_pic.jpg")" alt="@item.Title" width=450 height=600 /><!--建議尺寸450*600px-->
+
+                                        }
+                                        else
+                                        {
+
+                                            <img src="@Url.Content("~/UploadImage/MessageItem/")@item.RelateImageFileName" alt="@item.Title" />
+                                        }
+                                    </a>
                                 </div>
-                                <!--Hastag-->
-                                <div class="link" id="HashTag">
+                                <div class="font_box">
+                                    <div class="title">
+                                        <a href="@Url.Action("Article","Destination_Index",new {langid = 1,Category = BanTitle,Aid = item.ItemID })" title="@item.Title">@item.Title</a>
+                                    </div>
+                                    <!--Hastag-->
+                                    <div class="link" id="HashTag">
 
-                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H &nbsp;</a>
-                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H &nbsp;</a>
-                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H &nbsp;</a>
-                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H &nbsp;</a>
-                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H &nbsp;</a>
-                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H &nbsp;</a>
-                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H &nbsp;</a>
-                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H &nbsp;</a>
-                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H &nbsp;</a>
-                                    <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H </a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H &nbsp;</a>
+                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H </a>
 
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    }
-                }
-                @*<li data-sr="enter bottom over 1.5s">
-                        <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_11.jpg" alt="" /></a></div>
-                        <div class="font_box">
-                            <div class="title"><a href="#" title="">The Liechtenstein Trail: Walking the length of a country in a weekend</a></div>
-                            <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
-                        </div>
-                    </li>
-                    <li data-sr="enter bottom over 1.5s">
-                        <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_12.jpg" alt="" /></a></div>
-                        <div class="font_box">
-                            <div class="title"><a href="#" title="">10 of world’s most eco-friendly golf courses</a></div>
-                            <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
-                        </div>
-                    </li>
-                    <li data-sr="enter bottom over 1.5s">
-                        <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_13.jpg" alt="" /></a></div>
-                        <div class="font_box">
-                            <div class="title"><a href="#" title="">Somewhere special to stay: 7 gorgeous new boutique hotels around the world</a></div>
-                            <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
-                        </div>
-                    </li>
-                    <li data-sr="enter bottom over 1.5s">
-                        <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_14.jpg" alt="" /></a></div>
-                        <div class="font_box">
-                            <div class="title"><a href="#" title="">Ski Guide: Samoens, France</a></div>
-                            <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
-                        </div>
-                    </li>
-                    <li data-sr="enter bottom over 1.5s">
-                        <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_15.jpg" alt="" /></a></div>
-                        <div class="font_box">
-                            <div class="title"><a href="#" title="">Walking the Rota Vicentina along Portugal’s Atlantic Coast</a></div>
-                            <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
-                        </div>
-                    </li>
+                            </li>
+                            }
 
-                    <li data-sr="enter bottom over 1.5s">
-                        <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_16.jpg" alt="" /></a></div>
-                        <div class="font_box">
-                            <div class="title"><a href="#" title="">TExploring Norway’s South Coast</a></div>
-                            <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
-                        </div>
-                    </li>*@
+                    } 
+                </ul>
+            
+            @*<li data-sr="enter bottom over 1.5s">
+            <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_11.jpg" alt="" /></a></div>
+            <div class="font_box">
+                <div class="title"><a href="#" title="">The Liechtenstein Trail: Walking the length of a country in a weekend</a></div>
+                <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
+            </div>
+        </li>
+        <li data-sr="enter bottom over 1.5s">
+            <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_12.jpg" alt="" /></a></div>
+            <div class="font_box">
+                <div class="title"><a href="#" title="">10 of world’s most eco-friendly golf courses</a></div>
+                <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
+            </div>
+        </li>
+        <li data-sr="enter bottom over 1.5s">
+            <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_13.jpg" alt="" /></a></div>
+            <div class="font_box">
+                <div class="title"><a href="#" title="">Somewhere special to stay: 7 gorgeous new boutique hotels around the world</a></div>
+                <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
+            </div>
+        </li>
+        <li data-sr="enter bottom over 1.5s">
+            <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_14.jpg" alt="" /></a></div>
+            <div class="font_box">
+                <div class="title"><a href="#" title="">Ski Guide: Samoens, France</a></div>
+                <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
+            </div>
+        </li>
+        <li data-sr="enter bottom over 1.5s">
+            <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_15.jpg" alt="" /></a></div>
+            <div class="font_box">
+                <div class="title"><a href="#" title="">Walking the Rota Vicentina along Portugal’s Atlantic Coast</a></div>
+                <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
+            </div>
+        </li>
 
-            </ul>
+        <li data-sr="enter bottom over 1.5s">
+            <div class="img imh_opacity"><a href="#" title=""><img src="img/d_pic_16.jpg" alt="" /></a></div>
+            <div class="font_box">
+                <div class="title"><a href="#" title="">TExploring Norway’s South Coast</a></div>
+                <div class="link"><a href="#" title="">#Walking & Hiking</a> &nbsp; <a href="#" title="">#Clamping</a> </div>
+            </div>
+        </li>*@
+
+
+
+            @*分頁*@
+            @*<div id="page_number" class="table-toolbar">
+                <div class="col-md-4 col-sm-12 col-xs-12 page_total" style="visibility: visible; ">Total:@TotalCount, Display@((NowPage - 1) * 9 + 1)~@(NowPage * 9 < TotalCount ? NowPage * 9 : TotalCount)</div>
+                <div class="col-md-8 col-sm-12 col-xs-12 page_icon" style="visibility: visible; ">
+                    <div class="btn-group">
+                        <button type="button" class="btn_page accesskey" title="First" id="First"><i class="fa fa-angle-double-left" aria-hidden="true"></i><span class="sr-only">First</span></button>
+                        <button type="button" class="btn_page accesskey" title="Prev" id="Prev"><i class="fa fa-angle-left" aria-hidden="true"></i><span class="sr-only">Prev</span></button>
+                        <select class="form-control page_list accesskey">
+                            @for (var i = 1; i <= PageCount; i++)
+                            {
+                                <option>@i</option>
+                            }
+
+                        </select>
+                        <button type="button" class="btn_page accesskey" title="GO" id="Go">GO</button>英文GO
+                        <button type="button" class="btn_page accesskey" title="Next" id="Next"><i class="fa fa-angle-right" aria-hidden="true"></i><span class="sr-only">Next</span></button>
+                        <button type="button" class="btn_page accesskey" title="Last" id="Last"><i class="fa fa-angle-double-right" aria-hidden="true"></i><span class="sr-only">Last</span></button>
+                    </div>
+                </div>
+            </div>*@
         </div>
     </div>
     <!--article_list end-->
@@ -303,19 +350,20 @@
 
 <script>
     $(function () {
+        //標籤紅顏色
         $("#mainNav>li>a").first().addClass("active").parent().siblings().children().removeClass("active");
 
-        
+
 
         //點擊maplegend換圖
         $(".bookmark_item>li>a").click(function () {
 
             $(this).addClass("active").parent().siblings().children().removeClass("active");
 
+
             var BookID = $(this).attr("id");
 
-            switch(BookID)
-            {
+            switch (BookID) {
                 case "page_01":
                     $("#bookmark_item_detail").empty();
                     document.getElementById("bookmark_item_detail").innerHTML = `<div class="locaton"><ul>
@@ -499,7 +547,14 @@
 
 
         })
-        
+
+
+        //$("#First").click(function(){
+        //    NowPage= 1;
+        //    $("#Article").load(location.href + " #Article >*");
+        //    //window.location.reload();
+        //});
+
 
     })
     

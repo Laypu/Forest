@@ -105,7 +105,7 @@
                     <div class="header-column">
 
                         <div class="header-logo">
-                            <a href="#main-content" class="sr-only  sr-only-focusable" title="@Common.GetLangText("跳到主要內容區塊")">@Common.GetLangText("跳到主要內容區塊")</a>
+                            <a href="#main-content" class="sr-only  sr-only-focusable" title="@Common.GetLangText("Go To Main-content")">@Common.GetLangText("Go To Main-content")</a>
                             <h1>
                                 <a href="@Url.Action("Index", "Home")" title="@Model.SEOTitleOrg">
                                     <img alt=" " width="130" data-sticky-width="130" data-sticky-top="0" src="@Model.LogoUrl">
@@ -329,7 +329,7 @@
 @RenderSection("scripts_V", required: false)
 <script type="text/javascript">
     $(function () {
-         $(".scroll-to-top").attr('title','@Common.GetLangText("回頂端")');
+         $(".scroll-to-top").attr('title','@Common.GetLangText("Go To Top")');
 
         size_set('@Model.Fontsize');
         $("body").delegate((".newopen"), "click", function () {

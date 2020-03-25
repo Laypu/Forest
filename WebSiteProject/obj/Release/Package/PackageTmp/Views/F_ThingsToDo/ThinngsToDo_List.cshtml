@@ -198,7 +198,20 @@
                     foreach (var item in FTModel)
                     {
                         <li data-sr="enter bottom over 1.5s">
-                            <div class="img imh_opacity"><a href="@Url.Action("Article","F_ThingsToDo",new {listid= item.ItemID,TTDTitle = @ViewBag.F_Thingtodo_Title})" title="@item.Title"><img src="@Url.Content("~/UploadImage/MessageItem/")@item.RelateImageFileName" alt="@item.Title" /></a></div>
+                            <div class="img imh_opacity">
+                                <a href="@Url.Action("Article","F_ThingsToDo",new {listid= item.ItemID,TTDTitle = @ViewBag.F_Thingtodo_Title})" title="@item.Title">
+                                    @if (item.RelateImageFileName.IsNullorEmpty())
+                                    {
+                                        <img src="@Url.Content("~/Img/preset_pic.jpg")" alt="@item.Title" width=450 height=600/><!--建議尺寸450*600px-->
+
+                                    }
+                                    else 
+                                    {
+                                        <img src="@Url.Content("~/UploadImage/MessageItem/")@item.RelateImageFileName" alt="@item.Title" />
+                                    }
+                                    
+                                </a>
+                            </div>
                             <div class="font_box">
                                 <div class="title"><a href="@Url.Action("Article","F_ThingsToDo",new {listid= item.ItemID,TTDTitle = @ViewBag.F_Thingtodo_Title})" title="@item.Title">@item.Title</a></div>
                                 <div class="link margin0" data-itemID="@item.ItemID">
@@ -291,7 +304,7 @@
         //gethasgtag();
     });
 
-
+    $("#mainNav>li:nth-child(2)").children().addClass("active").parent().siblings().children().removeClass("active");
     @*function gethasgtag() {
         var List = $(".margin0");
         console.log(List);

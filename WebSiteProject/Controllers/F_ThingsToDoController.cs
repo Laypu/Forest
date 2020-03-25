@@ -396,6 +396,7 @@ namespace WebSiteProject.Controllers
             ViewBag.TTD_Detail = db.MessageItems.Find(listid);
             ViewBag.MessageBanner = db.MessageBanners.Where(m => m.MessageItem_ID == listid).FirstOrDefault().MessageBanner_Img;
             ViewBag.Category = TTDTitle;
+            ViewBag.Unit = db.MessageUnitSettings.Where(p => p.MainID == 9).Select(p => new UnitPrint { isPrint = (bool)p.IsPrint, isForward = (bool)p.IsForward, isRSS = (bool)p.IsRSS, isShare = (bool)p.IsShare }).FirstOrDefault();
 
 
             return View(viewmodel);

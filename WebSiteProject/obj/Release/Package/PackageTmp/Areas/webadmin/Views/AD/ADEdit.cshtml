@@ -18,7 +18,7 @@
         else
         {
             <li>
-                <a href="@Url.Action("Index",new {type=Model.Type_ID,site_id=Model.Site_ID,MenuType="-1",stype="P"})"> Home </a>
+                <a href="@Url.Action("Index", new { type = Model.Type_ID, site_id = Model.Site_ID, MenuType = "-1", stype = "P" })"> Home </a>
                 <i class="fa fa-circle"></i>
             </li>
             if (Model.ID == -1)
@@ -125,7 +125,7 @@
                             <div class="col-md-2 col-sm-12 search_item">影片上傳</div>
                             <div class="col-md-10 col-sm-12 bg-white mobile_white">
                                 <div class="col-md-12">
-                                    <div id="div_olduploadfile" style="display:none"><a href="@Url.Action("VideoDownLoad",new { id=Model.ID,type=Model.Type})" target="preview">@Model.UploadVideoFileName</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delupfile">刪除</label></div>
+                                    <div id="div_olduploadfile" style="display:none"><a href="@Url.Action("VideoDownLoad", new { id = Model.ID, type = Model.Type })" target="preview">@Model.UploadVideoFileName</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delupfile">刪除</label></div>
                                     <div id="div_nofile" style="display:inline">
                                         <div class="col-md-10">
                                             <input type="file" id="uploadvideofile" class="display_inline" name="UploadVideoFile" accept="video/*">
@@ -135,9 +135,23 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-2 col-sm-2 col-xs-12 search_item">連結路徑</div>
+                            <div class="col-md-2 col-sm-2 col-xs-12 search_item">
+                            @if (Model.Site_ID == 2)
+                            { 
+                                <span class="red">*</span>
+                            }
+                            連結路徑</div>
                             <div class="col-md-10 col-sm-4 col-xs-12 bg-white mobile_white">
-                                @Html.EditorFor(model => model.Link_Href, new { htmlAttributes = new { @class = "form-control" } })
+                                @if (Model.Site_ID == 2)
+                                {
+                                    @Html.EditorFor(model => model.Link_Href, new { htmlAttributes = new { @class = "form-control checkitem" } })
+                                }
+                                else
+                                {
+                                    @Html.EditorFor(model => model.Link_Href, new { htmlAttributes = new { @class = "form-control" } })
+                                }
+
+                                <span class="required" id="Link_Href-error" style="display:none">廣告連結必須輸入</span>
                             </div>
                         </div>
                         <div class="form-group">

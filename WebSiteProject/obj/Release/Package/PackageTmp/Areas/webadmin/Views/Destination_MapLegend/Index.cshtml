@@ -93,10 +93,10 @@
                                             </div>
 
                                             <div class="col-md-3 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center align-center">
-                                                <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@item.Destination_Img_Mobile" />
+                                                <img id="Index_ImgM_File@(x)" src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@item.Destination_Img_Mobile" />
                                                 <br />
-                                                <input data-imgid="Index_Img_File@(x)" name="Img_File" type="file" accept=".jpeg,.jpg,.gif,.png" />
-                                                <label for="Index_Img_File@(x)" style="display:none"></label>
+                                                <input data-imgid="Index_ImgM_File@(x)" name="Img_File" type="file" accept=".jpeg,.jpg,.gif,.png" />
+                                                <label for="Index_ImgM_File@(x)" style="display:none"></label>
                                                 <input id="Img_FileName@(x)" name="DML[@x].Destination_Img_Mobile" class="selected" value="@item.Destination_Img_Mobile" style="display:none">
                                             </div>
                                         </div>
@@ -165,10 +165,10 @@
                 var time = date.getTime();
                 var p =  time+this.files[0].name;
 
-                $(this).parent().children(".selected").val(p)
+                $(this).parent().children(".selected").val(p);
                 reader.onload = function (e) {
 
-                    $(this).parent().children("img").attr("src", e.target.result)
+                    $(`#${imgid}`).attr("src", e.target.result);
 
 
                 };
