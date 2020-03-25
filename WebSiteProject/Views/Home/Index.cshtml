@@ -93,7 +93,56 @@
         <div class="slider-container rev_slider_wrapper">
             <div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 670, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,500], 'parallax': { 'type': 'scroll', 'origo': 'enterpoint', 'speed': 1000, 'levels': [2,3,4,5,6,7,8,9,12,50], 'disable_onmobile': 'on' }, 'navigation' : {'arrows': { 'enable': true }, 'bullets': {'enable': true, 'style': 'bullets-style-1', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
                 <ul>
-                    @foreach (var ad in Model.ADMobile)
+                    @*@foreach (var ad in Model.ADMobile)
+        {
+            string target = ad.Link_Mode == "1" ? "_self" : "_blank";
+            if (string.IsNullOrEmpty(ad.Img_Name_Ori) == false)
+            {
+                <li data-transition="fade">
+                    <div class="tp-caption tp-resizeme"
+                         data-frames='[{"delay":0,"speed":2000,"frame":"0","from":"opacity:0;x:100%;y:-100%;","to":"o:1;x:0;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                         data-type="image"
+                         data-x="center"
+                         data-y="top"
+                         data-width="['auto']"
+                         data-height="['auto']"
+                         data-basealign="slide">
+                        <img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="@ad.AD_Name">
+                    </div>
+                    <div class="tp-caption item_box" data-x="30" data-y="220" data-start="0" data-transform_in="y:[0%];opacity:0;s:0;">
+                        <div class="title">@ad.AD_Name</div>
+                        <div class="con_font">@Html.Raw(ad.ADDesc)</div><br />
+                        <div class="btn_box"><a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")"><span class="btn_01">@Common.GetLangText("View")<i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span></a></div>
+                    </div>
+                </li>
+            }
+            else
+            {
+                <li class="slide-overlay" data-transition="fade">
+                    <div class="rs-background-video-layer"
+                         data-forcerewind="on"
+                         data-volume="mute"
+                         data-videowidth="100%"
+                         data-videoheight="100%"
+                         data-videomp4="@VirtualPathUtility.ToAbsolute("~"+ad.UploadVideoFilePath)"
+                         data-videopreload="preload"
+                         data-videoloop="loop"
+                         data-forceCover="1"
+                         data-aspectratio="16:9"
+                         data-autoplay="true"
+                         data-autoplayonlyfirsttime="false"
+                         data-nextslideatend="true">
+                    </div>
+
+                    <div class="tp-caption item_box" data-x="30" data-y="220" data-start="0" data-transform_in="y:[0%];opacity:0;s:0;">
+                        <div class="title">@ad.AD_Name</div>
+                        <div class="con_font">@Html.Raw(ad.ADDesc)</div><br />
+                        <div class="btn_box"><a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")"><span class="btn_01">@Common.GetLangText("View")<i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span></a></div>
+                    </div>
+                </li>
+            }
+        }*@
+                    @foreach (var ad in Model.ADMain)
                     {
                         string target = ad.Link_Mode == "1" ? "_self" : "_blank";
                         if (string.IsNullOrEmpty(ad.Img_Name_Ori) == false)
@@ -109,10 +158,23 @@
                                      data-basealign="slide">
                                     <img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="@ad.AD_Name">
                                 </div>
-                                <div class="tp-caption item_box" data-x="30" data-y="220" data-start="0" data-transform_in="y:[0%];opacity:0;s:0;">
+
+                                <div class="tp-caption item_box" data-x="0" data-y="500" data-start="500" data-transform_in="y:[100%];opacity:0;s:500;">
                                     <div class="title">@ad.AD_Name</div>
                                     <div class="con_font">@Html.Raw(ad.ADDesc)</div><br />
-                                    <div class="btn_box"><a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")"><span class="btn_01">@Common.GetLangText("View")<i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span></a></div>
+                                    <div class="btn_box">
+                                        @if (ad.Link_Href.IsNullorEmpty())
+                                        {
+
+                                        }
+                                        else
+                                        {
+                                            <a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more") @(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")">
+                                                <span class="btn_01">@Common.GetLangText("View")<i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span>
+                                            </a>
+                                        }
+
+                                    </div>
                                 </div>
                             </li>
                         }
@@ -134,14 +196,23 @@
                                      data-nextslideatend="true">
                                 </div>
 
-                                <div class="tp-caption item_box" data-x="30" data-y="220" data-start="0" data-transform_in="y:[0%];opacity:0;s:0;">
+                                <div class="tp-caption item_box" data-x="0" data-y="500" data-start="500" data-transform_in="y:[100%];opacity:0;s:500;">
                                     <div class="title">@ad.AD_Name</div>
                                     <div class="con_font">@Html.Raw(ad.ADDesc)</div><br />
-                                    <div class="btn_box"><a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")"><span class="btn_01">@Common.GetLangText("View")<i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span></a></div>
+                                    <div class="btn_box">
+                                        <a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")">
+                                            <span class="btn_01">
+                                                @Common.GetLangText("View")
+                                            <i class="fas fa-arrow-alt-circle-right" aria-hidden="true">
+
+                                            </i>
+                                        </span>
+                                    </a>
                                 </div>
-                            </li>
-                        }
+                            </div>
+                        </li>
                     }
+                }
                 </ul>
             </div>
         </div>
