@@ -777,6 +777,7 @@ namespace WebSiteProject.Controllers
                           H.Message10Hash_8H == Hashtag ||
                           H.Message10Hash_9H == Hashtag ||
                           H.Message10Hash_10H == Hashtag
+                    orderby M.Sort
                     select M;
 
             ViewBag.Hash = q.ToList();

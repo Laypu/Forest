@@ -302,3 +302,4 @@ C:\Users\203\Documents\GitHub\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.c
 C:\Users\203\Documents\GitHub\Forest\ResourceLibrary\obj\Debug\en-US\ResourceLibrary.resources.dll
 C:\Users\203\Documents\GitHub\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.dll
 C:\Users\203\Documents\GitHub\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.pdb
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Debug\ResourceLibrary.csproj.CoreCompileInputs.cache

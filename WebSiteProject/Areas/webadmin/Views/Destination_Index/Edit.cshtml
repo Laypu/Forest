@@ -89,14 +89,14 @@
                         <div class="form-group">
                             <div class="col-md-2 col-sm-12 col-xs-12 search_item">開放時間</div>
                             <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
-                                @Html.TextAreaFor(model => model.Destination_Type_ServiceHours, new { @class = "form-control" })
+                                @Html.TextAreaFor(model => model.Destination_Type_ServiceHours, new { @class = "form-control"})
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-2 col-sm-12 col-xs-12 bg-grey_1 search_item">面積</div>
+                            <div class="col-md-2 col-sm-12 col-xs-12 bg-grey_1 search_item">面積及海拔</div>
                             <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
-                                @Html.EditorFor(model => model.Destination_Type_Area, new { htmlAttributes = new { @class = "form-control input-small" } })
+                                @Html.EditorFor(model => model.Destination_Type_Area, new { htmlAttributes = new { @class = "form-control input-small" ,@Wrap="hard"} })
                             </div>
                         </div>
 
@@ -168,7 +168,7 @@
                                 </div>
                             </div>
                         </div>*@
-
+                        
                         <div class="form-group bg-grey_1">
                             <div class="col-md-2 col-sm-12 search_item">地點圖片</div>
                             <div class="col-md-10 col-sm-12 bg-white mobile_white">
@@ -176,7 +176,7 @@
                                     <div style="display:inline">
                                         <a href="@Url.Content("~/UploadImage/Destination_Img/")@Model.Recommend_Img">@Html.ValueFor(model => model.Recommend_Img)</a><br />
                                         <input id="file_relateimage1" type="file" class="display_inline" name="Img_File" accept="image/*" />
-                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內</div>
+                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸200 * 167px，地圖位置置左上</div>
                                         @Html.EditorFor(model => model.Recommend_Img, new { htmlAttributes = new { @class = "selected", @style = "display:none" } })
                                     </div>
                                 </div>
@@ -191,7 +191,7 @@
                                         <a href="@Url.Content("~/UploadImage/Destination_Img/")@Model.Recommend_Detail_Img">@Html.ValueFor(model => model.Recommend_Detail_Img)</a><br />
                                         
                                         <input id="file_relateimage2" type="file" class="display_inline" name="Img_File" accept="image/*" />
-                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內</div>
+                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸200 * 250px</div>
                                         @Html.EditorFor(model => model.Recommend_Detail_Img, new { htmlAttributes = new { @class = "selected", @style = "display:none" } })
                                     </div>
                                 </div>
@@ -362,7 +362,7 @@
 
                                     </td>
                                 }
-
+                                
 
 
 
@@ -392,13 +392,17 @@
 </div>
 <script>
     $(function () {
+        $("#Destination_Type_Location").change(function () {
+            
+        })
         
-
 
         ShowImg();
         //送出表單
         $("#btn_submit").click(function () {
-            
+            var location = $("#Destination_Type_Location").val();
+            $("#Destination_Type_Location").val() = encodeURIComponent(location);
+            alert($("#Destination_Type_Location").val());
             $.ajax({
                 type: "POST",
                 url: '@Url.Action("Edit", "Destination_Index")',

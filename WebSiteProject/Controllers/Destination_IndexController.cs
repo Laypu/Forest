@@ -237,6 +237,7 @@ namespace WebSiteProject.Controllers
                     join H in db.Message_DesHash
                     on M.ItemID equals H.MessageItem_ID
                     where H.F_Destination_Type.Destination_Type_Title1 == ImgTitle
+                    orderby M.Sort
                     select M;
             //var count = q.Count();
             //ViewBag.count = count;

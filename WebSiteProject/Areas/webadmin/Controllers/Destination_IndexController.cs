@@ -183,6 +183,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             if (ModelState.IsValid)
             {
 
+                Destination_Type.Destination_Type_Location = HttpUtility.UrlDecode(Destination_Type.Destination_Type_Location);
                 db.Entry(Destination_Type).State = EntityState.Modified;
 
                 if (DF != null)
@@ -199,7 +200,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         db.Entry(AD_Des[i]).State = EntityState.Modified;
                     }
                 }
-
+                
                 db.SaveChanges();
                 TempData["Msg"] = "作業完成";
                 return RedirectToAction("Destination");

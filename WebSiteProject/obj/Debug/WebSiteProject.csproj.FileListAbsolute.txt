@@ -497,3 +497,4 @@ C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\AntiXssLibrary.dll
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\HtmlSanitizationLibrary.dll
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\AntiXssLibrary.xml
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\HtmlSanitizationLibrary.xml
+C:\Users\PC003\Desktop\git\Forest\WebSiteProject\obj\Debug\WebSiteProject.csproj.CoreCompileInputs.cache

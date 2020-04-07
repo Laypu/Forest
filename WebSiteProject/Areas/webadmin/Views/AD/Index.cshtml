@@ -414,6 +414,7 @@
                     CreatePost('@Url.Action("ADEdit")', obj);
                 }
                 else {
+                    obj.siteid =@ViewBag.sitid;
                      CreatePost('@Url.Action("ADEdit")', obj);
                 }
 

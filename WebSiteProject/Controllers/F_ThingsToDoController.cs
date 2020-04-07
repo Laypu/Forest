@@ -275,6 +275,7 @@ namespace WebSiteProject.Controllers
                     join H in db.F_Sub_HashTag_Type
                     on M.ItemID equals H.MessageItem_ID
                     where H.HashTag_Type_ID == F_TTD_Id
+                    orderby M.Sort
                     select M;
 
             ViewBag.Five_Thingstodo_List = q.ToList();

@@ -271,3 +271,4 @@ C:\Users\203\Documents\GitHub\Forest\SQLModel\obj\Debug\SQLModel.csprojAssemblyR
 C:\Users\203\Documents\GitHub\Forest\SQLModel\obj\Debug\SQLModel.csproj.CopyComplete
 C:\Users\203\Documents\GitHub\Forest\SQLModel\obj\Debug\SQLModel.dll
 C:\Users\203\Documents\GitHub\Forest\SQLModel\obj\Debug\SQLModel.pdb
+C:\Users\PC003\Desktop\git\Forest\SQLModel\obj\Debug\SQLModel.csproj.CoreCompileInputs.cache
