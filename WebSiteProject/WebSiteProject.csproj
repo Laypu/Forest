@@ -285,10 +285,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MailController.cs" />
     <Compile Include="Controllers\ActiveController.cs" />
-    <Compile Include="Controllers\DownloadController.cs" />
     <Compile Include="Controllers\FormController.cs" />
     <Compile Include="Controllers\PatentController.cs" />
-    <Compile Include="Controllers\VideosController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
@@ -2079,7 +2077,6 @@
     <Content Include="Views\Active\Index.cshtml" />
     <Content Include="Views\Active\ActiveView.cshtml" />
     <Content Include="Views\Active\Print.cshtml" />
-    <Content Include="Views\Download\Index.cshtml" />
     <Content Include="Views\Form\Index.cshtml" />
     <Content Include="Views\Form\ConfirmContent.cshtml" />
     <Content Include="Views\Event\Index.cshtml" />
@@ -2089,8 +2086,6 @@
     <Content Include="Views\Home\IndexCh.cshtml" />
     <Content Include="Views\Shared\_LayoutFooterEn.cshtml" />
     <Content Include="Views\Shared\_LayoutFooterCh.cshtml" />
-    <Content Include="Views\Videos\Index.cshtml" />
-    <Content Include="Views\Videos\VideoView.cshtml" />
     <Content Include="Views\Map\Index.cshtml" />
     <Content Include="Views\Patent\Index.cshtml" />
     <Content Include="Views\Patent\PatentView.cshtml" />
@@ -2100,16 +2095,13 @@
     <Content Include="Views\Patent\IndexNoJs.cshtml" />
     <Content Include="Views\Message\IndexNoJs.cshtml" />
     <Content Include="Views\Search\SearchNoJs.cshtml" />
-    <Content Include="Views\Videos\IndexNoJs.cshtml" />
     <Content Include="Views\Form\IndexNoJs.cshtml" />
     <Content Include="Views\Home\NoJsTemplate.cshtml" />
-    <Content Include="Views\Videos\Print.cshtml" />
     <Content Include="Views\Shared\XXXXX_Layout.cshtml" />
     <Content Include="Views\F_ThingsToDo\Index.cshtml" />
     <Content Include="Views\F_ThingsToDo\ThinngsToDo_List.cshtml" />
     <Content Include="Views\F_ThingsToDo\Article.cshtml" />
     <Content Include="Views\Home\F_Video_Index.cshtml" />
-    <Content Include="Views\Videos\XXXIndex.cshtml" />
     <Content Include="Views\Home\F_Video_Detail.cshtml" />
     <Content Include="Views\Destination_Index\Create.cshtml" />
     <Content Include="Views\Destination_Index\Details.cshtml" />
@@ -2200,7 +2192,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>17473</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:2642/forest</IISUrl>
+          <IISUrl>http://localhost:2645/forest</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
