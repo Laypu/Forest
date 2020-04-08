@@ -192,3 +192,4 @@ C:\Users\203\Documents\GitHub\Forest\Utilities\obj\Debug\Utilities.csprojAssembl
 C:\Users\203\Documents\GitHub\Forest\Utilities\obj\Debug\Utilities.csproj.CopyComplete
 C:\Users\203\Documents\GitHub\Forest\Utilities\obj\Debug\Utilities.dll
 C:\Users\203\Documents\GitHub\Forest\Utilities\obj\Debug\Utilities.pdb
+C:\Users\PC003\Desktop\git\Forest\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache

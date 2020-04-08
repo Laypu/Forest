@@ -79,20 +79,20 @@
 
                 <li>
                     @ViewBag.ReTitle
-                <i class="fa fa-circle"></i>
-            </li>
+                    <i class="fa fa-circle"></i>
+                </li>
 
-        }
-        else
-        {
-    <li>
-        @*@ViewBag.Title*@
-        入口首頁配置
-        <i class="fa fa-circle"></i>
-    </li>
+            }
+            else
+            {
+                <li>
+                    @*@ViewBag.Title*@
+                    入口首頁配置
+                    <i class="fa fa-circle"></i>
+                </li>
 
-    }
-    <li>輪播圖設定</li>
+            }
+            <li>輪播圖設定</li>
         }
 
 
@@ -101,7 +101,7 @@
 <!--page bar end-->
 @if (ViewBag.MenuType == 24 || (int)Session["F_MenuType"] == 24)
 {
-    <div class="title_01">Things To Do輪圖</div>
+    <div class="title_01">Things To Do輪播圖</div>
 }
 @if (ViewBag.MenuType == 179 || (int)Session["F_MenuType"] == 179)
 {
@@ -123,6 +123,14 @@
 {
     <div class="title_01">入口首頁配置</div>
 }
+@*@if (ViewBag.sitid == 5 || (int)Session["F_MenuType"] == 5 ||
+     ViewBag.sitid == 6 || (int)Session["F_MenuType"] == 6 ||
+     ViewBag.sitid == 7 || (int)Session["F_MenuType"] == 7 ||
+     ViewBag.sitid == 8 || (int)Session["F_MenuType"] == 8 ||
+     ViewBag.sitid == 9 || (int)Session["F_MenuType"] == 9)
+{
+    <div class="title_01">Things To Do輪播圖</div>
+}*@
 
 
 
@@ -167,20 +175,20 @@
 
                             <div class="display_inline">
 
-                                <select id="Index_FreeZone_Select" class="form-control checkitem" onchange="window.location.href=this.value">
+                                <select id="Index_FreeZone_Select" class="form-control checkitem" onchange="window.location.href=this.value" >
                                     @if (ViewBag.HomeId == 1)
                                     {
-                                        <option value="@Url.Action("Index_ADMain", "Home", new { home_type = "main", home_stype = "P" })" selected>主視覺輪播圖</option>
+                                        <option value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 1, MenuType=0})" selected>主視覺輪播圖</option>
                                         <option value="@Url.Action("Index_FreeZone", "Home", new { id = 1 })" @(ViewBag.FreeZoneTitleID == 1 ? "selected" : "")>自由編輯區一</option>
-                                        <option value="@Url.Action("Index_ADMain2", "Home", new { home_type = "main", home_stype = "P" })">廣告輪播圖</option>
+                                        <option value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 2, MenuType=0})">廣告輪播圖</option>
                                         <option value="@Url.Action("Index_FreeZone", "Home", new { id = 2 })" @(ViewBag.FreeZoneTitleID == 2 ? "selected" : "")>自由編輯區二</option>
 
                                     }
                                     else if (ViewBag.HomeId == 2)
                                     {
-                                        <option value="@Url.Action("Index_ADMain", "Home", new { home_type = "main", home_stype = "P" })">主視覺輪播圖</option>
+                                        <option value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 1, MenuType=0})">主視覺輪播圖</option>
                                         <option value="@Url.Action("Index_FreeZone", "Home", new { id = 1 })" @(ViewBag.FreeZoneTitleID == 1 ? "selected" : "")>自由編輯區一</option>
-                                        <option value="@Url.Action("Index_ADMain2", "Home", new { home_type = "main", home_stype = "P" })" selected>廣告輪播圖</option>
+                                        <option value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 2, MenuType=0 })" selected>廣告輪播圖</option>
                                         <option value="@Url.Action("Index_FreeZone", "Home", new { id = 2 })" @(ViewBag.FreeZoneTitleID == 2 ? "selected" : "")>自由編輯區二</option>
                                     }
                                 </select>
@@ -247,6 +255,7 @@
 
                     </div>
                 }
+
 
 
             }
@@ -370,6 +379,7 @@
             obj.type = langtype;
             obj.stype = stype;
             obj.maintype =@ViewBag.MenuType;
+            obj.siteid =@ViewBag.sitid;
             RegisterOrder("#eventtable", ".sortedit", '@Url.Action("EditADSeq")', obj);
             RegisterClickAll("#chk_all", '#eventtable tbody .chksel', "#selvalue");
             if (@ViewBag.sitid== 15 ||@ViewBag.sitid== 17 || @ViewBag.sitid== 14) {
@@ -386,12 +396,26 @@
             RegisterClick("#eventtable", ".chkstatus", '@Url.Action("SetStatus")', obj);
             RegisterClick("#eventtable", ".chkfixed", '@Url.Action("SetFixed")', obj);
             $("#btn_add").click(function () {
-                if (@ViewBag.sitid== 15 ||@ViewBag.sitid== 17|| @ViewBag.sitid== 14) {
+                if (@ViewBag.sitid == 15 ||
+                    @ViewBag.sitid == 17 ||
+                    @ViewBag.sitid == 14 ||
+                    @ViewBag.sitid == 5 ||
+                    @ViewBag.sitid == 6 ||
+                    @ViewBag.sitid == 7 ||
+                    @ViewBag.sitid == 8 ||
+                    @ViewBag.sitid == 9) {
                     obj.siteid = @ViewBag.sitid;
                     obj.maintype=@ViewBag.MenuType;
                     CreatePost('@Url.Action("ADEdit")', obj);
                 }
+                else if (@ViewBag.HomeId == 1 ||
+                         @ViewBag.HomeId == 2)
+                {
+                    obj.siteid =@ViewBag.HomeId;
+                    CreatePost('@Url.Action("ADEdit")', obj);
+                }
                 else {
+                    obj.siteid =@ViewBag.sitid;
                      CreatePost('@Url.Action("ADEdit")', obj);
                 }
 

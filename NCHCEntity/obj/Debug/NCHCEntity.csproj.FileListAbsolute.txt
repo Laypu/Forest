@@ -465,3 +465,4 @@ C:\Users\203\Documents\GitHub\Forest\NCHCEntity\obj\Debug\NCHCEntity.csprojAssem
 C:\Users\203\Documents\GitHub\Forest\NCHCEntity\obj\Debug\NCHCEntity.csproj.CopyComplete
 C:\Users\203\Documents\GitHub\Forest\NCHCEntity\obj\Debug\ViewModels.dll
 C:\Users\203\Documents\GitHub\Forest\NCHCEntity\obj\Debug\ViewModels.pdb
+C:\Users\PC003\Desktop\git\Forest\NCHCEntity\obj\Debug\NCHCEntity.csproj.CoreCompileInputs.cache

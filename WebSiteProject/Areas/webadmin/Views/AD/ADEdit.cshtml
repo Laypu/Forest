@@ -18,7 +18,7 @@
         else
         {
             <li>
-                <a href="@Url.Action("Index",new {type=Model.Type_ID,site_id=Model.Site_ID,MenuType="-1",stype="P"})"> Home </a>
+                <a href="@Url.Action("Index", new { type = Model.Type_ID, site_id = Model.Site_ID, MenuType = "-1", stype = "P" })"> Home </a>
                 <i class="fa fa-circle"></i>
             </li>
             if (Model.ID == -1)
@@ -55,20 +55,24 @@
             <div class="portlet-body form">
                 <div class="form-horizontal form-bordered">
                     <div class="form-body" id="form-body">
-                        @if (Model.Site_ID == 15 || Model.Site_ID == 17 ||Model.Site_ID == 14)
-                        {
-                            @Html.HiddenFor(Model => Model.Site_ID)
-                        }
-                        else
-                        {
-                            <div class="form-group">
-                                <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">選擇類別</div>
-                                <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
-                                    @Html.DropDownListFor(model => model.Site_ID, (SelectList)ViewBag.SiteList, "請選擇", new { @class = "form-control checkitem" })
-                                </div>
-                            </div>
+                        @*@if (Model.Site_ID == 15 || Model.Site_ID == 17 ||Model.Site_ID == 14)
+        {*@
 
+                        @*}
+        else
+        {
+            <div class="form-group">
+                <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">選擇類別</div>
+                <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
+                    @Html.DropDownListFor(model => model.Site_ID, (SelectList)ViewBag.SiteList, "請選擇", new { @class = "form-control checkitem" })
+                </div>
+            </div>
+
+        }*@
+                        @{ 
+                            var siteid = @ViewBag.siteid;
                         }
+                        @Html.EditorFor(Model => Model.Site_ID,new { htmlAttributes = new { @Value = siteid , @hidden = "hidden" } })
                         <div class="form-group">
                             <div class="col-md-2 col-sm-2 col-xs-12 bg-grey_1 search_item">顯示日期</div>
                             <div class="col-md-10 col-sm-10 col-xs-12 bg-white mobile_white">
@@ -80,7 +84,7 @@
                                     <div class="date-picker input-daterange" data-date-format="yyyy/mm/dd">
                                         @Html.EditorFor(model => model.EdDateStr, new { htmlAttributes = new { @class = "form-control", placeholder = "結束日期" } })
                                     </div>
-
+                                    
                                 </div>
                                 <div class="" style="float:left">
                                     <button type="button" class="btn blue" id="btn_clear">清空</button>
@@ -109,14 +113,14 @@
                                 <input id="file_image" type="file" name="uploadfile" accept="image/*" />
                                 @if (Model.Site_ID == 15 || Model.Site_ID == 17 || Model.Site_ID == 14)
                                 {
-                                 <span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸4000*850px</span>
+                                    <span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸4000*850px</span>
                                 }
                                 else if (Model.SType == "P")
                                 {
                                     <span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸4000*850px</span>
                                 }
                                 else
-                                {<span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸1200*2000px</span>}
+                                {<span style="color:red;padding-left; font-size:12px">檔案類型jpg、png、gif，建議檔案大小2MB內，建議尺寸4000*850px</span>}
 
                             </div>
                         </div>
@@ -124,7 +128,7 @@
                             <div class="col-md-2 col-sm-12 search_item">影片上傳</div>
                             <div class="col-md-10 col-sm-12 bg-white mobile_white">
                                 <div class="col-md-12">
-                                    <div id="div_olduploadfile" style="display:none"><a href="@Url.Action("VideoDownLoad",new { id=Model.ID,type=Model.Type})" target="preview">@Model.UploadVideoFileName</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delupfile">刪除</label></div>
+                                    <div id="div_olduploadfile" style="display:none"><a href="@Url.Action("VideoDownLoad", new { id = Model.ID, type = Model.Type })" target="preview">@Model.UploadVideoFileName</a><label style="color:blue;margin-left:10px;cursor:pointer" id="delupfile">刪除</label></div>
                                     <div id="div_nofile" style="display:inline">
                                         <div class="col-md-10">
                                             <input type="file" id="uploadvideofile" class="display_inline" name="UploadVideoFile" accept="video/*">
@@ -134,9 +138,23 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-2 col-sm-2 col-xs-12 search_item">連結路徑</div>
+                            <div class="col-md-2 col-sm-2 col-xs-12 search_item">
+                            @if (Model.Site_ID == 2)
+                            { 
+                                <span class="red">*</span>
+                            }
+                            連結路徑</div>
                             <div class="col-md-10 col-sm-4 col-xs-12 bg-white mobile_white">
-                                @Html.EditorFor(model => model.Link_Href, new { htmlAttributes = new { @class = "form-control" } })
+                                @if (Model.Site_ID == 2)
+                                {
+                                    @Html.EditorFor(model => model.Link_Href, new { htmlAttributes = new { @class = "form-control checkitem" } })
+                                }
+                                else
+                                {
+                                    @Html.EditorFor(model => model.Link_Href, new { htmlAttributes = new { @class = "form-control" } })
+                                }
+
+                                <span class="required" id="Link_Href-error" style="display:none">廣告連結必須輸入</span>
                             </div>
                         </div>
                         <div class="form-group">
@@ -242,6 +260,7 @@
                         return false;
                     }
                 }
+                formData.append("Site_ID", $('#Site_ID').val());
                 formData.append("ADDesc", encodeURIComponent($('#ADDesc').val()));
                 $('#btn_submit').attr('disabled', 'disabled');
 

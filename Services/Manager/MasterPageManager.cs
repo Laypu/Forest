@@ -1844,11 +1844,11 @@ namespace Services.Manager
             {
                 if (langid == "1")
                 {
-                    finaltitle = "國家高速網路與計算中心";
+                    finaltitle = "TAIWAN FOREST RECREATION";
                 }
                 else
                 {
-                    finaltitle = "National Center for High-performance Computing";
+                    finaltitle = "TAIWAN FOREST RECREATION";
                 }
             }
             if (orgseo == "") { orgseo = title; }

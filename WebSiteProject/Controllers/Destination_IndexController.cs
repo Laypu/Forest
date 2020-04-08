@@ -237,13 +237,18 @@ namespace WebSiteProject.Controllers
                     join H in db.Message_DesHash
                     on M.ItemID equals H.MessageItem_ID
                     where H.F_Destination_Type.Destination_Type_Title1 == ImgTitle
+                    orderby M.Sort
                     select M;
+            //var count = q.Count();
+            //ViewBag.count = count;
+            //ViewBag.pageCount = (int)count / 9;
+            //ViewBag.NowPag = Page;
 
+            //ViewBag.MessageItems = q.Take(9).OrderBy(m=>m.Sort).Skip((Page - 1) * 9).Take(9).ToList();
             ViewBag.MessageItems = q.ToList();
-
             ViewBag.Message10Hash = db.Message10Hash.ToList();
-
-            
+            //ViewBag.Page = Page;
+            ViewBag.TotalCount = q.Count();
 
             return View(viewmodel);
         }
@@ -505,5 +510,6 @@ namespace WebSiteProject.Controllers
 
             return View(viewmodel);
         }
+
     }
 }

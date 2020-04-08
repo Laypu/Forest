@@ -974,3 +974,4 @@ C:\Users\203\Documents\GitHub\Forest\Services\obj\Debug\Services.csprojAssemblyR
 C:\Users\203\Documents\GitHub\Forest\Services\obj\Debug\Services.csproj.CopyComplete
 C:\Users\203\Documents\GitHub\Forest\Services\obj\Debug\Services.dll
 C:\Users\203\Documents\GitHub\Forest\Services\obj\Debug\Services.pdb
+C:\Users\PC003\Desktop\git\Forest\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache

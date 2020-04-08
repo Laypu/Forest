@@ -34,8 +34,8 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             
             //20191230_Forest客製化
             #region 20191230_Forest客製化
-            var SiteList = db.SiteLists.Select(s => new { ID = s.SiteList_ID, Name = s.SiteList_Name_ch + "－" + s.SiteList_Name_en, s.Sort }).OrderBy(s => s.Sort);
-            ViewBag.SiteList = new SelectList(SiteList, "ID", "Name");
+            //var SiteList = db.SiteLists.Select(s => new { ID = s.SiteList_ID, Name = s.SiteList_Name_ch + "－" + s.SiteList_Name_en, s.Sort }).OrderBy(s => s.Sort);
+            //ViewBag.SiteList = new SelectList(SiteList, "ID", "Name");
             #endregion
 
 
@@ -121,6 +121,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 ViewBag.Title = "RecommendTrip_Article_Banner(" + prestr2 + "Master)";
                 imageadpath = "ad_main";
                 pathstr = "ADMain";
+                model.Site_ID = siteid;
             }
             if (id.IsNullorEmpty()) {
                 var imgdata = _imgsqlrepository.GetByWhere("item=@1", new object[] { imageadpath });
@@ -129,7 +130,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     model.AD_Width = imgdata.First().width;
                 }
                 ViewBag.mantype = maintype;
-                model.Site_ID = siteid;
+                ViewBag.siteid = siteid;
                 return View(model);
             }
             model = _IADManager.GetModel(id);
@@ -138,6 +139,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             model.SType = stype;
             model.Site_ID = siteid;
             ViewBag.mantype = maintype;
+            ViewBag.siteid = siteid;
             return View(model);
         }
         #endregion

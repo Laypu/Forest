@@ -912,6 +912,7 @@
     <Content Include="js\fontswitch.js" />
     <Content Include="js\jquery.appear.min.js" />
     <Content Include="js\jquery.easypiechart.min.js" />
+    <Content Include="js\jquery.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\jquery.themepunch.revolution.min.js" />
     <Content Include="js\jquery.themepunch.tools.min.js" />
@@ -1814,6 +1815,9 @@
     <Content Include="Scripts\ckeditor\plugins\wsc\README.md" />
     <Content Include="Scripts\ckeditor\README.md" />
     <Content Include="Scripts\ckeditor\skins\moono-lisa\readme.md" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Areas\webadmin\Views\Form\AddSelItem.cshtml" />
@@ -1920,6 +1924,7 @@
     <Content Include="Areas\webadmin\Views\Recommendedtrips\UnitPrint.cshtml" />
     <Content Include="Areas\webadmin\Views\Destination_Index\CreateAD.cshtml" />
     <None Include="Properties\PublishProfiles\MySkylines.pubxml" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-migrate-1.2.1.js" />
@@ -2195,7 +2200,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>17473</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54242/forest</IISUrl>
+          <IISUrl>http://localhost:2642/forest</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

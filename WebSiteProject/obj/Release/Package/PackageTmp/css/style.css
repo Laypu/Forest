@@ -1214,7 +1214,7 @@ footer .copyright{
 	background: linear-gradient(180deg,#c9aa79 20%,rgba(0,0,0,.8) 70% ,rgba(0,0,0,.9) 100%);
 }
 .page_img_list .list li:nth-child(3n+1){
-	clear:both.
+	clear:both;
 }
 .page_img_list .list li .font_box{
     color: #fff;

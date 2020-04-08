@@ -65,8 +65,14 @@
         <div class="container">
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                 <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
-                <a href="@Url.Action("Index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i><a href="@Url.Action("Index")" title="Recommended trips">Recommended trips</a>
-                <i class="fa fa-angle-right" aria-hidden="true"></i><span>@(ViewBag.HashTag != "" ? ViewBag.HashTag : "")</span>
+                <a href="@Url.Action("Index","Home")" title="Home">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                </a>
+                <span class="sr-only">Home</span>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="@Url.Action("Index")" title="Recommended trips">Recommended trips</a>
+                @*<i class="fa fa-angle-right" aria-hidden="true"></i>
+                <span>@(ViewBag.HashTag != "" ? ViewBag.HashTag : "")</span>*@
             </div>
             <div class="col-md-5 col-sm-6 col-xs-12">
                 <!--<script>$.include("blocks/page_top.html");</script>-->
@@ -125,7 +131,7 @@
 <!--breadcrumbs end-->
 @section scripts_V{
 <script>
-        @*$(function () {
+    @*$(function () {
             var appan = $(".trip_list").children(".container")
              $("#btn_search").click(function () {
                  var Dstination_typ = $("#Dstination_typ").val();
@@ -137,6 +143,10 @@
                  appan.load(`@Url.Action("Show_list")/?Dstination_typ=${DestData}&Day_Id=${DayData}&F_HashTag=${HashTagData}`)
            })
         })*@
+    $(function () {
+        $("#mainNav>li:nth-child(3)").children().addClass("active").parent().siblings().children().removeClass("active");
+
+    });
 
 </script>
  }

@@ -80,15 +80,15 @@
                                     <div class="col-md-2 col-sm-12 col-xs-12  text-center">
                                         <span class="display_inline">標題(下)</span>
                                     </div>
-                                    <div class="col-md-2 col-sm-12 col-xs-12   text-center">
+                                    <div class="col-md-2 col-sm-12 col-xs-12  text-center">
                                         <span class="display_inline">圖片</span>
                                     </div>
-                                    <div class="col-md-5 col-sm-12 col-xs-12   text-center">
+                                    <div class="col-md-4 col-sm-12 col-xs-12  text-center">
                                         <span class="display_inline">說明</span>
                                     </div>
-                                    @*<div class="col-md-1 col-sm-12 col-xs-12   text-center">
-                                        <span class="display_inline">編輯</span>
-                                    </div>*@
+                                    <div class="col-md-1 col-sm-12 col-xs-12  text-center">
+                                        <span class="display_inline">輪播圖管理</span>
+                                    </div>
                                 </div>
                                 <hr class="Five_Thingtodo_div" />
                                 @{
@@ -129,15 +129,39 @@
 
                                             </div>
 
-                                            <div class="col-md-5 col-sm-12 col-xs-12 bg-white mobile_white">
+                                            <div class="col-md-4 col-sm-12 col-xs-12 bg-white mobile_white">
                                                 <textarea name="F_things[@x].F_Thingtodo_Type_Description" class="form-control" style="resize:none; height:160px">@item.F_Thingtodo_Type_Description</textarea>
                                             </div>
+                                            <div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white">
+                                                @switch (x)
+                                                {
+                                                    case 0:
+                                                        <button type="button" class="btn grey-mint">@Html.ActionLink("管理", "Index", "AD", new { type = "main", stype = "P", site_id = 5 ,MenuType=24}, new { style = "color:white" })</button>
+
+                                                        break;
+                                                    case 1:
+                                                        <button type="button" class="btn grey-mint">@Html.ActionLink("管理", "Index", "AD", new { type = "main", stype = "P", site_id = 6 ,MenuType=24}, new { style = "color:white" })</button>
+
+                                                        break;
+                                                    case 2:
+                                                        <button type="button" class="btn grey-mint">@Html.ActionLink("管理", "Index", "AD", new { type = "main", stype = "P", site_id = 7 ,MenuType=24}, new { style = "color:white" })</button>
+
+                                                        break;
+                                                    case 3:
+                                                        <button type="button" class="btn grey-mint">@Html.ActionLink("管理", "Index", "AD", new { type = "main", stype = "P", site_id = 8 ,MenuType=24}, new { style = "color:white" })</button>
+
+                                                        break;
+                                                    case 4:
+                                                        <button type="button" class="btn grey-mint">@Html.ActionLink("管理", "Index", "AD", new { type = "main", stype = "P", site_id = 9,MenuType=24 }, new { style = "color:white" })</button>
+
+                                                        break;
 
 
+                                                }
+                                            </div>    
+                                            
 
-                                            @*<div class="col-md-1 col-sm-12 col-xs-12 bg-white mobile_white ">
-                                                <button class="form-control btn-warning text-center">編輯</button>
-                                            </div>*@
+
 
                                         </div>
                                         <hr class="Five_Thingtodo_div" />

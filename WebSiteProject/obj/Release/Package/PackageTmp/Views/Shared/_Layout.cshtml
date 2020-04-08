@@ -4,7 +4,7 @@
     ViewBag.SEOScript = WebSiteProject.Code.CacheMapping.SEOScript;
 }
 <!DOCTYPE html>
-<html lang="@(Model.LangId=="1"?"Zh-hant":"en")" xml:lang="@(Model.LangId=="1"?"Zh-hant":"en")">
+<html lang="@(Model.LangId=="1"?"en":"Zh-hant")" xml:lang="@(Model.LangId=="1"?"en":"Zh-hant")">
 <!--英文版<html lang="en" xml:lang="en">-->
 <head>
     <meta charset="utf-8">
@@ -24,9 +24,9 @@
     <link rel="stylesheet" href="@Url.Content("~/frontcss/css/regular.min.css")">
     <!--fontawesome end-->
     <link rel="stylesheet" href="@Url.Content("~/frontcss/css/style.css")">
-    @*<script src="@Url.Content("~/js/jquery.js")"></script>*@
-    <script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/jquery-migrate-3.0.0.min.js")"></script>
+    <script src="@Url.Content("~/js/jquery.js")"></script>
+    @*<script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>*@
+    @*<script src="@Url.Content("~/Scripts/jquery-migrate-3.0.0.min.js")"></script>*@
     <script src="@Url.Content("~/js/main.js")"></script>
     <noscript>
         @*<img src="@Url.Action("noJavascript","Home")" alt="" style="display:none" />*@
@@ -88,7 +88,10 @@
     <noscript>
         <div class="noscript_font">
             <img src="@Url.Action("noJavascript","Home")" style="display:none;" alt="noJavascriptImg">
-            @Common.GetLangText("NoJavascript")
+            Word-class size SCRIPT, such as your browser does not support, IE6 please use the keyboard hold down the ALT key + V → X → (G) the largest (L) larger (M) in the (S) smaller (A) small, to choose The text size is right for you, or if, for IE7 Firefoxy browser can use the keyboard Ctrl + (+) to enlarge (-) narrowed to change the font size.
+            
+
+            @*@Common.GetLangText("NoJavascript")*@
         </div>
     </noscript>
     <!--header start-->
@@ -102,7 +105,7 @@
                     <div class="header-column">
 
                         <div class="header-logo">
-                            <a href="#main-content" class="sr-only  sr-only-focusable" title="@Common.GetLangText("跳到主要內容區塊")">@Common.GetLangText("跳到主要內容區塊")</a>
+                            <a href="#main-content" class="sr-only  sr-only-focusable" title="@Common.GetLangText("Go To Main-content")">@Common.GetLangText("Go To Main-content")</a>
                             <h1>
                                 <a href="@Url.Action("Index", "Home")" title="@Model.SEOTitleOrg">
                                     <img alt=" " width="130" data-sticky-width="130" data-sticky-top="0" src="@Model.LogoUrl">
@@ -326,7 +329,7 @@
 @RenderSection("scripts_V", required: false)
 <script type="text/javascript">
     $(function () {
-         $(".scroll-to-top").attr('title','@Common.GetLangText("回頂端")');
+         $(".scroll-to-top").attr('title','@Common.GetLangText("Go To Top")');
 
         size_set('@Model.Fontsize');
         $("body").delegate((".newopen"), "click", function () {

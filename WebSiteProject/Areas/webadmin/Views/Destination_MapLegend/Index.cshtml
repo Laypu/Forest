@@ -1,5 +1,16 @@
 ﻿@model IEnumerable<WebSiteProject.Models.Destination_MapLegend>
+@{
+    if (TempData["Msg"] != null)
+    {
+        <script>
+            $(function () {
+                var Msg = @Html.Raw(Json.Encode(TempData["Msg"]));
+                alert(Msg);
+            });
+        </script>
+    }
 
+}
 
 <!--page bar start-->
 <div class="page-bar all_width">
@@ -55,9 +66,15 @@
                                     </div>
                                     <div class="col-md-3 col-sm-12 col-xs-12  text-center">
                                         <span class="display_inline">圖片</span>
+                                        <span class="red">
+                                            尺寸800 * 478px<br />檔案類型jpg、png、gif，建議檔案大小2MB內
+                                        </span>
                                     </div>
                                     <div class="col-md-3 col-sm-12 col-xs-12   text-center">
                                         <span class="display_inline">圖片(手機)</span>
+                                        <span class="red">
+                                            尺寸寬500px<br />檔案類型jpg、png、gif，建議檔案大小2MB內
+                                        </span>
                                     </div>
 
 
@@ -70,17 +87,17 @@
                                     {
 
                                         <div class="form-group" style="background-color:white">
-                                            <input type="hidden" name="DML[@x].Destination_MAP_LEGEND_ID" id="Destination_MAP_LEGEND_ID" value="@item.Destination_MAP_LEGEND_ID" />
+                                            <input type="hidden" name="DML[@x].Destination_MAP_LEGEND_ID" id="Destination_MAP_LEGEND_ID[@x]" value="@item.Destination_MAP_LEGEND_ID" />
 
                                             <div class="col-md-1 col-sm-12 col-xs-12 text-center">
                                                 <span class="display_inline">
-                                                    <label type="text" name="DML[@x].Destination_MAP_LEGEND_ID" id="Destination_MAP_LEGEND_ID"> @item.Destination_MAP_LEGEND_ID</label>
+                                                    <label type="text" name="DML[@x].Destination_MAP_LEGEND_ID" id="Destination_MAP_LEGEND_ID[@x]"> @item.Destination_MAP_LEGEND_ID</label>
                                                 </span>
                                             </div>
 
                                             <div class="col-md-4 col-sm-12 col-xs-12 text-center ">
                                                 <span class="display_inline">
-                                                    <input type="text" name="DML[@x].Destination_MAP_LEGEND_Name" id="Destination_MAP_LEGEND_Name" value="@item.Destination_MAP_LEGEND_Name" class="form-control" />
+                                                    <input type="text" name="DML[@x].Destination_MAP_LEGEND_Name" id="Destination_MAP_LEGEND_Name[@x]" value="@item.Destination_MAP_LEGEND_Name" class="form-control" />
                                                 </span>
                                             </div>
 
@@ -93,10 +110,10 @@
                                             </div>
 
                                             <div class="col-md-3 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center align-center">
-                                                <img id="Index_Img_File@(x)" src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@item.Destination_Img_Mobile" />
+                                                <img id="Index_ImgM_File@(x)" src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@item.Destination_Img_Mobile" />
                                                 <br />
-                                                <input data-imgid="Index_Img_File@(x)" name="Img_File" type="file" accept=".jpeg,.jpg,.gif,.png" />
-                                                <label for="Index_Img_File@(x)" style="display:none"></label>
+                                                <input data-imgid="Index_ImgM_File@(x)" name="Img_File" type="file" accept=".jpeg,.jpg,.gif,.png" />
+                                                <label for="Index_ImgM_File@(x)" style="display:none"></label>
                                                 <input id="Img_FileName@(x)" name="DML[@x].Destination_Img_Mobile" class="selected" value="@item.Destination_Img_Mobile" style="display:none">
                                             </div>
                                         </div>
@@ -165,10 +182,10 @@
                 var time = date.getTime();
                 var p =  time+this.files[0].name;
 
-                $(this).parent().children(".selected").val(p)
+                $(this).parent().children(".selected").val(p);
                 reader.onload = function (e) {
 
-                    $(this).parent().children("img").attr("src", e.target.result)
+                    $(`#${imgid}`).attr("src", e.target.result);
 
 
                 };
@@ -177,7 +194,7 @@
                 var file_data = $(this).prop('files')[0];
                 var form_data = new FormData();  //建構new FormData()
                 form_data.append('Img_File', file_data);
-
+                form_data.append('Img_FileName', p)
                     $.ajax({
                         type: "POST",
                         url: `@Url.Action("Upload","Destination_MapLegend")`,

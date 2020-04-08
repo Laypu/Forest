@@ -1220,7 +1220,7 @@ footer .copyright{
 	background: linear-gradient(180deg,#c9aa79 20%,rgba(0,0,0,.8) 70% ,rgba(0,0,0,.9) 100%);
 }
 .page_img_list .list li:nth-child(3n+1){
-	clear:both.
+	clear:both;
 }
 .page_img_list .list li .font_box{
     color: #fff;
@@ -1668,20 +1668,24 @@ footer .copyright{
 	list-style:none;
 	margin-bottom:10px;
 }
-.trip_list .font ul li{
+.trip_list .font .con{
 	color:#c9aa79;
 	font-size:0.9em;
-	margin:4px 0 4px 22px;
-	line-height:130%;
+	/*line-height:150%;*/
+}
+.trip_list .font ul li{
+	color:#c9aa79;
+	margin:0 0 0 22px;
 }
 .trip_list .font ul li:before{
-	content:url(../img/page_icon_05_s.png);
+	content:url(../../img/page_icon_05_s.png);
 	padding-right:5px;	
 	margin-left: -22px;
 }
 .trip_list .font .link{
 	float:left;
 	padding:20px 0 0 20px;
+	width:100%;
 }
 .trip_list .font .link a{
 	color:#fff;
@@ -3239,6 +3243,204 @@ a[href]:after {
 	width: auto;
 }
 }
+
+
+/*-----------------------------------------for編輯器--------------------------------------------*/
+.x_title_01{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:1.7em;
+	font-weight:bold;
+	padding:20px 0;
+	line-height: 130%;
+	color:#000;
+}
+.x_title_02{
+	font-family: "Times New Roman", Times, serif;
+	font-size:1.2em;
+	font-weight:bold;
+	padding:10px 15px;
+	line-height: 130%;
+	color:#fff;
+	background:#7e2a2c;
+}
+.x_title_03{
+	font-family:Helvetica;
+	font-weight:bold;
+	font-size:1.25em;
+	line-height: 130%;
+	color:#333;
+}
+.x_title_04{
+	font-family:Helvetica;
+	font-weight:bold;
+	font-size:1em;
+	line-height: 130%;
+	color:#333;
+}
+.x_w-100{
+	width:100%
+}
+.x_w-800 {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+}
+.x_w-auto{
+	width:auto;
+}
+.x_float_left {
+    float: left;
+}
+.x_float_right {
+    float: right;
+}
+.x_text_center {
+    text-align: center;
+}
+.x_text_right {
+    text-align: right;
+}
+.x_text_left {
+    text-align: left;
+}
+.x_red {
+    color: #c00;
+}
+.x_required {
+    color: #c00;
+    font-size: 0.9em;
+    line-height: 140%;
+    padding: 3px 0;
+}
+.x_img_padding{
+	padding:10px;
+}
+
+
+/*table scroll*/
+.x_table-scrollable {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: none;
+}
+.x_table-scrollable > .x_table-bordered > thead > tr:last-child > th, .x_table.x_table-bordered thead > tr > th {
+	border-bottom: 0;
+	border: 1px solid #ddd;
+	line-height: 130%;
+	vertical-align: middle;
+	padding: 10px;
+}
+.x_table-scrollable > .x_table {
+	width: 100% !important;
+	margin: 0 !important;
+	min-width: 650px;
+}
+.x_table{
+	margin-bottom:5px;
+}
+.x_table > tbody > tr > td {
+    line-height: 190%;
+}
+.x_table-scrollable > .x_table > thead {
+    border-top: solid 1px #ddd;
+}
+.x_table-scrollable > .x_table > thead > tr > th, .x_table-scrollable th, .x_table > thead > tr > th {
+	white-space: nowrap;
+	padding: 8px;
+	background: #666;
+	color: #fff;
+	font-weight: 500;
+}
+.x_table-hover > tbody > tr:hover {
+    background: rgba(0,105,62,0.05);
+}
+.x_table-even > tbody > tr:nth-child(even) {
+    background: rgba(0,105,62,0.05);
+}
+.x_delete_th {
+    padding: 10px 0 !important;
+}
+
+
+/*table*/
+.x_table {
+    display: table;
+	border-color:#ddd;
+	width:100%;
+}
+.x_table_01 {
+    display: table;
+	border:none;
+	text-align:left;
+}
+.x_table-row {
+    display: table-row;
+}
+.x_table-cell {
+    display: table-cell;
+}
+
+
+/*縮排*/
+.X_paddingleft22{
+	padding-left:22px;
+}
+.x_textindent22{
+	text-indent: -22px;
+}
+
+
+/*清單*/
+.x_ol_01{
+	list-style-type:cjk-ideographic; /*一, 二, 三*/
+}
+.x_ol_02{
+	list-style-type:upper-latin; /*A, B, C*/
+}
+.x_ol_03{
+	list-style-type:lower-alpha; /*a, b, c*/
+}
+.x_ul_01{
+	list-style-type:square; /*實心方塊*/
+}
+.x_ul_none ,.x_ol_none{
+	list-style:none;
+	padding-left: 0;
+}
+
+
+/*客製內容編輯*/
+.page_con .x_box_02{
+	clear:both;
+}
+.page_con .x_box_02 .x_no{
+	font-family: Impact;
+	font-size:4em;
+	font-weight:bold;
+	line-height: 130%;
+	color:#000;
+	float:left;
+	width: 70px;
+    text-align: right;
+}
+.page_con .x_box_02 .x_font{
+	float:left;
+	padding-left:90px;
+	margin-top:-75px;
+}
+.page_con .x_box_02 .x_title{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:1.8em;
+	font-weight:bold;
+	line-height: 130%;
+	color:#000;
+	margin-bottom:20px;
+}
+.page_con .x_embed-responsive{
+	margin:20px 0 30px 0;
+}
+
+
 
 
 

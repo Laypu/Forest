@@ -162,7 +162,7 @@
                 </div>
             </div>
             <div class="item">
-                <div class="img"><img src="@Url.Content("~/UploadImage/Destination_Img")@ViewBag.Recommend_Detail_Img" alt="position" /></div><!--六大森林遊樂區page_icon_07~12(內洞、奧萬大、合歡山、大雪山、阿里山、墾丁)，後台可以選擇-->
+                <div class="img"><img src="@Url.Content("~/UploadImage/Destination_Img/")@ViewBag.Recommend_Detail_Img" alt="position" /></div><!--六大森林遊樂區page_icon_07~12(內洞、奧萬大、合歡山、大雪山、阿里山、墾丁)，後台可以選擇-->
                 <div class="font">
                     @Redmode.RecommendedTrips_Location
                 </div>
@@ -237,7 +237,14 @@
 <div class="breadcrumbs">
     <div class="container">
         <div class="title">You are here</div>
-        <div class="font"><a href="@Url.Action("Index","Home")" title="Home">Home</a> / <a href="@Url.Action("Index")" title="Recommended trips">Recommended trips</a></div>
+        <div class="font"><a href="@Url.Action("Index","Home")" title="Home">Home</a> / <a href="@Url.Action("Index")" title="Recommended trips">Recommended trips</a> / @Redmode.RecommendedTrips_Title</div>
     </div>
 </div>
 <!--breadcrumbs end-->
+<script>
+    $(function () {
+        $("#mainNav>li:nth-child(3)").children().addClass("active").parent().siblings().children().removeClass("active");
+
+    });
+
+</script>

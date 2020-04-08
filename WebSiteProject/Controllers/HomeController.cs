@@ -554,6 +554,8 @@ namespace WebSiteProject.Controllers
 
             WebSiteProject.Models.ForestEntities db = new Models.ForestEntities();
             ViewBag.F_Video = db.VideoItems.Where(f => f.ModelID == 5 && f.Enabled == true && f.IsVerift == true && f.ItemID == itemid).ToList();
+            ViewBag.Unit = db.VideoUnitSettings.Where(p => p.MainID == 5).Select(p => new UnitPrint { isPrint = (bool)p.IsPrint, isForward = (bool)p.IsForward, isRSS = (bool)p.IsRSS, isShare = (bool)p.IsShare }).FirstOrDefault();
+
 
             return View(viewmodel);
         }
@@ -775,6 +777,7 @@ namespace WebSiteProject.Controllers
                           H.Message10Hash_8H == Hashtag ||
                           H.Message10Hash_9H == Hashtag ||
                           H.Message10Hash_10H == Hashtag
+                    orderby M.Sort
                     select M;
 
             ViewBag.Hash = q.ToList();

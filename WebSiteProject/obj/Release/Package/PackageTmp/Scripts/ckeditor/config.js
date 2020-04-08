@@ -24,7 +24,8 @@ CKEDITOR.editorConfig = function (config) {
     ['NumberedList', 'BulletedList', '-',  'Blockquote'],
         '/',
     ['Bold', 'Italic', 'Underline', 'Strike', '-', 'Subscript', 'Superscript'],
-    ['TextColor', 'BGColor'],
+
+    //['TextColor', 'BGColor'],
     ['Image', 'Table', 'HorizontalRule', 'SpecialChar'],
     ['Maximize']];
 

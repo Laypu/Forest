@@ -33,7 +33,19 @@
                                 <div class="tp-caption item_box" data-x="0" data-y="500" data-start="500" data-transform_in="y:[100%];opacity:0;s:500;">
                                     <div class="title">@ad.AD_Name</div>
                                     <div class="con_font">@Html.Raw(ad.ADDesc)</div><br />
-                                    <div class="btn_box"><a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more") @(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")"><span class="btn_01">@Common.GetLangText("View")<i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span></a></div>
+                                    <div class="btn_box">
+                                        @if (ad.Link_Href.IsNullorEmpty())
+                                        {
+
+                                        }
+                                        else 
+                                        {
+                                            <a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more") @(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")">
+                                                <span class="btn_01">@Common.GetLangText("View")<i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span>
+                                            </a>
+                                        }
+                                            
+                                    </div>
                                 </div>                               
                             </li>
                         }
@@ -81,7 +93,56 @@
         <div class="slider-container rev_slider_wrapper">
             <div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'delay': 9000, 'gridwidth': 1170, 'gridheight': 670, 'disableProgressBar': 'on', 'responsiveLevels': [4096,1200,992,500], 'parallax': { 'type': 'scroll', 'origo': 'enterpoint', 'speed': 1000, 'levels': [2,3,4,5,6,7,8,9,12,50], 'disable_onmobile': 'on' }, 'navigation' : {'arrows': { 'enable': true }, 'bullets': {'enable': true, 'style': 'bullets-style-1', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
                 <ul>
-                    @foreach (var ad in Model.ADMobile)
+                    @*@foreach (var ad in Model.ADMobile)
+        {
+            string target = ad.Link_Mode == "1" ? "_self" : "_blank";
+            if (string.IsNullOrEmpty(ad.Img_Name_Ori) == false)
+            {
+                <li data-transition="fade">
+                    <div class="tp-caption tp-resizeme"
+                         data-frames='[{"delay":0,"speed":2000,"frame":"0","from":"opacity:0;x:100%;y:-100%;","to":"o:1;x:0;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                         data-type="image"
+                         data-x="center"
+                         data-y="top"
+                         data-width="['auto']"
+                         data-height="['auto']"
+                         data-basealign="slide">
+                        <img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="@ad.AD_Name">
+                    </div>
+                    <div class="tp-caption item_box" data-x="30" data-y="220" data-start="0" data-transform_in="y:[0%];opacity:0;s:0;">
+                        <div class="title">@ad.AD_Name</div>
+                        <div class="con_font">@Html.Raw(ad.ADDesc)</div><br />
+                        <div class="btn_box"><a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")"><span class="btn_01">@Common.GetLangText("View")<i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span></a></div>
+                    </div>
+                </li>
+            }
+            else
+            {
+                <li class="slide-overlay" data-transition="fade">
+                    <div class="rs-background-video-layer"
+                         data-forcerewind="on"
+                         data-volume="mute"
+                         data-videowidth="100%"
+                         data-videoheight="100%"
+                         data-videomp4="@VirtualPathUtility.ToAbsolute("~"+ad.UploadVideoFilePath)"
+                         data-videopreload="preload"
+                         data-videoloop="loop"
+                         data-forceCover="1"
+                         data-aspectratio="16:9"
+                         data-autoplay="true"
+                         data-autoplayonlyfirsttime="false"
+                         data-nextslideatend="true">
+                    </div>
+
+                    <div class="tp-caption item_box" data-x="30" data-y="220" data-start="0" data-transform_in="y:[0%];opacity:0;s:0;">
+                        <div class="title">@ad.AD_Name</div>
+                        <div class="con_font">@Html.Raw(ad.ADDesc)</div><br />
+                        <div class="btn_box"><a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")"><span class="btn_01">@Common.GetLangText("View")<i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span></a></div>
+                    </div>
+                </li>
+            }
+        }*@
+                    @foreach (var ad in Model.ADMain)
                     {
                         string target = ad.Link_Mode == "1" ? "_self" : "_blank";
                         if (string.IsNullOrEmpty(ad.Img_Name_Ori) == false)
@@ -97,10 +158,23 @@
                                      data-basealign="slide">
                                     <img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="@ad.AD_Name">
                                 </div>
-                                <div class="tp-caption item_box" data-x="30" data-y="220" data-start="0" data-transform_in="y:[0%];opacity:0;s:0;">
+
+                                <div class="tp-caption item_box" data-x="0" data-y="300" data-start="500" data-transform_in="y:[100%];opacity:0;s:500;">
                                     <div class="title">@ad.AD_Name</div>
                                     <div class="con_font">@Html.Raw(ad.ADDesc)</div><br />
-                                    <div class="btn_box"><a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")"><span class="btn_01">@Common.GetLangText("View")<i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span></a></div>
+                                    <div class="btn_box">
+                                        @if (ad.Link_Href.IsNullorEmpty())
+                                        {
+
+                                        }
+                                        else
+                                        {
+                                            <a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more") @(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")">
+                                                <span class="btn_01">@Common.GetLangText("View")<i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span>
+                                            </a>
+                                        }
+
+                                    </div>
                                 </div>
                             </li>
                         }
@@ -122,14 +196,23 @@
                                      data-nextslideatend="true">
                                 </div>
 
-                                <div class="tp-caption item_box" data-x="30" data-y="220" data-start="0" data-transform_in="y:[0%];opacity:0;s:0;">
+                                <div class="tp-caption item_box" data-x="0" data-y="300" data-start="500" data-transform_in="y:[100%];opacity:0;s:500;">
                                     <div class="title">@ad.AD_Name</div>
                                     <div class="con_font">@Html.Raw(ad.ADDesc)</div><br />
-                                    <div class="btn_box"><a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")"><span class="btn_01">@Common.GetLangText("View")<i class="fas fa-arrow-alt-circle-right" aria-hidden="true"></i></span></a></div>
+                                    <div class="btn_box">
+                                        <a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode=="1"?"":"("+Common.GetLangText("New Window")+")")" target="@(ad.Link_Mode=="1"?"":"_black")">
+                                            <span class="btn_01">
+                                                @Common.GetLangText("View")
+                                            <i class="fas fa-arrow-alt-circle-right" aria-hidden="true">
+
+                                            </i>
+                                        </span>
+                                    </a>
                                 </div>
-                            </li>
-                        }
+                            </div>
+                        </li>
                     }
+                }
                 </ul>
             </div>
         </div>
@@ -285,88 +368,90 @@
 <!--index_info start-->
 <div class="index_info">
     <div class="container">
+        <a href="#;return false;" title="Main content area" accesskey="C" id="main-content">:::</a>
+
         <div class="title">
             <h2 data-sr="enter top over 1.5s">Things to do</h2>
             <!--<ul data-sr="enter top over 1.5s">
-                <li><a href="#">See all things to do</a></li>
-                <li><a href="#">All destinations</a></li>
-                <li><a href="#">Recommended trips</a></li>
-            </ul>-->
+            <li><a href="#">See all things to do</a></li>
+            <li><a href="#">All destinations</a></li>
+            <li><a href="#">Recommended trips</a></li>
+        </ul>-->
         </div>
         <!--<ul class="list">
-            <li>
-                <a href="#">
-                    <div class="img"><img src="img/index_pic_01.jpg" /></div>
-                    <div class="font_box">
-                        <div class="title">View Taiwan’s Forest videos<i class="fas fa-arrow-right"></i></div>
-                        <div class="con_font">Good Morning World from Taiwan! You can watch them all here and learn more about our beautiful country.</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="img"><img src="img/index_pic_02.jpg" /></div>
-                    <div class="font_box">
-                        <div class="title">Top things to do<i class="fas fa-arrow-right"></i></div>
-                        <div class="con_font">We've asked visitors and checked in with locals to find the best places and things to do on your Taiwan holiday.</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="img"><img src="img/index_pic_03.jpg" /></div>
-                    <div class="font_box">
-                        <div class="title">Visas & Immigration<i class="fas fa-arrow-right"></i></div>
-                        <div class="con_font">If you’re thinking about visiting to Taiwan, passport and visa organisation is key. Learn how to obtain a visa for Taiwan for a trouble free vacation.</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="img"><img src="img/index_pic_04.jpg" /></div>
-                    <div class="font_box">
-                        <div class="title">Recommended trips<i class="fas fa-arrow-right"></i></div>
-                        <div class="con_font">However long you are visiting Taiwan for, you’ll find trip routes, driving times and distances, and some great ideas to help you plan your itinerary.</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="img"><img src="img/index_pic_05.jpg" /></div>
-                    <div class="font_box">
-                        <div class="title">Climate and Seasons<i class="fas fa-arrow-right"></i></div>
-                        <div class="con_font">Find out more about Taiwan weather patterns and learn more about typical temperatures for seasons. Find out what to wear for each climate.</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="img"><img src="img/index_pic_06.jpg" /></div>
-                    <div class="font_box">
-                        <div class="title">Travel to Taiwan<i class="fas fa-arrow-right"></i></div>
-                        <div class="con_font">Getting to Taiwan is easier than ever. Flights to New Zealand airports are available from many international destinations. Not a flyer? Book a cruise.</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="img"><img src="img/index_pic_07.jpg" /></div>
-                    <div class="font_box">
-                        <div class="title">Walking & Hiking<i class="fas fa-arrow-right"></i></div>
-                        <div class="con_font">Take a walking holiday! Hiking in Taiwan is the best way to immerse yourself in iconic natural beauty. Find great walks and diverse Taiwan trails.</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="img"><img src="img/index_pic_08.jpg" /></div>
-                    <div class="font_box">
-                        <div class="title">Special travel offers (Seasonal tours)<i class="fas fa-arrow-right"></i></div>
-                        <div class="con_font">Travel and accommodation providers have listed deals, tours and packages that are waiting for you to discover.</div>
-                    </div>
-                </a>
-            </li>
-        </ul>-->
+        <li>
+            <a href="#">
+                <div class="img"><img src="img/index_pic_01.jpg" /></div>
+                <div class="font_box">
+                    <div class="title">View Taiwan’s Forest videos<i class="fas fa-arrow-right"></i></div>
+                    <div class="con_font">Good Morning World from Taiwan! You can watch them all here and learn more about our beautiful country.</div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="img"><img src="img/index_pic_02.jpg" /></div>
+                <div class="font_box">
+                    <div class="title">Top things to do<i class="fas fa-arrow-right"></i></div>
+                    <div class="con_font">We've asked visitors and checked in with locals to find the best places and things to do on your Taiwan holiday.</div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="img"><img src="img/index_pic_03.jpg" /></div>
+                <div class="font_box">
+                    <div class="title">Visas & Immigration<i class="fas fa-arrow-right"></i></div>
+                    <div class="con_font">If you’re thinking about visiting to Taiwan, passport and visa organisation is key. Learn how to obtain a visa for Taiwan for a trouble free vacation.</div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="img"><img src="img/index_pic_04.jpg" /></div>
+                <div class="font_box">
+                    <div class="title">Recommended trips<i class="fas fa-arrow-right"></i></div>
+                    <div class="con_font">However long you are visiting Taiwan for, you’ll find trip routes, driving times and distances, and some great ideas to help you plan your itinerary.</div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="img"><img src="img/index_pic_05.jpg" /></div>
+                <div class="font_box">
+                    <div class="title">Climate and Seasons<i class="fas fa-arrow-right"></i></div>
+                    <div class="con_font">Find out more about Taiwan weather patterns and learn more about typical temperatures for seasons. Find out what to wear for each climate.</div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="img"><img src="img/index_pic_06.jpg" /></div>
+                <div class="font_box">
+                    <div class="title">Travel to Taiwan<i class="fas fa-arrow-right"></i></div>
+                    <div class="con_font">Getting to Taiwan is easier than ever. Flights to New Zealand airports are available from many international destinations. Not a flyer? Book a cruise.</div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="img"><img src="img/index_pic_07.jpg" /></div>
+                <div class="font_box">
+                    <div class="title">Walking & Hiking<i class="fas fa-arrow-right"></i></div>
+                    <div class="con_font">Take a walking holiday! Hiking in Taiwan is the best way to immerse yourself in iconic natural beauty. Find great walks and diverse Taiwan trails.</div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div class="img"><img src="img/index_pic_08.jpg" /></div>
+                <div class="font_box">
+                    <div class="title">Special travel offers (Seasonal tours)<i class="fas fa-arrow-right"></i></div>
+                    <div class="con_font">Travel and accommodation providers have listed deals, tours and packages that are waiting for you to discover.</div>
+                </div>
+            </a>
+        </li>
+    </ul>-->
 
     </div>
 
@@ -402,7 +487,7 @@
                     var IModel1 = (IEnumerable<WebSiteProject.Models.FreeZoneContent>)ViewBag.FreeZone1_Link;
                     foreach (var item in IModel1)
                     {
-                        <li><a href="@item.Link">@item.LinkName</a></li>                       
+                        <li><a href="@item.Link" title="@item.LinkName">@item.LinkName</a></li>                       
                     }
                 }                
             </ul>                  
@@ -430,7 +515,7 @@
         <noscript>
             <!--僅顯示圖片，影片不置入-->
             <div class="defaultimg" style="width:100%">
-                <img src="img/index_ad_fake.jpg" alt="" />
+                <img src="@Url.Content("img/index_ad_fake.jpg")" alt="" />
                 <div><img src="@Url.Content("~/img/index_pic_12.jpg")" alt="" /></div>
                 <div><img src="@Url.Content("~/img/index_pic_9.jpg")" alt="" /></div>
                 <div><img src="@Url.Content("~/img/index_pic_10.jpg")" alt="" /></div>
@@ -453,7 +538,7 @@
                     var IModel2 = (IEnumerable<WebSiteProject.Models.FreeZoneContent>)ViewBag.FreeZone2_Link;
                     foreach (var item in IModel2)
                     {
-                        <li><a href="@item.Link">@item.LinkName</a></li>               
+                        <li><a href="@item.Link" title="@item.LinkName">@item.LinkName</a></li>               
                     }
                 }                
             </ul>

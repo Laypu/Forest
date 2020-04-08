@@ -38,7 +38,7 @@
                                      data-width="['auto']"
                                      data-height="['auto']"
                                      data-basealign="slide">
-                                    <img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="@ad.AD_Name">
+                                    <img src="@Url.Content("~/UploadImage/ADMain/" + ad.Img_Name_Ori)" alt="@ad.AD_Name">
                                 </div>
 
                                 @*<div class="tp-caption item_box" data-x="0" data-y="500" data-start="500" data-transform_in="y:[100%];opacity:0;s:500;">
@@ -56,7 +56,7 @@
                                      data-volume="mute"
                                      data-videowidth="100%"
                                      data-videoheight="100%"
-                                     data-videomp4="@VirtualPathUtility.ToAbsolute("~"+ad.UploadVideoFilePath)"
+                                     data-videomp4="@VirtualPathUtility.ToAbsolute("~" + ad.UploadVideoFilePath)"
                                      data-videopreload="preload"
                                      data-videoloop="loop"
                                      data-forceCover="1"
@@ -98,7 +98,7 @@
                                      data-width="['auto']"
                                      data-height="['auto']"
                                      data-basealign="slide">
-                                    <img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="@ad.AD_Name">
+                                    <img src="@Url.Content("~/UploadImage/ADMain/" + ad.Img_Name_Ori)" alt="@ad.AD_Name">
                                 </div>
                                 @*<div class="tp-caption item_box" data-x="30" data-y="220" data-start="0" data-transform_in="y:[0%];opacity:0;s:0;">
                                         <div class="title">@ad.AD_Name</div>
@@ -115,7 +115,7 @@
                                      data-volume="mute"
                                      data-videowidth="100%"
                                      data-videoheight="100%"
-                                     data-videomp4="@VirtualPathUtility.ToAbsolute("~"+ad.UploadVideoFilePath)"
+                                     data-videomp4="@VirtualPathUtility.ToAbsolute("~" + ad.UploadVideoFilePath)"
                                      data-videopreload="preload"
                                      data-videoloop="loop"
                                      data-forceCover="1"
@@ -146,7 +146,7 @@
             {
                 if (string.IsNullOrEmpty(ad.Img_Name_Ori) == false)
                 {
-                    <div><img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="@ad.AD_Name" /></div>
+                    <div><img src="@Url.Content("~/UploadImage/ADMain/" + ad.Img_Name_Ori)" alt="@ad.AD_Name" /></div>
                 }
             }
         </div>
@@ -162,14 +162,65 @@
 <div class="page_content">
 
     <!--page_info_01 start-->
-    <div class="page_info_01 bg_04">
-        <!--bg_01~05，依thing.html頁面五類別順序對照，固定五項-->
-        <div class="container">
-            <div class="con_font">
-                @Html.Raw(ViewBag.F_Thingtodo__Description)
-            </div>
-        </div>
-    </div>
+    @{
+        int F_TTD_Id = ViewBag.F_TTD_Id;
+        switch (F_TTD_Id)
+        {
+            case 1:
+                <div class="page_info_01 bg_01">
+                    <!--bg_01~05，依thing.html頁面五類別順序對照，固定五項-->
+                    <div class="container">
+                        <div class="con_font">
+                            @Html.Raw(ViewBag.F_Thingtodo__Description)
+                        </div>
+                    </div>
+                </div>
+                break;
+            case 2:
+                <div class="page_info_01 bg_02">
+                    <!--bg_01~05，依thing.html頁面五類別順序對照，固定五項-->
+                    <div class="container">
+                        <div class="con_font">
+                            @Html.Raw(ViewBag.F_Thingtodo__Description)
+                        </div>
+                    </div>
+                </div>
+                break;
+            case 3:
+                <div class="page_info_01 bg_03">
+                    <!--bg_01~05，依thing.html頁面五類別順序對照，固定五項-->
+                    <div class="container">
+                        <div class="con_font">
+                            @Html.Raw(ViewBag.F_Thingtodo__Description)
+                        </div>
+                    </div>
+                </div>
+                break;
+            case 4:
+                <div class="page_info_01 bg_04">
+                    <!--bg_01~05，依thing.html頁面五類別順序對照，固定五項-->
+                    <div class="container">
+                        <div class="con_font">
+                            @Html.Raw(ViewBag.F_Thingtodo__Description)
+                        </div>
+                    </div>
+                </div>
+                break;
+            case 5:
+                <div class="page_info_01 bg_05">
+                    <!--bg_01~05，依thing.html頁面五類別順序對照，固定五項-->
+                    <div class="container">
+                        <div class="con_font">
+                            @Html.Raw(ViewBag.F_Thingtodo__Description)
+                        </div>
+                    </div>
+                </div>
+                break;
+    }
+
+    }
+
+
 
     <!--page top start-->
     <div class="page_top">
@@ -194,27 +245,89 @@
 
                 @{
                     var FTModel = (List<WebSiteProject.Models.MessageItem>)ViewBag.Five_Thingstodo_List;
-                    var Message10Hash =(IEnumerable<WebSiteProject.Models.Message10Hash>)ViewBag.Message10Hash;
+                    var Message10Hash = (IEnumerable<WebSiteProject.Models.Message10Hash>)ViewBag.Message10Hash;
                     foreach (var item in FTModel)
                     {
                         <li data-sr="enter bottom over 1.5s">
-                            <div class="img imh_opacity"><a href="@Url.Action("Article","F_ThingsToDo",new {listid= item.ItemID,TTDTitle = @ViewBag.F_Thingtodo_Title})" title="@item.Title"><img src="@Url.Content("~/UploadImage/MessageItem/")@item.RelateImageFileName" alt="@item.Title" /></a></div>
+                            <div class="img imh_opacity">
+                                <a href="@Url.Action("Article","F_ThingsToDo",new {listid= item.ItemID,TTDTitle = @ViewBag.F_Thingtodo_Title})" title="@item.Title">
+                                    @if (item.RelateImageFileName.IsNullorEmpty())
+                                    {
+                                        <img src="@Url.Content("~/Img/preset_pic.jpg")" alt="@item.Title" width=450 height=600 /><!--建議尺寸450*600px-->
+
+                                    }
+                                    else
+                                    {
+                                        <img src="@Url.Content("~/UploadImage/MessageItem/")@item.RelateImageFileName" alt="@item.Title" />
+                                    }
+
+                                </a>
+                            </div>
                             <div class="font_box">
                                 <div class="title"><a href="@Url.Action("Article","F_ThingsToDo",new {listid= item.ItemID,TTDTitle = @ViewBag.F_Thingtodo_Title})" title="@item.Title">@item.Title</a></div>
                                 <div class="link margin0" data-itemID="@item.ItemID">
                                     <!--Hastag-->
                                     <div class="link" id="HashTag">
+                                        @if (!@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H.IsNullorEmpty())
+                                        {
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H &nbsp;</a>
 
-                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H &nbsp;</a>
-                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H &nbsp;</a>
-                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H &nbsp;</a>
-                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H &nbsp;</a>
-                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H &nbsp;</a>
-                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H &nbsp;</a>
-                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H &nbsp;</a>
-                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H &nbsp;</a>
-                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H &nbsp;</a>
-                                        <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H </a>
+                                        }
+                                        @if (!@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H.IsNullorEmpty())
+                                        {
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H &nbsp;</a>
+
+                                        }
+                                        @if (!@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H.IsNullorEmpty())
+                                        {
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H &nbsp;</a>
+
+                                        }
+                                        @if (!@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H.IsNullorEmpty())
+                                        {
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H &nbsp;</a>
+
+                                        }
+                                        @if (!@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H.IsNullorEmpty())
+                                        {
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H &nbsp;</a>
+
+                                        }
+                                        @if (!@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H.IsNullorEmpty())
+                                        {
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H &nbsp;</a>
+
+                                        }
+                                        @if (!@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H.IsNullorEmpty())
+                                        {
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H &nbsp;</a>
+
+                                        }
+                                        @if (!@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H.IsNullorEmpty())
+                                        {
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H &nbsp;</a>
+
+                                        }
+                                        @if (!@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H.IsNullorEmpty())
+                                        {
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H &nbsp;</a>
+
+                                        }
+                                        @if (!@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H.IsNullorEmpty())
+                                        {
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H </a>
+
+                                        }
+                                        @*<a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H &nbsp;</a>
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_2H &nbsp;</a>
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_3H &nbsp;</a>
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_4H &nbsp;</a>
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_5H &nbsp;</a>
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_6H &nbsp;</a>
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_7H &nbsp;</a>
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_8H &nbsp;</a>
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_9H &nbsp;</a>
+                                            <a href="@Url.Action("ArticleSearch","Home",new {HashTag= @Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H})" title="@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H">@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_10H </a>*@
 
                                     </div>
                                 </div>
@@ -291,7 +404,7 @@
         //gethasgtag();
     });
 
-
+    $("#mainNav>li:nth-child(2)").children().addClass("active").parent().siblings().children().removeClass("active");
     @*function gethasgtag() {
         var List = $(".margin0");
         console.log(List);

@@ -270,11 +270,13 @@ namespace WebSiteProject.Controllers
             //Thingstodo_各類別_Description
             ViewBag.F_Thingtodo__Description = Server.HtmlDecode(db.F_Thingtodo_Type.Find(F_TTD_Id).F_Thingtodo_Type_Description);
 
+            ViewBag.F_TTD_Id = F_TTD_Id;
             //List
             var q = from M in db.MessageItems
                     join H in db.F_Sub_HashTag_Type
                     on M.ItemID equals H.MessageItem_ID
                     where H.HashTag_Type_ID == F_TTD_Id
+                    orderby M.Sort
                     select M;
 
             ViewBag.Five_Thingstodo_List = q.ToList();
@@ -396,6 +398,7 @@ namespace WebSiteProject.Controllers
             ViewBag.TTD_Detail = db.MessageItems.Find(listid);
             ViewBag.MessageBanner = db.MessageBanners.Where(m => m.MessageItem_ID == listid).FirstOrDefault().MessageBanner_Img;
             ViewBag.Category = TTDTitle;
+            ViewBag.Unit = db.MessageUnitSettings.Where(p => p.MainID == 9).Select(p => new UnitPrint { isPrint = (bool)p.IsPrint, isForward = (bool)p.IsForward, isRSS = (bool)p.IsRSS, isShare = (bool)p.IsShare }).FirstOrDefault();
 
 
             return View(viewmodel);
