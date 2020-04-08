@@ -392,19 +392,20 @@
 </div>
 <script>
     $(function () {
-        $("#Destination_Type_Location").change(function () {
-            
-            
-            
-           
+
+
+        $("#Description[0]").change(function () {
+
+            console.log($("#Description[0]").prev().val());
+
         })
-        
+
 
         ShowImg();
         //送出表單
         $("#btn_submit").click(function () {
-            
-            
+
+
 
             var formData = new FormData();
             var array1 = $('#editform1').serializeArray();
@@ -424,21 +425,32 @@
             formData.set("Destination_Type_ServiceHours", _html.encode($("#Destination_Type_ServiceHours").val()));
             formData.set("Destination_Type_Area", _html.encode($("#Destination_Type_Area").val()));
             formData.set("Destination_Type_Altitude", _html.encode($("#Destination_Type_Altitude").val()));
+            formData.set("Destination_Type_Description", _html.encode($("#Destination_Type_Description").val()));
+            
+
+            for (var i = 0; i < @x; i++)
+            {
+                var str =document.getElementById("Description[" + i + "]").value;
+                var newvalue = _html.encode(str);
+                formData.set("DF[" + i + "].Description", newvalue );
+            }
+
+
             //var form1 = new FormData();
 
             for (var i of formData.entries())
             {
                 console.log(i[0],i[1]);
             }
-                
-            
-            
+
+
+
 
 
 
 
             //form1 = $("#editform1,#editform2,#editform3").serialize();
-            
+
             $.ajax({
                 type: "POST",
                 url: '@Url.Action("Edit", "Destination_Index")',
@@ -448,6 +460,7 @@
                 success: function (data) {
 
                     alert("修改成功")
+                    window.history.back();
                 }
             });
 
@@ -471,16 +484,16 @@
 
             $("input[type='file']").change(function () {
 
-                
+
                 var date = new Date();
                 var time = date.getTime();
                 var p =  time+this.files[0].name;
                 $(this).parent().children(".selected").val(p);
-                
-                
+
+
 
                 var file_data = $(this).prop('files')[0];
-                
+
 
                 var form_data = new FormData();  //建構new FormData()
 
@@ -490,11 +503,11 @@
                         type: "POST",
                         url: `@Url.Action("Upload","Destination_Index")`,
                         data: form_data,
-                        async: false,
+                        async: true,
                         contentType: false,
                         processData:false,
                         success: function (data) {
-                        
+
                         }
                     });
 
@@ -504,41 +517,41 @@
 
         RegisterClickAll("#chk_all", '#faretable tbody .chksel', "#selvalue");
 
-        
-        
+
+
         $("#btn_del").click(function () {
-            
+
             if (confirm('確定要刪除嗎??'))
             {
                 var farecheck = $("#faretable tbody .chksel:checked");
-                
+
                 farecheck.each(function () {
                     var chargeID = $(this).parent().parent().next().children(".chargeID").val();
                     //formdata.append("chargeID", chargeID);
-                   
+
                     $.ajax({
                         type: "POST",
                         url: '@Url.Action("Delete", "Destination_Index")',
                         dataType:'json',
                         data: { chargeID:chargeID },
                         success: function (data) {
-                            
+
                             $("#editform2").load(location.href + " #editform2 >*");//location.href + " #editform2"內的" #editform2"#前的空白很重要
 
                         }
                     });
                 })
                 @*window.location.href = "@Url.Action("delete","Destination_Index")" + "?chargeID=" + formdata;*@
-                
+
             }
 
-            
+
         })
 
         RegisterClickAll("#chkAD_all", '#ADtable tbody .chksel', "#selvalue");
 
         $("#btn_delAD").click(function () {
-            
+
             if (confirm('確定要刪除嗎??'))
             {
                 var ADcheck = $("#ADtable tbody .chksel:checked");
@@ -548,7 +561,7 @@
                     var ADid = $(this).parent().parent().next().children(".ADid").val();
                     //formdata.append("chargeID", chargeID);
                     ADids.push(ADid);
-                    
+
                 })
 
                 $.ajax({
@@ -560,18 +573,18 @@
                              DESTypeID:DESTypeID
                         },
                         success: function (data) {
-                            
+
                             $("#editform3").load(location.href + " #editform3>*");//location.href + " #editform2"內的" #editform2"#前的空白很重要
 
                         }
                     });
                 @*window.location.href = "@Url.Action("delete","Destination_Index")" + "?chargeID=" + formdata;*@
-                
+
             }
 
-            
+
         })
-        
+
 
     })
 

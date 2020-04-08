@@ -14,7 +14,7 @@
     }
 
 }
-
+<script src="@Url.Content("~/Scripts/_html.js")"></script>
 <style>
 
     hr {
@@ -162,6 +162,8 @@
                                                             <input type="hidden" name="F_DES[@x].Temp_Summer" id="Temp_Summer[@x]" value="@item.Temp_Summer" />
                                                             <input type="hidden" name="F_DES[@x].Temp_Autumn" id="Temp_Autumn[@x]" value="@item.Temp_Autumn" />
                                                             <input type="hidden" name="F_DES[@x].Temp_Winter" id="Temp_Winter[@x]" value="@item.Temp_Winter" />
+                                                            <input type="hidden" name="F_DES[@x].Recommend_Detail_Img" id="Recommend_Detail_Img[@x]" value="@item.Recommend_Detail_Img" />
+                                                            <input type="hidden" name="F_DES[@x].Recommend_Img" id="Recommend_Img[@x]" value="@item.Recommend_Img" />
 
 
                                                             <input type="checkbox" class="checkboxes chksel">
@@ -222,7 +224,7 @@
                                         </tbody>
                                     </table>
                                     <div class="col-md-10 col-sm-12 col-xs-12  text-center " id="div_buttons" style="margin-bottom:50px;padding:10px">
-                                        <button type="submit" class="btn blue" id="btn_submit">確認送出</button>
+                                        <button type="button" class="btn blue" id="btn_submit">確認送出</button>
                                     </div>
                                 </form>
                             </div>
@@ -252,13 +254,45 @@
 
 
             //送出表單
-            $("#editform").submit(function () {
+            $("#btn_submit").click(function () {
 
+                var formData = new FormData();
+                var array = $('#editform').serializeArray();
+                $.each(array, function () {
+                    formData.append(this.name, this.value);
+                });
+                for (var i = 0; i < @x; i++)
+                {
+
+                    var str1 = document.getElementById("Destination_Type_Description[" + i + "]").value;
+                    var newvalue1 = _html.encode(str1);
+                    formData.set("F_DES[" + i + "].Destination_Type_Description", newvalue1);
+                    var str2 = document.getElementById("Destination_Type_ServiceHours[" + i + "]").value;
+                    var newvalue2 = _html.encode(str2);
+                    formData.set("F_DES[" + i + "].Destination_Type_ServiceHours", newvalue2);
+                    var str3 = document.getElementById("Destination_Type_Altitude[" + i + "]").value;
+                    var newvalue3 = _html.encode(str3);
+                    formData.set("F_DES[" + i + "].Destination_Type_Altitude", newvalue3);
+                    var str4 = document.getElementById("Destination_Type_Area[" + i + "]").value;
+                    var newvalue4 = _html.encode(str4);
+                    formData.set("F_DES[" + i + "].Destination_Type_Area", newvalue4);
+                    var str5 = document.getElementById("Destination_Type_Location[" + i + "]").value;
+                    var newvalue5 = _html.encode(str5);
+                    formData.set("F_DES[" + i + "].Destination_Type_Location", newvalue5);
+                    //var str6 = document.getElementById("Destination_Type_Description[" + i + "]").value;
+                    //var newvalue6 = _html.encode(str6);
+                    //formData.set("F_DES[" + i + "].Destination_Type_Description", newvalue6);
+                }
+                for (var i of formData.entries()) {
+                    console.log(i[0], i[1]);
+                }
 
                 $.ajax({
                     type: "POST",
-                    url: form.action,
-                    data: $(form).serialize(),
+                    url: '@Url.Action("Destination","Destination_Index")',
+                    contentType: false,
+                    processData:false,
+                    data: formData,
                     success: function (data) {
                         console.log(data);
                         console.log("success");
@@ -284,7 +318,9 @@
                         $.ajax({
                             type: "POST",
                             url: '@Url.Action("Destination_IndexDelete", "Destination_Index")',
-                            dataType:'json',
+                            dataType: 'json',
+                            contentType: false,
+                            processData:false,
                             data: { Desid:Desid },
                             success: function (data) {
                                 var datamessage = data.message;

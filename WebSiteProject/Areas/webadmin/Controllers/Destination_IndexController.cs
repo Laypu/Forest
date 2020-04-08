@@ -134,13 +134,18 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 {
                     for (var i = 0; i < F_DES.Length; i++)
                     {
+                        F_DES[i].Destination_Type_Location = Server.HtmlDecode(F_DES[i].Destination_Type_Location);
+                        F_DES[i].Destination_Type_ServiceHours = Server.HtmlDecode(F_DES[i].Destination_Type_ServiceHours);
+                        F_DES[i].Destination_Type_Area = Server.HtmlDecode(F_DES[i].Destination_Type_Area);
+                        F_DES[i].Destination_Type_Altitude = Server.HtmlDecode(F_DES[i].Destination_Type_Altitude);
+                        F_DES[i].Destination_Type_Description = Server.HtmlDecode(F_DES[i].Destination_Type_Description);
                         db.Entry(F_DES[i]).State = EntityState.Modified;
                     }
                 }
 
                 db.SaveChanges();
                 TempData["Msg"] = "作業完成";
-                return RedirectToAction("Destination");
+                return RedirectToAction("Destination",new { F_MenuType = 179 , MenuType = 179 });
 
             }
             else 
@@ -187,7 +192,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 Destination_Type.Destination_Type_Altitude = Server.HtmlDecode(Destination_Type.Destination_Type_Altitude);
                 Destination_Type.Destination_Type_ServiceHours = Server.HtmlDecode(Destination_Type.Destination_Type_ServiceHours);
                 Destination_Type.Destination_Type_Area = Server.HtmlDecode(Destination_Type.Destination_Type_Area);
-
+                Destination_Type.Destination_Type_Description = Server.HtmlDecode(Destination_Type.Destination_Type_Description);
 
                 db.Entry(Destination_Type).State = EntityState.Modified;
 
@@ -195,6 +200,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 {
                     for (var i = 0; i < DF.Length; i++)
                     {
+                        DF[i].Description = Server.HtmlDecode(DF[i].Description);
                         db.Entry(DF[i]).State = EntityState.Modified;
                     }
                 }
@@ -208,7 +214,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 
                 db.SaveChanges();
                 TempData["Msg"] = "作業完成";
-                return RedirectToAction("Destination");
+                return RedirectToAction("Destination",new { F_MenuType = 179 , MenuType = 179 });
             }
             TempData["Msg"] = "作業失敗";
             return Json(new { success = true, message = "作業失敗" }, JsonRequestBehavior.AllowGet);

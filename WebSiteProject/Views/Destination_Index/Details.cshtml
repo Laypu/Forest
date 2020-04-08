@@ -115,7 +115,7 @@
 <div class="page_info">
     <div class="container">
         <div class="con_font">
-            @DesModel.First().Destination_Type_Description
+            @Html.Raw(@DesModel.First().Destination_Type_Description)
         </div>
     </div>
 </div>
@@ -569,7 +569,7 @@
                                         <td>
                                         @if (item.Description != null)
                                         {
-                                            @item.Description
+                                            @Html.Raw(@item.Description)
                                         }
                                         </td>
 

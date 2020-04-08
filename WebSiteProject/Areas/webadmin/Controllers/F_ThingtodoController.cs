@@ -108,20 +108,22 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 
                     if (F_things[i].F_Thingtodo_Type_ImgName == null)
                     {
+                        F_things[i].F_Thingtodo_Type_Description = Server.HtmlDecode(F_things[i].F_Thingtodo_Type_Description);
                         db.Entry(F_things[i]).State = System.Data.Entity.EntityState.Modified;
-                        db.SaveChanges();
+                        
                     }
                     else
                     {
-
+                        F_things[i].F_Thingtodo_Type_Description = Server.HtmlDecode(F_things[i].F_Thingtodo_Type_Description);
                         db.Entry(F_things[i]).State = System.Data.Entity.EntityState.Modified;
-                        db.SaveChanges();
+                        
                     }
-
+                    
                 }
+                db.SaveChanges();
                 TempData["Msg"] = "作業完成";
-                return RedirectToAction("Five_Thingstodo");
-
+                //return RedirectToAction("Five_Thingstodo",new {F_MenuType = 24 , MenuType = 24 });
+                return  Json(new { success = true, message = "修改成功" }, JsonRequestBehavior.AllowGet);
             }
             else
             {
