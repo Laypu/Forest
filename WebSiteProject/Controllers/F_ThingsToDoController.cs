@@ -270,6 +270,7 @@ namespace WebSiteProject.Controllers
             //Thingstodo_各類別_Description
             ViewBag.F_Thingtodo__Description = Server.HtmlDecode(db.F_Thingtodo_Type.Find(F_TTD_Id).F_Thingtodo_Type_Description);
 
+            ViewBag.F_TTD_Id = F_TTD_Id;
             //List
             var q = from M in db.MessageItems
                     join H in db.F_Sub_HashTag_Type

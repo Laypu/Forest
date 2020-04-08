@@ -53,7 +53,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 
 
 
-        public ActionResult Upload(HttpPostedFileBase Img_File)
+        public ActionResult Upload(HttpPostedFileBase Img_File, string Img_FileName)
         {
             string Index_Img_Name = "";
 
@@ -70,22 +70,23 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 
                     }
 
-                    Index_Img_Name = Path.GetFileName(Img_File.FileName);  //取得檔案名
-                    var NewImgName = DateTime.Now.Ticks + "_" + Index_Img_Name;
-                    var path = Path.Combine(Server.MapPath("~/UploadImage/MapLEGEND_Img/"), NewImgName);  //取得本機檔案路徑
+                    /*Index_Img_Name = Path.GetFileName(Img_File.FileName);*/  //取得檔案名
+                    Index_Img_Name = Img_FileName;
+                    //var NewImgName = DateTime.Now.Ticks + "_" + Index_Img_Name;
+                    var path = Path.Combine(Server.MapPath("~/UploadImage/MapLEGEND_Img/"), Index_Img_Name);  //取得本機檔案路徑
 
 
                     //若有重複則不儲存
-                    if (System.IO.File.Exists(path))
-                    {
-                        //Random rand = new Random();
-                        //Index_Img_Name = rand.Next().ToString() + "-" + Index_Img_Name;
-                        //path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), Index_Img_Name);
-                    }
-                    else
-                    {
+                    //if (System.IO.File.Exists(path))
+                    //{
+                    //    //Random rand = new Random();
+                    //    //Index_Img_Name = rand.Next().ToString() + "-" + Index_Img_Name;
+                    //    //path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), Index_Img_Name);
+                    //}
+                    //else
+                    //{
                         Img_File.SaveAs(path);
-                    }
+                    //}
 
                     //若有重複則換名字_end
 

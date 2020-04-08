@@ -193,7 +193,7 @@
             </div>
             <div class="img hidden-xs">
                 <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModel.First().Destination_Img" alt="@MapModel.First().Destination_Img" />
-                <div class="font_box" id="timebox" style="display:none">
+                <div class="font_box" id="timebox1" style="display:none">
                     <div class="line"></div>
                     Now the Time in Taiwan<br>
                     <div class="date">@datetimeD</div>
@@ -201,7 +201,17 @@
                     GMT+8
                 </div>
             </div><!--建議尺寸800*478px-->
-            <div class="img visible-xs"><img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModel.First().Destination_Img_Mobile" alt="@MapModel.First().Destination_Img" /></div><!--建議尺寸，寬500px-->
+            <div class="img visible-xs">
+                <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModel.First().Destination_Img_Mobile" alt="@MapModel.First().Destination_Img" />
+                <div class="font_box" id="timebox2" style="display:none">
+                    <div class="line"></div>
+                    Now the Time in Taiwan<br>
+                    <div class="date">@datetimeD</div>
+                    <div class="time">@datetimeT</div>
+                    GMT+8
+                </div>
+            
+            </div><!--建議尺寸，寬500px-->
 
         </div>
     </div>
@@ -301,22 +311,27 @@
         //初始畫面maplegend的ul 顏色
         $("#MapL>ul").children().first().children().attr("class", "active");
 
-        
+
         //點擊maplegend換圖
         $("#MapL>ul>li>a").click(function () {
-            
+
             $(this).addClass("active").parent().siblings().children().removeClass("active");
-            var MapImg = `@Url.Content("~/UploadImage/MapLEGEND_Img/")`+$(this).attr("data-imgName");
+            var MapImg = `@Url.Content("~/UploadImage/MapLEGEND_Img/")` + $(this).attr("data-imgName");
+            var MapImgMobile = `@Url.Content("~/UploadImage/MapLEGEND_Img/")` + $(this).attr("data-imgnamemoblie");
             var MapName = $(this).attr("title");
-            $("#MapLeg>div>img").attr('src', MapImg);
-            $("#MapLeg>div>img").attr('alt', MapName);
+            $("#MapLeg>.hidden-xs>img").attr('src', MapImg);
+            $("#MapLeg>.visible-xs>img").attr('src', MapImgMobile);
+            $("#MapLeg>.hidden-xs>img").attr('alt', MapName);
+            $("#MapLeg>.visible-xs>img").attr('alt', MapImgMobile);
             var index = $("#MapL>ul>li").index($(this).parent());
             if (index == 3) {
-                $("#timebox").css("display", "");
+                $("#timebox1").css("display", "");
+                $("#timebox2").css("display", "");
             }
             else
             {
-                $("#timebox").css("display","none")
+                $("#timebox1").css("display", "none");
+                $("#timebox2").css("display", "none");
             }
         });
 
@@ -325,7 +340,7 @@
         function GetTime() {
             $.ajax({
                     type:"post",
-                    contentType:"application/json",  
+                    contentType:"application/json",
                     url:"@Url.Action("GetTime","Destination_Index")",
                 success: function (result) {
 
@@ -333,29 +348,29 @@
                     $(".time").text(result);
                     },
                     error: function() {
-                         
+
                     }
             })
         }
         function GetDate() {
             $.ajax({
                     type:"post",
-                    contentType:"application/json",  
+                    contentType:"application/json",
                     url:"@Url.Action("GetDate","Destination_Index")",
                 success: function (result) {
 
                     $('.date').text(result);
-                    
+
                     },
                     error: function() {
-                         
+
                     }
             })
         }
-        
+
     });
 
-    
+
 
 
     //$(function () {

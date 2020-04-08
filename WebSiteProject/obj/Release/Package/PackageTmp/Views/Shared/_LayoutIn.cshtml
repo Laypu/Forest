@@ -24,9 +24,9 @@
     <link rel="stylesheet" href="@Url.Content("~/frontcss/css/regular.min.css")">
     <!--fontawesome end-->
     <link rel="stylesheet" href="@Url.Content("~/frontcss/css/style.css")">
-    <script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/jquery-migrate-3.0.0.min.js")"></script>
-    @*<script src="@Url.Content("~/js/jquery.js")"></script>*@
+    @*<script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-migrate-3.0.0.min.js")"></script>*@
+    <script src="@Url.Content("~/js/jquery.js")"></script>
     <script src="@Url.Content("~/js/main.js")"></script>
     <script src="@Url.Content("~/Scripts/custom.js")"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120661325-6"></script>
@@ -172,18 +172,18 @@
                                             {
                                                 <li><a href='@Url.Action("ChangeLang","Home",new { lang=1})' class='' langid='1' title='中文'><i class="fa fa-language" aria-hidden="true"></i>中文</a></li>
                                             }*@
-                                            <li>
+                                            @*<li>
                                                 <a href="https://www.facebook.com/%E5%9C%8B%E7%A0%94%E9%99%A2%E5%9C%8B%E7%B6%B2%E4%B8%AD%E5%BF%83-292580541692362/?notify_field=blurb&modal=profile_completion&notif_id=1558930416338465&notif_t=page_profile_blurb" target="_blank" title="facbook(@Common.GetLangText("另開新視窗"))">
-                                                    <!--英文 facebook(new window)-->
+                                                    英文 facebook(new window)
                                                     <i class="fab fa-facebook-f" aria-hidden="true"></i> facebook
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="https://www.youtube.com/channel/UCWrzkYUM5cwpZExQ4Et5vSw?view_as=subscriber" target="_blank" title="youtube(@Common.GetLangText("另開新視窗"))">
-                                                    <!--英文 youtube(new window)-->
+                                                    英文 youtube(new window)
                                                     <i class="fab fa-youtube" aria-hidden="true"></i> youtube
                                                 </a>
-                                            </li>
+                                            </li>*@
                                         </ul>
 
                                     </nav>
@@ -205,9 +205,17 @@
     <div class="footer_menu">
         <div class="container">
             <div class="footer_item">
-                <div class="footer_title">
-                    footer_item
-                </div>
+                <!--固定無後台-->
+                <div class="footer_title">Find us on</div>
+                <ul>
+                    <!--<li><a href="#" title=""><i class="fab fa-twitter" aria-hidden="true"></i> Twitter</a></li>-->
+                    <li><a href="https://www.instagram.com/forestrybureau/" title="Instagram" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+                    <li><a href="https://www.facebook.com/twforest" title="Facebook" target="_blank"><i class="fab fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+                    <li><a href="https://www.youtube.com/channel/UC8r9KygvV33JfgSN66wr9OA" title="YouTube" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</a></li>
+                </ul>
+            </div>
+            <div class="footer_item">
+                <div class="footer_title">Our other sites</div>
                 <ul>
                     @Html.Raw(Model.FooterMenu)
                 </ul>

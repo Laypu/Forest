@@ -69,7 +69,7 @@
                             {
                                 level1idx += 1;
                                 <li class="sitemap_item">
-                                    @if ((menu.MenuUrl == "#" || string.IsNullOrEmpty(menu.MenuUrl)) && menu.ModelID != 6)
+                                    @if ((menu.LinkUrl == "#" || string.IsNullOrEmpty(menu.MenuUrl)) && menu.ModelID != 6)
                                     {
                                         @*<div class="sitemap_no">@level1idx.</div><div class="sitemap_font">@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName )</div>*@
                                         <a href="javascript:void(0);" class="accesskey @(menu.ModelID!=6?"":"langchange")" title="@level1idx.@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName )">
@@ -79,7 +79,7 @@
                                     }
                                     else
                                     {
-                                        <a href="@menu.MenuUrl" class="accesskey @(menu.ModelID!=6?"":"langchange")" title="@level1idx.@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName )">
+                                        <a href="@menu.LinkUrl" class="accesskey @(menu.ModelID!=6?"":"langchange")" title="@level1idx.@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName )">
                                             <div class="sitemap_no">@level1idx.</div>
                                             <div class="sitemap_font">@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName)</div>
                                         </a>
@@ -147,7 +147,7 @@
                                     }
                                 </li>
                             }
-                            <li class="sitemap_item">
+                            @*<li class="sitemap_item">
                                 @if (Model.LangId == "1")
                                 {
                                     <a href="@Url.Action("ChangeLang","Home",new { lang=2})" class="accesskey" title="@(level1idx + 1).EN">
@@ -162,7 +162,7 @@
                                         <div class="sitemap_font">中文</div>
                                     </a>
                                 }
-                            </li>
+                            </li>*@
                         }
                     </ul>
                     <!--上方選單 end-->

@@ -1074,7 +1074,7 @@ body{
 
 
 /*-----------------------------------------for編輯器--------------------------------------------*/
-.title_01{
+.bootbox-body .title_01{
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-size:1.7em;
 	font-weight:bold;
@@ -1082,7 +1082,7 @@ body{
 	line-height: 130%;
 	color:#000;
 }
-.title_02{
+.bootbox-body .title_02{
 	font-family: "Times New Roman", Times, serif;
 	font-size:1.2em;
 	font-weight:bold;
@@ -1091,14 +1091,14 @@ body{
 	color:#fff;
 	background:#7e2a2c;
 }
-.title_03{
+.bootbox-body .title_03{
 	font-family:Helvetica;
 	font-weight:bold;
 	font-size:1.25em;
 	line-height: 130%;
 	color:#333;
 }
-.title_04{
+.bootbox-body .title_04{
 	font-family:Helvetica;
 	font-weight:bold;
 	font-size:1em;
@@ -1145,47 +1145,47 @@ body{
 
 
 /*table scroll*/
-.table-scrollable {
+.bootbox-body .table-scrollable {
     width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
     border: none;
 }
-.table-scrollable > .table-bordered > thead > tr:last-child > th, .table.table-bordered thead > tr > th {
+.bootbox-body .table-scrollable > .table-bordered > thead > tr:last-child > th, .bootbox-body .table.table-bordered thead > tr > th {
 	border-bottom: 0;
 	border: 1px solid #ddd;
 	line-height: 130%;
 	vertical-align: middle;
 	padding: 10px;
 }
-.table-scrollable > .table {
+.bootbox-body .table-scrollable > .table {
 	width: 100% !important;
 	margin: 0 !important;
 	min-width: 650px;
 }
-.table{
+.bootbox-body .table{
 	margin-bottom:5px;
 }
-.table > tbody > tr > td {
+.bootbox-body .table > tbody > tr > td {
     line-height: 190%;
 }
-.table-scrollable > .table > thead {
+.bootbox-body .table-scrollable > .table > thead {
     border-top: solid 1px #ddd;
 }
-.table-scrollable > .table > thead > tr > th, .table-scrollable th, .table > thead > tr > th {
+.bootbox-body .table-scrollable > .table > thead > tr > th, .bootbox-body .table-scrollable th,.bootbox-body .table > thead > tr > th {
 	white-space: nowrap;
 	padding: 8px;
 	background: #666;
 	color: #fff;
 	font-weight: 500;
 }
-.table-hover > tbody > tr:hover {
+.bootbox-body .table-hover > tbody > tr:hover {
     background: rgba(0,105,62,0.05);
 }
-.table-even > tbody > tr:nth-child(even) {
+.bootbox-body .table-even > tbody > tr:nth-child(even) {
     background: rgba(0,105,62,0.05);
 }
-.delete_th {
+.bootbox-body .delete_th {
     padding: 10px 0 !important;
 }
 

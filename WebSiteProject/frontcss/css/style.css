@@ -1428,6 +1428,9 @@ footer .copyright{
 	width:50%;
 	padding: 20px 5%;
 }
+.page_bookmark .locaton ul li:nth-child(2n+1){
+	clear:both;
+}
 .page_bookmark .locaton ul li div{
 	display: table-cell;
 	vertical-align:top;
@@ -1507,7 +1510,7 @@ footer .copyright{
 .page_bookmark .charges{
 	float:left;
 	width:100%;
-	padding:30px 10% 50px 10%;
+	padding:30px 10px 50px 10px;
 	text-align:center;
 }
 .page_bookmark .charges .table>thead>tr>th {
@@ -1668,20 +1671,24 @@ footer .copyright{
 	list-style:none;
 	margin-bottom:10px;
 }
-.trip_list .font ul li{
+.trip_list .font .con{
 	color:#c9aa79;
 	font-size:0.9em;
-	margin:4px 0 4px 22px;
-	line-height:130%;
+	/*line-height:150%;*/
+}
+.trip_list .font ul li{
+	color:#c9aa79;
+	margin:0 0 0 22px;
 }
 .trip_list .font ul li:before{
-	content:url(../img/page_icon_05_s.png);
+	content:url(../../img/page_icon_05_s.png);
 	padding-right:5px;	
 	margin-left: -22px;
 }
 .trip_list .font .link{
 	float:left;
 	padding:20px 0 0 20px;
+	width:100%;
 }
 .trip_list .font .link a{
 	color:#fff;

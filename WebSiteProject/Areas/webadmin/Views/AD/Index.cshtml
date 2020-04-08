@@ -379,6 +379,7 @@
             obj.type = langtype;
             obj.stype = stype;
             obj.maintype =@ViewBag.MenuType;
+            obj.siteid =@ViewBag.sitid;
             RegisterOrder("#eventtable", ".sortedit", '@Url.Action("EditADSeq")', obj);
             RegisterClickAll("#chk_all", '#eventtable tbody .chksel', "#selvalue");
             if (@ViewBag.sitid== 15 ||@ViewBag.sitid== 17 || @ViewBag.sitid== 14) {

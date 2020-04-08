@@ -11,7 +11,7 @@
         </script>
     }
 }
-
+<script src="@Url.Content("~/Scripts/_html.js")"></script>
 <style>
 
     hr {
@@ -89,21 +89,21 @@
                         <div class="form-group">
                             <div class="col-md-2 col-sm-12 col-xs-12 search_item">開放時間</div>
                             <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
-                                @Html.TextAreaFor(model => model.Destination_Type_ServiceHours, new { @class = "form-control" })
+                                @Html.TextAreaFor(model => model.Destination_Type_ServiceHours, new { @class = "form-control"})
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-2 col-sm-12 col-xs-12 bg-grey_1 search_item">面積</div>
+                            <div class="col-md-2 col-sm-12 col-xs-12 bg-grey_1 search_item">面積及海拔</div>
                             <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
-                                @Html.EditorFor(model => model.Destination_Type_Area, new { htmlAttributes = new { @class = "form-control input-small" } })
+                                @Html.TextAreaFor(model => model.Destination_Type_Area, new { @class = "form-control " } )
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-2 col-sm-12 col-xs-12 bg-grey_1 search_item">海拔</div>
                             <div class="col-md-10 col-sm-12 col-xs-12 bg-white mobile_white">
-                                @Html.EditorFor(model => model.Destination_Type_Altitude, new { htmlAttributes = new { @class = "form-control input-small" } })
+                                @Html.TextAreaFor(model => model.Destination_Type_Altitude, new {  @class = "form-control " } )
                             </div>
                         </div>
 
@@ -168,7 +168,7 @@
                                 </div>
                             </div>
                         </div>*@
-
+                        
                         <div class="form-group bg-grey_1">
                             <div class="col-md-2 col-sm-12 search_item">地點圖片</div>
                             <div class="col-md-10 col-sm-12 bg-white mobile_white">
@@ -176,7 +176,7 @@
                                     <div style="display:inline">
                                         <a href="@Url.Content("~/UploadImage/Destination_Img/")@Model.Recommend_Img">@Html.ValueFor(model => model.Recommend_Img)</a><br />
                                         <input id="file_relateimage1" type="file" class="display_inline" name="Img_File" accept="image/*" />
-                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內</div>
+                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸200 * 167px，地圖位置置左上</div>
                                         @Html.EditorFor(model => model.Recommend_Img, new { htmlAttributes = new { @class = "selected", @style = "display:none" } })
                                     </div>
                                 </div>
@@ -191,7 +191,7 @@
                                         <a href="@Url.Content("~/UploadImage/Destination_Img/")@Model.Recommend_Detail_Img">@Html.ValueFor(model => model.Recommend_Detail_Img)</a><br />
                                         
                                         <input id="file_relateimage2" type="file" class="display_inline" name="Img_File" accept="image/*" />
-                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內</div>
+                                        <div class="red">檔案類型jpg、png、gif，建議檔案大小2MB內，尺寸200 * 250px</div>
                                         @Html.EditorFor(model => model.Recommend_Detail_Img, new { htmlAttributes = new { @class = "selected", @style = "display:none" } })
                                     </div>
                                 </div>
@@ -362,7 +362,7 @@
 
                                     </td>
                                 }
-
+                                
 
 
 
@@ -392,17 +392,59 @@
 </div>
 <script>
     $(function () {
+        $("#Destination_Type_Location").change(function () {
+            
+            
+            
+           
+        })
         
-
 
         ShowImg();
         //送出表單
         $("#btn_submit").click(function () {
             
+            
+
+            var formData = new FormData();
+            var array1 = $('#editform1').serializeArray();
+            $.each(array1, function () {
+                formData.append(this.name, this.value);
+            });
+            var array2 = $('#editform2').serializeArray();
+            $.each(array2, function () {
+                formData.append(this.name, this.value);
+            });
+            var array3 = $('#editform3').serializeArray();
+            $.each(array3, function () {
+                formData.append(this.name, this.value);
+            });
+
+            formData.set("Destination_Type_Location", _html.encode($("#Destination_Type_Location").val()));
+            formData.set("Destination_Type_ServiceHours", _html.encode($("#Destination_Type_ServiceHours").val()));
+            formData.set("Destination_Type_Area", _html.encode($("#Destination_Type_Area").val()));
+            formData.set("Destination_Type_Altitude", _html.encode($("#Destination_Type_Altitude").val()));
+            //var form1 = new FormData();
+
+            for (var i of formData.entries())
+            {
+                console.log(i[0],i[1]);
+            }
+                
+            
+            
+
+
+
+
+            //form1 = $("#editform1,#editform2,#editform3").serialize();
+            
             $.ajax({
                 type: "POST",
                 url: '@Url.Action("Edit", "Destination_Index")',
-                data: $("#editform1,#editform2,#editform3").serialize(),
+                data: formData,
+                contentType: false,
+                processData: false,
                 success: function (data) {
 
                     alert("修改成功")

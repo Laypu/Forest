@@ -183,7 +183,12 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             if (ModelState.IsValid)
             {
 
-                Destination_Type.Destination_Type_Location = HttpUtility.UrlDecode(Destination_Type.Destination_Type_Location);
+                Destination_Type.Destination_Type_Location = Server.HtmlDecode(Destination_Type.Destination_Type_Location);
+                Destination_Type.Destination_Type_Altitude = Server.HtmlDecode(Destination_Type.Destination_Type_Altitude);
+                Destination_Type.Destination_Type_ServiceHours = Server.HtmlDecode(Destination_Type.Destination_Type_ServiceHours);
+                Destination_Type.Destination_Type_Area = Server.HtmlDecode(Destination_Type.Destination_Type_Area);
+
+
                 db.Entry(Destination_Type).State = EntityState.Modified;
 
                 if (DF != null)

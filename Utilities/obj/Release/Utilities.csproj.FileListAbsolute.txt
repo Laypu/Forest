@@ -42,3 +42,4 @@ C:\Users\PC003\Desktop\git\Forest\Utilities\obj\Release\Utilities.csprojAssembly
 C:\Users\PC003\Desktop\git\Forest\Utilities\obj\Release\Utilities.csproj.CopyComplete
 C:\Users\PC003\Desktop\git\Forest\Utilities\obj\Release\Utilities.dll
 C:\Users\PC003\Desktop\git\Forest\Utilities\obj\Release\Utilities.pdb
+C:\Users\PC003\Desktop\git\Forest\Utilities\obj\Release\Utilities.csproj.CoreCompileInputs.cache

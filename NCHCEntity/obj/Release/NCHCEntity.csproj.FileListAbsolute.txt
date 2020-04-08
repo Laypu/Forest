@@ -38,3 +38,4 @@ C:\Users\PC003\Desktop\git\Forest\NCHCEntity\obj\Release\NCHCEntity.csprojAssemb
 C:\Users\PC003\Desktop\git\Forest\NCHCEntity\obj\Release\NCHCEntity.csproj.CopyComplete
 C:\Users\PC003\Desktop\git\Forest\NCHCEntity\obj\Release\ViewModels.dll
 C:\Users\PC003\Desktop\git\Forest\NCHCEntity\obj\Release\ViewModels.pdb
+C:\Users\PC003\Desktop\git\Forest\NCHCEntity\obj\Release\NCHCEntity.csproj.CoreCompileInputs.cache

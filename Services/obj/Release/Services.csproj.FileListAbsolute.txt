@@ -188,3 +188,4 @@ C:\Users\PC003\Desktop\git\Forest\Services\obj\Release\Services.csprojAssemblyRe
 C:\Users\PC003\Desktop\git\Forest\Services\obj\Release\Services.csproj.CopyComplete
 C:\Users\PC003\Desktop\git\Forest\Services\obj\Release\Services.dll
 C:\Users\PC003\Desktop\git\Forest\Services\obj\Release\Services.pdb
+C:\Users\PC003\Desktop\git\Forest\Services\obj\Release\Services.csproj.CoreCompileInputs.cache

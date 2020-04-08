@@ -34,3 +34,4 @@ C:\Users\PC003\Desktop\git\Forest\SQLModel\obj\Release\SQLModel.csprojAssemblyRe
 C:\Users\PC003\Desktop\git\Forest\SQLModel\obj\Release\SQLModel.csproj.CopyComplete
 C:\Users\PC003\Desktop\git\Forest\SQLModel\obj\Release\SQLModel.dll
 C:\Users\PC003\Desktop\git\Forest\SQLModel\obj\Release\SQLModel.pdb
+C:\Users\PC003\Desktop\git\Forest\SQLModel\obj\Release\SQLModel.csproj.CoreCompileInputs.cache

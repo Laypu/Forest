@@ -49,3 +49,4 @@ C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Release\ResourceLibrary.cs
 C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Release\en-US\ResourceLibrary.resources.dll
 C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Release\ResourceLibrary.dll
 C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Release\ResourceLibrary.pdb
+C:\Users\PC003\Desktop\git\Forest\ResourceLibrary\obj\Release\ResourceLibrary.csproj.CoreCompileInputs.cache

@@ -4,7 +4,7 @@
     ViewBag.SEOScript = WebSiteProject.Code.CacheMapping.SEOScript;
 }
 <!DOCTYPE html>
-<html lang="@(Model.LangId=="1"?"Zh-hant":"en")" xml:lang="@(Model.LangId=="1"?"Zh-hant":"en")">
+<html lang="@(Model.LangId=="1"?"en":"Zh-hant")" xml:lang="@(Model.LangId=="1"?"en":"Zh-hant")">
 <!--英文版<html lang="en" xml:lang="en">-->
 <head>
     <meta charset="utf-8">
@@ -24,9 +24,9 @@
     <link rel="stylesheet" href="@Url.Content("~/frontcss/css/regular.min.css")">
     <!--fontawesome end-->
     <link rel="stylesheet" href="@Url.Content("~/frontcss/css/style.css")">
-    @*<script src="@Url.Content("~/js/jquery.js")"></script>*@
-    <script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/jquery-migrate-3.0.0.min.js")"></script>
+    <script src="@Url.Content("~/js/jquery.js")"></script>
+    @*<script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>*@
+    @*<script src="@Url.Content("~/Scripts/jquery-migrate-3.0.0.min.js")"></script>*@
     <script src="@Url.Content("~/js/main.js")"></script>
     <noscript>
         @*<img src="@Url.Action("noJavascript","Home")" alt="" style="display:none" />*@

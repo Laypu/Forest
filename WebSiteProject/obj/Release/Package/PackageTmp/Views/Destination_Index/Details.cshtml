@@ -495,7 +495,7 @@
                                 <div class="circular-bar">
                                     <div class="circular-bar-chart" data-percent="@DesModel.First().Temp_Spring">
                                         <strong>SPRING</strong>
-                                        <label>@DesModel.First().Temp_Spring°C</label>
+                                        <label>@string.Format("{0:0.##}",@DesModel.First().Temp_Spring) °C</label>
                                     </div>
                                 </div>
 
@@ -504,7 +504,7 @@
                                 <div class="circular-bar">
                                     <div class="circular-bar-chart" data-percent="@DesModel.First().Temp_Summer">
                                         <strong>SUMMER</strong>
-                                        <label>@DesModel.First().Temp_Summer°C</label>
+                                        <label>@string.Format("{0:0.##}", @DesModel.First().Temp_Summer)°C</label>
                                     </div>
                                 </div>
                             </li>
@@ -512,7 +512,7 @@
                                 <div class="circular-bar">
                                     <div class="circular-bar-chart" data-percent="@DesModel.First().Temp_Autumn">
                                         <strong>AUTUMN</strong>
-                                        <label>@DesModel.First().Temp_Autumn°C</label>
+                                        <label>@string.Format("{0:0.##}", @DesModel.First().Temp_Autumn)°C</label>
                                     </div>
                                 </div>
                             </li>
@@ -520,7 +520,7 @@
                                 <div class="circular-bar">
                                     <div class="circular-bar-chart" data-percent="@DesModel.First().Temp_Winter">
                                         <strong>WINTER</strong>
-                                        <label>@DesModel.First().Temp_Winter°C</label>
+                                        <label>@string.Format("{0:0.##}", @DesModel.First().Temp_Winter)°C</label>
                                     </div>
                                 </div>
                             </li>
@@ -598,7 +598,7 @@
 
 
     })
-    
+
 
 </script>
 <!--ProgressBar start-->
