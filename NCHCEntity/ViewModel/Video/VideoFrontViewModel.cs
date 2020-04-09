@@ -39,6 +39,9 @@ namespace ViewModels
         public bool VideoHasMore { get; set; }
         public string VideoMoreNoScript { get; set; }
         public string LinkUrlDesc { get; set; }
-        
+
+        public string ImageFileName { get; set; }
+
+        public string ImageFileOrgName { get; set; }
     }
 }

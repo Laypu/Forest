@@ -49,51 +49,68 @@
         <div class="title"><h2>@Model.Title</h2></div>
         <div class="date">
             @Model.PublicshDate  @if (@Model.GroupName != "")
-        {<span class="top_class">@Model.GroupName</span>}
+            {<span class="top_class">@Model.GroupName</span>}
         </div>
 
         <!--page content start-->
         <div class="page_con">
-            <div class="date">
+            @*<div class="date">
                 @if (@Model.GroupName != "")
                 {<span class="top_class">@Model.GroupName</span>}
             </div>
-            <br />
+            <br />*@
             @if (string.IsNullOrEmpty(Model.VideoLink) == false)
             {
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="@Model.VideoLink" frameborder="0" allowfullscreen title="@Model.Title"></iframe>
                 </div>
             }
+            
+            <div class="title_02"><i class="fas fa-video"></i>Video introduction</div>
             <br />
-
-            <h3>@(Common.GetLangText("影片介紹"))</h3>
             <div class="con_font">
-                @if (string.IsNullOrEmpty(Model.ImageName) == false)
+                @if (string.IsNullOrEmpty(Model.ImageFileOrgName) == false)
                 {
-                    <span>
-                        <!--圖片置左-->
-                        @if (Model.ImageFileLocation == "1")
-                        {
-                            <img src="@Url.Content("~/UploadImage/VideoItem/")@Model.ImageName" class="img_padding" alt="" align="left">
-                        }
-                        else if (Model.ImageFileLocation == "2")
-                        {
-                            <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/VideoItem/")@Model.ImageName" class="img_padding" alt=""></p></div>
-                        }
-                        else if (Model.ImageFileLocation == "3")
-                        {
-                            <img src="@Url.Content("~/UploadImage/VideoItem/")@Model.ImageName" class="img_padding" alt="" align="right">
-                        }
-                    </span>
+                    <!--圖片置左-->
+                    if (Model.ImageFileLocation == "1")
+                    {
+                        <img src="@Url.Content("~/UploadImage/VideoItem/")@Model.ImageFileName" class="img_padding" alt="@Model.ImageFileDesc" align="left">
+                    }
+                    else if (Model.ImageFileLocation == "2")
+                    {
+                        <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/VideoItem/")@Model.ImageFileName" class="img_padding" alt="@Model.ImageFileOrgName"></p></div>
+                    }
+                    else if (Model.ImageFileLocation == "3")
+                    {
+                        <img src="@Url.Content("~/UploadImage/VideoItem/")@Model.ImageFileName" class="img_padding" alt="@Model.ImageFileDesc" align="right">
+                    }
+
                 }
+                @*@if (string.IsNullOrEmpty(Model.ImageName) == false)
+            {
+
+                圖片置左
+                if (Model.ImageFileLocation == "1")
+                {
+                <img src="@Url.Content("~/UploadImage/VideoItem/")@Model.ImageFileName" class="img_padding" alt="@Model.ImageFileDesc" align="left">
+                }
+                else if (item.ImageFileLocation == "2")
+                {
+                <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/VideoItem/")@Model.ImageFileName" class="img_padding" alt="@item.ImageFileOrgName"></p></div>
+                }
+                else if (item.ImageFileLocation == "3")
+                {
+                <img src="@Url.Content("~/UploadImage/VideoItem/")@Model.ImageFileName" class="img_padding" alt="@item.ImageFileDesc" align="right">
+                }
+
+            }*@
                 @Html.Raw(Model.Content)
             </div>
-            <div class="btn_box">
-                <a href="javascript:history.back()" class="btn_01">
-                    @(Common.GetLangText("回上一頁"))
-                </a><!--英文 Go Back-->
-            </div>
+            @*<div class="btn_box">
+            <a href="javascript:history.back()" class="btn_01">
+                @(Common.GetLangText("回上一頁"))
+            </a>英文 Go Back
+        </div>*@
             @if (string.IsNullOrEmpty(Model.VideoMore) == false)
             {
                 <div class="other_video">

@@ -78,15 +78,15 @@
                     <!--圖片置左-->
                     if (ActiveItem.ImageFileLocation == "1")
                     {
-                        <img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="@ActiveItem.ImageFileDesc" align="left">
+                        <img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="@ActiveItem.ImageFileDesc" title="@ActiveItem.ImageFileDesc" align="left">
                     }
                     else if (ActiveItem.ImageFileLocation == "2")
                     {
-                        <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="@ActiveItem.ImageFileDesc"></p></div>
+                        <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="@ActiveItem.ImageFileDesc" title="@ActiveItem.ImageFileDesc"></p></div>
                     }
                     else if (ActiveItem.ImageFileLocation == "3")
                     {
-                        <img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="@ActiveItem.ImageFileDesc" align="right">
+                        <img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="@ActiveItem.ImageFileDesc" title="@ActiveItem.ImageFileDesc" align="right">
                     }
 
                 }

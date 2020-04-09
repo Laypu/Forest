@@ -580,16 +580,16 @@
       <publishTime>03/25/2020 11:56:51</publishTime>
     </File>
     <File Include="bin/Services.dll">
-      <publishTime>04/07/2020 14:27:55</publishTime>
+      <publishTime>04/08/2020 17:49:10</publishTime>
     </File>
     <File Include="bin/Services.pdb">
-      <publishTime>04/07/2020 14:27:55</publishTime>
+      <publishTime>04/08/2020 17:49:10</publishTime>
     </File>
     <File Include="bin/SQLModel.dll">
-      <publishTime>04/07/2020 14:27:53</publishTime>
+      <publishTime>04/08/2020 15:14:16</publishTime>
     </File>
     <File Include="bin/SQLModel.pdb">
-      <publishTime>04/07/2020 14:27:53</publishTime>
+      <publishTime>04/08/2020 15:14:16</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>03/25/2020 11:56:51</publishTime>
@@ -643,19 +643,19 @@
       <publishTime>04/07/2020 14:27:53</publishTime>
     </File>
     <File Include="bin/ViewModels.dll">
-      <publishTime>04/07/2020 14:27:54</publishTime>
+      <publishTime>04/08/2020 17:49:09</publishTime>
     </File>
     <File Include="bin/ViewModels.pdb">
-      <publishTime>04/07/2020 14:27:54</publishTime>
+      <publishTime>04/08/2020 17:49:09</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>03/25/2020 11:56:52</publishTime>
     </File>
     <File Include="bin/WebSiteProject.dll">
-      <publishTime>04/08/2020 15:04:05</publishTime>
+      <publishTime>04/08/2020 17:49:17</publishTime>
     </File>
     <File Include="bin/WebSiteProject.pdb">
-      <publishTime>04/08/2020 15:04:05</publishTime>
+      <publishTime>04/08/2020 17:49:17</publishTime>
     </File>
     <File Include="bin/zh-Hant/EntityFramework.resources.dll">
       <publishTime>03/25/2020 11:56:49</publishTime>
@@ -1846,7 +1846,7 @@
       <publishTime>03/25/2020 11:56:50</publishTime>
     </File>
     <File Include="Models/_Forest.edmx.diagram">
-      <publishTime>03/25/2020 11:56:48</publishTime>
+      <publishTime>04/08/2020 15:57:56</publishTime>
     </File>
     <File Include="NLog.config">
       <publishTime>03/25/2020 11:56:48</publishTime>
@@ -8932,7 +8932,7 @@
       <publishTime>02/27/2020 18:32:58</publishTime>
     </File>
     <File Include="Views/Destination_Index/Details.cshtml">
-      <publishTime>04/08/2020 14:55:03</publishTime>
+      <publishTime>04/08/2020 15:25:58</publishTime>
     </File>
     <File Include="Views/Destination_Index/Index.cshtml">
       <publishTime>04/07/2020 14:22:00</publishTime>
@@ -9016,13 +9016,13 @@
       <publishTime>04/07/2020 14:59:11</publishTime>
     </File>
     <File Include="Views/Home/Article.cshtml">
-      <publishTime>03/25/2020 11:56:49</publishTime>
+      <publishTime>04/08/2020 17:47:11</publishTime>
     </File>
     <File Include="Views/Home/ArticleSearch.cshtml">
       <publishTime>04/06/2020 19:25:18</publishTime>
     </File>
     <File Include="Views/Home/F_Video_Detail.cshtml">
-      <publishTime>03/25/2020 11:56:49</publishTime>
+      <publishTime>04/08/2020 16:43:17</publishTime>
     </File>
     <File Include="Views/Home/F_Video_Index.cshtml">
       <publishTime>03/25/2020 13:45:36</publishTime>
@@ -9044,6 +9044,9 @@
     </File>
     <File Include="Views/Home/NoJsTemplate.cshtml">
       <publishTime>03/25/2020 11:56:49</publishTime>
+    </File>
+    <File Include="Views/Home/Print.cshtml">
+      <publishTime>04/08/2020 17:36:27</publishTime>
     </File>
     <File Include="Views/Industry/IndustryItemType.cshtml">
       <publishTime>05/05/2017 13:23:11</publishTime>
@@ -9124,7 +9127,7 @@
       <publishTime>12/11/2017 12:31:02</publishTime>
     </File>
     <File Include="Views/Message/Print.cshtml">
-      <publishTime>03/25/2020 11:56:49</publishTime>
+      <publishTime>04/08/2020 17:18:41</publishTime>
     </File>
     <File Include="Views/Message/SelectIndustry.cshtml">
       <publishTime>04/22/2017 16:38:30</publishTime>
@@ -9256,7 +9259,7 @@
       <publishTime>03/25/2020 11:56:49</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/07/2020 14:28:01</publishTime>
+      <publishTime>04/08/2020 15:14:23</publishTime>
     </File>
   </ItemGroup>
 </Project>

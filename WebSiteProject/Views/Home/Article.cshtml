@@ -22,7 +22,14 @@
     <!--banner start-->
     <div class="page_banner one_pic">
         <!--一張封面照；建議尺寸寬2000*600px；後台無上傳圖片時，img不顯示(但div page_banner要保留)；圖片alt=標題-->
-        <img src="@Url.Content("~/UploadImage/MessageItem/")@Banner" alt="@DesModel.First().Title" />
+        @if (@Banner == "" || Banner == null)
+        {
+
+        }
+        else 
+        {
+            <img src="@Url.Content("~/UploadImage/MessageItem/")@Banner" alt="@DesModel.First().Title" />
+        }
     </div>
     <!--banner end-->
     <!--page_content start-->
@@ -39,7 +46,33 @@
                 </div>
                 <div class="col-md-5 col-sm-6 col-xs-12">
                     <div class="page_top_right">
-                        @Html.Partial(Url.Content("~/Views/Home/_unit.cshtml"))
+                        @{
+                            WebSiteProject.Models.F_ViewModels.UnitPrint unit = ViewBag.Unit;
+                        }
+                        @{
+                            if (unit.isForward)
+                            {
+                                <a href="#" @*target="_blank"="*@ onclick="window.open('@Url.Action("Forward","F_Recommendedtrips" ,new {Title=@DesModel.First().Title,Url=Request.Url.ToString() })', 'forward')" title="forward(new windown)"><img src="@Url.Content("~/img/icon_mail.png")" alt="icon_mail.png"></a>
+                            }
+                            if (unit.isPrint)
+                            {
+                                <a href="@Url.Action("Print","Message",new { mid=179,id =DesModel.FirstOrDefault().ItemID})" target="_blank" title="print(new windown)"><img src="@Url.Content("~/img/icon_print.png")" alt="print"></a>
+                            }
+                            <!--<a href="#" target="_blank" title="link - web name(new window)"><img src="img/icon_link.png" alt=""></a>
+        <a href="#" target="_blank" title="download - file name(new window)"><img src="img/icon_download.png" alt=""></a>-->
+                            if (unit.isShare)
+                            {
+                                <a href="http://www.facebook.com/share.php?u=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="facebook share(new window)"><img src="@Url.Content("~/img/icon_facebook.png")" alt=""></a>
+                                <a href="https://twitter.com/share?text=@ViewBag.Title&url=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="twitter share(new window)"><img src="@Url.Content("~/img/icon_twitter.png")" alt=""></a>
+                                <a href="http://plurk.com/?qualifier=shares&status=[分享]@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))(@ViewBag.Titlee&url)" target="_blank" title="plurk share(new window)"><img src="@Url.Content("~/img/icon_plurk.png")" alt=""></a>
+                            }
+                            if (unit.isRSS)
+                            {
+
+                            }
+                        }
+
+                        @*@Html.Partial(Url.Content("~/Views/Home/_unit.cshtml"))*@
 
                         @*<a href="forward.html" target="_blank" title="forward(new windown)"><img src="~/img/icon_mail.png" alt=""></a>
         <a href="@Url.Action("Print","Message",new { mid=179,id=DesModel.First().ItemID})" target="_blank" title="print(new windown)"><img src="~/img/icon_print.png" alt="print"></a>
@@ -82,7 +115,7 @@
                     }
 
                     <!--文繞圖 end-->
-                    @Html.Raw(DesModel.First().HtmlContent)
+                    @Html.Raw(DesModel.First().HtmlContent.safeHtmlFragment())
 
 
                 </div>

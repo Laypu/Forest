@@ -125,9 +125,9 @@
     <div class="container" id="bookmark">
 
         <ul class="bookmark_item">
-            <li><a href="javascript:void(0);" name="page_01" id="page_01" title="Location" class="active">Location</a></li>
-            <li><a href="javascript:void(0);" name="page_02" id="page_02" title="Featured points">Featured points</a></li>
-            <li><a href="javascript:void(0);" name="page_03" id="page_03" title="Season">Season</a></li>
+            <li><a href="javascript:void(0);" name="page_01" id="page_01" title="Basic Info" class="active">Basic Info</a></li>
+            <li><a href="javascript:void(0);" name="page_02" id="page_02" title="Highlights">Highlights</a></li>
+            <li><a href="javascript:void(0);" name="page_03" id="page_03" title="Temperature">Temperature</a></li>
             <li><a href="javascript:void(0);" name="page_04" id="page_04" title="Charges">Charges</a></li>
         </ul>
         <div id="bookmark_item_detail">
@@ -136,28 +136,28 @@
                     <li data-sr="enter bottom over 1.5s">
                         <div class="img"><img src="@Url.Content("~/img/page_icon_01.jpg")" alt="" /></div>
                         <div class="font">
-                            <div class="title">Location</div>
+                            <div class="title">Address</div>
                             <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Location)</div>
                         </div>
                     </li>
                     <li data-sr="enter bottom over 1.5s">
                         <div class="img"><img src="@Url.Content("~/img/page_icon_02.jpg")" alt="" /></div>
                         <div class="font">
-                            <div class="title">Service hours</div>
+                            <div class="title">Opening hours</div>
                             <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_ServiceHours)</div>
                         </div>
                     </li>
                     <li data-sr="enter bottom over 1.5s">
                         <div class="img"><img src="@Url.Content("~/img/page_icon_03.jpg")" alt="" /></div>
                         <div class="font">
-                            <div class="title">Area</div>
+                            <div class="title">Area/Altitude</div>
                             <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Area)</div>
                         </div>
                     </li>
                     <li data-sr="enter bottom over 1.5s">
-                        <div class="img"><img src="@Url.Content("~/img/page_icon_04.jpg")" alt="" /></div>
+                        <div class="img"><img src="@Url.Content("~/img/Tel-icon-01.png")" alt="" /></div>
                         <div class="font">
-                            <div class="title">Altitude</div>
+                            <div class="title">Telephone</div>
                             <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Altitude)</div>
                         </div>
                     </li>
@@ -407,36 +407,38 @@
             switch (BookID) {
                 case "page_01":
                     $("#bookmark_item_detail").empty();
-                    document.getElementById("bookmark_item_detail").innerHTML = `<div class="locaton"><ul>
-                <li data-sr="enter bottom over 1.5s">
-                    <div class="img"><img src=\"@Url.Content("~/img/page_icon_01.jpg")\" alt="" /></div>
-                    <div class="font">
-                        <div class="title">Location</div>
-                        <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Location)</div>
-                    </div>
-                </li>
-                <li data-sr="enter bottom over 1.5s">
-                    <div class="img"><img src="@Url.Content("~/img/page_icon_02.jpg")" alt="" /></div>
-                    <div class="font">
-                        <div class="title">Service hours</div>
-                        <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_ServiceHours)</div>
-                    </div>
-                </li>
-                <li data-sr="enter bottom over 1.5s">
-                    <div class="img"><img src="@Url.Content("~/img/page_icon_03.jpg")" alt="" /></div>
-                    <div class="font">
-                        <div class="title">Area</div>
-                        <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Area)</div>
-                    </div>
-                </li>
-                <li data-sr="enter bottom over 1.5s">
-                    <div class="img"><img src="@Url.Content("~/img/page_icon_04.jpg")" alt="" /></div>
-                    <div class="font">
-                        <div class="title">Altitude</div>
-                        <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Altitude)</div>
-                    </div>
-                </li>
-            </ul></div>`
+                    document.getElementById("bookmark_item_detail").innerHTML = `<div class="locaton">
+                <ul>
+                    <li data-sr="enter bottom over 1.5s">
+                        <div class="img"><img src="@Url.Content("~/img/page_icon_01.jpg")" alt="" /></div>
+                        <div class="font">
+                            <div class="title">Address</div>
+                            <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Location)</div>
+                        </div>
+                    </li>
+                    <li data-sr="enter bottom over 1.5s">
+                        <div class="img"><img src="@Url.Content("~/img/page_icon_02.jpg")" alt="" /></div>
+                        <div class="font">
+                            <div class="title">Opening hours</div>
+                            <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_ServiceHours)</div>
+                        </div>
+                    </li>
+                    <li data-sr="enter bottom over 1.5s">
+                        <div class="img"><img src="@Url.Content("~/img/page_icon_03.jpg")" alt="" /></div>
+                        <div class="font">
+                            <div class="title">Area/Altitude</div>
+                            <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Area)</div>
+                        </div>
+                    </li>
+                    <li data-sr="enter bottom over 1.5s">
+                        <div class="img"><img src="@Url.Content("~/img/Tel-icon-01.png")" alt="" /></div>
+                        <div class="font">
+                            <div class="title">Telephone</div>
+                            <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Altitude)</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>`
                     break;
                 case "page_02":
                     $("#bookmark_item_detail").empty();
