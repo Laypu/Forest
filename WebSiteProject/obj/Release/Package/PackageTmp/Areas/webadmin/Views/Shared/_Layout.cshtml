@@ -115,6 +115,19 @@
                 @{
                     var AuthList = (List<SQLModel.Models.AdminFunctionAuth>)ViewBag.AuthList;
                     <ul class="nav navbar-nav">
+
+                        @if (ViewBag.Role == "admin")
+                        {
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="內容總管"><i class="icon-directions"></i> <span class="top_menu_title">內容總管</span> <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a path="@Url.Action("Index", "Home",new { menutype = "1" })" class="topmenu" title="主要選單">主要選單</a></li>
+                                    <li><a path="@Url.Action("Index", "Home",new { menutype = "2" })" class="topmenu" title="上方選單">上方選單</a></li>
+                                    <li><a path="@Url.Action("Index", "Home",new { menutype = "3" })" class="topmenu" title="下方選單">下方選單</a></li>
+                                </ul>
+                            </li>
+                        }
+
                         @*@if (ViewBag.Role == "admin")
                         {
                             <li class="dropdown">
@@ -154,7 +167,9 @@
                                     <li><a path="@Url.Action("SiteConfig", "Config")" class="topmenu" title="管理介面設定">管理介面設定</a></li>
                                     <li><a path="@Url.Action("PasswordEdit", "Config")" class="topmenu" title="密碼設定">密碼設定</a></li>
                                     <li><a path="@Url.Action("UserList", "Config")" class="topmenu" title="權限管理">權限管理</a></li>
+                                    <li><a path="@Url.Action("SystemRecord","Config")" class="topmenu" title="管理資料查詢">管理資料查詢</a></li>
                                     <li><a path="@Url.Action("SiteFlow", "Config")" class="topmenu" title="流量分析">流量分析</a></li>
+
                                     @*<li><a path="@Url.Action("Verify", "Config")" class="topmenu" title="審核管理">審核管理</a></li>*@
                                 </ul>
                             </li>

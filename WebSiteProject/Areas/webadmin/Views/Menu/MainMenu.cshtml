@@ -68,13 +68,13 @@
                                     {
                                         <td class='class_03' rowspan='@l1rowcount'>
                                             <div class='display_inline' style='float:left'>
-                                                @*@if (ViewBag.onlylevle1 != "Y")
-        {
+                                                @if (ViewBag.onlylevle1 != "Y")
+                                                {
 
-            <button type='button' class='btn green-meadow btn-xs addmenu' index='@l1.ID' nextlevel='@(l1.MenuLevel + 1)'><i class='fa fa-plus' aria-hidden='true'></i></button>
+                                                    <button type='button' class='btn green-meadow btn-xs addmenu' index='@l1.ID' nextlevel='@(l1.MenuLevel + 1)'><i class='fa fa-plus' aria-hidden='true'></i></button>
 
 
-        }*@
+                                                }
                                                 @if (@l1.ID == 24){ }
                                                 else if (@l1.ID == 179) { }
                                                 else if (@l1.ID == 176) { }

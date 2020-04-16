@@ -46,5 +46,10 @@ namespace ViewModels
         public string FBTitle { get; set; }
         public string PrintImageUrl { get; set; }
         public string SEOScriptCode { get; set; }
+
+        public List<Menu> Footer { get; set; }
+
+        public List<string> FooterMenuString { get; set; }
     }
+
 }

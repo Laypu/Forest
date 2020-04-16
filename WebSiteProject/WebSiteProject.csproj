@@ -626,6 +626,7 @@
     <Content Include="Areas\webadmin\Views\WebsiteMap\Index.cshtml" />
     <Content Include="Areas\webadmin\Views\WebsiteMap\WebSiteEdit.cshtml" />
     <Content Include="Areas\webadmin\Views\WebsiteMap\UnitSetting.cshtml" />
+    <Content Include="bin\NAudio.dll" />
     <Content Include="blocks\footer.html" />
     <Content Include="blocks\header.html" />
     <Content Include="blocks\page_bottom.html" />
@@ -1529,6 +1530,7 @@
     <Content Include="Scripts\ckeditor\plugins\about\dialogs\about.js" />
     <Content Include="Scripts\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
     <Content Include="Scripts\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Scripts\ckeditor\plugins\CodePlugin\plugin.js" />
     <Content Include="Scripts\ckeditor\plugins\colordialog\dialogs\colordialog.css" />
     <Content Include="Scripts\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
     <Content Include="Scripts\ckeditor\plugins\copyformatting\cursors\cursor-disabled.svg" />
@@ -2127,6 +2129,7 @@
     <Content Include="Views\Facts\Fact_Detail.cshtml" />
     <Content Include="Views\Facts\Print.cshtml" />
     <Content Include="Views\Home\Print.cshtml" />
+    <Content Include="Views\Destination_Index\_DetailView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

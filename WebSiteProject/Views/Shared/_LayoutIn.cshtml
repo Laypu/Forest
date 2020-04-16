@@ -2,9 +2,10 @@
 @{
     Layout = null;
     ViewBag.SEOScript = WebSiteProject.Code.CacheMapping.SEOScript;
+
 }
 <!DOCTYPE html>
-<html lang="@(Model.LangId=="1"?"Zh-hant":"en")" xml:lang="@(Model.LangId=="1"?"Zh-hant":"en")">
+<html lang="@(Model.LangId == "1" ? "Zh-hant" : "en")" xml:lang="@(Model.LangId == "1" ? "Zh-hant" : "en")">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -85,12 +86,12 @@
     <!--header start-->
     <noscript>
         <div class="noscript_font">
-            <img src="@Url.Action("noJavascript","Home")" style="display:none;" alt="noJavascriptImg">
+            <img src="@Url.Action("noJavascript", "Home")" style="display:none;" alt="noJavascriptImg">
             @Common.GetLangText("NoJavascript")
         </div>
     </noscript>
     <!--header start-->
-    <header id="header" class="white" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": false, "stickyStartAt": 0, "stickySetTop": "0", "stickyChangeLogo": false}'>
+    <header id="header"  data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": false, "stickyStartAt": 0, "stickySetTop": "0", "stickyChangeLogo": false}'>
         <div class="header-body">
             <!--topmenu start-->
             <div class="header-container container">
@@ -102,7 +103,7 @@
                                 @Common.GetLangText("跳到主要內容區塊")
                             </a><!-- 英文版 <a href="#main-content" class="sr-only" title="" tabindex="1">Jump to the main content area</a>  -->
                             <h1>
-                                <a href="@Url.Action("Index","Home")" title="@Model.SEOTitleOrg">
+                                <a href="@Url.Action("Index", "Home")" title="@Model.SEOTitleOrg">
                                     <img alt=" " width="130" data-sticky-width="130"
                                          data-sticky-top="0" src="@Model.InnerLogoUrl"><!--英文版 ；建議尺寸360*70px-->
                                 </a>
@@ -204,6 +205,7 @@
     <!--content end-->
     <div class="footer_menu">
         <div class="container">
+            <div><a href="#;return false;" title="Footer area" accesskey="B">:::</a></div>
             <div class="footer_item">
                 <!--固定無後台-->
                 <div class="footer_title">Find us on</div>
@@ -214,12 +216,95 @@
                     <li><a href="https://www.youtube.com/channel/UC8r9KygvV33JfgSN66wr9OA" title="YouTube" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</a></li>
                 </ul>
             </div>
-            <div class="footer_item">
-                <div class="footer_title">Our other sites</div>
-                <ul>
-                    @Html.Raw(Model.FooterMenu)
+
+            @*@foreach (Menu Menu1st in TopMenu.Where(t => t.MenuLevel == 1).OrderBy(t => t.Sort))
+        {
+            <div class="footer_list">
+                @Html.aira_HyperLink_Menu(Menu1st, "<div class=\"title\">" + Menu1st.MenuName + "</div>", Menu1st.MenuName, null)
+                <a href="#" title=""><div class="title">@Menu1st.MenuName</div></a>
+                <div class="title" data-sr="enter bottom over 1.5s"></div>
+                <span></span>
+                <ul class="footer_list_01" data-sr="enter bottom over 1.5s">
+
+                    @foreach (Menu Menu2nd in TopMenu.Where(t => t.MenuLevel == 2 && t.ParentID == Menu1st.ID).OrderBy(t => t.Sort))
+                    {
+                        bool is3rd = TopMenu.Where(t => t.MenuLevel == 3 && t.ParentID == Menu2nd.ID).Count() > 0;
+                        if (is3rd && Menu2nd.LinkMode == 1)
+                        {
+                            <li>
+                                @Html.aira_HyperLink_Menu(TopMenu.Where(t => t.MenuLevel == 3 && t.ParentID == Menu2nd.ID).First(), null)
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                @Html.aira_HyperLink_Menu(Menu2nd, null)
+                            </li>
+                        }
+                    }
                 </ul>
             </div>
+        }*@
+
+           
+
+            @{
+                var x = 0;
+                foreach (var item in Model.Footer)
+                {
+                        <div class="footer_item">
+                            @if (item.MenuLevel == 1)
+                            {
+                                <div class="footer_title">
+                                    @if (item.LinkUrl.IsNullorEmpty())
+                                    {
+                                        @item.MenuName
+                                    }
+                                    else
+                                    {
+                                        @Html.Raw(Model.FooterMenuString[@x])
+                                    }
+
+                                </div>
+                                <ul>
+                                    @foreach (var item1 in Model.Footer)
+                                    {
+
+                                        if (item1.ParentID == item.ID)
+                                        {
+
+                                            var link = Url.Action("Index", "Page", new { itemid = item1.ModelItemID, mid = item1.ID });
+                                            <li>
+                                                <a href="@link">@item1.MenuName</a>
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+                            }
+                            else
+                            {
+
+
+
+                            }
+
+
+                        </div>
+                    x = x + 1;
+                }
+
+             }
+
+            <div class="footer_item">
+
+            <div class="footer_title">Our other sites</div>
+            <ul>
+
+                @Html.Raw(Model.FooterMenu)
+
+            </ul>
+        </div>
+
             @Html.Raw(Model.FooterString)
         </div>
         </div>

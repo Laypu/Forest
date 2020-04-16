@@ -782,6 +782,7 @@ namespace WebSiteProject.Controllers
                           H.Message10Hash_8H == Hashtag ||
                           H.Message10Hash_9H == Hashtag ||
                           H.Message10Hash_10H == Hashtag
+                    where M.Enabled == true
                     orderby M.Sort
                     select M;
 
@@ -991,6 +992,14 @@ namespace WebSiteProject.Controllers
 
             return View(model);
         }
+
+        //public string GetSub(int id)
+        //{
+        //    MasterPageManager MPM = new MasterPageManager();
+        //    MPM.GetIDString(id);
+        //    return "";
+        //}
+
 
     }
 }

@@ -45,8 +45,8 @@
                         {
                             <a href="@Url.Action("Print",new { ItemID=ActiveItem.ItemID,ModelID =ActiveItem.ModelID})" target="_blank" title="print(new windown)"><img src="@Url.Content("~/img/icon_print.png")" alt="print"></a>
                         }
-                        <a href="#" target="_blank" title="link - web name(new window)"><img src="img/icon_link.png" alt=""></a>
-                        <a href="#" target="_blank" title="download - file name(new window)"><img src="img/icon_download.png" alt=""></a>
+                        @*<a href="#" target="_blank" title="link - web name(new window)"><img src="img/icon_link.png" alt=""></a>
+                        <a href="#" target="_blank" title="download - file name(new window)"><img src="img/icon_download.png" alt=""></a>*@
                         if (unit.isShare)
                         {
                             <a href="http://www.facebook.com/share.php?u=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="facebook share(new window)"><img src="@Url.Content("~/img/icon_facebook.png")" alt=""></a>

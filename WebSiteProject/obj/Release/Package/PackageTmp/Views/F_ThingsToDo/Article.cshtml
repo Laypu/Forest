@@ -51,11 +51,11 @@
 
                             if (unit.isForward)
                             {
-                                <a href="#" @*target="_blank"="*@ onclick="window.open('@Url.Action("Forward","F_Recommendedtrips" ,new {Title=TTDModel.Title,Url=Request.Url.ToString() })', 'forward', config='height=750,width=650')" title="forward(new windown)"><img src="@Url.Content("~/img/icon_mail.png")" alt="icon_mail.png"></a>
+                                <a href="#" @*target="_blank"="*@ onclick="window.open('@Url.Action("Forward","F_Recommendedtrips" ,new {Title=TTDModel.Title,Url=Request.Url.ToString() })', 'forward', config='height=750,width=650')" title="forward(new window)"><img src="@Url.Content("~/img/icon_mail.png")" alt="icon_mail.png"></a>
                             }
                             if (unit.isPrint)
                             {
-                                <a href="@Url.Action("Print","Message",new { mid=24,id =TTDModel.ItemID})" target="_blank" title="print(new windown)"><img src="@Url.Content("~/img/icon_print.png")" alt="print"></a>
+                                <a href="@Url.Action("Print","Message",new { mid=24,id =TTDModel.ItemID})" target="_blank" title="print(new window)"><img src="@Url.Content("~/img/icon_print.png")" alt="print"></a>
                             }
                             <!--<a href="#" target="_blank" title="link - web name(new window)"><img src="img/icon_link.png" alt=""></a>
         <a href="#" target="_blank" title="download - file name(new window)"><img src="img/icon_download.png" alt=""></a>-->
@@ -160,7 +160,7 @@
     <div class="breadcrumbs">
         <div class="container">
             <div class="title">You are here</div>
-            <div class="font"><a href="index.html" title="Home">Home</a> / <a href="things.html" title="Things to do">Things to do</a> / <a href="things_detail_03.html" title="@ViewBag.Category">@ViewBag.Category</a> / @TTDModel.Title</div>
+            <div class="font"><a href="index.html" title="Home">Home</a> / <a href="@Url.Action("Index","F_ThingsToDo",new { mid = 24})" title="Things to do">Things to do</a> / <a href="things_detail_03.html" title="@ViewBag.Category">@ViewBag.Category</a> / @TTDModel.Title</div>
         </div>
     </div>
     <!--breadcrumbs end-->

@@ -49,7 +49,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 
         
         //上傳檔案
-        public ActionResult Upload(HttpPostedFileBase Img_File)
+        public ActionResult Upload(HttpPostedFileBase Img_File, string Img_FileName)
         {
             string Index_Img_Name = "";
 
@@ -63,11 +63,11 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     {
                         Directory.CreateDirectory(uploadPath);
                     }
-                    
-                    Index_Img_Name = Path.GetFileName(Img_File.FileName);  //取得檔案名
-                    
-                    var NewImgFile = DateTime.Now.Ticks + "_" + Index_Img_Name;
-                    var path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), NewImgFile);  //取得本機檔案路徑
+                    Index_Img_Name = Img_FileName;
+                    //Index_Img_Name = Path.GetFileName(Img_File.FileName);  //取得檔案名
+
+                    //var NewImgFile = DateTime.Now.Ticks + "_" + Index_Img_Name;
+                    var path = Path.Combine(Server.MapPath("~/UploadImage/ThingsToDo_Img/"), Index_Img_Name);  //取得本機檔案路徑
 
 
                     //若有重複則不儲存

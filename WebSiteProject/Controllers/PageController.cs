@@ -79,7 +79,7 @@ namespace WebSiteProject.Controllers
             }
             if (itemmodel.ModelID == null){return RedirectToAction("Index", "Home");}
             if (itemmodel.ItemID == 0){ return RedirectToAction("Index", "Home");}
-            if (itemmodel.IsVerift == false) { return RedirectToAction("Index", "Home"); }
+            //if (itemmodel.IsVerift == false) { return RedirectToAction("Index", "Home"); }
             if (menu!=null)
             {
                 if (menu.ID == 0) { return RedirectToAction("Index", "Home"); }

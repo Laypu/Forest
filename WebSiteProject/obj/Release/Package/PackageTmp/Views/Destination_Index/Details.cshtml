@@ -99,10 +99,16 @@
     <noscript>
         <!--僅顯示圖片，影片不置入-->
         <div class="noscrip_banner defaultimg" style="width:100%">
-            <img src="img/index_banner_fake.jpg" alt="" />
-            <div><img src="img/index_banner_05.jpg" alt="" /></div>
-            <div><img src="img/index_banner_05.jpg" alt="" /></div>
+            <img src="@Url.Content("~/img/index_banner_fake.jpg")" alt="banner">
+            @foreach (var ad in Model.ADMain)
+            {
+                if (string.IsNullOrEmpty(ad.Img_Name_Ori) == false)
+                {
+                   <img src="@Url.Content("~/UploadImage/Destination_AD/" + ad.Img_Name_Ori)" alt="@ad.Img_Name_Ori">
+                }
+            }
         </div>
+        
     </noscript>
 
     <div class="banner_title">
@@ -124,51 +130,215 @@
 <div class="page_bookmark">
     <div class="container" id="bookmark">
 
-        <ul class="bookmark_item">
-            <li><a href="javascript:void(0);" name="page_01" id="page_01" title="Location" class="active">Basic Info</a></li>
-            <li><a href="javascript:void(0);" name="page_02" id="page_02" title="Featured points">Highlights</a></li>
-            <li><a href="javascript:void(0);" name="page_03" id="page_03" title="Season">Temperature</a></li>
-            <li><a href="javascript:void(0);" name="page_04" id="page_04" title="Charges">Charges</a></li>
-        </ul>
-        <div id="bookmark_item_detail">
-            <div class="locaton">
-                <ul>
-                    <li data-sr="enter bottom over 1.5s">
-                        <div class="img"><img src="@Url.Content("~/img/page_icon_01.jpg")" alt="" /></div>
-                        <div class="font">
-                            <div class="title">Address</div>
-                            <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Location)</div>
+        @{
+                var id = (int)@ViewBag.ID;
+                string title = @ViewBag.Title;
+         }
+        @switch (id)
+        {
+                case 1:
+                    <ul class="bookmark_item">
+                        <li><a href="@Url.Action("Details", new { ID = 1, ImgTitle = title })" name="page_01" id="page_01" title="Basic Info" class="active">Basic Info</a></li>
+                        <li><a href="@Url.Action("Details", new { ID = 2, ImgTitle = title })" name="page_02" id="page_02" title="Highlights">Highlights</a></li>
+                        <li><a href="@Url.Action("Details", new { ID = 3, ImgTitle = title })" name="page_03" id="page_03" title="Temperature">Temperature</a></li>
+                        <li><a href="@Url.Action("Details", new { ID = 4, ImgTitle = title })" name="page_04" id="page_04" title="Charges">Charges</a></li>
+                    </ul>
+                    <div id="bookmark_item_detail">
+                        <div class="locaton">
+                            <ul>
+                                <li data-sr="enter bottom over 1.5s">
+                                    <div class="img"><img src="@Url.Content("~/img/page_icon_01.jpg")" alt="Address" /></div>
+                                    <div class="font">
+                                        <div class="title">Address</div>
+                                        <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Location)</div>
+                                    </div>
+                                </li>
+                                <li data-sr="enter bottom over 1.5s">
+                                    <div class="img"><img src="@Url.Content("~/img/page_icon_02.jpg")" alt="Opening hours" /></div>
+                                    <div class="font">
+                                        <div class="title">Opening hours</div>
+                                        <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_ServiceHours)</div>
+                                    </div>
+                                </li>
+                                <li data-sr="enter bottom over 1.5s">
+                                    <div class="img"><img src="@Url.Content("~/img/page_icon_03.jpg")" alt="Area/Altitude" /></div>
+                                    <div class="font">
+                                        <div class="title">Area/Altitude</div>
+                                        <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Area)</div>
+                                    </div>
+                                </li>
+                                <li data-sr="enter bottom over 1.5s">
+                                    <div class="img"><img src="@Url.Content("~/img/Tel-icon-01.png")" alt="Telephone" /></div>
+                                    <div class="font">
+                                        <div class="title">Telephone</div>
+                                        <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Altitude)</div>
+                                    </div>
+                                </li>
+
+
+
+
+                            </ul>
+
                         </div>
-                    </li>
-                    <li data-sr="enter bottom over 1.5s">
-                        <div class="img"><img src="@Url.Content("~/img/page_icon_02.jpg")" alt="" /></div>
-                        <div class="font">
-                            <div class="title">Opening hours</div>
-                            <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_ServiceHours)</div>
-                        </div>
-                    </li>
-                    <li data-sr="enter bottom over 1.5s">
-                        <div class="img"><img src="@Url.Content("~/img/page_icon_03.jpg")" alt="" /></div>
-                        <div class="font">
-                            <div class="title">Area/Altitude</div>
-                            <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Area)</div>
-                        </div>
-                    </li>
-                    <li data-sr="enter bottom over 1.5s">
-                        <div class="img"><img src="@Url.Content("~/img/Tel-icon-01.png")" alt="" /></div>
-                        <div class="font">
-                            <div class="title">Telephone</div>
-                            <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Altitude)</div>
-                        </div>
-                    </li>
+                    </div>
+                    break;
+
+                case 2:
+                    <ul class="bookmark_item">
+                        <li><a href="@Url.Action("Details", new { ID = 1, ImgTitle = title })" name="page_01" id="page_01" title="Basic Info" >Basic Info</a></li>
+                        <li><a href="@Url.Action("Details", new { ID = 2, ImgTitle = title })" name="page_02" id="page_02" title="Highlights" class="active">Highlights</a></li>
+                        <li><a href="@Url.Action("Details", new { ID = 3, ImgTitle = title })" name="page_03" id="page_03" title="Temperature">Temperature</a></li>
+                        <li><a href="@Url.Action("Details", new { ID = 4, ImgTitle = title })" name="page_04" id="page_04" title="Charges">Charges</a></li>
+                    </ul>
+                    <div class="featured">
+                        <div class="img"><img src="@Url.Content("~/img/page_icon_05.png")" alt="featured" /></div>
+                        <ul>
+                            @if (@DesModel.First().FPI != null)
+                            {
+                                <li data-sr="enter bottom over 1.5s">@DesModel.First().FPI</li>
+                            }
+                            @if (@DesModel.First().FPII != null)
+                            {
+                                <li data-sr="enter bottom over 1.5s">@DesModel.First().FPII</li>
+                            }
+                            @if (@DesModel.First().FPIII != null)
+                            {
+                                <li data-sr="enter bottom over 1.5s">@DesModel.First().FPIII</li>
+                            }
+                            @if (@DesModel.First().FPIV != null)
+                            {
+                                <li data-sr="enter bottom over 1.5s">@DesModel.First().FPIV</li>
+                            }
+                            @if (@DesModel.First().FPV != null)
+                            {
+                                <li data-sr="enter bottom over 1.5s">@DesModel.First().FPV</li>
+                            }
+                            @if (@DesModel.First().FPVI != null)
+                            {
+                                <li data-sr="enter bottom over 1.5s">@DesModel.First().FPVI</li>
+                            }
+                            @if (@DesModel.First().FPVII != null)
+                            {
+                                <li data-sr="enter bottom over 1.5s">@DesModel.First().FPVII</li>
+                            }
+                            @if (@DesModel.First().FPVIII != null)
+                            {
+                                <li data-sr="enter bottom over 1.5s">@DesModel.First().FPVIII</li>
+                            }
+                            @if (@DesModel.First().FPIX != null)
+                            {
+                                <li data-sr="enter bottom over 1.5s">@DesModel.First().FPIX</li>
+                            }
+                            @if (@DesModel.First().FPX != null)
+                            {
+                                <li data-sr="enter bottom over 1.5s">@DesModel.First().FPX</li>
+                            }
+                        </ul>
+                    </div>
+                    break;
+                case 3:
+                    <ul class="bookmark_item">
+                        <li><a href="@Url.Action("Details", new { ID = 1, ImgTitle = title })" name="page_01" id="page_01" title="Basic Info">Basic Info</a></li>
+                        <li><a href="@Url.Action("Details", new { ID = 2, ImgTitle = title })" name="page_02" id="page_02" title="Highlights">Highlights</a></li>
+                        <li><a href="@Url.Action("Details", new { ID = 3, ImgTitle = title })" name="page_03" id="page_03" title="Temperature" class="active">Temperature</a></li>
+                        <li><a href="@Url.Action("Details", new { ID = 4, ImgTitle = title })" name="page_04" id="page_04" title="Charges">Charges</a></li>
+                    </ul>
+                    <div class="season">
+                        <ul>
+                            <li data-sr="enter bottom over 1.5s">
+                                <div class="circular-bar">
+                                    <div class="circular-bar-chart" data-percent="@DesModel.First().Temp_Spring">
+                                        <strong>SPRING</strong>
+                                        <label>@string.Format("{0:0.##}", @DesModel.First().Temp_Spring) °C</label>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li data-sr="enter bottom over 1.5s">
+                                <div class="circular-bar">
+                                    <div class="circular-bar-chart" data-percent="@DesModel.First().Temp_Summer">
+                                        <strong>SUMMER</strong>
+                                        <label>@string.Format("{0:0.##}", @DesModel.First().Temp_Summer)°C</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-sr="enter bottom over 1.5s">
+                                <div class="circular-bar">
+                                    <div class="circular-bar-chart" data-percent="@DesModel.First().Temp_Autumn">
+                                        <strong>AUTUMN</strong>
+                                        <label>@string.Format("{0:0.##}", @DesModel.First().Temp_Autumn)°C</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-sr="enter bottom over 1.5s">
+                                <div class="circular-bar">
+                                    <div class="circular-bar-chart" data-percent="@DesModel.First().Temp_Winter">
+                                        <strong>WINTER</strong>
+                                        <label>@string.Format("{0:0.##}", @DesModel.First().Temp_Winter)°C</label>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    break;
+                case 4:
+                    <ul class="bookmark_item">
+                        <li><a href="@Url.Action("Details", new { ID = 1, ImgTitle = title })" name="page_01" id="page_01" title="Basic Info">Basic Info</a></li>
+                        <li><a href="@Url.Action("Details", new { ID = 2, ImgTitle = title })" name="page_02" id="page_02" title="Highlights">Highlights</a></li>
+                        <li><a href="@Url.Action("Details", new { ID = 3, ImgTitle = title })" name="page_03" id="page_03" title="Temperature">Temperature</a></li>
+                        <li><a href="@Url.Action("Details", new { ID = 4, ImgTitle = title })" name="page_04" id="page_04" title="Charges" class="active">Charges</a></li>
+                    </ul>
+                    <div class="charges" data-sr="enter bottom over 1.5s">
+                        <table class="table" summary="charges list, The first column is Ticket type, the second column is fare (NT $: yuan), and the third column is Description ">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Ticket type</th>
+                                    <th scope="col">Fare (NT$: yuan)</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in FareModel)
+                                {
+                                    <tr>
+                                        <td>
+                                            @if (item.TicketType != null)
+                                            {
+                                                @item.TicketType
+                                            }
+                                        </td>
+                                        <td>
+                                            $
+                                            @if (item.Fare != null)
+                                            {
+                                                @item.Fare
+                                            }
+                                        </td>
+                                        <td>
+                                            @if (item.Description != null)
+                                            {
+                                                @Html.Raw(@item.Description)
+                                            }
+                                        </td>
+
+                                    </tr>
+                                }
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                    break;
+
+        }
 
 
 
 
-                </ul>
 
-            </div>
-        </div>
     </div>
 </div>
 <!--page_bookmark end-->
@@ -181,7 +351,7 @@
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                 <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
                 <a href="@Url.Action("Index", "Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
-                <a href="@Url.Action("Index", "Destination_Index", new { langid = 1 })">Destinations</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="@Url.Action("Index", "Destination_Index", new { langid = 1 })">@ViewBag.Destination_Title</a><i class="fa fa-angle-right" aria-hidden="true"></i>
                 @BanTitle
             </div>
             <div class="col-md-5 col-sm-6 col-xs-12">
@@ -294,7 +464,7 @@
                                     </div>
                                 </div>
                             </li>
-                            }
+                         }
 
                     } 
                 </ul>
@@ -379,7 +549,7 @@
 <div class="breadcrumbs">
     <div class="container">
         <div class="title">You are here</div>
-        <div class="font"><a href="@Url.Action("Index","Home")" title="Home">Home</a> / <a href="@Url.Action("Index","Destination_Index",new {langid = 1 })" title="Destinations">Destinations</a> / @BanTitle</div>
+        <div class="font"><a href="@Url.Action("Index","Home")" title="Home">Home</a> / <a href="@Url.Action("Index","Destination_Index",new {langid = 1 })" title="@ViewBag.Destination_Title">@ViewBag.Destination_Title</a> / @BanTitle</div>
     </div>
 </div>
 <!--breadcrumbs end-->
@@ -397,7 +567,7 @@
 
 
         //點擊maplegend換圖
-        $(".bookmark_item>li>a").click(function () {
+        @*$(".bookmark_item>li>a").click(function () {
 
             $(this).addClass("active").parent().siblings().children().removeClass("active");
 
@@ -407,36 +577,38 @@
             switch (BookID) {
                 case "page_01":
                     $("#bookmark_item_detail").empty();
-                    document.getElementById("bookmark_item_detail").innerHTML = `<div class="locaton"><ul>
-                <li data-sr="enter bottom over 1.5s">
-                    <div class="img"><img src=\"@Url.Content("~/img/page_icon_01.jpg")\" alt="" /></div>
-                    <div class="font">
-                        <div class="title">Location</div>
-                        <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Location)</div>
-                    </div>
-                </li>
-                <li data-sr="enter bottom over 1.5s">
-                    <div class="img"><img src="@Url.Content("~/img/page_icon_02.jpg")" alt="" /></div>
-                    <div class="font">
-                        <div class="title">Service hours</div>
-                        <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_ServiceHours)</div>
-                    </div>
-                </li>
-                <li data-sr="enter bottom over 1.5s">
-                    <div class="img"><img src="@Url.Content("~/img/page_icon_03.jpg")" alt="" /></div>
-                    <div class="font">
-                        <div class="title">Area</div>
-                        <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Area)</div>
-                    </div>
-                </li>
-                <li data-sr="enter bottom over 1.5s">
-                    <div class="img"><img src="@Url.Content("~/img/page_icon_04.jpg")" alt="" /></div>
-                    <div class="font">
-                        <div class="title">Altitude</div>
-                        <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Altitude)</div>
-                    </div>
-                </li>
-            </ul></div>`
+                    document.getElementById("bookmark_item_detail").innerHTML = `<div class="locaton">
+                <ul>
+                    <li data-sr="enter bottom over 1.5s">
+                        <div class="img"><img src="@Url.Content("~/img/page_icon_01.jpg")" alt="" /></div>
+                        <div class="font">
+                            <div class="title">Address</div>
+                            <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Location)</div>
+                        </div>
+                    </li>
+                    <li data-sr="enter bottom over 1.5s">
+                        <div class="img"><img src="@Url.Content("~/img/page_icon_02.jpg")" alt="" /></div>
+                        <div class="font">
+                            <div class="title">Opening hours</div>
+                            <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_ServiceHours)</div>
+                        </div>
+                    </li>
+                    <li data-sr="enter bottom over 1.5s">
+                        <div class="img"><img src="@Url.Content("~/img/page_icon_03.jpg")" alt="" /></div>
+                        <div class="font">
+                            <div class="title">Area/Altitude</div>
+                            <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Area)</div>
+                        </div>
+                    </li>
+                    <li data-sr="enter bottom over 1.5s">
+                        <div class="img"><img src="@Url.Content("~/img/Tel-icon-01.png")" alt="" /></div>
+                        <div class="font">
+                            <div class="title">Telephone</div>
+                            <div class="con_font">@Html.Raw(DesModel.First().Destination_Type_Altitude)</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>`
                     break;
                 case "page_02":
                     $("#bookmark_item_detail").empty();
@@ -587,7 +759,7 @@
 
 
 
-        })
+        })*@
 
 
         //$("#First").click(function(){
@@ -606,7 +778,15 @@
 <script type="text/javascript">
     // ProgressBar
     $(function () {
-
+        $('.circular-bar-chart').easyPieChart({
+            barColor: "#d0ad7b",
+            trackColor: "#e7d6bd",
+            scaleColor: false,
+            lineWidth: 15,
+            trackWidth: 15,
+            lineCap: "round",
+            size: 140,
+        });
     });
 
 </script>

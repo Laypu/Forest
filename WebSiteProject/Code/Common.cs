@@ -244,6 +244,7 @@ namespace WebSiteProject.Code
         public static string GetLangText(string key)
         {
             var langid = HttpContext.Current.Session["LangID"];
+            langid = 2;
             Dictionary<string, string> tempdict = null;
             tempdict = TCHNLang;
             if (langid != null  && LangDict != null)

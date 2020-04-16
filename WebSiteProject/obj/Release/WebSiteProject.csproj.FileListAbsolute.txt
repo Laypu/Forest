@@ -33,7 +33,6 @@ C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Mic
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.dll
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.dll
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\NAudio.dll
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\NAudio.Lame.dll
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\Newtonsoft.Json.dll
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\Owin.dll

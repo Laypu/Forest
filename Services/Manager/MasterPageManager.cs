@@ -99,6 +99,7 @@ namespace Services.Manager
             //if (MasterPageModel.MasterMainTitle == "") { MasterPageModel.MasterMainTitle = langid == "1" ? "國家高速網路與計算中心" : "National Center for High-performance Computing"; }
             MasterPageModel.SEOTitle = MasterPageModel.MasterMainTitle;
             var adset = _adsetsqlrepository.GetByWhere("Lang_ID=@1 and SType=@2", new object[] { langid, stype });
+            
             MasterPageModel.FooterString = layoutdata.HtmlContent;
             var menuurl = _menuurlsqlrepository.GetAll().ToDictionary(v => v.MenuName, v => v.MenuPath);
             MasterPageModel.PrintImageUrl = layoutdata.PrintImageUrl;
@@ -121,6 +122,9 @@ namespace Services.Manager
             var langdict = new Dictionary<string, string>();
             MasterPageModel.LeftMenu = GetSubString(langid, mid, _langdict, menuurl);
             MasterPageModel.FooterMenu = GetFooterString(langid, menuurl);
+
+            //MasterPageModel.FooterMenuString = GetFooterString(langid, menuurl);
+            //MasterPageModel.Footer = GetFooter(langid, menuurl);
             MasterPageModel.BannerImage = string.IsNullOrEmpty(layoutdata.InsidePageImgNameOri) ? "" : layoutdata.InsidePageImageUrl;
             MasterPageModel.LangId = langid;
             if (HttpContext.Current.Session["LangID"] == null) { HttpContext.Current.Session["LangID"] = langid; } else {
@@ -505,15 +509,80 @@ namespace Services.Manager
             foreach (var m in allmenu)
             {
                 var tempname = m.MenuName;
-                sb.Append("<li data-sr='enter botom over 1.5s'>" + GetPageUrl(menuurl, m, helper, m.MenuLevel) +"</li>");
+                sb.Append("<li>" + GetPageUrl(menuurl, m, helper, m.MenuLevel)+ "</li>");
+
             }
             return sb.ToString();
         }
         #endregion
 
+        //#region GetFooterString
+        //public string GetIDString(string langid, Dictionary<string, string> langdict, int ID, IDictionary<string, string> menuurl = null)
+        //{
+        //    if (menuurl == null)
+        //    {
+        //        menuurl = _menuurlsqlrepository.GetAll().ToDictionary(v => v.MenuName, v => v.MenuPath);
+        //    }
+        //    var allmenu = _menusqlrepository.GetByWhere($"ID={ID} order by MenuLevel,Sort", new object[] { langid, true });
+        //    UrlHelper helper = new UrlHelper(HttpContext.Current.Request.RequestContext);
+        //    var tempname = allmenu.FirstOrDefault().MenuName;
+
+        //    var sb = "";
+        //    sb= GetPageUrl(menuurl, allmenu.FirstOrDefault(), helper, allmenu.FirstOrDefault().MenuLevel);
+
+        //    return sb.ToString();
+        //}
+        //#endregion
+
+
+
+        //#region GetFooterString
+        //public List<string> GetFooterString(string langid, Dictionary<string, string> langdict, IDictionary<string, string> menuurl = null)
+        //{
+        //    if (menuurl == null)
+        //    {
+        //        menuurl = _menuurlsqlrepository.GetAll().ToDictionary(v => v.MenuName, v => v.MenuPath);
+        //    }
+        //    var allmenu = _menusqlrepository.GetByWhere("LangID=@1 and  Status=@2 and MenuType=3 order by MenuLevel,Sort", new object[] { langid, true });
+        //    var sb = new List<string>();
+        //    UrlHelper helper = new UrlHelper(HttpContext.Current.Request.RequestContext);
+        //    foreach (var m in allmenu)
+        //    {
+        //        var tempname = m.MenuName;
+        //        sb.Add("" + GetPageUrl(menuurl, m, helper, m.MenuLevel));
+
+        //    }
+        //    return sb;
+        //}
+        //#endregion
+
+        //#region GetFooter
+        //public List<Menu> GetFooter(string langid, Dictionary<string, string> langdict, IDictionary<string, string> menuurl = null)
+        //{
+        //    if (menuurl == null)
+        //    {
+        //        menuurl = _menuurlsqlrepository.GetAll().ToDictionary(v => v.MenuName, v => v.MenuPath);
+        //    }
+        //    var allmenu = _menusqlrepository.GetByWhere("LangID=@1 and  Status=@2 and MenuType=3 order by MenuLevel,Sort", new object[] { langid, true });
+        //    var sb = new List<Menu>();
+        //    UrlHelper helper = new UrlHelper(HttpContext.Current.Request.RequestContext);
+        //    foreach (var m in allmenu)
+        //    {
+        //        var tempname = m.MenuName;
+        //        var pageurl = GetPageUrl(menuurl, m, helper, m.MenuLevel);
+        //        sb.Add(m);
+
+        //    }
+        //    return sb;
+        //}
+        //#endregion
+
+
+
         #region GetSubString
         public string GetSubString(string langid, string mid, Dictionary<string, string> langkey, IDictionary<string, string> menuurl = null)
         {
+            
             if (mid.IsNullorEmpty()) { return ""; }
             if (menuurl == null)
             {
@@ -814,6 +883,7 @@ namespace Services.Manager
         #region GetPageUrl
         public string GetPageUrl(IDictionary<string, string> menuurl, Menu _menu, UrlHelper helper,int reallevel)
         {
+            
             // var openmodestr  = "openmode='" + _menu.OpenMode + "'";
             var levelclass = "";
             if (reallevel == 2)
@@ -825,11 +895,11 @@ namespace Services.Manager
                 levelclass = "3rd";
             }
             var openmodestr = "";
-            var opennewwindowstr = "另開新視窗";
+            var opennewwindowstr = "new window";
             if (_langid == "2") {
-                opennewwindowstr = "New Window";
+                opennewwindowstr = "new window";
             }
-            if (_langdict != null && _langdict.ContainsKey("另開新視窗")) { opennewwindowstr = _langdict["另開新視窗"]; }
+            if (_langdict != null && _langdict.ContainsKey("new window")) { opennewwindowstr = _langdict["new window"]; }
             var isopennewwinstr = "";
             var link = "";
             //var showmenun = _menu.ICon.IsNullorEmpty() ? _menu.MenuName : _menu.ICon;
@@ -1031,18 +1101,21 @@ namespace Services.Manager
         }
         #endregion
 
+
+
+
         #region GetSubPageUrl2
         public string GetSubPageUrl2(IDictionary<string, string> menuurl, Menu _menu, UrlHelper helper,bool linkopen)
         {
             var linkstr = "";
             var showmenun = _menu.ICon.IsNullorEmpty() ? _menu.MenuName : _menu.ICon;
-            var opennewwindowstr = "另開新視窗";
+            var opennewwindowstr = "new window";
             if (_langid == "2")
             {
-                opennewwindowstr = "New Window";
+                opennewwindowstr = "new window";
             }
             var isopennewwinstr = "";
-            if (_langdict != null && _langdict.ContainsKey("另開新視窗")) { isopennewwinstr = "(" + opennewwindowstr + ")"; }
+            if (_langdict != null && _langdict.ContainsKey("new window")) { isopennewwinstr = "(" + opennewwindowstr + ")"; }
             if (_menu.LinkMode.Value == 3)
             {
                 if (_menu.LinkUrl.IsNullorEmpty() == false)

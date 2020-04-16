@@ -39,7 +39,7 @@ namespace WebSiteProject.Controllers
             _ADRightDownManager = new ADRightDownManager(new SQLRepository<ADRightDown>(connectionstr));
         }
         // GET: Destination_Index
-        public ActionResult Index(int? langid)
+        public ActionResult Index(int? langid ,int legend=0)
         {
             var site_id = 3; //Destination輪播ID
             if (Session["LangID"] == null)
@@ -125,6 +125,8 @@ namespace WebSiteProject.Controllers
                 Sort = "Sort"
             }).rows;
 
+            ViewBag.Destination_Title = db.Menus.Where(f => f.ID == 179).FirstOrDefault().MenuName;
+
 
 
             //標題和內容
@@ -134,14 +136,15 @@ namespace WebSiteProject.Controllers
             ViewBag.F_Destination_Type = db.F_Destination_Type.ToList();
 
             ViewBag.Destination_MapLegend = db.Destination_MapLegend.ToList();
-
+            ViewBag.legend = legend;
 
             return View(viewmodel);
         }
 
-        public ActionResult Details(int? langid,string ImgTitle)
+        public ActionResult Details(int? langid,string ImgTitle,int ID=1)
         {
-
+            ViewBag.ID = ID;
+            ViewBag.Title = ImgTitle;
             ViewBag.ADDestinations = db.ADDestinations.Where(m=>m.F_Destination_Type.Destination_Type_Title1==ImgTitle).ToList();
             ViewBag.Category = ImgTitle;
             //ViewBag.MessageItems = db.MessageItems.ToList();
@@ -236,7 +239,7 @@ namespace WebSiteProject.Controllers
             var q = from M in db.MessageItems
                     join H in db.Message_DesHash
                     on M.ItemID equals H.MessageItem_ID
-                    where H.F_Destination_Type.Destination_Type_Title1 == ImgTitle
+                    where H.F_Destination_Type.Destination_Type_Title1 == ImgTitle && M.Enabled == true
                     orderby M.Sort
                     select M;
             //var count = q.Count();
@@ -249,7 +252,7 @@ namespace WebSiteProject.Controllers
             ViewBag.Message10Hash = db.Message10Hash.ToList();
             //ViewBag.Page = Page;
             ViewBag.TotalCount = q.Count();
-
+            ViewBag.Destination_Title = db.Menus.Where(f => f.ID == 179).FirstOrDefault().MenuName;
             return View(viewmodel);
         }
 
@@ -504,12 +507,14 @@ namespace WebSiteProject.Controllers
             ViewBag.Category = Category;
             ViewBag.DesHash = db.MessageItems.Where(M=>M.ItemID == Aid).ToList();
             ViewBag.MessageBanner = db.MessageBanners.Where(B =>B.MessageItem_ID == Aid).First().MessageBanner_Img;
-
+            ViewBag.Destination_Title = db.Menus.Where(f => f.ID == 179).FirstOrDefault().MenuName;
             ViewBag.Unit = db.MessageUnitSettings.Where(p => p.MainID == 9).Select(p => new UnitPrint { isPrint = (bool)p.IsPrint, isForward = (bool)p.IsForward, isRSS = (bool)p.IsRSS, isShare = (bool)p.IsShare }).FirstOrDefault();
 
 
             return View(viewmodel);
         }
+
+        
 
     }
 }
