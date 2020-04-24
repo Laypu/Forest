@@ -13,6 +13,7 @@
     var DesModel = (IEnumerable<WebSiteProject.Models.F_Destination_Type>)ViewBag.F_Destination_Type;
     var BanTitle = DesModel.First().Destination_Type_Title1 + " " + DesModel.First().Destination_Type_Title2;
     var FareModel = (IEnumerable<WebSiteProject.Models.Destination_Fare>)ViewBag.Destination_Fare;
+
 }
 <!--banner start-->
 <div class="page_banner">
@@ -100,14 +101,20 @@
         <!--僅顯示圖片，影片不置入-->
         <div class="noscrip_banner defaultimg" style="width:100%">
             <img src="@Url.Content("~/img/index_banner_fake.jpg")" alt="banner">
-            @foreach (var ad in Model.ADMain)
-            {
-                if (string.IsNullOrEmpty(ad.Img_Name_Ori) == false)
+            @{
+                if (ViewBag.ADDestinations != null)
                 {
-                   <img src="@Url.Content("~/UploadImage/Destination_AD/" + ad.Img_Name_Ori)" alt="@ad.Img_Name_Ori">
+                    var ADmodelno = (IEnumerable<WebSiteProject.Models.ADDestination>)ViewBag.ADDestinations;
+                    foreach (var ad in ADmodelno)
+                    {
+                        if (string.IsNullOrEmpty(ad.Img_Name_Ori) == false)
+                        {
+                            <img src="@Url.Content("~/UploadImage/Destination_AD/" + ad.Img_Name_Ori)" alt="@ad.Img_Name_Ori">
+                        }
+                    }
                 }
-            }
-        </div>
+             }
+            </div>
         
     </noscript>
 

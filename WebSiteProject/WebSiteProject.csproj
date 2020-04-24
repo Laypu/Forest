@@ -2108,7 +2108,6 @@
     <Content Include="Views\Destination_Index\Create.cshtml" />
     <Content Include="Views\Destination_Index\Details.cshtml" />
     <Content Include="Views\Destination_Index\Index.cshtml" />
-    <Content Include="Views\Destination_Index\_MapLegendPartial.cshtml" />
     <Content Include="Views\F_Recommendedtrips\Index.cshtml" />
     <Content Include="Views\F_Recommendedtrips\recommended_list.cshtml" />
     <Content Include="Views\F_Recommendedtrips\show_list.cshtml" />
@@ -2129,7 +2128,7 @@
     <Content Include="Views\Facts\Fact_Detail.cshtml" />
     <Content Include="Views\Facts\Print.cshtml" />
     <Content Include="Views\Home\Print.cshtml" />
-    <Content Include="Views\Destination_Index\_DetailView.cshtml" />
+    <Content Include="Views\Home\Policy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
