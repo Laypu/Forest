@@ -396,7 +396,6 @@ C:\Users\203\Documents\GitHub\Forest\WebSiteProject\bin\Microsoft.Owin.Security.
 C:\Users\203\Documents\GitHub\Forest\WebSiteProject\bin\Microsoft.Owin.Security.OAuth.dll
 C:\Users\203\Documents\GitHub\Forest\WebSiteProject\bin\Microsoft.Owin.Security.Twitter.dll
 C:\Users\203\Documents\GitHub\Forest\WebSiteProject\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\203\Documents\GitHub\Forest\WebSiteProject\bin\NAudio.dll
 C:\Users\203\Documents\GitHub\Forest\WebSiteProject\bin\NAudio.Lame.dll
 C:\Users\203\Documents\GitHub\Forest\WebSiteProject\bin\Newtonsoft.Json.dll
 C:\Users\203\Documents\GitHub\Forest\WebSiteProject\bin\Owin.dll
