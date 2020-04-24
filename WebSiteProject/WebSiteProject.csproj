@@ -626,6 +626,7 @@
     <Content Include="Areas\webadmin\Views\WebsiteMap\Index.cshtml" />
     <Content Include="Areas\webadmin\Views\WebsiteMap\WebSiteEdit.cshtml" />
     <Content Include="Areas\webadmin\Views\WebsiteMap\UnitSetting.cshtml" />
+    <Content Include="bin\NAudio.dll" />
     <Content Include="blocks\footer.html" />
     <Content Include="blocks\header.html" />
     <Content Include="blocks\page_bottom.html" />
@@ -1529,6 +1530,7 @@
     <Content Include="Scripts\ckeditor\plugins\about\dialogs\about.js" />
     <Content Include="Scripts\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
     <Content Include="Scripts\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Scripts\ckeditor\plugins\CodePlugin\plugin.js" />
     <Content Include="Scripts\ckeditor\plugins\colordialog\dialogs\colordialog.css" />
     <Content Include="Scripts\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
     <Content Include="Scripts\ckeditor\plugins\copyformatting\cursors\cursor-disabled.svg" />
@@ -2106,7 +2108,6 @@
     <Content Include="Views\Destination_Index\Create.cshtml" />
     <Content Include="Views\Destination_Index\Details.cshtml" />
     <Content Include="Views\Destination_Index\Index.cshtml" />
-    <Content Include="Views\Destination_Index\_MapLegendPartial.cshtml" />
     <Content Include="Views\F_Recommendedtrips\Index.cshtml" />
     <Content Include="Views\F_Recommendedtrips\recommended_list.cshtml" />
     <Content Include="Views\F_Recommendedtrips\show_list.cshtml" />
@@ -2126,6 +2127,8 @@
     <Content Include="Views\Facts\Index.cshtml" />
     <Content Include="Views\Facts\Fact_Detail.cshtml" />
     <Content Include="Views\Facts\Print.cshtml" />
+    <Content Include="Views\Home\Print.cshtml" />
+    <Content Include="Views\Home\Policy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -2192,7 +2195,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>17473</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:2645/forest</IISUrl>
+          <IISUrl>http://localhost:5645/forest</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

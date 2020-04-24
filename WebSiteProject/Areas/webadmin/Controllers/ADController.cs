@@ -131,6 +131,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 }
                 ViewBag.mantype = maintype;
                 ViewBag.siteid = siteid;
+                model.Site_ID = siteid;
                 return View(model);
             }
             model = _IADManager.GetModel(id);

@@ -11,7 +11,8 @@
         strikethrough: '刪除線',
         subscript: '下標',
         superscript: '上標',
-        size: '字號'
+        size: '字號',
+        title03:'title03'
       },
       image: {
         image: '圖片',

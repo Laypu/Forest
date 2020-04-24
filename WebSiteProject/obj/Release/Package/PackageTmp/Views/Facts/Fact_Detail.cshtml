@@ -45,8 +45,8 @@
                         {
                             <a href="@Url.Action("Print",new { ItemID=ActiveItem.ItemID,ModelID =ActiveItem.ModelID})" target="_blank" title="print(new windown)"><img src="@Url.Content("~/img/icon_print.png")" alt="print"></a>
                         }
-                        <a href="#" target="_blank" title="link - web name(new window)"><img src="img/icon_link.png" alt=""></a>
-                        <a href="#" target="_blank" title="download - file name(new window)"><img src="img/icon_download.png" alt=""></a>
+                        @*<a href="#" target="_blank" title="link - web name(new window)"><img src="img/icon_link.png" alt=""></a>
+                        <a href="#" target="_blank" title="download - file name(new window)"><img src="img/icon_download.png" alt=""></a>*@
                         if (unit.isShare)
                         {
                             <a href="http://www.facebook.com/share.php?u=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="facebook share(new window)"><img src="@Url.Content("~/img/icon_facebook.png")" alt=""></a>
@@ -78,15 +78,15 @@
                     <!--圖片置左-->
                     if (ActiveItem.ImageFileLocation == "1")
                     {
-                        <img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="@ActiveItem.ImageFileDesc" align="left">
+                        <img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="@ActiveItem.ImageFileDesc" title="@ActiveItem.ImageFileDesc" align="left">
                     }
                     else if (ActiveItem.ImageFileLocation == "2")
                     {
-                        <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="@ActiveItem.ImageFileDesc"></p></div>
+                        <div align="center"><p class="text_center"><img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="@ActiveItem.ImageFileDesc" title="@ActiveItem.ImageFileDesc"></p></div>
                     }
                     else if (ActiveItem.ImageFileLocation == "3")
                     {
-                        <img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="@ActiveItem.ImageFileDesc" align="right">
+                        <img src="@Url.Content("~/UploadImage/ActiveItem/")@ActiveItem.ImageFileName" class="img_padding" alt="@ActiveItem.ImageFileDesc" title="@ActiveItem.ImageFileDesc" align="right">
                     }
 
                 }

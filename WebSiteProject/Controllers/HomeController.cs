@@ -14,6 +14,7 @@ using System.Web.Mvc;
 using WebSiteProject.Code;
 using ViewModels;
 using WebSiteProject.Models.F_ViewModels;
+using Utilities;
 
 namespace WebSiteProject.Controllers
 {
@@ -26,7 +27,8 @@ namespace WebSiteProject.Controllers
         IMenuManager _IMenuManager;
         IModelLinkManager _IModelLinkManager;
         ADRightDownManager _ADRightDownManager;
-
+        IModelVideoManager _IModelVideoManager;
+        
         WebSiteProject.Models.ForestEntities db = new Models.ForestEntities();
 
         public HomeController()
@@ -38,6 +40,9 @@ namespace WebSiteProject.Controllers
             _IMenuManager = serviceinstance.MenuManager;
             _IModelLinkManager = serviceinstance.ModelLinkManager;
             _ADRightDownManager =new ADRightDownManager(new SQLRepository<ADRightDown>(connectionstr));
+            _IModelVideoManager = serviceinstance.ModelVideoManager;
+
+            
         }
         // GET: WebSite/Home
         public ActionResult Index(int? langid)
@@ -777,6 +782,7 @@ namespace WebSiteProject.Controllers
                           H.Message10Hash_8H == Hashtag ||
                           H.Message10Hash_9H == Hashtag ||
                           H.Message10Hash_10H == Hashtag
+                    where M.Enabled == true
                     orderby M.Sort
                     select M;
 
@@ -885,6 +891,202 @@ namespace WebSiteProject.Controllers
             return View(viewmodel);
         }
 
+        public ActionResult Print(string id, string mid)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            var itemmodel = _IModelVideoManager.GetModelItem(id);
+            if (itemmodel.ItemID == 0) { return RedirectToAction("Index", "Home"); }
+            if (itemmodel.Enabled == false) { return RedirectToAction("Index", "Home"); }
+            if (itemmodel.IsVerift == false) { return RedirectToAction("Index", "Home"); }
+            Session["messagemodelid"] = itemmodel.ModelID.ToString();
+
+            var isusedate = (itemmodel.StDate == null || itemmodel.StDate <= DateTime.Now) && (itemmodel.EdDate == null || itemmodel.EdDate.Value.AddDays(1) >= DateTime.Now);
+            if (isusedate == false) { return RedirectToAction("Index", "Home"); }
+            VideoFrontViewModel model = new VideoFrontViewModel();
+            _IMasterPageManager.SetModel<VideoFrontViewModel>(ref model, Device, LangID, mid);
+            model.SEOScript = _IMasterPageManager.GetSEOData("", "", itemmodel.ModelID.ToString(), id, LangID, itemmodel.Title);
+            var unitmodel = _IModelVideoManager.GetUnitModel(itemmodel.ModelID.ToString());
+            model.MainID = itemmodel.ModelID.ToString();
+            model.ItemID = id;
+            model.MenuID = string.IsNullOrEmpty(mid) ? "-1" : mid.ToString();
+            var mainmodel = _IModelVideoManager.Where(new ModelVideoMain() { ID = itemmodel.ModelID.Value });
+            if (string.IsNullOrEmpty(mid) == false)
+            {
+                var menu = _IMenuManager.GetModel(mid);
+                if (menu.ID == 0) { return RedirectToAction("Index", "Home"); }
+                model.BannerImage = menu.ImgNameOri.IsNullorEmpty() ? (model.BannerImage == "" ? "fromclass" : model.BannerImage) : menu.ImageUrl;
+                model.MainTitle = menu.MenuName;
+            }
+            else
+            {
+                if (mainmodel.Count() > 0) { model.MainTitle = mainmodel.First().Name; }
+            }
+            if (itemmodel.GroupID != null)
+            {
+                model.GroupID = itemmodel.GroupID.ToString();
+                model.GroupName = _IModelVideoManager.GetGroupName(itemmodel.GroupID.ToString());
+            }
+            UrlHelper helper = new UrlHelper(Request.RequestContext);
+            var baseimg = @Url.Content("~/ContentWebsite/image/logo_400x300.jpg");
+            if (itemmodel.RelateImageFileName.IsNullorEmpty() == false)
+            {
+                itemmodel.RelateImageFileName = helper.Content("~/UploadImage/VideoItem/" + itemmodel.RelateImageFileName);
+            }
+            else
+            {
+                itemmodel.RelateImageFileName = baseimg;
+            }
+            var urlBuilder = new System.UriBuilder(Request.Url.AbsoluteUri) { Path = itemmodel.RelateImageFileName, Query = null, };
+            model.FBImage = urlBuilder.ToString();
+            model.SiteMenuID = string.IsNullOrEmpty(Request.Form["sitemenuid"]) ? "-1" : Request.Form["sitemenuid"];
+            model.LinkStr = _IMasterPageManager.GetFrontLinkString(id, mid, mainmodel.First().Name, model.SiteMenuID);
+            model.Content = itemmodel.HtmlContent == null ? "" : itemmodel.HtmlContent.Replace("\n", "<br>").Replace("<<br>", "<\n").Replace("><br>", ">\n");
+
+            var fbtitle = model.Content.TrimgHtmlTag().Replace("\n", "").Replace("\t", "");
+            model.FBTitle = fbtitle.Count() > 80 ? fbtitle.Substring(0, 80) : fbtitle;
+
+            model.IsForward = unitmodel.IsForward;
+            model.IsPrint = unitmodel.IsPrint;
+            model.IsShare = unitmodel.IsShare;
+            model.ImageName = itemmodel.ImageFileName;
+            model.ImageFileLocation = itemmodel.ImageFileLocation;
+            model.PublicshDate = itemmodel.PublicshDate.Value.ToString("yyyy/MM/dd");
+            model.ImageFileDesc = itemmodel.ImageFileDesc;
+            model.Title = itemmodel.Title;
+            model.VideoLink = itemmodel.VideoLink;
+            model.VideoHasMore = itemmodel.IsShowMoreVideo.Value;
+            model.LinkUrlDesc = itemmodel.LinkUrlDesc == null ? "" : itemmodel.LinkUrlDesc;
+            model.ImageFileName = itemmodel.ImageFileName;
+            model.ImageFileOrgName = itemmodel.ImageFileOrgName;
+            if (model.VideoHasMore)
+            {
+                var vstrarr = _IModelVideoManager.GetVideoMore(model.MainID, model.ItemID, model.MenuID);
+                model.VideoMore = vstrarr[0];
+                model.VideoMoreNoScript = vstrarr[1];
+            }
+            if (model.VideoLink.IsNullorEmpty() == false)
+            {
+                if (model.VideoLink.IndexOf("embed") != 0)
+                {
+                    var keyindex = model.VideoLink.IndexOf("watch?v=");
+                    var key = "";
+                    if (keyindex == -1) { key = model.VideoLink; }
+                    else
+                    {
+                        key = model.VideoLink.Substring(keyindex + 8);
+                    }
+                    model.VideoLink = "https://www.youtube.com/embed/" + key;
+                }
+            }
+            if (itemmodel.LinkUrl.IsNullorEmpty() == false) { model.LinkUrl = itemmodel.LinkUrl; }
+            if (itemmodel.UploadFilePath.IsNullorEmpty() == false)
+            {
+                model.DownloadID = itemmodel.ItemID.ToString();
+                model.DownloadDesc = itemmodel.UploadFileDesc;
+            }
+            model.ShowModel = _IMasterPageManager.GetMenuShowModel(mid);
+            model.MenuType = string.IsNullOrEmpty(Request.Form["menutype"]) ? "1" : Request.Form["menutype"];
+
+            return View(model);
+        }
+
+        //public string GetSub(int id)
+        //{
+        //    MasterPageManager MPM = new MasterPageManager();
+        //    MPM.GetIDString(id);
+        //    return "";
+        //}
+
+        public ActionResult Policy(int? langid=1)
+        {
+            var site_id = 1; //這是Index的輪播ID
+            if (Session["LangID"] == null)
+            {
+                var DefaultLang = System.Web.Configuration.WebConfigurationManager.AppSettings["DefaultLang"];
+                _ILangManager = serviceinstance.LangManager;
+                var alllang = _ILangManager.GetAll();
+                if (alllang != null)
+                {
+                    if (alllang.Any(v => v.Lang_Name == DefaultLang))
+                    {
+                        langid = alllang.Where(v => v.Lang_Name == DefaultLang).First().ID.Value;
+                    }
+                }
+                Session["LangID"] = langid.ToString();
+                Session.Timeout = 600;
+            }
+            else
+            {
+                if (langid == null)
+                {
+                    int _langid = 1;
+                    if (int.TryParse(Session["LangID"].ToString(), out _langid) == false)
+                    {
+                        langid = 1;
+                    }
+                    else { langid = _langid; }
+                }
+                else
+                {
+                    Session["LangID"] = langid.ToString();
+                }
+            }
+
+            HomeViewModel viewmodel = new HomeViewModel();
+            //讀取logo圖片
+            _IMasterPageManager.SetModel<HomeViewModel>(ref viewmodel, "P", langid.ToString(), "");
+            viewmodel.SEOScript = _IMasterPageManager.GetSEOData("", "", langid.ToString());
+            viewmodel.ADMain = _IMasterPageManager.GetADMain("P", langid.ToString(), site_id);
+            viewmodel.ADMobile = _IMasterPageManager.GetADMain("M", langid.ToString(), site_id);
+            viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
+
+            var sitemenu = _ISiteLayoutManager.PagingMain(new ViewModels.SearchModelBase()
+            {
+                Limit = 100,
+                Key = Device,
+                NowPage = 1,
+                Offset = 0,
+                Sort = "ID",
+                LangId = langid.ToString()
+            });
+            if (sitemenu.total > 0)
+            {
+                var layoutpagelist = ((List<PageLayout>)sitemenu.rows);
+                if (layoutpagelist.Any(v => v.Title == "焦點新聞"))
+                {
+                    viewmodel.PageLayoutModel1 = _IMasterPageManager.GetSiteLayout(sitemenu.rows, "焦點新聞", langid.ToString()).First();
+                }
+                else { viewmodel.PageLayoutModel1 = new HomePageLayoutModel(); }
+                if (layoutpagelist.Any(v => v.Title == "活動專區"))
+                {
+                    viewmodel.PageLayoutModel2 = _IMasterPageManager.GetSiteLayout(sitemenu.rows, "活動專區", langid.ToString()).First();
+                }
+                else { viewmodel.PageLayoutModel2 = new HomePageLayoutModel(); }
+            }
+            else
+            {
+                viewmodel.PageLayoutModel1 = new HomePageLayoutModel();
+                viewmodel.PageLayoutModel2 = new HomePageLayoutModel();
+                ViewBag.sitemenu = new List<PageLayout>();
+                ViewBag.sitemenupart = "";
+            }
+            viewmodel.BannerImage = "";
+            viewmodel.PageLayoutOP1 = _ISiteLayoutManager.GetPageLayoutOP1Edit(langid.ToString());
+            viewmodel.PageLayoutOP2 = _ISiteLayoutManager.GetPageLayoutOP2Edit(langid.ToString());
+            viewmodel.PageLayoutOP3 = _ISiteLayoutManager.GetPageLayoutOP3Edit(langid.ToString());
+            viewmodel.PageLayoutActivityModel = _ISiteLayoutManager.PageLayoutActivity(langid.ToString());
+
+            viewmodel.LinkItems = _IModelLinkManager.PagingItem("Y", new SearchModelBase()
+            {
+                LangId = this.LangID,
+                Limit = -1,
+                Sort = "Sort"
+            }).rows;
+            return View(viewmodel);
+        }
 
 
     }

@@ -144,7 +144,7 @@
     </noscript>
 
     <div class="banner_title">
-        <h2>Destinations</h2>
+        <h2>@ViewBag.Destination_Title</h2>
     </div>
 
 </div>
@@ -171,7 +171,14 @@
     <!--map start-->
     <div class="page_map">
         <div id="MapLeg" class="container">
+            @{
+                var legend = (int)ViewBag.legend;
 
+            }
+            @{
+
+
+            }
             <div class="font_box">
                 <div class="title">@Html.Raw(ViewBag.Title)</div>
                 <div class="con_font">@Html.Raw(ViewBag.Content)</div>
@@ -180,38 +187,114 @@
                     <ul>
                         @{
                             var MapModel = (IEnumerable<WebSiteProject.Models.Destination_MapLegend>)ViewBag.Destination_MapLegend;
-                            foreach (var item in MapModel)
+                            var MapModelList = MapModel.ToList();
+                            switch (legend)
                             {
-                                <li class="color hover"><a href="javascript:void(0);" id="page_01" name="page_01" data-imgName="@item.Destination_Img" data-imgNameMoblie="@item.Destination_Img_Mobile"  title="@item.Destination_MAP_LEGEND_Name" class="nav-item ">@item.Destination_MAP_LEGEND_Name</a></li>
+                                case 0:
+                                    <li class="color hover"><a href="@Url.Action("Index",new {legend = 0 })" id="page_01" name="page_01" data-imgName="@MapModelList[0].Destination_Img" data-imgNameMoblie="@MapModelList[0].Destination_Img_Mobile" title="@MapModelList[0].Destination_MAP_LEGEND_Name" class="nav-item active">@MapModelList[0].Destination_MAP_LEGEND_Name</a></li>
+                                    <li class="color hover"><a href="@Url.Action("Index",new {legend = 1 })" id="page_02" name="page_02" data-imgName="@MapModelList[1].Destination_Img" data-imgNameMoblie="@MapModelList[1].Destination_Img_Mobile" title="@MapModelList[1].Destination_MAP_LEGEND_Name" class="nav-item ">@MapModelList[1].Destination_MAP_LEGEND_Name</a></li>
+                                    <li class="color hover"><a href="@Url.Action("Index",new {legend = 2 })" id="page_03" name="page_03" data-imgName="@MapModelList[2].Destination_Img" data-imgNameMoblie="@MapModelList[2].Destination_Img_Mobile" title="@MapModelList[2].Destination_MAP_LEGEND_Name" class="nav-item ">@MapModelList[2].Destination_MAP_LEGEND_Name</a></li>
+                                    <li class="color hover"><a href="@Url.Action("Index",new {legend = 3 })" id="page_04" name="page_04" data-imgName="@MapModelList[3].Destination_Img" data-imgNameMoblie="@MapModelList[3].Destination_Img_Mobile" title="@MapModelList[3].Destination_MAP_LEGEND_Name" class="nav-item ">@MapModelList[3].Destination_MAP_LEGEND_Name</a></li>
+                                    break;
+                                case 1:
+                                    <li class="color hover"><a href="@Url.Action("Index",new {legend = 0 })" id="page_01" name="page_01" data-imgName="@MapModelList[0].Destination_Img" data-imgNameMoblie="@MapModelList[0].Destination_Img_Mobile" title="@MapModelList[0].Destination_MAP_LEGEND_Name" class="nav-item">@MapModelList[0].Destination_MAP_LEGEND_Name</a></li>
+                                    <li class="color hover"><a href="@Url.Action("Index",new {legend = 1 })" id="page_02" name="page_02" data-imgName="@MapModelList[1].Destination_Img" data-imgNameMoblie="@MapModelList[1].Destination_Img_Mobile" title="@MapModelList[1].Destination_MAP_LEGEND_Name" class="nav-item active">@MapModelList[1].Destination_MAP_LEGEND_Name</a></li>
+                                    <li class="color hover"><a href="@Url.Action("Index",new {legend = 2 })" id="page_03" name="page_03" data-imgName="@MapModelList[2].Destination_Img" data-imgNameMoblie="@MapModelList[2].Destination_Img_Mobile" title="@MapModelList[2].Destination_MAP_LEGEND_Name" class="nav-item ">@MapModelList[2].Destination_MAP_LEGEND_Name</a></li>
+                                    <li class="color hover"><a href="@Url.Action("Index",new {legend = 3 })" id="page_04" name="page_04" data-imgName="@MapModelList[3].Destination_Img" data-imgNameMoblie="@MapModelList[3].Destination_Img_Mobile" title="@MapModelList[3].Destination_MAP_LEGEND_Name" class="nav-item ">@MapModelList[3].Destination_MAP_LEGEND_Name</a></li>
+                                    break;
+                                case 2:
+                                    <li class="color hover"><a href="@Url.Action("Index",new {legend = 0 })" id="page_01" name="page_01" data-imgName="@MapModelList[0].Destination_Img" data-imgNameMoblie="@MapModelList[0].Destination_Img_Mobile" title="@MapModelList[0].Destination_MAP_LEGEND_Name" class="nav-item ">@MapModelList[0].Destination_MAP_LEGEND_Name</a></li>
+                                    <li class="color hover"><a href="@Url.Action("Index",new {legend = 1 })" id="page_02" name="page_02" data-imgName="@MapModelList[1].Destination_Img" data-imgNameMoblie="@MapModelList[1].Destination_Img_Mobile" title="@MapModelList[1].Destination_MAP_LEGEND_Name" class="nav-item ">@MapModelList[1].Destination_MAP_LEGEND_Name</a></li>
+                                    <li class="color hover"><a href="@Url.Action("Index",new {legend = 2 })" id="page_03" name="page_03" data-imgName="@MapModelList[2].Destination_Img" data-imgNameMoblie="@MapModelList[2].Destination_Img_Mobile" title="@MapModelList[2].Destination_MAP_LEGEND_Name" class="nav-item active">@MapModelList[2].Destination_MAP_LEGEND_Name</a></li>
+                                    <li class="color hover"><a href="@Url.Action("Index",new {legend = 3 })" id="page_04" name="page_04" data-imgName="@MapModelList[3].Destination_Img" data-imgNameMoblie="@MapModelList[3].Destination_Img_Mobile" title="@MapModelList[3].Destination_MAP_LEGEND_Name" class="nav-item ">@MapModelList[3].Destination_MAP_LEGEND_Name</a></li>
+                                    break;
+                                case 3:
+                                    <li class="color hover"><a href="@Url.Action("Index",new {legend = 0 })" id="page_01" name="page_01" data-imgName="@MapModelList[0].Destination_Img" data-imgNameMoblie="@MapModelList[0].Destination_Img_Mobile" title="@MapModelList[0].Destination_MAP_LEGEND_Name" class="nav-item ">@MapModelList[0].Destination_MAP_LEGEND_Name</a></li>
+                                    <li class="color hover"><a href="@Url.Action("Index",new {legend = 1 })" id="page_02" name="page_02" data-imgName="@MapModelList[1].Destination_Img" data-imgNameMoblie="@MapModelList[1].Destination_Img_Mobile" title="@MapModelList[1].Destination_MAP_LEGEND_Name" class="nav-item ">@MapModelList[1].Destination_MAP_LEGEND_Name</a></li>
+                                    <li class="color hover"><a href="@Url.Action("Index",new {legend = 2 })" id="page_03" name="page_03" data-imgName="@MapModelList[2].Destination_Img" data-imgNameMoblie="@MapModelList[2].Destination_Img_Mobile" title="@MapModelList[2].Destination_MAP_LEGEND_Name" class="nav-item ">@MapModelList[2].Destination_MAP_LEGEND_Name</a></li>
+                                    <li class="color hover"><a href="@Url.Action("Index",new {legend = 3 })" id="page_04" name="page_04" data-imgName="@MapModelList[3].Destination_Img" data-imgNameMoblie="@MapModelList[3].Destination_Img_Mobile" title="@MapModelList[3].Destination_MAP_LEGEND_Name" class="nav-item active">@MapModelList[3].Destination_MAP_LEGEND_Name</a></li>
+                                    break;
                             }
+
+
+
+
+
+
+                            @*foreach (var item in MapModel)
+                        {
+                            <li class="color hover"><a href="javascript:void(0);" id="page_01" name="page_01" data-imgName="@item.Destination_Img" data-imgNameMoblie="@item.Destination_Img_Mobile"  title="@item.Destination_MAP_LEGEND_Name" class="nav-item ">@item.Destination_MAP_LEGEND_Name</a></li>
+                        }*@
                             var datetime = DateTime.Now;
-                            var datetimeD = datetime.Date.ToString("MMMM d,yyyy",new System.Globalization.CultureInfo("en-US"));
-                            var datetimeT = datetime.ToString("h:mm tt",new System.Globalization.CultureInfo("en-US"));
+                            var datetimeD = datetime.Date.ToString("MMMM d,yyyy", new System.Globalization.CultureInfo("en-US"));
+                            var datetimeT = datetime.ToString("h:mm tt", new System.Globalization.CultureInfo("en-US"));
                         }
                     </ul>
                 </div>
             </div>
-            <div class="img hidden-xs">
-                <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModel.First().Destination_Img" alt="@MapModel.First().Destination_Img" />
-                <div class="font_box" id="timebox1" style="display:none">
-                    <div class="line"></div>
-                    Now the Time in Taiwan<br>
-                    <div class="date">@datetimeD</div>
-                    <div class="time">@datetimeT</div>
-                    GMT+8
-                </div>
-            </div><!--建議尺寸800*478px-->
-            <div class="img visible-xs">
-                <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModel.First().Destination_Img_Mobile" alt="@MapModel.First().Destination_Img" />
-                <div class="font_box" id="timebox2" style="display:none">
-                    <div class="line"></div>
-                    Now the Time in Taiwan<br>
-                    <div class="date">@datetimeD</div>
-                    <div class="time">@datetimeT</div>
-                    GMT+8
-                </div>
-            
-            </div><!--建議尺寸，寬500px-->
+            @{
+                switch (legend)
+                {
+                    case 0:
+                        <div class="img hidden-xs">
+                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[0].Destination_Img" alt="@MapModelList[0].Destination_Img" />
+                            
+                        </div><!--建議尺寸800*478px-->
+                        <div class="img visible-xs">
+                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[0].Destination_Img_Mobile" alt="@MapModelList[0].Destination_Img" />
+                            
+
+                        </div><!--建議尺寸，寬500px-->
+                        break;
+                    case 1:
+                        <div class="img hidden-xs">
+                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[1].Destination_Img" alt="@MapModelList[1].Destination_Img" />
+                            
+                        </div><!--建議尺寸800*478px-->
+                        <div class="img visible-xs">
+                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[1].Destination_Img_Mobile" alt="@MapModelList[1].Destination_Img" />
+                           
+
+                        </div><!--建議尺寸，寬500px-->
+                        break;
+                    case 2:
+                        <div class="img hidden-xs">
+                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[2].Destination_Img" alt="@MapModelList[2].Destination_Img" />
+                            
+                        </div><!--建議尺寸800*478px-->
+                        <div class="img visible-xs">
+                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[2].Destination_Img_Mobile" alt="@MapModelList[2].Destination_Img" />
+                            
+
+                        </div><!--建議尺寸，寬500px-->
+                        break;
+                    case 3:
+                        <div class="img hidden-xs">
+                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[3].Destination_Img" alt="@MapModelList[3].Destination_Img" />
+                            <div class="font_box" id="timebox1">
+                                <div class="line"></div>
+                                Now the Time in Taiwan<br>
+                                <div class="date">@datetimeD</div>
+                                <div class="time">@datetimeT</div>
+                                GMT+8
+                            </div>
+                        </div><!--建議尺寸800*478px-->
+                        <div class="img visible-xs">
+                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[3].Destination_Img_Mobile" alt="@MapModelList[3].Destination_Img" />
+                            <div class="font_box" id="timebox2">
+                                <div class="line"></div>
+                                Now the Time in Taiwan<br>
+                                <div class="date">@datetimeD</div>
+                                <div class="time">@datetimeT</div>
+                                GMT+8
+                            </div>
+
+                        </div><!--建議尺寸，寬500px-->
+                        break;
+                }
+
+            }
+
 
         </div>
     </div>
@@ -285,7 +368,7 @@
 <div class="breadcrumbs">
     <div class="container">
         <div class="title">You are here</div>
-        <div class="font"><a href="@Url.Action("Index","Home")" title="Home">Home</a> / Destinations</div>
+        <div class="font"><a href="@Url.Action("Index","Home")" title="Home">Home</a> / @ViewBag.Destination_Title</div>
     </div>
 </div>
 <!--breadcrumbs end-->
@@ -309,11 +392,11 @@
     $(function () {
 
         //初始畫面maplegend的ul 顏色
-        $("#MapL>ul").children().first().children().attr("class", "active");
+        //$("#MapL>ul").children().first().children().attr("class", "active");
 
 
         //點擊maplegend換圖
-        $("#MapL>ul>li>a").click(function () {
+        @*$("#MapL>ul>li>a").click(function () {
 
             $(this).addClass("active").parent().siblings().children().removeClass("active");
             var MapImg = `@Url.Content("~/UploadImage/MapLEGEND_Img/")` + $(this).attr("data-imgName");
@@ -333,9 +416,9 @@
                 $("#timebox1").css("display", "none");
                 $("#timebox2").css("display", "none");
             }
-        });
+        });*@
 
-        setInterval(GetTime, 6000);
+        setInterval(GetTime, 100);
         setInterval(GetDate, 864000000);
         function GetTime() {
             $.ajax({

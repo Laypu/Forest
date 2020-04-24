@@ -1,0 +1,85 @@
+﻿@*@{
+    Layout = null;
+    Layout = WebSiteProject.Code.Common.GetLayout(Model.ShowModel, Model.LangId);
+}*@
+
+@model HomeViewModel
+
+
+<div class="page_banner one_pic">
+    <img src="@Url.Content("~/img/index_banner_05.jpg")" alt="Sitemap Banner" />
+</div>
+<!--banner end-->
+<div class="page_content">
+    <div class="page_top">
+        <div class="container">
+            <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
+
+                <a href="javascript:void(0);" title="@Common.GetLangText("Content area")" accesskey="@if(Model.LangId == "1"){@("C") }else{ @("C")}" id="main-content">:::</a>
+                <a href="@Url.Action("Index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>Privacy Policy
+            </div>
+        </div>
+    </div>
+    <div class="page_con">
+        <div class="container">
+
+            <h2 data-sr="enter left over 1.5s">@Common.GetLangText("Privacy Policy")</h2>
+
+            <div class="content_con">
+                <br />
+                Dear friends, We, the Forestry Bureau, take your privacy very seriously; however, in order to help you understand our privacy policy, please read the following carefully:
+                <br />
+                <br />
+                <b>Range of Privacy Notice</b>
+                <br />
+                The Privacy notice below applies to all personal data collection, use and protection while at our website. It does not apply to any other sites that may be linked to us, whether they be governmental or paid sites. All sites linked to us have their own privacy notices in effect, and we are not responsible for the operation of other sites. While on other sites, their privacy notices apply.
+                <br />
+                <br />
+                <b>Personal Data Gathering</b>
+                <br />
+                We will not collect any data from you when you are simply downloading or browsing in our website.
+                While using the website to apply for certain services, the organization or office receiving the application may require certain personal data pertaining to your application. Such data may include name, national ID number, contact phone number, email, residence and registered addresses. Please submit the most updated and correct information.
+                The website will record guests’ IP address, login time, pages browsed and other data. This data enables the webmaster to analyze data flow and network behavior, in order to improve the quality of our services. This information is only used statistically and will not be analyzed on a per-person basis.
+                We are responsible for protecting the privacy of all applicants, and will not alter or delete any personal files or information unless with your prior permission, or if any of the conditions below pertains:
+                <br />
+                <div style="padding-left:50px">
+                    <ul>
+                        <li>By legal orders.</li>
+                        <li>While protecting or defending the rights and properties of website users.</li>
+                        <li>While protecting the rights of organizations related to this website.</li>
+                    </ul>
+                </div>
+                
+                <br />
+                We will not sell, exchange, rent or otherwise publish your personal information to any groups, individuals or private enterprises, except under the following circumstances:
+                <div style="padding-left:50px">
+                <ul>
+                    <li>While assisting investigations by legal authorities.</li>
+                    <li>Coordinating with investigations and use of organizations with legal need.</li>
+                    <li>Believing in good faith that exposing such data serves a necessary legal interest, or using such data to improve website services.</li>
+                </ul>
+                </div>
+                <br />
+                <br />
+                <b>Responsibilities of Individuals</b>
+                <br />
+                All registered users of website, and users of online application services provided by this website, have a responsibility to provide the most accurate and up-to-date personal information.
+                If it is established that your information is incorrect, the website and related organizations reserve the right to ban you from using part or all of the services provided on the website.
+                The security of your account and password is the responsibility of you and the related organizations of the website.
+                If your password and account is stolen, or in the event of any other network security issue, please email us at the website at treasure@forest.gov.tw, so that our technicians may assist you.
+                Please remember to log out at the end of each session to prevent account theft by other parties。 If you share a computer with others, or are using a public computer, please remember to close the browser window to prevent others from accessing your information or reading your mail.
+                All conduct of registered users should adhere to local and international laws, and a user is entirely responsible for all activities done by the user.
+                <br />
+                <br />
+                <b>Questions on the Privacy Notice</b>
+                <br />
+                If you have nay questions or comments, please email us at treasure@forest.gov.tw
+                If any organization of the “Forestry Bureau Global Network” permits or performs actions contrary to this Notice, please drop us a note detailing such an event. treasure@forest.gov.tw
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

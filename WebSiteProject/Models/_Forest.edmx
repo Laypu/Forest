@@ -499,16 +499,16 @@
           <Property Name="Temp_Summer" Type="numeric" Precision="18" Scale="2" />
           <Property Name="Temp_Autumn" Type="numeric" Precision="18" Scale="2" />
           <Property Name="Temp_Winter" Type="numeric" Precision="18" Scale="2" />
-          <Property Name="FPI" Type="nvarchar" MaxLength="20" />
-          <Property Name="FPII" Type="nvarchar" MaxLength="20" />
-          <Property Name="FPIII" Type="nvarchar" MaxLength="20" />
-          <Property Name="FPIV" Type="nvarchar" MaxLength="20" />
-          <Property Name="FPV" Type="nvarchar" MaxLength="20" />
-          <Property Name="FPVI" Type="nvarchar" MaxLength="20" />
-          <Property Name="FPVII" Type="nvarchar" MaxLength="20" />
-          <Property Name="FPVIII" Type="nvarchar" MaxLength="20" />
-          <Property Name="FPIX" Type="nvarchar" MaxLength="20" />
-          <Property Name="FPX" Type="nvarchar" MaxLength="20" />
+          <Property Name="FPI" Type="nvarchar" MaxLength="35" />
+          <Property Name="FPII" Type="nvarchar" MaxLength="35" />
+          <Property Name="FPIII" Type="nvarchar" MaxLength="35" />
+          <Property Name="FPIV" Type="nvarchar" MaxLength="35" />
+          <Property Name="FPV" Type="nvarchar" MaxLength="35" />
+          <Property Name="FPVI" Type="nvarchar" MaxLength="35" />
+          <Property Name="FPVII" Type="nvarchar" MaxLength="35" />
+          <Property Name="FPVIII" Type="nvarchar" MaxLength="35" />
+          <Property Name="FPIX" Type="nvarchar" MaxLength="35" />
+          <Property Name="FPX" Type="nvarchar" MaxLength="35" />
           <Property Name="Banner_Img" Type="nvarchar(max)" />
           <Property Name="Recommend_Img" Type="nvarchar(max)" />
           <Property Name="Recommend_Detail_Img" Type="nvarchar(max)" />
@@ -2096,6 +2096,12 @@
           <EntitySet Name="Message_DesHash" EntityType="ForestModel.Message_DesHash" />
           <EntitySet Name="MessageBanners" EntityType="ForestModel.MessageBanner" />
           <EntitySet Name="ADDestinations" EntityType="ForestModel.ADDestination" />
+          <EntitySet Name="ActiveItems" EntityType="ForestModel.ActiveItem" />
+          <EntitySet Name="RecommendedTrips" EntityType="ForestModel.RecommendedTrip" />
+          <AssociationSet Name="FK_RecommendedTrips_RecommendedTrips_Day" Association="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day">
+            <End Role="RecommendedTrips_Day" EntitySet="RecommendedTrips_Day" />
+            <End Role="RecommendedTrip" EntitySet="RecommendedTrips" />
+          </AssociationSet>
           <EntitySet Name="F_Destination_Type" EntityType="ForestModel.F_Destination_Type" />
           <AssociationSet Name="FK_ADDestination_F_Destination_Type" Association="ForestModel.FK_ADDestination_F_Destination_Type">
             <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
@@ -2109,14 +2115,8 @@
             <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
             <End Role="Message_DesHash" EntitySet="Message_DesHash" />
           </AssociationSet>
-          <EntitySet Name="ActiveItems" EntityType="ForestModel.ActiveItem" />
-          <EntitySet Name="RecommendedTrips" EntityType="ForestModel.RecommendedTrip" />
           <AssociationSet Name="FK_RecommendedTrips_F_Destination_Type" Association="ForestModel.FK_RecommendedTrips_F_Destination_Type">
             <End Role="F_Destination_Type" EntitySet="F_Destination_Type" />
-            <End Role="RecommendedTrip" EntitySet="RecommendedTrips" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RecommendedTrips_RecommendedTrips_Day" Association="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day">
-            <End Role="RecommendedTrips_Day" EntitySet="RecommendedTrips_Day" />
             <End Role="RecommendedTrip" EntitySet="RecommendedTrips" />
           </AssociationSet>
           </EntityContainer>
@@ -3797,81 +3797,6 @@
           <Property Name="ADDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="F_Destination_Type" Relationship="ForestModel.FK_ADDestination_F_Destination_Type" FromRole="ADDestination" ToRole="F_Destination_Type" />
         </EntityType>
-        <EntityType Name="F_Destination_Type">
-          <Key>
-            <PropertyRef Name="Destination_Type_ID" />
-          </Key>
-          <Property Name="Destination_Type_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Destination_Type_Title1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Destination_Type_Title2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Destination_Type_CreateDate" Type="DateTime" Precision="3" />
-          <Property Name="Destination_Type_ImgName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Destination_Type_ImgDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Destination_Type_Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Destination_Type_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Destination_Type_MapName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Destination_Type_Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Destination_Type_ServiceHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Destination_Type_Area" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Destination_Type_Altitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Temp_Spring" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Temp_Summer" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Temp_Autumn" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Temp_Winter" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="FPI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="FPII" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="FPIII" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="FPIV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="FPV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="FPVI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="FPVII" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="FPVIII" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="FPIX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="FPX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Banner_Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Recommend_Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Recommend_Detail_Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ADDestinations" Relationship="ForestModel.FK_ADDestination_F_Destination_Type" FromRole="F_Destination_Type" ToRole="ADDestination" />
-          <NavigationProperty Name="Destination_Fare" Relationship="ForestModel.FK_Destination_Fare_F_Destination_Type" FromRole="F_Destination_Type" ToRole="Destination_Fare" />
-          <NavigationProperty Name="Message_DesHash" Relationship="ForestModel.FK_Message_DesHash_F_Destination_Type" FromRole="F_Destination_Type" ToRole="Message_DesHash" />
-          <NavigationProperty Name="RecommendedTrips" Relationship="ForestModel.FK_RecommendedTrips_F_Destination_Type" FromRole="F_Destination_Type" ToRole="RecommendedTrip" />
-        </EntityType>
-        <Association Name="FK_ADDestination_F_Destination_Type">
-          <End Type="ForestModel.F_Destination_Type" Role="F_Destination_Type" Multiplicity="0..1" />
-          <End Type="ForestModel.ADDestination" Role="ADDestination" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="F_Destination_Type">
-              <PropertyRef Name="Destination_Type_ID" />
-            </Principal>
-            <Dependent Role="ADDestination">
-              <PropertyRef Name="Destination_Type_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Destination_Fare_F_Destination_Type">
-          <End Type="ForestModel.F_Destination_Type" Role="F_Destination_Type" Multiplicity="0..1" />
-          <End Type="ForestModel.Destination_Fare" Role="Destination_Fare" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="F_Destination_Type">
-              <PropertyRef Name="Destination_Type_ID" />
-            </Principal>
-            <Dependent Role="Destination_Fare">
-              <PropertyRef Name="Destination_Type_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Message_DesHash_F_Destination_Type">
-          <End Type="ForestModel.F_Destination_Type" Role="F_Destination_Type" Multiplicity="0..1" />
-          <End Type="ForestModel.Message_DesHash" Role="Message_DesHash" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="F_Destination_Type">
-              <PropertyRef Name="Destination_Type_ID" />
-            </Principal>
-            <Dependent Role="Message_DesHash">
-              <PropertyRef Name="Destination_Type_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="ActiveItem">
           <Key>
             <PropertyRef Name="ItemID" />
@@ -3938,21 +3863,9 @@
           <Property Name="ImageFileName" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="ImageFileDesc" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="ImageFileLocation" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="F_Destination_Type" Relationship="ForestModel.FK_RecommendedTrips_F_Destination_Type" FromRole="RecommendedTrip" ToRole="F_Destination_Type" />
           <NavigationProperty Name="RecommendedTrips_Day" Relationship="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day" FromRole="RecommendedTrip" ToRole="RecommendedTrips_Day" />
+          <NavigationProperty Name="F_Destination_Type" Relationship="ForestModel.FK_RecommendedTrips_F_Destination_Type" FromRole="RecommendedTrip" ToRole="F_Destination_Type" />
         </EntityType>
-        <Association Name="FK_RecommendedTrips_F_Destination_Type">
-          <End Type="ForestModel.F_Destination_Type" Role="F_Destination_Type" Multiplicity="0..1" />
-          <End Type="ForestModel.RecommendedTrip" Role="RecommendedTrip" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="F_Destination_Type">
-              <PropertyRef Name="Destination_Type_ID" />
-            </Principal>
-            <Dependent Role="RecommendedTrip">
-              <PropertyRef Name="RecommendedTrips_Destinations_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_RecommendedTrips_RecommendedTrips_Day">
           <End Type="ForestModel.RecommendedTrips_Day" Role="RecommendedTrips_Day" Multiplicity="0..1" />
           <End Type="ForestModel.RecommendedTrip" Role="RecommendedTrip" Multiplicity="*" />
@@ -3962,6 +3875,93 @@
             </Principal>
             <Dependent Role="RecommendedTrip">
               <PropertyRef Name="RecommendedTrips_Day_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="F_Destination_Type">
+          <Key>
+            <PropertyRef Name="Destination_Type_ID" />
+          </Key>
+          <Property Name="Destination_Type_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Destination_Type_Title1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Destination_Type_Title2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Destination_Type_CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="Destination_Type_ImgName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Destination_Type_ImgDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Destination_Type_Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Destination_Type_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Destination_Type_MapName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Destination_Type_Location" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Destination_Type_ServiceHours" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Destination_Type_Area" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Destination_Type_Altitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Temp_Spring" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Temp_Summer" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Temp_Autumn" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Temp_Winter" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FPI" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="FPII" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="FPIII" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="FPIV" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="FPV" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="FPVI" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="FPVII" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="FPVIII" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="FPIX" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="FPX" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="Banner_Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Recommend_Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Recommend_Detail_Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ADDestinations" Relationship="ForestModel.FK_ADDestination_F_Destination_Type" FromRole="F_Destination_Type" ToRole="ADDestination" />
+          <NavigationProperty Name="Destination_Fare" Relationship="ForestModel.FK_Destination_Fare_F_Destination_Type" FromRole="F_Destination_Type" ToRole="Destination_Fare" />
+          <NavigationProperty Name="Message_DesHash" Relationship="ForestModel.FK_Message_DesHash_F_Destination_Type" FromRole="F_Destination_Type" ToRole="Message_DesHash" />
+          <NavigationProperty Name="RecommendedTrips" Relationship="ForestModel.FK_RecommendedTrips_F_Destination_Type" FromRole="F_Destination_Type" ToRole="RecommendedTrip" />
+        </EntityType>
+        <Association Name="FK_ADDestination_F_Destination_Type">
+          <End Type="ForestModel.F_Destination_Type" Role="F_Destination_Type" Multiplicity="0..1" />
+          <End Type="ForestModel.ADDestination" Role="ADDestination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="F_Destination_Type">
+              <PropertyRef Name="Destination_Type_ID" />
+            </Principal>
+            <Dependent Role="ADDestination">
+              <PropertyRef Name="Destination_Type_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Destination_Fare_F_Destination_Type">
+          <End Type="ForestModel.F_Destination_Type" Role="F_Destination_Type" Multiplicity="0..1" />
+          <End Type="ForestModel.Destination_Fare" Role="Destination_Fare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="F_Destination_Type">
+              <PropertyRef Name="Destination_Type_ID" />
+            </Principal>
+            <Dependent Role="Destination_Fare">
+              <PropertyRef Name="Destination_Type_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_DesHash_F_Destination_Type">
+          <End Type="ForestModel.F_Destination_Type" Role="F_Destination_Type" Multiplicity="0..1" />
+          <End Type="ForestModel.Message_DesHash" Role="Message_DesHash" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="F_Destination_Type">
+              <PropertyRef Name="Destination_Type_ID" />
+            </Principal>
+            <Dependent Role="Message_DesHash">
+              <PropertyRef Name="Destination_Type_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecommendedTrips_F_Destination_Type">
+          <End Type="ForestModel.F_Destination_Type" Role="F_Destination_Type" Multiplicity="0..1" />
+          <End Type="ForestModel.RecommendedTrip" Role="RecommendedTrip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="F_Destination_Type">
+              <PropertyRef Name="Destination_Type_ID" />
+            </Principal>
+            <Dependent Role="RecommendedTrip">
+              <PropertyRef Name="RecommendedTrips_Destinations_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -5696,42 +5696,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="F_Destination_Type">
-            <EntityTypeMapping TypeName="ForestModel.F_Destination_Type">
-              <MappingFragment StoreEntitySet="F_Destination_Type">
-                <ScalarProperty Name="Recommend_Detail_Img" ColumnName="Recommend_Detail_Img" />
-                <ScalarProperty Name="Recommend_Img" ColumnName="Recommend_Img" />
-                <ScalarProperty Name="Banner_Img" ColumnName="Banner_Img" />
-                <ScalarProperty Name="FPX" ColumnName="FPX" />
-                <ScalarProperty Name="FPIX" ColumnName="FPIX" />
-                <ScalarProperty Name="FPVIII" ColumnName="FPVIII" />
-                <ScalarProperty Name="FPVII" ColumnName="FPVII" />
-                <ScalarProperty Name="FPVI" ColumnName="FPVI" />
-                <ScalarProperty Name="FPV" ColumnName="FPV" />
-                <ScalarProperty Name="FPIV" ColumnName="FPIV" />
-                <ScalarProperty Name="FPIII" ColumnName="FPIII" />
-                <ScalarProperty Name="FPII" ColumnName="FPII" />
-                <ScalarProperty Name="FPI" ColumnName="FPI" />
-                <ScalarProperty Name="Temp_Winter" ColumnName="Temp_Winter" />
-                <ScalarProperty Name="Temp_Autumn" ColumnName="Temp_Autumn" />
-                <ScalarProperty Name="Temp_Summer" ColumnName="Temp_Summer" />
-                <ScalarProperty Name="Temp_Spring" ColumnName="Temp_Spring" />
-                <ScalarProperty Name="Destination_Type_Altitude" ColumnName="Destination_Type_Altitude" />
-                <ScalarProperty Name="Destination_Type_Area" ColumnName="Destination_Type_Area" />
-                <ScalarProperty Name="Destination_Type_ServiceHours" ColumnName="Destination_Type_ServiceHours" />
-                <ScalarProperty Name="Destination_Type_Location" ColumnName="Destination_Type_Location" />
-                <ScalarProperty Name="Destination_Type_MapName" ColumnName="Destination_Type_MapName" />
-                <ScalarProperty Name="Destination_Type_Description" ColumnName="Destination_Type_Description" />
-                <ScalarProperty Name="Destination_Type_Link" ColumnName="Destination_Type_Link" />
-                <ScalarProperty Name="Destination_Type_ImgDescription" ColumnName="Destination_Type_ImgDescription" />
-                <ScalarProperty Name="Destination_Type_ImgName" ColumnName="Destination_Type_ImgName" />
-                <ScalarProperty Name="Destination_Type_CreateDate" ColumnName="Destination_Type_CreateDate" />
-                <ScalarProperty Name="Destination_Type_Title2" ColumnName="Destination_Type_Title2" />
-                <ScalarProperty Name="Destination_Type_Title1" ColumnName="Destination_Type_Title1" />
-                <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ActiveItems">
             <EntityTypeMapping TypeName="ForestModel.ActiveItem">
               <MappingFragment StoreEntitySet="ActiveItem">
@@ -5798,6 +5762,42 @@
                 <ScalarProperty Name="RecommendedTrips_Destinations_ID" ColumnName="RecommendedTrips_Destinations_ID" />
                 <ScalarProperty Name="RecommendedTrips_Day_ID" ColumnName="RecommendedTrips_Day_ID" />
                 <ScalarProperty Name="RecommendedTrips_ID" ColumnName="RecommendedTrips_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="F_Destination_Type">
+            <EntityTypeMapping TypeName="ForestModel.F_Destination_Type">
+              <MappingFragment StoreEntitySet="F_Destination_Type">
+                <ScalarProperty Name="Recommend_Detail_Img" ColumnName="Recommend_Detail_Img" />
+                <ScalarProperty Name="Recommend_Img" ColumnName="Recommend_Img" />
+                <ScalarProperty Name="Banner_Img" ColumnName="Banner_Img" />
+                <ScalarProperty Name="FPX" ColumnName="FPX" />
+                <ScalarProperty Name="FPIX" ColumnName="FPIX" />
+                <ScalarProperty Name="FPVIII" ColumnName="FPVIII" />
+                <ScalarProperty Name="FPVII" ColumnName="FPVII" />
+                <ScalarProperty Name="FPVI" ColumnName="FPVI" />
+                <ScalarProperty Name="FPV" ColumnName="FPV" />
+                <ScalarProperty Name="FPIV" ColumnName="FPIV" />
+                <ScalarProperty Name="FPIII" ColumnName="FPIII" />
+                <ScalarProperty Name="FPII" ColumnName="FPII" />
+                <ScalarProperty Name="FPI" ColumnName="FPI" />
+                <ScalarProperty Name="Temp_Winter" ColumnName="Temp_Winter" />
+                <ScalarProperty Name="Temp_Autumn" ColumnName="Temp_Autumn" />
+                <ScalarProperty Name="Temp_Summer" ColumnName="Temp_Summer" />
+                <ScalarProperty Name="Temp_Spring" ColumnName="Temp_Spring" />
+                <ScalarProperty Name="Destination_Type_Altitude" ColumnName="Destination_Type_Altitude" />
+                <ScalarProperty Name="Destination_Type_Area" ColumnName="Destination_Type_Area" />
+                <ScalarProperty Name="Destination_Type_ServiceHours" ColumnName="Destination_Type_ServiceHours" />
+                <ScalarProperty Name="Destination_Type_Location" ColumnName="Destination_Type_Location" />
+                <ScalarProperty Name="Destination_Type_MapName" ColumnName="Destination_Type_MapName" />
+                <ScalarProperty Name="Destination_Type_Description" ColumnName="Destination_Type_Description" />
+                <ScalarProperty Name="Destination_Type_Link" ColumnName="Destination_Type_Link" />
+                <ScalarProperty Name="Destination_Type_ImgDescription" ColumnName="Destination_Type_ImgDescription" />
+                <ScalarProperty Name="Destination_Type_ImgName" ColumnName="Destination_Type_ImgName" />
+                <ScalarProperty Name="Destination_Type_CreateDate" ColumnName="Destination_Type_CreateDate" />
+                <ScalarProperty Name="Destination_Type_Title2" ColumnName="Destination_Type_Title2" />
+                <ScalarProperty Name="Destination_Type_Title1" ColumnName="Destination_Type_Title1" />
+                <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -337,6 +337,8 @@
 @section scripts {
     <script>
         $(function () {
+            
+
             var fileupload = '@Model.UploadFileName';
             var selactiveitem = '@Model.ActiveItemID';
 
@@ -424,7 +426,9 @@
                         breakAfterClose: false
                     });
             });
-
+            $("#cke_48").click(function () {
+                selectvalue();
+            });
             //indent : false, breakBeforeOpen : false, breakAfterOpen : false, breakBeforeClose : false, breakAfterClose : true}
             $('#editform').submit(function (event) {
 
@@ -599,7 +603,16 @@
             });
         }
 
-
+        function selectvalue() {
+            var txtArea = document.getElementById("HtmlContent");
+            var selectedText;
+            if (txtArea.selectionStart != undefined) {
+                var startPosition = txtArea.selectionStart;
+                var endPosition = txtArea.selectionEnd;
+                selectedText = txtArea.value.substring(startPosition, endPosition);
+            }
+            alert("You selected :" + selectedText);
+        }
 
     </script>
 

@@ -17,6 +17,8 @@ CKEDITOR.editorConfig = function (config) {
     CKEDITOR.config.fullPage = false;
     CKEDITOR.dtd.$removeEmpty['i'] = false;
     
+
+
     config.toolbar_BasicToolbar = [['Source', '-', 'NewPage', 'Preview'],
     ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Print', 'SpellChecker', 'Scayt'],
     ['Link', 'Unlink', 'Anchor'],
@@ -24,11 +26,12 @@ CKEDITOR.editorConfig = function (config) {
     ['NumberedList', 'BulletedList', '-',  'Blockquote'],
         '/',
     ['Bold', 'Italic', 'Underline', 'Strike', '-', 'Subscript', 'Superscript'],
-
+        //['title03'],
     //['TextColor', 'BGColor'],
-    ['Image', 'Table', 'HorizontalRule', 'SpecialChar'],
+        ['Image', 'Table', 'HorizontalRule', 'SpecialChar'],
+        ['Styles'],
     ['Maximize']];
-
+    
     //config.toolbar_SimpleToolbar = [
     //    ['Source', '-', 'NewPage', 'Preview'],
     //    ['Cut', 'Copy', 'Paste'],
@@ -41,4 +44,7 @@ CKEDITOR.editorConfig = function (config) {
     //    ['Image', 'Table', 'HorizontalRule'],
     //    ['Maximize']
     //];
+    //config.extraPlugins = 'CodePlugin';
 };
+
+   

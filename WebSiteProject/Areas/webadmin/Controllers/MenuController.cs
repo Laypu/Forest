@@ -34,7 +34,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             if (menutype == "1")
             {
                 ViewBag.Title = "主要選單";
-                ViewBag.onlylevle1 = "N";
+                ViewBag.onlylevle1 = "Y";
             }
             else if (menutype == "2")
             {
@@ -44,7 +44,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             else if (menutype == "3")
             {
                 ViewBag.Title = "下方選單";
-                ViewBag.onlylevle1 = "Y";
+                ViewBag.onlylevle1 = "N";
             }
             else if (menutype == "4")
             {

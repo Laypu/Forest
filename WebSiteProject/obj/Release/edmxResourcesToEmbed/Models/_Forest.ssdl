@@ -494,16 +494,16 @@
     <Property Name="Temp_Summer" Type="numeric" Precision="18" Scale="2" />
     <Property Name="Temp_Autumn" Type="numeric" Precision="18" Scale="2" />
     <Property Name="Temp_Winter" Type="numeric" Precision="18" Scale="2" />
-    <Property Name="FPI" Type="nvarchar" MaxLength="20" />
-    <Property Name="FPII" Type="nvarchar" MaxLength="20" />
-    <Property Name="FPIII" Type="nvarchar" MaxLength="20" />
-    <Property Name="FPIV" Type="nvarchar" MaxLength="20" />
-    <Property Name="FPV" Type="nvarchar" MaxLength="20" />
-    <Property Name="FPVI" Type="nvarchar" MaxLength="20" />
-    <Property Name="FPVII" Type="nvarchar" MaxLength="20" />
-    <Property Name="FPVIII" Type="nvarchar" MaxLength="20" />
-    <Property Name="FPIX" Type="nvarchar" MaxLength="20" />
-    <Property Name="FPX" Type="nvarchar" MaxLength="20" />
+    <Property Name="FPI" Type="nvarchar" MaxLength="35" />
+    <Property Name="FPII" Type="nvarchar" MaxLength="35" />
+    <Property Name="FPIII" Type="nvarchar" MaxLength="35" />
+    <Property Name="FPIV" Type="nvarchar" MaxLength="35" />
+    <Property Name="FPV" Type="nvarchar" MaxLength="35" />
+    <Property Name="FPVI" Type="nvarchar" MaxLength="35" />
+    <Property Name="FPVII" Type="nvarchar" MaxLength="35" />
+    <Property Name="FPVIII" Type="nvarchar" MaxLength="35" />
+    <Property Name="FPIX" Type="nvarchar" MaxLength="35" />
+    <Property Name="FPX" Type="nvarchar" MaxLength="35" />
     <Property Name="Banner_Img" Type="nvarchar(max)" />
     <Property Name="Recommend_Img" Type="nvarchar(max)" />
     <Property Name="Recommend_Detail_Img" Type="nvarchar(max)" />

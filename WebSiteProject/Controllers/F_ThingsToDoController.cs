@@ -275,7 +275,7 @@ namespace WebSiteProject.Controllers
             var q = from M in db.MessageItems
                     join H in db.F_Sub_HashTag_Type
                     on M.ItemID equals H.MessageItem_ID
-                    where H.HashTag_Type_ID == F_TTD_Id
+                    where H.HashTag_Type_ID == F_TTD_Id && M.Enabled == true
                     orderby M.Sort
                     select M;
 
