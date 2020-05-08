@@ -42,20 +42,20 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 
 
         #region Index_ADMain 輪播牆檢視
-        public ActionResult Index_ADMain(string home_type, string home_stype) 
+        public ActionResult Index_ADMain(string home_type, string home_stype,int site_id) 
         {
             TempData["site_id"] = 1;
 
-            return RedirectToAction("Index", "Ad", new { type = home_type, stype = home_stype, MenuType = 0 });
+            return RedirectToAction("Index", "Ad", new { type = home_type, stype = home_stype, MenuType = 0 ,site_id = site_id});
         }
         #endregion
 
 
         #region Index_ADMain2 輪播牆檢視2
-        public ActionResult Index_ADMain2(string home_type, string home_stype)
+        public ActionResult Index_ADMain2(string home_type, string home_stype, int site_id)
         {
             TempData["site_id"] = 2;
-            return RedirectToAction("Index", "Ad", new { type = home_type, stype = home_stype, MenuType = 0 });
+            return RedirectToAction("Index", "Ad", new { type = home_type, stype = home_stype, MenuType = 0, site_id = site_id });
         }
         #endregion
 

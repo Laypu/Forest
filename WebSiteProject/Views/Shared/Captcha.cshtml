@@ -37,7 +37,8 @@
                                                           {"data-val", "true"},
                                                           {"data-val-required", Model.RequiredMessage},
                                                           {"class","form-control input-small float_left" },
-                                                          {"placeholder","please enter Verification code" }
+                                                          {"placeholder","please enter Verification code" },
+                                                          { "autocomplete", "off" }
                                                       })
     }
     else
@@ -47,7 +48,7 @@
                id="@Model.InputElementId"
                name="@Model.InputElementId"
                class="form-control input-small float_left"
-               placeholder="please enter Verification code" />
+               placeholder="please enter Verification code" autocomplete = "off" />
 
 
         @*@Html.TextBox(Model.InputElementId, null, new { @class = "form-control input-small float_left", @placeholder = "請輸入驗證碼" })*@
@@ -59,9 +60,12 @@
             <i class="fa fa-refresh" aria-hidden="true"></i>
             reorganize
         </a>
-        <a href="@Url.Action("PlayVoice","F_Recommendedtrips")?token=@Model.TokenValue" target="voice" title="Voice playback" id="i_voice">
+        @*<a href="@Url.Action("PlayVoice","F_Recommendedtrips")?token=@Model.TokenValue" target="voice" title="Voice playback" id="i_voice">
             <i class="fa fa-volume-up" aria-hidden="true" style="cursor:pointer"></i><span class="sr-only">Voice playback</span>
-        </a>
+        </a>*@
+        <button type="button" onclick=""></button>
+
+
     </span>
     @if (ViewData["submitBtn"] != null && ViewData["submitBtn"].ToString() == "Captcha")
     {

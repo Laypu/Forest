@@ -387,8 +387,10 @@
                 RegisterClicklink("#eventtable", ".edit", '@Url.Action("ADEdit")', obj);
                  RegisterDelete("#btn_del", '#eventtable .chksel:checked', '@Url.Action("SetADDelete")', obj);
                 }
-                else {
+            else {
+                obj.siteid = @ViewBag.sitid;
                 RegisterClicklink("#eventtable", ".edit", '@Url.Action("ADEdit")', obj);
+
                   RegisterDelete("#btn_del", '#eventtable .chksel:checked', '@Url.Action("SetADDelete")', obj);
                 }
 

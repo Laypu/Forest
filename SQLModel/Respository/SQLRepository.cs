@@ -504,10 +504,10 @@ namespace SQLModel
                     }
 
                     //20200107更新，要取得新增的ID
-                    if (r>0)
-                    {
-                        r = (int)myid.Value;
-                    }
+                    //if (r>0)
+                    //{
+                    //    r = (int)myid.Value;
+                    //}
                     
                 }
             }
