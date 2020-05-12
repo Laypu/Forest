@@ -156,7 +156,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             var siteid = site_id ?? TempData["site_id"] ?? 1;
             if (TempData["site_id"] == null)
             {
-                TempData["site_id"] = site_id;
+                TempData["site_id"] = siteid;
             }
             
             ViewBag.sitid = -1;
@@ -165,7 +165,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             if(site_id!=null)
             {
                 ViewBag.SiteTile = db.SiteLists.Where(p => p.SiteList_ID == site_id).FirstOrDefault().SiteList_Name_en;
-                ViewBag.sitid = site_id;
+                ViewBag.sitid = siteid;
                 if(site_id == 17)
                 {
                     var id = Int32.Parse(type);
