@@ -278,6 +278,9 @@ label {
 	color:#333;
 	width: 14px;
 }
+.login .fa-inverse {
+    color: #333;
+}
 .login .left .input-group fa-user{
 	width:14px;
 }
@@ -303,6 +306,9 @@ label {
 	background-size:cover;
 	height:100vh;
 }
+.login .right .logo{
+    margin-bottom:20px;
+}
 .login .right .title{
 	text-align:center;
 	vertical-align:middle;
@@ -310,39 +316,19 @@ label {
 	font-weight:800;
 	margin-bottom:20px;
 	line-height:170%;
-	text-shadow: 2px 2px 5px #fff;
-	color:#a36341;
+	/*text-shadow: 2px 2px 5px #fff;*/
+	color: #b8986a;
 }
 .login .right .font_con{
 	border-radius:10px;
+	color:#fff;
 }
-
 .login .right .font_con .fa-xs{
 	margin-top:10px;
 }
 .login .text-shadow{
-	text-shadow: 2px 2px 5px #fff;
+	/*text-shadow: 2px 2px 5px #fff;*/
 }
-
-
-/*login white*/
-.login .right.white .title{
-	color:#fff;
-	text-shadow: 2px 2px 5px #000;
-}
-.login .right.white .font_con{
-	color:#ccc;
-}
-.login .right.white .font_con .fa-circle:before {
-    color: #FFF;
-}
-.login .right.white .font_con .fa-inverse {
-    color: #666;
-}
-.login .right.white .text-shadow {
-    text-shadow: 2px 2px 5px #000;
-}
-
 
 
 /*left menu*/
@@ -1072,199 +1058,95 @@ body{
 }
 
 
+/*-------------------------------------------2019.7.23客製設定值----------------------------------------*/
 
-/*-----------------------------------------for編輯器--------------------------------------------*/
-.bootbox-body .title_01{
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size:1.7em;
-	font-weight:bold;
-	padding:20px 0;
-	line-height: 130%;
-	color:#000;
-}
-.bootbox-body .title_02{
-	font-family: "Times New Roman", Times, serif;
-	font-size:1.2em;
-	font-weight:bold;
-	padding:10px 15px;
-	line-height: 130%;
-	color:#fff;
-	background:#7e2a2c;
-}
-.bootbox-body .title_03{
-	font-family:Helvetica;
-	font-weight:bold;
-	font-size:1.25em;
-	line-height: 130%;
-	color:#333;
-}
-.bootbox-body .title_04{
-	font-family:Helvetica;
-	font-weight:bold;
-	font-size:1em;
-	line-height: 130%;
-	color:#333;
-}
-.w-100{
-	width:100%
-}
-.w-800 {
-    max-width: 800px !important;
-    margin: 0 auto !important;
-}
-.w-auto{
-	width:auto;
-}
-.float_left {
-    float: left;
-}
-.float_right {
-    float: right;
-}
-.text_center {
-    text-align: center;
-}
-.text_right {
-    text-align: right;
-}
-.text_left {
-    text-align: left;
-}
-.red {
-    color: #c00;
-}
-.required {
-    color: #c00;
-    font-size: 0.9em;
-    line-height: 140%;
-    padding: 3px 0;
-}
 .img_padding{
 	padding:10px;
 }
 
-
-/*table scroll*/
-.bootbox-body .table-scrollable {
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    border: none;
+/*客戶編輯器*/
+/*錨點*/
+.anchor_list{
+	float:left;
+	width:100%;
+	list-style:none;
+	margin-bottom:20px;
+	padding-left:0 !important;
 }
-.bootbox-body .table-scrollable > .table-bordered > thead > tr:last-child > th, .bootbox-body .table.table-bordered thead > tr > th {
-	border-bottom: 0;
-	border: 1px solid #ddd;
-	line-height: 130%;
-	vertical-align: middle;
-	padding: 10px;
+.anchor_list a{
+	float:left;
+	padding:5px 15px;
+	border-radius:5px;
+	color:#333;
+	margin:5px;
+	border: solid #ccc 1px;
 }
-.bootbox-body .table-scrollable > .table {
-	width: 100% !important;
-	margin: 0 !important;
-	min-width: 650px;
+.anchor_list li{
+	float:left;
 }
-.bootbox-body .table{
-	margin-bottom:5px;
-}
-.bootbox-body .table > tbody > tr > td {
-    line-height: 190%;
-}
-.bootbox-body .table-scrollable > .table > thead {
-    border-top: solid 1px #ddd;
-}
-.bootbox-body .table-scrollable > .table > thead > tr > th, .bootbox-body .table-scrollable th,.bootbox-body .table > thead > tr > th {
-	white-space: nowrap;
-	padding: 8px;
-	background: #666;
-	color: #fff;
-	font-weight: 500;
-}
-.bootbox-body .table-hover > tbody > tr:hover {
-    background: rgba(0,105,62,0.05);
-}
-.bootbox-body .table-even > tbody > tr:nth-child(even) {
-    background: rgba(0,105,62,0.05);
-}
-.bootbox-body .delete_th {
-    padding: 10px 0 !important;
+.anchor_list a:hover ,.anchor_list a:focus{
+	background:#2e7f98;
+	color:#fff;
+	box-shadow:none;
+	border: solid #2e7f98 1px;
 }
 
 
-/*table*/
-.table {
-    display: table;
-	border-color:#ddd;
+/*圖片2則*/
+.img_box_2{
+	float:left;
 	width:100%;
 }
-.table_01 {
-    display: table;
-	border:none;
-	text-align:left;
+.img_box_2 .item{
+	float:left;
+	width:50%;
+	padding:15px;
 }
-.table-row {
-    display: table-row;
+.img_box_2 img{
+	width:100%;
+	margin-bottom:5px;
+	border: solid #ccc 1px;
 }
-.table-cell {
-    display: table-cell;
-}
-
-
-/*縮排*/
-.paddingleft22{
-	padding-left:22px;
-}
-.textindent22{
-	text-indent: -22px;
+.img_box_2 .con_font{
+	font-size:0.9em;
+	color:#666;
 }
 
 
-/*清單*/
-.ol_01{
-	list-style-type:cjk-ideographic; /*一, 二, 三*/
+/*圖片3則*/
+.img_box_3{
+	float:left;
+	width:100%;
 }
-.ol_02{
-	list-style-type:upper-latin; /*A, B, C*/
+.img_box_3 .item{
+	float:left;
+	width:33.3%;
+	padding:15px;
 }
-.ol_03{
-	list-style-type:lower-alpha; /*a, b, c*/
+.img_box_3 img{
+	width:100%;
+	margin-bottom:5px;
+	border: solid #ccc 1px;
 }
-.ul_01{
-	list-style-type:square; /*實心方塊*/
-}
-.ul_none ,.ol_none{
-	list-style:none;
-	padding-left: 0;
+.img_box_3 .con_font{
+	font-size:0.9em;
+	color:#666;
 }
 
+/* 橫向智慧手機到竪立平板電腦解析度 */
+@media (max-width: 767px) {
+/*客戶編輯器*/
+/*圖片2則*/
+.img_box_2 .item{
+	width:100%;
+	padding:15px 0;
+}
 
-/*客製內容編輯*/
-.bootbox-body .box_02{
-	clear:both;
+/*圖片3則*/
+.img_box_3 .item{
+	width:100%;
+	padding:15px 0;
 }
-.bootbox-body .box_02 .no{
-	font-family: Impact;
-	font-size:4em;
-	font-weight:bold;
-	line-height: 130%;
-	color:#000;
-	/*float:left;*/
-	width: 70px;
-    text-align: right;
-}
-.bootbox-body .box_02 .font{
-	/*float:left;*/
-	padding-left:90px;
-	margin-top:-75px;
-}
-.bootbox-body .box_02 .title{
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size:1.8em;
-	font-weight:bold;
-	line-height: 130%;
-	color:#000;
-	margin-bottom:20px;
-}
-.bootbox-body .embed-responsive{
-	margin:20px 0 30px 0;
+
 }
 

@@ -63,10 +63,10 @@
                     <div class="display_inline">
 
                         <select id="Index_FreeZone_Select" class="form-control checkitem" onchange="window.location.href=this.value">
-                            <option value="@Url.Action("Index_ADMain","Home", new { home_type = "main", home_stype = "P"})">主視覺輪播圖</option>
-                            <option value="@Url.Action("Index_FreeZone","Home",new { id=1 })" @(ViewBag.FreeZoneTitleID == 1 ? "selected" : "")>自由編輯區一</option>
-                            <option value="@Url.Action("Index_ADMain2", "Home", new { home_type = "main", home_stype = "P"})">廣告輪播圖</option>
-                            <option value="@Url.Action("Index_FreeZone","Home",new { id=2 })" @(ViewBag.FreeZoneTitleID == 2 ? "selected" : "")>自由編輯區二</option>
+                            <option value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 1, MenuType=0})" >主視覺輪播圖</option>
+                            <option value="@Url.Action("Index_FreeZone", "Home", new { id = 1 })" @(ViewBag.FreeZoneTitleID == 1 ? "selected" : "")>自由編輯區一</option>
+                            <option value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 2, MenuType=0})">廣告輪播圖</option>
+                            <option value="@Url.Action("Index_FreeZone", "Home", new { id = 2 })" @(ViewBag.FreeZoneTitleID == 2 ? "selected" : "")>自由編輯區二</option>
                         </select>
                     </div>
                 </div>

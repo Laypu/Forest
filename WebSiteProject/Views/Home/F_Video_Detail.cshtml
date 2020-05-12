@@ -93,7 +93,7 @@
                     <!--文繞圖 end-->
                     <!--edit_con start-->
                     <div class="edit_con">
-                        @Html.Raw(item.HtmlContent)
+                        @Html.Raw(item.HtmlContent.safeHtmlFragment())
                     </div>
                     <!--edit_con end-->
                     <!--相關連結+檔案下載 start-->

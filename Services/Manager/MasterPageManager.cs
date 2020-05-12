@@ -1232,7 +1232,7 @@ namespace Services.Manager
             var openmodestr = "";
             var link = "";
             var showmenun = _menu.ICon.IsNullorEmpty() ? _menu.MenuName : _menu.ICon;
-            var opennewwindowstr = "另開新視窗";
+            var opennewwindowstr = "New Window";
             if (_langid == "2")
             {
                 opennewwindowstr = "New Window";
@@ -1246,7 +1246,7 @@ namespace Services.Manager
             {
                 levelclass = "3rd";
             }
-            if (_langdict != null && _langdict.ContainsKey("另開新視窗")) { opennewwindowstr = _langdict["另開新視窗"]; }
+            if (_langdict != null && _langdict.ContainsKey("New Window")) { opennewwindowstr = _langdict["New Window"]; }
             if (_menu.OpenMode == 2) { openmodestr = "target='_blank'"; isopennewwinstr = "(" + opennewwindowstr + ")"; }
             else if (_menu.OpenMode == 3)
             {
