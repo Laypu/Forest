@@ -6,14 +6,20 @@
 @{
     string id = Guid.NewGuid().ToString("N");
     string functionName = string.Format("______{0}________()", Guid.NewGuid().ToString("N"));
+     string functionName2 = string.Format("______{0}________()", Guid.NewGuid().ToString("N"));
     <script type="text/javascript">
 
         $(function () {
             $('#@id').show();
             $('#i_voice').show();
-    });
-
-
+        });
+        function @functionName2 {
+           var d1 = $('#CaptchaDeText').val();
+           $.post("@Url.Action("GetCaptvalue", "F_Recommendedtrips")?token="+d1, function (data) {
+               $("#show2").html(data).show();
+            })
+           return false;
+        };
     function @functionName {
             $('#@id').hide();
              $.post("@Model.RefreshUrl", { @Model.TokenParameterName: $('#@Model.TokenElementId').val() },
@@ -22,6 +28,7 @@
                      $('#i_voice').prop('href', '@Url.Action("PlayVoice","F_Recommendedtrips")?token=' + d);
                      $('#@id').show();
                      $('#@Model.InputElementId').focus();
+                     $('#show2').hide();
             });
         return false;
     }
@@ -54,19 +61,20 @@
         @*@Html.TextBox(Model.InputElementId, null, new { @class = "form-control input-small float_left", @placeholder = "請輸入驗證碼" })*@
     }
 
-    <span class="verification_code">
-        <img id="@Model.ImageElementId" style="width:75px;height:25px" src="@Model.ImageUrl" alt="Verify image" />
-        <a href="#" id="@id" style="display:none" onclick="@functionName" title="replace">
-            <i class="fa fa-refresh" aria-hidden="true"></i>
-            reorganize
-        </a>
-        <a href="@Url.Action("PlayVoice","F_Recommendedtrips")?token=@Model.TokenValue" target="voice" title="Voice playback" id="i_voice">
-            <i class="fa fa-volume-up" aria-hidden="true" style="cursor:pointer"></i><span class="sr-only">Voice playback</span>
-        </a>
-        <input value="@Model.ImageUrl" />
+<span class="verification_code">
+    <img id="@Model.ImageElementId" style="width:75px;height:25px" src="@Model.ImageUrl" alt="Verify image" />
+    <a href="#" id="@id" style="display:none" onclick="@functionName" title="replace">
+        <i class="fa fa-refresh" aria-hidden="true"></i>
+        reorganize
+    </a>
+    <a href="@Url.Action("PlayVoice","F_Recommendedtrips")?token=@Model.TokenValue" target="voice" title="Voice playback" id="i_voice">
+        <i class="fa fa-volume-up" aria-hidden="true" style="cursor:pointer"></i><span class="sr-only">Voice playback</span>
+    </a>
+    <input value="" />
 
+    <a id="btn" onclick="@functionName2">顯示</a> <span style="display:none" id="show2"></span>
+</span>
 
-    </span>
     @if (ViewData["submitBtn"] != null && ViewData["submitBtn"].ToString() == "Captcha")
     {
         <div class="required">
