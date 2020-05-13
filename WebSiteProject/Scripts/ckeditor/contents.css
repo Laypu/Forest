@@ -206,3 +206,432 @@ a > img {
 	max-height: 1080px;
 	margin:0 auto;
 }
+
+
+
+/*-----------------------------------------for編輯器--------------------------------------------*/
+.title_01{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:1.7em;
+	font-weight:bold;
+	padding:20px 0;
+	line-height: 130%;
+	color:#000;
+}
+.title_02{
+	font-family: "Times New Roman", Times, serif;
+	font-size:1.2em;
+	font-weight:bold;
+	padding:10px 15px;
+	line-height: 130%;
+	color:#fff;
+	background:#7e2a2c;
+}
+.title_03{
+	font-family:Helvetica;
+	font-weight:bold;
+	font-size:1.25em;
+	line-height: 130%;
+	color:#333;
+}
+.title_04{
+	font-family:Helvetica;
+	font-weight:bold;
+	font-size:1em;
+	line-height: 130%;
+	color:#333;
+}
+
+.color_01{
+	color:#c9aa79 !important;
+}
+.color_02{
+	color:#a2422e !important;
+}
+.color_03{
+	color:#4d5327 !important;
+}
+.color_04{
+	color:#b2c9c7 !important;
+}
+.color_05{
+	color:#7e2a2c !important;
+}
+.color_06{
+	color:#3942CA !important;
+}
+.color_07{
+	color:#1F5B73 !important;
+}
+.bg_01{
+	background:#c9aa79 !important;
+}
+.bg_02{
+	background:#a2422e !important;
+}
+.bg_03{
+	background:#4d5327 !important;
+}
+.bg_04{
+	background:#b2c9c7 !important;
+}
+.bg_05{
+	background:#7e2a2c !important;
+}
+
+.w-100{
+	width:100%
+}
+.w-800 {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+}
+.w-auto{
+	width:auto;
+}
+.float_left {
+    float: left;
+}
+.float_right {
+    float: right;
+}
+.text_center ,.text-center {
+    text-align: center;
+}
+.text_right ,.text-right {
+    text-align: right;
+}
+.text_left ,.text-left {
+    text-align: left;
+}
+.red {
+    color: #c00;
+}
+.white{
+	color:#fff;
+}
+.black{
+	color:#000;
+}
+.gray{
+	color:#666;
+}
+.blue_01{
+	color:#3e76b6;
+}
+.blue_02{
+	color:#003f86;
+}
+.green_01{
+	color:#588216;
+}
+.green_02{
+	color:#00693E;
+}
+.orange_01{
+	color:#C45519;
+}
+.orange_02{
+	color:#a6410a;
+}
+.brown_01{
+	color:#817461;
+}
+.brown_02{
+	color:#513710;
+}
+.pink{
+	color:#B648B7;
+}
+.purple{
+	color:#800080;
+}
+.required {
+    color: #c00;
+    font-size: 0.9em;
+    line-height: 140%;
+    padding: 3px 0;
+}
+.img_padding{
+	padding:10px;
+}
+.blockquote_font{
+	max-width: 96%;
+    margin: 30px auto;
+    color: #333;
+    border-left: 6px solid #2b50a8;
+	padding-left: 1.5em;
+}
+
+
+/*table scroll*/
+.table-scrollable {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: none;
+}
+.table-scrollable > .table-bordered > thead > tr:last-child > th, .table.table-bordered thead > tr > th {
+	border-bottom: 0;
+	border: 1px solid #ddd;
+	line-height: 130%;
+	vertical-align: middle;
+	padding: 10px;
+}
+.table-scrollable > .table {
+	width: 100% !important;
+	margin: 0 !important;
+	min-width: 650px;
+}
+.table{
+	margin-bottom:5px;
+}
+.table > tbody > tr > td {
+    line-height: 190%;
+	border: 1px solid #ddd;
+	padding: 5px 10px;
+}
+.table-scrollable > .table > thead {
+    border-top: solid 1px #ddd;
+}
+.table-scrollable > .table > thead > tr > th, .table-scrollable th, .table > thead > tr > th {
+	white-space: nowrap;
+	padding: 8px;
+	background: #666;
+	color: #fff;
+	font-weight: 500;
+}
+.table-hover > tbody > tr:hover {
+    background: rgba(0,105,62,0.05);
+}
+.table-even > tbody > tr:nth-child(even) {
+    background: rgba(0,105,62,0.05);
+}
+.delete_th {
+    padding: 10px 0 !important;
+}
+
+
+/*table*/
+.table {
+    display: table;
+	border-color:#ddd;
+	width:100%;
+}
+.table_01 {
+    display: table;
+	border:none;
+	text-align:left;
+}
+.table-row {
+    display: table-row;
+}
+.table-cell {
+    display: table-cell;
+}
+
+
+/*縮排*/
+.paddingleft22{
+	padding-left:22px;
+}
+.textindent22{
+	text-indent: -22px;
+}
+.text_indent{
+	text-indent: 2em;
+}
+
+
+/*清單*/
+.ol_01{
+	list-style-type:cjk-ideographic; /*一, 二, 三*/
+}
+.ol_02{
+	list-style-type:upper-latin; /*A, B, C*/
+}
+.ol_03{
+	list-style-type:lower-alpha; /*a, b, c*/
+}
+.ul_01{
+	list-style-type:square; /*實心方塊*/
+}
+.ul_02{
+	list-style-type: disc; /*實心圓*/
+}
+.ul_none ,.ol_none{
+	list-style:none;
+	padding-left: 0;
+}
+
+
+/*客製內容編輯*/
+.box_02{
+	clear:both;
+}
+.box_02 .no{
+	font-family: Impact;
+	font-size:4em;
+	font-weight:bold;
+	line-height: 130%;
+	color:#000;
+	float:left;
+	width: 70px;
+    text-align: right;
+}
+.box_02 .font{
+	float:left;
+	padding-left:90px;
+	margin-top:-75px;
+}
+.box_02 .title{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:1.8em;
+	font-weight:bold;
+	line-height: 130%;
+	color:#000;
+	margin-bottom:20px;
+}
+.embed-responsive{
+	margin:20px 0 30px 0;
+}
+
+
+/*錨點*/
+.anchor_list{
+	float:left;
+	width:100%;
+	list-style:none;
+	margin-bottom:20px;
+	padding-left:0 !important;
+}
+.anchor_list a{
+	float:left;
+	padding:5px 15px;
+	border-radius:5px;
+	color:#333;
+	margin:5px;
+	border: solid #ccc 1px;
+	text-decoration:none;
+}
+.anchor_list li{
+	float:left;
+}
+.anchor_list a:hover ,.anchor_list a:focus{
+	background:#98672d;
+	color:#fff;
+	box-shadow:none;
+	border: solid #98672d 1px;
+}
+
+
+/*併排4*/
+.list_04{
+	float:left;
+	width:100%;
+}
+.list_04 .item {
+	float: left;
+	width: 22%;
+	margin: 1.5%;
+}
+.list_04 .item img{
+	margin-bottom:10px;
+}
+.list_04 .item:nth-child(4n+1) {
+	clear: both;
+}
+
+@media (max-width: 767px) {
+.list_04 .item  {
+	width: 29.3%;
+	margin:2%;
+}
+.list_04 .item:nth-child(4n+1) {
+	clear: none;
+}
+.list_04 .item:nth-child(3n+1) {
+	clear: both;
+}
+}
+
+@media (max-width: 480px) {
+.list_04 .item{
+	width: 44%;
+	margin: 3%;
+}
+.list_04 .item:nth-child(4n+1) ,.list_04 .item:nth-child(3n+1) {
+	clear: none;
+}
+.list_04 .item:nth-child(2n+1) {
+	clear: both;
+}
+.list_04 .item img {
+	width: 100%;
+}
+}
+
+
+/*併排3*/
+.list_03{
+	float:left;
+	width:100%;
+}
+.list_03 .item {
+	float: left;
+	width: 29.3%;
+	margin: 2%;
+}
+.list_03 .item img{
+	margin-bottom:10px;
+}
+.list_03 .item:nth-child(3n+1) {
+	clear: both;
+}
+
+@media (max-width: 767px) {
+.list_03 .item  {
+	width: 46%;
+}
+.list_03 .item:nth-child(3n+1) {
+	clear: none;
+}
+.list_03 .item:nth-child(2n+1) {
+	clear: both;
+}
+}
+
+@media (max-width: 480px) {
+.list_03 .item{
+	width: 90%;
+	margin: 5%;
+}
+.list_03 .item img {
+	width: 100%;
+}
+}
+
+
+/*併排2*/
+.list_02{
+	float:left;
+	width:100%;
+}
+.list_02 .item {
+	float: left;
+	width: 44%;
+	margin: 3%;
+}
+.list_02 .item img{
+	margin-bottom:10px;
+}
+.list_02 .item:nth-child(2n+1) {
+	clear: both;
+}
+
+@media (max-width: 767px) {
+.list_02 .item{
+	width: 90%;
+	margin: 5%;
+}
+}
