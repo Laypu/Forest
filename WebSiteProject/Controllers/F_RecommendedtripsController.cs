@@ -415,149 +415,17 @@ namespace WebSiteProject.Controllers
             return View(model);
         }
         #endregion
-        #region Forward
-        public ActionResult Forward(Forward_model model,string btn="",string CaptchaInputText="")
+        #region FoGetCaptvalue
+        public ActionResult GetCaptvalue(string token)
         {
-            string ErroMessage = string.Empty;
-            if (btn=="")
-            { 
-            //itemid = Server.HtmlEncode(itemid);
-
-            //ViewBag.itemid = itemid;
-            //var itemmodel = db.RecommendedTrips.Find(int.Parse(itemid));
-            //    if (itemmodel == null) { return RedirectToAction("Index", "Home"); }
-            //    if (itemmodel != null)
-            //    {
-            //        model.Title = itemmodel.RecommendedTrips_Title;
-            //    }
-
-      
-            //if(string.IsNullOrEmpty(itemid)==false)
-            //{
-            //    model.Url =
-            //}
-            return View(model);
-            }
-            else
+            var a = CaptchaMvc.HtmlHelpers.CaptchaHelper.GetCaptchaManager(this);
+            var c = a.StorageProvider.Value(token, CaptchaMvc.Interface.TokenType.Validation);
+            string speak = "1234";
+            if (c != null)
             {
-                var info = new Dictionary<string, string>();
-                try
-                {
-                    var echeck = new EmailAddressAttribute();
-
-                    if (model.Sender.IsNullorEmpty())
-                    {
-                        info.Add("Sender", "");
-                        model.btn = "Sender";
-                        model.ErroMessage += "Sender" + " required";
-                        return View(model);
-                    }
-                    if (model.SenderEMail.IsNullorEmpty())
-                    {
-                        info.Add("SenderEMail", "");
-                        model.btn = "SenderEMail";
-                        model.ErroMessage += "Sender EMail" + " required";
-                        return View(model);
-                    }
-                    else
-                    {
-                        if (echeck.IsValid(model.SenderEMail) == false)
-                        {
-                            info.Add("SenderEMailFormat", "");
-                            model.btn = "SenderEMail_Erro";
-                            model.ErroMessage += "Sender EMail" + " formal erro";
-                            return View(model);
-                        }
-                    }
-                    if (model.ForwardEMail.IsNullorEmpty())
-                    {
-                        info.Add("ForwardEMail", "");
-                        model.btn = "ForwardEMail";
-                        model.ErroMessage += "Forward EMail" + " required";
-                        return View(model);
-                    }
-                    else
-                    {
-                        var fsplit = model.ForwardEMail.Split(';');
-                        foreach (var v in fsplit)
-                        {
-                            if (echeck.IsValid(v) == false)
-                            {
-                                if (v == "") { continue; }
-                                info.Add("ForwardEMailFormat", "");
-                                model.btn = "ForwardEMail_Erro";
-                                model.ErroMessage += "Forward EMail" + " formal erro";
-                                return View(model);
-                            }
-                        }
-                    }
-                    if(CaptchaInputText.IsNullorEmpty())
-                    {
-                        info.Add("Captcha", "");
-                        model.btn = "Captcha";
-
-                        return View(model);
-                    }
-                    if (!this.IsCaptchaValid("驗證失敗!"))
-                    {
-                        info.Add("Captcha_v", "");
-                        model.btn = "Captcha_v";
-
-                        return View(model);
-                    }
-                    if (info.Count() == 0)
-                    {
-                        var host = System.Web.Configuration.WebConfigurationManager.AppSettings["smtphost"];
-                        var mailfrom = System.Web.Configuration.WebConfigurationManager.AppSettings["mailfrom"];
-                        var NoticeSenderEMail = mailfrom;
-                        var NoticeSubject = model.Title;
-                        var slist = model.ForwardEMail.Split(';');
-                        MailMessage message = new MailMessage();
-                        message.From = new MailAddress(model.SenderEMail, model.Sender);
-                        foreach (var sender in slist)
-                        {
-                            message.To.Add(new MailAddress(sender));
-                        }
-                        message.SubjectEncoding = System.Text.Encoding.UTF8;
-                        message.Subject = NoticeSubject;
-                        message.BodyEncoding = System.Text.Encoding.UTF8;
-                        string body = model.Sender + Common.GetLangText("寄了一則訊息給你喔") + "<br/> " + Common.GetLangText("給您的訊息") + ":" + model.ForwardMessage +
-                            "<br/>" + model.Url;
-                        message.Body = body;
-                        message.IsBodyHtml = true;
-                        message.Priority = MailPriority.High;
-                        var ur = System.Web.Configuration.WebConfigurationManager.AppSettings["mailuser"];
-                        var pw = System.Web.Configuration.WebConfigurationManager.AppSettings["mailpassword"];
-                        var port = System.Web.Configuration.WebConfigurationManager.AppSettings["mailport"];
-                        if (string.IsNullOrEmpty(pw) == false)
-                        {
-                            SmtpClient client = new SmtpClient(host, int.Parse(port));
-                            client.EnableSsl = true;
-                            client.Credentials = new NetworkCredential(ur, pw);
-                            client.Send(message);
-                        }
-                        else
-                        {
-                            SmtpClient client2 = new SmtpClient(host);
-                            client2.Send(message);
-                        }
-                        info.Add("result", "ok");
-                        return RedirectToAction("Forward_OK", "F_Recommendedtrips", new { check="True" });
-                    }
-                    else
-                    {
-                        info.Add("result", "error");
-                        return RedirectToAction("Forward_OK", "F_Recommendedtrips", new { check = "False" });
-                    }
-                }
-                catch (Exception ex)
-                {
-                    info.Add("result", "exception");
-                    info.Add("errorinfo", "寄信失敗:" + ex.Message);
-                    return RedirectToAction("Forward_OK", "F_Recommendedtrips", new { check = "False" });
-                }
-                return Json("send_error");
+                speak = c.Value.ToString();
             }
+            return Content(speak);
         }
         #endregion
         #region Forward_OK
@@ -658,6 +526,151 @@ namespace WebSiteProject.Controllers
                 ViewBag.mess = mess.AntiXss();
             }
             return View(viewmodel);
+        }
+        #endregion
+        #region Forward
+        public ActionResult Forward(Forward_model model, string btn = "", string CaptchaInputText = "")
+        {
+            string ErroMessage = string.Empty;
+            if (btn == "")
+            {
+                //itemid = Server.HtmlEncode(itemid);
+
+                //ViewBag.itemid = itemid;
+                //var itemmodel = db.RecommendedTrips.Find(int.Parse(itemid));
+                //    if (itemmodel == null) { return RedirectToAction("Index", "Home"); }
+                //    if (itemmodel != null)
+                //    {
+                //        model.Title = itemmodel.RecommendedTrips_Title;
+                //    }
+
+
+                //if(string.IsNullOrEmpty(itemid)==false)
+                //{
+                //    model.Url =
+                //}
+                return View(model);
+            }
+            else
+            {
+                var info = new Dictionary<string, string>();
+                try
+                {
+                    var echeck = new EmailAddressAttribute();
+
+                    if (model.Sender.IsNullorEmpty())
+                    {
+                        info.Add("Sender", "");
+                        model.btn = "Sender";
+                        model.ErroMessage += "Sender" + " required";
+                        return View(model);
+                    }
+                    if (model.SenderEMail.IsNullorEmpty())
+                    {
+                        info.Add("SenderEMail", "");
+                        model.btn = "SenderEMail";
+                        model.ErroMessage += "Sender EMail" + " required";
+                        return View(model);
+                    }
+                    else
+                    {
+                        if (echeck.IsValid(model.SenderEMail) == false)
+                        {
+                            info.Add("SenderEMailFormat", "");
+                            model.btn = "SenderEMail_Erro";
+                            model.ErroMessage += "Sender EMail" + " formal erro";
+                            return View(model);
+                        }
+                    }
+                    if (model.ForwardEMail.IsNullorEmpty())
+                    {
+                        info.Add("ForwardEMail", "");
+                        model.btn = "ForwardEMail";
+                        model.ErroMessage += "Forward EMail" + " required";
+                        return View(model);
+                    }
+                    else
+                    {
+                        var fsplit = model.ForwardEMail.Split(';');
+                        foreach (var v in fsplit)
+                        {
+                            if (echeck.IsValid(v) == false)
+                            {
+                                if (v == "") { continue; }
+                                info.Add("ForwardEMailFormat", "");
+                                model.btn = "ForwardEMail_Erro";
+                                model.ErroMessage += "Forward EMail" + " formal erro";
+                                return View(model);
+                            }
+                        }
+                    }
+                    if (CaptchaInputText.IsNullorEmpty())
+                    {
+                        info.Add("Captcha", "");
+                        model.btn = "Captcha";
+
+                        return View(model);
+                    }
+                    if (!this.IsCaptchaValid("驗證失敗!"))
+                    {
+                        info.Add("Captcha_v", "");
+                        model.btn = "Captcha_v";
+
+                        return View(model);
+                    }
+                    if (info.Count() == 0)
+                    {
+                        var host = System.Web.Configuration.WebConfigurationManager.AppSettings["smtphost"];
+                        var mailfrom = System.Web.Configuration.WebConfigurationManager.AppSettings["mailfrom"];
+                        var NoticeSenderEMail = mailfrom;
+                        var NoticeSubject = model.Title;
+                        var slist = model.ForwardEMail.Split(';');
+                        MailMessage message = new MailMessage();
+                        message.From = new MailAddress(model.SenderEMail, model.Sender);
+                        foreach (var sender in slist)
+                        {
+                            message.To.Add(new MailAddress(sender));
+                        }
+                        message.SubjectEncoding = System.Text.Encoding.UTF8;
+                        message.Subject = NoticeSubject;
+                        message.BodyEncoding = System.Text.Encoding.UTF8;
+                        string body = model.Sender + Common.GetLangText("寄了一則訊息給你喔") + "<br/> " + Common.GetLangText("給您的訊息") + ":" + model.ForwardMessage +
+                            "<br/>" + model.Url;
+                        message.Body = body;
+                        message.IsBodyHtml = true;
+                        message.Priority = MailPriority.High;
+                        var ur = System.Web.Configuration.WebConfigurationManager.AppSettings["mailuser"];
+                        var pw = System.Web.Configuration.WebConfigurationManager.AppSettings["mailpassword"];
+                        var port = System.Web.Configuration.WebConfigurationManager.AppSettings["mailport"];
+                        if (string.IsNullOrEmpty(pw) == false)
+                        {
+                            SmtpClient client = new SmtpClient(host, int.Parse(port));
+                            client.EnableSsl = true;
+                            client.Credentials = new NetworkCredential(ur, pw);
+                            client.Send(message);
+                        }
+                        else
+                        {
+                            SmtpClient client2 = new SmtpClient(host);
+                            client2.Send(message);
+                        }
+                        info.Add("result", "ok");
+                        return RedirectToAction("Forward_OK", "F_Recommendedtrips", new { check = "True" });
+                    }
+                    else
+                    {
+                        info.Add("result", "error");
+                        return RedirectToAction("Forward_OK", "F_Recommendedtrips", new { check = "False" });
+                    }
+                }
+                catch (Exception ex)
+                {
+                    info.Add("result", "exception");
+                    info.Add("errorinfo", "寄信失敗:" + ex.Message);
+                    return RedirectToAction("Forward_OK", "F_Recommendedtrips", new { check = "False" });
+                }
+                return Json("send_error");
+            }
         }
         #endregion
         public async Task<ActionResult> PlayVoice(string token)
