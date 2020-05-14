@@ -474,7 +474,7 @@ ul.nav-pills > li.active > a:hover, ul.nav-pills > li.active > a:focus {
 }
 
 .nav-secondary .nav-pills > li a {
-	font-size: 12px;
+	font-size: 0.75em;
 	font-style: normal;
 	font-weight: 600;
 	line-height: 20px;
@@ -3784,7 +3784,6 @@ hr.pattern.pattern-2:after, .divider.pattern.pattern-2:after {
 	background: #666;
 	color: #FFF;
 	font-family: "Open Sans", Arial, sans-serif;
-	font-size: 600;
 	box-shadow: none;
 	width: 100%;
 	font-size: 1.5em;
@@ -3838,7 +3837,6 @@ html.boxed .pricing-table .plan, html.boxed .pricing-table h3 {
 /* Icon Featured */
 .icon-featured {
 	display: inline-block;
-	font-size: 0px;
 	margin: 15px;
 	width: 110px;
 	height: 110px;
@@ -4610,7 +4608,7 @@ html.boxed .pricing-table .plan, html.boxed .pricing-table h3 {
 	border-radius: 2px;
 	display: inline-block;
 	float: left;
-	font-size: 12px;
+	font-size: 0.75em;
 	font-weight: 400;
 	letter-spacing: 0;
 	margin: 8px -2px -15px -2px;
@@ -5318,7 +5316,7 @@ section.timeline .timeline-box .owl-carousel {
 .testimonial .testimonial-author span {
 	color: #666;
 	display: block;
-	font-size: 12px;
+	font-size: 0.75em;
 }
 
 .testimonial .testimonial-author p {

@@ -51,30 +51,31 @@
     else
     {
         <input type="text"
-               @(ViewData["submitBtn"] != null && ViewData["submitBtn"].ToString() == "Captcha"||ViewData["submitBtn"] != null && ViewData["submitBtn"].ToString() == "Captcha_v" ? "autofocus" : "")
+               @(ViewData["submitBtn"] != null && ViewData["submitBtn"].ToString() == "Captcha" || ViewData["submitBtn"] != null && ViewData["submitBtn"].ToString() == "Captcha_v" ? "autofocus" : "")
                id="@Model.InputElementId"
                name="@Model.InputElementId"
                class="form-control input-small float_left"
-               placeholder="please enter Verification code" autocomplete = "off" />
+               placeholder="please enter Verification code" autocomplete="off" />
 
 
         @*@Html.TextBox(Model.InputElementId, null, new { @class = "form-control input-small float_left", @placeholder = "請輸入驗證碼" })*@
     }
-
-<span class="verification_code">
-    <img id="@Model.ImageElementId" style="width:75px;height:25px" src="@Model.ImageUrl" alt="Verify image" />
-    <a href="#" id="@id" style="display:none" onclick="@functionName" title="replace">
-        <i class="fa fa-refresh" aria-hidden="true"></i>
-        reorganize
-    </a>
-    <a href="@Url.Action("PlayVoice","F_Recommendedtrips")?token=@Model.TokenValue" target="voice" title="Voice playback" id="i_voice">
-        <i class="fa fa-volume-up" aria-hidden="true" style="cursor:pointer"></i><span class="sr-only">Voice playback</span>
-    </a>
-    <input value="" />
-
-    <a id="btn" onclick="@functionName2">顯示</a> <span style="display:none" id="show2"></span>
-</span>
-
+    <div>
+        <span class="verification_code">
+        <img id="@Model.ImageElementId" style="width:90px;height:33px;border-radius:10px" src="@Model.ImageUrl" alt="Verify image" />
+        <a href="#" id="@id" style="display:none" onclick="@functionName" title="reorganize">
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+            <span class="sr-only">Reorganize</span>
+        </a>
+        @*<a href="@Url.Action("PlayVoice","F_Recommendedtrips")?token=@Model.TokenValue" target="voice" title="Voice playback" id="i_voice">
+                <i class="fa fa-volume-up" aria-hidden="true" style="cursor:pointer"></i><span class="sr-only">Voice playback</span>
+            </a>
+            <input value="" />*@
+        
+        </span>
+    </div>
+    
+    
     @if (ViewData["submitBtn"] != null && ViewData["submitBtn"].ToString() == "Captcha")
     {
         <div class="required">
@@ -84,10 +85,17 @@
     @if (ViewData["submitBtn"] != null && ViewData["submitBtn"].ToString() == "Captcha_v")
     {
         <div class="required">
-           Verification code erro
+            Verification code erro
         </div>
     }
     @Html.Hidden(Model.TokenElementId, Model.TokenValue)
 
     @*@Html.ValidationMessage(Model.InputElementId,new {@class="required" })*@
+    
+    <div>
+        <button type="button" class="btn_01" id="btn" onclick="@functionName2" title="Show Code">Show Code</button>
+        <span style="display:none" id="show2"></span>
+    </div>
+       
+    
 </div>

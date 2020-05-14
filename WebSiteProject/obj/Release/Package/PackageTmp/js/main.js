@@ -112,6 +112,12 @@ $(function () {
 
 
 
+//mobile search icon
+$(document).ready(function(){
+    $(".sidetitle").click(function(){
+        $(".sidemenu").slideToggle();
+    });
+});
 
 
 

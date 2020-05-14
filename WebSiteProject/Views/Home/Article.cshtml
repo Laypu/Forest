@@ -52,7 +52,7 @@
                         @{
                             if (unit.isForward)
                             {
-                                <a href="#" @*target="_blank"="*@ onclick="window.open('@Url.Action("Forward","F_Recommendedtrips" ,new {Title=@DesModel.First().Title,Url=Request.Url.ToString() })', 'forward')" title="forward(new window)"><img src="@Url.Content("~/img/icon_mail.png")" alt="icon_mail.png"></a>
+                                <a href="#" @*target="_blank"="*@ onclick="window.open('@Url.Action("Forward","F_Recommendedtrips" ,new {Title=@DesModel.First().Title,Url=Request.Url.ToString() })', 'forward')" title="forward(new window)"><img src="@Url.Content("~/img/icon_mail.png")" alt="mail"></a>
                             }
                             if (unit.isPrint)
                             {
@@ -65,7 +65,7 @@
                                 <a href="http://www.facebook.com/share.php?u=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="facebook share(new window)"><img src="@Url.Content("~/img/icon_facebook.png")" alt="facebook"></a>
                                 <a href="https://twitter.com/share?text=@ViewBag.Title&url=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="twitter share(new window)"><img src="@Url.Content("~/img/icon_twitter.png")" alt="twitter"></a>
                                 <a href="http://plurk.com/?qualifier=shares&status=[分享]@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))(@ViewBag.Titlee&url)" target="_blank" title="plurk share(new window)"><img src="@Url.Content("~/img/icon_plurk.png")" alt="plurk"></a>
-                                <a href="http://line.naver.jp/R/msg/text/?@DesModel.First().Title%0D%0A@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="line share(new window)"><img src="@Url.Content("~/img/icon_plurk.png")" alt=""></a>
+                                <a href="http://line.naver.jp/R/msg/text/?@DesModel.First().Title%0D%0A@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="line share(new window)"><img src="@Url.Content("~/img/icon_line.png")" alt=""></a>
                              }
                             if (unit.isRSS)
                             {

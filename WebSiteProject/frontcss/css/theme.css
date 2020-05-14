@@ -1279,7 +1279,7 @@ html:not(.sticky-header-active) #header.header-transparent-sticky-deactive .head
 
 #header .header-nav-main nav > ul > li.dropdown-mega.dropdown-mega-signin.logged .user-avatar span {
 	display: block;
-	font-size: 12px;
+	font-size: 0.75em;
 }
 
 #header .header-nav-main nav > ul > li.dropdown-mega.dropdown-mega-signin.logged .user-avatar p {
@@ -1960,7 +1960,7 @@ aside ul.nav-list > li > a {
 
 .slider-container .featured-label {
 	color: #FFF;
-	font-size: 52px;
+	font-size:3.25em;
 	line-height: 52px;
 	font-weight: 800;
 	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
