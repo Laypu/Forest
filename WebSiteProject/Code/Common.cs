@@ -152,7 +152,7 @@ namespace WebSiteProject.Code
         #endregion
 
         #region GetIndexLayout
-        public static string GetIndexLayout( string langid)
+        public static string GetIndexLayout(string langid)
         {
             return "~/Views/Shared/_Layout.cshtml";
             //if (langid == "1")

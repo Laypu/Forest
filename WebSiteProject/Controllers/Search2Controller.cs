@@ -96,7 +96,7 @@ namespace WebSiteProject.Controllers
                     sear.RunPage = "Destination_Index/Article";
                     sear.Itemid = item.ItemID;
                     sear.Modelid = 0;
-                    sear.Cate = F_Destination_Type.First().Destination_Type_Title1 + F_Destination_Type.First().Destination_Type_Title2;
+                    sear.Cate = F_Destination_Type.First().Destination_Type_Title1+" " + F_Destination_Type.First().Destination_Type_Title2;
                     sear.Title = item.Title;
                     serch.Add(sear);
                 }

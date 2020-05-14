@@ -139,9 +139,9 @@
                                         <li><a href='@Url.Action("ChangeLang","Home",new { lang=1})' class='' langid='1' title='中文'>中文</a></li>
                                     }*@
                                     <li class="font_size hidden-xs">
-                                        <a href="#" class="size_s" id="font_s" onClick="size_set('font_s')" onkeypress="size_set('font_s')" title="S">A-</a>
-                                        <a href="#" class="size_m" id="font_m" onClick="size_set('font_m')" onkeypress="size_set('font_m')" title="M">A</a>
-                                        <a href="#" class="size_l" id="font_l" onClick="size_set('font_l')" onkeypress="size_set('font_l')" title="L">A+</a>
+                                        <a href="#" class="size_s" id="font_s" onClick="size_set('font_s')" onkeypress="size_set('font_s')" title="font size S">A-</a>
+                                        <a href="#" class="size_m" id="font_m" onClick="size_set('font_m')" onkeypress="size_set('font_m')" title="font size M">A</a>
+                                        <a href="#" class="size_l" id="font_l" onClick="size_set('font_l')" onkeypress="size_set('font_l')" title="font size L">A+</a>
                                         @*<a href="#" class="size_l" id="font_l" onClick="size_set('font_l')" onkeypress="size_set('font_l')" title="@Common.GetLangText("大字級")">A+</a>*@
                                     </li>
                                     @*<li class="share_icon">
@@ -161,14 +161,17 @@
                                                 <span class="sr-only">YouTube</span>
                                             </a>
                                         </li>*@
-                                <form action="@Url.Action("Search","Search2")">
+                                
+                                    
                                     <li class="top_search hidden-xs">
-                                        <label for="top_serach">
-                                            <input type="text" id="top_search" class="form-control" name="Key" placeholder="Search..." title="Enter keywords">
-                                        </label>
-                                        <button type="submit" class="search_icon"  onkeypress="location.href='@Url.Action("Search","Search2")'" title="search"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">Search</span></button>
+                                        <form action="@Url.Action("Search","Search2")" class="display_inline">
+                                            <label for="top_serach">
+                                                <input type="text" id="top_search" class="form-control" name="Key" placeholder="Search..." title="Enter keywords">
+                                            </label>
+                                            <button type="submit" class="search_icon" onkeypress="location.href='@Url.Action("Search","Search2")'" title="search"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">Search</span></button>
+                                        </form>
                                     </li>
-                                </form>
+                                    
                                 </ul>
                             </nav>
                         </div>
@@ -187,10 +190,13 @@
 
                                 <!--search start-->
                                 <div class="sidemenu search_box" style="display: none;">
-                                    <label for="search_input">
-                                        <input type="text" id="search_input" class="form-control" placeholder="Search...">
-                                    </label>
-                                    <button type="submit" class="search_icon"  onclick="location.href='search.html'"><i class="fa fa-search"></i></button>
+                                    <form action="@Url.Action("Search","Search2")" class="w-100">
+                                        <label for="search_input">
+                                            <input type="text" id="search_input" class="form-control" name="Key" placeholder="Search..." title="Enter keywords">
+                                        </label>
+                                        <button type="submit" class="search_icon" onkeypress="location.href='@Url.Action("Search","Search2")'" title="search"><i class="fa fa-search"></i><span class="sr-only">Search</span></button>
+                                    </form>
+                                    
                                 </div>
                                 <!--search end-->
 
@@ -398,8 +404,25 @@
             
 
         });
+        
+        //$("#search_input").change(function(){
 
+        //    $("#top_search").val($("#search_input").val()) 
+        //});
+        
+        //$("#top_search").change(function () {
 
+        //    $("#search_input").val($("#top_search").val())
+        //});
+        
+        var input1 = document.getElementById("search_input");
+        var input2 = document.getElementById("top_search");
+        input1.onkeyup = function () {
+            input2.value = input1.value;
+        }
+        input2.onkeyup = function () {
+            input1.value = input2.value;
+        }
 
     });
 

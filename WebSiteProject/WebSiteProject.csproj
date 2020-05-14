@@ -2107,7 +2107,6 @@
     <Content Include="Views\F_ThingsToDo\Article.cshtml" />
     <Content Include="Views\Home\F_Video_Index.cshtml" />
     <Content Include="Views\Home\F_Video_Detail.cshtml" />
-    <Content Include="Views\Destination_Index\Create.cshtml" />
     <Content Include="Views\Destination_Index\Details.cshtml" />
     <Content Include="Views\Destination_Index\Index.cshtml" />
     <Content Include="Views\F_Recommendedtrips\Index.cshtml" />
@@ -2198,7 +2197,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>17473</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:5657/forest</IISUrl>
+          <IISUrl>http://localhost:56517/forest</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

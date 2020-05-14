@@ -500,7 +500,7 @@
                 foreach (var item in ADmainModel)
                 {
                     <div class="item">
-                        <a href="@item.Link_Href" title="">
+                        <a href="@item.Link_Href" title="@item.AD_Name">
                             <img src="@Url.Content("~/UploadImage/ADMain/"+item.Img_Name_Ori)" alt="@item.AD_Name" /><!--建議尺寸1200*450px-->
                             <div class="font">
                                 <div class="title">@item.AD_Name</div>
