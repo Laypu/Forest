@@ -3,35 +3,35 @@
 @{
     Layout = null;
 }
+<html lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/forest/img/favicon.ico" type="image/x-icon">
+    <title>@Common.GetLangText("TAIWAN FOREST RECREATION")</title><!--英文 -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/bootstrap.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/theme.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/theme-elements.css")/">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/settings.css")" media="screen">
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="icon" href="/forest/img/favicon.ico" type="image/x-icon">
-        <title>@Common.GetLangText("TAIWAN FOREST RECREATION")</title><!--英文 -->
-        <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/bootstrap.min.css")">
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/theme.css")">
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/theme-elements.css")/">
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/settings.css")" media="screen">
+    <!--fontawesome start-->
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/font-awesome.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/fontawesome.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/brands.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/solid.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/regular.min.css")">
+    <!--fontawesome end-->
 
-        <!--fontawesome start-->
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/font-awesome.min.css")">
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/fontawesome.min.css")">
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/brands.min.css")">
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/solid.min.css")">
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/regular.min.css")">
-        <!--fontawesome end-->
-
-        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/style.css")">
-        @*<script src="@Url.Content("~/js/jquery.js")"></script>*@
-        <script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
-        <script src="@Url.Content("~/Scripts/jquery-migrate-3.0.0.min.js")"></script>
-        @*<script src="@Url.Content("~/js/main.js")"></script>
+    <link rel="stylesheet" href="@Url.Content("~/frontcss/css/style.css")">
+    @*<script src="@Url.Content("~/js/jquery.js")"></script>*@
+    <script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-migrate-3.0.0.min.js")"></script>
+    @*<script src="@Url.Content("~/js/main.js")"></script>
         <script src="@Url.Content("~/js/scrollReveal.js")"></script>*@
-        @*<script>
+    @*<script>
                 $(function () {
                     $("#submit").click(function () {
                         $(".required").hide();
@@ -72,14 +72,14 @@
                     return re.test(String(email).toLowerCase());
                 }
         </script>*@
-        <noscript>
-            <link rel="stylesheet" href="@Url.Content("~/frontcss/css/noscript.css")">
-        </noscript>
+    <noscript>
+        <link rel="stylesheet" href="@Url.Content("~/frontcss/css/noscript.css")">
+    </noscript>
 
-    </head>
+</head>
 <body style="max-width:806px; margin:0 auto; background: url(img/bg_05.jpg);">
     <div class="con_box">
-        <div class="con_banner"><img src="@Url.Content("~/img/print_banner.jpg")" alt="Banner" /></div><!--建議尺寸740*185px-->
+        <div class="con_banner"><h1><img src="@Url.Content("~/img/print_banner.jpg")" alt="" /></div><!--建議尺寸740*185px--></h1>
 
         <h2>@Model.Title</h2>
         <form action="@Url.Action("Forward")" method="post">
@@ -89,7 +89,7 @@
                     <div class="table form_box">
                         @Html.HiddenFor(m => m.Title)
                         @Html.HiddenFor(m => m.Url)
-                        
+
                         <div class="table-row">
                             <div class="form_q"><label for="sender_s">Sender <span class="required">(required)</span></label></div><!--標題label for值需與對應input id值相同-->
                             <div class="form_a">
@@ -171,6 +171,7 @@
     </div>
     <iframe name="voice" style="display:none" title="語音播放"></iframe>
 </body>
+</html>
 <script type="text/javascript">
     @*if ('@Model.btn' == 'Captcha') {
         $('#CaptchaInputText').focus();

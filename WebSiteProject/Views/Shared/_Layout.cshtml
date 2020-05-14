@@ -161,12 +161,14 @@
                                                 <span class="sr-only">YouTube</span>
                                             </a>
                                         </li>*@
+                                <form action="@Url.Action("Search","Search2")">
                                     <li class="top_search hidden-xs">
                                         <label for="top_serach">
-                                            <input type="text" id="top_search" class="form-control" placeholder="Search..." title="Enter keywords">
+                                            <input type="text" id="top_search" class="form-control" name="Key" placeholder="Search..." title="Enter keywords">
                                         </label>
-                                        <button type="submit" class="search_icon" onClick="location.href='search.html'" onkeypress="location.href='search.html'" title="search"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">Search</span></button>
+                                        <button type="submit" class="search_icon"  onkeypress="location.href='@Url.Action("Search","Search2")'" title="search"><i class="fa fa-search" aria-hidden="true"></i><span class="sr-only">Search</span></button>
                                     </li>
+                                </form>
                                 </ul>
                             </nav>
                         </div>

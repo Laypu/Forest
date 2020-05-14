@@ -289,6 +289,7 @@
     <Compile Include="Controllers\PatentController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\PageController.cs" />
+    <Compile Include="Controllers\Search2Controller.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -413,6 +414,7 @@
     <Compile Include="Models\F_ViewModels\F_ThingsToDo_List_ViewModel.cs" />
     <Compile Include="Models\F_ViewModels\RecommendedTrip_Travel_ViewModel.cs" />
     <Compile Include="Models\F_ViewModels\RecommendSearchViewmodel.cs" />
+    <Compile Include="Models\F_ViewModels\SearChModel.cs" />
     <Compile Include="Models\GroupActive.cs">
       <DependentUpon>_Forest.tt</DependentUpon>
     </Compile>
@@ -2129,6 +2131,7 @@
     <Content Include="Views\Facts\Print.cshtml" />
     <Content Include="Views\Home\Print.cshtml" />
     <Content Include="Views\Home\Policy.cshtml" />
+    <Content Include="Views\Search2\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -2195,7 +2198,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>17473</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:5656/forest</IISUrl>
+          <IISUrl>http://localhost:5657/forest</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

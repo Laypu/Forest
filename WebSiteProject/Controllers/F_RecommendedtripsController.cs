@@ -345,7 +345,7 @@ namespace WebSiteProject.Controllers
                 return RedirectToAction("recommended_list");
             }
             ViewBag.ID = model.RecommendedTrips_ID;
-            //ViewBag.Title = model.RecommendedTrips_Title;
+            ViewBag.Title = model.RecommendedTrips_Title;
             ViewBag.day = model.RecommendedTrips_Day.RecommendedTrips_Day_Name;
             //ViewBag.content = model.RecommendedTrips_Content;
             //ViewBag.location = model.RecommendedTrips_Location;
