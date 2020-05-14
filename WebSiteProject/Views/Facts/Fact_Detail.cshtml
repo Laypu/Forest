@@ -39,7 +39,7 @@
                     @{
                         if (unit.isForward)
                         {
-                            <a href="#" target="_blank" onclick="window.open('@Url.Action("Forward","F_Recommendedtrips" ,new {Title=ActiveItem.Title,Url=Request.Url.ToString() })', 'forward', config='height=750,width=650')" title="forward(new windown)"><img src="@Url.Content("~/img/icon_mail.png")" alt=""></a>
+                            <a href="#" target="_blank" onclick="window.open('@Url.Action("Forward","F_Recommendedtrips" ,new {Title=ActiveItem.Title,Url=Request.Url.ToString() })', 'forward', config='height=750,width=650')" title="forward(new windown)"><img src="@Url.Content("~/img/icon_mail.png")" alt="mail"></a>
                         }
                         if (unit.isPrint)
                         {

@@ -64,7 +64,6 @@ C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\Utilities.pdb
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\Utilities.dll.config
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\AutoMapper.xml
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\NAudio.xml
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\Newtonsoft.Json.xml
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\System.Net.Http.Formatting.xml
 C:\Users\PC003\Desktop\git\Forest\WebSiteProject\bin\System.Web.Http.xml
