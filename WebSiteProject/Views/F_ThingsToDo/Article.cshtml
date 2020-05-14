@@ -61,9 +61,10 @@
         <a href="#" target="_blank" title="download - file name(new window)"><img src="img/icon_download.png" alt=""></a>-->
                             if (unit.isShare)
                             {
-                                <a href="http://www.facebook.com/share.php?u=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="facebook share(new window)"><img src="@Url.Content("~/img/icon_facebook.png")" alt=""></a>
-                                <a href="https://twitter.com/share?text=@ViewBag.Title&url=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="twitter share(new window)"><img src="@Url.Content("~/img/icon_twitter.png")" alt=""></a>
-                                <a href="http://plurk.com/?qualifier=shares&status=[分享]@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="plurk share(new window)"><img src="@Url.Content("~/img/icon_plurk.png")" alt=""></a>
+                                <a href="http://www.facebook.com/share.php?u=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="facebook share(new window)"><img src="@Url.Content("~/img/icon_facebook.png")" alt="facebook"></a>
+                                <a href="https://twitter.com/share?text=@ViewBag.Title&url=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="twitter share(new window)"><img src="@Url.Content("~/img/icon_twitter.png")" alt="twitter"></a>
+                                <a href="http://plurk.com/?qualifier=shares&status=[分享]@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="plurk share(new window)"><img src="@Url.Content("~/img/icon_plurk.png")" alt="plurk"></a>
+                                <a href="http://line.naver.jp/R/msg/text/?@TTDModel.Title%0D%0A@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="line share(new window)"><img src="@Url.Content("~/img/icon_line.png")" alt="line"></a>
                             }
                             if (unit.isRSS)
                             {
