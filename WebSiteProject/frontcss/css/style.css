@@ -452,7 +452,7 @@ input:-ms-input-placeholder { /* Microsoft Edge */
 	padding-left:1.5em;
 }
 .news_list_02 .title:before{
-	content:"��";
+	content:"•";
 	padding-right:1em;
 	margin-left: -1.5em;
 }
