@@ -84,6 +84,23 @@ namespace WebSiteProject.Controllers
                     serch.Add(sear);
                 }
             }
+            var Dest = db.MessageItems.Where(k => k.Title.Contains(Key) || k.HtmlContent.Contains(Key)).ToList();
+            if (Dest.Count() > 0)
+            {
+
+                foreach (var item in Dest)
+                {
+                    var Message_DesHash = db.Message_DesHash.Where(o => o.MessageItem_ID == item.ItemID).Select(o=>o.Destination_Type_ID).FirstOrDefault();
+                    var F_Destination_Type = db.F_Destination_Type.Where(o => o.Destination_Type_ID == Message_DesHash);
+                    SearChModel sear = new SearChModel();
+                    sear.RunPage = "Destination_Index/Article";
+                    sear.Itemid = item.ItemID;
+                    sear.Modelid = 0;
+                    sear.Cate = F_Destination_Type.First().Destination_Type_Title1 + F_Destination_Type.First().Destination_Type_Title2;
+                    sear.Title = item.Title;
+                    serch.Add(sear);
+                }
+            }
             var count = (double)serch.Count();
             ViewBag.Key = Key;
             ViewBag.count = count;

@@ -9,6 +9,7 @@ namespace WebSiteProject.Models.F_ViewModels
     {
         public string RunPage { get; set; }
         public string Title { get; set; }
+        public string Cate { get; set; }
         public int Itemid { get; set; }
         public int Modelid { get; set; }
     }
