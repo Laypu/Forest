@@ -585,7 +585,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\lang.xml" />
-    <Content Include="Areas\webadmin\Views\web.config" />
+    <Content Include="Areas\webadmin\Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\webadmin\Views\Default\Index.cshtml" />
     <Content Include="Areas\webadmin\Views\Account\Login.cshtml" />
     <Content Include="Areas\webadmin\Views\Home\Index.cshtml" />
@@ -2197,7 +2199,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>17473</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56517/forest</IISUrl>
+          <IISUrl>http://localhost:5767/forest</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

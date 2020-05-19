@@ -26,5 +26,7 @@ namespace ViewModels
         public string ListType { get; set; }
         public string IsRange { get; set; }
         public int? ThingsToDoID { get; set; }
+
+        public int? Destination_Type_ID { get; set; }
     }
 }
