@@ -30,7 +30,7 @@
                                     <img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="@ad.AD_Name">
                                 </div>
 
-                                <div class="tp-caption item_box" data-x="0" data-y="500" data-start="500" id="link_div" data-transform_in="y:[100%];opacity:0;s:500;">
+                                <div class="tp-caption item_box" data-x="-200" data-y="500" data-start="500" id="link_div" data-transform_in="y:[100%];opacity:0;s:500;">
                                     <div class="title">@ad.AD_Name</div>
                                     <div class="con_font">@Html.Raw(ad.ADDesc)</div><br />
                                     <div class="btn_box">
@@ -500,7 +500,7 @@
                 foreach (var item in ADmainModel)
                 {
                     <div class="item">
-                        <a href="@item.Link_Href" title="">
+                        <a href="@item.Link_Href" title="@item.AD_Name">
                             <img src="@Url.Content("~/UploadImage/ADMain/"+item.Img_Name_Ori)" alt="@item.AD_Name" /><!--建議尺寸1200*450px-->
                             <div class="font">
                                 <div class="title">@item.AD_Name</div>

@@ -16,7 +16,11 @@
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
 
                 <a href="javascript:void(0);" title="@Common.GetLangText("Content area")" accesskey="@if(Model.LangId == "1"){@("C") }else{ @("C")}" id="main-content">:::</a>
-                <a href="@Url.Action("Index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>Privacy Policy
+                <a href="@Url.Action("Index","Home")" title="Home">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span class="sr-only">Home</span>
+                </a>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>Privacy Policy
             </div>
         </div>
     </div>
@@ -49,15 +53,15 @@
                         <li>While protecting the rights of organizations related to this website.</li>
                     </ul>
                 </div>
-                
+
                 <br />
                 We will not sell, exchange, rent or otherwise publish your personal information to any groups, individuals or private enterprises, except under the following circumstances:
                 <div style="padding-left:50px">
-                <ul>
-                    <li>While assisting investigations by legal authorities.</li>
-                    <li>Coordinating with investigations and use of organizations with legal need.</li>
-                    <li>Believing in good faith that exposing such data serves a necessary legal interest, or using such data to improve website services.</li>
-                </ul>
+                    <ul>
+                        <li>While assisting investigations by legal authorities.</li>
+                        <li>Coordinating with investigations and use of organizations with legal need.</li>
+                        <li>Believing in good faith that exposing such data serves a necessary legal interest, or using such data to improve website services.</li>
+                    </ul>
                 </div>
                 <br />
                 <br />
@@ -81,5 +85,12 @@
         </div>
 
     </div>
-
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="title">You are here</div>
+            <div class="font">
+                <a href="@Url.Action("Index","Home")" title="Home">Home</a> /  Privacy Policy
+            </div>
+        </div>
+    </div>
 </div>

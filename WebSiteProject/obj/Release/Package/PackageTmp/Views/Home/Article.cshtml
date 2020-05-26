@@ -52,7 +52,7 @@
                         @{
                             if (unit.isForward)
                             {
-                                <a href="#" @*target="_blank"="*@ onclick="window.open('@Url.Action("Forward","F_Recommendedtrips" ,new {Title=@DesModel.First().Title,Url=Request.Url.ToString() })', 'forward')" title="forward(new window)"><img src="@Url.Content("~/img/icon_mail.png")" alt="icon_mail.png"></a>
+                                <a href="#" @*target="_blank"="*@ onclick="window.open('@Url.Action("Forward","F_Recommendedtrips" ,new {Title=@DesModel.First().Title,Url=Request.Url.ToString() })', 'forward')" title="forward(new window)"><img src="@Url.Content("~/img/icon_mail.png")" alt="mail"></a>
                             }
                             if (unit.isPrint)
                             {

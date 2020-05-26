@@ -78,8 +78,8 @@
                             </div>
                             <div class="font_box">
                                 <div class="title">
-                                    <a href="@Url.Action("Article","Home",new {langid = 1,ImgTitle = item.Title })" title="@item.Title">@item.Title</a>
-                                </div>
+                                    <a href="@Url.Action("Article","Home",new {langid = 1,Aid = item.ItemID,Hashtag= @HashTagName})" title="@item.Title">
+</div>
                                 <!--Hastag-->
                                 <div class="link" id="HashTag">
                                     @if (!@Message10Hash.Where(MH => MH.MessageItem_ID == item.ItemID).First().Message10Hash_1H.IsNullorEmpty())

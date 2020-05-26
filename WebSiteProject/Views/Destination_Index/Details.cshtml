@@ -52,7 +52,7 @@
                                         <div class="title">@ad.AD_Name</div>
                                         <div class="con_font">@Html.Raw(ad.ADDesc)</div><br />
                                         <div class="btn_box">
-                                            <a href="@Common.FixLink(ad.Link_Href)" title="@ad.AD_Name @Common.GetLangText("Find out more")@(ad.Link_Mode == "1" ? "" : "(" + Common.GetLangText("New Window") + ")")" target="@(ad.Link_Mode == "1" ? "" : "_black")">
+                                            <a href="@Common.FixLink(ad.Link_Href)" title="@BanTitle @Common.GetLangText("Find out more")@(ad.Link_Mode == "1" ? "" : "(" + Common.GetLangText("New Window") + ")")" target="@(ad.Link_Mode == "1" ? "" : "_black")">
                                                 <span class="btn_01">
                                                     @Common.GetLangText("View")
                                                 <i class="fas fa-arrow-alt-circle-right" aria-hidden="true">
@@ -76,7 +76,7 @@
                                          data-width="['auto']"
                                          data-height="['auto']"
                                          data-basealign="slide">
-                                        <img src="@Url.Content("~/UploadImage/Destination_AD/" + ad.Img_Name_Ori)" alt="@ad.Img_Name_Ori">
+                                        <img src="@Url.Content("~/UploadImage/Destination_AD/" + ad.Img_Name_Ori)" alt="@BanTitle">
 
                                     </div>
                                 </li>
@@ -109,7 +109,7 @@
                     {
                         if (string.IsNullOrEmpty(ad.Img_Name_Ori) == false)
                         {
-                            <img src="@Url.Content("~/UploadImage/Destination_AD/" + ad.Img_Name_Ori)" alt="@ad.Img_Name_Ori">
+                            <img src="@Url.Content("~/UploadImage/Destination_AD/" + ad.Img_Name_Ori)" alt="@BanTitle">
                         }
                     }
                 }
@@ -357,7 +357,10 @@
         <div class="container">
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                 <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
-                <a href="@Url.Action("Index", "Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="@Url.Action("Index", "Home")" title="Home">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span class="sr-only">Home</span>
+                </a><i class="fa fa-angle-right" aria-hidden="true"></i>
                 <a href="@Url.Action("Index", "Destination_Index", new { langid = 1 })">@ViewBag.Destination_Title</a><i class="fa fa-angle-right" aria-hidden="true"></i>
                 @BanTitle
             </div>

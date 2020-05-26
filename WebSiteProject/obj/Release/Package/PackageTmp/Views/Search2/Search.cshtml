@@ -1,0 +1,115 @@
+﻿
+@{
+    Layout = WebSiteProject.Code.Common.GetIndexLayout(Model.LangId);
+}
+@{ 
+    var Search = (IEnumerable<WebSiteProject.Models.F_ViewModels.SearChModel>)ViewBag.Search;
+    var pageCount = (int)ViewBag.pageCount;
+    var nowPage = (int)ViewBag.NowPag;
+    var Total = (int)ViewBag.count;
+    var PagTak = (int)ViewBag.PagTak;
+}
+    <div class="page_banner one_pic">
+        <!--一張封面照；建議尺寸寬2000*600px；後台無上傳圖片時，img不顯示(但div page_banner要保留)；圖片alt=標題-->
+        <img src="@Url.Content("~/img/index_banner_05.jpg")" alt="">
+    </div>
+    <div class="page_content">
+
+        <!--page top start-->
+        <div class="page_top">
+            <div class="container">
+                <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
+                    <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
+                    <a href="@Url.Action("index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                    Search
+                </div>
+                <div class="col-md-5 col-sm-6 col-xs-12">
+                    <!--<script>$.include("blocks/page_top.html");</script>-->
+                </div>
+            </div>
+        </div>
+        <!--page top end-->
+        <!--page_con start-->
+        <div class="page_con">
+            <div class="container">
+
+                <h2>Search</h2>
+
+                <!--list start-->
+                <div class="news_list_02">
+                    @foreach (var item in Search)
+                    {
+                        string showTitle = item.Title.Replace((string)ViewBag.Key, "<span class=\"red\">" + (string)ViewBag.Key + "</span>");
+                        if (item.RunPage == "F_Recommendedtrips/recommended_Detail")
+                        {
+                            <a href="@Url.Action("recommended_Detail","F_Recommendedtrips",new {RecommendedTrips_ID=item.Itemid })" title="">
+                                <div class="item">
+                                    <div class="title">@Html.Raw(showTitle)</div>
+                                </div>
+                            </a>
+                        }
+                        else if (item.RunPage == "Facts/Fact_Detail")
+                        {
+                            <a href="@Url.Action("Fact_Detail","Facts",new {item.Itemid,item.Modelid})" title="">
+                                <div class="item">
+                                    <div class="title">@Html.Raw(showTitle)e</div>
+                                </div>
+                            </a>
+                        }
+                        else if (item.RunPage == "Home/F_Video_Detail")
+                        {
+                            <a href="@Url.Action("F_Video_Detail","Home",new {item.Itemid})" title="">
+                                <div class="item">
+                                    <div class="title">@Html.Raw(showTitle)</div>
+                                </div>
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Article","Destination_Index",new {langid=1,Category=item.Cate,Aid=item.Itemid})" title="">
+                                <div class="item">
+                                    <div class="title">@Html.Raw(showTitle)</div>
+                                </div>
+                            </a>
+                        }
+                    }
+                </div>
+                <!--list end-->
+                <!--頁碼 start-->
+             @if (Total > PagTak)
+             {
+                <form method="post" action="@Url.Action("Search")">
+                    <input type="hidden" name="Key" value="@((string)ViewBag.Key)" />
+                    <div class="col-md-4 col-sm-12 col-xs-12 page_total" data-sr="enter left over 1.5s">Total：@Total，Display：@((nowPage - 1) * PagTak + 1)~@(nowPage * PagTak < Total ? nowPage * PagTak : Total)</div>
+                    <div class="col-md-8 col-sm-12 col-xs-12 page_icon" data-sr="enter right over 1.5s">
+                        <div class="btn-group">
+                            <button type="submit" class="btn_page accesskey" name="nowpage" value="1" title="First"><i class="fa fa-angle-double-left" aria-hidden="true"></i><span class="sr-only">First</span></button>
+                            <button type="submit" class="btn_page accesskey" name="nowpage" value="@(nowPage == 1 ? 1 : nowPage - 1)" title="Prev"><i class="fa fa-angle-left" aria-hidden="true"></i><span class="sr-only">Prev</span></button>
+                            @{
+                                <select class="form-control page_list accesskey" name="jumpPage">
+                                    @for (int i = 1; i <= pageCount; i++)
+                                    {
+                                        <option value="@i" @(i == nowPage ? "selected" : "")>@i</option>
+                                    }
+                                </select>
+                            }
+                            <button type="submit" class="btn_page accesskey" title="GO">GO</button>
+                            <button type="submit" class="btn_page accesskey" name="nowpage" value="@(nowPage < pageCount ? nowPage + 1 : nowPage)" title="Next"><i class="fa fa-angle-right" aria-hidden="true"></i><span class="sr-only">Next</span></button>
+                            <button type="submit" class="btn_page accesskey" name="nowpage" value="@pageCount" title="Last"><i class="fa fa-angle-double-right" aria-hidden="true"></i><span class="sr-only">Last</span></button>
+                        </div>
+                    </div>
+                </form>
+                <!--頁碼 end-->
+            }
+
+            </div>
+        </div>
+        <!--page_con end-->
+
+    </div>
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="title">You are here</div>
+            <div class="font"><a href="@Url.Action("index","Home")" title="Home">Home</a> / Search</div>
+        </div>
+    </div>

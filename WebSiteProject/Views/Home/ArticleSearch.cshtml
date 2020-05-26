@@ -18,7 +18,7 @@
             <div class="container">
                 <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                     <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
-                    <a href="index.html" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i><a href="things.html">Things to do</a>
+                    <a href="index.html" title="Home"><i class="fas fa-home" aria-hidden="true"></i><span class="sr-only">Home</span></a><i class="fa fa-angle-right" aria-hidden="true"></i><a href="things.html">Things to do</a>
                 </div>
                 <div class="col-md-5 col-sm-6 col-xs-12">
                     <script>$.include("blocks/page_top.html");</script>
@@ -32,7 +32,11 @@
         <div class="container">
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                 <a href="#;return false;" title="Main content area" accesskey="C" id="main-content">:::</a> &nbsp;
-                <a href="index.html" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="@Url.Action("Index","Home")" title="Home">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span class="sr-only">Home</span>
+                </a>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
                 @HashTagName
             </div>
 
@@ -78,7 +82,7 @@
                             </div>
                             <div class="font_box">
                                 <div class="title">
-                                    <a href="@Url.Action("Article","Home",new {langid = 1,ImgTitle = item.Title })" title="@item.Title">@item.Title</a>
+                                    <a href="@Url.Action("Article","Home",new {langid = 1,Aid = item.ItemID,Hashtag= @HashTagName})" title="@item.Title">@item.Title</a>
                                 </div>
                                 <!--Hastag-->
                                 <div class="link" id="HashTag">
@@ -161,7 +165,7 @@
 
 
 
-<script src="js/bootstrap.js"></script>
+<script src="@Url.Content("~/js/bootstrap.js")"></script>
 
 @*<script>
 
