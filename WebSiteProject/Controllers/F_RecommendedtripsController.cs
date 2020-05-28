@@ -247,6 +247,7 @@ namespace WebSiteProject.Controllers
                    re.RecommendedTrips_Img = m.RecommendedTrips_Img;
                    re.RecommendedTrips_Img_Description = m.RecommendedTrips_Img_Description;
                     re.RecommendedTrips_Img_Img = m.F_Destination_Type.Recommend_Img;
+                    re.sort = m.Sort;
                     mode.Add(re);
                 }
             }
@@ -254,7 +255,7 @@ namespace WebSiteProject.Controllers
              mode = db.RecommendedTrips.Where(p => (p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay == null)
                            || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay == null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime)
                             || ((p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)
-                           || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)).Select(p => new RecommendedSearchModel { RecommendedTrips_ID = p.RecommendedTrips_ID, RecommendedTrips_Title = p.RecommendedTrips_Title, RecommendedTrips_Day_Name = p.RecommendedTrips_Day.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = p.RecommendedTrips_Day.RecommendedTrips_Day_ID, RecommendedTrips_Destinations_ID = p.RecommendedTrips_Destinations_ID, RecommendedTrips_Index_Content = p.RecommendedTrips_Content, RecommendedTrips_Img = p.RecommendedTrips_Img, RecommendedTrips_Img_Description = p.RecommendedTrips_Img_Description, RecommendedTrips_Img_Img = p.F_Destination_Type.Recommend_Img }).ToList();
+                           || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)).Select(p => new RecommendedSearchModel { RecommendedTrips_ID = p.RecommendedTrips_ID, RecommendedTrips_Title = p.RecommendedTrips_Title, RecommendedTrips_Day_Name = p.RecommendedTrips_Day.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = p.RecommendedTrips_Day.RecommendedTrips_Day_ID, RecommendedTrips_Destinations_ID = p.RecommendedTrips_Destinations_ID, RecommendedTrips_Index_Content = p.RecommendedTrips_Content, RecommendedTrips_Img = p.RecommendedTrips_Img, RecommendedTrips_Img_Description = p.RecommendedTrips_Img_Description, RecommendedTrips_Img_Img = p.F_Destination_Type.Recommend_Img,sort=p.Sort }).ToList();
             }
             if (recommendSearch.Day_Id != "-1")
             {
@@ -269,12 +270,12 @@ namespace WebSiteProject.Controllers
                 mode = (from t1 in mode
                         join t2 in db.RecommendedTrips_HashTag_Type on t1.RecommendedTrips_ID equals t2.RecommendedTrips_ID
                         where t2.HashTag_Type_ID == Convert.ToInt32(recommendSearch.F_HashTag)
-                        select new RecommendedSearchModel { RecommendedTrips_ID = t1.RecommendedTrips_ID, RecommendedTrips_Title = t1.RecommendedTrips_Title, RecommendedTrips_Day_Name = t1.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = t1.RecommendedTrips_Day_ID, HashTag_Type_ID = t2.HashTag_Type_ID, RecommendedTrips_Destinations_ID = t1.RecommendedTrips_Destinations_ID,RecommendedTrips_Index_Content=t1.RecommendedTrips_Index_Content, RecommendedTrips_Img = t1.RecommendedTrips_Img , RecommendedTrips_Img_Description = t1.RecommendedTrips_Img_Description, RecommendedTrips_Img_Img = t1.RecommendedTrips_Img_Img }
+                        select new RecommendedSearchModel { RecommendedTrips_ID = t1.RecommendedTrips_ID, RecommendedTrips_Title = t1.RecommendedTrips_Title, RecommendedTrips_Day_Name = t1.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = t1.RecommendedTrips_Day_ID, HashTag_Type_ID = t2.HashTag_Type_ID, RecommendedTrips_Destinations_ID = t1.RecommendedTrips_Destinations_ID,RecommendedTrips_Index_Content=t1.RecommendedTrips_Index_Content, RecommendedTrips_Img = t1.RecommendedTrips_Img , RecommendedTrips_Img_Description = t1.RecommendedTrips_Img_Description, RecommendedTrips_Img_Img = t1.RecommendedTrips_Img_Img, sort = t1.sort }
                         ).ToList();
             }
             ViewBag.HashTage = db.RecommendedTrips_HashTag.ToList();
             ViewBag.count = mode.Count();
-            return PartialView(mode);
+            return PartialView(mode.OrderBy(o=>o.sort));
         }
         #endregion
         #region recommended_Detail
