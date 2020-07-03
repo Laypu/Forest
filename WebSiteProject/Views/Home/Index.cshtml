@@ -497,7 +497,7 @@
         <div class="owl-carousel owl-theme banner_01">
             @{
                 var ADmainModel = (IEnumerable<WebSiteProject.Models.ADMain>)ViewBag.ADMain2;
-                foreach (var item in ADmainModel)
+                foreach (var item in ADmainModel.Where(t => t.Enabled == true))
                 {
                     <div class="item">
                         <a href="@item.Link_Href" title="@item.AD_Name">
@@ -516,7 +516,7 @@
             <!--僅顯示圖片，影片不置入-->
             <div class="noscrip_banner defaultimg" style="width:100%">
             <img src="@Url.Content("~/img/index_ad_fake.jpg")" alt="banner">
-            @foreach (var item in ADmainModel)
+            @foreach (var item in ADmainModel.Where(t => t.Enabled == true))
             {
                 if (string.IsNullOrEmpty(item.Img_Name_Ori) == false)
                 {
