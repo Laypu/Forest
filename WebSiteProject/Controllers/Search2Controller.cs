@@ -1,6 +1,7 @@
 ﻿using Services.Manager;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -34,6 +35,7 @@ namespace WebSiteProject.Controllers
             List<SearChModel> serch = new List<SearChModel>();
             int pageCount = (int)db.PageIndexSettings.Where(o => o.ID == 1).FirstOrDefault().ShowCount;
             var langid = _IMasterPageManager.CheckLangID("");
+            var datetime = DateTime.Now.Date;
             //_SearchManager.SetKeyCount(key, langid);
             ViewBag.langid = langid;
             var model = new MasterPageModel();
@@ -42,7 +44,10 @@ namespace WebSiteProject.Controllers
                 {
                     return RedirectToAction("Index", "Home");
                 }
-                var Recom = db.RecommendedTrips.Where(k => k.RecommendedTrips_Title.Contains(Key) || k.RecommendedTrips_HtmContent.Contains(Key)).ToList();
+                var Recom = db.RecommendedTrips.Where(p =>((p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay == null)
+                             || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay == null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime)
+                              || ((p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)
+                             || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime))&& (p.RecommendedTrips_Title.Contains(Key)||p.RecommendedTrips_HtmContent.Contains(Key))).ToList();
                 if(Recom.Count()>0)
                 {
              
@@ -56,7 +61,10 @@ namespace WebSiteProject.Controllers
                     serch.Add(sear);
                     }
                 }
-            var Fact = db.ActiveItems.Where(k => k.Title.Contains(Key) || k.HtmlContent.Contains(Key)).ToList();
+            var Fact = db.ActiveItems.Where(p =>( (p.StDate == null && p.EdDate == null)
+                            || ((p.StDate != null && p.EdDate == null) && DbFunctions.TruncateTime(p.StDate) <= datetime)
+                             || ((p.StDate == null && p.EdDate != null) && DbFunctions.TruncateTime(p.EdDate) >= datetime)
+                            || ((p.StDate != null && p.EdDate != null) && DbFunctions.TruncateTime(p.StDate) <= datetime && DbFunctions.TruncateTime(p.EdDate) >= datetime) )&& p.Enabled == true && DbFunctions.TruncateTime(p.PublicshDate) <= datetime && (p.Title.Contains(Key) || p.HtmlContent.Contains(Key))).ToList();
             if (Fact.Count() > 0)
             {
 
@@ -70,7 +78,10 @@ namespace WebSiteProject.Controllers
                     serch.Add(sear);
                 }
             }
-            var Video = db.VideoItems.Where(k => k.Title.Contains(Key) || k.HtmlContent.Contains(Key)).ToList();
+            var Video = db.VideoItems.Where(p => ((p.StDate == null && p.EdDate == null)
+                             || ((p.StDate != null && p.EdDate == null) && DbFunctions.TruncateTime(p.StDate) <= datetime)
+                              || ((p.StDate == null && p.EdDate != null) && DbFunctions.TruncateTime(p.EdDate) >= datetime)
+                             || ((p.StDate != null && p.EdDate != null) && DbFunctions.TruncateTime(p.StDate) <= datetime && DbFunctions.TruncateTime(p.EdDate) >= datetime)) && p.Enabled == true && DbFunctions.TruncateTime(p.PublicshDate) <= datetime &&( p.Title.Contains(Key) || p.HtmlContent.Contains(Key))).ToList();
             if (Video.Count() > 0)
             {
 
@@ -84,7 +95,10 @@ namespace WebSiteProject.Controllers
                     serch.Add(sear);
                 }
             }
-            var Dest = db.MessageItems.Where(k => k.Title.Contains(Key) || k.HtmlContent.Contains(Key)).ToList();
+            var Dest = db.MessageItems.Where(p =>( (p.StDate == null && p.EdDate == null)
+                            ||((p.StDate != null && p.EdDate == null) && DbFunctions.TruncateTime(p.StDate) <= datetime)
+                             || ((p.StDate == null && p.EdDate != null) && DbFunctions.TruncateTime(p.EdDate) >= datetime)
+                            || ((p.StDate != null && p.EdDate != null) && DbFunctions.TruncateTime(p.StDate) <= datetime && DbFunctions.TruncateTime(p.EdDate) >= datetime)) && p.Enabled==true  && DbFunctions.TruncateTime(p.PublicshDate) <= datetime && (p.Title.Contains(Key) || p.HtmlContent.Contains(Key))).ToList();
             if (Dest.Count() > 0)
             {
 

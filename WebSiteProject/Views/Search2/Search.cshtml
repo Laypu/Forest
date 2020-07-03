@@ -47,7 +47,7 @@
                         {
                             <a href="@Url.Action("recommended_Detail","F_Recommendedtrips",new {RecommendedTrips_ID=item.Itemid })" title="">
                                 <div class="item">
-                                    <div class="title">@Html.Raw(showTitle)</div>
+                                    <div class="title">Recommendedtrips-@Html.Raw(showTitle)</div>
                                 </div>
                             </a>
                         }
@@ -55,7 +55,7 @@
                         {
                             <a href="@Url.Action("Fact_Detail","Facts",new {item.Itemid,item.Modelid})" title="">
                                 <div class="item">
-                                    <div class="title">@Html.Raw(showTitle)e</div>
+                                    <div class="title">Facts-@Html.Raw(showTitle)</div>
                                 </div>
                             </a>
                         }
@@ -63,7 +63,7 @@
                         {
                             <a href="@Url.Action("F_Video_Detail","Home",new {item.Itemid})" title="">
                                 <div class="item">
-                                    <div class="title">@Html.Raw(showTitle)</div>
+                                    <div class="title">Video-@Html.Raw(showTitle)</div>
                                 </div>
                             </a>
                         }
@@ -71,7 +71,7 @@
                         {
                             <a href="@Url.Action("Article","Destination_Index",new {langid=1,Category=item.Cate,Aid=item.Itemid})" title="">
                                 <div class="item">
-                                    <div class="title">@Html.Raw(showTitle)</div>
+                                    <div class="title">Destination-@Html.Raw(showTitle)</div>
                                 </div>
                             </a>
                         }
