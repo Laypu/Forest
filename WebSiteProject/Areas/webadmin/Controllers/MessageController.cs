@@ -110,9 +110,12 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             }
             
             ViewBag.Destination_Type_ID = Destinations_ID;
-            
-            
-            ViewBag.Message10Hash = db.Message10Hash.Where(s => s.MessageItem_ID.ToString() == itemid).ToList();
+
+            var Message10Hash = db.Message10Hash.Where(s => s.MessageItem_ID.ToString() == itemid);
+
+
+
+            ViewBag.Message10Hash = Message10Hash.ToList();
             
             ViewBag.MessageBanners = db.MessageBanners.Where(s => s.MessageItem_ID.ToString() == itemid).ToList();
             return View(model);
@@ -486,7 +489,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                         foreach (var item in HashTag_Type)
                         {
                             WebSiteProject.Models.F_Sub_HashTag_Type Sub_HashTag = new Models.F_Sub_HashTag_Type();
-                            Sub_HashTag.MessageItem_ID = result;
+                            Sub_HashTag.MessageItem_ID = model.ItemID;
                             Sub_HashTag.HashTag_Type_ID = item;
                             db.F_Sub_HashTag_Type.Add(Sub_HashTag);
                             db.SaveChanges();
@@ -506,16 +509,16 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     
                     WebSiteProject.Models.Message10Hash message10Hash = new Models.Message10Hash();
                     message10Hash.MessageItem_ID = result;
-                    message10Hash.Message10Hash_1H = M10Hash.Message10Hash_1H;
-                    message10Hash.Message10Hash_2H = M10Hash.Message10Hash_2H;
-                    message10Hash.Message10Hash_3H = M10Hash.Message10Hash_3H;
-                    message10Hash.Message10Hash_4H = M10Hash.Message10Hash_4H;
-                    message10Hash.Message10Hash_5H = M10Hash.Message10Hash_5H;
-                    message10Hash.Message10Hash_6H = M10Hash.Message10Hash_6H;
-                    message10Hash.Message10Hash_7H = M10Hash.Message10Hash_7H;
-                    message10Hash.Message10Hash_8H = M10Hash.Message10Hash_8H;
-                    message10Hash.Message10Hash_9H = M10Hash.Message10Hash_9H;
-                    message10Hash.Message10Hash_10H = M10Hash.Message10Hash_10H;
+                    message10Hash.Message10Hash_1H = M10Hash.Message10Hash_1H == null ? "": M10Hash.Message10Hash_1H;
+                    message10Hash.Message10Hash_2H = M10Hash.Message10Hash_2H == null ? "": M10Hash.Message10Hash_2H;
+                    message10Hash.Message10Hash_3H = M10Hash.Message10Hash_3H == null ? "" : M10Hash.Message10Hash_3H;
+                    message10Hash.Message10Hash_4H = M10Hash.Message10Hash_4H == null ? "" : M10Hash.Message10Hash_4H;
+                    message10Hash.Message10Hash_5H = M10Hash.Message10Hash_5H == null ? "" : M10Hash.Message10Hash_5H;
+                    message10Hash.Message10Hash_6H = M10Hash.Message10Hash_6H == null ? "" : M10Hash.Message10Hash_6H;
+                    message10Hash.Message10Hash_7H = M10Hash.Message10Hash_7H == null ? "" : M10Hash.Message10Hash_7H;
+                    message10Hash.Message10Hash_8H = M10Hash.Message10Hash_8H == null ? "" : M10Hash.Message10Hash_8H;
+                    message10Hash.Message10Hash_9H = M10Hash.Message10Hash_9H == null ? "" : M10Hash.Message10Hash_9H;
+                    message10Hash.Message10Hash_10H = M10Hash.Message10Hash_10H == null ? "" : M10Hash.Message10Hash_10H;
                     db.Message10Hash.Add(message10Hash);
                     
 

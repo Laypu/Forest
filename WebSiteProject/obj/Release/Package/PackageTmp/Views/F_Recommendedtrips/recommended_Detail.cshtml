@@ -170,7 +170,7 @@
             <div class="item">
                 <div class="img"><img src="@Url.Content("~/img/page_icon_05.png")" alt="attractions" /></div>
                 <div class="font">
-                    @Html.Raw(HttpUtility.HtmlDecode(Redmode.RecommendedTrips_Content).safeHtmlFragment())
+                    @Html.Raw(HttpUtility.HtmlDecode(Redmode.RecommendedTrips_Content)/*.safeHtmlFragment*/)
                 </div>
             </div>
         </div>
@@ -182,7 +182,10 @@
         <div class="container">
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                 <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
-                <a href="" @Url.Action("Index", "Home") " title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="" @Url.Action("Index", "Home") " title="Home">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span class="sr-only">Home</span>
+                </a><i class="fa fa-angle-right" aria-hidden="true"></i>
                 <a href="@Url.Action("Index")" title="Recommended trips">Recommended trips</a><i class="fa fa-angle-right" aria-hidden="true"></i>
                 @Redmode.RecommendedTrips_Title
             </div>
@@ -214,7 +217,7 @@
                     }
 
                 }
-                @Html.Raw(HttpUtility.HtmlDecode(Redmode.RecommendedTrips_HtmContent).safeHtmlFragment())
+                @Html.Raw(HttpUtility.HtmlDecode(Redmode.RecommendedTrips_HtmContent)/*.safeHtmlFragment*/)
             </div>
             <!--相關連結+檔案下載 start-->
             @Html.Partial(Url.Content("~/Views/Shared/page_bottom.cshtml"))

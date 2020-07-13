@@ -982,7 +982,7 @@ namespace Services.Manager
                     _sqlitemrepository.Update("Sort=@1", "ItemID=@2", new object[] { odata.Sort + 1, odata.ItemID });
                 }               
 
-                return r; //>0成功
+                return savemodel.ItemID; //>0成功
             }
             else
             {

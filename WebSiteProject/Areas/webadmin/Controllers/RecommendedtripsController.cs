@@ -91,7 +91,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             ViewBag.F_HashTag_Type = HashTag_Type;
             //var searchmoel =new  List<V_RecommendedTripsForWebadmin>();
             var mode = new List<RecommendedSearchModel>();
-            mode = db.RecommendedTrips.Select(p => new RecommendedSearchModel { RecommendedTrips_ID = p.RecommendedTrips_ID, RecommendedTrips_Title = p.RecommendedTrips_Title, RecommendedTrips_Day_Name = p.RecommendedTrips_Day.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = p.RecommendedTrips_Day.RecommendedTrips_Day_ID, RecommendedTrips_Destinations_ID = p.RecommendedTrips_Destinations_ID,sort=p.Sort,starDate=p.RecommendedTrips_StarDay,EndDate=p.RecommendedTrips_EndDay }).OrderBy(p=>p.sort).ToList();
+            mode = db.RecommendedTrips.Select(p => new RecommendedSearchModel { RecommendedTrips_ID = p.RecommendedTrips_ID, RecommendedTrips_Title = p.RecommendedTrips_Title, RecommendedTrips_Day_Name = p.RecommendedTrips_Day.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = p.RecommendedTrips_Day.RecommendedTrips_Day_ID, RecommendedTrips_Destinations_ID = p.RecommendedTrips_Destinations_ID,sort=p.Sort,starDate=p.RecommendedTrips_StarDay,EndDate=p.RecommendedTrips_EndDay,Enabled = p.Enabled.Value }).OrderBy(p=>p.sort).ToList();
             //mode = db.V_RecommendedTripsForWebadmin.GroupBy(o=>o.RecommendedTrips_ID).Select(p=>new RecommendedSearchModel {RecommendedTrips_ID=p.Key, RecommendedTrips_Title=p.FirstOrDefault().RecommendedTrips_Title, RecommendedTrips_Day_Name=p.FirstOrDefault().RecommendedTrips_Day_Name,HashTag_Type_ID=p.FirstOrDefault().HashTag_Type_ID,RecommendedTrips_Day_ID=p.FirstOrDefault().RecommendedTrips_Day_ID,RecommendedTrips_Destinations_ID=p.FirstOrDefault().RecommendedTrips_Destinations_ID}).ToList();
             if (Day_Id != "")
             {
@@ -170,6 +170,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             if (model.Count()>0)
             {
                 var ReD = model.First();
+                RE.Enabled = ReD.Enabled;
                 RE.RecommendedTrips_ID = ReD.RecommendedTrips_ID;
                 RE.RecommendedTrips_Day_ID = ReD.RecommendedTrips_Day_ID;
                 RE.RecommendedTrips_Img = ReD.RecommendedTrips_Img;
@@ -204,6 +205,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 RE.ImageFileDesc = "";
                 RE.ImageFileLocation = "1";
                 RE.ImageFileName = "";
+                RE.Enabled = true;
             }
             //旅遊資訊關聯
             var seodata = db.RecommendedTrips_HashTag.Where(p => p.RecommendedTrips_Id.ToString() == itemid);
@@ -483,6 +485,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                     ImageFileDesc= recommendedTrip.ImageFileLocation,
                     Sort = 1,
                     InFront = 1,
+                    Enabled = true
                 };
                 db.RecommendedTrips.Add(recom);
                 var r= db.SaveChanges();
@@ -660,8 +663,8 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                             }
                             else
                             {
-                            var Hash = db.RecommendedTrips_HashTag.Find(HashMode.FirstOrDefault().RecommendedTrips_HashTag_Id);
-                            Hash.RecommendedTrips_keyword0 = Keywords[0];
+                                var Hash = db.RecommendedTrips_HashTag.Find(HashMode.FirstOrDefault().RecommendedTrips_HashTag_Id);
+                                Hash.RecommendedTrips_keyword0 = Keywords[0];
                                 Hash.RecommendedTrips_keyword1 = Keywords[1];
                                 Hash.RecommendedTrips_keyword2 = Keywords[2];
                                 Hash.RecommendedTrips_keyword3 = Keywords[3];
@@ -1031,5 +1034,23 @@ namespace WebSiteProject.Areas.webadmin.Controllers
             }
         }
         #endregion
+
+        #region SetItemStatus
+        public ActionResult SetItemStatus(string id, bool status)
+        {
+            if (Request.IsAuthenticated)
+            {
+                var itemid = int.Parse(id);
+                var recommendtrip = db.RecommendedTrips.Where(m => m.RecommendedTrips_ID == itemid).FirstOrDefault();
+                recommendtrip.Enabled = status;
+
+                db.Entry(recommendtrip).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return Json("設定完成");
+            }
+            else { return Json("請先登入"); }
+        }
+        #endregion
+
     }
 }

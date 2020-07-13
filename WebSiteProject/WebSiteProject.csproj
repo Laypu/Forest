@@ -585,6 +585,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\lang.xml" />
+    <Content Include="Areas\webadmin\Views\Video\GroupEdit.cshtml" />
+    <Content Include="Areas\webadmin\Views\Video\Index.cshtml" />
+    <Content Include="Areas\webadmin\Views\Video\ModelItem.cshtml" />
+    <Content Include="Areas\webadmin\Views\Video\SEOSetting.cshtml" />
+    <Content Include="Areas\webadmin\Views\Video\UnitSetting.cshtml" />
+    <Content Include="Areas\webadmin\Views\Video\VideoEdit.cshtml" />
     <Content Include="Areas\webadmin\Views\web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1852,12 +1858,6 @@
     <Content Include="Areas\webadmin\Views\EventList\ModelItem.cshtml" />
     <Content Include="Areas\webadmin\Views\EventList\SEOSetting.cshtml" />
     <Content Include="Areas\webadmin\Views\EventList\UnitSetting.cshtml" />
-    <Content Include="Areas\webadmin\Views\Video\GroupEdit.cshtml" />
-    <Content Include="Areas\webadmin\Views\Video\Index.cshtml" />
-    <Content Include="Areas\webadmin\Views\Video\VideoEdit.cshtml" />
-    <Content Include="Areas\webadmin\Views\Video\ModelItem.cshtml" />
-    <Content Include="Areas\webadmin\Views\Video\SEOSetting.cshtml" />
-    <Content Include="Areas\webadmin\Views\Video\UnitSetting.cshtml" />
     <Content Include="Areas\webadmin\Views\WebsiteMap\AddSelItem.cshtml" />
     <Content Include="Areas\webadmin\Views\Patent\PatentEdit.cshtml" />
     <Content Include="Areas\webadmin\Views\Patent\GroupEdit.cshtml" />

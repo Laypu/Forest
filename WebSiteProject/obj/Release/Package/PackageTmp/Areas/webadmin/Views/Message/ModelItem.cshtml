@@ -311,11 +311,30 @@
 
             $("#HashTag_Type_ID").change(function () {
                 GetThingToDoList();
+                var SearchModelBase = mytable.SearchModelBase;
+
+                SearchModelBase.DisplayFrom = $('#@Html.IdFor(m => m.DisplayFrom)').val();
+                SearchModelBase.DisplayTo = $('#@Html.IdFor(m => m.DisplayTo)').val();
+                SearchModelBase.PublicshDateFrom = $('#@Html.IdFor(m => m.PublicshDateFrom)').val();
+                SearchModelBase.PublicshDateTo = $('#@Html.IdFor(m => m.PublicshDateTo)').val();
+                SearchModelBase.Enabled = $('#@Html.IdFor(m => m.Enabled)' ).val();
+                SearchModelBase.Title = $('#@Html.IdFor(m => m.Title)').val();
+                 @*SearchModelBase.GroupId = $('#@Html.IdFor(m => m.GroupId)' + '2').val();*@
+                 SearchModelBase.IsRange = $('#@Html.IdFor(m => m.IsRange)').val();
+                 SearchModelBase.Search = "Y";
+                 
+
+
             });
 
 
             $("#Destination_Type_ID").change(function () {
+
+
                 GetDestinationList();
+
+
+                
             })
 
 
@@ -325,85 +344,88 @@
 
         function GetThingToDoList() {
             if ( '@ViewBag.HashTag' != ""){
-                console.log($("#HashTag_Type_ID").val());
-            if ($("#HashTag_Type_ID").val() === "" ){
+                    console.log($("#HashTag_Type_ID").val());
+                    if ($("#HashTag_Type_ID").val() === "")
+                    {
+                    $("tr[id^='tr_']").removeClass("hidden");
+                    }
+                    else
+                    {
+                        $.ajax({
+                            url: `@Url.Action("ShowThingsToDoList", "Message")`,
+                            type: 'POST',
+                            dataType: 'json',
+                            data: {
+                                ThingsToDoID: $("#HashTag_Type_ID").val(),
+                            },
+                            success: function (datas) {
+                                //console.log("success:" + datas);
+                                var F_tr = $("tr[id^='tr_']");
+                                //console.log(F_tr);
+                                $("tr[id^='tr_']").removeClass("hidden").addClass("hidden");
+                                var F_flag = false;
+                                $.each(F_tr, function (idxx, _tr) {
+                                    F_flag = false;
+                                    $.each(datas, function (idx, data) {
+                                        if (data.MessageItem_ID == $(_tr).attr("itemid") && F_flag == false){
+                                            $(_tr).removeClass("hidden");
+                                            F_flag = true;
+                                        }
+                                        console.log(data);
+                                        console.log(F_flag);
+                                    });
+                                    //console.log($(_tr).attr("itemid"));
+                                });
+
+
+                            },
+                            error: function (datas) {
+                                console.log("error:"+datas);
+                            }
+                        });
+                    }
+                }
+        };
+        function GetDestinationList() {
+            if ($("#Destination_Type_ID").val() === "") {
                 $("tr[id^='tr_']").removeClass("hidden");
             } else {
                 $.ajax({
-                  url: `@Url.Action("ShowThingsToDoList", "Message")`,
-                  type: 'POST',
-                  dataType: 'json',
-                  data: {
-                      ThingsToDoID: $("#HashTag_Type_ID").val(),
-                  },
-                  success: function (datas) {
-                      //console.log("success:" + datas);
-                      var F_tr = $("tr[id^='tr_']");
-                      //console.log(F_tr);
-                      $("tr[id^='tr_']").removeClass("hidden").addClass("hidden");
-                      var F_flag = false;
-                      $.each(F_tr, function (idxx, _tr) {
-                          F_flag = false;
-                          $.each(datas, function (idx, data) {
-                              if (data.MessageItem_ID == $(_tr).attr("itemid") && F_flag == false){
-                                  $(_tr).removeClass("hidden");
-                                  F_flag = true;
-                              }
-                              console.log(data);
-                              console.log(F_flag);
-                          });
-                          //console.log($(_tr).attr("itemid"));
-                      });
-
-
-                  },
-                  error: function (datas) {
-                      console.log("error:"+datas);
-                  }
-              });
-            }
-            }
-        };
-    function GetDestinationList() {
-        if ($("#Destination_Type_ID").val() === "") {
-            $("tr[id^='tr_']").removeClass("hidden");
-        } else {
-            $.ajax({
-                url: `@Url.Action("ShowDestination", "Message")`,
-                type: 'POST',
-                dataType: 'json',
-                data: {
-                    Destination_Type_ID: $("#Destination_Type_ID").val()
-                },
-                success: function (datas) {
-                    $("tr[id^='tr_']").removeClass("hidden").addClass("hidden");
-                    console.log(datas);
-                    //console.log("success:" + datas);
-                    var F_tr = $("tr[id^='tr_']");
-                    //console.log(F_tr);
-                    var F_flag = false;
-                    $.each(F_tr, function (idxx, _tr) {
-                        F_flag = false;
-                        $.each(datas, function (idx, data) {
-                            if (data.MessageItem_ID == $(_tr).attr("itemid") && F_flag == false) {
-                                $(_tr).removeClass("hidden");
-                                F_flag = true;
-                            }
-                            console.log(data);
-                            console.log(F_flag);
+                    url: `@Url.Action("ShowDestination", "Message")`,
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        Destination_Type_ID: $("#Destination_Type_ID").val()
+                    },
+                    success: function (datas) {
+                        $("tr[id^='tr_']").removeClass("hidden").addClass("hidden");
+                        console.log(datas);
+                        //console.log("success:" + datas);
+                        var F_tr = $("tr[id^='tr_']");
+                        //console.log(F_tr);
+                        var F_flag = false;
+                        $.each(F_tr, function (idxx, _tr) {
+                            F_flag = false;
+                            $.each(datas, function (idx, data) {
+                                if (data.MessageItem_ID == $(_tr).attr("itemid") && F_flag == false) {
+                                    $(_tr).removeClass("hidden");
+                                    F_flag = true;
+                                }
+                                console.log(data);
+                                console.log(F_flag);
+                            });
+                            //console.log($(_tr).attr("itemid"));
                         });
-                        //console.log($(_tr).attr("itemid"));
-                    });
-
-
-                },
-                error: function (datas) {
-                    console.log("error:" + datas);
-                    $("tr[id^='tr_']").removeClass("hidden");
-                }
-            });
+                        
+                        
+                    },
+                    error: function (datas) {
+                        console.log("error:" + datas);
+                        $("tr[id^='tr_']").removeClass("hidden");
+                    }
+                });
+            }
         }
-    }
 
         function GetThingToDoList1() {
             if ( '@ViewBag.HashTag' != ""){

@@ -20,7 +20,10 @@
             <div class="container">
                 <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                     <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
-                    <a href="@Url.Action("index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <a href="@Url.Action("index","Home")" title="Home">
+                        <i class="fas fa-home" aria-hidden="true"></i>
+                        <span class="sr-only">Home</span>
+                    </a><i class="fa fa-angle-right" aria-hidden="true"></i>
                     Search
                 </div>
                 <div class="col-md-5 col-sm-6 col-xs-12">
@@ -44,7 +47,7 @@
                         {
                             <a href="@Url.Action("recommended_Detail","F_Recommendedtrips",new {RecommendedTrips_ID=item.Itemid })" title="">
                                 <div class="item">
-                                    <div class="title">@Html.Raw(showTitle)</div>
+                                    <div class="title">Recommendedtrips-@Html.Raw(showTitle)</div>
                                 </div>
                             </a>
                         }
@@ -52,7 +55,7 @@
                         {
                             <a href="@Url.Action("Fact_Detail","Facts",new {item.Itemid,item.Modelid})" title="">
                                 <div class="item">
-                                    <div class="title">@Html.Raw(showTitle)e</div>
+                                    <div class="title">Facts-@Html.Raw(showTitle)</div>
                                 </div>
                             </a>
                         }
@@ -60,7 +63,7 @@
                         {
                             <a href="@Url.Action("F_Video_Detail","Home",new {item.Itemid})" title="">
                                 <div class="item">
-                                    <div class="title">@Html.Raw(showTitle)</div>
+                                    <div class="title">Video-@Html.Raw(showTitle)</div>
                                 </div>
                             </a>
                         }
@@ -68,7 +71,7 @@
                         {
                             <a href="@Url.Action("Article","Destination_Index",new {langid=1,Category=item.Cate,Aid=item.Itemid})" title="">
                                 <div class="item">
-                                    <div class="title">@Html.Raw(showTitle)</div>
+                                    <div class="title">Destination-@Html.Raw(showTitle)</div>
                                 </div>
                             </a>
                         }
