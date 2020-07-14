@@ -195,8 +195,16 @@
               var Itemid = this.getAttribute("indexid");
               var checkstutas = $(this).is(':checked')
               console.log(checkstutas);
-              $.post("@Url.Action("SetItemStatus")", { id: Itemid, status: checkstutas });
-              
+              //$.post("@Url.Action("SetItemStatus")", { id: Itemid, status: checkstutas });
+              $.ajax({
+                  type: "POST",
+                  url: "@Url.Action("SetItemStatus")",
+                  data: { id: Itemid, status: checkstutas },
+                  dataType: 'json',
+                  success: function (result) {
+                      alert(result);
+                  }
+              });
 
           });
           $("#btn_del").click(function () {
