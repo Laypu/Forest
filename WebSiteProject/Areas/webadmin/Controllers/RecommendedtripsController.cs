@@ -1044,7 +1044,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 db.SaveChanges();
                 if(status)
                 {
-                    return Json($"完成上架");
+                    return Json("完成上架");
                 }
                 return Json("取消上架");
             }
