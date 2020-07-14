@@ -28,7 +28,7 @@
                                      data-width="['auto']"
                                      data-height="['auto']"
                                      data-basealign="slide">
-                                    <img src="@Url.Content("~/UploadImage/ADMain/" + ad.Img_Name_Ori)" alt="@ad.AD_Name">
+                                    <img src="@Url.Content("~/UploadImage/ADMain/" + ad.Img_Name_Ori)" alt="@ViewBag.Destination_Title">
                                 </div>
 
                                 @*<div class="tp-caption item_box" data-x="0" data-y="500" data-start="500" data-transform_in="y:[100%];opacity:0;s:500;">
@@ -88,7 +88,7 @@
                                      data-width="['auto']"
                                      data-height="['auto']"
                                      data-basealign="slide">
-                                    <img src="@Url.Content("~/UploadImage/ADMain/" + ad.Img_Name_Ori)" alt="@ad.AD_Name">
+                                    <img src="@Url.Content("~/UploadImage/ADMain/" + ad.Img_Name_Ori)" alt="@ViewBag.Destination_Title">
                                 </div>
 
                                 @*<div class="tp-caption item_box" data-x="0" data-y="500" data-start="500" data-transform_in="y:[100%];opacity:0;s:500;">
@@ -137,7 +137,7 @@
             {
                 if (string.IsNullOrEmpty(ad.Img_Name_Ori) == false)
                 {
-                    <div><img src="@Url.Content("~/UploadImage/ADMain/" + ad.Img_Name_Ori)" alt="@ad.AD_Name" /></div>
+                    <div><img src="@Url.Content("~/UploadImage/ADMain/" + ad.Img_Name_Ori)" alt="@ViewBag.Destination_Title" /></div>
                 }
             }
         </div>
@@ -159,7 +159,7 @@
         <div class="container">
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                 <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
-                <a href="index.html" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i><a href="things.html">Things to do</a>
+                <a href="index.html" title="Home"><i class="fas fa-home" aria-hidden="true"></i><span class="sr-only">Home</span></a><i class="fa fa-angle-right" aria-hidden="true"></i><a href="things.html">Things to do</a>
             </div>
             <div class="col-md-5 col-sm-6 col-xs-12">
                 <script>$.include("blocks/page_top.html");</script>
@@ -237,40 +237,40 @@
                 {
                     case 0:
                         <div class="img hidden-xs">
-                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[0].Destination_Img" alt="@MapModelList[0].Destination_Img" />
+                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[0].Destination_Img" alt="@MapModelList[0].Destination_MAP_LEGEND_Name" />
                             
                         </div><!--建議尺寸800*478px-->
                         <div class="img visible-xs">
-                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[0].Destination_Img_Mobile" alt="@MapModelList[0].Destination_Img" />
+                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[0].Destination_Img_Mobile" alt="@MapModelList[0].Destination_MAP_LEGEND_Name" />
                             
 
                         </div><!--建議尺寸，寬500px-->
                         break;
                     case 1:
                         <div class="img hidden-xs">
-                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[1].Destination_Img" alt="@MapModelList[1].Destination_Img" />
+                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[1].Destination_Img" alt="@MapModelList[1].Destination_MAP_LEGEND_Name" />
                             
                         </div><!--建議尺寸800*478px-->
                         <div class="img visible-xs">
-                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[1].Destination_Img_Mobile" alt="@MapModelList[1].Destination_Img" />
+                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[1].Destination_Img_Mobile" alt="@MapModelList[1].Destination_MAP_LEGEND_Name" />
                            
 
                         </div><!--建議尺寸，寬500px-->
                         break;
                     case 2:
                         <div class="img hidden-xs">
-                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[2].Destination_Img" alt="@MapModelList[2].Destination_Img" />
+                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[2].Destination_Img" alt="@MapModelList[2].Destination_MAP_LEGEND_Name" />
                             
                         </div><!--建議尺寸800*478px-->
                         <div class="img visible-xs">
-                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[2].Destination_Img_Mobile" alt="@MapModelList[2].Destination_Img" />
+                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[2].Destination_Img_Mobile" alt="@MapModelList[2].Destination_MAP_LEGEND_Name" />
                             
 
                         </div><!--建議尺寸，寬500px-->
                         break;
                     case 3:
                         <div class="img hidden-xs">
-                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[3].Destination_Img" alt="@MapModelList[3].Destination_Img" />
+                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[3].Destination_Img" alt="@MapModelList[3].Destination_MAP_LEGEND_Name" />
                             <div class="font_box" id="timebox1">
                                 <div class="line"></div>
                                 Now the Time in Taiwan<br>
@@ -280,7 +280,7 @@
                             </div>
                         </div><!--建議尺寸800*478px-->
                         <div class="img visible-xs">
-                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[3].Destination_Img_Mobile" alt="@MapModelList[3].Destination_Img" />
+                            <img src="@Url.Content("~/UploadImage/MapLEGEND_Img/")@MapModelList[3].Destination_Img_Mobile" alt="@MapModelList[3].Destination_MAP_LEGEND_Name" />
                             <div class="font_box" id="timebox2">
                                 <div class="line"></div>
                                 Now the Time in Taiwan<br>
@@ -305,8 +305,11 @@
         <div class="container">
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                 <a href="#;return false;" title="Main content area" accesskey="C" id="main-content">:::</a> &nbsp;
-                <a href="@Url.Action("Index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a>
-                <span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="@Url.Action("Index","Home")" title="Home">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span class="sr-only">Home</span>
+                </a>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
                 @*<a href="." title="Destinations">*@Destinations@*</a>*@
             </div>
             <div class="col-md-5 col-sm-6 col-xs-12">

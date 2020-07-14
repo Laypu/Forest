@@ -1493,6 +1493,7 @@
           <Property Name="ImageFileName" Type="varchar" MaxLength="1000" />
           <Property Name="ImageFileDesc" Type="varchar" MaxLength="1000" />
           <Property Name="ImageFileLocation" Type="varchar" MaxLength="1" />
+          <Property Name="Enabled" Type="bit" />
         </EntityType>
         <EntityType Name="RecommendedTrip_Travel">
           <Key>
@@ -3865,6 +3866,7 @@
           <Property Name="ImageFileLocation" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="RecommendedTrips_Day" Relationship="ForestModel.FK_RecommendedTrips_RecommendedTrips_Day" FromRole="RecommendedTrip" ToRole="RecommendedTrips_Day" />
           <NavigationProperty Name="F_Destination_Type" Relationship="ForestModel.FK_RecommendedTrips_F_Destination_Type" FromRole="RecommendedTrip" ToRole="F_Destination_Type" />
+          <Property Name="Enabled" Type="Boolean" />
         </EntityType>
         <Association Name="FK_RecommendedTrips_RecommendedTrips_Day">
           <End Type="ForestModel.RecommendedTrips_Day" Role="RecommendedTrips_Day" Multiplicity="0..1" />
@@ -5741,6 +5743,7 @@
           <EntitySetMapping Name="RecommendedTrips">
             <EntityTypeMapping TypeName="ForestModel.RecommendedTrip">
               <MappingFragment StoreEntitySet="RecommendedTrip">
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
                 <ScalarProperty Name="ImageFileLocation" ColumnName="ImageFileLocation" />
                 <ScalarProperty Name="ImageFileDesc" ColumnName="ImageFileDesc" />
                 <ScalarProperty Name="ImageFileName" ColumnName="ImageFileName" />

@@ -21,6 +21,7 @@ namespace ViewModels
         public string RecommendedTrips_Img { get; set; }
         public string RecommendedTrips_Img_Description { get; set; }
         public string RecommendedTrips_Img_Img { get; set; }
-        public int InFront { get; set; }
+
+        public bool Enabled { get; set; }
     }
 }

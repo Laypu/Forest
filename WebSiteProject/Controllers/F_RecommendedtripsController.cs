@@ -95,7 +95,7 @@ namespace WebSiteProject.Controllers
             viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
             ////標題和內容
             //ViewBag.Title = Server.HtmlDecode(db.RecommendedTrips_Index.FirstOrDefault().RecommendedTrips_Index_Title);
-            ViewBag.Content = Server.HtmlDecode(db.RecommendedTrips_Index.FirstOrDefault().RecommendedTrips_Index_Content).safeHtmlFragment();
+            ViewBag.Content = Server.HtmlDecode(db.RecommendedTrips_Index.FirstOrDefault().RecommendedTrips_Index_Content)/*.safeHtmlFragment*/;
 
             //五大標題+圖
             ViewBag.F_Destination_Type = db.F_Destination_Type.ToList();

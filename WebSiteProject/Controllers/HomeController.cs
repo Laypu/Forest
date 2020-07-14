@@ -130,13 +130,13 @@ namespace WebSiteProject.Controllers
             //自由編輯區1
             var FreeZone1 = db.FreeZoneTitles.Find(1);            
             ViewBag.FreeZone1_Title = FreeZone1.Title;
-            ViewBag.FreeZone1_Content = Server.HtmlDecode(FreeZone1.FreeZoneTitleContent.safeHtmlFragment());
+            ViewBag.FreeZone1_Content = Server.HtmlDecode(FreeZone1.FreeZoneTitleContent/*.safeHtmlFragment*/);
             ViewBag.FreeZone1_Link = db.FreeZoneContents.Where(f => f.FreeZoneTitleID == 1).ToList();
 
             //自由編輯區2
             var FreeZone2 = db.FreeZoneTitles.Find(2);
             ViewBag.FreeZone2_Title = FreeZone2.Title;
-            ViewBag.FreeZone2_Content = Server.HtmlDecode(FreeZone2.FreeZoneTitleContent.safeHtmlFragment());
+            ViewBag.FreeZone2_Content = Server.HtmlDecode(FreeZone2.FreeZoneTitleContent/*.safeHtmlFragment()*/);
             ViewBag.FreeZone2_Link = db.FreeZoneContents.Where(f => f.FreeZoneTitleID == 2).ToList();
 
             //輪播牆2

@@ -27,7 +27,11 @@
         <div class="container">
             <div class="col-md-7 col-sm-6 col-xs-12 page_top_left">
                 <a href="#;return false;" title="Content area" accesskey="C" id="main-content">:::</a> &nbsp;
-                <a href="@Url.Action("Index","Home")" title="Home"><i class="fas fa-home" aria-hidden="true"></i></a><span class="sr-only">Home</span><i class="fa fa-angle-right" aria-hidden="true"></i>
+                <a href="@Url.Action("Index","Home")" title="Home">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span class="sr-only">Home</span>
+                </a>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
                 <a href="@Url.Action("Index",new {nowpage=TempData["Page"] })" title="Fact">Fact</a><i class="fa fa-angle-right" aria-hidden="true"></i>
                 @ActiveItem.Title
             </div>
@@ -93,7 +97,7 @@
                 }
 
                 <!--文繞圖 end-->
-                @Html.Raw(ActiveItem.HtmlContent.safeHtmlFragment())
+                @Html.Raw(ActiveItem.HtmlContent/*.safeHtmlFragment*/)
 
 
             </div>

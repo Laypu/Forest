@@ -661,7 +661,9 @@
                                 <select id="Index_Partial_Select" class="form-control checkitem" onchange="window.location.href=this.value">
                                     <option data-index="0" value="#">請選擇</option>
                                     @*<option data-index="1" value="#">連結路徑</option>*@
+                                    <option data-index="1" value="@Url.Action("Index", "AD", new { type = "main" , stype = "P", site_id = 10, MenuType=57})">輪播圖設定</option>
                                     <option data-index="2" value="@Url.Action("ModelItem", "Video", new { mainid = 5 })">Video</option>
+                                    
                                 </select>
                             </div>
                         </div>
