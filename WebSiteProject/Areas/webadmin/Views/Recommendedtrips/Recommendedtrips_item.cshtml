@@ -102,6 +102,7 @@
                         <th class="text-center">類別</th>
                         <th class="text-center">顯示區間</th>
                         <th class="text-center">輪播管理</th>
+                        <th class="text-center">顯示</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -125,34 +126,37 @@
                         {
                             istrue = true;
                         }
-                        <tr class="text-center">
-                            <td><input type="checkbox" class="checkboxes chksel" value="@item.RecommendedTrips_ID" /></td>
-                            <td>
-                                <button name="totop" type="button" class="btn btn-default btn-xs seqindex" value="-1" idindex="1329"><i class="fa fa-angle-double-up"></i></button>
-                                <button name="Up" type="button" class="btn btn-default btn-xs seqindex" value="@(item.sort-1)" idindex="1329"><i class="fa fa-angle-up"></i></button>
-                                <button name="Down" type="button" class="btn btn-default btn-xs seqindex" value="@(item.sort+1)" idindex="1329"><i class="fa fa-angle-down"></i></button>
-                                <button name="tobottom" type="button" class="btn btn-default btn-xs seqindex" value="-2" idindex="1329"><i class="fa fa-angle-double-down"></i></button>
-                                <input type="hidden" value="@item.sort" data-pid="@item.RecommendedTrips_ID">
-                                <input class="editinput btn btn-default btn-xs sequence_list sortedit" value="@item.sort" />
-                            </td>
-                            <td> <a href="@Url.Action("Recommendedtrips_Edit",new {itemid=@item.RecommendedTrips_ID})">@item.RecommendedTrips_Title</a></td>
-                            <td>@item.RecommendedTrips_Day_Name</td>
-                            @if (istrue)
-                            {
-                                <td style="font:600;color:green">是</td>
-                            }
-                            else
-                            {
-                                <td style="font:600;color:red">否</td>
-                            }
-                            @*<td>
-                                <a href="@Url.Action("RecommendedTrip_Travel_Item",new {RecommendedTripID=@item.RecommendedTrips_ID})" class="btn green-meadow">管理<i class="fa fa-plus"></i></a>
-                            </td>*@
-                            <td>
-                                <a class="btn grey-mint" href="@Url.Action("Index", "AD", new { type = @item.RecommendedTrips_ID.ToString() , stype = "P", site_id = 17,MenuType=-1})">管理</a>
-                                @*<a class="btn green-meadow" href="@Url.Action("Index", "AD", new { type = @item.RecommendedTrips_ID.ToString() , stype = "M", site_id = 17,MenuType=-1})">手機輪播管理<i class="fa fa-plus"></i></a>*@
-                            </td>
-                        </tr>
+                    <tr class="text-center">
+                        <td><input type="checkbox" class="checkboxes chksel" value="@item.RecommendedTrips_ID" /></td>
+                        <td>
+                            <button name="totop" type="button" class="btn btn-default btn-xs seqindex" value="-1" idindex="1329"><i class="fa fa-angle-double-up"></i></button>
+                            <button name="Up" type="button" class="btn btn-default btn-xs seqindex" value="@(item.sort-1)" idindex="1329"><i class="fa fa-angle-up"></i></button>
+                            <button name="Down" type="button" class="btn btn-default btn-xs seqindex" value="@(item.sort+1)" idindex="1329"><i class="fa fa-angle-down"></i></button>
+                            <button name="tobottom" type="button" class="btn btn-default btn-xs seqindex" value="-2" idindex="1329"><i class="fa fa-angle-double-down"></i></button>
+                            <input type="hidden" value="@item.sort" data-pid="@item.RecommendedTrips_ID">
+                            <input class="editinput btn btn-default btn-xs sequence_list sortedit" value="@item.sort" />
+                        </td>
+                        <td> <a href="@Url.Action("Recommendedtrips_Edit",new {itemid=@item.RecommendedTrips_ID})">@item.RecommendedTrips_Title</a></td>
+                        <td>@item.RecommendedTrips_Day_Name</td>
+                        @if (istrue)
+                        {
+                            <td style="font:600;color:green">是</td>
+                        }
+                        else
+                        {
+                            <td style="font:600;color:red">否</td>
+                        }
+                        @*<td>
+            <a href="@Url.Action("RecommendedTrip_Travel_Item",new {RecommendedTripID=@item.RecommendedTrips_ID})" class="btn green-meadow">管理<i class="fa fa-plus"></i></a>
+        </td>*@
+                        <td>
+                            <a class="btn grey-mint" href="@Url.Action("Index", "AD", new { type = @item.RecommendedTrips_ID.ToString() , stype = "P", site_id = 17,MenuType=-1})">管理</a>
+                            @*<a class="btn green-meadow" href="@Url.Action("Index", "AD", new { type = @item.RecommendedTrips_ID.ToString() , stype = "M", site_id = 17,MenuType=-1})">手機輪播管理<i class="fa fa-plus"></i></a>*@
+                        </td>
+                        <td>
+                            <input type="checkbox" class="checkis" id="@item.RecommendedTrips_ID" @(item.InFront == 1 ? "checked" : "")>
+                        </td>
+                    </tr>
                     }
                 </tbody>
             </table>
@@ -196,7 +200,19 @@
                         })
 
                 }
-                })
+            })
+                        $('.checkis').change(function () {
+                            var check = $(this).prop('checked');
+                            var checkint = 2;
+                            var id=$(this).attr('id')
+                            if (check) {
+                                checkint = 1;
+                            }
+                             $.post("@Url.Action("IsShow", "Recommendedtrips")", { id:id, isfort:checkint })
+                        .success(function (data) {
+                            alert(data);
+                        })
+                        })
             //$("#table").DataTable();
             $("#table").DataTable({
                 searching: false, //關閉filter功能
