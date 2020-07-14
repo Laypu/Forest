@@ -229,7 +229,7 @@ namespace WebSiteProject.Controllers
                                                                p.RecommendedTrips_keyword7.ToUpper() == HasT ||
                                                                p.RecommendedTrips_keyword8.ToUpper() == HasT ||
                                                                p.RecommendedTrips_keyword9.ToUpper() == HasT).Select(p=>p.RecommendedTrips_Id).ToList();
-                var Re = db.RecommendedTrips.Where(p => (p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay == null)
+                var Re = db.RecommendedTrips.Where(p => ((bool)p.Enabled == true && p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay == null)
                              || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay == null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime)
                               || ((p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)
                              || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)).ToList();
@@ -252,7 +252,7 @@ namespace WebSiteProject.Controllers
                 }
             }
             else { 
-             mode = db.RecommendedTrips.Where(p => (p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay == null)
+             mode = db.RecommendedTrips.Where(p => ((bool)p.Enabled == true && p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay == null)
                            || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay == null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime)
                             || ((p.RecommendedTrips_StarDay == null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)
                            || ((p.RecommendedTrips_StarDay != null && p.RecommendedTrips_EndDay != null) && DbFunctions.TruncateTime(p.RecommendedTrips_StarDay) <= datetime && DbFunctions.TruncateTime(p.RecommendedTrips_EndDay) >= datetime)).Select(p => new RecommendedSearchModel { RecommendedTrips_ID = p.RecommendedTrips_ID, RecommendedTrips_Title = p.RecommendedTrips_Title, RecommendedTrips_Day_Name = p.RecommendedTrips_Day.RecommendedTrips_Day_Name, RecommendedTrips_Day_ID = p.RecommendedTrips_Day.RecommendedTrips_Day_ID, RecommendedTrips_Destinations_ID = p.RecommendedTrips_Destinations_ID, RecommendedTrips_Index_Content = p.RecommendedTrips_Content, RecommendedTrips_Img = p.RecommendedTrips_Img, RecommendedTrips_Img_Description = p.RecommendedTrips_Img_Description, RecommendedTrips_Img_Img = p.F_Destination_Type.Recommend_Img,sort=p.Sort }).ToList();

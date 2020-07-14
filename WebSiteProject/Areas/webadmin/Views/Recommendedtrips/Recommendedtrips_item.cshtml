@@ -218,7 +218,19 @@
                         })
 
                 }
-                })
+            })
+                        $('.checkis').change(function () {
+                            var check = $(this).prop('checked');
+                            var checkint = 2;
+                            var id=$(this).attr('id')
+                            if (check) {
+                                checkint = 1;
+                            }
+                             $.post("@Url.Action("IsShow", "Recommendedtrips")", { id:id, isfort:checkint })
+                        .success(function (data) {
+                            alert(data);
+                        })
+                        })
             //$("#table").DataTable();
             $("#table").DataTable({
                 searching: false, //關閉filter功能
