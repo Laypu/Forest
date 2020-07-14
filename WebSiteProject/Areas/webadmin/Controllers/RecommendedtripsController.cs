@@ -1042,7 +1042,11 @@ namespace WebSiteProject.Areas.webadmin.Controllers
 
                 db.Entry(recommendtrip).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-                return Json("設定完成");
+                if(status)
+                {
+                    return Json("完成上架");
+                }
+                return Json("取消上架");
             }
             else { return Json("請先登入"); }
         }
