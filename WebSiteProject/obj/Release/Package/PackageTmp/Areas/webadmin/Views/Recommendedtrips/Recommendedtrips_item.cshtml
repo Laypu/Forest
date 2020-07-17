@@ -100,7 +100,8 @@
                         <th class="text-center">排序</th>
                         <th class="text-center">標題</th>
                         <th class="text-center">類別</th>
-                        <th class="text-center">顯示區間</th>
+                        <th class="text-center">是否顯示區間</th>
+                        <th class="text-center">上架</th>
                         <th class="text-center">輪播管理</th>
                     </tr>
                 </thead>
@@ -149,6 +150,19 @@
                                 <a href="@Url.Action("RecommendedTrip_Travel_Item",new {RecommendedTripID=@item.RecommendedTrips_ID})" class="btn green-meadow">管理<i class="fa fa-plus"></i></a>
                             </td>*@
                             <td>
+
+                                @if (item.Enabled == true)
+                                {
+                                    <input class="chkstatus" type="checkbox" indexid ="@item.RecommendedTrips_ID" checked />
+                                }
+                                else
+                                {
+                                    <input class="chkstatus" indexid ="@item.RecommendedTrips_ID" type="checkbox" />
+                                }
+
+                            </td>
+
+                            <td>
                                 <a class="btn grey-mint" href="@Url.Action("Index", "AD", new { type = @item.RecommendedTrips_ID.ToString() , stype = "P", site_id = 17,MenuType=-1})">管理</a>
                                 @*<a class="btn green-meadow" href="@Url.Action("Index", "AD", new { type = @item.RecommendedTrips_ID.ToString() , stype = "M", site_id = 17,MenuType=-1})">手機輪播管理<i class="fa fa-plus"></i></a>*@
                             </td>
@@ -173,11 +187,19 @@
     <script src="~/Scripts/jquery.dataTables.js"></script>
     <link href="~/css/jquery.dataTables.css" rel="stylesheet" />
     <script>
-                    $(function () {
-                  //選取全部
+      $(function () {
+            //選取全部
             RegisterClickAll("#chk_all", '#table tbody .chksel', "#selvalue");
-            //選取刪除
-            $("#btn_del").click(function () {
+          //選取刪除
+          $(".chkstatus").change(function () {
+              var Itemid = this.getAttribute("indexid");
+              var checkstutas = $(this).is(':checked')
+              console.log(checkstutas);
+              $.post("@Url.Action("SetItemStatus")", { id: Itemid, status: checkstutas }, function (data) {alert(data) });
+              
+
+          });
+          $("#btn_del").click(function () {
 
                 if (confirm('確定要刪除嗎??'))
                 {
@@ -196,7 +218,19 @@
                         })
 
                 }
-                })
+            })
+                        $('.checkis').change(function () {
+                            var check = $(this).prop('checked');
+                            var checkint = 2;
+                            var id=$(this).attr('id')
+                            if (check) {
+                                checkint = 1;
+                            }
+                             $.post("@Url.Action("IsShow", "Recommendedtrips")", { id:id, isfort:checkint })
+                        .success(function (data) {
+                            alert(data);
+                        })
+                        })
             //$("#table").DataTable();
             $("#table").DataTable({
                 searching: false, //關閉filter功能

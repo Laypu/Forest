@@ -250,7 +250,7 @@
       <publishTime>03/25/2020 11:56:48</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Message/MessageEdit.cshtml">
-      <publishTime>04/10/2020 12:01:28</publishTime>
+      <publishTime>07/13/2020 14:28:10</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Message/ModelItem.cshtml">
       <publishTime>05/18/2020 15:17:41</publishTime>
@@ -304,10 +304,10 @@
       <publishTime>03/25/2020 11:56:48</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Recommendedtrips/Recommendedtrips_Edit.cshtml">
-      <publishTime>07/03/2020 10:13:00</publishTime>
+      <publishTime>07/13/2020 17:14:55</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Recommendedtrips/Recommendedtrips_item.cshtml">
-      <publishTime>03/25/2020 11:56:48</publishTime>
+      <publishTime>07/14/2020 10:15:28</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Recommendedtrips/RecommendedTrip_Travel_Item.cshtml">
       <publishTime>03/25/2020 11:56:48</publishTime>
@@ -325,7 +325,7 @@
       <publishTime>03/25/2020 11:56:48</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Shared/_Layout.cshtml">
-      <publishTime>05/08/2020 14:40:59</publishTime>
+      <publishTime>07/10/2020 16:36:24</publishTime>
     </File>
     <File Include="Areas/webadmin/Views/Site/FowardSetting.cshtml">
       <publishTime>03/25/2020 11:56:48</publishTime>
@@ -445,7 +445,7 @@
       <publishTime>03/25/2020 11:56:49</publishTime>
     </File>
     <File Include="bin/en-US/ResourceLibrary.resources.dll">
-      <publishTime>07/07/2020 10:14:54</publishTime>
+      <publishTime>07/14/2020 10:16:21</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/25/2020 11:56:51</publishTime>
@@ -538,10 +538,10 @@
       <publishTime>03/25/2020 11:56:52</publishTime>
     </File>
     <File Include="bin/ResourceLibrary.dll">
-      <publishTime>07/07/2020 10:14:54</publishTime>
+      <publishTime>07/14/2020 10:16:21</publishTime>
     </File>
     <File Include="bin/ResourceLibrary.pdb">
-      <publishTime>07/07/2020 10:14:54</publishTime>
+      <publishTime>07/14/2020 10:16:21</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>03/25/2020 11:56:51</publishTime>
@@ -580,16 +580,16 @@
       <publishTime>03/25/2020 11:56:51</publishTime>
     </File>
     <File Include="bin/Services.dll">
-      <publishTime>07/07/2020 10:14:55</publishTime>
+      <publishTime>07/14/2020 10:16:23</publishTime>
     </File>
     <File Include="bin/Services.pdb">
-      <publishTime>07/07/2020 10:14:55</publishTime>
+      <publishTime>07/14/2020 10:16:23</publishTime>
     </File>
     <File Include="bin/SQLModel.dll">
-      <publishTime>07/07/2020 10:14:54</publishTime>
+      <publishTime>07/14/2020 10:16:21</publishTime>
     </File>
     <File Include="bin/SQLModel.pdb">
-      <publishTime>07/07/2020 10:14:54</publishTime>
+      <publishTime>07/14/2020 10:16:21</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>03/25/2020 11:56:51</publishTime>
@@ -634,28 +634,28 @@
       <publishTime>12/13/2017 13:31:08</publishTime>
     </File>
     <File Include="bin/Utilities.dll">
-      <publishTime>07/07/2020 10:14:54</publishTime>
+      <publishTime>07/14/2020 10:16:21</publishTime>
     </File>
     <File Include="bin/Utilities.dll.config">
       <publishTime>03/25/2020 11:56:49</publishTime>
     </File>
     <File Include="bin/Utilities.pdb">
-      <publishTime>07/07/2020 10:14:54</publishTime>
+      <publishTime>07/14/2020 10:16:21</publishTime>
     </File>
     <File Include="bin/ViewModels.dll">
-      <publishTime>07/07/2020 10:14:55</publishTime>
+      <publishTime>07/14/2020 10:16:22</publishTime>
     </File>
     <File Include="bin/ViewModels.pdb">
-      <publishTime>07/07/2020 10:14:55</publishTime>
+      <publishTime>07/14/2020 10:16:22</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>03/25/2020 11:56:52</publishTime>
     </File>
     <File Include="bin/WebSiteProject.dll">
-      <publishTime>07/07/2020 10:15:00</publishTime>
+      <publishTime>07/14/2020 10:16:27</publishTime>
     </File>
     <File Include="bin/WebSiteProject.pdb">
-      <publishTime>07/07/2020 10:15:00</publishTime>
+      <publishTime>07/14/2020 10:16:27</publishTime>
     </File>
     <File Include="bin/zh-Hant/EntityFramework.resources.dll">
       <publishTime>03/25/2020 11:56:49</publishTime>
@@ -8926,7 +8926,7 @@
       <publishTime>11/05/2017 08:54:58</publishTime>
     </File>
     <File Include="Views/Destination_Index/Article.cshtml">
-      <publishTime>07/07/2020 10:13:28</publishTime>
+      <publishTime>07/13/2020 13:30:31</publishTime>
     </File>
     <File Include="Views/Destination_Index/Create.cshtml">
       <publishTime>03/25/2020 11:56:49</publishTime>
@@ -9010,7 +9010,7 @@
       <publishTime>04/24/2020 11:42:55</publishTime>
     </File>
     <File Include="Views/F_ThingsToDo/Article.cshtml">
-      <publishTime>07/07/2020 10:13:28</publishTime>
+      <publishTime>07/13/2020 13:24:19</publishTime>
     </File>
     <File Include="Views/F_ThingsToDo/Index.cshtml">
       <publishTime>05/14/2020 16:57:08</publishTime>
@@ -9022,7 +9022,7 @@
       <publishTime>05/14/2020 16:57:08</publishTime>
     </File>
     <File Include="Views/Home/Article.cshtml">
-      <publishTime>07/07/2020 10:13:28</publishTime>
+      <publishTime>07/13/2020 13:32:53</publishTime>
     </File>
     <File Include="Views/Home/ArticleSearch.cshtml">
       <publishTime>05/14/2020 16:44:35</publishTime>
