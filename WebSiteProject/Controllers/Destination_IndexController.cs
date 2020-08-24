@@ -131,6 +131,7 @@ namespace WebSiteProject.Controllers
 
             //標題和內容
             ViewBag.Title = Server.HtmlDecode(db.Destination_Index.FirstOrDefault().Destination_Title);
+            viewmodel.Title = ViewBag.Destination_Title;
             ViewBag.Content = Server.HtmlDecode(db.Destination_Index.FirstOrDefault().Destination_Context);
             //五大標題+圖
             ViewBag.F_Destination_Type = db.F_Destination_Type.ToList();
@@ -249,6 +250,7 @@ namespace WebSiteProject.Controllers
 
             //ViewBag.MessageItems = q.Take(9).OrderBy(m=>m.Sort).Skip((Page - 1) * 9).Take(9).ToList();
             ViewBag.MessageItems = q.ToList();
+            viewmodel.Title = q.ToList().FirstOrDefault().Title;
             ViewBag.Message10Hash = db.Message10Hash.ToList();
             //ViewBag.Page = Page;
             ViewBag.TotalCount = q.Count();
@@ -506,6 +508,7 @@ namespace WebSiteProject.Controllers
             }).rows;
             ViewBag.Category = Category;
             ViewBag.DesHash = db.MessageItems.Where(M=>M.ItemID == Aid).ToList();
+            viewmodel.Title = db.MessageItems.Where(M => M.ItemID == Aid).ToList().FirstOrDefault().Title;
             ViewBag.MessageBanner = db.MessageBanners.Where(B =>B.MessageItem_ID == Aid).First().MessageBanner_Img;
             ViewBag.Destination_Title = db.Menus.Where(f => f.ID == 179).FirstOrDefault().MenuName;
             ViewBag.Unit = db.MessageUnitSettings.Where(p => p.MainID == 9).Select(p => new UnitPrint { isPrint = (bool)p.IsPrint, isForward = (bool)p.IsForward, isRSS = (bool)p.IsRSS, isShare = (bool)p.IsShare }).FirstOrDefault();

@@ -444,7 +444,7 @@ namespace WebSiteProject.Controllers
 
             WebSiteProject.Models.ForestEntities db = new Models.ForestEntities();
             ViewBag.F_Video = db.VideoItems.Where(f => f.ModelID == 5 && f.Enabled == true && f.IsVerift == true).OrderBy(f => f.Sort).ToList();
-
+            viewmodel.Title = "Video";
 
 
             //if (db.VideoItems.Any(f => f.StDate == null))
@@ -560,7 +560,7 @@ namespace WebSiteProject.Controllers
             WebSiteProject.Models.ForestEntities db = new Models.ForestEntities();
             ViewBag.F_Video = db.VideoItems.Where(f => f.ModelID == 5 && f.Enabled == true && f.IsVerift == true && f.ItemID == itemid).ToList();
             ViewBag.Unit = db.VideoUnitSettings.Where(p => p.MainID == 5).Select(p => new UnitPrint { isPrint = (bool)p.IsPrint, isForward = (bool)p.IsForward, isRSS = (bool)p.IsRSS, isShare = (bool)p.IsShare }).FirstOrDefault();
-
+            viewmodel.Title = db.VideoItems.Where(f => f.ModelID == 5 && f.Enabled == true && f.IsVerift == true && f.ItemID == itemid).ToList().FirstOrDefault().Title;
 
             return View(viewmodel);
         }
@@ -884,10 +884,10 @@ namespace WebSiteProject.Controllers
                 Limit = -1,
                 Sort = "Sort"
             }).rows;
-            
+            viewmodel.Title=
             ViewBag.DesHash = db.MessageItems.Where(M => M.ItemID == Aid).ToList();
             ViewBag.MessageBanner = db.MessageBanners.Where(B => B.MessageItem_ID == Aid).First().MessageBanner_Img;
-            ViewBag.HashTagName = Hashtag;
+            ViewBag.HashTagName = db.MessageItems.Where(M => M.ItemID == Aid).ToList().FirstOrDefault().Title;
             return View(viewmodel);
         }
 

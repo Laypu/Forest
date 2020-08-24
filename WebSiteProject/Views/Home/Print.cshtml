@@ -1,13 +1,13 @@
 ﻿@{ Layout = null;}
 @model VideoFrontViewModel
 <!DOCTYPE html>
-<html lang="Zh-hant" xml:lang="Zh-hant">
+<html lang="en" xml:lang="en">
 <!--英文版<html lang="en" xml:lang="en">-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>@Common.GetLangText("TAIWAN FOREST RECREATION")</title><!--英文 -->
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+    <link rel="icon" href="@Url.Content("~/img/favicon.ico")" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="@Url.Content("~/frontcss/css/bootstrap.min.css")">
@@ -30,8 +30,47 @@
     <noscript>
         <link rel="stylesheet" href="@Url.Content("~/frontcss/css/noscript.css")">
     </noscript>
-
-
+    <meta name="google-site-verification" content="4j4ecKUAGRYw60NCyofmhQSS9QGgTQGSAf3FwCb7wgk" />
+    @if (Model.SEOScript != null)
+    {
+        if (Model.SEOScript.Length > 3) { Model.SEOTitleOrg = Model.SEOScript[3]; }
+        else { Model.SEOTitleOrg = Model.SEOTitle; }
+        if (string.IsNullOrEmpty(Model.SEOScript[2]) == false)
+        {
+            Model.SEOTitle = Model.SEOScript[2];
+            <title>@Model.SEOScript[2]</title>
+        }
+        else
+        {
+            <title>@Model.SEOScript[2]</title>
+        }
+        if (Model.SEOScript[1] != "")
+        {
+            @Html.Raw(Model.SEOScript[1])
+        }
+        if (Model.SEOScript[0] != "")
+        {
+            <meta name="description" content="@Model.SEOScript[0]" />
+        }
+    }
+    else
+    {
+        Model.SEOTitleOrg = Model.SEOTitle;
+        <title>@Model.SEOTitle</title>
+    }
+    @if (ViewBag.SEOScript == "")
+    {
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'UA-120661325-6');
+        </script>
+    }
+    else
+    {
+        @Html.Raw(@ViewBag.SEOScript)
+    }
 </head>
 <body style="max-width:806px; margin:0 auto; background: url(@Url.Content("~/img/bg_05.jpg"));">
     <div class="con_box">

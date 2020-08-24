@@ -1768,34 +1768,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="RecommendedTrips">
-      <EntityTypeMapping TypeName="ForestModel.RecommendedTrip">
-        <MappingFragment StoreEntitySet="RecommendedTrip">
-          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
-          <ScalarProperty Name="ImageFileLocation" ColumnName="ImageFileLocation" />
-          <ScalarProperty Name="ImageFileDesc" ColumnName="ImageFileDesc" />
-          <ScalarProperty Name="ImageFileName" ColumnName="ImageFileName" />
-          <ScalarProperty Name="InFront" ColumnName="InFront" />
-          <ScalarProperty Name="Sort" ColumnName="Sort" />
-          <ScalarProperty Name="RecommendedTrips_EndDay" ColumnName="RecommendedTrips_EndDay" />
-          <ScalarProperty Name="RecommendedTrips_StarDay" ColumnName="RecommendedTrips_StarDay" />
-          <ScalarProperty Name="RecommendedTrips_LinkUrlDesc" ColumnName="RecommendedTrips_LinkUrlDesc" />
-          <ScalarProperty Name="RecommendedTrips_LinkUrl" ColumnName="RecommendedTrips_LinkUrl" />
-          <ScalarProperty Name="RecommendedTrips_UploadFileDesc" ColumnName="RecommendedTrips_UploadFileDesc" />
-          <ScalarProperty Name="RecommendedTrips_UploadFilePath" ColumnName="RecommendedTrips_UploadFilePath" />
-          <ScalarProperty Name="RecommendedTrips_UploadFileName" ColumnName="RecommendedTrips_UploadFileName" />
-          <ScalarProperty Name="RecommendedTrips_Img_Description" ColumnName="RecommendedTrips_Img_Description" />
-          <ScalarProperty Name="RecommendedTrips_HtmContent" ColumnName="RecommendedTrips_HtmContent" />
-          <ScalarProperty Name="RecommendedTrips_Location" ColumnName="RecommendedTrips_Location" />
-          <ScalarProperty Name="RecommendedTrips_Content" ColumnName="RecommendedTrips_Content" />
-          <ScalarProperty Name="RecommendedTrips_Title" ColumnName="RecommendedTrips_Title" />
-          <ScalarProperty Name="RecommendedTrips_Img" ColumnName="RecommendedTrips_Img" />
-          <ScalarProperty Name="RecommendedTrips_Destinations_ID" ColumnName="RecommendedTrips_Destinations_ID" />
-          <ScalarProperty Name="RecommendedTrips_Day_ID" ColumnName="RecommendedTrips_Day_ID" />
-          <ScalarProperty Name="RecommendedTrips_ID" ColumnName="RecommendedTrips_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="F_Destination_Type">
       <EntityTypeMapping TypeName="ForestModel.F_Destination_Type">
         <MappingFragment StoreEntitySet="F_Destination_Type">
@@ -1829,6 +1801,34 @@
           <ScalarProperty Name="Destination_Type_Title2" ColumnName="Destination_Type_Title2" />
           <ScalarProperty Name="Destination_Type_Title1" ColumnName="Destination_Type_Title1" />
           <ScalarProperty Name="Destination_Type_ID" ColumnName="Destination_Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecommendedTrips">
+      <EntityTypeMapping TypeName="ForestModel.RecommendedTrip">
+        <MappingFragment StoreEntitySet="RecommendedTrip">
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="ImageFileLocation" ColumnName="ImageFileLocation" />
+          <ScalarProperty Name="ImageFileDesc" ColumnName="ImageFileDesc" />
+          <ScalarProperty Name="ImageFileName" ColumnName="ImageFileName" />
+          <ScalarProperty Name="InFront" ColumnName="InFront" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="RecommendedTrips_EndDay" ColumnName="RecommendedTrips_EndDay" />
+          <ScalarProperty Name="RecommendedTrips_StarDay" ColumnName="RecommendedTrips_StarDay" />
+          <ScalarProperty Name="RecommendedTrips_LinkUrlDesc" ColumnName="RecommendedTrips_LinkUrlDesc" />
+          <ScalarProperty Name="RecommendedTrips_LinkUrl" ColumnName="RecommendedTrips_LinkUrl" />
+          <ScalarProperty Name="RecommendedTrips_UploadFileDesc" ColumnName="RecommendedTrips_UploadFileDesc" />
+          <ScalarProperty Name="RecommendedTrips_UploadFilePath" ColumnName="RecommendedTrips_UploadFilePath" />
+          <ScalarProperty Name="RecommendedTrips_UploadFileName" ColumnName="RecommendedTrips_UploadFileName" />
+          <ScalarProperty Name="RecommendedTrips_Img_Description" ColumnName="RecommendedTrips_Img_Description" />
+          <ScalarProperty Name="RecommendedTrips_HtmContent" ColumnName="RecommendedTrips_HtmContent" />
+          <ScalarProperty Name="RecommendedTrips_Location" ColumnName="RecommendedTrips_Location" />
+          <ScalarProperty Name="RecommendedTrips_Content" ColumnName="RecommendedTrips_Content" />
+          <ScalarProperty Name="RecommendedTrips_Title" ColumnName="RecommendedTrips_Title" />
+          <ScalarProperty Name="RecommendedTrips_Img" ColumnName="RecommendedTrips_Img" />
+          <ScalarProperty Name="RecommendedTrips_Destinations_ID" ColumnName="RecommendedTrips_Destinations_ID" />
+          <ScalarProperty Name="RecommendedTrips_Day_ID" ColumnName="RecommendedTrips_Day_ID" />
+          <ScalarProperty Name="RecommendedTrips_ID" ColumnName="RecommendedTrips_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

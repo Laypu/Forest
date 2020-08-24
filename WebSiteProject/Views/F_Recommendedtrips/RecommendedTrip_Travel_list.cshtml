@@ -40,12 +40,16 @@
                             <button type="submit" class="btn_page accesskey" name="nowpage" value="1" title="First"><i class="fa fa-angle-double-left" aria-hidden="true"></i><span class="sr-only">First</span></button>
                             <button type="submit" class="btn_page accesskey" name="nowpage" value="@(nowPage==1?1:nowPage-1)" title="Prev"><i class="fa fa-angle-left" aria-hidden="true"></i><span class="sr-only">Prev</span></button>
                             @{
-                                <select class="form-control page_list accesskey" name="jumpPage">
-                                    @for (int i = 1; i <= pageCount; i++)
-                                    {
-                                        <option value="@i" @(i == nowPage ? "selected" : "")>@i</option>
-                                    }
-                                </select>
+                                <label for="jumpPage">
+                                    <select class="form-control page_list accesskey" name="jumpPage" id="jumpPage">
+                                        @for (int i = 1; i <= pageCount; i++)
+                                        {
+                                            <option value="@i" @(i == nowPage ? "selected" : "")>@i</option>
+                                        }
+                                    </select>
+
+                                </label>
+                                
                             }
                             <button type="submit" class="btn_page accesskey" title="GO">GO</button><!--英文GO-->
                             <button type="submit" class="btn_page accesskey" name="nowpage" value="@(nowPage<pageCount?nowPage+1:nowPage)" title="Next"><i class="fa fa-angle-right" aria-hidden="true"></i><span class="sr-only">Next</span></button>

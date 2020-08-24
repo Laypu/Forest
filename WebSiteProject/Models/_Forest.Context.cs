@@ -109,7 +109,7 @@ namespace WebSiteProject.Models
         public virtual DbSet<MessageBanner> MessageBanners { get; set; }
         public virtual DbSet<ADDestination> ADDestinations { get; set; }
         public virtual DbSet<ActiveItem> ActiveItems { get; set; }
-        public virtual DbSet<RecommendedTrip> RecommendedTrips { get; set; }
         public virtual DbSet<F_Destination_Type> F_Destination_Type { get; set; }
+        public virtual DbSet<RecommendedTrip> RecommendedTrips { get; set; }
     }
 }

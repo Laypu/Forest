@@ -90,7 +90,7 @@
                 <div class="portlet light form-fit ">
                     <div class="portlet-body ">
                         <div class="form-horizontal bordered " style="padding-bottom:20px">
-                            <div class="form-body" id="form-body">
+                            <div class="form-body table-scrollable" id="form-body">
 
                                 <form method="post" action="@Url.Action("Destination","Destination_Index")" class="Five_Thingtodo_Header" id="editform">
                                     <table class="table nomarginbottom " id="Destable">
@@ -119,7 +119,7 @@
                                                     </span>
                                                     
                                                 </th>
-                                                <th class="col-md-2 col-sm-12 col-xs-12 text-center">
+                                                <th class="col-md-2 col-sm-12 col-xs-12 text-center" style="display:none">
                                                     <span class="display_inline">圖片說明</span>
                                                 </th>
                                                 <th class="col-md-2 col-sm-12 col-xs-12 text-center">
@@ -199,7 +199,7 @@
 
                                                         </td>
 
-                                                        <td class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center " style="padding:10px">
+                                                        <td class="col-md-2 col-sm-12 col-xs-12 bg-white mobile_white forest_link text-center " style="padding:10px ;display:none">
 
                                                             <textarea name="F_DES[@x].Destination_Type_ImgDescription" id="Destination_Type_ImgDescription[@x]" style="resize:none; height:160px" class="form-control">@item.Destination_Type_ImgDescription</textarea>
 

@@ -33,7 +33,7 @@
                                      data-width="['auto']"
                                      data-height="['auto']"
                                      data-basealign="slide">
-                                    <img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="Things to do">
+                                    <img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="@ad.AD_Name">
                                 </div>
 
                                 @*<div class="tp-caption item_box" data-x="0" data-y="500" data-start="500" data-transform_in="y:[100%];opacity:0;s:500;">
@@ -93,7 +93,7 @@
                                      data-width="['auto']"
                                      data-height="['auto']"
                                      data-basealign="slide">
-                                    <img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="Things to do">
+                                    <img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="@ad.AD_Name">
                                 </div>
 
                                 @*<div class="tp-caption item_box" data-x="0" data-y="500" data-start="500" data-transform_in="y:[100%];opacity:0;s:500;">
@@ -137,12 +137,12 @@
     <noscript>
         <!--僅顯示圖片，影片不置入-->
         <div class="noscrip_banner defaultimg" style="width:100%">
-            <img src="@Url.Content("~/img/index_banner_fake.jpg")" alt="banner">
+            <img src="@Url.Content("~/img/index_banner_fake.jpg")" alt="">
             @foreach (var ad in Model.ADMain)
             {
                 if (string.IsNullOrEmpty(ad.Img_Name_Ori) == false)
                 {
-                    <div><img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="Things to do" /></div>
+                    <div><img src="@Url.Content("~/UploadImage/ADMain/"+ad.Img_Name_Ori)" alt="@ad.AD_Name" /></div>
                 }
             }
         </div>
@@ -200,7 +200,7 @@
                     {
                         <li>
                             <a href="@Url.Action("ThinngsToDo_List", "F_ThingsToDo", new { F_TTD_Id= n++})" title="@item.F_Thingtodo_Type_Title1 @item.F_Thingtodo_Type_Title2">
-                                <div class="item_img"><img src="@Url.Content("~/img/600x800.png")" alt="@item.F_Thingtodo_Type_Title1" style="background:url(@Url.Content("~/UploadImage/ThingsToDo_Img/" + item.F_Thingtodo_Type_ImgName))" /></div><!--建議尺寸600*800px-->
+                                <div class="item_img"><img src="@Url.Content("~/img/600x800.png")" alt="" style="background:url(@Url.Content("~/UploadImage/ThingsToDo_Img/" + item.F_Thingtodo_Type_ImgName))" /></div><!--建議尺寸600*800px-->
                                 <div class="item_title">@item.F_Thingtodo_Type_Title1<div class="second_line">@item.F_Thingtodo_Type_Title2</div></div>
                             </a>
                         </li>

@@ -27,11 +27,11 @@
     <!--fontawesome end-->
     <link rel="stylesheet" href="@Url.Content("~/frontcss/css/style.css")">
     @*<script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
-    <script src="@Url.Content("~/Scripts/jquery-migrate-3.0.0.min.js")"></script>*@
+        <script src="@Url.Content("~/Scripts/jquery-migrate-3.0.0.min.js")"></script>*@
     <script src="@Url.Content("~/js/jquery.js")"></script>
     <script src="@Url.Content("~/js/main.js")"></script>
     <script src="@Url.Content("~/Scripts/custom.js")"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120661325-6"></script>
+    @*<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120661325-6"></script>*@
     @if (Model.SEOScript != null)
     {
         if (Model.SEOScript.Length > 3) { Model.SEOTitleOrg = Model.SEOScript[3]; }
@@ -81,7 +81,7 @@
     <noscript>
         <link rel="stylesheet" href="@Url.Content("~/frontcss/css/noscript.css")">
     </noscript>
-
+    <meta name="google-site-verification" content="4j4ecKUAGRYw60NCyofmhQSS9QGgTQGSAf3FwCb7wgk" />
 </head>
 <body>
     <!--header start-->

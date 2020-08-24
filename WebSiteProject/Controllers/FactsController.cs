@@ -37,6 +37,7 @@ namespace WebSiteProject.Controllers
             _IMenuManager = serviceinstance.MenuManager;
             _IModelLinkManager = serviceinstance.ModelLinkManager;
             _ADRightDownManager = new ADRightDownManager(new SQLRepository<ADRightDown>(connectionstr));
+             ViewBag.SEOScriptArr = _IMasterPageManager.GetSEOData("", "", "1", Common.GetLangText("搜尋結果"));
         }
         // GET: Facts
         public ActionResult Index(int? langid,int nowpage = 0, int jumpPage = 0)
@@ -81,6 +82,7 @@ namespace WebSiteProject.Controllers
             viewmodel.ADMain = _IMasterPageManager.GetADMain("P", langid.ToString(), site_id);
             viewmodel.ADMobile = _IMasterPageManager.GetADMain("M", langid.ToString(), site_id);
             viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
+            viewmodel.Title = "FACTS";
             #region page action計算
             if (nowpage == 0 && jumpPage != 0)
             {
@@ -156,6 +158,7 @@ namespace WebSiteProject.Controllers
             {
                 return RedirectToAction("Index");
             }
+            viewmodel.Title = mode.Title;
             ViewBag.ActiveItemDetail = mode;
             ViewBag.Unit = db.ActiveUnitSettings.Where(p => p.MainID == mode.ModelID).Select(p => new Models.F_ViewModels.UnitPrint { isPrint = (bool)p.IsPrint, isForward = (bool)p.IsForward, isRSS = (bool)p.IsRSS, isShare = (bool)p.IsShare }).FirstOrDefault();
             return View(viewmodel);

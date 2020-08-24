@@ -43,9 +43,10 @@
                     @foreach (var item in Search)
                     {
                         string showTitle = item.Title.Replace((string)ViewBag.Key, "<span class=\"red\">" + (string)ViewBag.Key + "</span>");
+
                         if (item.RunPage == "F_Recommendedtrips/recommended_Detail")
                         {
-                            <a href="@Url.Action("recommended_Detail","F_Recommendedtrips",new {RecommendedTrips_ID=item.Itemid })" title="">
+                            <a href="@Url.Action("recommended_Detail","F_Recommendedtrips",new {RecommendedTrips_ID=item.Itemid })" title="@item.Title">
                                 <div class="item">
                                     <div class="title">Recommendedtrips-@Html.Raw(showTitle)</div>
                                 </div>
@@ -53,7 +54,7 @@
                         }
                         else if (item.RunPage == "Facts/Fact_Detail")
                         {
-                            <a href="@Url.Action("Fact_Detail","Facts",new {item.Itemid,item.Modelid})" title="">
+                            <a href="@Url.Action("Fact_Detail","Facts",new {item.Itemid,item.Modelid})" title="@item.Title">
                                 <div class="item">
                                     <div class="title">Facts-@Html.Raw(showTitle)</div>
                                 </div>
@@ -61,7 +62,7 @@
                         }
                         else if (item.RunPage == "Home/F_Video_Detail")
                         {
-                            <a href="@Url.Action("F_Video_Detail","Home",new {item.Itemid})" title="">
+                            <a href="@Url.Action("F_Video_Detail","Home",new {item.Itemid})" title="@item.Title">
                                 <div class="item">
                                     <div class="title">Video-@Html.Raw(showTitle)</div>
                                 </div>
@@ -69,7 +70,7 @@
                         }
                         else
                         {
-                            <a href="@Url.Action("Article","Destination_Index",new {langid=1,Category=item.Cate,Aid=item.Itemid})" title="">
+                            <a href="@Url.Action("Article","Destination_Index",new {langid=1,Category=item.Cate,Aid=item.Itemid})" title="@item.Title">
                                 <div class="item">
                                     <div class="title">Destination-@Html.Raw(showTitle)</div>
                                 </div>
@@ -89,12 +90,15 @@
                             <button type="submit" class="btn_page accesskey" name="nowpage" value="1" title="First"><i class="fa fa-angle-double-left" aria-hidden="true"></i><span class="sr-only">First</span></button>
                             <button type="submit" class="btn_page accesskey" name="nowpage" value="@(nowPage == 1 ? 1 : nowPage - 1)" title="Prev"><i class="fa fa-angle-left" aria-hidden="true"></i><span class="sr-only">Prev</span></button>
                             @{
-                                <select class="form-control page_list accesskey" name="jumpPage">
-                                    @for (int i = 1; i <= pageCount; i++)
-                                    {
-                                        <option value="@i" @(i == nowPage ? "selected" : "")>@i</option>
-                                    }
-                                </select>
+                                <label for="jumpPage">
+                                    <select class="form-control page_list accesskey" name="jumpPage">
+                                        @for (int i = 1; i <= pageCount; i++)
+                                        {
+                                            <option value="@i" @(i == nowPage ? "selected" : "")>@i</option>
+                                        }
+                                    </select>
+                                </label>
+                                
                             }
                             <button type="submit" class="btn_page accesskey" title="GO">GO</button>
                             <button type="submit" class="btn_page accesskey" name="nowpage" value="@(nowPage < pageCount ? nowPage + 1 : nowPage)" title="Next"><i class="fa fa-angle-right" aria-hidden="true"></i><span class="sr-only">Next</span></button>

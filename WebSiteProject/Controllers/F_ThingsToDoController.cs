@@ -129,7 +129,7 @@ namespace WebSiteProject.Controllers
             }).rows;
 
 
-
+            viewmodel.Title = "Things to do";
             //標題和內容
             ViewBag.Title = Server.HtmlDecode(db.F_Thingtodo_Index.FirstOrDefault().F_Thingtodo_Index_Title);
             ViewBag.Content = Server.HtmlDecode(db.F_Thingtodo_Index.FirstOrDefault().F_Thingtodo_Index_Content);
@@ -266,7 +266,7 @@ namespace WebSiteProject.Controllers
 
             //Title
             ViewBag.F_Thingtodo_Title = db.F_Thingtodo_Type.Where( f => f.F_Thingtodo_Type_ID == F_TTD_Id).FirstOrDefault().F_Thingtodo_Type_Title1 + " " + db.F_Thingtodo_Type.Where(f => f.F_Thingtodo_Type_ID == F_TTD_Id).FirstOrDefault().F_Thingtodo_Type_Title2;
-
+            viewmodel.Title = ViewBag.F_Thingtodo_Title;
             //Thingstodo_各類別_Description
             ViewBag.F_Thingtodo__Description = Server.HtmlDecode(db.F_Thingtodo_Type.Find(F_TTD_Id).F_Thingtodo_Type_Description);
 
@@ -398,6 +398,7 @@ namespace WebSiteProject.Controllers
             ViewBag.TTD_Detail = db.MessageItems.Find(listid);
             ViewBag.MessageBanner = db.MessageBanners.Where(m => m.MessageItem_ID == listid).FirstOrDefault().MessageBanner_Img;
             ViewBag.Category = TTDTitle;
+            viewmodel.Title = db.MessageItems.Find(listid).Title;
             ViewBag.Unit = db.MessageUnitSettings.Where(p => p.MainID == 9).Select(p => new UnitPrint { isPrint = (bool)p.IsPrint, isForward = (bool)p.IsForward, isRSS = (bool)p.IsRSS, isShare = (bool)p.IsShare }).FirstOrDefault();
 
 

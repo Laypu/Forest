@@ -50,6 +50,7 @@ namespace ViewModels
         public List<Menu> Footer { get; set; }
 
         public List<string> FooterMenuString { get; set; }
+        public string Title { get; set; }
     }
 
 }
