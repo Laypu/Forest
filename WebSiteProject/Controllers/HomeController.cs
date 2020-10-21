@@ -884,7 +884,7 @@ namespace WebSiteProject.Controllers
                 Limit = -1,
                 Sort = "Sort"
             }).rows;
-            viewmodel.Title=
+            
             ViewBag.DesHash = db.MessageItems.Where(M => M.ItemID == Aid).ToList();
             ViewBag.MessageBanner = db.MessageBanners.Where(B => B.MessageItem_ID == Aid).First().MessageBanner_Img;
             ViewBag.HashTagName = db.MessageItems.Where(M => M.ItemID == Aid).ToList().FirstOrDefault().Title;
