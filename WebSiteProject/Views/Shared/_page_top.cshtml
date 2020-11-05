@@ -5,11 +5,11 @@
         @{
             if (unit.isForward)
             {
-                <a href="@Url.Action("Forward","F_Recommendedtrips",new { Title = ViewBag.Title, Url = Request.Url.ToString() })" target="_blank" title="forward(new windown)"><img src="@Url.Content("~/img/icon_mail.png")" alt="mail"></a>
+                <a href="@Url.Action("Forward","F_Recommendedtrips",new { Title = ViewBag.Title, Url = Request.Url.ToString() })" target="_blank" title="forward(new window)"><img src="@Url.Content("~/img/icon_mail.png")" alt="mail"></a>
             }
             if (unit.isPrint)
             {
-                <a href="@ViewBag.pageprt" target="_blank" title="print(new windown)"><img src="@Url.Content("~/img/icon_print.png")" alt="print"></a>
+                <a href="@ViewBag.pageprt" target="_blank" title="print(new window)"><img src="@Url.Content("~/img/icon_print.png")" alt="print"></a>
             }
             <!--<a href="#" target="_blank" title="link - web name(new window)"><img src="img/icon_link.png" alt=""></a>
         <a href="#" target="_blank" title="download - file name(new window)"><img src="img/icon_download.png" alt=""></a>-->

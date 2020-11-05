@@ -40,8 +40,10 @@
     <script src="@Url.Content("~/js/main_owl.js")"></script>
     <!--owl.carousel end-->
     <script src="@Url.Content("~/Scripts/custom.js")"></script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120661325-6"></script>
+    @*<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120661325-6"></script>*@
+
     @if (Model.SEOScript != null)
     {
         if (Model.SEOScript.Length > 3) { Model.SEOTitleOrg = Model.SEOScript[3]; }
@@ -49,11 +51,11 @@
         if (string.IsNullOrEmpty(Model.SEOScript[2]) == false)
         {
             Model.SEOTitle = Model.SEOScript[2];
-            <title>@Model.SEOScript[2]</title>
+            <title>@(Model.Title == null ? "" : Model.Title + "-") @Model.SEOScript[2]</title>
         }
         else
         {
-            <title>@Model.SEOScript[2]</title>
+            <title>@(Model.Title == null ? "" : Model.Title + "-") @Model.SEOScript[2]</title>
         }
         if (Model.SEOScript[1] != "")
         {
@@ -61,7 +63,7 @@
         }
         if (Model.SEOScript[0] != "")
         {
-            <meta name="description" content="@Model.SEOScript[0]" />
+            <meta name="description" content="@(Model.Title == null ? "" : Model.Title + "-") @Model.SEOScript[0]" />
         }
     }
     else
@@ -82,13 +84,14 @@
     {
         @Html.Raw(@ViewBag.SEOScript)
     }
+    <meta name="google-site-verification" content="4j4ecKUAGRYw60NCyofmhQSS9QGgTQGSAf3FwCb7wgk" />
 </head>
 <body>
     <!--header start-->
     <noscript>
         <div class="noscript_font">
             <img src="@Url.Action("noJavascript","Home")" style="display:none;" alt="noJavascriptImg">
-            Word-class size SCRIPT, such as your browser does not support, IE6 please use the keyboard hold down the ALT key + V → X → (G) the largest (L) larger (M) in the (S) smaller (A) small, to choose The text size is right for you, or if, for IE7 Firefoxy browser can use the keyboard Ctrl + (+) to enlarge (-) narrowed to change the font size.
+            Word-class size SCRIPT, such as your browser does not support, IE6 please use the keyboard hold down the ALT key + V → X → (G) the largest (L) larger (M) in the (S) smaller (A) small, to choose The text size is right for you, or if, for IE7 Firefox browser can use the keyboard Ctrl + (+) to enlarge (-) narrowed to change the font size.
             
 
             @*@Common.GetLangText("NoJavascript")*@
@@ -315,7 +318,7 @@
                 <div class="footer_title">Find us on</div>
                 <ul>
                     <!--<li><a href="#" title=""><i class="fab fa-twitter" aria-hidden="true"></i> Twitter</a></li>-->
-                    <li><a href="https://www.instagram.com/forestrybureau/" title="Instagram(new window)" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+                    <li><a href="https://www.instagram.com/hidden_treasure_of_asia/" title="Instagram(new window)" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a></li>
                     <li><a href="https://www.facebook.com/twforest" title="Facebook(new window)" target="_blank"><i class="fab fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
                     <li><a href="https://www.youtube.com/channel/UC8r9KygvV33JfgSN66wr9OA" title="YouTube(new window)" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i> YouTube</a></li>
                 </ul>

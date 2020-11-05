@@ -82,8 +82,8 @@
                     
                     
                     @*<div class="page_top_right">
-                        <a href="forward.html" target="_blank" title="forward(new windown)"><img src="~/img/icon_mail.png" alt=""></a>
-                        <a href="@Url.Action("Print","Message",new { mid=179,id=DesModel.First().ItemID})" target="_blank" title="print(new windown)"><img src="~/img/icon_print.png" alt="print"></a>
+                        <a href="forward.html" target="_blank" title="forward(new window)"><img src="~/img/icon_mail.png" alt=""></a>
+                        <a href="@Url.Action("Print","Message",new { mid=179,id=DesModel.First().ItemID})" target="_blank" title="print(new window)"><img src="~/img/icon_print.png" alt="print"></a>
                         <a href="#" target="_blank" title="link - web name(new window)"><img src="img/icon_link.png" alt=""></a>
                         <a href="#" target="_blank" title="download - file name(new window)"><img src="img/icon_download.png" alt=""></a>
                         <a href="http://www.facebook.com/share.php?u=@(HttpUtility.UrlEncode(Request.Url.AbsoluteUri))" target="_blank" title="facebook share(new window)"><img src="~/img/icon_facebook.png" alt=""></a>
@@ -102,7 +102,7 @@
                 <!--publishdate-->
                 <div class="date">@dat.ToString("yyyy/MM/dd")</div>
 
-                <div>
+                <div class="edit_con">
                     <!--文繞圖 start-->
                     @if (string.IsNullOrEmpty(@DesModel.First().ImageFileOrgName) == false)
                     {

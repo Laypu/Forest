@@ -73,84 +73,117 @@
                             foreach (var menu in Model.UpMenulist.Where(v => v.MenuLevel == 1))
                             {
                                 level1idx += 1;
-                                <li class="sitemap_item">
-                                    @if ((menu.LinkUrl == "#" || string.IsNullOrEmpty(menu.MenuUrl)) && menu.ModelID != 6)
-                                    {
-                                        @*<div class="sitemap_no">@level1idx.</div><div class="sitemap_font">@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName )</div>*@
-                                        <a href="javascript:void(0);" class="accesskey @(menu.ModelID!=6?"":"langchange")" title="@level1idx.@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName )">
-                                            <div class="sitemap_no">@level1idx.</div>
-                                            <div class="sitemap_font">@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName)</div>
-                                        </a>
-                                    }
-                                    else
-                                    {
-                                        <a href="@menu.LinkUrl" class="accesskey @(menu.ModelID!=6?"":"langchange")" title="@level1idx.@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName )">
-                                            <div class="sitemap_no">@level1idx.</div>
-                                            <div class="sitemap_font">@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName)</div>
-                                        </a>
-                                    }
-                                    @{
-                                        var l2menulist = Model.UpMenulist.Where(v => v.ParentID == menu.ID);
-                                        level2idx = 0;
-                                        if (l2menulist.Count() > 0)
-                                        {
-                                            <ul class="sitemap_list_1">
-                                                @foreach (var l2menu in l2menulist)
-                                                {
-                                                    level2idx += 1;
-                                                    <li class="sitemap_item_1">
-                                                        @if (l2menu.MenuUrl == "#" || string.IsNullOrEmpty(l2menu.MenuUrl))
-                                                        {
-                                                            @*<div class="sitemap_no">@level1idx.@level2idx</div><div class="sitemap_font">@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName )</div>*@
-                                                            <a href="javascript:void(0);" class="accesskey" title="@level1idx.@level2idx.@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName )">
-                                                                <div class="sitemap_no">@level1idx.@level2idx</div>
-                                                                <div class="sitemap_font">@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName)</div>
-                                                            </a>
-                                                        }
-                                                        else
-                                                        {
-                                                            <a href="@l2menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName )">
-                                                                <div class="sitemap_no">@level1idx.@level2idx</div>
-                                                                <div class="sitemap_font">@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName)</div>
-                                                            </a>
-                                                        }
-                                                        @{
-                                                            var l3menulist = Model.UpMenulist.Where(v => v.ParentID == l2menu.ID);
-                                                            level3idx = 0;
-                                                            if (l3menulist.Count() > 0)
-                                                            {
-                                                                <ul class="sitemap_list_2">
-                                                                    @foreach (var l3menu in l3menulist)
-                                                                    {
-                                                                        level3idx += 1;
-                                                                        <li class="sitemap_item_2">
-                                                                            @if (l3menu.MenuUrl == "#" || string.IsNullOrEmpty(l3menu.MenuUrl))
-                                                                            {
-                                                                                @*<div class="sitemap_no">@level1idx.@level2idx.@level3idx</div><div class="sitemap_font">@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName )</div>*@
-                                                                                <a href="javascript:void(0);" class="accesskey" title="@level1idx.@level2idx.@level3idx.@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName )">
-                                                                                    <div class="sitemap_no">@level1idx.@level2idx.@level3idx</div>
-                                                                                    <div class="sitemap_font">@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName)</div>
-                                                                                </a>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <a href="@l3menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@level3idx.@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName )">
-                                                                                    <div class="sitemap_no">@level1idx.@level2idx.@level3idx</div>
-                                                                                    <div class="sitemap_font">@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName)</div>
-                                                                                </a>
-                                                                            }
-                                                                        </li>
-                                                                    }
+                        <li class="sitemap_item">
+                            @if ((menu.LinkUrl == "#" || string.IsNullOrEmpty(menu.MenuUrl)) && menu.ModelID != 6)
+                            {
+                                @*<div class="sitemap_no">@level1idx.</div><div class="sitemap_font">@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName )</div>*@
+                                <a href="javascript:void(0);" class="accesskey @(menu.ModelID!=6?"":"langchange")" title="@level1idx.@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName )">
+                                    <div class="sitemap_no">@level1idx.</div>
+                                    <div class="sitemap_font">@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName)</div>
+                                </a>
+                            }
+                            else
+                            {
+                                if (menu.OpenMode == 1)
+                                {
+                                    <a href="@menu.LinkUrl" class="accesskey @(menu.ModelID != 6 ? "" : "langchange")" title="@level1idx.@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName )">
+                                        <div class="sitemap_no">@level1idx.</div>
+                                        <div class="sitemap_font">@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName)</div>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a href="@menu.LinkUrl" class="accesskey @(menu.ModelID!=6?"":"langchange")" title="@level1idx.@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName ) (new window)" target="_blank">
+                                        <div class="sitemap_no">@level1idx.</div>
+                                        <div class="sitemap_font">@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName)</div>
+                                    </a>
+                                }
 
-                                                                </ul>
-                                                            }
-                                                        }
-                                                    </li>
+                            }
+                            @{
+                                var l2menulist = Model.UpMenulist.Where(v => v.ParentID == menu.ID);
+                                level2idx = 0;
+                                if (l2menulist.Count() > 0)
+                                {
+                                    <ul class="sitemap_list_1">
+                                        @foreach (var l2menu in l2menulist)
+                                        {
+                                            level2idx += 1;
+                                            <li class="sitemap_item_1">
+                                                @if (l2menu.MenuUrl == "#" || string.IsNullOrEmpty(l2menu.MenuUrl))
+                                                {
+                                                    @*<div class="sitemap_no">@level1idx.@level2idx</div><div class="sitemap_font">@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName )</div>*@
+                                                    <a href="javascript:void(0);" class="accesskey" title="@level1idx.@level2idx.@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName )">
+                                                        <div class="sitemap_no">@level1idx.@level2idx</div>
+                                                        <div class="sitemap_font">@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName)</div>
+                                                    </a>
                                                 }
-                                            </ul>
+                                                else
+                                                {
+                                                    if (l2menu.OpenMode == 1)
+                                                    {
+                                                        <a href="@l2menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName )">
+                                                            <div class="sitemap_no">@level1idx.@level2idx</div>
+                                                            <div class="sitemap_font">@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName)</div>
+                                                        </a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a href="@l2menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName ) (new window)" target="_blank">
+                                                            <div class="sitemap_no">@level1idx.@level2idx</div>
+                                                            <div class="sitemap_font">@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName)</div>
+                                                        </a>
+                                                    }
+
+                                                }
+                                                @{
+                                                    var l3menulist = Model.UpMenulist.Where(v => v.ParentID == l2menu.ID);
+                                                    level3idx = 0;
+                                                    if (l3menulist.Count() > 0)
+                                                    {
+                                                        <ul class="sitemap_list_2">
+                                                            @foreach (var l3menu in l3menulist)
+                                                            {
+                                                                level3idx += 1;
+                                                                <li class="sitemap_item_2">
+                                                                    @if (l3menu.MenuUrl == "#" || string.IsNullOrEmpty(l3menu.MenuUrl))
+                                                                    {
+                                                                        @*<div class="sitemap_no">@level1idx.@level2idx.@level3idx</div><div class="sitemap_font">@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName )</div>*@
+                                                                        <a href="javascript:void(0);" class="accesskey" title="@level1idx.@level2idx.@level3idx.@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName )">
+                                                                            <div class="sitemap_no">@level1idx.@level2idx.@level3idx</div>
+                                                                            <div class="sitemap_font">@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName)</div>
+                                                                        </a>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        if (l3menu.OpenMode == 1)
+                                                                        {
+                                                                            <a href="@l3menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@level3idx.@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName )">
+                                                                                <div class="sitemap_no">@level1idx.@level2idx.@level3idx</div>
+                                                                                <div class="sitemap_font">@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName)</div>
+                                                                            </a>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <a href="@l3menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@level3idx.@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName ) (new window)" target="_blank">
+                                                                                <div class="sitemap_no">@level1idx.@level2idx.@level3idx</div>
+                                                                                <div class="sitemap_font">@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName)</div>
+                                                                            </a>
+                                                                        }
+
+                                                                    }
+                                                                </li>
+                                                            }
+
+                                                        </ul>
+                                                    }
+                                                }
+                                            </li>
                                         }
-                                    }
-                                </li>
+                                    </ul>
+                                }
+                            }
+                        </li>
                             }
                             @*<li class="sitemap_item">
                                 @if (Model.LangId == "1")
@@ -182,85 +215,132 @@
                             foreach (var menu in Model.MainMenulist.Where(v => v.MenuLevel == 1))
                             {
                                 level1idx += 1;
-                                <li class="sitemap_item">
-                                    @if (menu.MenuUrl == "#" || string.IsNullOrEmpty(menu.MenuUrl))
+                        <li class="sitemap_item">
+                            @if (menu.MenuUrl == "#" || string.IsNullOrEmpty(menu.MenuUrl))
+                            {
+                                @*<div class="sitemap_no">@level1idx.</div><div class="sitemap_font">@menu.MenuName</div>*@
+                                <a href="javascript:void(0);" class="accesskey" title="@level1idx.@menu.MenuName">
+                                    <div class="sitemap_no">@level1idx.</div>
+                                    <div class="sitemap_font">@menu.MenuName</div>
+                                </a>
+                            }
+                            else
+                            {
+                                if ((menu.LinkUrl == "#" || string.IsNullOrEmpty(menu.MenuUrl)) && menu.ModelID != 6)
+                                {
+                                    @*<div class="sitemap_no">@level1idx.</div><div class="sitemap_font">@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName )</div>*@
+                                    <a href="javascript:void(0);" class="accesskey @(menu.ModelID!=6?"":"langchange")" title="@level1idx.@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName )">
+                                        <div class="sitemap_no">@level1idx.</div>
+                                        <div class="sitemap_font">@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName)</div>
+                                    </a>
+                                }
+                                else
+                                {
+                                    if (menu.OpenMode == 1)
                                     {
-                                        @*<div class="sitemap_no">@level1idx.</div><div class="sitemap_font">@menu.MenuName</div>*@
-                                        <a href="javascript:void(0);" class="accesskey" title="@level1idx.@menu.MenuName">
+                                        <a href="@menu.LinkUrl" class="accesskey @(menu.ModelID != 6 ? "" : "langchange")" title="@level1idx.@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName )">
                                             <div class="sitemap_no">@level1idx.</div>
-                                            <div class="sitemap_font">@menu.MenuName</div>
+                                            <div class="sitemap_font">@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName)</div>
                                         </a>
                                     }
                                     else
                                     {
-                                        <a href="@menu.MenuUrl" class="accesskey" title="@level1idx.@menu.MenuName">
+                                        <a href="@menu.LinkUrl" class="accesskey @(menu.ModelID!=6?"":"langchange")" title="@level1idx.@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName ) (new window)" target="_blank">
                                             <div class="sitemap_no">@level1idx.</div>
-                                            <div class="sitemap_font">@menu.MenuName</div>
+                                            <div class="sitemap_font">@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName)</div>
                                         </a>
                                     }
 
-                                    @{
-                                        var l2menulist = Model.MainMenulist.Where(v => v.ParentID == menu.ID);
-                                        level2idx = 0;
-                                        if (l2menulist.Count() > 0)
-                                        {
-                                            <ul class="sitemap_list_1">
-                                                @foreach (var l2menu in l2menulist)
-                                                {
-                                                    level2idx += 1;
-                                                    <li class="sitemap_item_1">
-                                                        @if (l2menu.MenuUrl == "#" || string.IsNullOrEmpty(l2menu.MenuUrl))
-                                                        {
-                                                            @*<div class="sitemap_no">@level1idx.@level2idx</div><div class="sitemap_font">@l2menu.MenuName</div>*@
-                                                            <a href="javascript:void(0);" class="accesskey" title="@level1idx.@level2idx.@l2menu.MenuName">
-                                                                <div class="sitemap_no">@level1idx.@level2idx</div>
-                                                                <div class="sitemap_font">@l2menu.MenuName</div>
-                                                            </a>
-                                                        }
-                                                        else
-                                                        {
-                                                            <a href="@l2menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@l2menu.MenuName">
-                                                                <div class="sitemap_no">@level1idx.@level2idx</div>
-                                                                <div class="sitemap_font">@l2menu.MenuName</div>
-                                                            </a>
-                                                        }
-                                                        @{
-                                                            var l3menulist = Model.MainMenulist.Where(v => v.ParentID == l2menu.ID);
-                                                            level3idx = 0;
-                                                            if (l3menulist.Count() > 0)
-                                                            {
-                                                                <ul class="sitemap_list_2">
-                                                                    @foreach (var l3menu in l3menulist)
-                                                                    {
-                                                                        level3idx += 1;
-                                                                        <li class="sitemap_item_2">
-                                                                            @if (l3menu.MenuUrl == "#" || string.IsNullOrEmpty(l3menu.MenuUrl))
-                                                                            {
-                                                                                @*<div class="sitemap_no">@level1idx.@level2idx.@level3idx</div><div class="sitemap_font">@l3menu.MenuName</div>*@
-                                                                                <a href="javascript:void(0);" class="accesskey" title="@level1idx.@level2idx.@level3idx.@l3menu.MenuName">
-                                                                                    <div class="sitemap_no">@level1idx.@level2idx.@level3idx</div>
-                                                                                    <div class="sitemap_font">@l3menu.MenuName</div>
-                                                                                </a>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <a href="@l3menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@level3idx.@l3menu.MenuName">
-                                                                                    <div class="sitemap_no">@level1idx.@level2idx.@level3idx</div>
-                                                                                    <div class="sitemap_font">@l3menu.MenuName</div>
-                                                                                </a>
-                                                                            }
-                                                                        </li>
-                                                                    }
+                                }
 
-                                                                </ul>
-                                                            }
-                                                        }
-                                                    </li>
+
+                                
+                            }
+
+                            @{
+                                var l2menulist = Model.MainMenulist.Where(v => v.ParentID == menu.ID);
+                                level2idx = 0;
+                                if (l2menulist.Count() > 0)
+                                {
+                                    <ul class="sitemap_list_1">
+                                        @foreach (var l2menu in l2menulist)
+                                        {
+                                            level2idx += 1;
+                                        <li class="sitemap_item_1">
+                                            @if (l2menu.MenuUrl == "#" || string.IsNullOrEmpty(l2menu.MenuUrl))
+                                            {
+                                                @*<div class="sitemap_no">@level1idx.@level2idx</div><div class="sitemap_font">@l2menu.MenuName</div>*@
+                                                <a href="javascript:void(0);" class="accesskey" title="@level1idx.@level2idx.@l2menu.MenuName">
+                                                    <div class="sitemap_no">@level1idx.@level2idx</div>
+                                                    <div class="sitemap_font">@l2menu.MenuName</div>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                if (l2menu.OpenMode == 1)
+                                                {
+                                                    <a href="@l2menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName )">
+                                                        <div class="sitemap_no">@level1idx.@level2idx</div>
+                                                        <div class="sitemap_font">@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName)</div>
+                                                    </a>
                                                 }
-                                            </ul>
+                                                else
+                                                {
+                                                    <a href="@l2menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName ) (new window)" target="_blank">
+                                                        <div class="sitemap_no">@level1idx.@level2idx</div>
+                                                        <div class="sitemap_font">@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName)</div>
+                                                    </a>
+                                                }
+                                                
+                                            }
+                                            @{
+                                                var l3menulist = Model.MainMenulist.Where(v => v.ParentID == l2menu.ID);
+                                                level3idx = 0;
+                                                if (l3menulist.Count() > 0)
+                                                {
+                                                    <ul class="sitemap_list_2">
+                                                        @foreach (var l3menu in l3menulist)
+                                                        {
+                                                            level3idx += 1;
+                                                        <li class="sitemap_item_2">
+                                                            @if (l3menu.MenuUrl == "#" || string.IsNullOrEmpty(l3menu.MenuUrl))
+                                                            {
+                                                                @*<div class="sitemap_no">@level1idx.@level2idx.@level3idx</div><div class="sitemap_font">@l3menu.MenuName</div>*@
+                                                                <a href="javascript:void(0);" class="accesskey" title="@level1idx.@level2idx.@level3idx.@l3menu.MenuName">
+                                                                    <div class="sitemap_no">@level1idx.@level2idx.@level3idx</div>
+                                                                    <div class="sitemap_font">@l3menu.MenuName</div>
+                                                                </a>
+                                                            }
+                                                            else
+                                                            {
+                                                                if (l3menu.OpenMode == 1)
+                                                                {
+                                                                    <a href="@l3menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@level3idx.@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName )">
+                                                                        <div class="sitemap_no">@level1idx.@level2idx.@level3idx</div>
+                                                                        <div class="sitemap_font">@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName)</div>
+                                                                    </a>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <a href="@l3menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@level3idx.@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName ) (new window)" target="_blank">
+                                                                        <div class="sitemap_no">@level1idx.@level2idx.@level3idx</div>
+                                                                        <div class="sitemap_font">@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName)</div>
+                                                                    </a>
+                                                                }
+                                                                
+                                                            }
+                                                        </li>
+                                                        }
+
+                                                    </ul>
+                                                }
+                                            }
+                                        </li>
                                         }
-                                    }
-                                </li>
+                                    </ul>
+                                }
+                            }
+                        </li>
                             }
                         }
                     </ul>
@@ -276,84 +356,130 @@
                             foreach (var menu in Model.DownMenulist.Where(v => v.MenuLevel == 1))
                             {
                                 level1idx += 1;
-                                <li class="sitemap_item">
-                                    @if (menu.MenuUrl == "#" || string.IsNullOrEmpty(menu.MenuUrl))
+                        <li class="sitemap_item">
+                            @if (menu.MenuUrl == "#" || string.IsNullOrEmpty(menu.MenuUrl))
+                            {
+                                @*<div class="sitemap_no">@level1idx.</div><div class="sitemap_font">@menu.MenuName</div>*@
+                                <a href="javascript:void(0);" class="accesskey @(menu.ModelID!=6?"":"langchange")" title="@level1idx.@menu.MenuName">
+                                    <div class="sitemap_no">@level1idx.</div>
+                                    <div class="sitemap_font">@menu.MenuName</div>
+                                </a>
+                            }
+                            else
+                            {
+                                if ((menu.LinkUrl == "#" || string.IsNullOrEmpty(menu.MenuUrl)) && menu.ModelID != 6)
+                                {
+                                    @*<div class="sitemap_no">@level1idx.</div><div class="sitemap_font">@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName )</div>*@
+                                    <a href="javascript:void(0);" class="accesskey @(menu.ModelID!=6?"":"langchange")" title="@level1idx.@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName )">
+                                        <div class="sitemap_no">@level1idx.</div>
+                                        <div class="sitemap_font">@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName)</div>
+                                    </a>
+                                }
+                                else
+                                {
+                                    if (menu.OpenMode == 1)
                                     {
-                                        @*<div class="sitemap_no">@level1idx.</div><div class="sitemap_font">@menu.MenuName</div>*@
-                                        <a href="javascript:void(0);" class="accesskey @(menu.ModelID!=6?"":"langchange")" title="@level1idx.@menu.MenuName">
+                                        <a href="@menu.LinkUrl" class="accesskey @(menu.ModelID != 6 ? "" : "langchange")" title="@level1idx.@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName )">
                                             <div class="sitemap_no">@level1idx.</div>
-                                            <div class="sitemap_font">@menu.MenuName</div>
+                                            <div class="sitemap_font">@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName)</div>
                                         </a>
                                     }
                                     else
                                     {
-                                        <a href="@menu.MenuUrl" class="accesskey @(menu.ModelID!=6?"":"langchange")" title="@level1idx.@menu.MenuName">
+                                        
+                                        <a href="@menu.LinkUrl" class="accesskey @(menu.ModelID!=6?"":"langchange")" title="@level1idx.@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName ) (new window)" target="_blank">
                                             <div class="sitemap_no">@level1idx.</div>
-                                            <div class="sitemap_font">@menu.MenuName</div>
+                                            <div class="sitemap_font">@(string.IsNullOrEmpty(menu.DisplayName) ? menu.MenuName : menu.DisplayName)</div>
                                         </a>
                                     }
-                                    @{
-                                        var l2menulist = Model.DownMenulist.Where(v => v.ParentID == menu.ID);
-                                        level2idx = 0;
-                                        if (l2menulist.Count() > 0)
-                                        {
-                                            <ul class="sitemap_list_1">
-                                                @foreach (var l2menu in l2menulist)
-                                                {
-                                                    level2idx += 1;
-                                                    <li class="sitemap_item_1">
-                                                        @if (l2menu.MenuUrl == "#" || string.IsNullOrEmpty(l2menu.MenuUrl))
-                                                        {
-                                                            @*<div class="sitemap_no">@level1idx.@level2idx</div><div class="sitemap_font">@l2menu.MenuName</div>*@
-                                                            <a href="javascript:void(0);" class="accesskey" title="@level1idx.@level2idx.@l2menu.MenuName">
-                                                                <div class="sitemap_no">@level1idx.@level2idx</div>
-                                                                <div class="sitemap_font">@l2menu.MenuName</div>
-                                                            </a>
-                                                        }
-                                                        else
-                                                        {
-                                                            <a href="@l2menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@l2menu.MenuName">
-                                                                <div class="sitemap_no">@level1idx.@level2idx</div>
-                                                                <div class="sitemap_font">@l2menu.MenuName</div>
-                                                            </a>
-                                                        }
-                                                        @{
-                                                            var l3menulist = Model.DownMenulist.Where(v => v.ParentID == l2menu.ID);
-                                                            level3idx = 0;
-                                                            if (l3menulist.Count() > 0)
-                                                            {
-                                                                <ul class="sitemap_list_2">
-                                                                    @foreach (var l3menu in l3menulist)
-                                                                    {
-                                                                        level3idx += 1;
-                                                                        <li class="sitemap_item_2">
-                                                                            @if (l3menu.MenuUrl == "#" || string.IsNullOrEmpty(l3menu.MenuUrl))
-                                                                            {
-                                                                                @*<div class="sitemap_no">@level1idx.@level2idx.@level3idx</div><div class="sitemap_font">@l3menu.MenuName</div>*@
-                                                                                <a href="javascript:void(0);" class="accesskey" title="@level1idx.@level2idx.@level3idx.@l3menu.MenuName">
-                                                                                    <div class="sitemap_no">@level1idx.@level2idx.@level3idx</div>
-                                                                                    <div class="sitemap_font">@l3menu.MenuName</div>
-                                                                                </a>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <a href="@l3menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@level3idx.@l3menu.MenuName">
-                                                                                    <div class="sitemap_no">@level1idx.@level2idx.@level3idx</div>
-                                                                                    <div class="sitemap_font">@l3menu.MenuName</div>
-                                                                                </a>
-                                                                            }
-                                                                        </li>
-                                                                    }
 
-                                                                </ul>
-                                                            }
-                                                        }
-                                                    </li>
+                                }
+                                
+                            }
+                            @{
+                                var l2menulist = Model.DownMenulist.Where(v => v.ParentID == menu.ID);
+                                level2idx = 0;
+                                if (l2menulist.Count() > 0)
+                                {
+                                    <ul class="sitemap_list_1">
+                                        @foreach (var l2menu in l2menulist)
+                                        {
+                                            level2idx += 1;
+                                        <li class="sitemap_item_1">
+                                            @if (l2menu.MenuUrl == "#" || string.IsNullOrEmpty(l2menu.MenuUrl))
+                                            {
+                                                @*<div class="sitemap_no">@level1idx.@level2idx</div><div class="sitemap_font">@l2menu.MenuName</div>*@
+                                                <a href="javascript:void(0);" class="accesskey" title="@level1idx.@level2idx.@l2menu.MenuName">
+                                                    <div class="sitemap_no">@level1idx.@level2idx</div>
+                                                    <div class="sitemap_font">@l2menu.MenuName</div>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                if (l2menu.OpenMode == 1)
+                                                {
+                                                    <a href="@l2menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName )">
+                                                        <div class="sitemap_no">@level1idx.@level2idx</div>
+                                                        <div class="sitemap_font">@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName)</div>
+                                                    </a>
                                                 }
-                                            </ul>
+                                                else
+                                                {
+                                                    <a href="@l2menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName ) (new window)" target="_blank">
+                                                        <div class="sitemap_no">@level1idx.@level2idx</div>
+                                                        <div class="sitemap_font">@(string.IsNullOrEmpty(l2menu.DisplayName) ? l2menu.MenuName : l2menu.DisplayName)</div>
+                                                    </a>
+                                                }
+                                                
+                                            }
+                                            @{
+                                                var l3menulist = Model.DownMenulist.Where(v => v.ParentID == l2menu.ID);
+                                                level3idx = 0;
+                                                if (l3menulist.Count() > 0)
+                                                {
+                                                    <ul class="sitemap_list_2">
+                                                        @foreach (var l3menu in l3menulist)
+                                                        {
+                                                            level3idx += 1;
+                                                        <li class="sitemap_item_2">
+                                                            @if (l3menu.MenuUrl == "#" || string.IsNullOrEmpty(l3menu.MenuUrl))
+                                                            {
+                                                                @*<div class="sitemap_no">@level1idx.@level2idx.@level3idx</div><div class="sitemap_font">@l3menu.MenuName</div>*@
+                                                                <a href="javascript:void(0);" class="accesskey" title="@level1idx.@level2idx.@level3idx.@l3menu.MenuName">
+                                                                    <div class="sitemap_no">@level1idx.@level2idx.@level3idx</div>
+                                                                    <div class="sitemap_font">@l3menu.MenuName</div>
+                                                                </a>
+                                                            }
+                                                            else
+                                                            {
+                                                                if (l3menu.OpenMode == 1)
+                                                                {
+                                                                    <a href="@l3menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@level3idx.@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName )">
+                                                                        <div class="sitemap_no">@level1idx.@level2idx.@level3idx</div>
+                                                                        <div class="sitemap_font">@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName)</div>
+                                                                    </a>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <a href="@l3menu.MenuUrl" class="accesskey" title="@level1idx.@level2idx.@level3idx.@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName ) (new window)" target="_blank">
+                                                                        <div class="sitemap_no">@level1idx.@level2idx.@level3idx</div>
+                                                                        <div class="sitemap_font">@(string.IsNullOrEmpty(l3menu.DisplayName) ? l3menu.MenuName : l3menu.DisplayName)</div>
+                                                                    </a>
+                                                                }
+                                                                
+                                                            }
+                                                        </li>
+                                                        }
+
+                                                    </ul>
+                                                }
+                                            }
+                                        </li>
                                         }
-                                    }
-                                </li>
+                                    </ul>
+                                }
+                            }
+                        </li>
                             }
                         }
                     </ul>

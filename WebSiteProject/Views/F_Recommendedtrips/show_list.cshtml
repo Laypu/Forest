@@ -21,7 +21,7 @@
                     ,HashData.First().RecommendedTrips_keyword5,HashData.First().RecommendedTrips_keyword6,HashData.First().RecommendedTrips_keyword7,HashData.First().RecommendedTrips_keyword8,HashData.First().RecommendedTrips_keyword9};
         <li class="bg_print" style="background-image:url(@Url.Content("~/UploadImage/Destination_Img/")@item.RecommendedTrips_Img_Img);" data-sr="enter top over 1.5s">
             <!--森林遊樂區trip_map_01~06(內洞、奧萬大、合歡山、大雪山、阿里山、墾丁)，後台可以選擇-->
-            <a href="@Url.Action("recommended_Detail",new {item.RecommendedTrips_ID })"  title="Title_@item.RecommendedTrips_Img_Description">
+            <a href="@Url.Action("recommended_Detail",new {item.RecommendedTrips_ID })"  title="@item.RecommendedTrips_Title">
                 <div class="img" >
                     <!--建議尺寸800*800px，圖片會置頂、置中，多餘部份遮住-->
                     <div class="type">@item.RecommendedTrips_Day_Name</div>
@@ -29,7 +29,7 @@
                 </div>
             </a>
             <div class="font">
-                <div class="title"><a href="@Url.Action("recommended_Detail",new {item.RecommendedTrips_ID })" title="Title_@item.RecommendedTrips_Title">@item.RecommendedTrips_Title</a></div>
+                <div class="title"><a href="@Url.Action("recommended_Detail",new {item.RecommendedTrips_ID })" title="@item.RecommendedTrips_Title">@item.RecommendedTrips_Title</a></div>
                 <div class="con">
                     @Html.Raw(HttpUtility.HtmlDecode(item.RecommendedTrips_Index_Content))
                     <div class="link">
@@ -37,7 +37,7 @@
                         {
                             if (keyword[i].IsNullorEmpty() == false)
                             {
-                                <a href="@Url.Action("recommended_list",new { HashTag = keyword[i] })" title="Tag @keyword[i]">#@keyword[i]</a>
+                                <a href="@Url.Action("recommended_list",new { HashTag = keyword[i] })" title="# @keyword[i]">#@keyword[i]</a>
                             }
                         }
                     </div>

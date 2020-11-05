@@ -47,7 +47,8 @@ namespace WebSiteProject.Controllers
             _ILoginManager = serviceinstance.LoginManager;
             _IMenuManager = serviceinstance.MenuManager;
             _IModelLinkManager = serviceinstance.ModelLinkManager;
-            _ADRightDownManager = new ADRightDownManager(new SQLRepository<ADRightDown>(connectionstr)); 
+            _ADRightDownManager = new ADRightDownManager(new SQLRepository<ADRightDown>(connectionstr));
+            ViewBag.SEOScriptArr = _IMasterPageManager.GetSEOData("", "", "1", Common.GetLangText("搜尋結果"));
         }
         #region Index
         // GET: F_Recommendedtrips
@@ -93,6 +94,7 @@ namespace WebSiteProject.Controllers
             viewmodel.ADMain = _IMasterPageManager.GetADMain("P", langid.ToString(), site_id);
             viewmodel.ADMobile = _IMasterPageManager.GetADMain("M", langid.ToString(), site_id);
             viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
+            viewmodel.Title = Server.HtmlDecode(db.RecommendedTrips_Index.FirstOrDefault().RecommendedTrips_Index_Title);
             ////標題和內容
             //ViewBag.Title = Server.HtmlDecode(db.RecommendedTrips_Index.FirstOrDefault().RecommendedTrips_Index_Title);
             ViewBag.Content = Server.HtmlDecode(db.RecommendedTrips_Index.FirstOrDefault().RecommendedTrips_Index_Content)/*.safeHtmlFragment*/;
@@ -144,6 +146,7 @@ namespace WebSiteProject.Controllers
             _IMasterPageManager.SetModel<HomeViewModel>(ref viewmodel, "P", langid.ToString(), "");
             viewmodel.SEOScript = _IMasterPageManager.GetSEOData("", "", langid.ToString());
             viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
+            viewmodel.Title = "Recommended trips";
             #endregion
             var Destination_Typ = db.F_Destination_Type;
             var Day_ID_ = db.RecommendedTrips_Day;
@@ -327,6 +330,7 @@ namespace WebSiteProject.Controllers
             }
 
             HomeViewModel viewmodel = new HomeViewModel();
+
             //讀取logo圖片
             var Type_ID = db.ADMains.Where(p => p.Type_ID == RecommendedTrips_ID.ToString()).FirstOrDefault();
             var Type = "main";
@@ -339,12 +343,14 @@ namespace WebSiteProject.Controllers
             viewmodel.ADMain = _IMasterPageManager.GetADMain_Article("P", langid.ToString(), site_id, Type);
             viewmodel.ADMobile = _IMasterPageManager.GetADMain_Article("M", langid.ToString(), site_id, Type);
             viewmodel.TrainingSiteData = _ISiteLayoutManager.GetTrainingSiteData(Common.GetLangText("另開新視窗")).AntiXss(new string[] { "class" });
+ 
             #endregion
             var model = db.RecommendedTrips.Find(RecommendedTrips_ID);
             if(db.RecommendedTrips.Where(p=>p.RecommendedTrips_ID==RecommendedTrips_ID).FirstOrDefault()==null)
             {
                 return RedirectToAction("recommended_list");
             }
+            viewmodel.Title = model.RecommendedTrips_Title;
             ViewBag.ID = model.RecommendedTrips_ID;
             ViewBag.Title = model.RecommendedTrips_Title;
             ViewBag.day = model.RecommendedTrips_Day.RecommendedTrips_Day_Name;
@@ -532,6 +538,7 @@ namespace WebSiteProject.Controllers
         #region Forward
         public ActionResult Forward(Forward_model model, string btn = "", string CaptchaInputText = "")
         {
+            
             string ErroMessage = string.Empty;
             if (btn == "")
             {
@@ -635,7 +642,7 @@ namespace WebSiteProject.Controllers
                         message.SubjectEncoding = System.Text.Encoding.UTF8;
                         message.Subject = NoticeSubject;
                         message.BodyEncoding = System.Text.Encoding.UTF8;
-                        string body = model.Sender + Common.GetLangText("寄了一則訊息給你喔") + "<br/> " + Common.GetLangText("給您的訊息") + ":" + model.ForwardMessage +
+                        string body = model.Sender + Common.GetLangText("Send you a message") + "<br/> " + Common.GetLangText("message") + ":" + model.ForwardMessage +
                             "<br/>" + model.Url;
                         message.Body = body;
                         message.IsBodyHtml = true;

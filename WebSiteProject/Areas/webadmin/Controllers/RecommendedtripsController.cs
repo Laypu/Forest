@@ -188,6 +188,7 @@ namespace WebSiteProject.Areas.webadmin.Controllers
                 RE.ImageFileDesc = ReD.ImageFileDesc;
                 RE.ImageFileLocation = ReD.ImageFileLocation;
                 RE.ImageFileName = ReD.ImageFileName;
+                RE.Enabled = ReD.Enabled;
             }
             else
             {

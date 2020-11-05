@@ -36,10 +36,12 @@
     <link rel="stylesheet" href="@Url.Content("~/frontcss/css/owl.theme.default.min.css")">
     <script src="@Url.Content("~/js/owl.carousel.min.js")"></script>
     <script src="@Url.Content("~/js/main_owl.js")"></script>
+
+
     <!--owl.carousel end-->
     <script src="@Url.Content("~/Scripts/custom.js")"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120661325-6"></script>
+    @*<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120661325-6"></script>*@
     @if (Model.SEOScript != null)
     {
         if (Model.SEOScript.Length > 3) { Model.SEOTitleOrg = Model.SEOScript[3]; }
@@ -80,6 +82,8 @@
     {
         @Html.Raw(@ViewBag.SEOScript)
     }
+    <meta name="google-site-verification" content="4j4ecKUAGRYw60NCyofmhQSS9QGgTQGSAf3FwCb7wgk" />
+
 </head>
 <body>
     <!--header start-->

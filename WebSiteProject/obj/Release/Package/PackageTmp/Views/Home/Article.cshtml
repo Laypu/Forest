@@ -120,7 +120,7 @@
                     }
 
                     <!--文繞圖 end-->
-                    @Html.Raw(DesModel.First().HtmlContent/*.safeHtmlFragment*/)
+                    @Html.Raw(HttpUtility.HtmlDecode(DesModel.First().HtmlContent/*.safeHtmlFragment*/))
 
 
                 </div>

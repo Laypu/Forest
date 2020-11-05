@@ -123,7 +123,7 @@
                     }
 
                     <!--文繞圖 end-->
-                    @Html.Raw(DesModel.FirstOrDefault().HtmlContent/*.safeHtmlFragment*/)
+                    @Html.Raw(HttpUtility.HtmlDecode(DesModel.FirstOrDefault().HtmlContent/*.safeHtmlFragment*/))
 
 
                 </div>

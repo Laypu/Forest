@@ -114,7 +114,8 @@
                     }
 
                     <!--文繞圖 end-->
-                    @Html.Raw(TTDModel.HtmlContent/*.safeHtmlFragment*/)
+                    
+                    @Html.Raw(HttpUtility.HtmlDecode(TTDModel.HtmlContent/*.safeHtmlFragment*/))
 
 
                 </div>

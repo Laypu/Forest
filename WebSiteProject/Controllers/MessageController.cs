@@ -33,6 +33,7 @@ namespace WebSiteProject.Controllers
             _IMenuManager = serviceinstance.MenuManager;
             _IMessageManager = serviceinstance.MessageManager; 
             _ISiteLayoutManager = serviceinstance.SiteLayoutManager;
+            ViewBag.SEOScriptArr = _MasterPageManager.GetSEOData("", "", "1", Common.GetLangText("搜尋結果"));
         }
 
         #region Index

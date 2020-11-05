@@ -37,7 +37,7 @@ namespace WebSiteProject.Models
         public string ImageFileLocation { get; set; }
         public Nullable<bool> Enabled { get; set; }
     
-        public virtual RecommendedTrips_Day RecommendedTrips_Day { get; set; }
         public virtual F_Destination_Type F_Destination_Type { get; set; }
+        public virtual RecommendedTrips_Day RecommendedTrips_Day { get; set; }
     }
 }

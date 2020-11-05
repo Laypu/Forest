@@ -43,11 +43,11 @@
                     @{
                         if (unit.isForward)
                         {
-                            <a href="#" target="_blank" onclick="window.open('@Url.Action("Forward","F_Recommendedtrips" ,new {Title=ActiveItem.Title,Url=Request.Url.ToString() })', 'forward', config='height=750,width=650')" title="forward(new windown)"><img src="@Url.Content("~/img/icon_mail.png")" alt="mail"></a>
+                            <a href="@Url.Action("Forward","F_Recommendedtrips" ,new {Title=ActiveItem.Title,Url=Request.Url.ToString() })" target="_blank"  title="forward(new window)"><img src="@Url.Content("~/img/icon_mail.png")" alt="mail"></a>
                         }
                         if (unit.isPrint)
                         {
-                            <a href="@Url.Action("Print",new { ItemID=ActiveItem.ItemID,ModelID =ActiveItem.ModelID})" target="_blank" title="print(new windown)"><img src="@Url.Content("~/img/icon_print.png")" alt="print"></a>
+                            <a href="@Url.Action("Print",new { ItemID=ActiveItem.ItemID,ModelID =ActiveItem.ModelID})" target="_blank" title="print(new window)"><img src="@Url.Content("~/img/icon_print.png")" alt="print"></a>
                         }
                         @*<a href="#" target="_blank" title="link - web name(new window)"><img src="img/icon_link.png" alt=""></a>
             <a href="#" target="_blank" title="download - file name(new window)"><img src="img/icon_download.png" alt=""></a>*@
@@ -121,7 +121,7 @@
                         <div class="download">
                             <div class="title"><i class="fa fa-download" aria-hidden="true"></i>Download</div>
                             <div class="con_font">
-                                <a href="@Url.Action("FileDownLoad")?itemid=@ActiveItem.ItemID" target="_blank" title="@ActiveItem.UploadFileDesc (new window)">@ActiveItem.UploadFileName</a>
+                                <a href="@Url.Action("FileDownLoad")?itemid=@ActiveItem.ItemID" target="_blank" title="@ActiveItem.UploadFileDesc (new window)">@ActiveItem.UploadFileDesc</a>
                             </div>
                         </div>
                     }
